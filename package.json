@@ -49,7 +49,7 @@
 		"astro": "2.7.1",
 		"satori": "0.10.1",
 		"satori-html": "^0.3.2",
-		"sharp": "^0.32.0"
+		"sharp": "^0.32.4"
 	},
 	"packageManager": "pnpm@8.6.1"
 }
