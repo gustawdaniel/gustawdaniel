@@ -1,0 +1,21 @@
+{/* Inlined to avoid FOUC. */}
+<script is:inline>
+	const root = document.documentElement;
+	const colorThemeMetaTag = document.querySelector("meta[name='theme-color']");
+	const storedTheme = typeof localStorage !== "undefined" && localStorage.getItem("theme");
+	const userTheme =
+		storedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+	function setTheme(theme) {
+		root.classList.toggle("dark", theme === "dark");
+		const bgColour = getComputedStyle(document.body).getPropertyValue("--theme-bg");
+
+		colorThemeMetaTag.setAttribute("content", `rgb(${bgColour})`);
+		if (typeof localStorage !== "undefined") {
+			localStorage.setItem("theme", theme);
+		}
+	}
+	setTheme(userTheme);
+	root.addEventListener("theme-change", (e) => {
+		setTheme(e.detail.theme);
+	});
+</script>
