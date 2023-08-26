@@ -2,11 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
 import { getFormattedDate } from "@/utils";
-import { useTranslatedPath, getLangAndSlugFromUrl } from "../../i18n/utils";
-import { getLocale } from "astro-i18n-aut";
 
-const locale = getLocale(Astro.url) ?? "en";
-const translatePath = useTranslatedPath(locale);
 interface Props extends IElement {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
@@ -16,12 +12,11 @@ const { post, as: Element = "div", withDesc = false } = Astro.props;
 const date = new Date(post.data.publishDate);
 const datetime = date.toISOString();
 const postDate = getFormattedDate(date);
-const { slug } = getLangAndSlugFromUrl(post.slug);
 ---
 
 <time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
 <Element>
-	<a href={translatePath(`/post/${slug}`)} class="cactus-link" rel="prefetch">
+	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
 		{post.data.title}
 	</a>
 </Element>

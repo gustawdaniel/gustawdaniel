@@ -2,13 +2,10 @@
 import PageLayout from "@/layouts/Base";
 import { Image } from "astro:assets";
 import aboutImg from "~/assets/about-astro.png";
-import { getLocale } from "astro-i18n-aut";
-
-const locale = getLocale(Astro.url);
 
 const meta = {
 	title: "About",
-	description: "I am Rust, Node JS dev.",
+	description: "I'm a starter theme for Astro.build",
 };
 ---
 
@@ -27,7 +24,5 @@ const meta = {
 		</ul>
 
 		<p>My fav animal is a cat... possessed by Schrodinger</p>
-
-		<pre>{locale}</pre>
 	</div>
 </PageLayout>
