@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://gustawdaniel.com/sitemap-index.xml

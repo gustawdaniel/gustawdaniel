@@ -1,0 +1,66 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_LOCALE } from "../../consts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getLocale, getLocaleUrlPrefix } from "astro-i18n-aut";
+
+const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
+const localeUrlPrefix = getLocaleUrlPrefix(Astro.url);
+
+const posts = (
+  await getCollection("blog", (entry) => entry.slug.startsWith(`${locale}/`))
+)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+  .map<CollectionEntry<"blog"> & { href: string }>((post) => {
+    return {
+      href: localeUrlPrefix + "/blog" + post.slug.replace(locale, "") + "/",
+      ...post,
+    };
+  });
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li :global(time) {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #595959;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <FormattedDate date={post.data.pubDate} />
+                <a href={post.href}>{post.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

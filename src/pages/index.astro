@@ -1,103 +1,66 @@
 ---
-import { getCollection } from "astro:content";
-import PageLayout from "@/layouts/Base";
-import PostPreview from "@/components/blog/PostPreview";
-import SocialList from "@/components/SocialList";
-import { sortMDByDate } from "@/utils";
-
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, DEFAULT_LOCALE } from '../consts';
 import { getLocale } from "astro-i18n-aut";
 
-const locale = getLocale(Astro.url) ?? "en";
+const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE
 
-const MAX_POSTS = 10;
-const allPosts = await getCollection("post");
-const allPostsForCurrentLang = allPosts.filter((post) => {
-	return post.slug.startsWith(locale + "/");
-});
-const allPostsByDate = sortMDByDate(allPostsForCurrentLang).slice(0, MAX_POSTS);
-
-const showProject = false;
-const projects: Array<{ title: string; desc: string; href: string }> = [
-	{
-		title: "Xue.academy",
-		desc: "Learn languages with AI that adjust words to your level.",
-		href: "https://xue.academy",
-	},
-	{
-		title: "Precise Sale",
-		desc: "Apply optimal dynamic pricing strategy in your business",
-		href: "https://precise.sale",
-	},
-	{
-		title: "GPT-CLI",
-		desc: "Use GPT Chat directly from command line to find bash commands",
-		href: "https://github.com/gustawdaniel/gpt-cli",
-	},
-	{
-		title: "CV Parser",
-		desc: "Extract data about candidates from CV to JSON by API.",
-		href: "https://www.markdownguide.org/",
-	},
-];
-
-let title: string = "";
+let greeting: string;
 switch (locale) {
-	case "pl":
-		title = "Witaj świecie!";
-		break;
-	case "es":
-		title = "¡Hola Mundo!";
-		break;
-	case "fr":
-		title = "Bonjour Monde!";
-		break;
-	default:
-		title = "Hello World!";
+  case "es":
+    greeting = "¡Hola, astronauta!";
+    break;
+  case "fr":
+    greeting = "Bonjour, Astronaute !";
+    break;
+  default:
+    greeting = "Hello, Astronaut!";
 }
+
 ---
 
-<PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">{title}</h1>
-		<p class="mb-4">
-			I love to learn and share my knowledge. On this website you can read about my side projects,
-			technologies that I investigating and research. My favorite topics are AI, scraping, data
-			processing and web development.
-		</p>
-		<SocialList />
-	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
-	{
-		showProject && (
-			<section class="mt-16">
-				<h2 class="title mb-4 text-xl">Projects</h2>
-				<ul class="space-y-4 sm:space-y-2">
-					{projects.map(({ href, title, desc }) => (
-						<li>
-							<a
-								href={href}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="cactus-link inline-block"
-							>
-								{title}
-							</a>
-							:<p class="inline-block sm:mt-2">{desc}</p>
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
-</PageLayout>
+<!DOCTYPE html>
+<html lang={locale}>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>🧑‍🚀 {greeting}</h1>
+			<p>
+				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+				template serves as a lightweight, minimally-styled starting point for anyone looking to build
+				a personal website, blog, or portfolio with Astro.
+			</p>
+			<p>
+				This template comes with a few integrations already configured in your
+				<code>astro.config.mjs</code> file. You can customize your setup with
+				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
+				React, or Vue to your project.
+			</p>
+			<p>Here are a few ideas on how to get started with the template:</p>
+			<ul>
+				<li>Edit this page in <code>src/pages/index.astro</code></li>
+				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
+				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
+				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+			</ul>
+			<p>
+				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
+					>read the docs
+				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+			</p>
+			<p>
+				Looking for a blog template with a bit more personality? Check out <a
+					href="https://github.com/Charca/astro-blog-template"
+					>astro-blog-template
+				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
