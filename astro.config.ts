@@ -12,7 +12,7 @@ const defaultLocale = "en";
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://gustawdaniel.com/",
+	site: "https://gustawdaniel.com",
 	trailingSlash: "never",
 	build: {
 		format: "file",
