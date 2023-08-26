@@ -133,7 +133,7 @@ import { GoogleAnalytics } from "astro-google-analytics";
 
 [Astro docs](https://docs.astro.build/en/guides/deploy/) has a great section and breakdown of how to deploy your own Astro site on various platforms and their idiosyncrasies.
 
-By default the site will be built (see [Commands](#commands) section above) to a `/dist` directory.
+By default, the site will be built (see [Commands](#commands) section above) to a `/dist` directory.
 
 ## Acknowledgment
 
@@ -142,3 +142,19 @@ This theme is inspired by [Hexo Theme Cactus](https://github.com/probberechts/he
 ## License
 
 MIT
+
+---
+
+## Development
+
+Once grant caddy access to 433 without sudo
+
+```bash
+sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
+```
+
+Then start all languages by
+
+```
+npm run dev-all
+```

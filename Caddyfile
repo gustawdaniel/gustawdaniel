@@ -1,0 +1,19 @@
+gustawdaniel.local {
+	reverse_proxy localhost:3000
+}
+
+pl.gustawdaniel.local {
+	reverse_proxy localhost:3001
+}
+
+de.gustawdaniel.local {
+	reverse_proxy localhost:3002
+}
+
+es.gustawdaniel.local {
+	reverse_proxy localhost:3003
+}
+
+ru.gustawdaniel.local {
+	reverse_proxy localhost:3004
+}

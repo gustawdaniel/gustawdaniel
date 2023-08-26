@@ -1,10 +1,12 @@
 ---
-function getLocale(url: string) {}
-
-const locale = getLocale(Astro.url) ?? "en";
-
 import { locales } from "@/data/locales";
-import { useTranslatedPath } from "../i18n/utils";
+import { useTranslatedPath } from "@/i18n/utils";
+
+function getLocale(): keyof typeof locales {
+	return import.meta.env.PUBLIC_LANG ?? "en";
+}
+
+const locale = getLocale();
 
 const translatePath = useTranslatedPath(locale);
 ---
