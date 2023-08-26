@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.3.2
     version: 0.3.2(astro@2.10.8)(kleur@4.1.5)
   satori:
-    specifier: 0.10.1
-    version: 0.10.1
+    specifier: 0.10.3
+    version: 0.10.3
   satori-html:
     specifier: ^0.3.2
     version: 0.3.2
@@ -5109,8 +5109,8 @@ packages:
       ultrahtml: 1.2.0
     dev: false
 
-  /satori@0.10.1:
-    resolution: {integrity: sha512-F4bTCkDp931tLb7+UCNPBuSQwXhikrUkI4fBQo6fA8lF0Evqqgg3nDyUpRktQpR5Ry1DIiIVqLyEwkAms87ykg==}
+  /satori@0.10.3:
+    resolution: {integrity: sha512-8tZPu7AGiRWimbOyja1s2HK0hEC4DacZ8cAKDITxlVI5tKQZbOuMiVgSB50CABwc0I4Imgtkq7o9Egj1WOJTKg==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
