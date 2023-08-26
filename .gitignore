@@ -1,6 +1,7 @@
 # build output
 dist/
 .output/
+astro_tmp_pages_*
 
 # dependencies
 node_modules/
@@ -23,3 +24,4 @@ pnpm-debug.log*
 *.pem
 .cache
 .astro
+.idea

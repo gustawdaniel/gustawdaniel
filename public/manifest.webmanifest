@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "Daniel Gustaw Homepage",
+	"short_name": "Daniel Gustaw",
+	"description": "Programmers blog",
 	"icons": [
 		{
 			"src": "/192x192.png",

@@ -2,7 +2,7 @@ import type { APIContext, GetStaticPaths } from "astro";
 import { getCollection, getEntryBySlug } from "astro:content";
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import satori, { SatoriOptions } from "satori";
+import satori, { type SatoriOptions } from "satori";
 import { html } from "satori-html";
 import { Resvg } from "@resvg/resvg-js";
 import { siteConfig } from "@/site-config";
@@ -35,7 +35,7 @@ const ogOptions: SatoriOptions = {
 	],
 };
 
-const markup = (title: string, pubDate: string) => html`<div
+const markup = (title: string, pubDate: string) => html` <div
 	tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]"
 >
 	<div tw="flex flex-col flex-1 w-full p-10 justify-center">

@@ -6,6 +6,9 @@ import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import Pagination from "@/components/Paginator";
 import { getUniqueTags, sortMDByDate } from "@/utils";
+import { getLocale } from "astro-i18n-aut";
+
+const locale = getLocale(Astro.url) ?? "en";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getCollection("post");

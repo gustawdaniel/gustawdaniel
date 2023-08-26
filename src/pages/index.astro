@@ -5,56 +5,64 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { sortMDByDate } from "@/utils";
 
+import { getLocale } from "astro-i18n-aut";
+
+const locale = getLocale(Astro.url) ?? "en";
+
 const MAX_POSTS = 10;
 const allPosts = await getCollection("post");
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const allPostsForCurrentLang = allPosts.filter((post) => {
+	return post.slug.startsWith(locale + "/");
+});
+const allPostsByDate = sortMDByDate(allPostsForCurrentLang).slice(0, MAX_POSTS);
 
-const cactusTech: Array<{ title: string; desc: string; href: string }> = [
+const showProject = false;
+const projects: Array<{ title: string; desc: string; href: string }> = [
 	{
-		title: "Astro",
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
+		title: "Xue.academy",
+		desc: "Learn languages with AI that adjust words to your level.",
+		href: "https://xue.academy",
 	},
 	{
-		title: "Astro Assets",
-		desc: "Built-in optimized asset support.",
-		href: "https://docs.astro.build/en/guides/assets/",
+		title: "Precise Sale",
+		desc: "Apply optimal dynamic pricing strategy in your business",
+		href: "https://precise.sale",
 	},
 	{
-		title: "Tailwind CSS",
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
+		title: "GPT-CLI",
+		desc: "Use GPT Chat directly from command line to find bash commands",
+		href: "https://github.com/gustawdaniel/gpt-cli",
 	},
 	{
-		title: "Markdown",
-		desc: "Simple and easy-to-use markup language.",
+		title: "CV Parser",
+		desc: "Extract data about candidates from CV to JSON by API.",
 		href: "https://www.markdownguide.org/",
 	},
-	{
-		title: "MDX",
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-	},
-	{
-		title: "Satori",
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-	},
-	{
-		title: "Pagefind",
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-	},
 ];
+
+let title: string = "";
+switch (locale) {
+	case "pl":
+		title = "Witaj świecie!";
+		break;
+	case "es":
+		title = "¡Hola Mundo!";
+		break;
+	case "fr":
+		title = "Bonjour Monde!";
+		break;
+	default:
+		title = "Hello World!";
+}
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Hello World!</h1>
+		<h1 class="title mb-6">{title}</h1>
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on one the github icon link below which will take you to my repo.
+			I love to learn and share my knowledge. On this website you can read about my side projects,
+			technologies that I investigating and research. My favorite topics are AI, scraping, data
+			processing and web development.
 		</p>
 		<SocialList />
 	</section>
@@ -70,24 +78,26 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 			}
 		</ul>
 	</section>
-	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				cactusTech.map(({ href, title, desc }) => (
-					<li>
-						<a
-							href={href}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="cactus-link inline-block"
-						>
-							{title}
-						</a>:
-						<p class="inline-block sm:mt-2">{desc}</p>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	{
+		showProject && (
+			<section class="mt-16">
+				<h2 class="title mb-4 text-xl">Projects</h2>
+				<ul class="space-y-4 sm:space-y-2">
+					{projects.map(({ href, title, desc }) => (
+						<li>
+							<a
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cactus-link inline-block"
+							>
+								{title}
+							</a>
+							:<p class="inline-block sm:mt-2">{desc}</p>
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
 </PageLayout>
