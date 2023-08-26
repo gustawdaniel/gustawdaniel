@@ -1,6 +1,6 @@
-import { defineConfig } from "astro/config";
+import {defineConfig} from "astro/config";
 import mdx from "@astrojs/mdx";
-import { i18n, defaultLocaleSitemapFilter } from "astro-i18n-aut";
+import {defaultLocaleSitemapFilter, i18n} from "astro-i18n-aut";
 import sitemap from "@astrojs/sitemap";
 
 const defaultLocale = "en";
@@ -12,9 +12,6 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    redirects: true,
-  },
   site: "https://example.com/",
   trailingSlash: "always",
   build: {
