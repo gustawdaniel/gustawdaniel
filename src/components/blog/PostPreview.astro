@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { HTMLTag, Polymorphic } from "astro/types";
 import FormattedDate from "../FormattedDate.astro";
+import { stripLangFromSlug } from "@/i18n/utils";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
@@ -14,7 +15,7 @@ const postDate = post.data.updatedDate ?? post.data.publishDate;
 
 <FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
 <Tag>
-	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
+	<a href={`/posts/${stripLangFromSlug(post.slug)}/`} class="cactus-link" rel="prefetch">
 		{post.data.title}
 	</a>
 </Tag>

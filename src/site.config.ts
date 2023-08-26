@@ -1,4 +1,5 @@
 import type { SiteConfig } from "@/data/types";
+import { getLocale } from "@/i18n/utils";
 
 export const siteConfig: SiteConfig = {
 	author: "Daniel Gustaw",
@@ -8,7 +9,7 @@ export const siteConfig: SiteConfig = {
 	description:
 		"Blog about scraping, data processing and programming in node js, typescript, perl, php, python technologies.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "en-GB",
+	lang: getLocale(),
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "en_GB",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.

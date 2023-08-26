@@ -30,25 +30,34 @@ export function useTranslatedPath(lang: keyof typeof locales) {
 	};
 }
 
-// function stringToLang(lang?: string): keyof typeof locales {
-// 	switch (lang) {
-// 		case "pl":
-// 			return "pl";
-// 		case "es":
-// 			return "es";
-// 		case "ru":
-// 			return "ru";
-// 		case "de":
-// 			return "de";
-// 		default:
-// 			return "en";
-// 	}
-// }
-//
-// export function getLangAndSlugFromUrl(slugWithLang: string): {
-// 	lang: keyof typeof locales;
-// 	slug: string | undefined;
-// } {
-// 	const [lang, ...slug] = slugWithLang.split("/");
-// 	return { lang: stringToLang(lang), slug: slug.join("/") || undefined };
-// }
+export function getLocale(): keyof typeof locales {
+	return import.meta.env.PUBLIC_LANG ?? "en";
+}
+
+function stringToLang(lang?: string): keyof typeof locales {
+	switch (lang) {
+		case "pl":
+			return "pl";
+		case "es":
+			return "es";
+		case "ru":
+			return "ru";
+		case "de":
+			return "de";
+		default:
+			return "en";
+	}
+}
+
+export function getLangAndSlugFromUrl(slugWithLang: string): {
+	lang: keyof typeof locales;
+	slug: string | undefined;
+} {
+	const [lang, ...slug] = slugWithLang.split("/");
+	return { lang: stringToLang(lang), slug: slug.join("/") || undefined };
+}
+
+export function stripLangFromSlug(slugWithLang: string): string {
+	const { slug } = getLangAndSlugFromUrl(slugWithLang);
+	return slug ?? "";
+}
