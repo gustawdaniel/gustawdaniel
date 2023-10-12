@@ -47,7 +47,7 @@ rails generate scaffold post title:string body:text
 
 Ta komenda powoduje wygenerowanie się sporej ilości plików:
 
-![](./Screenshot-from-2021-04-18-14-15-08.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-14-15-08.png)
 
 Jednym z nich jest migracja na bazie danych, która zapisana w `db/migrate/20210418121400_create_posts.rb` wygląda tak:
 
@@ -90,11 +90,11 @@ Ogromną zaletą rails jest, że już teraz możemy korzystać z działającego 
 
 Po wytworzeniu posta ręcznie dostajemy:
 
-![](./Screenshot-from-2021-04-18-14-33-12.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-14-33-12.png)
 
 Co jeszcze przyjemniejsze mamy też od razu "api" pod adresem `/posts.json`
 
-![](./Screenshot-from-2021-04-18-14-37-18.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-14-37-18.png)
 
 Niestety próba utworzenia posta przez API
 
@@ -130,7 +130,7 @@ http POST localhost:3000/posts.json body=ok
 
 zapiszą swoje posty bez walidacji ich poprawności.
 
-![](./Screenshot-from-2021-04-18-14-52-53.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-14-52-53.png)
 
 Aby wymusić obecność parametru `title` w poście, w pliku `app/models/post.rb` dodajemy flagę `validates_presence_of`
 
@@ -142,11 +142,11 @@ end
 
 Dzięki niej niemożliwe będzie dodawanie postów bez tytułu zarówno na stronie
 
-![](./Screenshot-from-2021-04-19-14-41-18.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-19-14-41-18.png)
 
 jak i przez API
 
-![](./Screenshot-from-2021-04-19-14-42-01.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-19-14-42-01.png)
 
 ## Debugowanie - Rails Console
 
@@ -212,7 +212,7 @@ The Rails Command LineAfter reading this guide, you will know: How to create a R
 
 Tym czasem wrócimy do plików wygenerowanych dzięki opcji `resource`.
 
-![](./Screenshot-from-2021-04-18-15-09-56-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-15-09-56-1.png)
 
 Ponownie powstała tutaj migracja tym razem o zawartości:
 
@@ -260,7 +260,7 @@ Wyświetlenie routingu jest możliwe dzięki poleceniu:
 rails routes
 ```
 
-![](./Screenshot-from-2021-04-18-15-40-23-2.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-15-40-23-2.png)
 
 Co do kierunku relacji, to w tym momencie komentarze należą do postów co opisano w pliku `app/models/comment.rb`
 
@@ -317,7 +317,7 @@ Załączymy je w widoku pojedynczego postu dołączając do pliku `app/views/pos
 
 Teraz nasz widok postu będzie wyglądała następująco
 
-![](./Screenshot-from-2021-04-18-16-19-22-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-16-19-22-1.png)
 
 Mimo, że wygląda jak gotowy do działania, to funkcja dodawania komentarzy wciąż nie jest dostępna. Przygotowaliśmy jedynie widok, ale brakuje logiki, która obsłużyła by zapisywanie komentarzy do bazy i łączenie ich z postami.
 
@@ -349,7 +349,7 @@ Przyjrzyjmy mu się uważnie. Zaczyna się od opcji `before_action`, która usta
 
 Następnie następuje przekierowanie do strony z postami. Na stronie działa to bardzo dobrze.
 
-![](./Screenshot-from-2021-04-20-09-47-58.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-20-09-47-58.png)
 
 Ale jeśli chcemy tworzyć posty z poziomu API. to za każdym razem będąc przekierowani do postu zobaczymy go bez komentarzy. Jeśli zastąpimy
 
@@ -373,7 +373,7 @@ w kontrolerze przez instrukcje analogiczne jak dla posta
 
 dostaniemy błąd
 
-![](./Screenshot-from-2021-04-18-18-28-49-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-18-28-49-1.png)
 
 Jest tak dlatego, że teraz komentarze wymagają aby nadać im strukturę przy układaniu ich w plik JSON. Jest to rozwiązane dzięki fantastycznej bibliotece `jbuilder`.
 
@@ -394,7 +394,7 @@ json.comments @post.comments, :id, :body, :created_at
 
 skonfigurujemy serwer, aby po utworzeniu komentarza odpowiadał widokiem posta z listą wszystkich odpowiadających mu komentarzy. Jest to widok odpowiadający temu co widzimy w wersji HTML, choć nie zgodny z zasadami REST.
 
-![](./Screenshot-from-2021-04-18-18-36-24-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-18-36-24-1.png)
 
 Jeśli chcieli byśmy wyświetlić ten konkretny komentarz i możemy użyć składni
 
@@ -417,7 +417,7 @@ Jeśli chcieli byśmy wyświetlić ten konkretny komentarz i możemy użyć skł
 
 w kontrolerze. Wtedy w widoku odpowiedzi zobaczymy komentarz wraz z postem.
 
-![](./Screenshot-from-2021-04-20-11-48-56.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-20-11-48-56.png)
 
 Więcej o formatowaniu można przeczytać tutaj:
 
@@ -481,7 +481,7 @@ Pod adresem
 
 Możemy zobaczyć podgląd tego e-maila
 
-![](./Screenshot-from-2021-04-18-19-17-35-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-19-17-35-1.png)
 
 Nie możemy jednak oczekiwać, że ten e-mail będzie od razu wysyłany. Aby dołączyć jego wysyłanie musimy dodać linię
 
@@ -526,7 +526,7 @@ end
 
 Flaga "deliver\_later" pozwala na załączenie wysyłki e-maila do wewnętrznej pętli Ruby on Rails, która wyśle go najszybciej jak to możliwe nie blokując jednocześnie wykonania reszty kodu. Utworzenie komentarza nadal nie wyśle e-maila na prawdziwą pocztę, ale w konsoli zobaczymy, że taka akcja była by podjęta gdyby wysyłka faktycznie była do końca skonfigurowana.
 
-![](./Screenshot-from-2021-04-18-19-33-26-1.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-18-19-33-26-1.png)
 
 Nie będziemy iść w tą stronę, ale jeśli chcesz dokończyć konfigurację to poczytaj o `smtp_settings` i `delivery_method` w dokumentacji:
 
@@ -548,7 +548,7 @@ Aby używać komunikacji w czasie rzeczywistym, potrzebujemy kanału. Wygeneruje
 rails generate channel comments
 ```
 
-![](./Screenshot-from-2021-04-20-12-05-34.png)
+![](../../../../assets/2021-04-17/Screenshot-from-2021-04-20-12-05-34.png)
 
 W pliku `app/channels/comments_channel.rb` o zawartości:
 

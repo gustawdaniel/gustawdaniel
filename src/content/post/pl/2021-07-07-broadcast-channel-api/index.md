@@ -102,21 +102,21 @@ The Performance interface provides access to performance-related information for
 
 Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
 
-![](./Screenshot-from-2021-07-07-01-56-23.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-01-56-23.png)
 
 Nic nie stoi na przeszkodzie, żebyśmy włączyli cztery karty na raz. Wtedy wiadomości od trzech pozostałych w każdej z nich będą się wzajemnie przeplatać.
 
-![](./Screenshot-from-2021-07-07-01-57-17.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-01-57-17.png)
 
 Możemy wrócić do dwóch kart i odświeżyć kilka razy tą z prawej strony. W wyniku takiego działania ta po lewej dostanie kilkukrotnie nowe powiadomienia, a na tej prawej nie będzie widać nic poza jej własnym przedstawieniem się ponieważ lewa karta zakończyła już nadawanie wiadomości. Konkretny wynik odświeżania prawej karty przedstawia screenshot:
 
-![](./Screenshot-from-2021-07-07-02-12-15.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-02-12-15.png)
 
 Widzimy tu, że wiadomości pochodzą od różnych ID, bo karta po prawej zmienia ID przy każdym odświeżeniu.
 
 Kolejny eksperyment to sprawdzenie czy Broad Cast Channel działa między różnymi przeglądarkami:
 
-![](./Screenshot-from-2021-07-07-09-38-48.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-09-38-48.png)
 
 Okazało się, że nie. Ma to sens, bo jeśli miało by działać między przeglądarkami, to musiała by istnieć komunikacja między procesami utrzymującymi przeglądarki.
 
@@ -136,7 +136,7 @@ Web content’s origin is defined by the scheme (protocol), hostname (domain), a
 
 Sprawdzimy czy dla różnych komputerów też będzie działał poprawnie. W tym celu musimy zmienić ustawienia parcela, bo obecnie wystawia on nasz serwis na localhost
 
-![](./Screenshot-from-2021-07-07-02-16-02.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-02-16-02.png)
 
 Nasz obecny adres IP możemy sprawdzić poleceniem
 
@@ -144,7 +144,7 @@ Nasz obecny adres IP możemy sprawdzić poleceniem
 ip route
 ```
 
-![](./Screenshot-from-2021-07-07-08-20-47.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-08-20-47.png)
 
 Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 
@@ -158,7 +158,7 @@ Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 parce index.html --host 192.168.2.162
 ```
 
-![](./Screenshot-from-2021-07-07-08-21-16.png)
+![](../../../../assets/2021-07-07/Screenshot-from-2021-07-07-08-21-16.png)
 
 Okazało się, że komunikacja nie jest przesyłana między różnymi komputerami.
 

@@ -49,11 +49,11 @@ zawiera zielony przycisk wyszukaj. Po jego kliknięciu przechodzimy na stronę
 
 zawierającą klasyczną tabelę
 
-![](./Screenshot-from-2021-02-17-16-48-01.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-16-48-01.png)
 
 Schodząc na sam dół i klikając "ostatnia"
 
-![](./Screenshot-from-2021-02-17-16-49-24.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-16-49-24.png)
 
 zostaniemy przekierowani na stronę z klasyczną paginacją
 
@@ -71,25 +71,25 @@ Każda z kategorii ma nieco inną stronę profilową:
 
 Adwokat wykonujący zawód ma najpełniejszy profil
 
-![](./Screenshot-from-2021-02-17-17-16-58.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-17-16-58.png)
 
 Niektórzy mają do tego telefon komórkowy
 
 > [https://rejestradwokatow.pl/adwokat/urkowska-trzciska-justyna-48516](https://rejestradwokatow.pl/adwokat/urkowska-trzciska-justyna-48516)
 
-![](./Screenshot-from-2021-02-17-17-17-45.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-17-17-45.png)
 
 Dane o byłych adwokatach są ograniczone
 
 > [https://rejestradwokatow.pl/adwokat/urowski-jan-52462](https://rejestradwokatow.pl/adwokat/urowski-jan-52462)
 
-![](./Screenshot-from-2021-02-17-17-18-34.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-17-18-34.png)
 
 Jeszcze bardziej o nie wykonujących zawodu
 
 > [https://rejestradwokatow.pl/adwokat/urek-wanda-54247](https://rejestradwokatow.pl/adwokat/urek-wanda-54247)
 
-![](./Screenshot-from-2021-02-17-17-19-00.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-17-19-00.png)
 
 Strategia pobrania tych danych jest prosta. Na początku przejdziemy tabelę budując bazową listę z podstawowymi danymi. Wśród nich znajdą się linki do profili. Pobierzemy je wszystkie i z nich uzyskamy rozszerzenie tej bazowej listy o najcenniejsze dane, na przykład kontaktowe.
 
@@ -107,7 +107,7 @@ Mogli byśmy to przyśpieszyć pobierając kilka stron jednocześnie, ale dla na
 
 Na każdej podstronie mamy taką samą tabelę
 
-![](./Screenshot-from-2021-02-17-17-29-47.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-17-29-47.png)
 
 Projekt inicjalizujemy komendą
 
@@ -236,7 +236,7 @@ zajmuje pół minuty
 
 i generuje plik o wadze `5.1M`
 
-![](./Screenshot-from-2021-02-17-18-08-48.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-18-08-48.png)
 
 Repozytorium z kodem można znaleźć tutaj:
 
@@ -315,7 +315,7 @@ main().then(() => console.log("ok")).catch(console.error);
 
 Tak wyglądają przykładowe wywołania, jedno z, a drugie bez zapisu plików.
 
-![](./Screenshot-from-2021-02-17-18-30-20.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-18-30-20.png)
 
 Widać, że nie różnią się od siebie w zauważalny sposób i średni czas na zapis jednego adwokata to koło 150 ms. Daje to łącznie `27190*0.15` = `4078` sekund. Jednak to więcej niż `3600`. Ponad godzina!
 
@@ -527,7 +527,7 @@ Wykonanie tego pliku pokazuje kolumny z
 * czasem miedzy kolejnymi setkami
 * łącznym czasem od włączenia aplikacji
 
-![](./Screenshot-from-2021-02-17-20-17-27.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-20-17-27.png)
 
 Przetworzenie każdej setki plików zajmuje około 340 ms. Co oznacza mniej więcej 300 na sekundę, czyli całość powinna zająć około półtorej minuty. Faktycznie:
 
@@ -585,7 +585,7 @@ Zwróci rozkład względem wykonywanych zawodów i przykładowe linki:
 
 Dzięki interfejsowi Compass możemy przeglądać znacznie więcej takich grupowań w trybie graficznym
 
-![](./Screenshot-from-2021-02-17-20-33-57.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-20-33-57.png)
 
 Jeśli chcemy wrzucić te dane do mongo atlas możemy użyć komendy
 
@@ -601,7 +601,7 @@ mongodb+srv://user:pass@cluseter_number.mongodb.net/db_name
 
 W mongo charts możemy w chwilę wyklikać kilka wykresów, np wspomniany wcześniej rozkład statusu prawników
 
-![](./Screenshot-from-2021-02-17-21-01-11.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-21-01-11.png)
 
 Interaktywny wykres dostępny do zagnieżdżenia jako `iframe` możemy zobaczyć poniżej.
 
@@ -629,13 +629,13 @@ Po dodaniu wyliczanego pola z datą i rokiem:
 
 Możemy zdefiniować wykres
 
-![](./Screenshot-from-2021-02-17-21-34-30.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-21-34-30.png)
 
 Podobnie przygotowujemy wykres ze średnią liczbą specjalizacji
 
 Za pomocą konfiguracji
 
-![](./Screenshot-from-2021-02-17-21-46-31.png)
+![](../../../../assets/2021-02-18/Screenshot-from-2021-02-17-21-46-31.png)
 
 możemy pokazać częstotliwość wybieranych specjalizacji
 

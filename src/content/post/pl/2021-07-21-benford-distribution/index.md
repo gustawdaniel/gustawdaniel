@@ -9,7 +9,7 @@ excerpt: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu r
 
 Był rok 1992. W miasteczku Wayne (Arizona USA) zapadał wyrok na Jamesa Nelsona - głównego księgowego i zarządzającego Arizona State Treasurer. Jego fałszywe czeki, dzięki którym zdefraudował prawie 2 miliony dolarów zostały wykryte ponieważ rozkład częstości pierwszych cyfr w wyłudzonych kwotach odbiegał od rozkładu Benforta.
 
-![](./1520213042003.jpeg)
+![](../../../../assets/2021-07-21/1520213042003.jpeg)
 
 Na pierwszych pozycjach zmyślonych przez księgowego wartości zbyt często znajdowały się 7, 8 i 9 - typowe wartości postrzegane przez nas jako "bardziej" losowe niż 1, 2 lub 3.
 
@@ -30,11 +30,11 @@ Rozkład Benforda jest rozkładem prawdopodobieństwa występowania określonych
 * zbiór wartości powinien rozciągać się na wiele rzędów wielkości
 * prawdopodobieństwo powinno być niezmiennicze względem skali oraz bazy
 
-![](./BenfordBroad.png)
+![](../../../../assets/2021-07-21/BenfordBroad.png)
 
 Przykład rozkładu wielkości gdzie pierwsza cyfra spełnia w przybliżeniu prawo Benforda. Wykładniczy spadek rozkładu widzimy po zagęszczaniu się osi wartości.
 
-![](./BenfordNarrow.gif)
+![](../../../../assets/2021-07-21/BenfordNarrow.gif)
 
 Rozkład wielkości obejmujący jedne rząd wielkości. Zwykle pierwsze cyfry nie spełniają rozkładu Benforda, jeśli początkowy rozkład nie jest wystarczająco szeroki.
 
@@ -56,7 +56,7 @@ Ponieważ w tym artykule rozkład Benforda jest jedynie pretekstem do porównani
 
 Wzór na prawdopodobieństwo wystąpienia cyfry `d` na pierwszej pozycji to:
 
-![](./Screenshot-from-2021-07-20-11-49-38.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-20-11-49-38.png)
 
 Przykłady, które pokażę pochodzą z serwisu `[deltami.edu.pl](http://www.deltami.edu.pl/temat/matematyka/zastosowania/2016/03/21/Fenomen_rozkladu_Benforda/)`
 
@@ -64,25 +64,25 @@ Przykłady, które pokażę pochodzą z serwisu `[deltami.edu.pl](http://www.del
 
 Ze zbioru liczb naturalnych z zakresu od 1 do 9999 losujemy liczbę p, wykorzystując generator liczb losowych o rozkładzie równomiernym. Następnie z zakresu liczb naturalnych od 1 do p losujemy, również wykorzystując rozkład równomierny, liczbę r.
 
-![](./1012szy1_thumb_190px-1.png)
+![](../../../../assets/2021-07-21/1012szy1_thumb_190px-1.png)
 
 * Masa atomowa pierwiastków z układu okresowego
 
 Zobaczmy na układ okresowy pierwiastków chemicznych, a dokładniej, jeden z parametrów każdego pierwiastka - masą atomową.
 
-![](./1012szy2_thumb_190px.png)
+![](../../../../assets/2021-07-21/1012szy2_thumb_190px.png)
 
 * Powierzchnia państw świata w km²
 
 Ostatni przykład jest powiązany z geografią - przyjrzyjmy się powierzchni wszystkich państw świata w km2.
 
-![](./1012szy3_thumb_190px-1.png)
+![](../../../../assets/2021-07-21/1012szy3_thumb_190px-1.png)
 
 * Prawo Benforda
 
 Dyskretny rozkład Benforda dla układu dziesiętnego zwany również prawem pierwszych (znaczących) cyfr.
 
-![](./1012szy4_thumb_350px.png)
+![](../../../../assets/2021-07-21/1012szy4_thumb_350px.png)
 
 Jak widzimy, wszystkie te zbiory liczb mają tą samą własność - niezmienniczość względem skali, bazy i rozciągnięcie na kilka rzędów wielkości.
 
@@ -90,11 +90,11 @@ Jak widzimy, wszystkie te zbiory liczb mają tą samą własność - niezmiennic
 
 Ciąg Fibonacciego jest ciągiem liczb naturalnych o rekurencyjnej definicji:
 
-![](./Screenshot-from-2021-07-20-12-02-05.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-20-12-02-05.png)
 
 gdzie
 
-![](./Screenshot-from-2021-07-20-12-03-07.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-20-12-03-07.png)
 
 Jego własności opisane są w Math World.
 
@@ -112,7 +112,7 @@ Jego początkowe wartości to:
 
 Jest to ciąg, którego występowanie możemy często obserwować w przyrodzie: w wirach wodnych, w kształcie tornad, w układzie kwiatów, rozgałęzieniach roślin, podziale ciała owadów. Jego powszechność zachwyca badaczy tego zjawiska. Podobnie jak powszechność funkcji wykładniczej czy kwadratowej wynika ona z prostoty wzoru i bycia dobrym przybliżeniem dla znacznie bardziej złożonych układów obserwowanych w rzeczywistości.
 
-![](./868.png)
+![](../../../../assets/2021-07-21/868.png)
 
 Stosunki kolejnych wartości ciągu dążą do złotej proporcji. Dowód wynika wprost z definicji.
 
@@ -128,7 +128,7 @@ Podobnie jak liczby pierwsze, tak i ciąg Fibonacciego powinien spełniać rozk�
 
 ## Java
 
-![](./7pp55ytrrpy31.png)
+![](../../../../assets/2021-07-21/7pp55ytrrpy31.png)
 
 Aby zrobić to w Javie wymagany jest import modułu `java.math.BigInteger`.
 
@@ -189,7 +189,7 @@ Na końcu wyświetlamy tablicę porównującą wyniki z przewidywaniami teoretyc
 
 Kod wykonujemy wpisując `java Benford.java` i dostajemy wynik potwierdzający naszą teorię:
 
-![](./Screenshot-from-2021-07-20-13-09-42.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-20-13-09-42.png)
 
 ## Rust
 
@@ -224,7 +224,7 @@ fn main() {
 
 To bardzo miłe, że Rust wita nas w tak przyjemny sposób ułatwiając rozpoczęcie pracy z tym językiem.
 
-![](./0001.png)
+![](../../../../assets/2021-07-21/0001.png)
 
 Aby skompilować program wykonujemy poleceniem
 
@@ -362,7 +362,7 @@ const generate_fibonacci = (n) => {
 
 W dalszej części okaże się jak kolosalne różnice w wydajności i poprawności programu robi ten jeden znaczek `n`. Przy pisaniu oprogramowania ważne jest aby rozumieć na jakich zakresach wartości pracuje program i poprawnie obsługiwać ich krańce.
 
-![](./89c452c1e596c77dbb7fe3a17371c828.jpg)
+![](../../../../assets/2021-07-21/89c452c1e596c77dbb7fe3a17371c828.jpg)
 
 > Pod tym względem `node` wymaga od programisty szczególnej odpowiedzialności, bo próbując ratować program przez rzuceniem błędu idzie na kompromisy, które jak się okaże czasami są genialne, ale bywają bardzo zwodnicze.
 
@@ -431,17 +431,17 @@ cargo build --release
 
 Na przykład dla `n=1000` każdy program wyświetla to samo, ale różne są czasy obliczeń.
 
-![](./Screenshot-from-2021-07-21-11-30-41.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-21-11-30-41.png)
 
 Rust miażdży konkurencję. Node js niezależnie od tego czy operujemy zaczynaliśmy od `1` czy od `1n` pokazuje te same wyniki i bardzo zbliżony nawet niezły czas. Java mimo znacznego zużycia `cpu` włącza się tak długo, że w tym teście wypada najgorzej.
 
 Dla `n=10000` wynik Javy rośnie jedynie 10 razy, mimo, że Rust wykonuje obliczenia o dwa rzędy wielkości dłużej, a node 24 razy dłużej.
 
-![](./Screenshot-from-2021-07-21-11-42-22.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-21-11-42-22.png)
 
 Niech nie będzie mylącym dla Was, że `n` zwiększyło się "tylko" 10 razy. Wartości przetwarzane przez program mają geometryczne tępo wzrostu osiągając szybko gigantyczne wartości. Na przykład dla `n=10000` wartość ciągu to:
 
-![](./Screenshot-from-2021-07-21-11-48-18.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-21-11-48-18.png)
 
 Różnica we wzroście wydajności wynika z tego, że Java ma najcięższy proces uruchamiania się. Node mimo, że całkiem lekki nadal wymaga załadowania całego interpretera przez co Rust mając najszybszy start pokazał o ile faktycznie wzrosła złożoność obliczeniowa.
 
@@ -459,7 +459,7 @@ Gdybym zatrzymał się na zestawieniu pary wyników dla trzech programów nie by
 
 Pokaże jeszcze punkt pomiarowy `50.000`.
 
-![](./Screenshot-from-2021-07-21-13-02-25.png)
+![](../../../../assets/2021-07-21/Screenshot-from-2021-07-21-13-02-25.png)
 
 Jednak omawianie każdego z osobna nie jest tak wartościowe, jak zrobienie całej serii pomiarów i nałożenie ich na wspólny wykres.
 
@@ -629,7 +629,7 @@ Module[{steps = 100, minY = 1, maxY = 50000, pow = 3},
 
 spowoduje powstanie serii o następującej dystrybucji
 
-![](./n-benford.png)
+![](../../../../assets/2021-07-21/n-benford.png)
 
 Zapisujemy ją do pliku `n_values` poleceniem
 
@@ -699,7 +699,7 @@ ListLogPlot[
  LabelStyle -> Directive[FontSize -> 16]]
 ```
 
-![](./fib-benford-1.png)
+![](../../../../assets/2021-07-21/fib-benford-1.png)
 
 Podsumowanie:
 

@@ -10,7 +10,7 @@ W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempo po
 
 Teraz pokażę w jaki sposób rozstawić serwery z linii poleceń `terraform`. Dostawcą będzie Digital Ocean, ponieważ w porównaniu ze swoją największą konkurencją ma bardzo korzystne (8-10 razy niższe) ceny transferu sieciowego.
 
-![](./2021-03-04-184133_1326x925_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-184133_1326x925_scrot.png)
 
 https://www.digitalocean.com/pricing/calculator/
 
@@ -28,7 +28,7 @@ yay -S terraform
 
 Aby połączyć się z Digital Ocean potrzebujemy tokenu. Jeśli go nie posiadamy, znajdziemy w zakładce API w panelu przycisk "Generate New Token"
 
-![](./2021-03-04-185052_1247x416_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-185052_1247x416_scrot.png)
 
 Token warto zapisać w `~/.zshrc` lub `~/.bashrc`
 
@@ -97,7 +97,7 @@ resource "digitalocean_droplet" "web" {
 
 Są to klucze, które znajdziemy w zakładce "Settings -> Security" w panelu Digital Ocean
 
-![](./2021-03-04-190447_1353x386_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-190447_1353x386_scrot.png)
 
 Wykonanie
 
@@ -107,7 +107,7 @@ Wykonanie
 
 Sprawdzi, czy nasza konfiguracja jest ok i pozwoli zobaczyć jak zmieni się architektura po wdrożeniu. W tym przypadku będzie to dodanie jednego serwera - dokładnie tak jak napisaliśmy w konfiguracji
 
-![](./2021-03-04-190739_957x755_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-190739_957x755_scrot.png)
 
 Wdrożenie wykonamy wpisując
 
@@ -127,7 +127,7 @@ Aby zobaczyć co postawiliśmy wykonujemy polecenie:
 
 Zwraca ono dane na temat zasobów zarządzanych przez `terraform`
 
-![](./2021-03-04-191308_966x505_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-191308_966x505_scrot.png)
 
 Najbardziej interesujące jest dla nas `ip`. W tym przypadku `164.90.174.250`.
 
@@ -139,7 +139,7 @@ ssh -o "StrictHostKeyChecking no" root@164.90.174.250
 
 Jak widać działa, bo komenda zalogowała nas na serwer `web-1` jako `root`.
 
-![](./2021-03-04-191554_965x446_scrot.png)
+![](../../../../assets/2021-03-04/2021-03-04-191554_965x446_scrot.png)
 
 Po powrocie do `localhost` poleceniem
 
