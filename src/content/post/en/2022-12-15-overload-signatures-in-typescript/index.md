@@ -24,7 +24,7 @@ export function volume(cube: HyperCube): number {
 }
 ```
 
-But because of our volumes are really huge we need display them in snake case notation. Eg.: `1_000_000_000` instead of `1000000000`.
+But because our volumes are really huge, we need to display them in snake case notation. Eg.: `1_000_000_000` instead of `1000000000`.
 
 We can add function to format
 
@@ -45,9 +45,9 @@ export function volume(cube: HyperCube, asString: boolean = false): string | num
 
 Unfortunately now using `volume` function we do not know if we will get `string` or `number`. We do not want to use `.toString` or `parseInt` any time.
 
-![](__GHOST_URL__/content/images/2022/12/meme-dev-humor-for-any-emergency-in-typescript-222.jpg)
+![](../../../../assets/2022-12-15/meme-dev-humor-for-any-emergency-in-typescript-222.jpg)
 
-Fortunately there is concept called overload signatures. It allows to select returned type in dependence from parameters values.
+Fortunately, there is a concept called overload signatures. It allows selecting a returned type in dependence from parameters values.
 
 In our case we want `number` is `asString` is false, in other case we need return `string`. To apply overload signature we can use the following syntax
 

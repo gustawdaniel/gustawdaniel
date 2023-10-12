@@ -242,7 +242,7 @@ CodinGame: Derivative Time - Part 1, Recursion (Typescript)
 CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra, Mathematics
 CodinGame: ASCI Art - Rust, NodeJs - Strings, Arrays, Loops
 Overload Signatures in Typescript
-Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) Part 1/2
+Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
 Login Component in Nuxt (Rest Strapi)
 Maximum Inequality [Linear Search] rust and typescript
 Pulumi - Infrastructure as a Code [ Digital Ocean ]

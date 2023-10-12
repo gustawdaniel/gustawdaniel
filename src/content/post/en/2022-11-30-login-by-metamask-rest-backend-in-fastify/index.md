@@ -1,5 +1,5 @@
 ---
-title: Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) Part 1/2
+title: Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
 slug: login-by-metamask-rest-backend-in-fastify
 publishDate: 2022-11-30T17:23:41.000Z
 date_updated: 2022-11-30T17:23:41.000Z

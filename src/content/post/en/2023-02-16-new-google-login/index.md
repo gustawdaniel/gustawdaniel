@@ -244,13 +244,12 @@ To verify it you should send it to backend.
 
 As backend we can use fastify. I described fastify config on this blog here
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) Part 1/2
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
 
-We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
+We're building from scratch rest api in fastify using mongodb connected by prisma as a database,
+jest as a test framework and etherjs to verify signatures signed by metamask.
 
-![](__GHOST_URL__/favicon.png)Precise LabDaniel Gustaw
-
-![](../../../../assets/2023-02-16/metamask-fastify-min.jpg)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)
+![](../../../../assets/2023-02-16/metamask-fastify-min.jpg)](/login-by-metamask-rest-backend-in-fastify/)
 
 so now I assume you have done step "Add Fastify with first endpoint" from this article.
 
@@ -368,10 +367,8 @@ and we can see in console all user's details
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) Part 1/2
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
 
 We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
-
-![](__GHOST_URL__/favicon.png)Precise LabDaniel Gustaw
 
 ![](../../../../assets/2023-02-16/metamask-fastify-min.jpg)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)
