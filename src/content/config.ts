@@ -1,6 +1,6 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
-function removeDupsAndLowerCase(array: string[]) {
+function removeDuplicatesAndLowerCase(array: string[]) {
 	if (!array.length) return array;
 	const lowercaseItems = array.map((str) => str.toLowerCase());
 	const distinctItems = new Set(lowercaseItems);
@@ -11,8 +11,8 @@ const post = defineCollection({
 	type: "content",
 	schema: ({ image }) =>
 		z.object({
-			title: z.string().max(60),
-			description: z.string().min(50).max(160),
+			title: z.string().max(80),
+			excerpt: z.string().min(50).max(220),
 			publishDate: z
 				.string()
 				.or(z.date())
@@ -27,7 +27,7 @@ const post = defineCollection({
 					alt: z.string(),
 				})
 				.optional(),
-			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+			tags: z.array(z.string()).default([]).transform(removeDuplicatesAndLowerCase),
 			ogImage: z.string().optional(),
 		}),
 });

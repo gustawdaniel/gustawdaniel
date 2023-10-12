@@ -158,3 +158,122 @@ Then start all languages by
 ```
 npm run dev-all
 ```
+
+GUSTAWDANIEL PUBLISHED
+
+Analiza Prawa Zipfa w Node.js
+Retry Policy - Jak obsługiwać losowe, nieprzewidywalne błędy
+Publikacja aktualizacji paczki w repozytorium AUR
+Najmniejsza wspólna wielokrotność - teoria liczb
+Jak skonfigurować SSL w lokalnym developmencie
+Jeszcze jedna instrukcja instalacji Arch Linux (i3)
+Rozkład Benforda dla Ciągu Fibonacciego w Java, Rust i Node JS
+Sterowanie procesami w Node JS
+Broadcast Channel API
+Analiza częstości nazw altcoinów w korpusie języka angielskiego
+Wpływ indeksacji na wydajność wyszukiwania w bazie MySQL
+Scraping najbardziej popularnych kont na twitterze
+Bot Telegramowy w Typescript
+Aplikacja z FOSUserBundle i API Google Maps
+Instalacja odnawialnego certyfikatu TLS (certbot + apache na Ubuntu)
+Scrapowanie danych w języku Perl
+Kompilacja interpretera php 7 w BunsenLabs
+Analiza logów Apache z GoAccess
+Tesseract-OCR i testowanie selektów.
+Wizualizacja dynamicznej sieci korelacyjnej.
+Logowanie danych w MySql, Ajax i Behat
+Scraping Facebooka w 2021 roku
+W jaki sposób wojna o kompatybilność ukształtowała frontend?
+Wyciskamy dane z PDF jak sok z cytryny
+Ile rodzin zmieści się w samolocie - zadanie z algorytmiki
+Scraping WordPress - 4300 wyroków sądów w sprawach frankowych bez linii kodu
+Ruby on Rails - szybkie wprowadzenie
+Infrastrukura defniowana przez kod (terraform + digital ocean)
+Wyznaczenie różnicy plików JSON
+Scraping Rejestru Aptek
+Jak pobrać dane kontaktowe 20k adwokatów w godzinę
+Scraping z money.pl w 30 liniach kodu.
+Strukturyzacja danych na przykładzie kursu CHF NBP
+
+GUSTAWDANIEL DRAFT
+
+Jak przygotować się do apokalipsy zombie
+How to install MongoDB 6 on Fedora 37
+Rust
+Konfiguracja wysyłki emaili w Strapi przez Emaillabs
+Wprowadzenie do Deno
+Analiza wpływu technologii na rozwój mediów.
+Invoice
+Cookie Ws
+Wpływ zmian rezerwy na giełdach na cenę BTC
+Apollo Server w Node JS + Mongo DB + Prisma
+Konsolowy CRM z Prisma i MongoDB
+mkcert
+Jak przechowywać sekrety w gicie z blackbox
+Rozesłanie kluczy na serwery
+Continuous Delivery w Gitlab Ci (Docker in Docker)
+Jak pobrałem dane o 4k firm w pół godziny
+Fetch, Promise oraz Template String
+Badanie wydajności insertów mysql
+Snake game in JavaScript (part 3 - Vue)
+Snake game in JavaScript (part 2 - events)
+Snake game in JavaScript (part 1 - objects)
+Pomiar ilości tekstu i kodu w moich wpisach
+Analiza wydajności pustych pętli w 16 językach
+Najlepsze metody web-scrapingu
+Form Data w Node JS
+Dotnet
+Ugoda KNF, Odfrankowienie oraz Unieważnienie kredytu indeksowanego w CHF
+
+PRECISELAB PUBLISHED
+
+Rust implementation of RFC 7396 - JSON Merge Patch
+Tutorial for ESM + CommonJS package creators
+How to Install Yay on a Pure Arch Linux Docker Image
+Simplifying Linux Command Line with GPT-CLI (rust, open source)
+tRPC - super fast development cycle for fullstack typescript apps
+How to install MongoDB 6 on Fedora 37
+QuickSort implementation in Rust, Typescript and Go
+ZeroMQ pull-push pattern for Node JS
+New Google Identity in Nuxt 3
+Selected syntax in JavaScript ES2020, ES2021 and ES2022
+CodinGame: Best fit to data - Rust - Regression Analysis
+CodinGame: Derivative Time - Part 1, Recursion (Typescript)
+CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra, Mathematics
+CodinGame: ASCI Art - Rust, NodeJs - Strings, Arrays, Loops
+Overload Signatures in Typescript
+Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) Part 1/2
+Login Component in Nuxt (Rest Strapi)
+Maximum Inequality [Linear Search] rust and typescript
+Pulumi - Infrastructure as a Code [ Digital Ocean ]
+Last Occurrence [Linear Search] easy
+Bolt (always) Lite - MITM, Proxy, Insomnia and Vue
+Xss attack using script style and image
+How to create a free email account with custom domain?
+Fetch, Promise and Template String on example of To Do List in JavaScript
+Communication between Vue components in Meteor
+Git styled calendar with custom dates
+
+PRECISELAB DRAFT
+
+How to transform BTC blockchain to neo4j on Fedora Linux
+Problem with standard Auth flow
+Test Article
+Managing processes in Node JS.
+Calculating the difference between JSON files.
+Creating an RPM Package for a Rust CLI Application on Fedora
+How I created 24 videos in single day to promote my GPT-CLI
+How did the compatibility war shape the frontend?
+How I used GPT-3 to solve my issues with OBS and Davinci Resolve problems with MKV format
+Performance of SQLite, Redis and Text search in Rust
+Scrabble
+The best web-scrapping methods
+Measuring the amount of text and code in my blog posts
+Fractional calclus on example of gaussian curve
+How to optimize your code
+
+Add terminal with vue
+- [ ] https://www.reddit.com/r/vuejs/comments/zoa2qh/a_fully_working_most_featurerich_vuejs_terminal/
+- [ ] Demo created with svg-term-cli: cat demo.json | svg-term -o demo.svg from https://github.com/marionebl/share-cli
+
+GPT_SYSTEM_PROMPT="I am a translator from Polish to English. I need to translate this text." GPT_POST=out GPT_MODEL=gpt-3.5-turbo-16k p "$(cat index.md)" > en.md

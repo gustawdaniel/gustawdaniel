@@ -1,6 +1,5 @@
 import { defaultLang, locales } from "@/data/locales";
-
-// TODO:NEW
+import { ui } from "@/i18n/ui";
 
 // function getLocale(url: string) {}
 //
@@ -11,12 +10,12 @@ import { defaultLang, locales } from "@/data/locales";
 // 	if (locale && locale in ui) return locale as keyof typeof ui;
 // 	return defaultLang;
 // }
-//
-// export function useTranslations(lang: keyof typeof ui) {
-// 	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-// 		return ui[lang][key] || ui[defaultLang][key];
-// 	};
-// }
+
+export function useTranslations(lang: keyof typeof ui) {
+	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
+		return ui[lang][key] || ui[defaultLang][key];
+	};
+}
 
 export function useTranslatedPath(lang: keyof typeof locales) {
 	return function translatePath(path: string, l = lang) {
@@ -53,8 +52,12 @@ export function getLangAndSlugFromUrl(slugWithLang: string): {
 	lang: keyof typeof locales;
 	slug: string | undefined;
 } {
-	const [lang, ...slug] = slugWithLang.split("/");
-	return { lang: stringToLang(lang), slug: slug.join("/") || undefined };
+	if (Object.values(locales).some((locale) => slugWithLang.startsWith(`${locale}/`))) {
+		const [lang, ...slug] = slugWithLang.split("/");
+		return { lang: stringToLang(lang), slug: slug.join("/") || undefined };
+	} else {
+		return { lang: defaultLang, slug: slugWithLang };
+	}
 }
 
 export function stripLangFromSlug(slugWithLang: string): string {

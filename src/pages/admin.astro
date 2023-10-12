@@ -1,0 +1,66 @@
+---
+import { locales } from "../data/locales";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("post", ({ id }) => {
+	return true;
+});
+
+const multiLangPosts: Record<string, Record<keyof locales, string>> = {};
+
+for (const post of allPosts) {
+	const [lang, id] = post.id.split("/");
+	const date = id.substring(0, 10);
+	const title = id.substring(11);
+
+	if (multiLangPosts[date]) {
+		multiLangPosts[date][lang] = title;
+	} else {
+		multiLangPosts[date] = {
+			[lang]: title,
+		};
+	}
+}
+
+const multiLangPostsArray = Object.entries(multiLangPosts);
+multiLangPostsArray.sort((a, b) => a[0].localeCompare(b[0]));
+
+const postsString = JSON.stringify(allPosts);
+---
+
+<table>
+	<thead>
+		<tr>
+			<td>Date</td>
+			<td>PL</td>
+			<td>EN</td>
+		</tr>
+	</thead>
+	<tbody>
+		{
+			multiLangPostsArray.map(([date, titles]) => (
+				<tr>
+					<td>{date}</td>
+					<td>{titles.pl}</td>
+					<td>{titles.en}</td>
+				</tr>
+			))
+		}
+	</tbody>
+</table>
+
+<hr />
+
+<table>
+	<tbody>
+		{
+			allPosts.map((post) => (
+				<tr>
+					<td>{post.id}</td>
+				</tr>
+			))
+		}
+	</tbody>
+</table>
+
+<pre>{postsString}</pre>
