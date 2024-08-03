@@ -1,0 +1,20 @@
+---
+import PostsList from "../components/PostsList.astro";
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+
+<h1>{frontmatter.title}</h1>
+<p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+<p>Written by {frontmatter.author}</p>
+
+<hr>
+
+<slot />
+
+<hr>
+
+<PostsList/>
+</BaseLayout>
