@@ -1,11 +1,26 @@
 ---
+author: Daniel Gustaw
+canonicalName: scraping-najbardziej-popularnych-kont-na-twitterze
+date_updated: 2021-06-26 09:35:10+00:00
+description: "Dzi\u0119ki obserwacji wpis\xF3w z twittera mo\u017Cemy \u015Bledzi\u0107\
+  \ r\xF3\u017Cne trendy. W tym wpisie poka\u017C\u0119 jak pobra\u0107 dane o kontach\
+  \ w tym serwisie i wybra\u0107 te, kt\xF3re maj\u0105 najwi\u0119kszy wsp\xF3\u0142\
+  czynnik wp\u0142ywu."
+excerpt: "Dzi\u0119ki obserwacji wpis\xF3w z twittera mo\u017Cemy \u015Bledzi\u0107\
+  \ r\xF3\u017Cne trendy. W tym wpisie poka\u017C\u0119 jak pobra\u0107 dane o kontach\
+  \ w tym serwisie i wybra\u0107 te, kt\xF3re maj\u0105 najwi\u0119kszy wsp\xF3\u0142\
+  czynnik wp\u0142ywu."
+publishDate: 2021-06-21 16:24:01+00:00
+slug: pl/scraping-najbardziej-popularnych-kont-na-twitterze
+tags:
+- twitter
+- cheerio
+- scraping
+- mongo
+- nodejs
 title: Scraping najbardziej popularnych kont na twitterze
-slug: scraping-najbardziej-popularnych-kont-na-twitterze
-publishDate: 2021-06-21T16:24:01.000Z
-date_updated: 2021-06-26T09:35:10.000Z
-tags: ['twitter', 'cheerio', 'scraping', 'mongo', 'nodejs']
-excerpt: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
 ---
+
 
 Listę najbardziej popularnych kont w serwisie Twitter możemy znaleźć na stronie Trackalytics:
 

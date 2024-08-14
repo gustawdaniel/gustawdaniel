@@ -1,11 +1,22 @@
 ---
+author: Daniel Gustaw
+canonicalName: logowanie-danych-w-mysql-ajax-i-behat
+date_updated: 2021-06-21 16:39:24+00:00
+description: "Napiszemy prost\u0105 aplikacj\u0119 webow\u0105 - kalkulator. Na jego\
+  \ przyk\u0142adzie poka\u017Cemy jak skonfigurowa\u0107 selenium z behatem i wykona\u0107\
+  \ na nim testy automatyczne."
+excerpt: "Napiszemy prost\u0105 aplikacj\u0119 webow\u0105 - kalkulator. Na jego przyk\u0142\
+  adzie poka\u017Cemy jak skonfigurowa\u0107 selenium z behatem i wykona\u0107 na\
+  \ nim testy automatyczne."
+publishDate: 2021-04-26 20:03:00+00:00
+slug: pl/logowanie-danych-w-mysql-ajax-i-behat
+tags:
+- ajax
+- mysql
+- selenium
 title: Logowanie danych w MySql, Ajax i Behat
-slug: logowanie-danych-w-mysql-ajax-i-behat
-publishDate: 2021-04-26T20:03:00.000Z
-date_updated: 2021-06-21T16:39:24.000Z
-tags: ['ajax', 'mysql', 'selenium']
-excerpt: Napiszemy prostą aplikację webową - kalkulator. Na jego przykładzie pokażemy jak skonfigurować selenium z behatem i wykonać na nim testy automatyczne.
 ---
+
 
 ## Opis projektu
 

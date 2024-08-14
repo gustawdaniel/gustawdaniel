@@ -1,11 +1,21 @@
 ---
+author: Daniel Gustaw
+canonicalName: sterowanie-procesami-w-node-js
+date_updated: 2021-07-17 13:57:27+00:00
+description: "Naucz si\u0119 jak tworzy\u0107 i zabija\u0107 podprocesy w Node JS,\
+  \ dynamicznie zarz\u0105dza\u0107 ich ilo\u015Bci\u0105 i prowadzi\u0107 z nimi\
+  \ dwustronn\u0105 komunikacj\u0119."
+excerpt: "Naucz si\u0119 jak tworzy\u0107 i zabija\u0107 podprocesy w Node JS, dynamicznie\
+  \ zarz\u0105dza\u0107 ich ilo\u015Bci\u0105 i prowadzi\u0107 z nimi dwustronn\u0105\
+  \ komunikacj\u0119."
+publishDate: 2021-07-17 13:53:19+00:00
+slug: pl/sterowanie-obciazeniem-procesora-w-node-js
+tags:
+- nodejs
+- cpu
 title: Sterowanie procesami w Node JS
-slug: sterowanie-obciazeniem-procesora-w-node-js
-publishDate: 2021-07-17T13:53:19.000Z
-date_updated: 2021-07-17T13:57:27.000Z
-tags: ['nodejs', 'cpu']
-excerpt: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać ich ilością i prowadzić z nimi dwustronną komunikację.
 ---
+
 
 W tym wpisie nauczymy się jak tworzyć i kończyć podprocesy w Node JS oraz jak przesyłać między nimi dane.
 

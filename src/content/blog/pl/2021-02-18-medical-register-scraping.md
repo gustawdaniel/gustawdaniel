@@ -1,10 +1,16 @@
 ---
+author: Daniel Gustaw
+canonicalName: scraping-rejestru-aptek
+date_updated: 2021-02-17 23:27:35+00:00
+description: "Administratorzy danych go nienawidz\u0105. Zobacz jak wpisuj\u0105c\
+  \ dwa polecenia w konsol\u0119 pobra\u0142 rejestr wszystkich aptek w Polsce."
+excerpt: "Administratorzy danych go nienawidz\u0105. Zobacz jak wpisuj\u0105c dwa\
+  \ polecenia w konsol\u0119 pobra\u0142 rejestr wszystkich aptek w Polsce."
+publishDate: 2021-02-17 23:25:12+00:00
+slug: pl/scraping-rejestrow-medycznych
 title: Scraping Rejestru Aptek
-slug: scraping-rejestrow-medycznych
-publishDate: 2021-02-17T23:25:12.000Z
-date_updated: 2021-02-17T23:27:35.000Z
-excerpt: Administratorzy danych go nienawidzą. Zobacz jak wpisując dwa polecenia w konsolę pobrał rejestr wszystkich aptek w Polsce.
 ---
+
 
 Są strony lepiej lub gorzej zabezpieczone przed scrapingiem. Teraz przyjrzymy się stronie wcale nie zabezpieczonej - Rejestrowi Medycznemu zawierającemu dane o aptekach.
 

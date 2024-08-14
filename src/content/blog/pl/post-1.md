@@ -1,19 +1,20 @@
 ---
-title: 'Jak napisać blog na astro od zera i dlaczego warto'
-canonicalName: post-1
-publishDate: 2024-08-03
-description: 
-  Migracja z Ghosta na Astro zajęła
-  kilka razy więcej czasu niż
-  zakładałem, ale było warto. W tym
-  wpisie pokazuję kluczowe etapy tego
-  procesu.
 author: Daniel Gustaw
+canonicalName: post-1
+description: "Migracja z Ghosta na Astro zaj\u0119\u0142a kilka razy wi\u0119cej czasu\
+  \ ni\u017C zak\u0142ada\u0142em, ale by\u0142o warto. W tym wpisie pokazuj\u0119\
+  \ kluczowe etapy tego procesu."
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+  alt: The Astro logo on a dark background with a pink glow.
+  url: https://docs.astro.build/assets/rose.webp
+publishDate: 2024-08-03
+tags:
+- astro
+- blogging
+- learning in public
+title: "Jak napisa\u0107 blog na astro od zera i dlaczego warto"
 ---
+
 
 Historia mojego blogowania sięga roku 2017. Wtedy popularny był `jekyl`.
 

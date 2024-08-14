@@ -1,11 +1,18 @@
 ---
-title: Wyznaczenie różnicy plików JSON
-slug: wyznaczenie-roznicy-plikow-json
-publishDate: 2021-02-26
+author: Daniel Gustaw
+canonicalName: wyznaczenie-roznicy-plikow-json
 date_updated: 2023-10-12
-tags: [ 'i18next' ]
-excerpt: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny przykład zastosowania funkcji rekurencyjnej.
+description: "Zobacz jak wyznaczy\u0107 r\xF3\u017Cnic\u0119 mi\u0119dzy dwoma plikami\
+  \ JSON. Jest to \u015Bwietny przyk\u0142ad zastosowania funkcji rekurencyjnej."
+excerpt: "Zobacz jak wyznaczy\u0107 r\xF3\u017Cnic\u0119 mi\u0119dzy dwoma plikami\
+  \ JSON. Jest to \u015Bwietny przyk\u0142ad zastosowania funkcji rekurencyjnej."
+publishDate: 2021-02-26
+slug: pl/wyznaczenie-roznicy-plikow-json
+tags:
+- i18next
+title: "Wyznaczenie r\xF3\u017Cnicy plik\xF3w JSON"
 ---
+
 
 W tym artykule pokażemy jak napisać funkcję do wyznaczenia różnicy między dwoma plikami JSON.
 

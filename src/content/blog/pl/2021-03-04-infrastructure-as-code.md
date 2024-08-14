@@ -1,10 +1,16 @@
 ---
+author: Daniel Gustaw
+canonicalName: infrastrukura-jako-kod-terraform-digital-ocean
+date_updated: 2021-04-07 10:30:29+00:00
+description: "We wpisie pokazuj\u0119 w jaki spos\xF3b rozstawi\u0107 serwery z linii\
+  \ polece\u0144 terraform."
+excerpt: "We wpisie pokazuj\u0119 w jaki spos\xF3b rozstawi\u0107 serwery z linii\
+  \ polece\u0144 terraform."
+publishDate: 2021-03-04 18:19:11+00:00
+slug: pl/infrastrukura-defniowana-jako-kod
 title: Infrastrukura jako kod (terraform + digital ocean)
-slug: infrastrukura-defniowana-jako-kod
-publishDate: 2021-03-04T18:19:11.000Z
-date_updated: 2021-04-07T10:30:29.000Z
-excerpt: We wpisie pokazuję w jaki sposób rozstawić serwery z linii poleceń terraform.
 ---
+
 
 W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempo pobierania i przetwarzania danych. Kiedy kilka lat temu pisałem swój pierwszy system, który równolegle zbierał dane używając kilkunastu serwerów, każdy z tych serwerów był przeze mnie "wyklikany" w panelu dostawcy.
 

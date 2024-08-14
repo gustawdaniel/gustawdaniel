@@ -1,11 +1,18 @@
 ---
-title: Scraping z money.pl w 30 liniach kodu.
-slug: scraping-libor-oraz-wibor-z-money-pl
-publishDate: 2021-02-17T15:10:17.000Z
-date_updated: 2021-02-17T21:03:26.000Z
-tags: ['mongo', 'scraping']
+author: Daniel Gustaw
+canonicalName: scraping-z-money-pl-w-30-liniach-kodu
+date_updated: 2021-02-17 21:03:26+00:00
+description: Zobacz proste case study pobrania i przetworzenia danych z paginowanej
+  tabeli.
 excerpt: Zobacz proste case study pobrania i przetworzenia danych z paginowanej tabeli.
+publishDate: 2021-02-17 15:10:17+00:00
+slug: pl/scraping-libor-oraz-wibor-z-money-pl
+tags:
+- mongo
+- scraping
+title: Scraping z money.pl w 30 liniach kodu.
 ---
+
 
 Dane finansowe w dobrej jakości i wygodne do pobrania polecam pobierać ze Stooq.
 

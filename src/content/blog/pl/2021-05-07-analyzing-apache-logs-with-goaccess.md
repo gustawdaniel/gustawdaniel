@@ -1,11 +1,20 @@
 ---
-title: Analiza logów Apache z GoAccess
-slug: analiza-logow-apache-z-goaccess
-publishDate: 2021-05-07T20:26:00.000Z
-date_updated: 2021-07-18T18:21:38.000Z
-tags: ['spa', 'mustache', 'log']
-excerpt: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje z plików generowanych automatycznie podczas pracy serwera.
+author: Daniel Gustaw
+canonicalName: analiza-logow-apache-z-goaccess
+date_updated: 2021-07-18 18:21:38+00:00
+description: "W tym wpisie pokazuj\u0119 narz\u0119dzie pozwalaj\u0105ce wydobywa\u0107\
+  \ ciekawe informacje z plik\xF3w generowanych automatycznie podczas pracy serwera."
+excerpt: "W tym wpisie pokazuj\u0119 narz\u0119dzie pozwalaj\u0105ce wydobywa\u0107\
+  \ ciekawe informacje z plik\xF3w generowanych automatycznie podczas pracy serwera."
+publishDate: 2021-05-07 20:26:00+00:00
+slug: pl/analiza-logow-apache-z-goaccess
+tags:
+- spa
+- mustache
+- log
+title: "Analiza log\xF3w Apache z GoAccess"
 ---
+
 
 Kiedyś, usłyszałem od kolegi, że nie ma gorszego zajęcia, niż analiza logów Apache. Przeraziło mnie to bo myślałem, że to zmywanie naczyń jest najgorsze. Było to dość dawno i od tego czasu w moim życiu dużo zmieniło się na lepsze. Dzisiaj do zmywania używam zmywarki, a do analizy logów GoAccess.
 

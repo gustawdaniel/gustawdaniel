@@ -1,14 +1,17 @@
 ---
-title: ranger
-canonicalName: ranger
 author: Daniel Gustaw
-description: "ranger wow!"
+canonicalName: ranger
+description: ranger wow!
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Ranger."
+  alt: Ranger.
+  url: https://docs.astro.build/assets/arc.webp
 publishDate: 2024-08-12
-tags: ["astro", "blogging"]
+tags:
+- astro
+- blogging
+title: ranger
 ---
+
 
 # Nodejs
 

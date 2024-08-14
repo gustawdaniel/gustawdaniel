@@ -1,10 +1,16 @@
 ---
+author: Daniel Gustaw
+canonicalName: scraping-facebooka-w-2021-roku
+date_updated: 2021-04-24 11:23:36+00:00
+description: "Artyku\u0142 ma na celu zapoznanie czytelnika z metod\u0105 na scaping\
+  \ portalu Facebooka po wprowadzeniu aktualizacji layoutu."
+excerpt: "Artyku\u0142 ma na celu zapoznanie czytelnika z metod\u0105 na scaping portalu\
+  \ Facebooka po wprowadzeniu aktualizacji layoutu."
+publishDate: 2021-04-23 19:49:00+00:00
+slug: pl/scraping-facebooka-w-2021-roku
 title: Scraping Facebooka w 2021 roku
-slug: scraping-facebooka-w-2021-roku
-publishDate: 2021-04-23T19:49:00.000Z
-date_updated: 2021-04-24T11:23:36.000Z
-excerpt: Artykuł ma na celu zapoznanie czytelnika z metodą na scaping portalu Facebooka po wprowadzeniu aktualizacji layoutu.
 ---
+
 
 ## Metoda stabilnych meta-selektorów opartych o stylowanie
 

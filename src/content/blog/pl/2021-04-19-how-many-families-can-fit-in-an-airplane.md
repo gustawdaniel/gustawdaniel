@@ -1,11 +1,22 @@
 ---
-title: Ile rodzin zmieści się w samolocie - zadanie z algorytmiki
-slug: ile-rodzin-zmiesci-sie-w-samolocie
-publishDate: 2021-04-20T18:41:10.000Z
-date_updated: 2021-04-20T18:41:10.000Z
-tags: ['alghoritms']
-excerpt: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
+author: Daniel Gustaw
+canonicalName: ile-rodzin-zmiesci-sie-w-samolocie-zadanie-z-algorytmiki
+date_updated: 2021-04-20 18:41:10+00:00
+description: "Por\xF3wnujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+  \ wolnych zestaw\xF3w przyleg\u0142ych miejsc. Dowiesz si\u0119 jak u\u017Cywa\u0107\
+  \ Profilowania i jak wielk\u0105 r\xF3\u017Cnic\u0119 robi u\u017Cycie pop oraz\
+  \ shift na tablicach w js."
+excerpt: "Por\xF3wnujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+  \ wolnych zestaw\xF3w przyleg\u0142ych miejsc. Dowiesz si\u0119 jak u\u017Cywa\u0107\
+  \ Profilowania i jak wielk\u0105 r\xF3\u017Cnic\u0119 robi u\u017Cycie pop oraz\
+  \ shift na tablicach w js."
+publishDate: 2021-04-20 18:41:10+00:00
+slug: pl/ile-rodzin-zmiesci-sie-w-samolocie
+tags:
+- alghoritms
+title: "Ile rodzin zmie\u015Bci si\u0119 w samolocie - zadanie z algorytmiki"
 ---
+
 
 Omówimy dwa rozwiązania zadania, które stosowane było podczas pewnej rekrutacji. Jeśli potraficie pisać kod, zalecam wam samodzielne rozwiązanie po przeczytaniu treści, zajmie to około 10 do 30 minut i pozwoli Wam porównać wasze rozwiązanie z tymi prezentowanymi poniżej:
 

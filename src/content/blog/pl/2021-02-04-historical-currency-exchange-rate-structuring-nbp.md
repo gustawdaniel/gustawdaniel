@@ -1,14 +1,24 @@
 ---
-title: Strukturyzacja danych na przykładzie kursu CHF NBP
-canonicalName: structuring-historical-currency-rates-nbp
-slug: pl/strukturyzacja-historycznych-kursow-walut-nbp
-publishDate: 2021-02-04T06:02:21.000Z
-date_updated: 2021-02-17T15:21:43.000Z
-tags: ['typescript', 'parcel', 'data-processing', 'apexcharts', 'xls', 'csv', 'json']
-excerpt: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu case study z dziedziny finansów.
-description: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu case study z dziedziny finansów.
 author: Daniel Gustaw
+canonicalName: structuring-historical-currency-rates-nbp
+date_updated: 2021-02-17 15:21:43+00:00
+description: "Naucz si\u0119 jak napisa\u0107 kod normalizuj\u0105cy i strukturyzuj\u0105\
+  cy dane w oparciu case study z dziedziny finans\xF3w."
+excerpt: "Naucz si\u0119 jak napisa\u0107 kod normalizuj\u0105cy i strukturyzuj\u0105\
+  cy dane w oparciu case study z dziedziny finans\xF3w."
+publishDate: 2021-02-04 06:02:21+00:00
+slug: pl/strukturyzacja-historycznych-kursow-walut-nbp
+tags:
+- typescript
+- parcel
+- data-processing
+- apexcharts
+- xls
+- csv
+- json
+title: "Strukturyzacja danych na przyk\u0142adzie kursu CHF NBP"
 ---
+
 
 Strukturyzacja danych to nadawanie danym kształtu pozwalającego na ich analizę i wygodne przetwarzanie. W tym wpisie pokażę jak może wyglądać taki proces na przykładzie danych pochodzących z NBP, które są składowane w plikach, których konwencja układania nagłówków ulegała zmianom na przestrzeni lat.
 

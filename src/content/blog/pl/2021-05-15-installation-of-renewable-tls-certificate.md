@@ -1,11 +1,23 @@
 ---
+author: Daniel Gustaw
+canonicalName: instalacja-odnawialnego-certyfikatu-tls-certbot-apache-na-ubuntu
+date_updated: 2021-06-22 09:05:15+00:00
+description: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrowa\u0107\
+  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i u\u017Cycie go w zestawieniu\
+  \ z serwerem apache."
+excerpt: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrowa\u0107\
+  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i u\u017Cycie go w zestawieniu\
+  \ z serwerem apache."
+publishDate: 2021-05-14 20:38:00+00:00
+slug: pl/instalacja-odnawialnego-certyfikatu-tls
+tags:
+- https
+- ssl
+- certbot
+- ubuntu
 title: Instalacja odnawialnego certyfikatu TLS (certbot + apache na Ubuntu)
-slug: instalacja-odnawialnego-certyfikatu-tls
-publishDate: 2021-05-14T20:38:00.000Z
-date_updated: 2021-06-22T09:05:15.000Z
-tags: ['https', 'ssl', 'certbot', 'ubuntu']
-excerpt: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem apache.
 ---
+
 
 ## Opis projektu
 

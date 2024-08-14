@@ -1,11 +1,24 @@
 ---
-title: Rozkład Benforda dla Ciągu Fibonacciego w Java, Rust i Node JS
-slug: rozklad-benforda
-publishDate: 2021-07-21T15:57:21.000Z
-date_updated: 2021-07-22T10:10:14.000Z
-tags: ['rust', 'java', 'nodejs']
-excerpt: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią i jak ich wydajność zależy od długości ciągu.
+author: Daniel Gustaw
+canonicalName: rozklad-benforda-dla-ciagu-fibonacciego-w-java-rust-i-node-js
+date_updated: 2021-07-22 10:10:14+00:00
+description: "Programy napisane w Java, Rust i Node JS \u015Bcigaj\u0105 si\u0119\
+  \ w sprawdzeniu rozk\u0142adu pierwszych cyfr ci\u0105gu Fibonacciego. Zobacz w\
+  \ czym s\u0105 podobne, a w czym si\u0119 r\xF3\u017Cni\u0105 i jak ich wydajno\u015B\
+  \u0107 zale\u017Cy od d\u0142ugo\u015Bci ci\u0105gu."
+excerpt: "Programy napisane w Java, Rust i Node JS \u015Bcigaj\u0105 si\u0119 w sprawdzeniu\
+  \ rozk\u0142adu pierwszych cyfr ci\u0105gu Fibonacciego. Zobacz w czym s\u0105 podobne,\
+  \ a w czym si\u0119 r\xF3\u017Cni\u0105 i jak ich wydajno\u015B\u0107 zale\u017C\
+  y od d\u0142ugo\u015Bci ci\u0105gu."
+publishDate: 2021-07-21 15:57:21+00:00
+slug: pl/rozklad-benforda
+tags:
+- rust
+- java
+- nodejs
+title: "Rozk\u0142ad Benforda dla Ci\u0105gu Fibonacciego w Java, Rust i Node JS"
 ---
+
 
 Był rok 1992. W miasteczku Wayne (Arizona USA) zapadał wyrok na Jamesa Nelsona - głównego księgowego i zarządzającego Arizona State Treasurer. Jego fałszywe czeki, dzięki którym zdefraudował prawie 2 miliony dolarów zostały wykryte ponieważ rozkład częstości pierwszych cyfr w wyłudzonych kwotach odbiegał od rozkładu Benforta.
 
