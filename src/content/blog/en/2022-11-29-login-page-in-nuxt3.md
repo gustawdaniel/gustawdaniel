@@ -18,7 +18,7 @@ title: Login Component in Nuxt (Rest Strapi)
 
 How many times in your live did you implemented login view? I did it too much times. Finally to no search code to copy in my projects I decided to paste here easy instruction how to build simple login component in nuxt.
 
-![](../../../assets/2022-11-29/when-you-have-5b9bfb.jpg)
+![](../../../assets/2022-11-29/nuxt-1.png)
 
 This setup using strapi as backend, but I will works with any rest API after body and url modifications. In next part we will create nuxt3 project, build login page and pass info about user by cookie to profile component.
 
@@ -150,7 +150,7 @@ In template we adding super minimalistic frontend with login form and `pre` tags
 </template>
 ```
 
-![](../../../assets/2022-11-29/yet-another-login.jpg)
+![](../../../assets/2022-11-29/nuxt-2.png)
 
 ### Passing user token between components
 
@@ -192,7 +192,7 @@ function login() {
 
 this change allow to execute login many times with she same payload.
 
-![](../../../assets/2022-11-29/93yay.jpg)
+![](../../../assets/2022-11-29/nuxt-3.png)
 
 It is especially important to avoid bugs, because we now added also `logout` function
 
@@ -270,4 +270,4 @@ our symbolic template can have form
 
 Thats it. We builded super simple front with login and profile pages. There is no styling, no registration and even I skipped part with strapi setup. But thanks to these simplifications it is useful as base to speedup setting up new nuxt3 projects. I hope it will be usful for you and help to avoid situations like on image below:
 
-![](../../../assets/2022-11-29/xy5zc.jpg)
+![](../../../assets/2022-11-29/nuxt-4.png)

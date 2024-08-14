@@ -31,7 +31,7 @@ CodinGame is a challenge-based training platform for programmers where you can p
 
 Goal is find best fitting model for given dataset. For example for data:
 
-![](../../../assets/2023-01-23/complexity_ms.jpg)
+![](../../../assets/2023-01-23/regression-1.png)
 
 we should print `O(log n)`. We can select models from list:
 
@@ -177,7 +177,7 @@ $$ R^2 = \\sum\_i ( log( t\_i) - log( f(n\_i) ) - c )^2 $$
 
 we can see that now there is no chance to operate on too big numbers so we can start implementation of these equations.
 
-![](../../../assets/2023-01-23/1_7VUKHiY_oOPbyaIH-olkEQ.jpeg)
+![](../../../assets/2023-01-23/regression-2.png)
 
 ## Reading series of data from standard input
 
@@ -395,4 +395,4 @@ Contribute to gustawdaniel/codingame-computational-complexity development by cre
 
 ![](https://opengraph.githubassets.com/b83a08ea9a2eb23cbe830b203c1492ccd02096878a68b63e97a8a741dd437a78/gustawdaniel/codingame-computational-complexity)](https://github.com/gustawdaniel/codingame-computational-complexity)
 
-![](../../../assets/2023-01-23/curve_fitting_2x.png)
+![](../../../assets/2023-01-23/regression-3.png)

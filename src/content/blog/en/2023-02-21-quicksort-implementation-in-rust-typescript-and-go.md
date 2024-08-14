@@ -20,7 +20,7 @@ title: QuickSort implementation in Rust, Typescript and Go
 
 QuickSort is a popular sorting algorithm that follows the divide-and-conquer approach to sort an array of elements. It works by dividing the array into two smaller sub-arrays around a pivot element, which is selected from the array. The elements in the left sub-array are all smaller than the pivot, and the elements in the right sub-array are all greater than the pivot. The pivot element is then placed in its final position, with all elements on its left being smaller than it, and all elements on its right being greater than it. This process is repeated recursively on the left and right sub-arrays until the whole array is sorted.
 
-![](../../../assets/2023-02-21/1664539554681.jpeg)
+![](../../../assets/2023-02-21/quicksort-1.png)
 
 Here are the basic steps of the QuickSort algorithm:
 
@@ -33,7 +33,7 @@ To partition the array, QuickSort uses a two-pointer approach, where two pointer
 
 The worst-case time complexity of QuickSort is O(n^2), but in practice, it performs much better than this because it has an average-case time complexity of O(n log n). The performance of QuickSort can be further improved by selecting the pivot element more intelligently, for example, by choosing the median of the first, middle, and last elements of the array.
 
-![](../../../assets/2023-02-21/fa4d450bf8481a058515ba78e701bcf3b0f1ee2bea482938344c085ec2077114_1.jpg)
+![](../../../assets/2023-02-21/quicksort-2.png)
 
 Although in name there is `Quick` it is not the fastest algorithm, but `O( n log n)` is much better that `O( n^2 )` for popular simple Bubble sort.
 
@@ -187,6 +187,6 @@ fn median_of_three<T: Ord>(arr: &[T]) -> usize {
 
 Due this issue with pivot selection QuickSort can be slowed down by specially malicious input data selection, so it is susceptible to some security attacks, such hash table collisions, its many advantages make it a popular choice for sorting large datasets. With the right choice of pivot element, QuickSort can achieve an average-case time complexity of O(n log n), which is faster than most other popular sorting algorithms. If you are working with large datasets and need to sort them quickly, QuickSort is a great choice.
 
-![](../../../assets/2023-02-21/ca23e33bbcc513f5a0396686b3bac790b76f4313bd1261aaf935f1acea8ffdc4_1.jpg)
+![](../../../assets/2023-02-21/quicksort-3.png)
 
 I know what you think. That this fun with sorting optimization is only for scientists, and in practice we are using sorting build in our languages, but sometimes to build something amazing it is worth to have deeper knowledge and intuition, what is worth to optimize and what not.

@@ -35,7 +35,7 @@ It can be solved using the following concepts.
 
 In stations and airports you often see this type of screen:
 
-![](../../../assets/2023-01-17/led_display.jpg)
+![](../../../assets/2023-01-17/asci-1.png)
 
 Have you ever asked yourself how it might be possible to simulate this display on a good old terminal? We have: with ASCII art!
 
@@ -51,7 +51,7 @@ ASCII art allows you to represent forms by using characters. To be precise, in o
 # # # # # # # # # #  #   #  # # # #
 ```
 
-​Your mission is to write a program that can display a line of text in ASCII art in a style you are given as input.
+Your mission is to write a program that can display a line of text in ASCII art in a style you are given as input.
 
 ## Game Input
 

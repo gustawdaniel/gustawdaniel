@@ -94,7 +94,7 @@ I can't find official sources but using GPT-4 we can estimate that in april 2023
 
 So because we are in "transition period" I think it is better to take responsibility and provide dual version for existing packages.
 
-![](../../../assets/2023-03-26/7fv8ft.jpg)
+![](../../../assets/2023-03-26/esm-1.png)
 
 If you creating new package I think you can select `ESM` and do not worry about `CommonJS` but if your packages was published earlier, this tutorial is for you.
 
@@ -110,7 +110,7 @@ Simplifying if user will write `const pkgInstance = require('pkg')` and in other
 
 I prepared diagram that help you do decide which approach best fit to you:
 
-![](../../../assets/2023-03-26/Zrzut-ekranu-z-2023-03-25-16-35-02.png)
+![](../../../assets/2023-03-26/esm-2.png)
 
 If you need to create `ES wrapper` then refer directly to docs. In further chapter I will assume that you have stateless package and will apply `Isolate state` approach.
 
@@ -304,11 +304,11 @@ Let's assume now that we need to use package `humanize-string`. I selected this 
 
 If we will add this package in version `2.1.0` to our project then `cjs` can be builded properly but for `esm` there is error:
 
-![](../../../assets/2023-03-26/Zrzut-ekranu-z-2023-03-26-23-42-28.png)
+![](../../../assets/2023-03-26/esm-3.png)
 
 package `xregexp` that is dependency of `decamelize` had default export in version 4 so it was impossible to easy convert it to `esm`
 
-![](../../../assets/2023-03-26/Zrzut-ekranu-z-2023-03-26-23-43-32.png)
+![](../../../assets/2023-03-26/esm-4.png)
 
 we can read about this problem here:
 
@@ -322,7 +322,7 @@ We use xregexp in a shared library that is used in our client (Angular 10) as we
 
 On the other hand when we will install `humanize-string` in `3.0.0` then building works but tests are broken:
 
-![](../../../assets/2023-03-26/Zrzut-ekranu-z-2023-03-26-23-47-45.png)
+![](../../../assets/2023-03-26/esm-5.png)
 
 fortunately in this case i found solution overriding `decamelize` version:
 

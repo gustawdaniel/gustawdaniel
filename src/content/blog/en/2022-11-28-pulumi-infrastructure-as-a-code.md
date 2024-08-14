@@ -20,13 +20,13 @@ title: Pulumi - Infrastructure as a Code [ Digital Ocean ]
 
 Initially (70 years ago) computers was programmed by manual change of cables connections. There was no personal desktop so programs was written on production. No deployment - no problem.
 
-![](../../../assets/2022-11-28/02102016_ENIAC_programmers_LA.width-600.jpg)
+![](../../../assets/2022-11-28/pulumi-1.png)
 
 first digital computer programmers
 
 About decade later IBM introduced punched cards so deployment or installation was performed by insert of card with program to a reader.
 
-![](../../../assets/2022-11-28/punch-card-machine.png)
+![](../../../assets/2022-11-28/pulumi-2.png)
 
 Next breakthrough - internet and ftp (1971) protocols changed everything. To move programs to other machines you stopped needing physical driver other than cables connecting with network.
 
@@ -44,7 +44,7 @@ These changes was important for cloud providers and IaaS branch, but developers 
 
 Next huge revolution was Docker written in Go in 2013, and using namespaces available from linux kernel 2.6.24 2008. His popularity exploded in 2017. Main problem of time before docker was configuration of server to use our application. When runtime environment was configured on server, then two different applications with different version or configuration of runtime couldn't be installed on the same host. If they was packed as virtual machines, then all operating system layer was duplicated. Docker solved these problems.
 
-![](../../../assets/2022-11-28/Docker-linux-interfaces.svg.png)
+![](../../../assets/2022-11-28/pulumi-3.png)
 
 But it is not the end. When people learned how to use Docker and created CI/CD flows to automate deployment and testing processes they realised that server managements can be done also on code layer.
 
@@ -86,7 +86,7 @@ W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempopob
 
 Now we will focus on competitor of Terraform. Lets discuss pulumi.
 
-![](../../../assets/2022-11-28/72cy2v.jpg)
+![](../../../assets/2022-11-28/pulumi-4.png)
 
 # Pulumi
 
@@ -236,7 +236,7 @@ doctl auth init
 
 You will need token that can be generated on in `API` tab in Digital Ocean Panel
 
-![](../../../assets/2022-11-28/2022-11-26_16-57-1.png)
+![](../../../assets/2022-11-28/pulumi-5.png)
 
 The same token should be used to connect pulumi with your digital ocean:
 
@@ -260,7 +260,7 @@ ssh-keygen -t ed25519 -C "gustaw.daniel@gmail.com" -f ~/.ssh/id_ed25519
 
 add public keys to security settings in digital ocean:
 
-![](../../../assets/2022-11-28/2022-11-26_18-25.png)
+![](../../../assets/2022-11-28/pulumi-6.png)
 
 After adding you can again ask about keys because you will need these numbers returned by command:
 
@@ -402,7 +402,7 @@ I hope this article will help you start with pulumi on Digital Ocean and follow 
 
 > Better spend 10 hours failing to automate, than do task manually.
 
-![](../../../assets/2022-11-28/72ccir.jpg)
+![](../../../assets/2022-11-28/pulumi-7.png)
 
 Lets sum up advantages of IaC approach.
 

@@ -51,7 +51,7 @@ Now you can install by
 sudo dnf install -y mongodb-org
 ```
 
-![](../../../assets/2023-03-02/1_SwgB2rxPWgOjbh030ETxyg.png)
+![](../../../assets/2023-03-02/mongodb-1.png)
 
 so there are two assumptions that are correct:
 
@@ -66,7 +66,7 @@ sudo systemctl start mongod
 
 And you can connect with mongodb by `mongosh`
 
-![](../../../assets/2023-03-02/Zrzut-ekranu-z-2023-03-02-13-19-32.png)
+![](../../../assets/2023-03-02/mongodb-2.png)
 
 Mongosh is better than `mongo` command because of colors and autocompletion, so use `mongosh` instead of `mongo`.
 
@@ -92,17 +92,13 @@ and install it
 sudo dnf install -y mongodb-compass-1.35.0.x86_64.rpm
 ```
 
-![](../../../assets/2023-03-02/Zrzut-ekranu-z-2023-03-02-13-41-28.png)
+![](../../../assets/2023-03-02/mongodb-3.png)
 
 ## Enable Mongo Replica Set locally
 
 Replication described here:
 
-[Replication — MongoDB Manual
-
-![](https://www.mongodb.com/docs/assets/favicon.ico)
-
-![](https://www.mongodb.com/docs/assets/meta_generic.png)](https://www.mongodb.com/docs/manual/replication/)
+[Replication — MongoDB Manual](https://www.mongodb.com/docs/manual/replication/)
 
 is required by `prisma` so I am enabling it locally.
 
@@ -137,7 +133,7 @@ then you can confirm changes by
 rs.status()
 ```
 
-![](../../../assets/2023-03-02/Zrzut-ekranu-z-2023-03-02-13-30-41.png)
+![](../../../assets/2023-03-02/mongodb-4.png)
 
 If you experiencing more complications there is great article with advanced config
 
@@ -149,4 +145,4 @@ The practice of synchronizing data across multiple separate databases is called 
 
 ![](https://www.digitalocean.com/_next/static/media/intro-to-cloud.d49bc5f7.jpeg)](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04)
 
-![](../../../assets/2023-03-02/mongodb-is-web-scale-v0-twb0dwtz8sw81.jpeg)
+![](../../../assets/2023-03-02/mongodb-5.png)

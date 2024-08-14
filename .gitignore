@@ -24,3 +24,5 @@ pnpm-debug.log*
 .idea/
 
 src/assets
+src/content/blog/pl/uploadcare.py
+src/content/blog/pl/upload.py

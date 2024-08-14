@@ -36,7 +36,7 @@ It is possible that some of them are known for you, but I hope that some of them
 * ES2022 - Array.prototype.at
 * ES2022 - Top level await
 
-![](../../../assets/2023-02-08/rewriting-js-code-to-use-fancy-es6-features-what-it-46582018.png)
+![](../../../assets/2023-02-08/javascript-1.png)
 
 ## Nullish coalescing operator ?? \[ more strict || \]
 
@@ -63,7 +63,7 @@ In the first example, if `userName` is `null` or `undefined`, the value of `name
 
 So, in short, the nullish coalescing operator is a more strict and specific way to handle default values in JavaScript, compared to the logical OR operator.
 
-![](../../../assets/2023-02-08/best-js-meme-to-date-2.png)
+![](../../../assets/2023-02-08/javascript-2.png)
 
 ## Optional chaining .? \[ less strict props access \]
 
@@ -167,7 +167,7 @@ var handler = {
 
 Proxies deserve for distinct article, but I hope you feel to be inspired to learn them deeper.
 
-![](../../../assets/2023-02-08/1_NWihm7jnH3kqUyEBOSpwiw.jpeg)
+![](../../../assets/2023-02-08/javascript-3.png)
 
 ## Private fields \[ privacy without WeakMap and closures \]
 
@@ -244,7 +244,7 @@ The Promise.allSettled() static method takes an iterable of promises as input an
 
 ![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
 
-![](../../../assets/2023-02-08/4014ebe135ed0321c2e4a4975a65a30251c5e44c0c5d3ca3e8fe879b75d309b6.jpg)
+![](../../../assets/2023-02-08/javascript-4.png)
 
 ## BigInt \[ for Math and huge Id from databases \]
 
@@ -288,7 +288,7 @@ BigInt values represent numeric values which are too large to be represented by 
 
 ![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
-![](../../../assets/2023-02-08/ezgif-2-e3e834a0e1.jpg)
+![](../../../assets/2023-02-08/javascript-5.png)
 
 ## Dynamic Import
 
@@ -419,7 +419,7 @@ const z = 0xff_ff_ff;
 
 In all cases, the numeric separators are ignored during evaluation, and the values are stored and used just like any other number in JavaScript.
 
-![](../../../assets/2023-02-08/7afbd5.jpg)
+![](../../../assets/2023-02-08/javascript-6.png)
 
 ## matchAll \[ access to matches for //g regex \]
 
@@ -435,7 +435,7 @@ const matches = originalString.matchAll(regex);
 
 now `matches` is object `RegExpStringIterator`.
 
-![](../../../assets/2023-02-08/Zrzut-ekranu-z-2023-02-08-21-08-00.png)
+![](../../../assets/2023-02-08/javascript-7.png)
 
 we can get acess to single match by `next`
 
@@ -445,7 +445,7 @@ m = matches.next()
 
 then `m` will be object with bolean `done` and `value` that contains details about match.
 
-![](../../../assets/2023-02-08/Zrzut-ekranu-z-2023-02-08-21-08-50.png)
+![](../../../assets/2023-02-08/javascript-8.png)
 
 second option to get matches is iteration
 
@@ -459,7 +459,7 @@ for (const match of matches) {
 
 or
 
-![](../../../assets/2023-02-08/Zrzut-ekranu-z-2023-02-08-21-11-07.png)
+![](../../../assets/2023-02-08/javascript-9.png)
 
 In comparison, using `match` with a regular expression would look like this:
 
@@ -532,7 +532,7 @@ console.log(x); // 2
 
 In the first case, x is assigned the value of 1, because null ?? 1 is 1. In the second case, x is assigned the value of 2, because 2 ?? 1 is 2. The ?? operator is similar to the || operator, but it only evaluates the right-side expression if the left-side expression is null or undefined.
 
-![](../../../assets/2023-02-08/7afchc.gif)
+![](../../../assets/2023-02-08/javascript-10.png)
 
 ## Promise.any() \[ for racings \]
 
@@ -558,7 +558,7 @@ In this example, the `Promise.any()` method takes an array of promises as its ar
 
 The use of `Promise.any()` can simplify your code and improve performance in cases where you want to wait for multiple promises to complete, but you only need to handle the result of the first one that succeeds.
 
-![](../../../assets/2023-02-08/ezgif-2-b971e352d2.jpg)
+![](../../../assets/2023-02-08/javascript-11.png)
 
 ## Array.prototype.at()
 

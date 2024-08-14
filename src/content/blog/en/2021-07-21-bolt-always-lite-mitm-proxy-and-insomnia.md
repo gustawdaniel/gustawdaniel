@@ -66,7 +66,7 @@ After I catched all the necessary requests I've proceeded to Insomnia to check w
 
 The Bolt API, though not public, has still very descriptive error codes such as:
 
-![](../../../assets/2021-07-21/image-20210404194651219-1.png)
+![](../../../assets/2021-07-21/attack-1.png)
 
 You will encounter such errors a lot - the most important thing is to listen to them!
 
@@ -74,17 +74,17 @@ Because of that I knew we need to take a step back and first search for a taxi o
 
 ### **Searching for taxi options**
 
-![](../../../assets/2021-07-21/image-20210404194923297.png)
+![](../../../assets/2021-07-21/attack-2.png)
 
 Sending such payload returns us with the list of possible fares and available bolt categories:
 
-![](../../../assets/2021-07-21/image-20210404195016612.png)
+![](../../../assets/2021-07-21/attack-3.png)
 
 What's intriguing about it is that we also get "surge\_multiplier" parameter, which is not visible in the app. Nice!
 
 ## **Request flow**
 
-![](../../../assets/2021-07-21/image-20210405122512692.png)
+![](../../../assets/2021-07-21/attack-4.png)
 
 ## **Constant reuqest queries**
 
@@ -125,13 +125,13 @@ The only issue is that you still need to get you API key. Sadly, you won't be ab
 Maybe we could get this token with bolt web application?
 There's a bolt mobile web app but sadly, it doesn't really work anywhere:
 
-![](../../../assets/2021-07-21/image.png)
+![](../../../assets/2021-07-21/attack-5.png)
 
 A sad alert you will get whenever you move the pickup pin on m.bolt.eu.
 
 And if you look into HTTP requests that are sent back and forth:
 
-![](../../../assets/2021-07-21/image-1.png)
+![](../../../assets/2021-07-21/attack-6.png)
 
 That's pretty much it! Thanks for reading folks!
 

@@ -40,7 +40,7 @@ Second simply could not work giving error that was suggesting that something is 
 
 I checked official Google Docs and see this:
 
-![](../../../assets/2023-02-16/Zrzut-ekranu-z-2023-02-16-18-26-11.png)
+![](../../../assets/2023-02-16/google-1.png)
 
 [Integrating Google Sign-In into your web app | Authentication | Google Developers
 
@@ -50,7 +50,7 @@ I checked official Google Docs and see this:
 
 Looks terrible, but hepilly I integrated google sign in button quite fast without external libs. In this article I will show how to implement new Google Identity with Nuxt 3.
 
-![](../../../assets/2023-02-16/3sa379.jpg)
+![](../../../assets/2023-02-16/google-2.png)
 
 ## Google Identity - how it is different
 
@@ -62,7 +62,7 @@ Because image is worth more than thousand of words, new login button contains av
 
 ![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
-![](../../../assets/2023-02-16/personalized-button-multiple.png)
+![](../../../assets/2023-02-16/google-3.png)
 
 ## Sign In button HTML
 
@@ -96,7 +96,7 @@ or prepare your own in configurator
 
 ![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/tools/configurator)
 
-![](../../../assets/2023-02-16/3.5-3.jpg)
+![](../../../assets/2023-02-16/google-4.png)
 
 There are three elements that we have to connect:
 
@@ -205,11 +205,11 @@ useHead({
 
 Now you should see login button. You should be able to click on it, login and see credentials in console. Assuming that you correctly configured OAuth 2.0 Client
 
-![](../../../assets/2023-02-16/Zrzut-ekranu-z-2023-02-16-18-47-12.png)
+![](../../../assets/2023-02-16/google-5.png)
 
 And added localhost to Authorized JavaScript origins
 
-![](../../../assets/2023-02-16/Zrzut-ekranu-z-2023-02-16-18-47-27.png)
+![](../../../assets/2023-02-16/google-6.png)
 
 After login in console you will see array with single object like this
 
@@ -245,7 +245,7 @@ Credentail token is `JWT` with payload
 
 To verify it you should send it to backend.
 
-![](../../../assets/2023-02-16/b33f57187cba4a7e2ebebc6b9987f09b.jpg)
+![](../../../assets/2023-02-16/google-7.png)
 
 ## Backend verification for Google credential
 
@@ -256,7 +256,7 @@ As backend we can use fastify. I described fastify config on this blog here
 We're building from scratch rest api in fastify using mongodb connected by prisma as a database,
 jest as a test framework and etherjs to verify signatures signed by metamask.
 
-![](../../../assets/2023-02-16/metamask-fastify-min.jpg)](/login-by-metamask-rest-backend-in-fastify/)
+![](../../../assets/2023-02-16/google-8.png)](/login-by-metamask-rest-backend-in-fastify/)
 
 so now I assume you have done step "Add Fastify with first endpoint" from this article.
 
@@ -348,9 +348,9 @@ if(process.client) {
 
 we forgot about `cors`
 
-![](../../../assets/2023-02-16/Zrzut-ekranu-z-2023-02-16-19-18-48.png)
+![](../../../assets/2023-02-16/google-9.png)
 
-![](../../../assets/2023-02-16/06ivdlvuveq21.jpg)
+![](../../../assets/2023-02-16/google-10.png)
 
 so quick fix
 
@@ -370,7 +370,7 @@ import cors from '@fastify/cors'
 
 and we can see in console all user's details
 
-![](../../../assets/2023-02-16/Zrzut-ekranu-z-2023-02-16-16-35-17.png)
+![](../../../assets/2023-02-16/google-11.png)
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 
@@ -378,4 +378,4 @@ We do not want to call `await client.verifyIdToken(` on any request so we have t
 
 We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
 
-![](../../../assets/2023-02-16/metamask-fastify-min.jpg)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)
+![](../../../assets/2023-02-16/google-8.png)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)

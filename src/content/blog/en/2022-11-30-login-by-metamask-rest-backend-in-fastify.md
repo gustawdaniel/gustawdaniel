@@ -69,7 +69,7 @@ npm run dev
 
 It will show "ok" and will wait for changes to react on them in real time.
 
-![](../../../assets/2022-11-30/javascript-typescript-its-just-so-much-better-19507603.png)
+![](../../../assets/2022-11-30/metamask-1.png)
 
 ## Add Fastify with first endpoint
 
@@ -77,7 +77,7 @@ Fastify is framework similar to express but with two advantages
 
 * it is about 20% faster in requests processing
 
-![](../../../assets/2022-11-30/1-3qbtNFz7J9yVzt06fAoM5A.png)
+![](../../../assets/2022-11-30/metamask-2.png)
 
 * it is faster in developemnt thanks to useful simplifications in his API
 
@@ -166,17 +166,17 @@ starts return response
 }
 ```
 
-![](../../../assets/2022-11-30/EEq5-clUcAEV8Nm.jpg)
+![](../../../assets/2022-11-30/metamask-3.png)
 
 ## Tests in Jest with esbuild
 
 If you are programmer more time, than one day you are aware how easy is break up your working program changing something in source code in random places. Fortunately we can write test that prove that code is working as we expecting.
 
-![](../../../assets/2022-11-30/6b4upqv6at321.jpg)
+![](../../../assets/2022-11-30/metamask-4.png)
 
 In node js word one of best testing frameworks is `jest`. But to connect it with typescript we need plugin that will transform `ts` files. It is terrible that most popular `ts-jest` is 2000 times more frequently used that about 26 times faster `jest-ebuild`. But lets use technology from the future - esbuild.
 
-![](../../../assets/2022-11-30/1642781701974.jpeg)
+![](../../../assets/2022-11-30/metamask-5.png)
 
 Our `jest.config.ts` will contain
 
@@ -243,7 +243,7 @@ Time:        0.222 s, estimated 1 s
 Ran all test suites.
 ```
 
-![](../../../assets/2022-11-30/6unvjk.jpg)
+![](../../../assets/2022-11-30/metamask-6.png)
 
 We have configured fastify server with live reload development environment and super fast tests configured in jest. We created first endpoint that returns name and version of server on root endpoint. It is time to describe auth flow and implement required routes.
 
@@ -251,7 +251,7 @@ We have configured fastify server with live reload development environment and s
 
 Generally idea is the following. User has private key connected with his wallet address. We can save this address to database as his unique id and generate nonce for him. Nonce is simple random phrase generated to check if user can correctly sing it using his own address. If nonce will leak, it is nothing scarry, because nobody will be able to sign it with correct address is he does not possess private key. Below we presenting diagram:
 
-![](../../../assets/2022-11-30/2022-11-30_13-47_1.png)
+![](../../../assets/2022-11-30/metamask-7.png)
 
 So we need users collection only with `address` and `nonce` and 4 endpoints
 
@@ -303,17 +303,13 @@ and in `.env` we can select address to our mongo database
 DATABASE_URL=mongodb://localhost:27017/web3_bdl
 ```
 
-![](../../../assets/2022-11-30/anMGwKn_460s.jpg)
+![](../../../assets/2022-11-30/metamask-8.png)
 
 ### Mongo in Replica Set Mode
 
 It is important, that prisma now using mongo in replica mode.
 
-[Replication — MongoDB Manual
-
-![](https://www.mongodb.com/docs/assets/favicon.ico)
-
-![](https://www.mongodb.com/docs/assets/meta_generic.png)](https://www.mongodb.com/docs/manual/replication/)
+[Replication — MongoDB Manual](https://www.mongodb.com/docs/manual/replication/)
 
 to configure it you will need add lines
 
@@ -386,7 +382,7 @@ export {
 
 Now we can import prisma from this place and get access to proper database in dependence from `NODE_ENV`.
 
-![](../../../assets/2022-11-30/b5867e5f337d3e62328e6a2c3a78c250d0f7ab511cf53864d6d5099f946ba055_3.jpg)
+![](../../../assets/2022-11-30/metamask-9.png)
 
 ### Passing env to process
 
@@ -546,7 +542,7 @@ describe('searching user by address', () => {
 
 Here we covered all possible scenarios.
 
-![](../../../assets/2022-11-30/android-mocking.jpg)
+![](../../../assets/2022-11-30/metamask-10.png)
 
 ## Register user using wallet address
 
@@ -633,7 +629,7 @@ describe('user can register account', () => {
 })
 ```
 
-![](../../../assets/2022-11-30/1-xwScPTcIGgjWfZIcEeR2oA.png)
+![](../../../assets/2022-11-30/metamask-11.png)
 
 ## Login user by signed message
 
@@ -837,7 +833,7 @@ import {Response} from "light-my-request";
     })
 ```
 
-![](../../../assets/2022-11-30/5834555ede7a912e00000942.png)
+![](../../../assets/2022-11-30/metamask-12.png)
 
 ## Getting user data from JWT token
 
@@ -926,19 +922,19 @@ and in `src/route/user.ts` add controller with name `root`.
 
 Now lets try to use it. First register account with address from my browser
 
-![](../../../assets/2022-11-30/2022-11-30_18-57.png)
+![](../../../assets/2022-11-30/metamask-13.png)
 
 Then sign `nonce` in browser
 
-![](../../../assets/2022-11-30/2022-11-30_18-59.png)
+![](../../../assets/2022-11-30/metamask-14.png)
 
 Login using signature to get jwt token
 
-![](../../../assets/2022-11-30/2022-11-30_19-00.png)
+![](../../../assets/2022-11-30/metamask-15.png)
 
 And finally get user data using private route `/me`
 
-![](../../../assets/2022-11-30/2022-11-30_19-01.png)
+![](../../../assets/2022-11-30/metamask-16.png)
 
 We can cover it by test in `jest` in file `test/account.test.ts`
 
@@ -1061,7 +1057,7 @@ describe('cors', () => {
 
 To find problems in our code easier we can use colors to print errors:
 
-![](../../../assets/2022-11-30/cw7i8et55g551.jpg)
+![](../../../assets/2022-11-30/metamask-17.png)
 
 Lets install `cli-color` library:
 
@@ -1099,7 +1095,7 @@ import {red, yellow} from 'cli-color'
 
 now our errors will be easy to find and analyze in console.
 
-![](../../../assets/2022-11-30/2022-11-30_20-25.png)
+![](../../../assets/2022-11-30/metamask-18.png)
 
 ### Github workflows
 
@@ -1196,12 +1192,6 @@ jobs:
 
 All presented code can be found in repository:
 
-[GitHub - gustawdaniel/metamask-fastify-rest-api
-
-Contribute to gustawdaniel/metamask-fastify-rest-api development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/f01f87b773a73f3bad53b83e622cfd82a917f3c0110cec2b4b9a6e7dee7d9cac/gustawdaniel/metamask-fastify-rest-api)](https://github.com/gustawdaniel/metamask-fastify-rest-api)
+[GitHub - gustawdaniel/metamask-fastify-rest-api](https://github.com/gustawdaniel/metamask-fastify-rest-api)
 
 I hope that you liked this form of publication when we covered all parts from scratch to working demo. Let me know if do you see how can I make my code better or if something presented here helped in your projects.
