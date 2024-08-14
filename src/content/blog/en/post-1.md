@@ -1,14 +1,18 @@
 ---
-title: 'en1'
+author: Astro Learner
 canonicalName: post-1
-publishDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+description: This is the first post of my new Astro blog.
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+  alt: The Astro logo on a dark background with a pink glow.
+  url: https://docs.astro.build/assets/rose.webp
+publishDate: 2022-07-01
+tags:
+- astro
+- blogging
+- learning in public
+title: en1
 ---
+
 
 en 1
 
