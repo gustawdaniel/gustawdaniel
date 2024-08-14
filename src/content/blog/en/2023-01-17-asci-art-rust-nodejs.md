@@ -11,6 +11,7 @@ excerpt: Solving this puzzle teaches how to manage strings and array arithmetics
 publishDate: 2023-01-17 18:31:50+00:00
 slug: en/asci-art-rust-nodejs
 tags:
+- asci
 - rust
 - nodejs
 - strings

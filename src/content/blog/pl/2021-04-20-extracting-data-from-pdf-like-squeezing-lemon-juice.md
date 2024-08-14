@@ -2,13 +2,15 @@
 author: Daniel Gustaw
 canonicalName: wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 date_updated: 2021-04-20 18:45:26+00:00
-description: "W tym wpisie pokarzemy jak pisz\u0105c naprawd\u0119 znikome ilo\u015B\
-  ci kodu mo\u017Cna wygodnie wydoby\u0107 dane z plik\xF3w PDF."
-excerpt: "W tym wpisie pokarzemy jak pisz\u0105c naprawd\u0119 znikome ilo\u015Bci\
-  \ kodu mo\u017Cna wygodnie wydoby\u0107 dane z plik\xF3w PDF."
+description: "W tym wpisie pokarzemy jak pisz\u0105c naprawdę znikome iloś\
+  ci kodu można wygodnie wydobyć dane z plików PDF."
+excerpt: "W tym wpisie pokarzemy jak pisz\u0105c naprawdę znikome ilości\
+  \ kodu można wygodnie wydobyć dane z plików PDF."
 publishDate: 2021-04-20 18:45:26+00:00
 slug: pl/wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 title: Wyciskamy dane z PDF jak sok z cytryny
+tags:
+  - pdf 
 ---
 
 

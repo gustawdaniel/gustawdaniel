@@ -11,10 +11,10 @@ excerpt: Simple hackeartch task solved in node js and rust. You con compare thes
 publishDate: 2022-11-28 16:54:21+00:00
 slug: en/maximum-inequality
 tags:
+- linear-search
 - rust
 - nodejs
 - typescript
-- linear-search
 title: Maximum Inequality [Linear Search] rust and typescript
 ---
 

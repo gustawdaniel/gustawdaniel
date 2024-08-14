@@ -7,6 +7,8 @@ excerpt: git styled calendar created from list of dates saved as csv file
 publishDate: 2021-04-20 19:28:40+00:00
 slug: en/git-styled-calendar-with-custom-dates
 title: Git styled calendar with custom dates
+tags:
+  - git
 ---
 
 

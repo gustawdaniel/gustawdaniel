@@ -2,11 +2,11 @@
 author: Daniel Gustaw
 canonicalName: logowanie-danych-w-mysql-ajax-i-behat
 date_updated: 2021-06-21 16:39:24+00:00
-description: "Napiszemy prost\u0105 aplikacj\u0119 webow\u0105 - kalkulator. Na jego\
-  \ przyk\u0142adzie poka\u017Cemy jak skonfigurowa\u0107 selenium z behatem i wykona\u0107\
+description: "Napiszemy prost\u0105 aplikację webow\u0105 - kalkulator. Na jego\
+  \ przykładzie pokażemy jak skonfigurować selenium z behatem i wykonać\
   \ na nim testy automatyczne."
-excerpt: "Napiszemy prost\u0105 aplikacj\u0119 webow\u0105 - kalkulator. Na jego przyk\u0142\
-  adzie poka\u017Cemy jak skonfigurowa\u0107 selenium z behatem i wykona\u0107 na\
+excerpt: "Napiszemy prost\u0105 aplikację webow\u0105 - kalkulator. Na jego przykł\
+  adzie pokażemy jak skonfigurować selenium z behatem i wykonać na\
   \ nim testy automatyczne."
 publishDate: 2021-04-26 20:03:00+00:00
 slug: pl/logowanie-danych-w-mysql-ajax-i-behat

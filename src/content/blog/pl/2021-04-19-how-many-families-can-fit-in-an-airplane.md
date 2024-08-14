@@ -2,19 +2,19 @@
 author: Daniel Gustaw
 canonicalName: ile-rodzin-zmiesci-sie-w-samolocie-zadanie-z-algorytmiki
 date_updated: 2021-04-20 18:41:10+00:00
-description: "Por\xF3wnujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
-  \ wolnych zestaw\xF3w przyleg\u0142ych miejsc. Dowiesz si\u0119 jak u\u017Cywa\u0107\
-  \ Profilowania i jak wielk\u0105 r\xF3\u017Cnic\u0119 robi u\u017Cycie pop oraz\
+description: "Porównujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+  \ wolnych zestawów przyległych miejsc. Dowiesz się jak używać\
+  \ Profilowania i jak wielk\u0105 różnicę robi użycie pop oraz\
   \ shift na tablicach w js."
-excerpt: "Por\xF3wnujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
-  \ wolnych zestaw\xF3w przyleg\u0142ych miejsc. Dowiesz si\u0119 jak u\u017Cywa\u0107\
-  \ Profilowania i jak wielk\u0105 r\xF3\u017Cnic\u0119 robi u\u017Cycie pop oraz\
+excerpt: "Porównujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+  \ wolnych zestawów przyległych miejsc. Dowiesz się jak używać\
+  \ Profilowania i jak wielk\u0105 różnicę robi użycie pop oraz\
   \ shift na tablicach w js."
 publishDate: 2021-04-20 18:41:10+00:00
 slug: pl/ile-rodzin-zmiesci-sie-w-samolocie
 tags:
-- alghoritms
-title: "Ile rodzin zmie\u015Bci si\u0119 w samolocie - zadanie z algorytmiki"
+- algorithm
+title: "Ile rodzin zmieści się w samolocie - zadanie z algorytmiki"
 ---
 
 

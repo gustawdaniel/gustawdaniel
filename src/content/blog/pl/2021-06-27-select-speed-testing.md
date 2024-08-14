@@ -2,19 +2,19 @@
 author: Daniel Gustaw
 canonicalName: wplyw-indeksacji-na-wydajnosc-wyszukiwania-w-bazie-mysql
 date_updated: 2021-06-27 17:40:00+00:00
-description: "Stosowanie indeks\xF3w przy\u015Bpiesza wyszukiwanie i podnosi wielko\u015B\
-  \u0107 tabel spowalniaj\u0105c modyfikacje. Artyku\u0142 pokazuje jak profilowa\u0107\
-  \ zapytania i mierzy\u0107 wp\u0142yw indeks\xF3w na wydajno\u015B\u0107 wyszukiwania."
-excerpt: "Stosowanie indeks\xF3w przy\u015Bpiesza wyszukiwanie i podnosi wielko\u015B\
-  \u0107 tabel spowalniaj\u0105c modyfikacje. Artyku\u0142 pokazuje jak profilowa\u0107\
-  \ zapytania i mierzy\u0107 wp\u0142yw indeks\xF3w na wydajno\u015B\u0107 wyszukiwania."
+description: "Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkoś\
+  ć tabel spowalniaj\u0105c modyfikacje. Artykuł pokazuje jak profilować\
+  \ zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania."
+excerpt: "Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkoś\
+  ć tabel spowalniaj\u0105c modyfikacje. Artykuł pokazuje jak profilować\
+  \ zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania."
 publishDate: 2021-06-27 17:40:00+00:00
 slug: pl/testowanie-szybkosci-selektow
 tags:
 - mathematica
 - mysql
 - profiling
-title: "Wp\u0142yw indeksacji na wydajno\u015B\u0107 wyszukiwania w bazie MySQL"
+title: "Wpływ indeksacji na wydajność wyszukiwania w bazie MySQL"
 ---
 
 

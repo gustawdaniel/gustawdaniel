@@ -2,19 +2,20 @@
 author: Daniel Gustaw
 canonicalName: scraping-wordpress-4300-wyrokow-sadow-w-sprawach-frankowych-bez-linii-kodu
 date_updated: 2021-04-20 12:18:07+00:00
-description: "Nie cz\u0119sto si\u0119 zdarza, \u017Ceby wykonanie us\u0142ugi trwa\u0142\
-  o kt\xF3rej, ni\u017C jej wycenienie, ale przy scrapingu mo\u017Ce si\u0119 tak\
-  \ sta\u0107. Zobacz jak \u0142atwe mo\u017Ce by\u0107 pobranie danych, szczeg\xF3\
+description: "Nie często się zdarza, żeby wykonanie usługi trwał\
+  o której, niż jej wycenienie, ale przy scrapingu może się tak\
+  \ stać. Zobacz jak łatwe może być pobranie danych, szczegó\
   lnie z Wordpressa."
-excerpt: "Nie cz\u0119sto si\u0119 zdarza, \u017Ceby wykonanie us\u0142ugi trwa\u0142\
-  o kt\xF3rej, ni\u017C jej wycenienie, ale przy scrapingu mo\u017Ce si\u0119 tak\
-  \ sta\u0107. Zobacz jak \u0142atwe mo\u017Ce by\u0107 pobranie danych, szczeg\xF3\
+excerpt: "Nie często się zdarza, żeby wykonanie usługi trwał\
+  o której, niż jej wycenienie, ale przy scrapingu może się tak\
+  \ stać. Zobacz jak łatwe może być pobranie danych, szczegó\
   lnie z Wordpressa."
 publishDate: 2021-04-20 12:14:43+00:00
 slug: pl/scraping-wordpressa
 tags:
+- wordpress
 - scraping
-title: "Scraping WordPress - 4300 wyrok\xF3w s\u0105d\xF3w w sprawach frankowych bez\
+title: "Scraping WordPress - 4300 wyroków s\u0105dów w sprawach frankowych bez\
   \ linii kodu"
 ---
 

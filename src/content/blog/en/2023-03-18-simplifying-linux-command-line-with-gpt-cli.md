@@ -9,8 +9,8 @@ excerpt: 'Run linux commands with natural language. Eg.: ''show my graphic card'
 publishDate: 2023-03-18 06:01:36+00:00
 slug: en/simplifying-linux-command-line-with-gpt-cli
 tags:
-- rust
 - gpt
+- rust
 - cli
 - linux
 title: Simplifying Linux Command Line with GPT-CLI (rust, open source)

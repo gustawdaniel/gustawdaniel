@@ -2,25 +2,21 @@
 author: Daniel Gustaw
 canonicalName: jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine
 date_updated: 2021-02-17 20:59:14+00:00
-description: "Poznaj technik\u0119 zr\xF3wnoleglania scrapingu kt\xF3ra mo\u017Ce\
-  \ kilkukrotnie przy\u015Bpieszy\u0107 pobieranie danych."
-excerpt: "Poznaj technik\u0119 zr\xF3wnoleglania scrapingu kt\xF3ra mo\u017Ce kilkukrotnie\
-  \ przy\u015Bpieszy\u0107 pobieranie danych."
+description: "Poznaj technikę zrównoleglania scrapingu która może\
+  \ kilkukrotnie przyśpieszyć pobieranie danych."
+excerpt: "Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie\
+  \ przyśpieszyć pobieranie danych."
 publishDate: 2021-02-17 20:59:14+00:00
 slug: pl/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine
-title: "Jak pobra\u0107 dane kontaktowe 20k adwokat\xF3w w godzin\u0119"
+title: "Jak pobrać dane kontaktowe 20k adwokatów w godzinę"
+tags:
+  - contact
 ---
 
 
 Strona internetowa "Rejestr Adwokatów" jest publicznym zbiorem danych. Zgodnie z obwiązującym prawem można gromadzić i przetwarzać publicznie dostępne dane osobowe z rejestrów.
 
-[:: KRAIA - adwokaci, prawnicy zagraniczni, aplikanci ::
-
-Krajowy Rejestr Adwokatów i Aplikantów Adwokackich
-
-![](https://rejestradwokatow.pl/favicon16x16.ico) Adwokaci, prawnicy zagraniczni, aplikanci ::
-
-![](https://rejestradwokatow.pl/templates/client_tpl/pl/_images/grafika/logo.png)](https://rejestradwokatow.pl/adwokat)
+[Krajowy Rejestr Adwokatów i Aplikantów Adwokackich](https://rejestradwokatow.pl/adwokat)
 
 W tym artykule przygotujemy zestaw danych pozwalających na kontakt z prawnikami z tego rejestru. Jeśli po prostu szukasz prawnika, to możesz go tam znaleźć i nie potrzebujesz pobierać całej bazy.
 
@@ -41,13 +37,7 @@ Projekt podzielimy na etapy:
 
 Rejestr adwokatów dostępny pod linkiem:
 
-[:: KRAIA - adwokaci, prawnicy zagraniczni, aplikanci ::
-
-Krajowy Rejestr Adwokatów i Aplikantów Adwokackich
-
-![](https://rejestradwokatow.pl/favicon16x16.ico)adwokaci, prawnicy zagraniczni, aplikanci ::
-
-![](https://rejestradwokatow.pl/templates/client_tpl/pl/_images/grafika/logo.png)](https://rejestradwokatow.pl/adwokat)
+[Krajowy Rejestr Adwokatów i Aplikantów Adwokackich](https://rejestradwokatow.pl/adwokat)
 
 zawiera zielony przycisk wyszukaj. Po jego kliknięciu przechodzimy na stronę
 

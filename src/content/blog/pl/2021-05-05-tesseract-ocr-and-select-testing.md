@@ -2,17 +2,17 @@
 author: Daniel Gustaw
 canonicalName: tesseract-ocr-i-testowanie-selektow
 date_updated: 2021-06-21 16:53:20+00:00
-description: "Odczytamy ze zdj\u0119cia tre\u015B\u0107 tabeli bazodanowej i napiszemy\
-  \ w behacie kilka test\xF3w na zapytania bazodanowe."
-excerpt: "Odczytamy ze zdj\u0119cia tre\u015B\u0107 tabeli bazodanowej i napiszemy\
-  \ w behacie kilka test\xF3w na zapytania bazodanowe."
+description: "Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy\
+  \ w behacie kilka testów na zapytania bazodanowe."
+excerpt: "Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy\
+  \ w behacie kilka testów na zapytania bazodanowe."
 publishDate: 2021-05-04 20:18:00+00:00
 slug: pl/tesseract-ocr-i-testowanie-selektow
 tags:
 - mysql
 - behat
 - perl
-title: "Tesseract-OCR i testowanie selekt\xF3w."
+title: "Tesseract-OCR i testowanie selektów."
 ---
 
 

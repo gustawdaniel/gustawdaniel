@@ -2,11 +2,11 @@
 author: Daniel Gustaw
 canonicalName: instalacja-odnawialnego-certyfikatu-tls-certbot-apache-na-ubuntu
 date_updated: 2021-06-22 09:05:15+00:00
-description: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrowa\u0107\
-  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i u\u017Cycie go w zestawieniu\
+description: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrować\
+  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i użycie go w zestawieniu\
   \ z serwerem apache."
-excerpt: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrowa\u0107\
-  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i u\u017Cycie go w zestawieniu\
+excerpt: "Jest wiele metod uzyskiwania certyfikatu pozwalaj\u0105cego szyfrować\
+  \ ruch http. Jedn\u0105 z nich jest instalacja certbota i użycie go w zestawieniu\
   \ z serwerem apache."
 publishDate: 2021-05-14 20:38:00+00:00
 slug: pl/instalacja-odnawialnego-certyfikatu-tls
@@ -47,7 +47,7 @@ certbot --apache
 
 Kolejno podajemy swój e-mail, literą A potwierdzamy zgodę na warunki usługi, odpowiadaomy na pytanie, czy chcemy udostępnić e-mail i wybieramy domeny z listy domen określonych w konfiguracji Apache2. Na koniec wybieramy czy chcemy wymuszać https czy dać https jedynie jako jedną z opcji.
 
-## Odświerzanie
+## Odświeżanie
 
 Ponieważ certyfikat wygasa po 90 dniach od jego pobrania, potrzebujemy mechanizmu jego automatycznego odświerzania. Na szczęście jest to proste. Nie zaszkodzi, jeśli będziemy go odśwerzać częściej. Zgodnie z poradnikiem zaufanej trzeciej strony dodajemy komendę doświerzającą certyfikat do crona.
 

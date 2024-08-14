@@ -8,8 +8,9 @@ excerpt: Zobacz proste case study pobrania i przetworzenia danych z paginowanej 
 publishDate: 2021-02-17 15:10:17+00:00
 slug: pl/scraping-libor-oraz-wibor-z-money-pl
 tags:
-- mongo
-- scraping
+  - libor
+  - mongo
+  - scraping
 title: Scraping z money.pl w 30 liniach kodu.
 ---
 
@@ -22,13 +23,7 @@ Z artykułu dowiesz się, jak robić to szybko. Zobaczysz jakich narzędzi używ
 
 Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `WIBOR3M`. Znajduję nawet stronę, która takie dane udostępnia:
 
-[Archiwum notowa� dla LIBOR frank szwajcarski 3M (LIBORCHF3M), strona 1
-
-Archiwum notowa� dla LIBOR frank szwajcarski 3M (LIBORCHF3M)
-
-![](https://static1.money.pl/i/favicon.ico)www.money.plGrupa Wirtualna Polska
-
-![](https://static1.money.pl/i/wp-money.png)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
+[Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
 ![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-16-36-22.png)
 

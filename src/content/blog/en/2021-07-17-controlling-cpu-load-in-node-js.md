@@ -10,6 +10,8 @@ excerpt: Learn how to create and terminate subprocesses in Node.js, dynamically 
 publishDate: 2023-04-05 09:44:19+00:00
 slug: en/managing-processes-in-node-js
 title: Managing processes in Node JS.
+tags:
+  - cpu
 ---
 
 

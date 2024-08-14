@@ -7,7 +7,7 @@ image:
   url: https://docs.astro.build/assets/arc.webp
 publishDate: 2024-08-12
 tags:
-- astro
+- ranger
 - blogging
 title: ranger
 ---

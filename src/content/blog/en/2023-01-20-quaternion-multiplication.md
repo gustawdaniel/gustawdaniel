@@ -9,6 +9,7 @@ excerpt: In this article, we will see how to implement the multiplication of qua
 publishDate: 2023-01-20 02:19:57+00:00
 slug: en/quaternion-multiplication
 tags:
+- quaternion
 - rust
 - nodejs
 - algebra

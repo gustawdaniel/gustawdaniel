@@ -11,6 +11,8 @@ excerpt: We describe how abandonment and backward compatibility have influenced 
 publishDate: 2023-03-10 15:56:01+00:00
 slug: en/how-did-the-compatibility-war-shape-the-frontend
 title: How did the compatibility war shape the frontend?
+tags:
+  - compatibility
 ---
 
 

@@ -1,18 +1,20 @@
 ---
 author: Daniel Gustaw
-canonicalName: infrastrukura-jako-kod-terraform-digital-ocean
+canonicalName: infrastruktura-jako-kod-terraform-digital-ocean
 date_updated: 2021-04-07 10:30:29+00:00
-description: "We wpisie pokazuj\u0119 w jaki spos\xF3b rozstawi\u0107 serwery z linii\
-  \ polece\u0144 terraform."
-excerpt: "We wpisie pokazuj\u0119 w jaki spos\xF3b rozstawi\u0107 serwery z linii\
-  \ polece\u0144 terraform."
+description: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
+  \ poleceń terraform."
+excerpt: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
+  \ poleceń terraform."
 publishDate: 2021-03-04 18:19:11+00:00
-slug: pl/infrastrukura-defniowana-jako-kod
-title: Infrastrukura jako kod (terraform + digital ocean)
+slug: pl/infrastruktura-definiowana-jako-kod
+title: Infrastruktura jako kod (terraform + digital ocean)
+tags:
+  - iac
 ---
 
 
-W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempo pobierania i przetwarzania danych. Kiedy kilka lat temu pisałem swój pierwszy system, który równolegle zbierał dane używając kilkunastu serwerów, każdy z tych serwerów był przeze mnie "wyklikany" w panelu dostawcy.
+W scrapingu ważnym czynnikiem jest skala, do jakiej możemy rozszerzyć tempo pobierania i przetwarzania danych. Kiedy kilka lat temu pisałem swój pierwszy system, który równolegle zbierał dane używając kilkunastu serwerów, każdy z tych serwerów był przeze mnie "wyklikany" w panelu dostawcy.
 
 Teraz pokażę w jaki sposób rozstawić serwery z linii poleceń `terraform`. Dostawcą będzie Digital Ocean, ponieważ w porównaniu ze swoją największą konkurencją ma bardzo korzystne (8-10 razy niższe) ceny transferu sieciowego.
 

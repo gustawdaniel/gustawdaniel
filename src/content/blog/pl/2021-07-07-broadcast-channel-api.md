@@ -2,16 +2,16 @@
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
 date_updated: 2021-07-23 09:22:25+00:00
-description: "Wpis pokazuje jak u\u017Cywa\u0107 Broadcast Channel API do przesy\u0142\
-  ania danych mi\u0119dzy kartami lub oknami przegl\u0105darki bez wykorzystania serwera\
-  \ i socket\xF3w."
-excerpt: "Wpis pokazuje jak u\u017Cywa\u0107 Broadcast Channel API do przesy\u0142\
-  ania danych mi\u0119dzy kartami lub oknami przegl\u0105darki bez wykorzystania serwera\
-  \ i socket\xF3w."
+description: "Wpis pokazuje jak używać Broadcast Channel API do przesył\
+  ania danych między kartami lub oknami przegl\u0105darki bez wykorzystania serwera\
+  \ i socketów."
+excerpt: "Wpis pokazuje jak używać Broadcast Channel API do przesył\
+  ania danych między kartami lub oknami przegl\u0105darki bez wykorzystania serwera\
+  \ i socketów."
 publishDate: 2021-07-07 11:08:19+00:00
 slug: pl/broadcast-channel-api
 tags:
-- web api
+- web-api
 - broadcast
 - channel
 title: Broadcast Channel API
@@ -103,13 +103,7 @@ const i = setInterval(() => {
 
 Przy okazji użyliśmy tu innego API - performance:
 
-[Performance - Web APIs | MDN
-
-The Performance interface provides access to performance-related information for the current page. It’s part of the High Resolution Time API, but is enhanced by the Performance Timeline API, the Navigation Timing API, the User Timing API, and the Resource Timing API.
-
-![](https://developer.mozilla.org/apple-touch-icon.0ea0fa02.png)MDN
-
-![](https://developer.mozilla.org/mdn-social-share.0ca9dbda.png)](https://developer.mozilla.org/en-US/docs/Web/API/Performance)
+[Performance - Web APIs | MDN](https://developer.mozilla.org/mdn-social-share.0ca9dbda.png)](https://developer.mozilla.org/en-US/docs/Web/API/Performance)
 
 Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
 

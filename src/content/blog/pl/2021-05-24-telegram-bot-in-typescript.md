@@ -2,11 +2,11 @@
 author: Daniel Gustaw
 canonicalName: bot-telegramowy-w-typescript
 date_updated: 2021-05-24 11:06:00+00:00
-description: "Dowiedz si\u0119 jak stworzy\u0107 bota na telegramie, doda\u0107 w\
-  \ nim nas\u0142uch na komendy oraz skonfigurowa\u0107 wysy\u0142anie powiadomie\u0144\
+description: "Dowiedz się jak stworzyć bota na telegramie, dodać w\
+  \ nim nasłuch na komendy oraz skonfigurować wysyłanie powiadomień\
   ."
-excerpt: "Dowiedz si\u0119 jak stworzy\u0107 bota na telegramie, doda\u0107 w nim\
-  \ nas\u0142uch na komendy oraz skonfigurowa\u0107 wysy\u0142anie powiadomie\u0144\
+excerpt: "Dowiedz się jak stworzyć bota na telegramie, dodać w nim\
+  \ nasłuch na komendy oraz skonfigurować wysyłanie powiadomień\
   ."
 publishDate: 2021-05-24 11:06:00+00:00
 slug: pl/bot-telegramowy-w-typescript

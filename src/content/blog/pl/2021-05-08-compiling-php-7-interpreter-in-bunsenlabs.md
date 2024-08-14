@@ -2,12 +2,12 @@
 author: Daniel Gustaw
 canonicalName: kompilacja-interpretera-php-7-w-bunsenlabs
 date_updated: 2021-06-21 17:02:31+00:00
-description: "Kompilacja to proces, kt\xF3ry czasami wymaga instalacji paczek lub\
-  \ linkowania zale\u017Cno\u015Bci. W tym przypadku zadanie polega\u0142o na dostarczeniu\
-  \ php7, na system na kt\xF3ry nie mia\u0142 go w dost\u0119pnych repozytoriach."
-excerpt: "Kompilacja to proces, kt\xF3ry czasami wymaga instalacji paczek lub linkowania\
-  \ zale\u017Cno\u015Bci. W tym przypadku zadanie polega\u0142o na dostarczeniu php7,\
-  \ na system na kt\xF3ry nie mia\u0142 go w dost\u0119pnych repozytoriach."
+description: "Kompilacja to proces, który czasami wymaga instalacji paczek lub\
+  \ linkowania zależności. W tym przypadku zadanie polegało na dostarczeniu\
+  \ php7, na system na który nie miał go w dostępnych repozytoriach."
+excerpt: "Kompilacja to proces, który czasami wymaga instalacji paczek lub linkowania\
+  \ zależności. W tym przypadku zadanie polegało na dostarczeniu php7,\
+  \ na system na który nie miał go w dostępnych repozytoriach."
 publishDate: 2021-05-07 20:30:00+00:00
 slug: pl/kompilacja-interpretera-php-7-w-bunsenlabs
 tags:
