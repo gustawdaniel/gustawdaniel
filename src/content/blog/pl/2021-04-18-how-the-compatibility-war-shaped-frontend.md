@@ -24,7 +24,7 @@ Problem niekompatybilnych wersji oprogramowania czy sprzętu prawdopodobnie nie 
 
 Być może jako przedsiębiorca mierzyłeś się już z problemem migrowania swojego systemu informatycznego, albo jako programista walczyłeś z błędami powodowanymi aktualizacją jakiejś paczki.
 
-![](../../../assets/2021-04-18/cat.jpg)
+![](../../../assets/2021-04-18/compatibility-1.png)
 
 Ten artykuł ma na celu pokazanie jak kompatybilność wsteczna wpływała na kierunek rozwoju technologii webowych.
 
@@ -38,7 +38,7 @@ Za przykład niech posłuży nam historia rozwoju frontendu webowego, którą w 
 
 Często dla każdej przeglądarki trzeba było pisać osobny kod do wykonania tego samego zadania. Niektóre zmieniały interfejs programistyczny nawet z wersji na wersję kilka razy! Pisząc kod programista zamiast zapytać o szerokość okna, sprawdzał na początku o to z jaką przeglądarką ma do czynienia, później dopiero w długiej liście warunków wykonywał odpowiednie komendy stosownie do przeglądarki jaką wykrył
 
-![](../../../assets/2021-04-18/width.jpeg)
+![](../../../assets/2021-04-18/compatibility-2.png)
 
 W tych warunkach w 2005 pojawiła się biblioteka jQuery. Stanowiła ona warstwę pośredniczącą między programistami webowymi a przeglądarkami. Błyskawicznie zaczęła zdobywać popularność, bo choć obciążała przeglądarki, to dzięki niej programista pisał znacznie mnie kodu, a dodatkowo to ona przejmowała odpowiedzialność za obsługę starych przeglądarek. Wraz ze zdobywanie popularności wprowadzała nowatorskie rozwiązania jak niektóre selektory do wyszukiwania elementów na stronie, które dopiero później znalazły się na stałe w standardach. Do jQuery napisano niezliczoną liczbę wtyczek i w 2012 stała się technologią, którą poznawał każdy programista jeśli chciał pisać strony internetowe.
 
@@ -48,7 +48,7 @@ Popularność jQuery zaczęła przygasać, dopiero kiedy stało się jasne, że 
 
 Jednak to nie koniec historii. Być może interesuje was, co się stało z technologiami webowymi po tym, jak jQuery przestawało powoli być już potrzebne.
 
-![](../../../assets/2021-04-18/trends.png)
+![](../../../assets/2021-04-18/compatibility-3.png)
 
 W 2013 roku zaczęło być głośno o frameworku Angular Js stworzonym 4 lata wcześniej przez Google. W tym samym momencie Facebook ogłosił powstanie Reacta. Oba narzędzia wdrażały deklaratywny paradygmat budowania interfejsów za pomocą bezstanowych komponentów. Krótko mówiąc, programista definiował warunki mówiące jak frontend ma działać, a komponenty przejmowały odpowiedzialność za warstwę wizualną pozostawiając więcej uwagi programisty do pracy nad logiką biznesową. W uproszczeniu: każde z sprawiało, że kod pisało się jeszcze szybciej niż w jQuery.
 

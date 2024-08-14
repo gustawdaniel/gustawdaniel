@@ -24,19 +24,19 @@ Artykuł oparty jest o analizę scrapingu na konkretnym przypadku. Tutaj jest to
 
 Zawiera ona kilka rejestrów danych powiązanych z medycyną
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-33-55.png)
+![](../../../assets/2021-02-18/medical-1.png)
 
 Załóżmy, że chcemy pobrać wszystkie dane o aptekach z tej strony. Klikamy na rejestr aptek i widzimy:
 
 > [https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public](https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public)
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-35-22.png)
+![](../../../assets/2021-02-18/medical-2.png)
 
 Co ciekawe paginacja nie powoduje tu zmiany adresu url tylko przeładowanie strony i wyświetlenie kolejnego widoku w tabeli.
 
 Po przejściu do zakładki "Network" w konsoli przeglądarki widzimy, że w tle wysyłany jest request
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-36-55.png)
+![](../../../assets/2021-02-18/medical-3.png)
 
 Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane, które ładowane są do tabeli bezpośrednio z api poleceniem
 
@@ -44,7 +44,7 @@ Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC
 ```
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-39-36.png)
+![](../../../assets/2021-02-18/medical-4.png)
 
 Nie ma problemu, żeby pobrać **dwie** apteki:
 
@@ -52,7 +52,7 @@ Nie ma problemu, żeby pobrać **dwie** apteki:
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC | jq '.[][] | {nr: .registrationNumber, name: .owners[0].name}'
 ```
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-45-15.png)
+![](../../../assets/2021-02-18/medical-5.png)
 
 Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 
@@ -60,7 +60,7 @@ Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=10000\&sortField\=originId\&sortDirection\=ASC | jq '.[][].owners[0].name' | wc
 ```
 
-![](../../../assets/2021-02-18/Screenshot-from-2021-02-17-22-48-04.png)
+![](../../../assets/2021-02-18/medical-6.png)
 
 Z paginacji strony widzimy, że rejestr zawiera `23006` apteki. Zatem jeśli możemy pobrać 10k na raz potrzebujemy 3 requestów. Niestety wpisanie `size=23006` rzuca błąd, ale warto sprawdzić `size=15000`. Dwa requesty to zawsze lepiej niż trzy.
 

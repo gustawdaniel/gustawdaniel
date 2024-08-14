@@ -128,7 +128,7 @@ Rdzeń programu `getAltcoins.ts` możemy przenieść z naszego niedawnego wpisu:
 
 Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
 
-![](../../../assets/2021-06-30/Screenshot-from-2021-06-21-13-57-17-1.png)](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+![](../../../assets/2021-06-30/maxdata-1.png)](./scraping-najbardziej-popularnych-kont-na-twitterze/)
 
 Czyli mniej więcej tak:
 
@@ -386,7 +386,7 @@ Compare genres, dialects, time periods. Search by PoS, collocates, synonyms, and
 
 Jest to scam. Zawiera informację, że jest darmowa i wystarczy zarejestrować konto
 
-![](../../../assets/2021-06-30/Screenshot-from-2021-06-27-20-30-56.png)
+![](../../../assets/2021-06-30/maxdata-2.png)
 
 ale posiada ograniczenia przez które możemy skanować dziennie jedynie 50 słów. Straciłem czas próbując automatyzować pobieranie danych z tego serwisu.
 
@@ -678,11 +678,11 @@ ts-node src/preparePhrases.ts
 
 Możemy zobaczyć, że dla bardzo mało znanych coinów, ale za to popularnych słów nasz współczynnik jest bardzo niski.
 
-![](../../../assets/2021-06-30/Screenshot-from-2021-06-28-09-09-53.png)
+![](../../../assets/2021-06-30/maxdata-3.png)
 
 możemy się spodziewać wielu tweetów ze słowami takimi jak `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` czy `kind` w których autor nie miał na myśli kryptowalut. Z drugiej strony nie istnieje obiektywne kryterium odcięcia.
 
-![](../../../assets/2021-06-30/Screenshot-from-2021-06-28-09-07-09.png)
+![](../../../assets/2021-06-30/maxdata-4.png)
 
 Gdybym ustawił je na 100, wycięte zostało by 2328/16395 = 14% fraz. Przy wartości `5` mamy odcięcie 1560/16395 = 9.5%.
 

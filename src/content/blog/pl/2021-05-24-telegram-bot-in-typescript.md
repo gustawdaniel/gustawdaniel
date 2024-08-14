@@ -59,7 +59,7 @@ Aby móc korzystać z API będziemy potrzebowali tokenu. Najprostszym sposobem j
 
 Cała konwersacja polega na tym, że podajemy komendę tworzącą bota, jego `name`, `username` i dostajemy token.
 
-![](../../../assets/2021-05-24/Screenshot-from-2021-04-21-22-23-23.png)
+![](../../../assets/2021-05-24/telegram-1.png)
 
 ## Dołączenie tokenu do projektu
 
@@ -111,7 +111,7 @@ bot.start();
 
 Następnie dołączyć bota do chatu i napisać do niego. Wynik będzie następujący:
 
-![](../../../assets/2021-05-24/Screenshot-from-2021-04-21-22-39-45.png)
+![](../../../assets/2021-05-24/telegram-2.png)
 
 Identyfikator chatu jest kluczową informacją, jeśli chcemy wysyłać do niego powiadomienia. ID chatu i Token to kluczowe informacje mówiące jaki bot i gdzie pisze. W naszym przypadku bot był ustawiony tak, żeby różne dane wysyłać na różne grupy więc musieliśmy powtórzyć to polecenie dla kliku grup i zanotować je w pliku `.env`. Do `.env` dopisujemy linię
 
@@ -132,7 +132,7 @@ setInterval(() => {
 }, 1000)
 ```
 
-![](../../../assets/2021-05-24/Screenshot-from-2021-04-21-22-48-26.png)
+![](../../../assets/2021-05-24/telegram-3.png)
 
 To był bardzo prosty kod i bardzo prosty bot. Z takimi botami można robić praktyczne rzeczy. Np:
 

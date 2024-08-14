@@ -273,7 +273,7 @@ SELECT SQL_TEXT,TIMER_WAIT FROM performance_schema.events_statements_history_lon
 
 powinniśmy zobaczyć czas trwania zapytania wyrażony w pikosekundach
 
-![](../../../assets/2021-06-27/Screenshot-from-2021-06-23-10-29-36.png)
+![](../../../assets/2021-06-27/mathematica-1.png)
 
 Jeśli temat konfiguracji mechanizmu profilowania Cię zainteresował możesz pogłębić wiedzę bezpośrednio w dokumentacji:
 
@@ -473,7 +473,7 @@ different number of rows.",
 Export["plotId.png", %];
 ```
 
-![](../../../assets/2021-06-27/plotId.png)
+![](../../../assets/2021-06-27/mathematica-2.png)
 
 Widzimy, że zarówno dla `InnoDB` jak i `MEMORY` szybkość wybierania po identyfikatorze nie zależy od ilości rekordów w bazie dla naszego zakresu. Na pewno nie jest to zależność, którą można by wyłowić z szumu, który jest tutaj obecny. Widać, że dla tabeli w pamięci operacyjnej selekty są wykonywane szybciej, a czas ich wykonywania jest bardziej regularny. Zupełnie inaczej sytuacja wygląda dla nie indeksowanych atrybutów.
 
@@ -490,7 +490,7 @@ engines for different number of rows.",
 Export["plotVal.png", %];
 ```
 
-![](../../../assets/2021-06-27/plotVal.png)
+![](../../../assets/2021-06-27/mathematica-3.png)
 
 Czas wybierania nie indeksowanego atrybutu rośnie liniowo z wielkością bazy. Tu również tabela zapisana w pamięci operacyjnej działa szybciej.
 
@@ -517,7 +517,7 @@ Histogram[{Flatten[timeIdInnoDB],
 Export["histogram.png", %];
 ```
 
-![](../../../assets/2021-06-27/histogram.png)
+![](../../../assets/2021-06-27/mathematica-4.png)
 
 ### Model
 
@@ -574,7 +574,7 @@ model c HeavisideTheta[x-a](x-a)*Exp[-b(x-a)]",
 Export["model.png", %]
 ```
 
-![](../../../assets/2021-06-27/model.png)
+![](../../../assets/2021-06-27/mathematica-5.png)
 
 To dopiero początek mojej przygody z bazami danych i wciąż temat ten jest znany mi tylko pobieżnie. Z tego względu wpisy dotyczące baz należy taktować bardziej jako notatki ucznia, niż wskazówki eksperta. Mimo to, mam nadzieję, że czas poświęcony na czytanie przełożył się u Ciebie na lepsze wyczucie ilościowych aspektów związanych z wydajnością indeksowania.
 

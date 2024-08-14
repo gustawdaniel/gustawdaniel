@@ -25,11 +25,11 @@ Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `
 
 [Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-16-36-22.png)
+![](../../../assets/2021-02-17/libor-1.png)
 
 Klikam pobierz i nawet dostaję plik, ale po zaznaczeniu pełnego okresu, wybraniu poprawnych danych widzę:
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-16-37-15.png)
+![](../../../assets/2021-02-17/libor-2.png)
 
 > Liczba wierszy ograniczona do 50
 
@@ -50,7 +50,7 @@ Główne cele:
 
 Okazuje się, że jak wyświetlimy tabelę to dane można z niej odczytać i będzie ona paginowana.
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-16-42-52.png)
+![](../../../assets/2021-02-17/libor-3.png)
 
 Linki mają kształt:
 
@@ -66,7 +66,7 @@ https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBOR
 
 Renderowane są po stronie backendu co widzimy sprawdzając źródło strony:
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-16-44-34.png)
+![](../../../assets/2021-02-17/libor-4.png)
 
 Potencjalnie plan 1:
 
@@ -117,15 +117,15 @@ HTTP request sent, awaiting response... 403 Forbidden
 
 Czyżby ta strona była tak często czesana `wgetem`, że admini zablokowali żądania dla domyślnego user agent wgeta?
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-17-12-21.png)
+![](../../../assets/2021-02-17/libor-5.png)
 
 Nie zdziwił bym się, biorąc po uwagę fakt, że Wget wcale się nie kryje ze swoją tożsamością. Httpie nie jest lepszy
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-17-13-43.png)
+![](../../../assets/2021-02-17/libor-6.png)
 
 ale jest mniej znany, dlatego działa
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-17-11-05.png)
+![](../../../assets/2021-02-17/libor-7.png)
 
 Do pobrania plików jak obiecałem wystarczy po 1 linii dla każdego rodzaju:
 
@@ -143,7 +143,7 @@ mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/de
 
 W katalogu `raw` mamy już wszystkie pliki wymagane do przetworzenia
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-17-24-23.png)
+![](../../../assets/2021-02-17/libor-8.png)
 
 # Opisanie docelowej struktury
 
@@ -201,7 +201,7 @@ const getFiles = (): { type: string, content: string }[] => fs
 
 Teraz je przetworzymy pojedynczą tabelę:
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-17-54-06.png)
+![](../../../assets/2021-02-17/libor-9.png)
 
 Ta linia wykonana w kosoli przeglądarki jest sercem całego programu. Należy ją przenieść do `node js`. Abyśmy bez problemu wykonali dynamiczną destrukturyzację potrzebujemy zmienić `target` w `tsconfig.json` na wyższy niż `es5` na przykład `ES2020`.
 
@@ -241,7 +241,7 @@ console.dir(main())
 
 Wykonanie zwraca dane, które musimy jeszcze zredukować do tylko pary kluczy - `LIBORCHF3M` oraz `WIBOR3M`
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-18-43-21.png)
+![](../../../assets/2021-02-17/libor-10.png)
 
 Redukcja wymaga mergowania objektów na kluczach, dlatego dopiszemy do niej funkcję
 
@@ -298,11 +298,11 @@ fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 
 Ilość linii prawdziwego kodu: 30
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-17-15-41-32.png)
+![](../../../assets/2021-02-17/libor-11.png)
 
 Czas wykonania: 1min 15sec
 
-![](../../../assets/2021-02-17/Screenshot-from-2021-02-05-19-15-08.png)
+![](../../../assets/2021-02-17/libor-12.png)
 
 Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
 

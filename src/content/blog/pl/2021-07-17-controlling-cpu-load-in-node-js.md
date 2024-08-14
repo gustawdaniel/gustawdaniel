@@ -21,7 +21,7 @@ W tym wpisie nauczymy się jak tworzyć i kończyć podprocesy w Node JS oraz ja
 
 Jeśli program wykonuje ciężkie obliczenia, ale nie jest zrównoleglony, stan Twojego procesora może wyglądać tak:
 
-![](../../../assets/2021-07-17/cpu0-12.png)
+![](../../../assets/2021-07-17/nodejs-1.png)
 
 Dlatego warto zgłębić ten temat niezależnie od języka, w którym piszesz.
 
@@ -92,7 +92,7 @@ Znak zapisany w `key` jest obiektem o następujących kluczach
 W prezentowanym kodzie obsługujemy zamknięcie procesu kombinacją `ctrl+c` oraz wypisanie w konsoli znaku wybranego na
 klawiaturze. Wpisywanie kolejnych znaków będzie za każdym razem pokazywało je w terminalu.
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-16-18-15-24.png)
+![](../../../assets/2021-07-17/nodejs-2.png)
 
 Następnym krokiem jest zastąpienie wypisywania znaków przez tworzenie lub kasowanie procesów obciążających procesor.
 
@@ -114,7 +114,7 @@ const forks = [];
 Jeśli zapomnielibyśmy o nich przy zamykaniu programu to stały by się one procesami `zombie` - czyli takimi, które żyją
 nadal i bez nadzoru pożerają zasoby komputera.
 
-![](../../../assets/2021-07-17/one-does-not-simply-kill-a-zombie-process.jpg)
+![](../../../assets/2021-07-17/nodejs-3.png)
 
 Aby je usunąć, przed zamknięciem naszego skryptu piszemy kod:
 
@@ -176,17 +176,17 @@ czyli kod napisany tylko po to, żeby symulować obciążenie.
 Po włączeniu programu i wyborze kilku opcji obciążenia widzimy, jak procesy są tworzone oraz kasowane. Dzięki `htop`
 możemy zobaczyć, jak w tym czasie zmienia się zużycie procesora.
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-16-18-51-17.png)
+![](../../../assets/2021-07-17/nodejs-4.png)
 
 Nawet ładniejszy interfejs do monitoringu procesora ma `bashtop`, ponieważ wyświetla również historyczne zużycie. Na
 screenshocie poniżej widzimy, jak modyfikując ilość procesów w naszym programie mogłem symulować różne poziomy obłożenia
 procesora zadaniami.
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-16-15-26-13.png)
+![](../../../assets/2021-07-17/nodejs-5.png)
 
 Oraz jak wyglądało wykorzystanie rdzeni, kiedy wybrałem opcję utworzenia 16 procesów.
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-16-15-30-03.png)
+![](../../../assets/2021-07-17/nodejs-6.png)
 
 Tego programu możemy używać do symulowania obciążenia. W pliku `bomb.js` możemy zastąpić losowanie liczb operacją
 wysyłania żądań http lub zużywania innych zasobów, na przykład pamięci operacyjnej lub dysku.
@@ -254,7 +254,7 @@ już jak złe może to mieć skutki dla wydajności w artykule:
 Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak
 używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
 
-![](../../../assets/2021-07-17/31742.jpg)
+![](../../../assets/2021-07-17/nodejs-7.png)
 
 https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
 
@@ -267,7 +267,7 @@ https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
 Zamiast rozładowywać kolejkę będziemy odczytywać z niej wartości za pomocą zmiennego indeksu, który będzie przesuwał się
 wzdłuż niej. Schemat blokowy programu, który napiszemy jest następujący:
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-13-44-09.png)
+![](../../../assets/2021-07-17/nodejs-8.png)
 
 Jego kod to:
 
@@ -335,7 +335,7 @@ Następnie włączamy nasz program i widzimy jak po kolei sprawdza hasła z kole
 time node force-single.js
 ```
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-13-48-47.png)
+![](../../../assets/2021-07-17/nodejs-9.png)
 
 W kolumnach mamy kolejno indeks, sprawdzaną sekwencję, czas od włączenia programu w milisekundach, informację, czy hasło
 pasuje do hashu oraz aktualną długość kolejki.
@@ -368,19 +368,19 @@ znacznego wzrostu wydajności tego zadania jeśli użyjemy do niego wielu rdzeni
 nasz program tak, aby główny proces zamiast wykonywać sprawdzanie haseł zajmował się obsługą kolejki i zlecaniem
 sprawdzania podrzędnym procesom.
 
-![](../../../assets/2021-07-17/bFbMbDgAT6M6T4zsVmk16Oiip7vIOWaeuEY0vTkkZoU.png)
+![](../../../assets/2021-07-17/nodejs-10.png)
 
 Schemat naszego programu dzieli się na proces główny oraz podprocesy. W procesie głównym tworzona jest lista procesów
 podrzędnych, kolejka oraz nasłuchy na wiadomości z podprocesów. Na końcu każdy podproces dostaje do wykonania zadanie z
 kolejki. Podprocesy po ich wykonaniu zgłaszają się do głównego wątku z odpowiedzą, a ten podnosi indeks i przydziela im
 nowe zadania. Dzieje się tak aż do znalezienia poprawnego hasła.
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-16-35.png)
+![](../../../assets/2021-07-17/nodejs-11.png)
 
 Warto zwrócić uwagę na to, że niezależne dzieci będą wykonywały zadania z różną prędkością, co wpłynie na kolejność
 zgłaszania odpowiedzi. Przykładowy output programu to:
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-26-11.png)
+![](../../../assets/2021-07-17/nodejs-12.png)
 
 Kod dzieli się na dwa pliki:
 
@@ -537,28 +537,28 @@ Jeśli nie słyszałeś o uniwersalnym prawie skalowania, to szybko wprowadzę C
 świecie, gdyby systemy były skalowalne liniowo, to znaczyło by, że dołożenie `n` razy więcej zasobów podnosi wydajność
 lub przepustowość systemu `n` razy. Taką sytuację może obrazować rysunek:
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-56-29.png)
+![](../../../assets/2021-07-17/nodejs-13.png)
 
 Takich sytuacji nie spotyka się jednak w świecie rzeczywistym. Zawsze bowiem występuje pewna nieefektywność związana z
 przydzielaniem danych do węzłów (serwerów lub wątków) oraz z ich zbieraniem. Opóźnienia związane z przydzielaniem i
 odbieraniem danych nazywa się serializacją, czasami można spotkać termin `contention`:
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-56-40.png)
+![](../../../assets/2021-07-17/nodejs-14.png)
 
 Uwzględnienie tego zjawiska prowadzi do modelu Amdahl\`a. Okazuje się jednak, że jest on niewystarczający dla większości
 systemów IT ponieważ całkowicie pomija drugi główny czynnik ograniczający skalowanie - komunikację między
 procesami - `crosstalk`. Graficznie można ją przedstawić tak:
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-56-46.png)
+![](../../../assets/2021-07-17/nodejs-15.png)
 
 O ile serializacja ma koszt proporcjonalny do ilości węzłów, to komunikacja jest proporcjonalna do ich kwadratu - tak
 jak liczba przekątnych wielokąta do ilości kątów
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-14-56-51.png)
+![](../../../assets/2021-07-17/nodejs-16.png)
 
 Na wykresie widzimy krzywe porównujące wpływ ilości węzłów na wydajność w systemu według tych trzech modeli.
 
-![](../../../assets/2021-07-17/usl.png)
+![](../../../assets/2021-07-17/nodejs-17.png)
 
 Dobre (50 stron) opracowanie na ten temat znajduje się pod linkiem:
 
@@ -603,7 +603,7 @@ Show[ListPlot[{#[[1]], #[[2]]/firstMean} & /@ loadEff],
   PlotLabel -> "Gain of efficiency relative to single process"]
 ```
 
-![](../../../assets/2021-07-17/gain-eff.png)
+![](../../../assets/2021-07-17/nodejs-18.png)
 
 Warto pokazać tu bardzo ładny wzór na teoretyczne maksimum
 
@@ -612,7 +612,7 @@ Solve[D[\[Lambda] n/(1 + \[Sigma] (n - 1) + \[Kappa] n (n - 1)),
    n] == 0, n]
 ```
 
-![](../../../assets/2021-07-17/Screenshot-from-2021-07-17-15-21-22.png)
+![](../../../assets/2021-07-17/nodejs-19.png)
 
 Wyliczona numerycznie
 
