@@ -7,7 +7,7 @@ const blogCollection =
     schema: z.object({
         title: z.string(),
         canonicalName: z.string(),
-        pubDate: z.date(),
+        publishDate: z.date(),
         description: z.string(),
         author: z.string(),
     })

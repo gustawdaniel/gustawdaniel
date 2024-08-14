@@ -1,0 +1,13 @@
+---
+
+import PostsList from "../PostsList.astro";
+
+const locale = Astro.currentLocale
+
+---
+
+<main class="container mt-5">
+    <p>Index Page {locale}</p>
+
+    <PostsList/>
+</main>

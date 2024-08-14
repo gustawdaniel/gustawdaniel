@@ -1,7 +1,7 @@
 ---
 title: 'Jak napisać blog na astro od zera i dlaczego warto'
 canonicalName: post-1
-pubDate: 2024-08-03
+publishDate: 2024-08-03
 description: 
   Migracja z Ghosta na Astro zajęła
   kilka razy więcej czasu niż

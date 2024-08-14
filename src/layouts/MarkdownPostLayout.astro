@@ -5,9 +5,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <article class="container">
 
-<h1>{frontmatter.title}</h1>
-<p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+  <h1>{frontmatter.title}</h1>
+<p>Published on: {frontmatter.publishDate.toString().slice(0,10)}</p>
 <p>{frontmatter.description}</p>
     <p>Written by {frontmatter.author}</p>
 
@@ -18,4 +19,5 @@ const { frontmatter } = Astro.props;
 <hr>
 
 <PostsList/>
+  </article>
 </BaseLayout>

@@ -2,14 +2,13 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import LangSwitch from "./LangSwitch.astro";
 
-const aboutURL = getRelativeLocaleUrl("es", "about");
-
 const locale = Astro.currentLocale
 ---
 
-<pre>{getRelativeLocaleUrl(locale, 'blog')}</pre>
-<LangSwitch/>
+<header class="container mt-4">
+  <nav class="flex justify-between text-lg">
+    <a href={getRelativeLocaleUrl(locale, '/')}>Daniel Gustaw</a>
 
-<a href={getRelativeLocaleUrl(locale, '/')}>Home</a>
-<a href={getRelativeLocaleUrl(locale, 'about')}>About</a>
-<a href={getRelativeLocaleUrl(locale, 'blog')}>Blog</a>
+    <LangSwitch/>
+  </nav>
+</header>

@@ -1,7 +1,7 @@
 ---
 import { locales } from '../locales';
 
-const locale = Astro.currentLocale
+const currentLocale = Astro.currentLocale
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import {stripLang} from "../helpers/i18n/stripLang";
 import {fixBlogLocale} from "../helpers/i18n/fixBlogLocale";
@@ -28,11 +28,10 @@ if(currentPath.includes('posts/')) {
 ---
 
 <div>
-    <pre>{locale} | {currentPath} | {translatedPosts.map(p => p.slug).join(';')}</pre>
-    <ul>
     {locales.map(
-        locale => <li>
-            <a href={
+        locale => <span>
+            <a class:list={[ 'uppercase', { 'font-bold text-indigo-400': locale === currentLocale } ]}
+               href={
                 fixBlogLocale(
                     getRelativeLocaleUrl(
                         locale,
@@ -41,10 +40,7 @@ if(currentPath.includes('posts/')) {
                     locale,
                     translatedPosts.map(p => p.slug)
                 )
-            }>
-                {locale}
-            </a>
-        </li>
+            }>{locale}</a>
+        </span>
     )}
-    </ul>
 </div>
