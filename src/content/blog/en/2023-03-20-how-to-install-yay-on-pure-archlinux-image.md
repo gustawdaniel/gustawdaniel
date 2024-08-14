@@ -21,7 +21,7 @@ title: How to Install Yay on a Pure Arch Linux Docker Image
 
 In this article, we will guide you through the process of installing the `yay` AUR helper on a pure Arch Linux Docker image. Yay is a popular, user-friendly tool for managing packages from the Arch User Repository (AUR). Installing `yay` on an Arch Linux Docker image can help you streamline package management and keep your containerized applications up-to-date.
 
-![](../../../assets/2023-03-20/linux-1.png)
+![](https://ucarecdn.com/6e96a98f-6c66-4687-9621-b29431e820b5/)
 
 ## Preparing the Arch Linux Docker Image
 
@@ -103,7 +103,7 @@ and install first package. For example
 yay -S gpt-cli
 ```
 
-![](../../../assets/2023-03-20/linux-2.png)
+![](https://ucarecdn.com/43be4bb9-02a5-4b86-b987-72fcd9f4c485/)
 
 It allow to recommend you linux commands using `openai` api with `gpt-3.5-turbo` model. You can test it typing:
 
@@ -117,7 +117,7 @@ you will see info that script presented below was copied to your clipboard
 perl -e 'sub f{ $_[0] < 2 ? $_[0] : f($_[0]-1) + f($_[0]-2) }; foreach(0..9){ print f($_), "\n"; }'
 ```
 
-![](../../../assets/2023-03-20/linux-3.png)
+![](https://ucarecdn.com/8743f013-5a07-42fc-bde9-43ec61fad1d2/)
 
 You can read full docs of `gpt-cli` on github.
 

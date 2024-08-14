@@ -107,7 +107,7 @@ We can divide our problem to three steps:
 * multiplication of Quaternions
 * formatting Quaternion again to string
 
-![](../../../assets/2023-01-20/quaternion-1.png)
+![](https://ucarecdn.com/8467207d-4e35-4dd6-ac96-8b874028e6ef/)
 
 These high-level operations can be implemented in NodeJS
 
@@ -152,7 +152,7 @@ should be treated as array of quaternions - separated by brackets. In any bracke
 * creating Quaternions from arrays of coefficients
 * extracing number from coefficient
 
-![](../../../assets/2023-01-20/quaternion-2.png)
+![](https://ucarecdn.com/dd766517-6a3f-4c23-b9df-dbf68b0c0c80/)
 
 In NodeJS we can start from two tests. First for simple cases:
 
@@ -368,7 +368,7 @@ or in `rust`:
 
 Multiplication of two quaternions is similar to multiplication of polynomials. Firstly we muliply any components pairs each other. Then we can group them by component type and finally add coefficients. Difference is that in polynomial multiplication we always adding powers, but in Quaternions we using noncommutative division algebra presented on table:
 
-![](../../../assets/2023-01-20/quaternion-3.png)
+![](https://ucarecdn.com/c7947573-0696-486e-8bd7-ffbfc5b8c85c/)
 
 So basically we can divide our problem to:
 
@@ -611,7 +611,7 @@ but generally idea is the same.
 
 Now we have program that can read input, convert it to array of Quaternions and multiply them.
 
-![](../../../assets/2023-01-20/quaternion-4.png)
+![](https://ucarecdn.com/0dd8108f-02cd-4dfd-84c6-63517935dd45/)
 
 Last lacking element is formatting result as string.
 

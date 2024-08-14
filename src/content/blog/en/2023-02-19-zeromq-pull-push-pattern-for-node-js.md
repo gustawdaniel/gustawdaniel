@@ -105,6 +105,6 @@ main().catch(console.error)
 
 I will see almost instant `push 1..10` and then any `2` seconds new lines with `Received Job`.
 
-![](../../../assets/2023-02-19/queue-1.png)
+![](https://ucarecdn.com/a0d0f0c3-36aa-4836-acfc-d8986441cc0b/)
 
 Of course you can use many instances of scripts that are workers and do these jobs in independent processes. In this case I wanted streamline outgoing http requests so I decided to process them in single `pull` and inject these requests from different places of code by `push`. So you can see that there is huge variety of applications especially, taking into account that I presented only one pattern from 4 available in ZeroMQ.

@@ -26,3 +26,4 @@ pnpm-debug.log*
 src/assets
 src/content/blog/pl/uploadcare.py
 src/content/blog/pl/upload.py
+src/content/blog/en/upload.py

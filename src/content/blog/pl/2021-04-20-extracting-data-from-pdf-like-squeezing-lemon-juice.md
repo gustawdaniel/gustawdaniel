@@ -18,7 +18,7 @@ Dane są wszystkim co jest lub może być przetwarzane umysłowo lub komputerowo
 
 W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF. Dla przykładu posłużymy się biletami kolejowymi ponieważ nie zawierają żadnych danych objętych tajemnicą, ale równie dobrze mogły to by być faktury, umowy czy pliki CV.
 
-![](../../../assets/2021-04-20/pdf-1.png)
+![](https://ucarecdn.com/97f6f2a3-ee40-4587-9856-b4e0acae8f3d/)
 
 **Zdobycie danych**
 
@@ -30,7 +30,7 @@ bilet pkp has:attachment -in:chats from:bilet.eic@intercity.pl to:me
 
 Oto widok jaki widzę po filtrowaniu:
 
-![](../../../assets/2021-04-20/pdf-2.png)
+![](https://ucarecdn.com/197afc96-cebe-47bb-9bc8-7728243c3c48/)
 
 Teraz wystarczyło pobrać pliki aby móc poddać je obróbce.
 
@@ -40,7 +40,7 @@ Wszystkie załączniki zapisałem na dysku twardym w katalogu ocr. Tak jak w ka�
 
 Zaczniemy od ustalenia początkowej zawartości katalogu. Jest wypełniony pikamy PDF.
 
-![](../../../assets/2021-04-20/pdf-3.png)
+![](https://ucarecdn.com/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb/)
 
 Dzięki narzędziu `pdftotext` z pakietu `poppler-utils` możemy wydobyć z plików PDF interesujące nas informacje w postaci czystego tekstu. Następującym poleceniem możemy zainstalować to narzędzie:
 
@@ -64,7 +64,7 @@ Polecenie to składa się z dwóch części. W pierwszej listuję wszystkie plik
 
 Łatwo sprawdzimy czy faktycznie istnieją dzięki poleceniu `ls`
 
-![](../../../assets/2021-04-20/pdf-4.png)
+![](https://ucarecdn.com/3e37bea4-5125-4ec4-99eb-f0216fcf4add/)
 
 **Strukturyzacja danych**
 
@@ -76,7 +76,7 @@ ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\
 
 Ta linia zwróciła `786.11` czyli koszt wszystkich biletów.
 
-![](../../../assets/2021-04-20/pdf-5.png)
+![](https://ucarecdn.com/e65863c8-b467-4dd1-ba24-5ff7657017c4/)
 
 Wejdziemy teraz głębiej i zobaczmy co się za tym kryje. Wyświetlimy jeden z plików tekstowych poleceniem `cat eic_67584344.txt`:
 
@@ -203,7 +203,7 @@ Polecenie to można wytłumaczyć następująco:
 
 Problem jaki mamy to polski `,` zamiast ogólnie stosowanej na świecie `.`. Ten problem bardzo łatwo eliminujemy poleceniem `tr` które zamienia swój pierwszy argument na drugi.
 
-![](../../../assets/2021-04-20/pdf-6.png)
+![](https://ucarecdn.com/d12a72a6-1834-461a-81e9-3b7b89753873/)
 
 Nie będziemy oczywiście powtarzać tych poleceń dla każdego pliku osobno. Zamiast tego ponownie wykorzystamy znany już `xargs`
 
@@ -227,7 +227,7 @@ Zostało już tylko sumowanie, ale suma kolumn z pliku tekstowego to bułka z ma
 
 Za pomocą `paste` z opcją `-s` wykonamy transpozycję do jednej linii. Opcją `d` ustawimy separator. Będzie nim oczywiście znak dodawania `+`. Wynik wygląda miej więcej tak:
 
-![](../../../assets/2021-04-20/pdf-7.png)
+![](https://ucarecdn.com/f286948c-7e71-4731-9b99-17f037f74813/)
 
 Ostatnia cegiełka `bc` kończy zadanie, ale to było prezentowane na samym początku:
 
@@ -256,7 +256,7 @@ Kolejna komenda, dodaje numery kolumn `cat -n` i rysuje wykres
 ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\n";}' | tr , . | cat -n | chart line
 ```
 
-![](../../../assets/2021-04-20/pdf-8.png)
+![](https://ucarecdn.com/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad/)
 
 Podsumowując. Nie napracowaliśmy się tutaj za bardzo ale właśnie to było celem. Pokazanie jak jedną linią kodu można posumować ceny lub wyrysować wykres z danych, które pozornie są niedostępne, bo ich format nie jest tak oczywisty jak w przypadku uporządkowanych danych zapisanych w bazie o dobrze określonej strukturze.
 

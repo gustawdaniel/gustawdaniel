@@ -18,7 +18,7 @@ W scrapingu ważnym czynnikiem jest skala, do jakiej możemy rozszerzyć tempo p
 
 Teraz pokażę w jaki sposób rozstawić serwery z linii poleceń `terraform`. Dostawcą będzie Digital Ocean, ponieważ w porównaniu ze swoją największą konkurencją ma bardzo korzystne (8-10 razy niższe) ceny transferu sieciowego.
 
-![](../../../assets/2021-03-04/iac-1.png)
+![](https://ucarecdn.com/72ece5c5-d1f6-4ebe-8859-9a24cd3b0792/)
 
 https://www.digitalocean.com/pricing/calculator/
 
@@ -36,7 +36,7 @@ yay -S terraform
 
 Aby połączyć się z Digital Ocean potrzebujemy tokenu. Jeśli go nie posiadamy, znajdziemy w zakładce API w panelu przycisk "Generate New Token"
 
-![](../../../assets/2021-03-04/iac-2.png)
+![](https://ucarecdn.com/7b60cea7-c6e4-45e7-bdac-d6d058495700/)
 
 Token warto zapisać w `~/.zshrc` lub `~/.bashrc`
 
@@ -105,7 +105,7 @@ resource "digitalocean_droplet" "web" {
 
 Są to klucze, które znajdziemy w zakładce "Settings -> Security" w panelu Digital Ocean
 
-![](../../../assets/2021-03-04/iac-3.png)
+![](https://ucarecdn.com/13c7dbc8-5b4f-4843-88e2-1e942b199997/)
 
 Wykonanie
 
@@ -115,7 +115,7 @@ Wykonanie
 
 Sprawdzi, czy nasza konfiguracja jest ok i pozwoli zobaczyć jak zmieni się architektura po wdrożeniu. W tym przypadku będzie to dodanie jednego serwera - dokładnie tak jak napisaliśmy w konfiguracji
 
-![](../../../assets/2021-03-04/iac-4.png)
+![](https://ucarecdn.com/bfa6cdb3-6771-4e57-a5e8-a4d2038b709d/)
 
 Wdrożenie wykonamy wpisując
 
@@ -135,7 +135,7 @@ Aby zobaczyć co postawiliśmy wykonujemy polecenie:
 
 Zwraca ono dane na temat zasobów zarządzanych przez `terraform`
 
-![](../../../assets/2021-03-04/iac-5.png)
+![](https://ucarecdn.com/327be4b6-5983-4721-865e-d1f701442660/)
 
 Najbardziej interesujące jest dla nas `ip`. W tym przypadku `164.90.174.250`.
 
@@ -147,7 +147,7 @@ ssh -o "StrictHostKeyChecking no" root@164.90.174.250
 
 Jak widać działa, bo komenda zalogowała nas na serwer `web-1` jako `root`.
 
-![](../../../assets/2021-03-04/iac-6.png)
+![](https://ucarecdn.com/31769e58-e37d-457e-a28f-09e42b3718aa/)
 
 Po powrocie do `localhost` poleceniem
 

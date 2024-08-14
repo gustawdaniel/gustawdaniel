@@ -51,7 +51,7 @@ Now you can install by
 sudo dnf install -y mongodb-org
 ```
 
-![](../../../assets/2023-03-02/mongodb-1.png)
+![](https://ucarecdn.com/248dfc2f-9001-42a9-ab1c-56499b862376/)
 
 so there are two assumptions that are correct:
 
@@ -66,7 +66,7 @@ sudo systemctl start mongod
 
 And you can connect with mongodb by `mongosh`
 
-![](../../../assets/2023-03-02/mongodb-2.png)
+![](https://ucarecdn.com/cd36581b-5767-4983-8381-b05d8ef53202/)
 
 Mongosh is better than `mongo` command because of colors and autocompletion, so use `mongosh` instead of `mongo`.
 
@@ -92,7 +92,7 @@ and install it
 sudo dnf install -y mongodb-compass-1.35.0.x86_64.rpm
 ```
 
-![](../../../assets/2023-03-02/mongodb-3.png)
+![](https://ucarecdn.com/d539655f-fa59-41a2-b203-e219fc72a510/)
 
 ## Enable Mongo Replica Set locally
 
@@ -133,7 +133,7 @@ then you can confirm changes by
 rs.status()
 ```
 
-![](../../../assets/2023-03-02/mongodb-4.png)
+![](https://ucarecdn.com/89eeb74d-98d4-43f3-90c5-ddf888fb0534/)
 
 If you experiencing more complications there is great article with advanced config
 
@@ -145,4 +145,4 @@ The practice of synchronizing data across multiple separate databases is called 
 
 ![](https://www.digitalocean.com/_next/static/media/intro-to-cloud.d49bc5f7.jpeg)](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04)
 
-![](../../../assets/2023-03-02/mongodb-5.png)
+![](https://ucarecdn.com/dd7f7dee-6cd4-4048-bc05-f83127be372f/)

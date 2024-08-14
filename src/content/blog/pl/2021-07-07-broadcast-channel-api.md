@@ -107,21 +107,21 @@ Przy okazji użyliśmy tu innego API - performance:
 
 Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
 
-![](../../../assets/2021-07-07/web-api-1.png)
+![](https://ucarecdn.com/460465c8-3065-49e4-9856-b06dbd448dcd/)
 
 Nic nie stoi na przeszkodzie, żebyśmy włączyli cztery karty na raz. Wtedy wiadomości od trzech pozostałych w każdej z nich będą się wzajemnie przeplatać.
 
-![](../../../assets/2021-07-07/web-api-2.png)
+![](https://ucarecdn.com/7d5446fd-3412-4adb-aaa2-ee9f4493f039/)
 
 Możemy wrócić do dwóch kart i odświeżyć kilka razy tą z prawej strony. W wyniku takiego działania ta po lewej dostanie kilkukrotnie nowe powiadomienia, a na tej prawej nie będzie widać nic poza jej własnym przedstawieniem się ponieważ lewa karta zakończyła już nadawanie wiadomości. Konkretny wynik odświeżania prawej karty przedstawia screenshot:
 
-![](../../../assets/2021-07-07/web-api-3.png)
+![](https://ucarecdn.com/b0784926-0177-48cb-9841-b51e8bc24203/)
 
 Widzimy tu, że wiadomości pochodzą od różnych ID, bo karta po prawej zmienia ID przy każdym odświeżeniu.
 
 Kolejny eksperyment to sprawdzenie czy Broad Cast Channel działa między różnymi przeglądarkami:
 
-![](../../../assets/2021-07-07/web-api-4.png)
+![](https://ucarecdn.com/a391acb2-05de-4311-ab57-d5cb2b76007f/)
 
 Okazało się, że nie. Ma to sens, bo jeśli miało by działać między przeglądarkami, to musiała by istnieć komunikacja między procesami utrzymującymi przeglądarki.
 
@@ -131,17 +131,11 @@ Broadcast Channel ma zasięg działania w dla wszystkich kart, przeglądarek, if
 
 Więcej o samym Origin możemy przeczytać w słowniku Mozilla Developers
 
-[Origin - MDN Web Docs Glossary: Definitions of Web-related terms | MDN
-
-Web content’s origin is defined by the scheme (protocol), hostname (domain), and port of the URL used to access it. Two objects have the same origin only when the scheme, hostname, and port all match.
-
-![](https://developer.mozilla.org/apple-touch-icon.0ea0fa02.png)MDN
-
-![](https://developer.mozilla.org/mdn-social-share.0ca9dbda.png)](https://developer.mozilla.org/en-US/docs/Glossary/Origin)
+[Origin - MDN Web Docs Glossary: Definitions of Web-related terms](https://developer.mozilla.org/en-US/docs/Glossary/Origin)
 
 Sprawdzimy czy dla różnych komputerów też będzie działał poprawnie. W tym celu musimy zmienić ustawienia parcela, bo obecnie wystawia on nasz serwis na localhost
 
-![](../../../assets/2021-07-07/web-api-5.png)
+![](https://ucarecdn.com/f181a0be-8a4c-460e-8b88-af06434063a3/)
 
 Nasz obecny adres IP możemy sprawdzić poleceniem
 
@@ -149,7 +143,7 @@ Nasz obecny adres IP możemy sprawdzić poleceniem
 ip route
 ```
 
-![](../../../assets/2021-07-07/web-api-6.png)
+![](https://ucarecdn.com/3dc7b0ef-fae0-45df-9f23-179df34c5106/)
 
 Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 
@@ -163,7 +157,7 @@ Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 parce index.html --host 192.168.2.162
 ```
 
-![](../../../assets/2021-07-07/web-api-7.png)
+![](https://ucarecdn.com/ea9494ab-6361-42e8-a9c8-88e8e2a3646d/)
 
 Okazało się, że komunikacja nie jest przesyłana między różnymi komputerami.
 

@@ -24,7 +24,7 @@ Omówimy dwa rozwiązania zadania, które stosowane było podczas pewnej rekruta
 
 W samolocie rozmieszczone są miejsca. Tworzą one trzy zestawy zawierające kolejno 3, 4 i 3 siedzenia sąsiadujące ze sobą. Zakładamy, że wiersze liczone są od 1 a kolumny indeksowane za pomocą liter alfabetu jak w tabeli EXCEL (od A do K). Schemat samolotu przedstawia poniższy rysunek. Zakładamy, że wszystkie miejsca mają taki sam układ jak te oznaczone na niebiesko.
 
-![](../../../assets/2021-04-19/algorithm-1.png)
+![](https://ucarecdn.com/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9/)
 
 Zakładamy, że samolot ma długość `N` rzędów z miejscami. Znamy też aktualne zapełnienie miejsc, które zapisane jest w postaci ciągu znakowego `S` jako oddzielone spacją współrzędne numeru wiersza i kolumny, np:
 
@@ -305,27 +305,27 @@ Do profilowania możemy użyć flagi `--porf`, spowoduje ona powstanie pliku z l
 
 Jego przeglądanie nie jest łatwe jeśli nie wie się czego szukać. Ten plik wygląda mniej więcej tak:
 
-![](../../../assets/2021-04-19/algorithm-2.png)
+![](https://ucarecdn.com/d3709132-8973-4019-b6a5-bbe082a7142e/)
 
 Na szczęście Webstorm ma ciekawe narzędzia do profilowania, które pod spodem robią to samo co ta flaga, ale nakładają graficzną nakładkę i wykresy, które pozwalają na odnalezienie się w logach i szybkie dotarcie do źródła problemu. Aby skonfigurować profilowanie zaznaczamy w ustawieniach `Coding assistance for Node.js`
 
-![](../../../assets/2021-04-19/algorithm-3.png)
+![](https://ucarecdn.com/2dbfbc25-faf3-4b30-96c4-10804664593c/)
 
 Następnie tworzymy profil, który wystartuje nasz skrypt z odpowiednimi parametrami
 
-![](../../../assets/2021-04-19/algorithm-4.png)
+![](https://ucarecdn.com/43a371ac-f72d-4e4f-824f-48d82b77915b/)
 
 a w zakładce `V8 Profiling` zaznaczamy opcję profilowania.
 
-![](../../../assets/2021-04-19/algorithm-5.png)
+![](https://ucarecdn.com/4c4e1fd8-521b-4d46-9765-62032b9b7527/)
 
 Po wybraniu zielonego trójkąta startującego profilowanie
 
-![](../../../assets/2021-04-19/algorithm-6.png)
+![](https://ucarecdn.com/69644d36-ba44-4026-b579-442715c7f781/)
 
 zobaczymy logi uporządkowane względem procentowego udziału w czasie wykonywania.
 
-![](../../../assets/2021-04-19/algorithm-7.png)
+![](https://ucarecdn.com/b08006c7-6808-4c90-82e6-dca997d39d54/)
 
 Ten widok pozwala wyłowić najcięższe funkcje względem całkowitego czasu wykonywania. Więcej o profilowaniu możesz poczytać w dokumentacji WebStorms.
 
@@ -461,7 +461,7 @@ Testing arrays of size 130000
 
 W przeglądarce te operacje trwają dwa razy krócej ale i tak różnica między `pop` a `shift` jest ogromna i każde 50-100 elementów tablic dodaje milisekundę do czasu wykonywania `shift`.
 
-![](../../../assets/2021-04-19/algorithm-8.png)
+![](https://ucarecdn.com/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a/)
 
 Przerabiając ten kod do testowania po raz drugi możemy uzyskać wersję, która będzie dobrze działać w przeglądarce i pozwoli na wygenerowanie danych do narysowania wykresu:
 
@@ -528,7 +528,7 @@ const data = {
 };
 ```
 
-![](../../../assets/2021-04-19/algorithm-9.png)
+![](https://ucarecdn.com/619da3bc-ba97-4390-b8cd-65344f86db03/)
 
 ## Ponowne porównanie rozwiązań
 
@@ -580,4 +580,4 @@ for (let N = 250000; N < 1000000; N += 250000) {
 
 Wyniki prezentują czas w milisekundach. Są to kolejno czasy Daniela, Marcina i stosunki czasów Marcina do Daniela. Kolumny pokazują ilość zajętych miejsc, a wiersze ilość rzędów w samolocie.
 
-![](../../../assets/2021-04-19/algorithm-10.png)
+![](https://ucarecdn.com/0497009b-a592-4043-8759-fc5d86f31cf6/)

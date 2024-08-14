@@ -117,13 +117,13 @@ Problem stanowi to, że `i18next` nie wykrył wszystkich tłumaczeń.
 
 Na początku wykonałem pracę ręcznie. Posortowałem oba pliki w serwisie: `codeshack.io/json-sorter`
 
-![](../../../assets/2021-02-26/diff-1.png)
+![](https://ucarecdn.com/5459cca6-ed9e-4f75-8933-90306a6307fc/)
 
 https://codeshack.io/json-sorter/
 
 Następnie w serwisie `diffchecker` wyznaczyłem różnice między
 
-![](../../../assets/2021-02-26/diff-2.png)
+![](https://ucarecdn.com/6028a6b5-ca6a-4baa-b16d-fb66a7199df3/)
 
 https://www.diffchecker.com/yffDMWff
 
@@ -135,7 +135,7 @@ node ../DevTools/json-diff.js src/locales/en_old.json src/locales/en.json > src/
 
 Plik wyświetlony i formatowany przez `jq` wygląda tak:
 
-![](../../../assets/2021-02-26/diff-3.png)
+![](https://ucarecdn.com/dd621642-427b-4560-9f26-b08150f04e97/)
 
 Widzimy, że zawiera wszystkie brakujące klucze.
 

@@ -42,7 +42,7 @@ Przed rozpoczęciem scrapingu należy zawsze wybrać odpowiedni wektor pozyskiwa
 
 Mamy request o wyrenderowaną już stronę:
 
-![](../../../assets/2021-06-21/twitter-1.png)
+![](https://ucarecdn.com/d6f34ea7-4697-432f-9637-055a8e1fae8f/)
 
 więc rendering musi odbywać się na backendzie. Potwierdzimy to sprawdzając źródło strony.
 
@@ -52,7 +52,7 @@ view-source:https://www.trackalytics.com/the-most-followed-twitter-profiles/page
 
 Faktycznie widzimy tu dane gotowe do scrapingu:
 
-![](../../../assets/2021-06-21/twitter-2.png)
+![](https://ucarecdn.com/ebca2c49-e69c-4962-ac42-fda0fab108ef/)
 
 Napiszemy więc skrypt, który pobierze ja i przetworzy za pomocą biblioteki `cheerio`.
 
@@ -130,7 +130,7 @@ Mamy tu za zaimplementowania interfejs kont wynikający ze struktury pobieranych
 
 Patrząc na wyświetlane dane:
 
-![](../../../assets/2021-06-21/twitter-3.png)
+![](https://ucarecdn.com/ac9cf5b4-0b47-4b21-9d6d-52db34010d12/)
 
 Można stworzyć następujący interfejs opisujący konto Twittera
 
@@ -217,7 +217,7 @@ return {
 }})
 ```
 
-![](../../../assets/2021-06-21/twitter-4.png)
+![](https://ucarecdn.com/cdfec776-07ad-40de-8ed3-1caa9e79c100/)
 
 W `node js` nie mamy obiektu `document` i aby wykonywać selektory na drzewie dom musimy je zbudować z tekstu tak jak robi to przeglądarka. Z tym, że zamiast natywnie wbudowanego mechanizmu wykorzystamy do tego jedną z popularnych bibliotek. Najbardziej znane są:
 
@@ -304,7 +304,7 @@ time DEBUG=app ts-node index.ts
 
 Poniżej widzimy jak wygląda ono w otoczeniu programów `bmon` do monitorowania interfejsów sieciowych oraz `htop` do sprawdzania pamięci `ram` oraz zużycia procesora.
 
-![](../../../assets/2021-06-21/twitter-5.png)
+![](https://ucarecdn.com/cc657994-e0d6-4ec3-ba19-2256dba98c2d/)
 
 Do zapisania tego pliku w bazie danych mongo możemy użyć polecenia:
 

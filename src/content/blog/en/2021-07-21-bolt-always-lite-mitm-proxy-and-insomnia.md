@@ -66,7 +66,7 @@ After I catched all the necessary requests I've proceeded to Insomnia to check w
 
 The Bolt API, though not public, has still very descriptive error codes such as:
 
-![](../../../assets/2021-07-21/attack-1.png)
+![](https://ucarecdn.com/f1448226-f620-4b89-846f-5b11ac381211/)
 
 You will encounter such errors a lot - the most important thing is to listen to them!
 
@@ -74,17 +74,17 @@ Because of that I knew we need to take a step back and first search for a taxi o
 
 ### **Searching for taxi options**
 
-![](../../../assets/2021-07-21/attack-2.png)
+![](https://ucarecdn.com/91e0520b-03f7-4f91-923e-59a732c25770/)
 
 Sending such payload returns us with the list of possible fares and available bolt categories:
 
-![](../../../assets/2021-07-21/attack-3.png)
+![](https://ucarecdn.com/4782afcb-fec5-43b5-817b-41ea04ddccac/)
 
 What's intriguing about it is that we also get "surge\_multiplier" parameter, which is not visible in the app. Nice!
 
 ## **Request flow**
 
-![](../../../assets/2021-07-21/attack-4.png)
+![](https://ucarecdn.com/93e25608-e518-4c95-94d1-45ba8cfecba9/)
 
 ## **Constant reuqest queries**
 
@@ -125,13 +125,13 @@ The only issue is that you still need to get you API key. Sadly, you won't be ab
 Maybe we could get this token with bolt web application?
 There's a bolt mobile web app but sadly, it doesn't really work anywhere:
 
-![](../../../assets/2021-07-21/attack-5.png)
+![](https://ucarecdn.com/5727bb63-8155-4a8c-a3ea-76b298e091ce/)
 
 A sad alert you will get whenever you move the pickup pin on m.bolt.eu.
 
 And if you look into HTTP requests that are sent back and forth:
 
-![](../../../assets/2021-07-21/attack-6.png)
+![](https://ucarecdn.com/a79b67c9-8fe9-45d9-8e98-4166d0281d01/)
 
 That's pretty much it! Thanks for reading folks!
 

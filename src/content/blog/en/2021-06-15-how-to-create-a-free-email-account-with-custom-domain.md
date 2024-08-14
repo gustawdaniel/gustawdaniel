@@ -22,7 +22,7 @@ After both Google and Microsoft enabled creation of custom emails only for paid 
 
 First we will go to [https://mail.yandex.com/](https://mail.yandex.com/) and create new Yandex account which will be organization-wide admin account.
 
-![](../../../assets/2021-06-15/mail-1.png)
+![](https://ucarecdn.com/ea76807c-665f-4dcf-936d-dd79cf9c0c26/)
 
 You can choose to verify your account with phone number or a security question.
 
@@ -32,7 +32,7 @@ Login to newly created account on [https://mail.yandex.com/](https://mail.yandex
 
 As an option choose DNS and add TXT record to your domain provider's DNS zone.
 
-![](../../../assets/2021-06-15/mail-2.png)
+![](https://ucarecdn.com/ecaba573-f41c-40a9-a41b-d5881287d213/)
 
 It should look simmilar to this.
 
@@ -42,7 +42,7 @@ To create a new email account go to [https://connect.yandex.com/portal/admin/use
 Then click **Все сотрудники**and add a new user by clicking "Add" and choosing "Add a person".
 You can also create mailing lists by "Creating a department" and adding people to it.
 
-![](../../../assets/2021-06-15/mail-3.png)
+![](https://ucarecdn.com/f37e8ee3-9030-4be4-8de2-391e9f0c799b/)
 
 Congratulations! You've just created a custom email for free!
 

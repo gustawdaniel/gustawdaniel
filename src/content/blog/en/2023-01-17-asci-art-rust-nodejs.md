@@ -35,7 +35,7 @@ It can be solved using the following concepts.
 
 In stations and airports you often see this type of screen:
 
-![](../../../assets/2023-01-17/asci-1.png)
+![](https://ucarecdn.com/bde46da2-a48c-4b4f-858d-af642e708b0f/)
 
 Have you ever asked yourself how it might be possible to simulate this display on a good old terminal? We have: with ASCII art!
 

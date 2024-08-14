@@ -25,11 +25,11 @@ Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `
 
 [Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
-![](../../../assets/2021-02-17/libor-1.png)
+![](https://ucarecdn.com/3d264f28-b578-4109-a4e7-939d74de1e3f/)
 
 Klikam pobierz i nawet dostaję plik, ale po zaznaczeniu pełnego okresu, wybraniu poprawnych danych widzę:
 
-![](../../../assets/2021-02-17/libor-2.png)
+![](https://ucarecdn.com/da1f58ed-b8f1-431c-a159-8caf6f8d1356/)
 
 > Liczba wierszy ograniczona do 50
 
@@ -50,7 +50,7 @@ Główne cele:
 
 Okazuje się, że jak wyświetlimy tabelę to dane można z niej odczytać i będzie ona paginowana.
 
-![](../../../assets/2021-02-17/libor-3.png)
+![](https://ucarecdn.com/f21ad04b-f819-4688-9304-ca972265f3cf/)
 
 Linki mają kształt:
 
@@ -66,7 +66,7 @@ https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBOR
 
 Renderowane są po stronie backendu co widzimy sprawdzając źródło strony:
 
-![](../../../assets/2021-02-17/libor-4.png)
+![](https://ucarecdn.com/d2d08c47-c9b0-4aca-bd95-24bc095de2e1/)
 
 Potencjalnie plan 1:
 
@@ -117,15 +117,15 @@ HTTP request sent, awaiting response... 403 Forbidden
 
 Czyżby ta strona była tak często czesana `wgetem`, że admini zablokowali żądania dla domyślnego user agent wgeta?
 
-![](../../../assets/2021-02-17/libor-5.png)
+![](https://ucarecdn.com/a01f54f5-5d4c-47d2-b9b8-220e924bed30/)
 
 Nie zdziwił bym się, biorąc po uwagę fakt, że Wget wcale się nie kryje ze swoją tożsamością. Httpie nie jest lepszy
 
-![](../../../assets/2021-02-17/libor-6.png)
+![](https://ucarecdn.com/2d2cbb6c-17d2-451f-95ab-a67271405e5f/)
 
 ale jest mniej znany, dlatego działa
 
-![](../../../assets/2021-02-17/libor-7.png)
+![](https://ucarecdn.com/f636546c-641b-4405-853f-faa0c337217d/)
 
 Do pobrania plików jak obiecałem wystarczy po 1 linii dla każdego rodzaju:
 
@@ -143,7 +143,7 @@ mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/de
 
 W katalogu `raw` mamy już wszystkie pliki wymagane do przetworzenia
 
-![](../../../assets/2021-02-17/libor-8.png)
+![](https://ucarecdn.com/6a907b6c-e625-46a2-be35-270e2fdc5229/)
 
 # Opisanie docelowej struktury
 
@@ -201,7 +201,7 @@ const getFiles = (): { type: string, content: string }[] => fs
 
 Teraz je przetworzymy pojedynczą tabelę:
 
-![](../../../assets/2021-02-17/libor-9.png)
+![](https://ucarecdn.com/ad5cde4e-061f-48f4-b58c-9a9dd680399e/)
 
 Ta linia wykonana w kosoli przeglądarki jest sercem całego programu. Należy ją przenieść do `node js`. Abyśmy bez problemu wykonali dynamiczną destrukturyzację potrzebujemy zmienić `target` w `tsconfig.json` na wyższy niż `es5` na przykład `ES2020`.
 
@@ -241,7 +241,7 @@ console.dir(main())
 
 Wykonanie zwraca dane, które musimy jeszcze zredukować do tylko pary kluczy - `LIBORCHF3M` oraz `WIBOR3M`
 
-![](../../../assets/2021-02-17/libor-10.png)
+![](https://ucarecdn.com/67386ff8-1f34-41e8-b420-8de3aba109bd/)
 
 Redukcja wymaga mergowania objektów na kluczach, dlatego dopiszemy do niej funkcję
 
@@ -298,11 +298,11 @@ fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 
 Ilość linii prawdziwego kodu: 30
 
-![](../../../assets/2021-02-17/libor-11.png)
+![](https://ucarecdn.com/903a0aff-c5e9-444b-b7eb-ce8eb9910c17/)
 
 Czas wykonania: 1min 15sec
 
-![](../../../assets/2021-02-17/libor-12.png)
+![](https://ucarecdn.com/9c30542e-2868-494f-b185-951200f3aece/)
 
 Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
 
@@ -374,30 +374,12 @@ ts-node app.ts  29.53s user 1.21s system 141% cpu 21.729 total
 
 Pełny DIFF jest dostępny pod linkiem:
 
-[JSDOM replaced by Cheerio (3.4) times faster (4cff4a83) · Commits · gustawdaniel / money-pl-scraper
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/money-pl-scraper/-/commit/4cff4a835589976ca26a7852f67dd42f2c4f2525)
+[JSDOM replaced by Cheerio (3.4) times faster (4cff4a83) · Commits · gustawdaniel / money-pl-scraper](https://gitlab.com/gustawdaniel/money-pl-scraper/-/commit/4cff4a835589976ca26a7852f67dd42f2c4f2525)
 
 Jeśli chcesz porozmawiać o scrapingu w ramach bezpłatnej, nie zobowiązującej konsultacji, zapraszam Cię na mój Calendy.
 
-[Daniel Gustaw
-
-Welcome to my scheduling page. Please follow the instructions to add an event to my calendar.
-
-![](https://assets.calendly.com/assets/touch-icon-ipad-retina-7a95e0c775301f4c0a22002bdf0a95d3c2b9cbe95af29c64f9c9573bac1f01e4.png)Calendly
-
-![](https://assets.calendly.com/assets/ogimage-a63bb2f442cd9e6345a5e4d7fe75393c6cfcc1ff29e48e858742d43573a8b02c.png?source&#x3D;opengraph)](https://calendly.com/gustaw-daniel)
+[Daniel Gustaw Calendly](https://calendly.com/gustaw-daniel)
 
 Warto przeczytać też
 
-[Downlevel Iteration for ES3/ES5 in TypeScript
-
-TypeScript 2.3 introduced a new `--downlevelIteration` flag that adds full support for the ES2015 iteration protocol and `for...of`-loops for ES3 and ES5 targets.
-
-![](https://mariusschulz.com/images/apple-touch-icon.RlWtv0iBaN.imm.png)Marius SchulzMarius Schulz
-
-![](https://mariusschulz.com/images/content/typescript_cannot_find_map-2x.JubdK2SZJP.imm.png)](https://mariusschulz.com/blog/downlevel-iteration-for-es3-es5-in-typescript)
+[Downlevel Iteration for ES3/ES5 in TypeScript](https://mariusschulz.com/blog/downlevel-iteration-for-es3-es5-in-typescript)

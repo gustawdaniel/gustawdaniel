@@ -24,19 +24,19 @@ Artykuł oparty jest o analizę scrapingu na konkretnym przypadku. Tutaj jest to
 
 Zawiera ona kilka rejestrów danych powiązanych z medycyną
 
-![](../../../assets/2021-02-18/medical-1.png)
+![](https://ucarecdn.com/c17df1c5-6321-4840-bdbe-f47b6296c374/)
 
 Załóżmy, że chcemy pobrać wszystkie dane o aptekach z tej strony. Klikamy na rejestr aptek i widzimy:
 
 > [https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public](https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public)
 
-![](../../../assets/2021-02-18/medical-2.png)
+![](https://ucarecdn.com/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37/)
 
 Co ciekawe paginacja nie powoduje tu zmiany adresu url tylko przeładowanie strony i wyświetlenie kolejnego widoku w tabeli.
 
 Po przejściu do zakładki "Network" w konsoli przeglądarki widzimy, że w tle wysyłany jest request
 
-![](../../../assets/2021-02-18/medical-3.png)
+![](https://ucarecdn.com/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c/)
 
 Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane, które ładowane są do tabeli bezpośrednio z api poleceniem
 
@@ -44,7 +44,7 @@ Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC
 ```
 
-![](../../../assets/2021-02-18/medical-4.png)
+![](https://ucarecdn.com/ace8898e-9b72-44d5-a5bf-f2e543ea67a0/)
 
 Nie ma problemu, żeby pobrać **dwie** apteki:
 
@@ -52,7 +52,7 @@ Nie ma problemu, żeby pobrać **dwie** apteki:
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC | jq '.[][] | {nr: .registrationNumber, name: .owners[0].name}'
 ```
 
-![](../../../assets/2021-02-18/medical-5.png)
+![](https://ucarecdn.com/1eac6eca-3409-4c59-b678-367f6607d33f/)
 
 Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 
@@ -60,7 +60,7 @@ Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=10000\&sortField\=originId\&sortDirection\=ASC | jq '.[][].owners[0].name' | wc
 ```
 
-![](../../../assets/2021-02-18/medical-6.png)
+![](https://ucarecdn.com/51765dc2-2e85-47a2-916e-7f505842c0dc/)
 
 Z paginacji strony widzimy, że rejestr zawiera `23006` apteki. Zatem jeśli możemy pobrać 10k na raz potrzebujemy 3 requestów. Niestety wpisanie `size=23006` rzuca błąd, ale warto sprawdzić `size=15000`. Dwa requesty to zawsze lepiej niż trzy.
 

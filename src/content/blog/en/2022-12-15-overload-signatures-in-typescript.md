@@ -56,7 +56,7 @@ export function volume(cube: HyperCube, asString: boolean = false): string | num
 
 Unfortunately now using `volume` function we do not know if we will get `string` or `number`. We do not want to use `.toString` or `parseInt` any time.
 
-![](../../../assets/2022-12-15/typescript-1.png)
+![](https://ucarecdn.com/9be19831-d3c3-453b-abce-b2c40444a931/)
 
 Fortunately, there is a concept called overload signatures. It allows selecting a returned type in dependence from parameters values.
 
