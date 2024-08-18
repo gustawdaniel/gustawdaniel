@@ -650,7 +650,7 @@ class FeatureContext extends TestCase implements Context
 
 Nasz kontekst rozszerza klasę `TestCase`, dostarczaną przez `phpunit` abyśmy mogli łatwo narzucać warunki. Podczas działania testów będą nam potrzebne trzy zmienne.
 
-```php?start_inline=1
+```php
 private $config;
 private $pdo;
 private $data;
@@ -659,7 +659,7 @@ private $data;
 
 Do zmiennej `$config` zapiszemy konfigurację z pliku `config/parameters.yml`, w `$pdo` będziemy trzymać połączenie z bazą, a `$data` będzie przechowywać wynik ostatniego zapytania. Dwóm pierwszym możemy przypisać wartości już w konstruktorze.
 
-```php?start_inline=1
+```php
     public function __construct()
     {
         parent::__construct();
@@ -672,7 +672,7 @@ Do zmiennej `$config` zapiszemy konfigurację z pliku `config/parameters.yml`, w
 
 Dziedziczymy tutaj konstruktor z `phpunit`. Następnie ustawiany zmienną `$config`. Nie musimy instalować dodatkowego parsera do `yml` ponieważ `behat` wziął sobie ten z `symfony`, sam przecież używa swojej własnej konfiguracji w formacie `yml`. Na koniec ustawiamy połączenie z domyślną bazą - `electronic_store` za pomocą funkcji `setPdoUsingBaseNumber(0)`. Jej kod jest następujący:
 
-```php?start_inline=1
+```php
     private function setPdoUsingBaseNumber($baseNumber)
     {
         try {
@@ -694,7 +694,7 @@ Dziedziczymy tutaj konstruktor z `phpunit`. Następnie ustawiany zmienną `$conf
 
 Generalnie można się było tego spodziewać. Z ciekawych rzeczy jest tu tylko ustawienie atrybutów naszego połączenia. Chcemy, żeby konwertował wyniki zapytań do obiektów. Mimo, że do większości assertów wykorzystamy `phpunit` nie ma on sprawdzania występowania w tablicy dla bardziej złożonych obiektów. Można by to ominąć serializując obiekty, ale tutaj zastosowałem inne podejście i porównałem je ręcznie.
 
-```php?start_inline=1
+```php
     private function assertArrayContainsHash($theArray, $hash)
     {
         foreach($theArray as $arrayItem) {
@@ -721,7 +721,7 @@ Te funkcje sprawdzają, czy w wyniku zapytania - `$theArray` pojawił się testo
 
 Teraz przedstawimy możliwe kroki, jakie mogą się pojawić podczas testowania.
 
-```php?start_inline=1
+```php
     /**
      * @Given I'm connected to :number database
      */
@@ -734,7 +734,7 @@ Teraz przedstawimy możliwe kroki, jakie mogą się pojawić podczas testowania.
 
 Przełączamy się między bazami, zmieniamy numerację `1`, `2` na tą w jakiej numeruje się indeksy tablicy. Teraz wybieranie selektów.
 
-```php?start_inline=1
+```php
     /**
      * @When I select :query from database
      */
@@ -750,7 +750,7 @@ Przełączamy się między bazami, zmieniamy numerację `1`, `2` na tą w jakiej
 
 Po prostu tworzymy zapytanie, wykonujemy je i wyniki zapisujemy do zmiennej `$data`. Dla zachowania porządku czyścimy zapytanie. Jeśli interesuje nas zobaczenie wyniku, przygotowałem na to metodę
 
-```php?start_inline=1
+```php
     /**
      * @Then I print result
      */
@@ -764,7 +764,7 @@ Po prostu tworzymy zapytanie, wykonujemy je i wyniki zapisujemy do zmiennej `$da
 
 Opcja formatowania do `jsona` też została przewidziana, ale ponieważ poza debugowaniem ten kod nie spełnia żadnego testowego zadania, nie tworzyłem dla niej osobnej metody. Czas na pierwsze z warunków jakie narzucamy na dane:
 
-```php?start_inline=1
+```php
     /**
      * @Then I should see :count results
      */
@@ -795,7 +795,7 @@ Jeśli chemy odnieść się do ilości rekordów w wyniku naszego zapytania moż
 
 Kolejny możliwy krok to sprawdzenie wartości atrybutu dla pierwszego wiersza danego zapytania.
 
-```php?start_inline=1
+```php
     /**
      * @Then Firs result should have :key equal :value
      */
@@ -810,7 +810,7 @@ Kolejny możliwy krok to sprawdzenie wartości atrybutu dla pierwszego wiersza d
 
 Kolejno sprawdzamy czy wynik ma pierwszy wiersz, czy istnieje w nim podany atrybut i czy ma wartość której oczekujemy. Ostatni krok jest tak ogólny, że jest stosowany przy prawie każdym scenariuszu w prawie każdym przykładnie.
 
-```php?start_inline=1
+```php
     /**
      * @Then /^Result should( not)? contain fields:$/
      */

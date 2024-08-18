@@ -47,13 +47,13 @@ Full repository with all these method can be found there: [https://github.com/gu
 
 We assume that you can create meteor project with Vue. If not then after on standard meteor project created by
 
-```
+```bash
 meteor create .
 ```
 
 you should use commands:
 
-```
+```bash
 meteor remove autopublish insecure blaze-html-templates
 meteor add akryum:vue-component static-html
 meteor npm install --save vue-meteor-tracker vue
@@ -61,7 +61,7 @@ meteor npm install --save vue-meteor-tracker vue
 
 Replace `/client/main.html` by
 
-```
+```html
 <head>
    <title>Components communication</title>
 </head>
@@ -72,7 +72,7 @@ Replace `/client/main.html` by
 
 and `/client/main.js` by
 
-```
+```js
 import Vue from 'vue';
 
 import VueMeteorTracker from 'vue-meteor-tracker';   // here!
@@ -90,7 +90,7 @@ Meteor.startup(() => {
 
 Now in `/client/App.vue` we can use standard Vue syntax like
 
-```
+```html
 <template>
     <h1>App</h1>
 </template>
@@ -112,7 +112,7 @@ In simplest cases when we do not want to operate on submitted data we can use ol
 
 To obtain this result we can write the following code in first component
 
-```
+```html
 <template>
 
     <input class="form-input" type="text" ref="input" @keyup="update">
@@ -134,7 +134,7 @@ As you can see we listen on `keyup` on input element and execute method `update`
 
 In second we do not want even JavaScript
 
-```
+```html
 <template>
 
     <p class="m-2" id="dom-target"></p>
@@ -159,7 +159,7 @@ but have also drawbacks:
 
 Concept of Event Bus relays on creation one (or many) independent globally available empty component that has only one task: emit and listen on events. This component can be injected to other components from our application and be used to signalize and invoke actions.
 
-```
+```js
 import Vue from 'vue';
 
 export default new Vue();
@@ -167,7 +167,7 @@ export default new Vue();
 
 Now out component initiating communication is more expanded
 
-```
+```html
 <template>
 
     <input class="form-input" type="text" v-model="value" @keyup="update">
@@ -192,7 +192,7 @@ Now out component initiating communication is more expanded
 
 We applied data property and use `$emit` method on imported `EventBus` to send signal. In component receiving we can use method `$on` to listen on this.
 
-```
+```html
 <template>
 
     <p class="m-2" id="dom-target">{{value}}</p>
@@ -231,13 +231,13 @@ Disadvantages
 
 Idea of separated components has great influence on code clarity and possibility of maintain. But sometimes we have data that should be accessible in any component and we want to share these data deliberately. To achieve this goal we can use Vuex. Is it not part of core vue library but officially supported. We shoud install vuex by command:
 
-```
+```bash
 npm install vuex --save
 ```
 
 To make it working we should do some preparation before using `vuex` in components. Firstly we should register it as package that we use. We can to it in file `/imports/client/plugins/vuex.js`
 
-```
+```js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -246,7 +246,7 @@ Vue.use(Vuex);
 
 Next we should create global set of shared properties and method to change state of these values called `store` . I propose create file `/imports/client/vuex/store.js` with content
 
-```
+```js
 import Vuex from 'vuex'
 
 export default new Vuex.Store({
@@ -263,7 +263,7 @@ export default new Vuex.Store({
 
 You can see that our state contains `value` and it can be “mutated” by function `update` . But it is not all. We also should append both our plugin and store to `/client/main.js` file. We can do this in following way
 
-```
+```js
 import Vue from 'vue';
 
 import '../imports/client/plugins/tracker'
@@ -285,7 +285,7 @@ You can see that `meteor-tracker` is moved to depart file in the same way like `
 
 Now we are prepared to use `vuex` in our components. When we typing then update should commit mutation with name `update` and send to their second argument value of our input.
 
-```
+```html
 <template>
 
     <input class="form-input" type="text" @keyup="update">
@@ -305,7 +305,7 @@ Now we are prepared to use `vuex` in our components. When we typing then update 
 
 Store has defined behavior of this method. We know that it is setter of value property. And in second component we can simply get this value from vuex.
 
-```
+```html
 <template>
 
     <p class="m-2" id="dom-target">{{$store.state.value}}</p>
@@ -332,13 +332,13 @@ You can see that we described three methods that we can use with Vue but without
 
 Lets start from creating dependency in file `/imports/client/Dependency.js`
 
-```
+```js
 export default new Tracker.Dependency;
 ```
 
 Now we want to import this dependency and use on it method `changed()` to signalize that any function dependent from this should be recalculated. Additionally we are saving value to `localStorage` and clear `localStorage` on create of this component to avoid caching value between browser refreshes.
 
-```
+```html
 <template>
 
     <input class="form-input" type="text" @keyup="update">
@@ -364,7 +364,7 @@ Now we want to import this dependency and use on it method `changed()` to signal
 
 In second component we have standard `data()` function but on created there is registered `autorun` Tracker’s method. This method will be called always if any reactive (from Meteor point of view) variable inside of his function changed. By typing `dependency.depend()` we command Meteor to recompute this function in any case when `dependency.changed()` is invoked.
 
-```
+```html
 <template>
 
     <p class="m-2" id="dom-target">{{value}}</p>
@@ -405,13 +405,13 @@ Advantages:
 
 One of most comfortable solution is usage `vue-meteor-tracker` . In contrast to last example we need reactive (from Meteor perspective) resource. Thank to usage reactive variables we can automate process of sending signal about changing data to dependent functions. We can use Mini Mongo collection that simulate Mongo collection but lives only on front-end without connection with back-end. Of course real Mongo collection can be used too, but we chose Mini Mongo for simplicity. Lets create collection in`/imports/client/Values.js`
 
-```
+```js
 export const Values = new Mongo.Collection(null);
 ```
 
 Now in input component we want to upsert data to this collection like the following:
 
-```
+```html
 <template>
 
     <input class="form-input" type="text" @keyup="update">
@@ -436,7 +436,7 @@ Now in input component we want to upsert data to this collection like the follow
 
 There are `upserts` on create of component and on update of input. Now in component that present data we can have code with `meteor` property of `Vue` component provided by `vue-meteor-tracker` package.
 
-```
+```html
 <template>
 
     <p class="m-2">{{valueObject.value}}</p>

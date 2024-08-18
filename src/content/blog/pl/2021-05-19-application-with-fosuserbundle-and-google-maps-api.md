@@ -161,7 +161,7 @@ Mamy teraz dwa problemy, pierwszy, że nie wygląda to ładnie, drugi, że chcem
 
 Bardzo czytelną instrukcję pozbywania się pola `username` można znaleźć na [stacku](http://stackoverflow.com/questions/8832916/remove-replace-the-username-field-with-email-using-fosuserbundle-in-symfony2). W klasie `User` nadpisujemy setter dla pola e-mail.
 
-```php?start_inline=1
+```php
 public function setEmail($email)
 {
     $email = is_null($email) ? '' : $email;
@@ -1197,7 +1197,7 @@ class Place
 
 Poza standardowymi własnościami dotyczącymy lokalizacji mamy tu własność `$users`. W bazie danych będzie odpowiadała ona występowaniu tabeli `users_places` z identyfikatorami użytkownika i miejsca. Wymagać to będzie jeszcze paru zmian w klasie `User`, ale o tym później. Teraz przejrzymy metody klasy `Place`.
 
-```php?start_inline=1
+```php
     public function __construct() {
         $this->users = new ArrayCollection();
         $this->setAddAt(new \DateTime("now"));
@@ -1206,7 +1206,7 @@ Poza standardowymi własnościami dotyczącymy lokalizacji mamy tu własność `
 
 Konstruktor ustawia datę dodania miejsca oraz zmienną `$users` jako `ArrayCollection`. Jest to obiekt podobny do zwykłej tablicy, ale ma kilka metod wygodnych dla stosowania go jako zbiór obiektów. Mamy też geter i setter dla `$googleId`:
 
-```php?start_inline=1
+```php
     /**
      * @return mixed
      */
@@ -1226,7 +1226,7 @@ Konstruktor ustawia datę dodania miejsca oraz zmienną `$users` jako `ArrayColl
 
 Do operowani na zmiennej `$users` mamy trzy metody.
 
-```php?start_inline=1
+```php
     /**
      * @return mixed
      */
@@ -1256,7 +1256,7 @@ Widać jak korzystamy tu z zalet `ArrayCollection`, gdyby `$users` było zwykł�
 
 Kolejnymi metodami są pary getterów i setterów dla adresu: `$formattedAddress`, współrzędnych `$lon`, `$lat` i czasu dodania adresu do bazy `$addAt`:
 
-```php?start_inline=1
+```php
     /**
      * @return mixed
      */
@@ -1324,7 +1324,7 @@ Kolejnymi metodami są pary getterów i setterów dla adresu: `$formattedAddress
 
 Dla pozostałych parametrów nie będziemy stosować już pary getter, setter. Z powodu ich ustrukturyzowanego występowania w api google maps, z którego będziemy korzystać ustawimy jeden setter dla nich wszystkich. Gettery nie będą nam potrzebne więc metody do obsługi pozostałych parametów wyglądają następująco:
 
-```php?start_inline=1
+```php
     public function getParams()
     {
         return [
@@ -1351,7 +1351,7 @@ Pierwsza z nich zwraca listę nazw obsługiwanych przez drugą metodę, te nazwy
 
 Została nam jeszcze jedna metoda - do rzutowania obiektu na string.
 
-```php?start_inline=1
+```php
     public function __toString()
     {
         return json_encode(["id"=>$this->getGoogleId(),"address"=>$this->getFormattedAddress()],JSON_UNESCAPED_UNICODE);
@@ -1361,7 +1361,7 @@ Została nam jeszcze jedna metoda - do rzutowania obiektu na string.
 
 Żeby tabela łącząca została poprawnie dodana wprowadzimy teraz zmiany w klasie `User` i dodamy do pliku `src/AppBundle/Entity/User.php` linie:
 
-```php?start_inline=1
+```php
 use Doctrine\Common\Collections\ArrayCollection;
 
 (...)
@@ -1418,7 +1418,7 @@ Na koniec załączam wizualizację schematu bazy
 
 Mamy model. Teraz kontrolery. Na końcu zrobimy widoki. W defaultowym kontrolerze (`src/AppBundle/Controller/DefaultController`) ustawimy przekierowanie zalogowanych użytkowników do ścieżki z miejscami:
 
-```php?start_inline=1
+```php
     /**
      * @Route("/", name="homepage")
      */
@@ -1503,7 +1503,7 @@ class PlaceType extends AbstractType implements FormTypeInterface
 
 Z php na nasze: ta klasa odpowada z to, że formularz, który reprezentuje ma jedno pole. Wracamy teraz do kontrolera `src/AppBundle/Form/PlaceType.php`. Kolejna metoda będzie odpowiadała za zapisywanie miejsca do bazy danych
 
-```php?start_inline=1
+```php
     /**
      * @Route("/profile/ajax_geo_save", name="ajax_geo_save")
      * @Route("/profile/ajax_geo_save/{debug}")
@@ -1538,7 +1538,7 @@ Mamy tu więc dwie ważne transformacje danych - z tego co wpisał użytkownik n
 
 Może jednak tak się zdarzyć, że użytkownikowi nie che się pisać swojego adresu, albo zgubił się i nie wie gdzie jest. W takim wypadku możemy wykorzystać metodę `geolocation` obiektu `navigator` dostępnego w `javascript`. Zwraca ona współrzędne geograficzne. Chcieli byśmy tłumaczyć je na adres czytelny dla człowieka. Do tego posłuży druga metoda kontrolera:
 
-```php?start_inline=1
+```php
     /**
      * @Route("/profile/ajax_geo_location", name="ajax_geo_location")
      * @param Request $request
@@ -1560,7 +1560,7 @@ Jej struktura jest bardzo przejrzysta. Pobieramy dane z requesta, wykonujemy tra
 
 Kolejna metoda wiąże się ze smutnym eventem jakim jest usunięcie adresu przez użytkownika.
 
-```php?start_inline=1
+```php
     /**
      * @Route("/profile/ajax_geo_delete/{googleId}", name="ajax_geo_delete")
      * @Method("DELETE")
@@ -1590,7 +1590,7 @@ Adres jest wyszukiwany po `googleId`. Jeśli nie zostanie znaleziony odsyłamy b
 
 Najwyższy czas na zaprezentowanie pierwszego z transformatorów danych - metody `getAddress`
 
-```php?start_inline=1
+```php
     /**
      * @param $data
      * @return array
@@ -1622,7 +1622,7 @@ Myślę, że to dobry moment, żeby pokazać do dokładnie jest odsyłane. Wykon
 
 Widać, że `formatted_address`, `place_id` oraz współrzędne mają tu dobrze określone miejsce, ale pozostałe własności adresu zostały spakowane do jednej tablicy `address_components` i są tagowane za pomocą typów, które mogą występować po kilka, ale niektórych może też wcale nie być. Do przetwarzania tej tablicy do postaci zgodnej z naszym modelem danych służy ostatnia metoda, którą zaprezentuję: `getPlace`
 
-```php?start_inline=1
+```php
     /**
      * @param array $address
      * @return mixed
@@ -1644,7 +1644,7 @@ Widać, że `formatted_address`, `place_id` oraz współrzędne mają tu dobrze 
 
 Na początku sprawdzamy czy dany adres już znajduje się w naszej bazie. Jeśli tak, to możemy pominąć całe transformowanie, dodamy do niego aktualnego użytkownika i wystarczy. Załóżmy jednak, że to nowy adres. W takim przypadku powinniśmy w pierwszej kolejności ustawić mu `google_id`, współrzędne, oraz jego sformatowaną postać. Następnie zajmiemy się otagowanymi składowymi adresu.
 
-```php?start_inline=1
+```php
             $params = $place->getParams();
 
             foreach($address["address_components"] as $component){
@@ -1660,7 +1660,7 @@ Na początku sprawdzamy czy dany adres już znajduje się w naszej bazie. Jeśli
 
 Będziemy je wyciągać w podwójnej pętli. Po komponentach adresu oraz po parametrach jakich szukamy. Jeśli jakiś parametr zostanie znaleziony, zapiszemy właściwość i usuniemy go z tablicy parametrów, tak, żeby nie nabijał pustych pętli.
 
-```php?start_inline=1
+```php
         $place->addUsers($this->getUser());
 
         return $place;

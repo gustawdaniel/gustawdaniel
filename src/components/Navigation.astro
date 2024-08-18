@@ -2,7 +2,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import LangSwitch from "./LangSwitch.astro";
 
-const locale = Astro.currentLocale
+const locale = Astro.currentLocale ?? 'en';
 ---
 
 <header class="container mt-4">
@@ -11,4 +11,7 @@ const locale = Astro.currentLocale
 
     <LangSwitch/>
   </nav>
+
+  <div id="search"></div>
+
 </header>

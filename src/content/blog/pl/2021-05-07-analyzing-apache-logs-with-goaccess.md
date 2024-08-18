@@ -163,7 +163,7 @@ Plik z API to przede wszystkim routing. Zaczyna się jednak od podłączenia pac
 
 > web/api.php
 
-```php?start_inline=1
+```php
 <?php
 
 require_once __DIR__."/../vendor/autoload.php";
@@ -192,7 +192,7 @@ Nowością jest cięcie adresu `uri` na tablicę za pomocą znaków `/`. Pierwsz
 
 W Symfony istnieją specjalne klasy `Response` i `JsonResponse`, które ułatwiają zwracanie odpowiedzi, tu jednak posłużymy się bardziej prymitywną metodą ze względu na jej prostotę. Zdefiniujemy funkcję do zwracania błędów.
 
-```php?start_inline=1
+```php
 function returnError($code,$type,$message){
     $data["error"] = ["code" => $code, "type" => $type, "message" => $message];
     echo json_encode($data);
@@ -203,7 +203,7 @@ function returnError($code,$type,$message){
 
 Warto zwrócić uwagę, że zwraca ona kody błędów, ale sama ma kod zawsze równy 200. Wyjątkiem będą błędy po stronie serwera, których nie przechwycę. Tylko w takim wypadku chcę zwracać kod błędu. Czas rozpocząć omawianie routingu. Zaczniemy od ścieżki do sprawdzania poprawności loginu. W `Symfony` odpoiada jej nie `login` ale `login_check`.
 
-```php?start_inline=1
+```php
 switch ($route) {
         case "login": {
 
@@ -224,7 +224,7 @@ Nasz switch przyjmuje do porównań ścieżkę wpisaną po `api.php/` ale przed 
 
 Zauważ, że na końcu nie dodałem instrukcji `break;`. Zrobiłem to celowo. Od razu po zalogowaniu bez wysyłania kolejnego requestu zawsze chcę dostawać listę domen, dla których Apache tworzy logi. Dlatego pod blokiem `login` umieściłem blok `report`, który ma wykonać się zarówno po wybraniu ścieżki `report` jak i po poprawnym zalogowaniu użytkownika. Jednak ponieważ chcę mieć dostęp do tej ścieżki przez `API` z pominięciem logowania formularzem, przed wydobyciem potrzebnych danych sprawdzę prawo dostępu za pomocą następującego warunku:
 
-```php?start_inline=1
+```php
         case "report": {
 
             if(
@@ -241,7 +241,7 @@ Zauważ, że na końcu nie dodałem instrukcji `break;`. Zrobiłem to celowo. Od
 
 Poza sprawdzaniem, czy sesja jest ustawiona sprawdzamy tutaj też nagłówek `Authorization` jako alternatywną metodę logowania. Jeśli przynajmniej jedna z metod logowania (sesja albo nagłówek) zostaną uznane za poprawne, wykona się następujący kod:
 
-```php?start_inline=1
+```php
             $data["report"] = [];
 
             $list = json_decode(file_get_contents(__DIR__ . "/../" . $config["config"]["report"] . "/list.json"));
@@ -256,7 +256,7 @@ Stworzyliśmy tu klucz `report` do tablicy z odpowiedzią. Odczytaliśmy i zdeko
 
 Jednak główną funkcjonalnością nie jest wyświetlanie samych nazw plików, tylko ich zawartości. To dobry moment aby zapoznać się z mechanizmem `content-negotiation`. Jest to sposób, aby w RESTowym API temu samemu adresowi `url` przypisać reprezentację za pomocą różnego typu danych. W naszym przykładzie będą to `html` i `json`. Typ danych jaki chcemy otrzymać ustawiamy na nagłówku `Accept` przygotowując żądanie. Poniższy kod odpowiada za odpowiednią interpretację tego nagłówka.
 
-```php?start_inline=1
+```php
             if ($parameter != "") {
                 if (preg_match('/text\/html/', $_SERVER["HTTP_ACCEPT"])) {
                     header('Content-Type: text/html');
@@ -278,7 +278,7 @@ Wykona się on tylko jeśli `url` będzie zawierał po `api.php/report/` coś je
 
 Ostatnią ścieżką obsługiwaną przez `api` jest `logout`.
 
-```php?start_inline=1
+```php
         case "logout": {
             session_unset();
             session_destroy();
@@ -290,7 +290,7 @@ Ostatnią ścieżką obsługiwaną przez `api` jest `logout`.
 
 Odpowiada on za usunięcie sesji i przypisanie stanu `loggedOut`. Na koniec obsługujemy wyjątek związany z nie poprawną ścieżką, w szczególności jest to też nasz punkt startowy `api.php/`
 
-```php?start_inline=1
+```php
         default: {
             returnError(404,"Not Found","Use route /report with Authorization header");
             break;

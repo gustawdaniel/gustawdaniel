@@ -23,7 +23,7 @@ second file to the standard output.
 
 We will start by checking if the files indicated as arguments exist:
 
-```javascript
+```js
 const fs = require('fs')
 
 const pathBase = `${process.cwd()}/${process.argv[2]}`;

@@ -3,7 +3,7 @@
 
 import { getCollection, getEntry } from 'astro:content';
 
-const locale = Astro.currentLocale
+const locale = Astro.currentLocale ?? 'en';
 
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import {stripLang} from "../helpers/i18n/stripLang";

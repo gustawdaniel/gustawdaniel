@@ -9,10 +9,22 @@ import '../styles/tailwind.css'
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width" />
   <title>Astro{pageTitle ? ' - ' + pageTitle : ''}</title>
-  <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />
+  <!--<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />-->
+
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
 </head>
 <body>
 <Navigation/>
+
 <slot/>
+
+<script>
+  // @ts-ignore PagefindUI is global
+  window.addEventListener('DOMContentLoaded', (_event) => {
+    // @ts-ignore PagefindUI is global
+    new PagefindUI({ element: "#search", showSubResults: true });
+  });
+</script>
 </body>
 </html>
