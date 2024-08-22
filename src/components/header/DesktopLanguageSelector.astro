@@ -1,0 +1,118 @@
+---
+import {useTranslations} from "../../i18n/utils";
+const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
+
+import {locales} from '../../locales';
+import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
+
+
+
+import {getRelativeLocaleUrl} from 'astro:i18n';
+import {stripLang} from "../../helpers/i18n/stripLang";
+import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
+const currentPathWithLang = Astro.url.pathname;
+const currentPath = stripLang(currentPathWithLang)
+
+import {getCollection, getEntry} from 'astro:content';
+import LightDarkSwitch from "./LightDarkSwitch.astro";
+
+let entry: undefined | { data: { canonicalName: string } } = undefined
+let translatedPosts: { slug: string }[] = []
+
+function getPostId(path: string): string {
+    path = path.replace('/posts/', '');
+    return path.replace(/\/$/, '');
+}
+
+if (currentPath.includes('posts/')) {
+    entry = await getEntry('blog', getPostId(currentPath));
+    translatedPosts = await getCollection('blog',
+        (post) => entry && post.data.canonicalName === entry.data.canonicalName
+    );
+}
+---
+
+<div class="hidden lg:relative lg:z-10 lg:ml-4
+lg:flex lg:items-center">
+    <LightDarkSwitch mode="desktop"/>
+
+<div class="relative ml-4 flex-shrink-0" x-data="{ open: false }">
+    <div>
+        <button
+                @click="open = !open"
+                type="button"
+                class="relative flex rounded-full
+                bg-white
+                dark:bg-gray-800
+                focus:outline-none focus:ring-2 focus:ring-indigo-500
+      focus:ring-offset-2"
+                id="user-menu-button"
+                aria-expanded="false"
+                aria-haspopup="true"
+        >
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">Select language</span>
+            <img
+                    class="h-8 w-8 rounded-full
+                    border
+                      dark:border-slate-900
+                     object-cover"
+                    src={`/flags/${currentLocale}.svg`}
+                    alt={useTranslations(currentLocale)(`lang.${currentLocale}`)}
+            />
+        </button>
+    </div>
+
+    <!-- Dropdown menu, show/hide based on menu state. -->
+    <div
+            x-cloak
+            x-show="open"
+            @click.outside="open = false"
+            x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
+            class="absolute right-0 z-10 mt-2 w-48
+            origin-top-right rounded-md
+            bg-white
+            dark:bg-gray-800
+            py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="user-menu-button"
+            tabindex="-1"
+    >
+        {locales
+            .filter(locale => locale !== currentLocale)
+            .map(locale =>
+                <a href={
+                    fixBlogLocale(
+                        getRelativeLocaleUrl(
+                            locale,
+                            currentPath
+                        ),
+                        locale,
+                        translatedPosts.map(p => p.slug)
+                    )
+                } class="flex items-center px-4 py-2 text-sm
+                text-gray-500 hover:bg-gray-50 hover:text-gray-900
+                dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white
+                " role="menuitem"
+                   tabindex="-1" id="user-menu-item-0">
+                    <img
+                            class="h-6 w-6 mr-2 rounded-full
+                            border
+                             dark:border-slate-900
+                             object-cover"
+                            src={`/flags/${locale}.svg`}
+                            alt=""
+                    />
+                    {useTranslations(locale)(`lang.${locale}`)}
+                </a>
+        )}
+    </div>
+</div>
+
+</div>

@@ -1,7 +1,7 @@
 ---
 import {locales} from '../locales';
 
-const currentLocale = Astro.currentLocale
+const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {stripLang} from "../helpers/i18n/stripLang";
 import {fixBlogLocale} from "../helpers/i18n/fixBlogLocale";

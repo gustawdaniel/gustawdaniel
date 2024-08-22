@@ -5,7 +5,8 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <article class="container">
+  <article class="container prose lg:prose-xl">
+
 
   <h1>{frontmatter.title}</h1>
 <p>Published on: {frontmatter.publishDate.toString().slice(0,10)}</p>

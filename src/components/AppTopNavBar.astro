@@ -1,0 +1,58 @@
+---
+import DesktopLanguageSelector from "./header/DesktopLanguageSelector.astro";
+import DesktopNavigationLinks from "./header/DesktopNavigationLinks.astro";
+import MobileNavigationLinks from "./header/MobileNavigationLinks.astro";
+import MobileLanguageSelector from "./header/MobileLanguageSelector.astro";
+import MobileMenuActivator from "./header/MobileMenuActivator.astro";
+import SearchActivator from "./search/SearchActivator.astro";
+---
+<header class="bg-white shadow dark:bg-gray-800" x-data="{open: false}">
+    <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y
+    lg:divide-gray-200 dark:lg:divide-gray-700 lg:px-8">
+        <div class="relative flex h-16 justify-between">
+            <div class="relative z-10 flex px-2 lg:px-0">
+                <div class="flex flex-shrink-0 items-center dark:text-gray-200">
+                    <span class="hidden sm:block">Daniel Gustaw</span>
+                    <span class="block sm:hidden">DG</span>
+                </div>
+            </div>
+
+            <SearchActivator/>
+
+            <div class="relative z-10 flex items-center lg:hidden" @click="open = !open">
+                <MobileMenuActivator/>
+            </div>
+
+            <DesktopLanguageSelector/>
+
+        </div>
+        <DesktopNavigationLinks/>
+    </div>
+
+    <nav x-show="open" class="lg:hidden" aria-label="Global" id="mobile-menu">
+        <MobileNavigationLinks/>
+
+        <MobileLanguageSelector/>
+    </nav>
+</header>
+
+<script lang="ts">
+    const se = document.querySelector('#search-dialog-activator');
+    const sd = document.querySelector('#search-dialog');
+    console.log('se', se);
+    console.log('sd', sd);
+
+    if (se && sd) {
+        se.addEventListener('click', () => {
+            sd.classList.toggle('hidden');
+            // setTimeout(() => {
+            const search = document.querySelector('#search input');
+            console.log('search', search);
+            if (search instanceof HTMLInputElement) {
+                search.focus();
+            }
+            // }, 100)
+
+        })
+    }
+</script>

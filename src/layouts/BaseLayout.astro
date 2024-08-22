@@ -1,18 +1,27 @@
 ---
 import Navigation from "../components/Navigation.astro";
-const { pageTitle } = Astro.props;
+const {pageTitle} = Astro.props;
 
 import '../styles/tailwind.css'
----
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width" />
-  <title>Astro{pageTitle ? ' - ' + pageTitle : ''}</title>
-  <!--<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />-->
+import '../styles/pagefind.css'
+import '../styles/alpine.css'
+// window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
 
-  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+---
+<html lang="en"
+      x-data="{ darkMode: localStorage.getItem('theme') || (localStorage.setItem('theme', 'system') || 'system')}"
+      x-init="$watch('darkMode', val => localStorage.setItem('theme', val))"
+      x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Astro{pageTitle ? ' - ' + pageTitle : ''}</title>
+    <!--<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />-->
+
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
 </head>
 <body>
 <Navigation/>
@@ -20,11 +29,14 @@ import '../styles/tailwind.css'
 <slot/>
 
 <script>
-  // @ts-ignore PagefindUI is global
-  window.addEventListener('DOMContentLoaded', (_event) => {
     // @ts-ignore PagefindUI is global
-    new PagefindUI({ element: "#search", showSubResults: true });
-  });
+    window.addEventListener('DOMContentLoaded', (_event) => {
+        console.log("ok");
+        console.log(document.querySelector("#search"));
+
+        // @ts-ignore PagefindUI is global
+        new PagefindUI({element: "#search", showSubResults: true, autofocus: true});
+    });
 </script>
 </body>
 </html>

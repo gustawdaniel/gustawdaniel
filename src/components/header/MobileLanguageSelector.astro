@@ -1,0 +1,90 @@
+---
+import {getCollection, getEntry} from "astro:content";
+import {stripLang} from "../../helpers/i18n/stripLang";
+
+import {useTranslations} from "../../i18n/utils";
+const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
+import {locales} from '../../locales';
+import {getRelativeLocaleUrl} from 'astro:i18n';
+
+let translatedPosts: { slug: string }[] = []
+
+import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
+import LightDarkSwitch from "./LightDarkSwitch.astro";
+const currentPathWithLang = Astro.url.pathname;
+const currentPath = stripLang(currentPathWithLang)
+let entry: undefined | { data: { canonicalName: string } } = undefined
+
+function getPostId(path: string): string {
+    path = path.replace('/posts/', '');
+    return path.replace(/\/$/, '');
+}
+
+
+if (currentPath.includes('posts/')) {
+    entry = await getEntry('blog', getPostId(currentPath));
+    translatedPosts = await getCollection('blog',
+        (post) => entry && post.data.canonicalName === entry.data.canonicalName
+    );
+}
+---
+
+<div class="border-t
+ border-gray-200
+ dark:border-gray-700
+ pb-3 pt-4">
+    <div class="flex items-center px-4">
+        <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full
+            border
+             dark:border-slate-900
+             object-cover"
+                 src={`/flags/${currentLocale}.svg`}
+                 alt={useTranslations(currentLocale)(`lang.${currentLocale}`)}
+            >
+        </div>
+        <div class="ml-3">
+            <div class="text-base font-medium
+            text-gray-800
+            dark:text-white
+            ">{useTranslations(currentLocale)(`lang.${currentLocale}`)}</div>
+            <div class="text-sm font-medium
+            text-gray-500
+            dark:text-gray-400
+            ">{useTranslations(currentLocale)('nav.read-in-other-lang')}
+                👇
+            </div>
+        </div>
+        <LightDarkSwitch mode="mobile"/>
+    </div>
+    <div class="mt-3 space-y-1 px-2">
+        {locales
+            .filter(locale => locale !== currentLocale)
+            .map(locale =>
+
+                    <a href={
+                        fixBlogLocale(
+                            getRelativeLocaleUrl(
+                                locale,
+                                currentPath
+                            ),
+                            locale,
+                            translatedPosts.map(p => p.slug)
+                        )
+                    } class="rounded-md px-3 py-2 text-base font-medium
+                    text-gray-500 hover:bg-gray-50 hover:text-gray-900
+                    dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white
+                     flex items-center">
+                        <img
+                                class="h-6 w-6 mr-2 rounded-full
+                                border
+                                 dark:border-slate-900
+                                 object-cover"
+                                src={`/flags/${locale}.svg`}
+                                alt=""
+                        />
+                        {useTranslations(locale)(`lang.${locale}`)}
+                    </a>
+            )}
+    </div>
+</div>

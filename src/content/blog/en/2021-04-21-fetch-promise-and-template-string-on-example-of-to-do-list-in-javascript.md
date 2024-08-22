@@ -37,31 +37,31 @@ You can see all source code under link
 
 If you want to test code on your computer without rewriting it, simplest way is download release by command
 
-```
+```bash
 wget -qO- https://github.com/gustawdaniel/simple-todo-app-js-tutorial/archive/1.0.tar.gz | tar xvz
 ```
 
 Next go to created directory
 
-```
+```bash
 cd simple-todo-app-js-tutorial-1.0
 ```
 
 Now you should install dependencies
 
-```
+```bash
 npm i
 ```
 
 To setup servers we will need two terminals. In firs one we run server with our projct
 
-```
+```bash
 node node_modules/http-server/bin/http-server
 ```
 
 In second terminal `ctrl+n` we setup `REST API` server provided by `json-server` package.
 
-```
+```bash
 node node_modules/json-server/bin/index.js --watch db.json
 ```
 
@@ -77,7 +77,7 @@ Website should be available on address `localhost:8080`
 
 Project contains the following files
 
-```
+```text
 ├── app.js              // script providing creating, reading and deleting tasks
 ├── db.json             // json file with data that is connected with REST API
 ├── index.html          // html file with main page
@@ -99,7 +99,7 @@ In next chapter we describe content of static files `index.html` and `style.css`
 
 File `index.html` starts in quite classic way. We downloading font `Lato` and attaching our custom style.
 
-```
+```html
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato:300&subset=latin-ext" rel="stylesheet">
@@ -109,7 +109,7 @@ File `index.html` starts in quite classic way. We downloading font `Lato` and at
 
 Because of code typed is in agreement with rules of `HTML5` semantics we have division on `header` and `main` . In header there is form with one field to type text of task.
 
-```
+```html
 <body>
 <header>
     <form class="todo">
@@ -120,7 +120,7 @@ Because of code typed is in agreement with rules of `HTML5` semantics we have di
 
 In part `main` there is list with three exemplary elements. Elements has his own identifiers and are divided on two parts. First one contains identifier, second text and button to deleting task.
 
-```
+```html
 <main>
   <ul>
     <li data-id="1">
@@ -156,7 +156,7 @@ In part `main` there is list with three exemplary elements. Elements has his own
 
 At the end we attaching script, which we describe later. Now it can be empty file.
 
-```
+```html
 <script src="app.js"></script>
 </body>
 </html>
@@ -166,7 +166,7 @@ At the end we attaching script, which we describe later. Now it can be empty fil
 
 If not styling, then looking on this page would cause nightmares. But inspired by lectures from `html` and `css` that I provided last time I decided type `css` file from scratch. The rules that I have added begin with determining the width of the document depending on the width of the screen. Most frequently I using bootstrap to this purpose, but you can do it without it. This is served by the @media directive, the use of which is presented below:
 
-```
+```css
 @media (max-width: 575px) {
     input,main {
         width: 100%;
@@ -184,7 +184,7 @@ If not styling, then looking on this page would cause nightmares. But inspired b
 
 You can see that on biggest devices we want to have margin, which on smaller is not necessary. Next rule is applying font Lato to all document
 
-```
+```css
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -192,7 +192,7 @@ body {
 
 In header we centering form and removing his natural margins
 
-```
+```css
 header {
     text-align: center;
 }
@@ -203,7 +203,7 @@ form {
 
 Next, we define the rules for highlighting the input to which we will click or over which we will have mouse. We removing the transparency from the frame and adding fuzzy shadow and red background.
 
-```
+```css
 input:focus, input:hover {
     border: solid 1px crimson;
     box-shadow: 0 0 5px -1px crimson;
@@ -213,7 +213,7 @@ input:focus, input:hover {
 
 Now we can see on not selected input.
 
-```
+```css
 input {
     padding: 20px;
     border: solid 1px rgba(220, 20, 60, 0.52);
@@ -226,7 +226,7 @@ Interesting property of not selected `input` is `transition` . It allows to defi
 
 Analogical effects we want to apply to list elements. Most standing out element is moving left border of list on the right what we set in property `margin` .
 
-```
+```css
 li:hover {
     border: solid 1px rgba(220, 20, 60, 0.8);
     background-color: rgba(220, 20, 60, 0.05);
@@ -237,7 +237,7 @@ li:hover {
 
 For comparison if mouse not hovered list element then margin is symmetric. There applied `transition` too obtaining animation of indenting and ejecting a list item.
 
-```
+```css
 li {
     list-style: none;
     border: solid 1px rgba(220, 20, 60, 0.52);
@@ -249,7 +249,7 @@ li {
 
 Elements of the list are divided into two parts, `.list-elem-head` is used to display the identifier. The space around is pushed with margins. It is also worth paying attention to `float: left` allowing divisions to be adjacent to one line.
 
-```
+```css
 .list-elem-head {
     float: left;
     margin: 20px;
@@ -258,7 +258,7 @@ Elements of the list are divided into two parts, `.list-elem-head` is used to di
 
 The situation is completely different for `.list-elem-body` . There not margins, but padding are responsible for pushing and centering relative to list element boundaries. It is because of we need full height of element `.list-elem-body` inside of `li` element for adding border `border-left` .
 
-```
+```css
 .list-elem-body {
     margin-left: 50px;
     padding: 20px 20px 20px 20px;
@@ -268,7 +268,7 @@ The situation is completely different for `.list-elem-body` . There not margins,
 
 This list do no need margins or paddings. With `list-style: none` for `li` we removing default style of list.
 
-```
+```css
 ul {
     margin: 0;
     padding: 0;
@@ -277,7 +277,7 @@ ul {
 
 One of the last changes is to offset the text with a note from the internal border of the list item.
 
-```
+```css
 li > span.text {
     padding-right: 20px;
 }
@@ -285,7 +285,7 @@ li > span.text {
 
 On the end we styling button to remove task. It is span containing letter `x` . I do not downloading there any additional font. Although of this thanks to rounding corners, appropriate colors, padding and setting the size of the element we managed to get quite a clear-looking removal button. However, one more interesting property has been added here: `user-select` . This allow to omit given element on selecting. Thanks this property double clicking on text of note not cause of selecting letter `x` on the end.
 
-```
+```css
 li > div > span.delete {
     float: right;
     border: solid 1px crimson;
@@ -307,7 +307,7 @@ li > div > span.delete {
 
 Now we will discuss how to add to the project the possibility of creating new tasks, deleting them and displaying tasks saved in the database. If you look at the `package.json` , you will see the following lines:
 
-```
+```json
 "dependencies": {
     "http-server": "^0.11.1",
     "json-server": "^0.12.1"
@@ -320,25 +320,25 @@ Second package is REST server that provide saving data to `db.json` file. In fil
 
 To add new task there is needed POST request
 
-```
+```bash
 http POST localhost:3000/todo text="First One"
 ```
 
 To list all tasks from database you should send GET
 
-```
+```bash
 http GET localhost:3000/todo
 ```
 
 To remove `n-th` task send DELETE request indicating which task should be removed in url
 
-```
+```bash
 http DELETE localhost:3000/todo/n
 ```
 
 Our initial state of `db.json` can looks following:
 
-```
+```javascript
 {
   "todo": [
     {
@@ -361,7 +361,7 @@ Now we can talk about logic of application placed in `app.js` . Before this we n
 
 All script is placed in anonymous function executed after event `DOMContentLoaded` . It prevent to executing script before loading `DOM` .
 
-```
+```js
 document.addEventListener('DOMContentLoaded',function () {
 
    // there should be placed code presented below
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded',function () {
 
 Inside this function we define variables which will be used in script. There are `dbUrl` containing address to API managing database. And two variables with reference to form and list from `DOM` .
 
-```
+```js
 const dbUrl = 'http://localhost:3000/todo';
 let form = document.querySelector('form.todo');
 let list = document.querySelector('ul');
@@ -379,7 +379,7 @@ let list = document.querySelector('ul');
 
 Now there is time for defining useful functions. We start from function downloading all tasks. Because of this function sends request it should wait for response. But waiting cant block rest of interface and other scripts. So by method `then` we adding listener of receiving response from this request. We can say that `then` removes himself from synchronous flow of program and starts waiting for response independent from rest of program. But because of we want to receive data from response we need receive Promise of obtaining these data. Promise is object that in constructor accepts function that argument is function to which we need pass interesting us data. It is complicated to describe but great visible in following code:
 
-```
+```js
 function getAllTodos() {
         return new Promise(resolve => {
             fetch(new Request(dbUrl))
@@ -393,7 +393,7 @@ But `Promise` is not only great thing, that you can see in these lines. Next one
 
 Second method that we will define allows to save task to database. In this case we also use `Promise` in identical way like last time, but now request is more complicated. To increase readability of code I saving it to temporary variable `req` . We can see that `URL` is the same, but in second argument of `Request` object we have his additional configuration: method, object containing headers and body of request.
 
-```
+```js
 function saveTodo(text) {
         let req = new Request(dbUrl,{ method: 'POST',
             headers: new Headers({'Content-Type': 'application/json'}),
@@ -410,7 +410,7 @@ function saveTodo(text) {
 
 Last function in this project do not have nothing to do with the interface `fetch` or `Promise` object, but presents other new feature from `ES6` - `template strings` . These are character strings surrounded by diagonal single quotation mark like this “\`", which can contain evaluation of JavaScript expressions designated by `${}` syntax. To this function we passing object with properties `id` and `text` . Function render proper `html` code that will be attached to list. It is much more comfortable than using `document.createElement()` .
 
-```
+```js
 function appendTextToList(todo) {
         list.innerHTML += `
 <li data-id="${todo.id}">
@@ -427,7 +427,7 @@ function appendTextToList(todo) {
 
 After defining these functions we can describe executive part of code. It begins from iterating by list of notes drawn from `API` and appending them to list on page.
 
-```
+```js
 getAllTodos().then(todos => {
         todos.forEach(todo => { appendTextToList(todo); });
     });
@@ -435,7 +435,7 @@ getAllTodos().then(todos => {
 
 Then we, add a listener to the form. If you add an entry, we send it to the database, and after receiving the identifier, we attach it to the list.
 
-```
+```js
 form.addEventListener('submit', function (e) {
         e.preventDefault();
         saveTodo(form.task.value).then(res => {
@@ -448,7 +448,7 @@ form.addEventListener('submit', function (e) {
 
 At the end, we’re adding a listener to clicks on the list. It’s supposed to be about just deleting, so using the `contains` method in the class list, we check if you click on the element with the class `delete`. If so, we draw the `id` from this list element, we send the request with the `DELETE` method to the url terminated with this id and we cut it from the list.
 
-```
+```js
 list.addEventListener('click',function (e) {
         if(e.target.classList.contains('delete')) {
             const id = e.target.parentElement.parentElement.dataset.id;
