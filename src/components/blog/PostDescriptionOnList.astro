@@ -1,0 +1,80 @@
+---
+import { Picture } from 'astro:assets';
+import type { InferEntrySchema } from 'astro:content'
+import dayjs from "dayjs";
+
+import 'dayjs/locale/pl'
+import 'dayjs/locale/es'
+
+interface Props {
+    data: InferEntrySchema<"blog">;
+    body: string;
+    type?: 'large'
+}
+
+const {data, body, type} = Astro.props;
+
+const locale = Astro.currentLocale ?? 'en';
+
+function readingTime(text: string): string {
+    const averageWPM = 265;
+
+    const adjustedText = text.replace(/(.)\1+/g, '$1');
+
+    const adjustedSentences = adjustedText.replace(/([.!?])\s*\1+/g, '$1');
+
+    const adjustedCharCount = adjustedSentences.length;
+
+    const adjustedWords = adjustedSentences.trim().split(/\s+/);
+
+    const adjustedWordCount = adjustedWords.length;
+    const averageWordLength = adjustedCharCount / adjustedWordCount;
+
+    const adjustedTime = (adjustedWordCount / averageWPM) * (averageWordLength / 5);
+
+    const formattedAdjustedTime = adjustedTime > 1 ? Math.round(adjustedTime) + " min" : "Less than 1 min";
+
+    return formattedAdjustedTime;
+}
+---
+
+<div class:list={['max-w-xl', type === 'large' ? 'flex flex-col justify-center' : '']}>
+    <div class:list={['flex items-center gap-x-4 text-xs mt-8', type === 'large' ? 'xl:mt-0' : '']}>
+
+        <!--href="#"-->
+        {data.tags.filter((_,i) => i<3).map(tag => <span  class="capitalize relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{tag}</span>)}
+    </div>
+    <div class="group relative">
+        <h3 class:list={['mt-3 font-semibold leading-6 text-gray-900 group-hover:text-gray-600 text-xl', type === 'large' ? 'xl:text-2xl' : '']}>
+            <span>
+                <!--href="#"-->
+                <span class="absolute inset-0"></span>
+                {data.title}
+            </span>
+        </h3>
+        <p class:list={['mt-5 line-clamp-3 leading-6 text-gray-600 text-sm', type === 'large' ? 'xl:text-base' : '']}>
+            {data.description}
+        </p>
+    </div>
+    <div class="relative mt-8 flex items-center gap-x-4">
+        <Picture src="https://ucarecdn.com/411d6d7d-6a1e-4096-9a88-fc16a9978f2f/-/preview/688x1000/"
+                 widths={[256]}
+                 formats={['avif']}
+                 alt={data.author} inferSize={true}
+                 class="h-10 w-10 rounded-full bg-gray-100  object-cover"
+        ></Picture>
+        <div class="text-sm leading-6">
+            <p class="font-semibold text-gray-900">
+                                            <span>
+                                                <!--href="#"-->
+                                                <span class="absolute inset-0"></span>
+                                                {data.author}
+                                            </span>
+            </p>
+            <p class="text-gray-500">
+                <time datetime="2020-03-16" class="text-gray-500">{dayjs(data.publishDate).locale(locale).format(locale === 'pl' ? 'DD MMM YYYY' : 'MMM DD, YYYY')}</time>
+                <span class="mx-1 text-gray-400">•</span>
+                <span>{readingTime(body)} read</span></p>
+        </div>
+    </div>
+</div>

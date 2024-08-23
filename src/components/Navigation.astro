@@ -1,23 +1,9 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import LangSwitch from "./LangSwitch.astro";
 import AppTopNavBar from "./AppTopNavBar.astro";
-
-
 import SearchLayer from "./search/SearchLayer.astro";
-
-const locale = Astro.currentLocale ?? 'en';
 ---
 
 <header class="">
   <SearchLayer/>
-
   <AppTopNavBar/>
-
-  <nav class="flex justify-between text-lg">
-    <a href={getRelativeLocaleUrl(locale, '/')}>Daniel Gustaw</a>
-
-    <LangSwitch/>
-  </nav>
-
 </header>

@@ -6,7 +6,7 @@ import MobileLanguageSelector from "./header/MobileLanguageSelector.astro";
 import MobileMenuActivator from "./header/MobileMenuActivator.astro";
 import SearchActivator from "./search/SearchActivator.astro";
 ---
-<header class="bg-white shadow dark:bg-gray-800" x-data="{open: false}">
+<header class="bg-white shadow dark:bg-gray-800" x-data="{open: false}" x-cloak>
     <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y
     lg:divide-gray-200 dark:lg:divide-gray-700 lg:px-8">
         <div class="relative flex h-16 justify-between">
