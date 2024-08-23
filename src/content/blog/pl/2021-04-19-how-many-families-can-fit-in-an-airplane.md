@@ -2,13 +2,13 @@
 author: Daniel Gustaw
 canonicalName: ile-rodzin-zmiesci-sie-w-samolocie-zadanie-z-algorytmiki
 date_updated: 2021-04-20 18:41:10+00:00
-description: "Porównujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+description: "Porównujemy dwa rozwiązania zadania polegającego na zliczaniu\
   \ wolnych zestawów przyległych miejsc. Dowiesz się jak używać\
-  \ Profilowania i jak wielk\u0105 różnicę robi użycie pop oraz\
+  \ Profilowania i jak wielką różnicę robi użycie pop oraz\
   \ shift na tablicach w js."
-excerpt: "Porównujemy dwa rozwi\u0105zania zadania polegaj\u0105cego na zliczaniu\
+excerpt: "Porównujemy dwa rozwiązania zadania polegającego na zliczaniu\
   \ wolnych zestawów przyległych miejsc. Dowiesz się jak używać\
-  \ Profilowania i jak wielk\u0105 różnicę robi użycie pop oraz\
+  \ Profilowania i jak wielką różnicę robi użycie pop oraz\
   \ shift na tablicach w js."
 publishDate: 2021-04-20 18:41:10+00:00
 slug: pl/ile-rodzin-zmiesci-sie-w-samolocie

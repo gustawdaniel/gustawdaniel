@@ -4,11 +4,11 @@ canonicalName: scraping-najbardziej-popularnych-kont-na-twitterze
 date_updated: 2021-06-26 09:35:10+00:00
 description: "Dzięki obserwacji wpisów z twittera możemy śledzić\
   \ różne trendy. W tym wpisie pokażę jak pobrać dane o kontach\
-  \ w tym serwisie i wybrać te, które maj\u0105 największy współ\
+  \ w tym serwisie i wybrać te, które mają największy współ\
   czynnik wpływu."
 excerpt: "Dzięki obserwacji wpisów z twittera możemy śledzić\
   \ różne trendy. W tym wpisie pokażę jak pobrać dane o kontach\
-  \ w tym serwisie i wybrać te, które maj\u0105 największy współ\
+  \ w tym serwisie i wybrać te, które mają największy współ\
   czynnik wpływu."
 publishDate: 2021-06-21 16:24:01+00:00
 slug: pl/scraping-najbardziej-popularnych-kont-na-twitterze

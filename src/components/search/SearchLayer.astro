@@ -12,26 +12,30 @@
     </div>
 </div>
 
-<script lang="ts">
+<script>
     (() => {
         const sd = document.querySelector('#search-dialog');
         const search = document.querySelector('#search');
-        console.log('sd', sd);
+
+        if(!sd) return;
+        if(!search) return;
 
         if (sd) {
             sd.addEventListener('click', () => {
                 const input = search.querySelector('input');
-                console.log('input', input);
-                input.value = '';
+                if(input) {
+                    input.value = '';
+                }
                 sd.classList.add('hidden')
             });
         }
 
         search.addEventListener('click', (event) => {
-            if(event.target.classList.contains('pagefind-ui__result-link')) {
+            if(event.target && event.target instanceof HTMLElement && event.target.classList.contains('pagefind-ui__result-link')) {
                 const input = search.querySelector('input');
-                console.log('input', input);
-                input.value = '';
+                if(input) {
+                    input.value = '';
+                }
                 sd.classList.add('hidden')
             }
             event.stopPropagation()
@@ -43,8 +47,9 @@
             console.log('e', event.key);
             if (event.key === 'Escape') {
                 const input = search.querySelector('input');
-                console.log('input', input);
-                input.value = '';
+                if(input) {
+                    input.value = '';
+                }
                 sd.classList.add('hidden')
             }
         })

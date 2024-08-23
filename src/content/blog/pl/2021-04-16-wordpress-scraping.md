@@ -15,7 +15,7 @@ slug: pl/scraping-wordpressa
 tags:
 - wordpress
 - scraping
-title: "Scraping WordPress - 4300 wyroków s\u0105dów w sprawach frankowych bez\
+title: "Scraping WordPress - 4300 wyroków sądów w sprawach frankowych bez\
   \ linii kodu"
 ---
 

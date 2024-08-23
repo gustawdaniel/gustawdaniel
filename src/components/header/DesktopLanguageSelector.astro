@@ -6,10 +6,8 @@ import {locales} from '../../locales';
 import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
 
 
-
 import {getRelativeLocaleUrl} from 'astro:i18n';
 import {stripLang} from "../../helpers/i18n/stripLang";
-import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
 const currentPathWithLang = Astro.url.pathname;
 const currentPath = stripLang(currentPathWithLang)
 

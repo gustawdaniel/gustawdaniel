@@ -2,9 +2,9 @@
 author: Daniel Gustaw
 canonicalName: structuring-historical-currency-rates-nbp
 date_updated: 2021-02-17 15:21:43+00:00
-description: "Naucz się jak napisać kod normalizuj\u0105cy i strukturyzuj\u0105\
+description: "Naucz się jak napisać kod normalizujący i strukturyzują\
   cy dane w oparciu case study z dziedziny finansów."
-excerpt: "Naucz się jak napisać kod normalizuj\u0105cy i strukturyzuj\u0105\
+excerpt: "Naucz się jak napisać kod normalizujący i strukturyzują\
   cy dane w oparciu case study z dziedziny finansów."
 publishDate: 2021-02-04 06:02:21+00:00
 slug: pl/strukturyzacja-historycznych-kursow-walut-nbp

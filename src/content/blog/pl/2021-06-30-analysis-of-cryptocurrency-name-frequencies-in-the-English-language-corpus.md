@@ -3,9 +3,9 @@ author: Daniel Gustaw
 canonicalName: analiza-czestosci-nazw-altcoinow-w-korpusie-jezyka-angielskiego
 date_updated: 2021-06-30 10:22:00+00:00
 description: "Celem artykułu jest pokazanie jak odfiltrować spośró\
-  d wszystkich nazw kryptowalut, te nie występuj\u0105ce w języku naturalnym."
+  d wszystkich nazw kryptowalut, te nie występujące w języku naturalnym."
 excerpt: "Celem artykułu jest pokazanie jak odfiltrować spośród\
-  \ wszystkich nazw kryptowalut, te nie występuj\u0105ce w języku naturalnym."
+  \ wszystkich nazw kryptowalut, te nie występujące w języku naturalnym."
 publishDate: 2021-06-30 10:22:00+00:00
 slug: pl/analiza-czestosci-nazw-kryptowalut-w-korpusie-jezyka-angielskiego
 tags:

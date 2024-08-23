@@ -4,12 +4,16 @@ import tailwind from "@astrojs/tailwind";
 import vue from '@astrojs/vue';
 
 import alpinejs from "@astrojs/alpinejs";
+import type {Locales} from "astro";
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    domains: ['ucarecdn.com']
+  },
   i18n: {
     defaultLocale,
-    locales
+    locales: locales as unknown as Locales
   },
   integrations: [tailwind({
     applyBaseStyles: false

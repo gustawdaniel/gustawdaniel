@@ -1,3 +1,4 @@
+src/content/blog/pl/addConver.py
 # build output
 dist/
 # generated types

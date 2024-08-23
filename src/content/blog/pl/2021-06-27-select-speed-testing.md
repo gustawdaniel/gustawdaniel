@@ -3,10 +3,10 @@ author: Daniel Gustaw
 canonicalName: wplyw-indeksacji-na-wydajnosc-wyszukiwania-w-bazie-mysql
 date_updated: 2021-06-27 17:40:00+00:00
 description: "Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkoś\
-  ć tabel spowalniaj\u0105c modyfikacje. Artykuł pokazuje jak profilować\
+  ć tabel spowalniając modyfikacje. Artykuł pokazuje jak profilować\
   \ zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania."
 excerpt: "Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkoś\
-  ć tabel spowalniaj\u0105c modyfikacje. Artykuł pokazuje jak profilować\
+  ć tabel spowalniając modyfikacje. Artykuł pokazuje jak profilować\
   \ zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania."
 publishDate: 2021-06-27 17:40:00+00:00
 slug: pl/testowanie-szybkosci-selektow
