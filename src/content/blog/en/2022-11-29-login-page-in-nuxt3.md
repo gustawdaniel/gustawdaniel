@@ -270,6 +270,8 @@ our symbolic template can have form
 </template>
 ```
 
-Thats it. We builded super simple front with login and profile pages. There is no styling, no registration and even I skipped part with strapi setup. But thanks to these simplifications it is useful as base to speedup setting up new nuxt3 projects. I hope it will be usful for you and help to avoid situations like on image below:
+That's it. We built super simple front with login and profile pages. There is no styling, no registration and even 
+I skipped part with strapi setup. But thanks to these simplifications it is useful as base to speedup setting up new 
+nuxt3 projects. I hope it will be useful for you and help to avoid situations like on image below:
 
 ![](https://ucarecdn.com/dc2ca83a-d254-4988-af9e-451a4487403f/)

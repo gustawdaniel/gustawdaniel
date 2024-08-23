@@ -147,10 +147,4 @@ pub fn reverse_search(
 }
 ```
 
-[GitHub - gustawdaniel/linear-sort-reverse-search-rust-easy: https://preciselab.io/last-occurrence/
-
-https://preciselab.io/last-occurrence/. Contribute to gustawdaniel/linear-sort-reverse-search-rust-easy development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/0b4950012139fd8b6e5ae96e677386be992685851612dd1a1288b51972c9fd93/gustawdaniel/linear-sort-reverse-search-rust-easy)](https://github.com/gustawdaniel/linear-sort-reverse-search-rust-easy)
+[linear-sort-reverse-search-rust-easy](https://github.com/gustawdaniel/linear-sort-reverse-search-rust-easy)

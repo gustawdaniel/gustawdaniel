@@ -2,6 +2,7 @@
 title: 'es1'
 canonicalName: post-1
 publishDate: 2022-07-01
+coverImage: https://ucarecdn.com/d8bce439-7a26-4a7d-aef8-4308277995db/
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:

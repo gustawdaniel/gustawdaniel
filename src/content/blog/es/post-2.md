@@ -2,6 +2,8 @@
 title: es2
 canonicalName: post-2
 author: Astro Learner
+coverImage: https://ucarecdn.com/d8bce439-7a26-4a7d-aef8-4308277995db/
+
 description: "After learning some Astro, I couldn't stop!"
 image:
     url: "https://docs.astro.build/assets/arc.webp"

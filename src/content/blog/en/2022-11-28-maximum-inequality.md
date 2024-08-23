@@ -422,10 +422,4 @@ jobs:
         working-directory: ${{ env.working-directory }}
 ```
 
-[GitHub - gustawdaniel/linear-sort-maximum-inequality-rust-node: Hack Earth problem with solution.
-
-Hack Earth problem with solution. . Contribute to gustawdaniel/linear-sort-maximum-inequality-rust-node development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/46206ad525ed8fc27c996a0b9789df18bebeb483bc4fc0eeb6ac06b62f1c7efd/gustawdaniel/linear-sort-maximum-inequality-rust-node)](https://github.com/gustawdaniel/linear-sort-maximum-inequality-rust-node)
+[linear-sort-maximum-inequality-rust-node](https://github.com/gustawdaniel/linear-sort-maximum-inequality-rust-node)

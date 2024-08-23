@@ -529,13 +529,7 @@ jobs:
 
 I hope this article will be helpful for learning basic concepts from rust or javascript. Full code can be seen here:
 
-[GitHub - gustawdaniel/asci-art-rust-node-js
-
-Contribute to gustawdaniel/asci-art-rust-node-js development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/eab81b748e6df897c8f1f504304f64535b3fe2515345883fefb716d3ffe7889d/gustawdaniel/asci-art-rust-node-js)](https://github.com/gustawdaniel/asci-art-rust-node-js)
+[GitHub - gustawdaniel/asci-art-rust-node-js](https://github.com/gustawdaniel/asci-art-rust-node-js)
 
 If you want to solve similar problems you can create account on `codingame` using link:
 

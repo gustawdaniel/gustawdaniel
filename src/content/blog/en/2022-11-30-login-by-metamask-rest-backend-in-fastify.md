@@ -1194,6 +1194,6 @@ jobs:
 
 All presented code can be found in repository:
 
-[GitHub - gustawdaniel/metamask-fastify-rest-api](https://github.com/gustawdaniel/metamask-fastify-rest-api)
+[metamask-fastify-rest-api](https://github.com/gustawdaniel/metamask-fastify-rest-api)
 
 I hope that you liked this form of publication when we covered all parts from scratch to working demo. Let me know if do you see how can I make my code better or if something presented here helped in your projects.

@@ -645,3 +645,8 @@ The await operator is used to wait for a Promise and get its fulfillment value. 
 
 ![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
+---
+
+It is all in this article, but definitely I touched only small part of current JS features and I am sure that this article is worse source to learn them than official specs . His goal was rather summarize, which features I see as useful but still rarely seen in codebase.
+
+I hope you feel inspired or learned something new and if yes, click subscribe or write comment. Thx

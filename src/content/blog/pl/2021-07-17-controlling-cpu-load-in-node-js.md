@@ -642,20 +642,3 @@ Ani workerów, które również mają osobny rozdział do dokumentacji
 [Worker threads | Node.js v16.5.0 Documentation | Node.js v16.5.0 Documentation](https://nodejs.org/api/worker_threads.html)
 
 Zachęcam Was do samodzielnej lektury dokumentacji `Node JS` i projektowania własnych eksperymentów.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

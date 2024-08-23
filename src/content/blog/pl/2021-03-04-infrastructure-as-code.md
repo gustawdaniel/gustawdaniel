@@ -2,6 +2,7 @@
 author: Daniel Gustaw
 canonicalName: infrastruktura-jako-kod-terraform-digital-ocean
 date_updated: 2021-04-07 10:30:29+00:00
+coverImage: https://ucarecdn.com/f370e14e-6fd0-48ef-b689-02d89d85bfb7/
 description: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
   \ poleceń terraform."
 excerpt: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
