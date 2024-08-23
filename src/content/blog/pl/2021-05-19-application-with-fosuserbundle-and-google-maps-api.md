@@ -1,13 +1,14 @@
 ---
 author: Daniel Gustaw
 canonicalName: aplikacja-z-fosuserbundle-i-api-google-maps
+coverImage: https://ucarecdn.com/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3/
 date_updated: 2021-06-22 09:23:37+00:00
-description: "Prosta apka integrująca fos user bundle z google maps. Serwis pozwala\
-  \ na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych\
-  \ przez api od google."
-excerpt: "Prosta apka integrująca fos user bundle z google maps. Serwis pozwala\
-  \ na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych\
-  \ przez api od google."
+description: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala
+  na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych
+  przez api od google.
+excerpt: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala na
+  logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych przez
+  api od google.
 publishDate: 2021-05-18 20:50:00+00:00
 slug: pl/aplikacja-z-fosuserbundle-i-api-google-maps
 tags:
@@ -18,6 +19,7 @@ tags:
 - css
 title: Aplikacja z FOSUserBundle i API Google Maps
 ---
+
 
 
 ## Opis projektu

@@ -1,19 +1,21 @@
 ---
 author: Daniel Gustaw
 canonicalName: analiza-logow-apache-z-goaccess
+coverImage: https://ucarecdn.com/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8/
 date_updated: 2021-07-18 18:21:38+00:00
-description: "W tym wpisie pokazuję narzędzie pozwalające wydobywać\
-  \ ciekawe informacje z plików generowanych automatycznie podczas pracy serwera."
-excerpt: "W tym wpisie pokazuję narzędzie pozwalające wydobywać\
-  \ ciekawe informacje z plików generowanych automatycznie podczas pracy serwera."
+description: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje
+  z plików generowanych automatycznie podczas pracy serwera.
+excerpt: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje
+  z plików generowanych automatycznie podczas pracy serwera.
 publishDate: 2021-05-07 20:26:00+00:00
 slug: pl/analiza-logow-apache-z-goaccess
 tags:
 - spa
 - mustache
 - log
-title: "Analiza logów Apache z GoAccess"
+title: Analiza logów Apache z GoAccess
 ---
+
 
 
 Kiedyś, usłyszałem od kolegi, że nie ma gorszego zajęcia, niż analiza logów Apache. Przeraziło mnie to bo myślałem, że to zmywanie naczyń jest najgorsze. Było to dość dawno i od tego czasu w moim życiu dużo zmieniło się na lepsze. Dzisiaj do zmywania używam zmywarki, a do analizy logów GoAccess.

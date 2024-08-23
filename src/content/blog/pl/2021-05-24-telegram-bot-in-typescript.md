@@ -1,13 +1,12 @@
 ---
 author: Daniel Gustaw
 canonicalName: bot-telegramowy-w-typescript
+coverImage: https://ucarecdn.com/2dcee1e9-a7f9-48db-a443-eb083a918a4d/
 date_updated: 2021-05-24 11:06:00+00:00
-description: "Dowiedz się jak stworzyć bota na telegramie, dodać w\
-  \ nim nasłuch na komendy oraz skonfigurować wysyłanie powiadomień\
-  ."
-excerpt: "Dowiedz się jak stworzyć bota na telegramie, dodać w nim\
-  \ nasłuch na komendy oraz skonfigurować wysyłanie powiadomień\
-  ."
+description: Dowiedz się jak stworzyć bota na telegramie, dodać w nim nasłuch na komendy
+  oraz skonfigurować wysyłanie powiadomień.
+excerpt: Dowiedz się jak stworzyć bota na telegramie, dodać w nim nasłuch na komendy
+  oraz skonfigurować wysyłanie powiadomień.
 publishDate: 2021-05-24 11:06:00+00:00
 slug: pl/bot-telegramowy-w-typescript
 tags:
@@ -16,6 +15,7 @@ tags:
 - typescript
 title: Bot Telegramowy w Typescript
 ---
+
 
 
 Jeden z projektów, które wypuściliśmy w tamtym miesiącu używał Telegrama do wysyłania powiadomień. Wpis pokaże Ci jak skonfigurować wysyłkę powiadomień od zera używając `typescript`.

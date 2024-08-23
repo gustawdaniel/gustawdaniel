@@ -1,23 +1,22 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-wordpress-4300-wyrokow-sadow-w-sprawach-frankowych-bez-linii-kodu
+coverImage: https://ucarecdn.com/8a96e11b-a834-413b-a886-3b5eb059ba3e/
 date_updated: 2021-04-20 12:18:07+00:00
-description: "Nie często się zdarza, żeby wykonanie usługi trwał\
-  o której, niż jej wycenienie, ale przy scrapingu może się tak\
-  \ stać. Zobacz jak łatwe może być pobranie danych, szczegó\
-  lnie z Wordpressa."
-excerpt: "Nie często się zdarza, żeby wykonanie usługi trwał\
-  o której, niż jej wycenienie, ale przy scrapingu może się tak\
-  \ stać. Zobacz jak łatwe może być pobranie danych, szczegó\
-  lnie z Wordpressa."
+description: Nie często się zdarza, żeby wykonanie usługi trwało której, niż jej wycenienie,
+  ale przy scrapingu może się tak stać. Zobacz jak łatwe może być pobranie danych,
+  szczególnie z Wordpressa.
+excerpt: Nie często się zdarza, żeby wykonanie usługi trwało której, niż jej wycenienie,
+  ale przy scrapingu może się tak stać. Zobacz jak łatwe może być pobranie danych,
+  szczególnie z Wordpressa.
 publishDate: 2021-04-20 12:14:43+00:00
 slug: pl/scraping-wordpressa
 tags:
 - wordpress
 - scraping
-title: "Scraping WordPress - 4300 wyroków sądów w sprawach frankowych bez\
-  \ linii kodu"
+title: Scraping WordPress - 4300 wyroków sądów w sprawach frankowych bez linii kodu
 ---
+
 
 
 Nie często się zdarza, żeby wykonanie usługi trwało krócej niż jej wycenienie, ale przy scrapingu tak może się stać. Scraping przypomina pod tym względem hacking, że w zależności od zabezpieczeń i skomplikowania systemu, z którego pobieramy dane, może on być banalnie prosty lub stanowić poważne wyzwanie.

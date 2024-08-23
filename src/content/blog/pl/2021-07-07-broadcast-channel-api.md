@@ -1,13 +1,12 @@
 ---
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
+coverImage: https://ucarecdn.com/8b3fb584-7d88-42e4-b053-b66de5ddfd09/
 date_updated: 2021-07-23 09:22:25+00:00
-description: "Wpis pokazuje jak używać Broadcast Channel API do przesył\
-  ania danych między kartami lub oknami przeglądarki bez wykorzystania serwera\
-  \ i socketów."
-excerpt: "Wpis pokazuje jak używać Broadcast Channel API do przesył\
-  ania danych między kartami lub oknami przeglądarki bez wykorzystania serwera\
-  \ i socketów."
+description: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych
+  między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
+excerpt: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych między
+  kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
 publishDate: 2021-07-07 11:08:19+00:00
 slug: pl/broadcast-channel-api
 tags:
@@ -16,6 +15,7 @@ tags:
 - channel
 title: Broadcast Channel API
 ---
+
 
 
 Nauczymy się jak używać `Broadcast Channel API` do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.

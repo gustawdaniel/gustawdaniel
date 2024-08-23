@@ -1,11 +1,12 @@
 ---
 author: Daniel Gustaw
 canonicalName: wizualizacja-dynamicznej-sieci-korelacyjnej
+coverImage: https://ucarecdn.com/2b2a7b61-d441-4c24-b8f3-f05eebf30c10/
 date_updated: 2021-04-29 23:11:09+00:00
-description: "Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentó\
-  w finansowych mierzonej korelacją."
-excerpt: "Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentó\
-  w finansowych mierzonej korelacją."
+description: Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentów finansowych
+  mierzonej korelacją.
+excerpt: Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentów finansowych
+  mierzonej korelacją.
 publishDate: 2021-04-29 20:05:00+00:00
 slug: pl/wizualizacja-dynamicznej-sieci-korelacyjnej
 tags:
@@ -14,6 +15,7 @@ tags:
 - visualisation
 title: Wizualizacja dynamicznej sieci korelacyjnej.
 ---
+
 
 
 ## Opis projektu

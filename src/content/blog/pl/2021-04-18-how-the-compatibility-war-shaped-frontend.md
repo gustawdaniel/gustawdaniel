@@ -1,18 +1,19 @@
 ---
 author: Daniel Gustaw
 canonicalName: w-jaki-sposob-wojna-o-kompatybilnosc-uksztaltowala-frontend
+coverImage: https://ucarecdn.com/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd/
 date_updated: 2021-04-20 18:51:16+00:00
-description: "Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną\
-  \ wpływało na kierunek rozwoju technologii webowych."
-excerpt: "Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną\
-  \ wpływało na kierunek rozwoju technologii webowych."
+description: Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną wpływało
+  na kierunek rozwoju technologii webowych.
+excerpt: Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną wpływało na kierunek
+  rozwoju technologii webowych.
 publishDate: 2021-04-20 18:51:16+00:00
 slug: pl/w-jaki-sposob-wojna-o-kompatybilnosc-uksztaltowala-frontend
-title: "W jaki sposób wojna o kompatybilność ukształtowała\
-  \ frontend?"
 tags:
 - compatibility
+title: W jaki sposób wojna o kompatybilność ukształtowała frontend?
 ---
+
 
 
 Problem niekompatybilnych wersji oprogramowania czy sprzętu prawdopodobnie nie raz przeszkadzał nam w codziennym życiu. Być może spotkałeś się z sytuacjami lub zauważyłeś:

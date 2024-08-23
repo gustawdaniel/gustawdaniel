@@ -1,18 +1,20 @@
 ---
 author: Daniel Gustaw
 canonicalName: analiza-czestosci-nazw-altcoinow-w-korpusie-jezyka-angielskiego
+coverImage: https://ucarecdn.com/13fd8113-13b0-4f44-a262-90a5e01d4714/
 date_updated: 2021-06-30 10:22:00+00:00
-description: "Celem artykułu jest pokazanie jak odfiltrować spośró\
-  d wszystkich nazw kryptowalut, te nie występujące w języku naturalnym."
-excerpt: "Celem artykułu jest pokazanie jak odfiltrować spośród\
-  \ wszystkich nazw kryptowalut, te nie występujące w języku naturalnym."
+description: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw
+  kryptowalut, te nie występujące w języku naturalnym.
+excerpt: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw kryptowalut,
+  te nie występujące w języku naturalnym.
 publishDate: 2021-06-30 10:22:00+00:00
 slug: pl/analiza-czestosci-nazw-kryptowalut-w-korpusie-jezyka-angielskiego
 tags:
 - maxdata
 - typescript
-title: "Analiza częstości nazw altcoinów w korpusie języka angielskiego"
+title: Analiza częstości nazw altcoinów w korpusie języka angielskiego
 ---
+
 
 
 Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw altcoinów, te nie występujące w języku naturalnym. Zastosowanie tej techniki pozwoliło nam na skuteczny monitoring wzmianek na temat tysięcy kryptowalut na Twitterze w projekcie `MaxData` .
