@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-component-in-nuxt-rest-strapi
+coverImage: https://ucarecdn.com/e5269211-5b98-4476-abdf-2196dfc06c7d/
 date_updated: 2022-11-29 19:22:30+00:00
 description: Simple example of login page in nuxt3 written as base to copy and paste
   in many similar projects.
@@ -14,6 +15,7 @@ tags:
 - login
 title: Login Component in Nuxt (Rest Strapi)
 ---
+
 
 
 How many times in your live did you implemented login view? I did it too much times. Finally to no search code to copy in my projects I decided to paste here easy instruction how to build simple login component in nuxt.

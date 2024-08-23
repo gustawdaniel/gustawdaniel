@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-create-a-free-email-account-with-custom-domain
+coverImage: https://ucarecdn.com/5152692c-b9ae-4f97-9f52-4d36fabe8670/
 date_updated: 2021-06-15 07:30:11+00:00
 description: In this article, you will learn how to create a free email with a custom
   domain. I've shown how to configure Yandex with your DNS.
@@ -14,6 +15,7 @@ tags:
 - email
 title: How to create a free email account with custom domain?
 ---
+
 
 
 ## Yandex is king

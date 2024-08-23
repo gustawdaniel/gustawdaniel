@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-install-mongodb-6-on-fedora-37
+coverImage: https://ucarecdn.com/acfa5bf6-4988-403e-8cc9-cbcca1a77015/
 date_updated: 2023-03-02 05:57:46+00:00
 description: Mongodb 6 installation on Fedora Linux 37. Article shows lacking fragment
   of official docs and two steps after installation that are presented in extremely
@@ -16,6 +17,7 @@ tags:
 - linux
 title: How to install MongoDB 6 on Fedora 37
 ---
+
 
 
 In official docs there is instruction only for Redhat

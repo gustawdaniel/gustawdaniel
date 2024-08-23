@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zeromq-pull-push-pattern-for-node-js
+coverImage: https://ucarecdn.com/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4/
 date_updated: 2023-02-19 09:43:53+00:00
 description: The article emphasizes ZeroMQ's flexibility for messaging in Node.js,
   highlighting the pull-push pattern ideal for high-volume distributed systems.
@@ -13,6 +14,7 @@ tags:
 - nodejs
 title: ZeroMQ pull-push pattern for Node JS
 ---
+
 
 
 ZeroMQ is a messaging library that enables fast and efficient communication between distributed systems. With ZeroMQ, developers can easily build complex messaging systems that can handle high volumes of data and are resilient to network failures. In Node.js, the ZeroMQ library can be used to create messaging endpoints and send and receive messages between them.

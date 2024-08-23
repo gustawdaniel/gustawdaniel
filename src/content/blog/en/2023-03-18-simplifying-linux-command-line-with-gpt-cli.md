@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: simplifying-linux-command-line-with-gpt-cli-rust-open-source
+coverImage: https://ucarecdn.com/eabf3a43-36b5-4911-9f81-ea162966930e/
 date_updated: 2023-03-18 06:01:36+00:00
 description: 'Run linux commands with natural language. Eg.: ''show my graphic card''
   instead ''lspci | grep VGA'', open source project written in rust'
@@ -15,6 +16,7 @@ tags:
 - linux
 title: Simplifying Linux Command Line with GPT-CLI (rust, open source)
 ---
+
 
 
 The Linux command line interface (CLI) is a powerful tool that allows programmers to interact with their computers and servers in an efficient and fast way. It is a tool that is widely used in programming and system administration. However, learning the Linux CLI can be a daunting task, especially for newcomers to the field. This is where GPT-CLI comes in. GPT-CLI is a tool that uses natural language processing (NLP) to simplify the Linux CLI, making it easier for anyone to use.

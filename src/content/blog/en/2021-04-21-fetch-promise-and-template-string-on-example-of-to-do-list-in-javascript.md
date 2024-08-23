@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-javascript
+coverImage: https://ucarecdn.com/014d0920-5eca-46f4-b476-960e0fa98596/
 date_updated: 2021-04-20 21:46:37+00:00
 description: This simple project is great as an introduction to JavaScript programming.
   The emphasis is on ES6 elements and the frontend.
@@ -15,6 +16,7 @@ tags:
 - css
 title: Fetch, Promise and Template String on example of To Do List in JavaScript
 ---
+
 
 
 This simple project learn you how to apply interface `fetch` , shows examples of usage of `promises` and some interesting `css` properties like `transform` , `user-select` or directive `@media`.

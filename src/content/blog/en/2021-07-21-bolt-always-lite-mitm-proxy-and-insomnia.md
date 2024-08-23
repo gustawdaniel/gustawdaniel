@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: bolt-always-lite-mitm-proxy-insomnia-and-vue
+coverImage: https://ucarecdn.com/cd38117c-276f-4c95-9ea8-3eb55e806e87/
 date_updated: 2021-08-15 23:22:00+00:00
 description: hack allowing to order bolt lite using man in the middle attack on app
 excerpt: hack allowing to order bolt lite using man in the middle attack on app
@@ -14,6 +15,7 @@ tags:
 - MITM
 title: Bolt (always) Lite - MITM, Proxy, Insomnia and Vue
 ---
+
 
 
 Howdy!

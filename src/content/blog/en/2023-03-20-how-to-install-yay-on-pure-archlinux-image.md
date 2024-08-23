@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-install-yay-on-a-pure-arch-linux-docker-image
+coverImage: https://ucarecdn.com/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1/
 date_updated: 2023-03-20 06:03:00+00:00
 description: Yay installation require few steps like user creation, base-devel and
   git installation, change in /etc/sudousers, cloning yay repo and makepkg on it.
@@ -17,6 +18,7 @@ tags:
 - yay
 title: How to Install Yay on a Pure Arch Linux Docker Image
 ---
+
 
 
 In this article, we will guide you through the process of installing the `yay` AUR helper on a pure Arch Linux Docker image. Yay is a popular, user-friendly tool for managing packages from the Arch User Repository (AUR). Installing `yay` on an Arch Linux Docker image can help you streamline package management and keep your containerized applications up-to-date.

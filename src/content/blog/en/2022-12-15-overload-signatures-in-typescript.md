@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
+coverImage: https://ucarecdn.com/4c92b683-70df-4d32-85da-c78094fc0cfc/
 date_updated: 2022-12-14 21:02:01+00:00
 description: In TypeScript, we can specify a function that can be called in different
   ways by writing overload signatures. You can use this to define functions with returned
@@ -16,6 +17,7 @@ tags:
 - javascript
 title: Overload Signatures in Typescript
 ---
+
 
 
 When do you have function that returns different types in dependence from parameter values `overload signatures` can be exactly what do you need.

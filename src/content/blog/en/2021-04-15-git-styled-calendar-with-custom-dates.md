@@ -1,15 +1,17 @@
 ---
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
+coverImage: https://ucarecdn.com/9f33d20f-8d16-4a99-82b4-180bd4877124/
 date_updated: 2021-04-20 19:28:39+00:00
 description: git styled calendar created from list of dates saved as csv file
 excerpt: git styled calendar created from list of dates saved as csv file
 publishDate: 2021-04-20 19:28:40+00:00
 slug: en/git-styled-calendar-with-custom-dates
-title: Git styled calendar with custom dates
 tags:
-  - git
+- git
+title: Git styled calendar with custom dates
 ---
+
 
 
 Let us assume that you have a set of dates. You want to display these dates in a readable clear way.

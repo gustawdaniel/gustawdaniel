@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: maximum-inequality-linear-search-rust-and-typescript
+coverImage: https://ucarecdn.com/3e9e4456-ce05-4bd0-b136-7bbd4c952edd/
 date_updated: 2022-11-28 16:54:20+00:00
 description: Simple hackeartch task solved in node js and rust. You con compare these
   two languages on example of this problem. I recommend to solve it independently
@@ -17,6 +18,7 @@ tags:
 - typescript
 title: Maximum Inequality [Linear Search] rust and typescript
 ---
+
 
 
 **Problem**

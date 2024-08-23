@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: selected-syntax-in-javascript-es2020-es2021-and-es2022
+coverImage: https://ucarecdn.com/dc12881c-1152-4886-bd6b-32ec7961740c/
 date_updated: 2023-02-08 16:39:54+00:00
 description: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled,
   BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment,
@@ -15,6 +16,7 @@ tags:
 - es6
 title: Selected syntax in JavaScript ES2020, ES2021 and ES2022
 ---
+
 
 
 Javascript is main primary language. But his dynamic development insist from me constant updates of my knowledge about it. In this article I will show few syntax that I learned in last two years and which was not available if you get know JavaScript earlier.
@@ -643,8 +645,3 @@ The await operator is used to wait for a Promise and get its fulfillment value. 
 
 ![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
----
-
-It is all in this article, but definitely I touched only small part of current JS features and I am sure that this article is worse source to learn them than official specs . His goal was rather summarize, which features I see as useful but still rarely seen in codebase.
-
-I hope you feel inspired or learned something new and if yes, click subscribe or write comment. Thx

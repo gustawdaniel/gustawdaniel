@@ -1,6 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: quicksort-implementation-in-rust-typescript-and-go
+coverImage: https://ucarecdn.com/7b891521-d7d2-4d7b-8cf7-ec59c58053a1/
 date_updated: 2023-02-21 03:51:40+00:00
 description: Master QuickSort with our in-depth guide and implementation examples
   in three popular programming languages, and sort large datasets quickly and efficiently.
@@ -16,6 +17,7 @@ tags:
 - sort
 title: QuickSort implementation in Rust, Typescript and Go
 ---
+
 
 
 QuickSort is a popular sorting algorithm that follows the divide-and-conquer approach to sort an array of elements. It works by dividing the array into two smaller sub-arrays around a pivot element, which is selected from the array. The elements in the left sub-array are all smaller than the pivot, and the elements in the right sub-array are all greater than the pivot. The pivot element is then placed in its final position, with all elements on its left being smaller than it, and all elements on its right being greater than it. This process is repeated recursively on the left and right sub-arrays until the whole array is sorted.
