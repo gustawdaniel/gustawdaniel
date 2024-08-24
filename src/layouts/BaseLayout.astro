@@ -15,6 +15,7 @@ import '../styles/pagefind.css'
 import '../styles/alpine.css'
 import '../styles/shiki.css'
 import BaseLayoutHead from "../components/layout/BaseLayoutHead.astro";
+import BaseFooter from "../components/footer/BaseFooter.astro";
 // window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
 
 ---
@@ -32,6 +33,8 @@ import BaseLayoutHead from "../components/layout/BaseLayoutHead.astro";
 <Navigation/>
 
 <slot/>
+
+<BaseFooter/>
 
 <script>
     // @ts-ignore PagefindUI is global
