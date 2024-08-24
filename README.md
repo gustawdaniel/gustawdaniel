@@ -55,3 +55,66 @@ Other blogs:
 
 https://techsquidtv.com/contact/
 https://bepyan.me/en/craft
+
+Selector to debug
+
+```xsl
+<xsl:for-each select="*">
+    <xsl:value-of select="name()"/> 
+    <xsl:text>, </xsl:text>
+</xsl:for-each>
+```
+
+
+```css
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #242628;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+table {
+    border: none;
+    border-collapse: collapse;
+    width: 100%
+}
+th {
+    text-align: left;
+    padding-right: 30px;
+    font-size: 11px;
+}
+thead th {
+    border-bottom: 1px solid #7d878a;
+    cursor: pointer;
+}
+td {
+    font-size:11px;
+    padding: 5px;
+}
+tr:nth-child(odd) td {
+    background-color: rgba(0,0,0,0.04);
+}
+tr:hover td {
+    background-color: #e2edf2;
+}
+
+#content {
+    margin: 0 auto;
+    padding: 2% 5%;
+    max-width: 800px;
+}
+
+.desc {
+    margin: 18px 3px;
+    line-height: 1.2em;
+}
+.desc a {
+    color: #5ba4e5;
+}
+```
