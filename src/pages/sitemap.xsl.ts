@@ -69,7 +69,7 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
                     <p class="desc">
                         This is a sitemap generated to allow search engines to discover this blog's content.
                     </p>
-                    <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &gt; 0">
+                    <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) > 0">
                         <table id="sitemap" cellpadding="3">
                             <thead>
                                 <tr>
@@ -87,14 +87,14 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
                                             <a href="{$sitemapURL}"><xsl:value-of select="sitemap:loc"/></a>
                                         </td>
                                         <td>
-                                            <xsl:value-of select="concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)))"/>
+                                            <xsl:value-of select="concat(substring(sitemap:lastmod, 1, 10), ' ', substring(sitemap:lastmod, 12, 5))"/>
                                         </td>
                                     </tr>
                                 </xsl:for-each>
                             </tbody>
                         </table>
                     </xsl:if>
-                    <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) &lt; 1">
+                    <xsl:if test="count(sitemap:sitemapindex/sitemap:sitemap) = 0">
                         <table id="sitemap" cellpadding="3">
                             <thead>
                                 <tr>
@@ -105,8 +105,6 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
                                 </tr>
                             </thead>
                             <tbody>
-                                <xsl:variable name="lower" select="'abcdefghijklmnopqrstuvwxyz'"/>
-                                <xsl:variable name="upper" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/>
                                 <xsl:for-each select="sitemap:urlset/sitemap:url">
                                     <tr>
                                         <td>
@@ -122,21 +120,17 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
                                         </td>
                                         <td>
                                             <xsl:choose>
-                                                <xsl:when test="contains(sitemap:loc, '/pl') or contains(sitemap:loc, '/es')">
-                                                    <xsl:choose>
-                                                        <xsl:when test="contains(sitemap:loc, '/posts/pl')">
-                                                            <xsl:text>pl</xsl:text>
-                                                        </xsl:when>
-                                                        <xsl:when test="contains(sitemap:loc, '/posts/es')">
-                                                            <xsl:text>es</xsl:text>
-                                                        </xsl:when>
-                                                        <xsl:when test="substring-after(sitemap:loc, '/pl')">
-                                                            <xsl:text>pl</xsl:text>
-                                                        </xsl:when>
-                                                        <xsl:when test="substring-after(sitemap:loc, '/es')">
-                                                            <xsl:text>es</xsl:text>
-                                                        </xsl:when>
-                                                    </xsl:choose>
+                                                <xsl:when test="contains(sitemap:loc, '/posts/pl')">
+                                                    <xsl:text>pl</xsl:text>
+                                                </xsl:when>
+                                                <xsl:when test="contains(sitemap:loc, '/posts/es')">
+                                                    <xsl:text>es</xsl:text>
+                                                </xsl:when>
+                                                <xsl:when test="starts-with(substring-after(sitemap:loc, '/'), 'pl')">
+                                                    <xsl:text>pl</xsl:text>
+                                                </xsl:when>
+                                                <xsl:when test="starts-with(substring-after(sitemap:loc, '/'), 'es')">
+                                                    <xsl:text>es</xsl:text>
                                                 </xsl:when>
                                                 <xsl:otherwise>
                                                     <xsl:text>en</xsl:text>
@@ -144,7 +138,7 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
                                             </xsl:choose>
                                         </td>
                                         <td>
-                                            <xsl:value-of select="concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)))"/>
+                                            <xsl:value-of select="concat(substring(sitemap:lastmod, 1, 10), ' ', substring(sitemap:lastmod, 12, 5))"/>
                                         </td>
                                     </tr>
                                 </xsl:for-each>
@@ -156,10 +150,11 @@ const content = `<?xml version="1.0" encoding="UTF-8"?>
         </html>
 
     </xsl:template>
-</xsl:stylesheet>`;
+</xsl:stylesheet>
+`;
 
 export async function GET() {
-    return new Response(content, {
+    return new Response(content.trim(), {
         headers: {
             'Content-Type': 'text/xsl',
         }
