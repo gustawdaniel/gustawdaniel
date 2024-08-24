@@ -51,7 +51,7 @@ Ograniczenia
 1 <= k_i <= 48
 ```
 
-![](__GHOST_URL__/content/images/2021/11/2021-11-18_14-02.png)
+![](https://ucarecdn.com/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1/)
 
 Wyjaśnienie
 
@@ -77,11 +77,11 @@ Kluczowe wzory to:
 
 * Fundamentalne twierdzenie arytmetyki - każdą dodatnią całkowitą liczbę przedstawimy jako unikalny iloczyn jej czynników pierwszych z odpowiednimi potęgami
 
-![](__GHOST_URL__/content/images/2021/11/c2064d7393a873698b08985de30ce22e9dc560a2.svg)
+![](https://ucarecdn.com/20687346-ea6f-43fc-8b22-7a7573819554/)
 
 * Najmniejszą wspólną wielokrotność (lcm) pary liczb wyliczymy używając tego rozkładu
 
-![](__GHOST_URL__/content/images/2021/11/c902bcafbb1287727dcd0409800994923dd66388.svg)
+![](https://ucarecdn.com/29216930-efaf-40f6-81e6-49f186d6a8fc/)
 
 Istnieją sposoby liczenia `lcm` bez rozkładu na czynniki, np przez związek z największym wspólnym dzielnikiem (gcd) i algorytm euklidesa, tu jednak posłużymy się rozkładem na czynniki.
 
@@ -97,7 +97,7 @@ Widzimy, że pierwszym wyzwaniem jest rozłożenie liczby na czynniki.
 
 W tym zagadnieniu bardzo pomocny jest graficzny schemat algorytmu
 
-![](__GHOST_URL__/content/images/2021/11/Algorithm-PrimeFactor_clip_image002.jpeg)
+![](https://ucarecdn.com/102c0a22-4b94-4642-97b0-6e96f9d9bd47/)
 
 [Prime Factor: Algorithm
 

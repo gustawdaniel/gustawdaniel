@@ -39,24 +39,3 @@ const locale = Astro.currentLocale ?? 'en';
         <MobileLanguageSelector/>
     </nav>
 </header>
-
-<script>
-    const se = document.querySelector('#search-dialog-activator');
-    const sd = document.querySelector('#search-dialog');
-    console.log('se', se);
-    console.log('sd', sd);
-
-    if (se && sd) {
-        se.addEventListener('click', () => {
-            sd.classList.toggle('hidden');
-            // setTimeout(() => {
-            const search = document.querySelector('#search input');
-            console.log('search', search);
-            if (search instanceof HTMLInputElement) {
-                search.focus();
-            }
-            // }, 100)
-
-        })
-    }
-</script>

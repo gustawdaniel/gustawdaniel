@@ -5,9 +5,12 @@ import vue from '@astrojs/vue';
 
 import alpinejs from "@astrojs/alpinejs";
 import type {Locales} from "astro";
+import {redirects} from "./src/helpers/redirects.ts";
 
+// redirect /author/daniel/
 // https://astro.build/config
 export default defineConfig({
+  redirects,
   image: {
     domains: ['ucarecdn.com']
   },

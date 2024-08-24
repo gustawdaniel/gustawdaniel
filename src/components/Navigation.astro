@@ -3,7 +3,7 @@ import AppTopNavBar from "./AppTopNavBar.astro";
 import SearchLayer from "./search/SearchLayer.astro";
 ---
 
-<header class="">
+<header x-data="{searchOpen: false}">
   <SearchLayer/>
   <AppTopNavBar/>
 </header>

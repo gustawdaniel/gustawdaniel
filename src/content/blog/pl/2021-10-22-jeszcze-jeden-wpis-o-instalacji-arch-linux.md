@@ -34,7 +34,7 @@ Kolejno omówimy:
 
 Rdzeń instalacji przedstawia poniższa grafika, ale niektóre komendy będą się u nas różnić.
 
-![](__GHOST_URL__/content/images/2021/10/Hokk8sK.jpeg)
+![](https://ucarecdn.com/b49cea1e-c602-46e3-a908-0b3470ec06a0/)
 
 ## Przygotowanie bootowalnego pendrive
 
@@ -48,7 +48,7 @@ Obraz ISO Archa możemy pobrać z torrentów:
 
 Jednak ponieważ płyty CD nie są już używane, domyślnym działaniem jest wgranie go na USB. Żeby to zrobić wkładamy pendrive do komputera i sprawdzamy jaką nazwę dostał jednym z poleceń `dmesg | grep Attached`, `df -h` lub `lsblk`.
 
-![](__GHOST_URL__/content/images/2021/08/Screenshot-from-2021-08-20-09-23-06.png)
+![](https://ucarecdn.com/d4303721-d034-4dc5-9b98-2aa9ae5553b2/)
 
 W naszym przypadku jest to `sde`. Odmontowujemy pendrive komedą:
 
@@ -66,7 +66,7 @@ Po włożeniu pendrive do docelowej maszyny i uruchomieniu zwykle należy użyć
 
 Jeśli się uda powinniśmy zobaczyć:
 
-![](__GHOST_URL__/content/images/2021/08/1-arch-linux.jpg)
+![](https://ucarecdn.com/049176bc-bcf4-4774-9275-0edd0d980b37/)
 
 Po zatwierdzeniu przez `ENTER` trafimy do konsoli instalatora
 
@@ -76,11 +76,11 @@ Nawiązanie połączenia z internetem jest naszym pierwszym zadaniem.
 
 Zaczniemy od listy dostępnych urządzeń, wpisujemy `iwctl` a następnie `device list`.
 
-![](__GHOST_URL__/content/images/2021/08/Screenshot-from-2021-08-20-09-51-53.png)
+![](https://ucarecdn.com/553974c5-3944-43e7-9e25-0034204bae17/)
 
 Lista sieci dostępna jest po wpisaniu `station wlan0 get-networks`
 
-![](__GHOST_URL__/content/images/2021/08/Screenshot-from-2021-08-20-09-54-15.png)
+![](https://ucarecdn.com/c6e726d4-85d0-4e02-ba9c-a0d281641f5b/)
 
 Podłączamy się do wybranej sieci poleceniem `station wlan0 connect TP-Link_CEC8` i podajemy hasło.
 
@@ -161,7 +161,7 @@ Na starszych komputerach użyjemy biosa. Programem `cfdisk` lub `fdisk` mozemy u
 * bootowalna patrycje sda1 z typem 83 Linux
 * nie bootowalna partycje sda2 z typem 82 Linux Swap
 
-![](__GHOST_URL__/content/images/2021/10/IMG_20211016_155428378.jpg)
+![](https://ucarecdn.com/88eda6fa-37ae-43a2-b5ce-9ea43ef00fcd/)
 
 Fortsmtujemy utworzona partycje
 
@@ -792,15 +792,15 @@ yay -S barrier
 
 Na urządzeniu klienckim ustawiamy id serwera:
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-16_23-25.png)
+![](https://ucarecdn.com/7e58151b-96fb-4217-b7f7-49a5552900a8/)
 
 A na serwerze:
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-13_00-04.png)
+![](https://ucarecdn.com/254f446b-c536-4626-ad8e-9461988b6c96/)
 
 Wskazujemy gdzie względem naszego komputera ustawi się klient
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-13_00-04_1.png)
+![](https://ucarecdn.com/270694f4-09f0-4dfd-af1c-6d7332690f0a/)
 
 W przypadku problemów z zestawieniem połączenia zawsze pomagało wyłączenie i włączeniu obu komputerów.
 
@@ -881,7 +881,7 @@ Do sprawdzania użycia i temperatury procesora, zajętej pamięci operacyjnej, t
 yay -S bashtop
 ```
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-17_00-54.png)
+![](https://ucarecdn.com/87e08fbb-de98-4348-9169-9543d9a8aab4/)
 
 ### Display Manager
 
@@ -892,7 +892,7 @@ yay -S ly
 sudo systemctl enable ly.service
 ```
 
-![](__GHOST_URL__/content/images/2021/10/88958888-65efbf80-d2a1-11ea-8ae5-3f263bce9cce.png)
+![](https://ucarecdn.com/9be76f2f-1843-4219-990f-9d5c1b422fd1/)
 
 ### Tmux i Tmuxinator
 
@@ -913,7 +913,7 @@ Contribute to gustawdaniel/my-arch-i3-config development by creating an account 
 
 ![](https://opengraph.githubassets.com/329bf602abfbb3c32fc70733557d3fb9f40c7171acdb51064027ff062f032e06/gustawdaniel/my-arch-i3-config)](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.tmux.conf)
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-22_01-27.png)
+![](https://ucarecdn.com/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e/)
 
 ### Bitwarden
 
@@ -933,7 +933,7 @@ for_window [instance="bitwarden"] border pixel 3
 for_window [instance="bitwarden"] resize set 800 600
 ```
 
-![](__GHOST_URL__/content/images/2021/10/2021-10-22_01-26.png)
+![](https://ucarecdn.com/4d133afa-efe5-4cf9-acaa-72970b4f0ac5/)
 
 ## Nasz Arch Linux z i3 jest gotowy
 
@@ -941,4 +941,4 @@ Wciąż do efektywnej pracy może brakować nam `IDE` jeśli jesteśmy programis
 
 Jeśli twoim zdaniem w zestawieniu zabrakło jakichś programów, albo widzisz miejsca gdzie mógł być coś uprościć daj znać w komentarzu.
 
-![](__GHOST_URL__/content/images/2021/10/x4akxjcv21e31-1.png)
+![](https://ucarecdn.com/f28189da-1303-474d-a73f-0eaa5eae884b/)

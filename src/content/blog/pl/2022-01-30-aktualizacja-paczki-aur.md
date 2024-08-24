@@ -25,7 +25,7 @@ Po założeniu konta na stronie
 
 przejdź do zakładki "moje konto" i uzupełnij "Klucz publiczny SSH"
 
-![](__GHOST_URL__/content/images/2022/01/2022-01-29_20-17.png)
+![](https://ucarecdn.com/08559ea5-1a3c-40c5-96f0-d5e3b34148cf/)
 
 ### Pobierz paczkę, którą chcesz zaktualizować
 
@@ -90,7 +90,7 @@ The official Infinity Wallet releases for desktop. Contribute to InfinityWallet/
 
 ![](https://opengraph.githubassets.com/35c9d7d692036ba82a86d7902eb4aa0e971f98303fbf7e3d573a97a339c532b2/InfinityWallet/Releases)](https://github.com/InfinityWallet/Releases/releases)
 
-![](__GHOST_URL__/content/images/2022/01/2022-01-29_20-37.png)
+![](https://ucarecdn.com/03aa2c9c-5c02-48c1-b89a-5b6dc474378b/)
 
 A wersję dla Debiana znajdziemy pod adresem
 
@@ -130,7 +130,7 @@ Możemy sprawdzić czy instalacja przebiega pomyślnie wpisując
 makepkg -si
 ```
 
-![](__GHOST_URL__/content/images/2022/01/DbWRSGGVAAAzWgb.jpg)
+![](https://ucarecdn.com/edfefedf-af85-409b-9e6d-ff33fbeefd07/)
 
 ### Wysyłamy zmiany do repozytorium
 

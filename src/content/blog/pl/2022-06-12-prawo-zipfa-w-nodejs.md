@@ -15,7 +15,7 @@ Prawo Zipfa mówi, że jeśli posortuje się słowa w danym języku względem cz
 
 Innymi słowy występuje liniowa zależność o ujemnym współczynniku między logartymami częstotliwości i rangi, co widać na wykresie w skali logarytmiczno-logarytmicznej.
 
-![](__GHOST_URL__/content/images/2022/06/2022-06-12_02-12.png)
+![](https://ucarecdn.com/6239ac87-abab-42ec-8187-c0cc1048c36f/)
 
 lub dzięki prostemu przekształceniu:
 
@@ -206,7 +206,7 @@ Alternatywą dla tego podejścia jest `console.time`.
 
 Po uruchomieniu początkowo wszystko szło dobrze, aż do fatalnego błędu `heap out of memory`.
 
-![](__GHOST_URL__/content/images/2022/06/2022-06-11_23-32.png)
+![](https://ucarecdn.com/75262dcb-25cd-46a0-9a22-2e580b0d4652/)
 
 Co istotne, komputer nie zawiesił się i miał zapas wolnej pamięci. Stało się tak dlatego, że domyślny limit ustawiony na 2GB został przekroczony. Możemy sprawdzić ten limit poleceniem:
 
@@ -285,11 +285,11 @@ gnuplot -e "set ylabel 'Count'; set xlabel 'Rank'; set logscale xy; plot 'log.tx
 
 Flaga `-e` pozwala podać komendę a `-p` nie wyłącza wykresu po jego narysowaniu.
 
-![](__GHOST_URL__/content/images/2022/06/2022-06-12_01-42.png)
+![](https://ucarecdn.com/ad6a0225-ab79-4797-9ef6-285c623bd87a/)
 
 Widzimy, że wykres pokrywa się z tym, który widzieliśmy na Wikipedii.
 
-![](__GHOST_URL__/content/images/2022/06/42fb977388_a_nie_mowilem_.jpg)
+![](https://ucarecdn.com/bc9c8b7d-7019-4011-97a1-d2ac6549cdca/)
 
 ## Interpretacja wyników
 

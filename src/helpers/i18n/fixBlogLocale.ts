@@ -13,6 +13,8 @@ export function fixBlogLocale(
             } else {
                 return `/` + (locale === defaultLocale ? '' : (locale))
             }
+        } else if(path.startsWith('/' + locale + '/')) {
+            return path.replace('/' + locale, '');
         }
     }
     return path;
