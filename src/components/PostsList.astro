@@ -29,7 +29,7 @@ import FirstPostCardOnList from "./blog/FirstPostCardOnList.astro";
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mt-16 ">
 
-            {allBlogPosts.length && <FirstPostCardOnList article={allBlogPosts.at(-1)} />}
+            {allBlogPosts.length && <FirstPostCardOnList article={allBlogPosts.at(-1)!} />}
             {allBlogPosts.reverse().filter((_,i) => i>0).map(p =>
                     <a  href={
                         fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(p.slug)), locale)

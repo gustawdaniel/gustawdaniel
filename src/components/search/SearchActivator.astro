@@ -26,18 +26,8 @@
                    focus:ring-indigo-600 sm:text-sm sm:leading-6
                    dark:focus:placeholder:text-gray-500"
                    placeholder="Search" type="search"
-            @click="() => {
-                searchOpen = !searchOpen;
-                if(searchOpen) {
-                    setTimeout(() => {
-                        const input = $refs.search.querySelector('input');
-                        if(input instanceof HTMLInputElement) {
-                            input.focus();
-                        }
-                    }, 100)
-                }
-            }"
-            >
+                @click="searchOpen = !searchOpen; if(searchOpen) { setTimeout(() => { const input = $refs.search.querySelector('input'); if(input instanceof HTMLInputElement) { input.focus(); } }, 100) }"
+            />
         </div>
     </div>
 </div>

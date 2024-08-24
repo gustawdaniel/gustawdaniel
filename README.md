@@ -50,3 +50,8 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 /content/images/size/w600/2022/01/209_159470772.jpg 600w,
 /content/images/size/w1000/2022/01/209_159470772.jpg 1000w,
 /content/images/size/w2000/2022/01/209_159470772.jpg 2000w
+
+Other blogs:
+
+https://techsquidtv.com/contact/
+https://bepyan.me/en/craft

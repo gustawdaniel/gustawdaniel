@@ -1,29 +1,33 @@
 ---
 import Navigation from "../components/Navigation.astro";
-const {pageTitle} = Astro.props;
+
+interface Props {
+    pageTitle: string;
+    description?: string;
+    ogImage?: string;
+}
+
+const {pageTitle, description, ogImage} = Astro.props;
+const locale = Astro.currentLocale ?? 'en';
 
 import '../styles/tailwind.css'
 import '../styles/pagefind.css'
 import '../styles/alpine.css'
 import '../styles/shiki.css'
+import BaseLayoutHead from "../components/layout/BaseLayoutHead.astro";
 // window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
 
 ---
-<html lang="en"
+<html lang={locale}
       x-data="{ darkMode: localStorage.getItem('theme') || (localStorage.setItem('theme', 'system') || 'system')}"
       x-init="$watch('darkMode', val => localStorage.setItem('theme', val))"
       x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
 >
-<head>
-
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Astro{pageTitle ? ' - ' + pageTitle : ''}</title>
-    <!--<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />-->
-
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-    <script is:inline src="/pagefind/pagefind-ui.js"></script>
-</head>
+<BaseLayoutHead
+        title={`Daniel Gustaw${pageTitle ? (' - ' + pageTitle) : ''}`}
+        description={description ?? "Daniel Gustaw's personal blog"}
+        ogImage={ogImage ?? 'https://ucarecdn.com/411d6d7d-6a1e-4096-9a88-fc16a9978f2f/-/preview/256x256/'}
+/>
 <body class="dark:bg-slate-900">
 <Navigation/>
 

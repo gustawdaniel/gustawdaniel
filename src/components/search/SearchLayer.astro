@@ -3,32 +3,19 @@
 ---
 
 <div
-        @click="() => {
-            const input = $refs.search.querySelector('input');
-            if(input) {
-                input.value = '';
-            }
-            searchOpen = false
-        }"
-        class="fixed inset-0 z-50"
-        x-show="searchOpen" x-cloak
-     id="search-dialog" role="dialog" tabindex="-1" aria-modal="true"
-     data-headlessui-state="open" data-open="">
+    @click="const input = $refs.search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false"
+    class="fixed inset-0 z-50"
+    x-show="searchOpen" x-cloak
+    id="search-dialog" role="dialog" tabindex="-1" aria-modal="true"
+    data-headlessui-state="open"
+>
     <div class="fixed inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-2xl"></div>
-    <div class="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:px-8
-    lg:py-[5vh]">
+    <div class="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:px-8 lg:py-[5vh]">
         <div
-                @click="(event) => {
-                    if(event.target && event.target instanceof HTMLElement && event.target.classList.contains('pagefind-ui__result-link')) {
-                        const input = search.querySelector('input');
-                        if(input) {
-                            input.value = '';
-                        }
-                        searchOpen = false
-                    }
-                    event.stopPropagation()
-                }"
-                @keydown="$event.key === 'Escape' ? searchOpen = false : null"
-                id="search" x-ref="search"></div>
+            x-ref="search"
+            @click="if($event.target && $event.target instanceof HTMLElement && $event.target.classList.contains('pagefind-ui__result-link')) { const input = search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false } $event.stopPropagation()"
+            @keydown="$event.key === 'Escape' ? searchOpen = false : null"
+            id="search"
+        />
     </div>
 </div>

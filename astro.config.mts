@@ -1,15 +1,16 @@
 import { defineConfig } from 'astro/config';
-import {defaultLocale, locales} from "./src/locales.ts";
+import { defaultLocale, locales } from "./src/locales.ts";
 import tailwind from "@astrojs/tailwind";
 import vue from '@astrojs/vue';
-
 import alpinejs from "@astrojs/alpinejs";
-import type {Locales} from "astro";
-import {redirects} from "./src/helpers/redirects.ts";
+import type { Locales } from "astro";
+import { redirects } from "./src/helpers/redirects.ts";
 
 // redirect /author/daniel/
+
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://gustawdaniel.com',
   redirects,
   image: {
     domains: ['ucarecdn.com']
@@ -29,7 +30,8 @@ export default defineConfig({
       // Alternatively, provide multiple themes
       // See note below for using dual light/dark themes
       themes: {
-        light: 'snazzy-light', // 'github-light',
+        light: 'snazzy-light',
+        // 'github-light',
         dark: 'dracula'
       },
       // Disable the default colors
