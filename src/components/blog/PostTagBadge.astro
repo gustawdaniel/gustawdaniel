@@ -1,0 +1,15 @@
+---
+interface Props {
+    tag: string,
+    className?: string
+}
+
+const {tag,className} = Astro.props
+---
+
+<span  class:list={[
+    'capitalize relative z-10 rounded-full bg-gray-50 text-gray-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 cursor-pointer px-3 py-1.5 font-medium',
+    className ? className : ''
+]}>
+    {tag}
+</span>

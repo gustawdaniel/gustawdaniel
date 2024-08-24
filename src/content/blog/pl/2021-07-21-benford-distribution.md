@@ -145,13 +145,13 @@ Podobnie jak liczby pierwsze, tak i ciąg Fibonacciego powinien spełniać rozk�
 
 Aby zrobić to w Javie wymagany jest import modułu `java.math.BigInteger`.
 
-```
+```java
 import java.math.BigInteger;
 ```
 
 W pliku `Benford.java` w klasie `Benford` utworzymy funkcję `generateFibonacci`, która pozwoli nam przygotować ciąg
 
-```
+```java
 public class Benford {
     private static BigInteger[] generateFibonacci(int n) {
         BigInteger[] fib = new BigInteger[n];
@@ -179,7 +179,7 @@ Dzięki `args` możemy użyć argumentu wpisanego przez użytkownika. Jeśli nie
 
 Następnie tablica `digits` zostaje wypełniona zliczeniami cyfr
 
-```
+```java
         int[] digits = new int[10];
 
         for (BigInteger number : numbers)
@@ -188,7 +188,7 @@ Następnie tablica `digits` zostaje wypełniona zliczeniami cyfr
 
 Na końcu wyświetlamy tablicę porównującą wyniki z przewidywaniami teoretycznymi.
 
-```
+```java
         System.out.print("N   Ben        Fib\n");
         for (int i = 1; i < digits.length; i++)
             System.out.printf("%d %10.6f %10.6f\n",
@@ -208,7 +208,7 @@ Kod wykonujemy wpisując `java Benford.java` i dostajemy wynik potwierdzający n
 
 Projekty w `Rust` rozpoczynamy poleceniem
 
-```
+```bash
 cargo new benford
 ```
 
@@ -218,7 +218,7 @@ cargo new benford
 
 w katalogu `benford` powstaje plik `Cargo.toml` o zawartości
 
-```
+```toml
 [package]
 name = "b"
 version = "0.1.0"
@@ -229,7 +229,7 @@ edition = "2018"
 
 oraz plik `src/main.rs` o treści
 
-```
+```rust
 fn main() {
     println!("Hello, world!");
 }
@@ -241,32 +241,32 @@ To bardzo miłe, że Rust wita nas w tak przyjemny sposób ułatwiając rozpocz�
 
 Aby skompilować program wykonujemy poleceniem
 
-```
+```bash
 cargo build
 ```
 
 Jego uruchomienie jest wówczas możliwe dzięki komendzie
 
-```
+```bash
 ./target/debug/benford
 ```
 
 Aby skompilować i wykonać program jednocześnie użyjemy polecenia
 
-```
+```bash
 cargo run
 ```
 
 O ile w Javie do obsługi dużych liczb całkowitych używaliśmy jednej paczki, to w Rust potrzebujemy dwóch: `num-bigint` oraz `num-traits`. Dodamy je do projektu dopisując linie
 
-```
+```toml
 num-bigint = "0.4.0"
 num-traits = "0.2.14"
 ```
 
 pod kluczem `[dependencies]` w pliku `Cargo.toml`. Wersje paczek automatycznie podpowie nam nasze `IDE`. Ich użycie w pliku `src/main.rs` wymaga napisania
 
-```
+```rust
 use num_bigint::BigUint;
 use num_traits::{Zero, One};
 use std::env;
@@ -274,7 +274,7 @@ use std::env;
 
 Gdzie `Uint` pochodzi od `unsigned integer` czyli liczb całkowitych, które nie poświęcają jednego bitu na znak, bo są zawsze dodatnie. Funckja generująca ciąg Fibonacciego będzie podobna do tej z `Javy`
 
-```
+```rust
 fn generate_fibonacci(n: usize) -> Vec<BigUint> {
     let mut fib = vec![Zero::zero(); n];
     fib[0] = One::one();
@@ -289,7 +289,7 @@ fn generate_fibonacci(n: usize) -> Vec<BigUint> {
 
 Widzimy, że główna różnica leży w nazwaniu typów. W funkcji `main` tak samo generujemy ciąg zapisując go do tablicy
 
-```
+```rust
 fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -303,21 +303,21 @@ Tym razem tablica argumentów zaczyna się od nazwy programu a przekazana warto�
 
 przygotowujemy tablicę ze zliczeniem ilości cyfr na pierwszych pozycjach
 
-```
-    let mut digits = vec![0; 10];
+```rust
+let mut digits = vec![0; 10];
 ```
 
 Zapis analogiczny do tego z Javy pozwala nam na zliczenie cyfr i zapisanie ilości ich wystąpień do tablicy
 
-```
-    for n in numbers.iter() {
-        digits[n.to_string()[..1].parse::<usize>().unwrap()] += 1;
-    }
+```rust
+for n in numbers.iter() {
+    digits[n.to_string()[..1].parse::<usize>().unwrap()] += 1;
+}
 ```
 
 Na końcu pokazujemy wyniki w konsoli dzięki następującej pętli
 
-```
+```rust
     println!("N   Fib        Ben");
     for i in 1..digits.len() {
         println!("{:} {:10.6} {:10.6}",
@@ -333,7 +333,7 @@ Na końcu pokazujemy wyniki w konsoli dzięki następującej pętli
 
 Wyjątkową cechą prezentowanego programu jest to, że jak mało który projekt w `node js` nie zawiera on listy wymaganych paczek. Nie musimy tu importować żadnych modułów odpowiedzialnych z obsługę dużych liczb. Stałe o typie `BigInt` tworzymy dodając literę `n` po liczbie. Przez to funkcja do generowania ciągu Fibonacciego przybiera formę:
 
-```
+```javascript
 const generate_fibonacci = (n) => {
     let fib = [];
     fib[0] = 1n;
@@ -347,7 +347,7 @@ const generate_fibonacci = (n) => {
 
 Łatwo możemy sobie jednak wyobrazić, że ktoś piszący kod tego nie zna różnicy między `1n` a `1` lub po prostu zapomniał, że pracuje z dużymi liczbami i napisał by go tak:
 
-```
+```javascript
 const generate_fibonacci = (n) => {
     let fib = [];
     fib[0] = 1;
@@ -361,7 +361,7 @@ const generate_fibonacci = (n) => {
 
 Aby symulować oba przypadki napiszmy uniwersalną funkcję sterowaną flagą `--cheat`.
 
-```
+```javascript
 const generate_fibonacci = (n) => {
     let fib = [];
     fib[0] = process.argv[3] === '--cheat' ? 1 : 1n;
@@ -381,7 +381,7 @@ W dalszej części okaże się jak kolosalne różnice w wydajności i poprawno�
 
 Funkcji `generate_fibonacci` użyjemy w funkcji `main` w następujący sposób
 
-```
+```javascript
 const main = () => {
     const numbers = generate_fibonacci(
        parseInt(process.argv[2]) || 1000
@@ -394,13 +394,13 @@ Przy okazji twoją uwagę zwróciło zapewne to, że ponownie zupełnie inaczej 
 
 Tablica dziesięciu zer, w których znajdą się ilości zliczonych pierwszych cyfr może być zadeklarowana następująco
 
-```
+```javascript
 const digits = [...new Array(10)].map(() => 0);
 ```
 
 Samo zliczanie jest równie proste co w innych językach
 
-```
+```javascript
 numbers.forEach(n =>
     digits[n.toString().substr(0, 1)]++
 )
@@ -408,7 +408,7 @@ numbers.forEach(n =>
 
 Natomiast drukowanie wyników zamiast używać szablonu do którego wkładamy wartości jako argumenty korzysta bezpośrednio z template string
 
-```
+```javascript
     process.stdout.write("N   Ben        Fib\n");
     for (let i = 1; i < digits.length; i++) {
         const ben = digits[i] / numbers.length;
@@ -422,7 +422,7 @@ Natomiast drukowanie wyników zamiast używać szablonu do którego wkładamy wa
 
 Na końcu za pomocą wywołania funkcji `main` włączamy nasz program.
 
-```
+```javascript
 main();
 ```
 
@@ -430,7 +430,7 @@ main();
 
 Przez wydajność programów mam na myśli wydajność skompilowanych programów bez liczenia czasu kompilacji. Dlatego w przypadku Javy musimy wykonać kompilację poleceniem
 
-```
+```bash
 javac Benford.java
 ```
 
@@ -438,7 +438,7 @@ w wyniku tego polecenia powstanie plik `Benford.class`.
 
 Dla rust kompilacja wykonana przez `cargo build` tworzy deweloperską nie zoptymalizowaną wersję. W celu utworzenia zoptymalizowanej należy dodać flagę `release`.
 
-```
+```bash
 cargo build --release
 ```
 
@@ -464,7 +464,7 @@ Ostatnim wnioskiem jest, że program napisany w `Node JS` z flagą `--cheat` "ni
 
 Oczywiście `Infninity` + `Infnity` = `Infinity` co znacznie skraca czas obliczeń, ale pierwsza "cyfra" nieskończoności dla Node do `I` ponieważ wyliczamy ją poleceniem
 
-```
+```javascript
 n.toString().substr(0, 1)
 ```
 
@@ -490,13 +490,13 @@ W bashu programy komunikują się za pomocą przekierowywania strumieni danych. 
 
 Dla prostego wykonania:
 
-```
+```bash
 java Benford 10
 ```
 
 wynik w postaci:
 
-```
+```tsv
 N   Ben        Fib
 1   0.300000   0.301030
 2   0.200000   0.176091
@@ -515,13 +515,13 @@ Wykonanie `java Benford 10 > out` nic nie pokaże ale spowoduje utworzenie pliku
 
 Jednak kiedy program poprzedzimy poleceniem `time` czyli napiszemy
 
-```
+```bash
 time java Benford 10
 ```
 
 okaże się, że dostaniemy w terminalu
 
-```
+```tsv
 N   Ben        Fib
 1   0.300000   0.301030
 2   0.200000   0.176091
@@ -537,7 +537,7 @@ java Benford 10  0.12s user 0.02s system 153% cpu 0.091 total
 
 jednak próba przechwycenia czasu wykonania do pliku jak poprzednio przez `>` zakończy się wyświetleniem linii
 
-```
+```tsv
 java Benford 10  0.12s user 0.02s system 153% cpu 0.091 total
 ```
 
@@ -545,13 +545,13 @@ w terminalu, a do pliku zostanie przekierowana cała reszta. Jest tak dlatego, �
 
 Naszym celem jest schowanie danych ze strumienia standardowego. Możemy to zrobić przekierowując go do `/dev/null`. To znaczy
 
-```
+```bash
 time java Benford 10 > /dev/null
 ```
 
 Jednak strumień błędów jest dla nas niemożliwy do przetwarzania jeśli nie przekierujemy go na strumień główny. Osiągniemy to poleceniem
 
-```
+```bash
 (time java Benford 10 > /dev/null) 2>&1
 ```
 
@@ -559,19 +559,19 @@ Wynik tych dwóch wygląda tak samo, ale kluczową różnicą jest to, że w dru
 
 Na przykład polecenie zawierające przetwarzanie danych:
 
-```
+```bash
 (time java Benford 10 > /dev/null) 2>&1 | awk '{print $1,10,$6,$10,$12}'
 ```
 
 zwróci na wyjściu standardowym jedynie
 
-```
+```tsv
 java 10 0.11s 154% 0.090
 ```
 
 aby oczyścić te wyniki ze znaku `s` i `%` możemy dodać
 
-```
+```bash
 | tr -d "s%"
 ```
 
@@ -579,19 +579,19 @@ Jeśli chcemy oglądać ten wynik jednocześnie zachowując go do pliku, z pomoc
 
 Wystarczy na końcu dopisać:
 
-```
+```bash
 | tee -a logs
 ```
 
 a pokazana linia zostanie załączona na końcu pliku `logs`. Teraz załóżmy, że chcemy wytworzone właśnie polecenie otoczyć pętlą przechodzącą po sekwencji:
 
-```
+```bash
 for i in $(seq 5 5 25); do echo $i; done;
 ```
 
 Sekwencja wyświetli nam
 
-```
+```tsv
 5
 10
 15
@@ -601,26 +601,26 @@ Sekwencja wyświetli nam
 
 Lecz jeśli wkleili byśmy naiwnie `$i` do `print` w `awk` w następujący sposób:
 
-```
+```bash
 for i in $(seq 5 5 25); do (time java Benford $i > /dev/null) 2>&1 | awk '{print $1,$i,$6,$10,$12}' | tr -d "s%" | tee -a logs; done;
 ```
 
 dostali byśmy kilka razy powtórzoną linię
 
-```
+```bash
 java java Benford $i > /dev/null  0.12s user 0.02s system 152% cpu 0.091 total 0.12 152 0.091
-...
 ```
 
 Jest tak dlatego, że `i` nie istnieje wewnątrz `print` jeśli go tam nie włożymy. Zatem `$i` wynosi tyle samo co `$0` co odpowiada całej linii, a nie wybranej kolumnie. Aby używać zmiennych wewnątrz kontekstu `print` w `awk` możemy użyć flagi `-v`. Poprawna składnia polecenia to:
 
-```
+
+```bash
 for i in $(seq 5 5 25); do (time java Benford $i > /dev/null) 2>&1 | awk -v i=$i '{print $1,i,$6,$10,$12}' | tr -d "s%" | tee -a logs; done;
 ```
 
 a jego wynikiem jest jednoczesne zapisanie do pliku `logs` i pokazanie na ekranie linii:
 
-```
+```bash
 java 5 0.11 150 0.090
 java 10 0.12 153 0.089
 java 15 0.11 152 0.088
@@ -634,7 +634,7 @@ Jeśli temat strumieni w `bash` cię zainteresował polecam wprowadzenie [Justin
 
 Dzieląc zakres pomiarowy na części należy zagęszczać pomiary tam gdzie ich koszt jest niski (krótki czas działania programu) a zmienność i ciekawe zachowania są spodziewane. U nas jest to zmiana stosunku czasu obliczeń do czasu uruchamiania (typowe dla niewielkich wartości `n`). Mamy więc dwa powody, aby nie dzielić zakresu pomiaru na równe kawałki i nie używać `seq`. Zamiast tego możemy wygenerować serię, której gęstość spada wraz ze wzrostem `n`. Na przykład moduł w `Mathematica`:
 
-```mathematica
+```matlab
 Module[{steps = 100, minY = 1, maxY = 50000, pow = 3},
    Table[maxY (minY + maxY (n)^pow)/(minY + maxY), {n, 0, 1,
      1/(steps - 1)}]] // Ceiling // DeleteDuplicates
@@ -646,7 +646,7 @@ spowoduje powstanie serii o następującej dystrybucji
 
 Zapisujemy ją do pliku `n_values` poleceniem
 
-```
+```matlab
 Export["~/exp/benford/n_values.csv", %]
 ```
 
@@ -654,7 +654,7 @@ Export["~/exp/benford/n_values.csv", %]
 
 Kod mierzący wydajność zapiszemy w pliku `measure.sh`
 
-```
+```bash
 #!/usr/bin/zsh
 
 while IFS= read -r i
@@ -667,39 +667,27 @@ done;
 
 Zamieniliśmy tu pętlę `for` na `while`. For z `cat n_values.csv` jest dopuszczalne, ale nie zalecane
 
-[SC2013 · koalaman/shellcheck Wiki
-
-ShellCheck, a static analysis tool for shell scripts - SC2013 · koalaman/shellcheck Wiki
-
-GitHub koalaman
-
-![](https://opengraph.githubassets.com/328ce20d54f5d720f88e3303aa94c9eea7311c1be8d26db7e995d4b88173cb92/koalaman/shellcheck)](https://github.com/koalaman/shellcheck/wiki/SC2013)
+[koalaman/shellcheck Wiki](https://github.com/koalaman/shellcheck/wiki/SC2013)
 
 Warto też otoczyć `$i` cudzysłowami. Kiedy braliśmy dane z sekwencji to nie miało znaczenia i teraz też nie wpłynie na program, ale dobrą praktyką jest używanie cudzysłowów ponieważ jeśli w zmiennych znajdują się wartości zawierające spacje, to słowa oddzielone spacjami mogą być traktowane jako argumenty na kolejnych pozycjach zamiast jedna wartość.
 
-[SC2086 · koalaman/shellcheck Wiki
-
-ShellCheck, a static analysis tool for shell scripts - SC2086 · koalaman/shellcheck Wiki
-
-GitHub koalaman
-
-![](https://opengraph.githubassets.com/328ce20d54f5d720f88e3303aa94c9eea7311c1be8d26db7e995d4b88173cb92/koalaman/shellcheck)](https://github.com/koalaman/shellcheck/wiki/SC2086)
+[koalaman/shellcheck Wiki](https://github.com/koalaman/shellcheck/wiki/SC2086)
 
 Pomiar wykonujemy wpisując
 
-```
+```bash
 time zsh measure.sh
 ```
 
 Ładujemy utworzony plik
 
-```
+```matlab
 logs = Import["/home/daniel/exp/benford/logs", "Data"];
 ```
 
 i rysujemy wykres
 
-```
+```matlab
 ListLogPlot[
  Table[{#[[1]],
      PadLeft[ToExpression /@ StringSplit[ToString[#[[2]]], ":"],
@@ -726,13 +714,7 @@ Zdaję sobie sprawę, że te programy można zoptymalizować, choćby pod wzglę
 
 DK13 - użytkownik serwisu wykop zwrócił uwagę na to, że w Rust mamy różne implementacje dużych liczb i ta którą z nich wybierzemy bardzo istotnie wpływa na wynik końcowy.
 
-[DK13 - profil w Wykop.pl
-
-Write once, debug everywhere.
-
-![](https://www.wykop.pl/static/wykoppl7/img/apple-touch-icon-180x180.png)Wykop.plDK13 12 godz. temu via Wykop Mobilny (Android) +1
-
-![](https://www.wykop.pl/cdn/c3397992/DK13_WbosXcWahF,q250.jpg)](https://www.wykop.pl/ludzie/DK13/)
+[Write once, debug everywhere.](https://www.wykop.pl/ludzie/DK13/)
 
 [https://github.com/tczajka/bigint-benchmark-rs#results](https://github.com/tczajka/bigint-benchmark-rs#results)
 

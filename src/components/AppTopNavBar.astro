@@ -5,17 +5,21 @@ import MobileNavigationLinks from "./header/MobileNavigationLinks.astro";
 import MobileLanguageSelector from "./header/MobileLanguageSelector.astro";
 import MobileMenuActivator from "./header/MobileMenuActivator.astro";
 import SearchActivator from "./search/SearchActivator.astro";
+
+import {getRelativeLocaleUrl} from "astro:i18n";
+const locale = Astro.currentLocale ?? 'en';
+
 ---
-<header class="bg-white shadow dark:bg-gray-800" x-data="{open: false}" x-cloak>
+<header class="bg-white shadow dark:bg-gray-800" x-data="{open: false}" >
     <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y
     lg:divide-gray-200 dark:lg:divide-gray-700 lg:px-8">
         <div class="relative flex h-16 justify-between">
-            <div class="relative z-10 flex px-2 lg:px-0">
+            <a href={getRelativeLocaleUrl(locale, '/')} class="relative z-10 flex px-2 lg:px-0">
                 <div class="flex flex-shrink-0 items-center dark:text-gray-200">
                     <span class="hidden sm:block">Daniel Gustaw</span>
                     <span class="block sm:hidden">DG</span>
                 </div>
-            </div>
+            </a>
 
             <SearchActivator/>
 
@@ -29,7 +33,7 @@ import SearchActivator from "./search/SearchActivator.astro";
         <DesktopNavigationLinks/>
     </div>
 
-    <nav x-show="open" class="lg:hidden" aria-label="Global" id="mobile-menu">
+    <nav x-show="open" class="lg:hidden" aria-label="Global" id="mobile-menu" x-cloak>
         <MobileNavigationLinks/>
 
         <MobileLanguageSelector/>

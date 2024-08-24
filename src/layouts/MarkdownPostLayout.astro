@@ -1,21 +1,56 @@
 ---
 import PostsList from "../components/PostsList.astro";
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import type { InferEntrySchema } from 'astro:content'
+import AvatarPublicationDateReadTime from "../components/blog/AvatarPublicationDateReadTime.astro";
+import { Picture } from 'astro:assets';
+import PostTagBadge from "../components/blog/PostTagBadge.astro";
+
+interface Props {
+    frontmatter: InferEntrySchema<"blog">;
+    body: string;
+}
+
+const { frontmatter, body } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <article class="container prose lg:prose-xl">
+    <article class="container px-2 my-4 sm:my-10 lg:my-20 m-auto">
+        <header>
+            <section class="prose lg:prose-xl m-auto dark:prose-invert">
+
+                <div class="py-3">
+{frontmatter.tags.filter((_,i) => i<3).map(tag =>
+<PostTagBadge className="mr-2 text-sm" tag={tag} />
+)}
+                </div>
+
+                <h1>{frontmatter.title}</h1>
+
+                <p class="text-gray-500 dark:text-gray-400 text-xl">{frontmatter.description}</p>
 
 
-  <h1>{frontmatter.title}</h1>
-<p>Published on: {frontmatter.publishDate.toString().slice(0,10)}</p>
-<p>{frontmatter.description}</p>
-    <p>Written by {frontmatter.author}</p>
+                <div class="not-prose">
+                    <AvatarPublicationDateReadTime data={frontmatter} body={body} />
+                </div>
 
-<hr>
+            </section>
 
-<slot />
+
+        </header>
+
+        <Picture src={frontmatter.coverImage}
+                 widths={[480, 768, 1024, 1440, 1920]}
+                 formats={['avif']}
+                 alt={frontmatter.title} inferSize={true}
+                 class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
+        ></Picture>
+
+        <section class="prose lg:prose-xl m-auto dark:prose-invert">
+
+            <slot/>
+
+        </section>
 
 <hr>
 

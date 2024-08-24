@@ -22,17 +22,17 @@ export default defineConfig({
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes
-      theme: 'dracula',
+      // theme: 'dracula',
       // Alternatively, provide multiple themes
       // See note below for using dual light/dark themes
       themes: {
-        light: 'github-light',
-        dark: 'github-dark'
+        light: 'snazzy-light', // 'github-light',
+        dark: 'dracula'
       },
       // Disable the default colors
       // https://shiki.style/guide/dual-themes#without-default-color
       // (Added in v4.12.0)
-      defaultColor: 'light',
+      // defaultColor: 'dark',
       // Add custom languages
       // Note: Shiki has countless langs built-in, including .astro!
       // https://shiki.style/languages

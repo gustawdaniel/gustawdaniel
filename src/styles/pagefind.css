@@ -1,4 +1,4 @@
-body {
+html {
     --pagefind-ui-scale: 1;
     --pagefind-ui-primary: #034ad8;
     --pagefind-ui-text: #393939;
@@ -12,7 +12,7 @@ body {
     --pagefind-ui-font: sans-serif;
 }
 
-body.dark {
+html.dark {
     --pagefind-ui-primary: #eeeeee;
     --pagefind-ui-text: #eeeeee;
     --pagefind-ui-background: #152028;

@@ -1,4 +1,4 @@
-import {stripLang} from "./stripLang.ts";
+import {defaultLocale} from "../../locales.ts";
 
 export function fixBlogLocale(
     path: string,
@@ -6,14 +6,12 @@ export function fixBlogLocale(
     translatedSlugs?: string[]
 ): string {
     if (path.includes('posts')) {
-        path = stripLang(path);
-        const components = path.split('/');
-        components[2] = locale;
-        path = components.join('/');
-
         if(Array.isArray(translatedSlugs)) {
-            if(!translatedSlugs.includes(components[2] + '/' + components[3])) {
-                return '/' + locale + '/blog'
+            const targetSlug = translatedSlugs.find(slug => slug.startsWith(locale + '/'));
+            if(targetSlug) {
+                return `/posts/${targetSlug}`
+            } else {
+                return `/` + (locale === defaultLocale ? '' : (locale))
             }
         }
     }

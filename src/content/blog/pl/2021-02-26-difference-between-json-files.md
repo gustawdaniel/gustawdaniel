@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: wyznaczenie-roznicy-plikow-json
+canonicalName: calculating-the-difference-between-json-files
 coverImage: https://ucarecdn.com/add30d50-3b0e-4cd7-9720-f990331f1806/
 date_updated: 2023-10-12
 description: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny

@@ -5,6 +5,7 @@ const {pageTitle} = Astro.props;
 import '../styles/tailwind.css'
 import '../styles/pagefind.css'
 import '../styles/alpine.css'
+import '../styles/shiki.css'
 // window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
 
 ---
@@ -23,7 +24,7 @@ import '../styles/alpine.css'
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <script is:inline src="/pagefind/pagefind-ui.js"></script>
 </head>
-<body>
+<body class="dark:bg-slate-900">
 <Navigation/>
 
 <slot/>
