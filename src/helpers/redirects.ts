@@ -38,4 +38,5 @@ export const redirects: Record<string, string | {
     '/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine/': '/posts/pl/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine/',
     '/scraping-libor-oraz-wibor-z-money-pl/': '/posts/pl/scraping-libor-oraz-wibor-z-money-pl/',
     '/strukturyzacja-historycznych-kursow-walut-nbp/': '/posts/pl/strukturyzacja-historycznych-kursow-walut-nbp/',
+    '/rss/': '/rss.xml',
 }
