@@ -26,7 +26,7 @@ export async function GET(context: AstroConfig) {
                 content: post.body,
                 // Compute RSS link from post `slug`
                 // This example assumes all posts are rendered as `/blog/[slug]` routes
-                link: `/blog/${post.slug}/`,
+                link: `/posts/${post.slug}/`,
             })),
         // (optional) inject custom xml
         customData: `<language>en-us</language>`,

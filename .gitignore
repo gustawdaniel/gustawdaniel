@@ -1,6 +1,3 @@
-src/content/blog/pl/addConver.py
-src/content/blog/en/addConver.py
-
 # build output
 dist/
 # generated types
@@ -29,8 +26,5 @@ pnpm-debug.log*
 .idea/
 
 src/assets
-src/content/blog/pl/uploadcare.py
-src/content/blog/pl/upload.py
-src/content/blog/en/upload.py
-
+src/assets/images
 public/pagefind
