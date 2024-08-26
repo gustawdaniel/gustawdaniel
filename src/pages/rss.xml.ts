@@ -22,7 +22,7 @@ export async function GET(context: AstroConfig) {
                 title: post.data.title,
                 pubDate: post.data.publishDate,
                 description: post.data.description,
-                customData: post.data.customData,
+                // customData: post.data.customData,
                 content: post.body,
                 // Compute RSS link from post `slug`
                 // This example assumes all posts are rendered as `/blog/[slug]` routes

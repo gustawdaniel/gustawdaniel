@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: simplifying-linux-command-line-with-gpt-cli-rust-open-source
-coverImage: https://ucarecdn.com/eabf3a43-36b5-4911-9f81-ea162966930e/
+coverImage: http://localhost:8484/eabf3a43-36b5-4911-9f81-ea162966930e.avif
 date_updated: 2023-03-18 06:01:36+00:00
 description: 'Run linux commands with natural language. Eg.: ''show my graphic card''
   instead ''lspci | grep VGA'', open source project written in rust'

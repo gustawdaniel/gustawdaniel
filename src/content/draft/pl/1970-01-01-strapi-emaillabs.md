@@ -8,11 +8,11 @@ draft: true
 
 [Strapi](https://strapi.io/) to wgodny CMS pozwalający wyklikać model danych i wygenerować na jego podstawie rest api oraz graphql.
 
-![](__GHOST_URL__/content/images/2022/06/2022-06-11_14-13.png)
+![](https://gustawdaniel.com/content/images/2022/06/2022-06-11_14-13.png)
 
 [Emaillabs](https://emaillabs.io/) to polski serwis obsługujący wysyłkę e-maili.
 
-![](__GHOST_URL__/content/images/2022/06/Send-us-all.jpg)
+![](https://gustawdaniel.com/content/images/2022/06/Send-us-all.jpg)
 
 ## Wprowadzenie do strapi
 
@@ -76,7 +76,7 @@ module.exports = ({ env }) => ({
 
 Częstym błędem jest podanie tej samej domeny adresu nadawcy i odbiorcy. Nie można tak robić, bo wysyłka między tymi samymi domenami przez zewnętrznego dostawcę jakim jest Emaillabs może zostać zablokowana. Za adres testowy należy wybrać adres z innej domeny.
 
-![](__GHOST_URL__/content/images/2022/06/email1.jpg)
+![](https://gustawdaniel.com/content/images/2022/06/email1.jpg)
 
 Sam kod naszego providera umieszczamy w pliku `providers/strapi-provider-email-emaillabs/index.js`
 
@@ -176,15 +176,15 @@ Send email from your server or externals providers.
 
 Do `.env` dodajemy smtp i klucze api, `EMAILLABS_SMTP` znajdziemy na głównej stronie
 
-![](__GHOST_URL__/content/images/2022/10/2022-10-06_23-01.png)
+![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-01.png)
 
 klucze api w zakładce "Administrator -> Api"
 
-![](__GHOST_URL__/content/images/2022/10/2022-10-06_23-02.png)
+![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-02.png)
 
 Należy też pamiętać o autoryzacji nadawcy, żeby nasze e-maile dochodziły. Będzie to wymagało dodania odpowiednich rekordów w DNS, ale wykracza to poza zakres tego wpisu.
 
-![](__GHOST_URL__/content/images/2022/10/2022-10-06_23-04.png)
+![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-04.png)
 
 Ponownie wysyłając zapytanie o konfigurację e-maila, które wysłaliśmy na początku
 
@@ -208,6 +208,6 @@ powinniśmy zobaczyć
 
 Przetestujmy to i przejdziemy do tematu załączników.
 
-![](__GHOST_URL__/content/images/2022/06/uns09pyvenq71.jpg)
+![](https://gustawdaniel.com/content/images/2022/06/uns09pyvenq71.jpg)
 
-![](__GHOST_URL__/content/images/2022/06/sending-email-like-a-boss.jpg)
+![](https://gustawdaniel.com/content/images/2022/06/sending-email-like-a-boss.jpg)

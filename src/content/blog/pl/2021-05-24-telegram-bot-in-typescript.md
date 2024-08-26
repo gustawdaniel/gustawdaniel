@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: bot-telegramowy-w-typescript
-coverImage: https://ucarecdn.com/2dcee1e9-a7f9-48db-a443-eb083a918a4d/
+coverImage: http://localhost:8484/2dcee1e9-a7f9-48db-a443-eb083a918a4d.avif
 date_updated: 2021-05-24 11:06:00+00:00
 description: Dowiedz się jak stworzyć bota na telegramie, dodać w nim nasłuch na komendy
   oraz skonfigurować wysyłanie powiadomień.
@@ -59,7 +59,7 @@ Aby móc korzystać z API będziemy potrzebowali tokenu. Najprostszym sposobem j
 
 Cała konwersacja polega na tym, że podajemy komendę tworzącą bota, jego `name`, `username` i dostajemy token.
 
-![](https://ucarecdn.com/dd1fe3ce-4c46-4c4d-94d7-c8db9d7b877a/)
+![](http://localhost:8484/dd1fe3ce-4c46-4c4d-94d7-c8db9d7b877a.avif)
 
 ## Dołączenie tokenu do projektu
 
@@ -111,7 +111,7 @@ bot.start();
 
 Następnie dołączyć bota do chatu i napisać do niego. Wynik będzie następujący:
 
-![](https://ucarecdn.com/db5aa8de-98ce-4cd0-8bec-4a8422a82351/)
+![](http://localhost:8484/db5aa8de-98ce-4cd0-8bec-4a8422a82351.avif)
 
 Identyfikator chatu jest kluczową informacją, jeśli chcemy wysyłać do niego powiadomienia. ID chatu i Token to kluczowe informacje mówiące jaki bot i gdzie pisze. W naszym przypadku bot był ustawiony tak, żeby różne dane wysyłać na różne grupy więc musieliśmy powtórzyć to polecenie dla kliku grup i zanotować je w pliku `.env`. Do `.env` dopisujemy linię
 
@@ -132,7 +132,7 @@ setInterval(() => {
 }, 1000)
 ```
 
-![](https://ucarecdn.com/bd59f2a8-88cb-4006-8fb0-51a99a78c6da/)
+![](http://localhost:8484/bd59f2a8-88cb-4006-8fb0-51a99a78c6da.avif)
 
 To był bardzo prosty kod i bardzo prosty bot. Z takimi botami można robić praktyczne rzeczy. Np:
 

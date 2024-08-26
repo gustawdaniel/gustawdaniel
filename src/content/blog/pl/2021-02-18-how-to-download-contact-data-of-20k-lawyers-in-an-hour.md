@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine
-coverImage: https://ucarecdn.com/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6/
+coverImage: http://localhost:8484/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
 date_updated: 2021-02-17 20:59:14+00:00
 description: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć
   pobieranie danych.
@@ -47,11 +47,11 @@ zawiera zielony przycisk wyszukaj. Po jego kliknięciu przechodzimy na stronę
 
 zawierającą klasyczną tabelę
 
-![](https://ucarecdn.com/8353fdf9-84d5-424c-953e-97fde105a990/)
+![](http://localhost:8484/8353fdf9-84d5-424c-953e-97fde105a990.avif)
 
 Schodząc na sam dół i klikając "ostatnia"
 
-![](https://ucarecdn.com/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec/)
+![](http://localhost:8484/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec.avif)
 
 zostaniemy przekierowani na stronę z klasyczną paginacją
 
@@ -69,25 +69,25 @@ Każda z kategorii ma nieco inną stronę profilową:
 
 Adwokat wykonujący zawód ma najpełniejszy profil
 
-![](https://ucarecdn.com/8393459d-2aa3-45b6-a92d-791a0ffeee65/)
+![](http://localhost:8484/8393459d-2aa3-45b6-a92d-791a0ffeee65.avif)
 
 Niektórzy mają do tego telefon komórkowy
 
 > [https://rejestradwokatow.pl/adwokat/urkowska-trzciska-justyna-48516](https://rejestradwokatow.pl/adwokat/urkowska-trzciska-justyna-48516)
 
-![](https://ucarecdn.com/06083bb5-6576-4b2f-af5b-26a28c09442c/)
+![](http://localhost:8484/06083bb5-6576-4b2f-af5b-26a28c09442c.avif)
 
 Dane o byłych adwokatach są ograniczone
 
 > [https://rejestradwokatow.pl/adwokat/urowski-jan-52462](https://rejestradwokatow.pl/adwokat/urowski-jan-52462)
 
-![](https://ucarecdn.com/6da64a0f-0436-4991-93d4-8b1dd546fa26/)
+![](http://localhost:8484/6da64a0f-0436-4991-93d4-8b1dd546fa26.avif)
 
 Jeszcze bardziej o nie wykonujących zawodu
 
 > [https://rejestradwokatow.pl/adwokat/urek-wanda-54247](https://rejestradwokatow.pl/adwokat/urek-wanda-54247)
 
-![](https://ucarecdn.com/ecc0716d-4318-4ab7-a809-8e3d8cb8090f/)
+![](http://localhost:8484/ecc0716d-4318-4ab7-a809-8e3d8cb8090f.avif)
 
 Strategia pobrania tych danych jest prosta. Na początku przejdziemy tabelę budując bazową listę z podstawowymi danymi. Wśród nich znajdą się linki do profili. Pobierzemy je wszystkie i z nich uzyskamy rozszerzenie tej bazowej listy o najcenniejsze dane, na przykład kontaktowe.
 
@@ -105,7 +105,7 @@ Mogli byśmy to przyśpieszyć pobierając kilka stron jednocześnie, ale dla na
 
 Na każdej podstronie mamy taką samą tabelę
 
-![](https://ucarecdn.com/79c8599c-c0b1-424b-bf53-9ff925e91320/)
+![](http://localhost:8484/79c8599c-c0b1-424b-bf53-9ff925e91320.avif)
 
 Projekt inicjalizujemy komendą
 
@@ -234,7 +234,7 @@ zajmuje pół minuty
 
 i generuje plik o wadze `5.1M`
 
-![](https://ucarecdn.com/499c6f85-e441-4a5a-93a4-e320543c0837/)
+![](http://localhost:8484/499c6f85-e441-4a5a-93a4-e320543c0837.avif)
 
 Repozytorium z kodem można znaleźć tutaj:
 
@@ -313,7 +313,7 @@ main().then(() => console.log("ok")).catch(console.error);
 
 Tak wyglądają przykładowe wywołania, jedno z, a drugie bez zapisu plików.
 
-![](https://ucarecdn.com/99942770-6f9d-4fc2-ac6b-d4e50cc24090/)
+![](http://localhost:8484/99942770-6f9d-4fc2-ac6b-d4e50cc24090.avif)
 
 Widać, że nie różnią się od siebie w zauważalny sposób i średni czas na zapis jednego adwokata to koło 150 ms. Daje to łącznie `27190*0.15` = `4078` sekund. Jednak to więcej niż `3600`. Ponad godzina!
 
@@ -525,7 +525,7 @@ Wykonanie tego pliku pokazuje kolumny z
 * czasem miedzy kolejnymi setkami
 * łącznym czasem od włączenia aplikacji
 
-![](https://ucarecdn.com/eceb4ffe-efff-4f71-ab81-ed67c75f4d26/)
+![](http://localhost:8484/eceb4ffe-efff-4f71-ab81-ed67c75f4d26.avif)
 
 Przetworzenie każdej setki plików zajmuje około 340 ms. Co oznacza mniej więcej 300 na sekundę, czyli całość powinna zająć około półtorej minuty. Faktycznie:
 
@@ -583,7 +583,7 @@ Zwróci rozkład względem wykonywanych zawodów i przykładowe linki:
 
 Dzięki interfejsowi Compass możemy przeglądać znacznie więcej takich grupowań w trybie graficznym
 
-![](https://ucarecdn.com/76a04f8e-5417-4186-8cc2-f7d296cca8e8/)
+![](http://localhost:8484/76a04f8e-5417-4186-8cc2-f7d296cca8e8.avif)
 
 Jeśli chcemy wrzucić te dane do mongo atlas możemy użyć komendy
 
@@ -599,7 +599,7 @@ mongodb+srv://user:pass@cluseter_number.mongodb.net/db_name
 
 W mongo charts możemy w chwilę wyklikać kilka wykresów, np wspomniany wcześniej rozkład statusu prawników
 
-![](https://ucarecdn.com/b7187cc9-3753-48fe-b8f2-3cc448ddb52c/)
+![](http://localhost:8484/b7187cc9-3753-48fe-b8f2-3cc448ddb52c.avif)
 
 Interaktywny wykres dostępny do zagnieżdżenia jako `iframe` możemy zobaczyć poniżej.
 
@@ -627,13 +627,13 @@ Po dodaniu wyliczanego pola z datą i rokiem:
 
 Możemy zdefiniować wykres
 
-![](https://ucarecdn.com/62950ca0-eca6-4ab8-bd33-36e4fd197fe0/)
+![](http://localhost:8484/62950ca0-eca6-4ab8-bd33-36e4fd197fe0.avif)
 
 Podobnie przygotowujemy wykres ze średnią liczbą specjalizacji
 
 Za pomocą konfiguracji
 
-![](https://ucarecdn.com/69740c15-e6e6-4e0b-8003-57abb2dc894c/)
+![](http://localhost:8484/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
 
 możemy pokazać częstotliwość wybieranych specjalizacji
 

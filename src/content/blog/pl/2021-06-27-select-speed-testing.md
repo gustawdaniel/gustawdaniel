@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: wplyw-indeksacji-na-wydajnosc-wyszukiwania-w-bazie-mysql
-coverImage: https://ucarecdn.com/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a/
+coverImage: http://localhost:8484/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 date_updated: 2021-06-27 17:40:00+00:00
 description: Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkość tabel
   spowalniając modyfikacje. Artykuł pokazuje jak profilować zapytania i mierzyć wpływ
@@ -275,7 +275,7 @@ SELECT SQL_TEXT,TIMER_WAIT FROM performance_schema.events_statements_history_lon
 
 powinniśmy zobaczyć czas trwania zapytania wyrażony w pikosekundach
 
-![](https://ucarecdn.com/12605ada-a72e-49a9-a9fe-7bb0d3c392b0/)
+![](http://localhost:8484/12605ada-a72e-49a9-a9fe-7bb0d3c392b0.avif)
 
 Jeśli temat konfiguracji mechanizmu profilowania Cię zainteresował możesz pogłębić wiedzę bezpośrednio w dokumentacji:
 
@@ -475,7 +475,7 @@ different number of rows.",
 Export["plotId.png", %];
 ```
 
-![](https://ucarecdn.com/845a64eb-b6e9-449c-8c56-9bb9ccd72edc/)
+![](http://localhost:8484/845a64eb-b6e9-449c-8c56-9bb9ccd72edc.avif)
 
 Widzimy, że zarówno dla `InnoDB` jak i `MEMORY` szybkość wybierania po identyfikatorze nie zależy od ilości rekordów w bazie dla naszego zakresu. Na pewno nie jest to zależność, którą można by wyłowić z szumu, który jest tutaj obecny. Widać, że dla tabeli w pamięci operacyjnej selekty są wykonywane szybciej, a czas ich wykonywania jest bardziej regularny. Zupełnie inaczej sytuacja wygląda dla nie indeksowanych atrybutów.
 
@@ -492,7 +492,7 @@ engines for different number of rows.",
 Export["plotVal.png", %];
 ```
 
-![](https://ucarecdn.com/f35404ce-0d52-4e75-9ee3-2844dcfe21e8/)
+![](http://localhost:8484/f35404ce-0d52-4e75-9ee3-2844dcfe21e8.avif)
 
 Czas wybierania nie indeksowanego atrybutu rośnie liniowo z wielkością bazy. Tu również tabela zapisana w pamięci operacyjnej działa szybciej.
 
@@ -519,7 +519,7 @@ Histogram[{Flatten[timeIdInnoDB],
 Export["histogram.png", %];
 ```
 
-![](https://ucarecdn.com/45e6712c-528f-4841-82df-1e26739e11ac/)
+![](http://localhost:8484/45e6712c-528f-4841-82df-1e26739e11ac.avif)
 
 ### Model
 
@@ -576,7 +576,7 @@ model c HeavisideTheta[x-a](x-a)*Exp[-b(x-a)]",
 Export["model.png", %]
 ```
 
-![](https://ucarecdn.com/9c843764-e061-4469-b638-772a2bfee396/)
+![](http://localhost:8484/9c843764-e061-4469-b638-772a2bfee396.avif)
 
 To dopiero początek mojej przygody z bazami danych i wciąż temat ten jest znany mi tylko pobieżnie. Z tego względu wpisy dotyczące baz należy taktować bardziej jako notatki ucznia, niż wskazówki eksperta. Mimo to, mam nadzieję, że czas poświęcony na czytanie przełożył się u Ciebie na lepsze wyczucie ilościowych aspektów związanych z wydajnością indeksowania.
 

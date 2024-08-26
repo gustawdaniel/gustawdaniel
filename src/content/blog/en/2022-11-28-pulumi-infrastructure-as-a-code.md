@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
-coverImage: https://ucarecdn.com/f370e14e-6fd0-48ef-b689-02d89d85bfb7/
+coverImage: http://localhost:8484/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
 date_updated: 2022-11-28 12:53:23+00:00
 description: With Pulumi you can define your it infrastructure in your file described
   by your favourite programming language. This article shows how to do it.
@@ -22,13 +22,13 @@ title: Pulumi - Infrastructure as a Code [ Digital Ocean ]
 
 Initially (70 years ago) computers was programmed by manual change of cables connections. There was no personal desktop so programs was written on production. No deployment - no problem.
 
-![](https://ucarecdn.com/bddc2654-5995-464a-b996-2dd693d9ae4e/)
+![](http://localhost:8484/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
 
 first digital computer programmers
 
 About decade later IBM introduced punched cards so deployment or installation was performed by insert of card with program to a reader.
 
-![](https://ucarecdn.com/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f/)
+![](http://localhost:8484/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
 
 Next breakthrough - internet and ftp (1971) protocols changed everything. To move programs to other machines you stopped needing physical driver other than cables connecting with network.
 
@@ -46,7 +46,7 @@ These changes was important for cloud providers and IaaS branch, but developers 
 
 Next huge revolution was Docker written in Go in 2013, and using namespaces available from linux kernel 2.6.24 2008. His popularity exploded in 2017. Main problem of time before docker was configuration of server to use our application. When runtime environment was configured on server, then two different applications with different version or configuration of runtime couldn't be installed on the same host. If they was packed as virtual machines, then all operating system layer was duplicated. Docker solved these problems.
 
-![](https://ucarecdn.com/9f422d08-4002-44ac-b29c-a8b841c07dc2/)
+![](http://localhost:8484/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
 
 But it is not the end. When people learned how to use Docker and created CI/CD flows to automate deployment and testing processes they realised that server managements can be done also on code layer.
 
@@ -88,7 +88,7 @@ W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempopob
 
 Now we will focus on competitor of Terraform. Lets discuss pulumi.
 
-![](https://ucarecdn.com/2c69f8e4-e541-4d09-bc72-c55d3118ae44/)
+![](http://localhost:8484/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
 
 # Pulumi
 
@@ -238,7 +238,7 @@ doctl auth init
 
 You will need token that can be generated on in `API` tab in Digital Ocean Panel
 
-![](https://ucarecdn.com/b01bcdbe-b267-4ff1-9738-da6dfcae157e/)
+![](http://localhost:8484/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
 
 The same token should be used to connect pulumi with your digital ocean:
 
@@ -262,7 +262,7 @@ ssh-keygen -t ed25519 -C "gustaw.daniel@gmail.com" -f ~/.ssh/id_ed25519
 
 add public keys to security settings in digital ocean:
 
-![](https://ucarecdn.com/4afd761e-f1ce-4e61-b4df-8e822587e997/)
+![](http://localhost:8484/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
 
 After adding you can again ask about keys because you will need these numbers returned by command:
 
@@ -404,7 +404,7 @@ I hope this article will help you start with pulumi on Digital Ocean and follow 
 
 > Better spend 10 hours failing to automate, than do task manually.
 
-![](https://ucarecdn.com/de358710-bd2f-40ee-a21e-ccb7758edec6/)
+![](http://localhost:8484/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
 
 Lets sum up advantages of IaC approach.
 

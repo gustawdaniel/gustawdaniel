@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
-coverImage: https://ucarecdn.com/5b6dbf3a-bdb7-428d-9017-948141dc0725/
+coverImage: http://localhost:8484/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
 date_updated: 2023-01-22 23:09:20+00:00
 description: Linear and logarithmic regressions were derived here. Models were fitted
   in rust language. This article shows that sometimes it's worth improving the theoretical
@@ -33,7 +33,7 @@ CodinGame is a challenge-based training platform for programmers where you can p
 
 Goal is find best fitting model for given dataset. For example for data:
 
-![](https://ucarecdn.com/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1/)
+![](http://localhost:8484/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
 
 we should print `O(log n)`. We can select models from list:
 
@@ -179,7 +179,7 @@ $$ R^2 = \\sum\_i ( log( t\_i) - log( f(n\_i) ) - c )^2 $$
 
 we can see that now there is no chance to operate on too big numbers so we can start implementation of these equations.
 
-![](https://ucarecdn.com/761d2c63-871b-4b55-b075-ad6b225d52bc/)
+![](http://localhost:8484/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
 
 ## Reading series of data from standard input
 
@@ -397,4 +397,4 @@ Contribute to gustawdaniel/codingame-computational-complexity development by cre
 
 ![](https://opengraph.githubassets.com/b83a08ea9a2eb23cbe830b203c1492ccd02096878a68b63e97a8a741dd437a78/gustawdaniel/codingame-computational-complexity)](https://github.com/gustawdaniel/codingame-computational-complexity)
 
-![](https://ucarecdn.com/c23aba85-16ce-4f94-9ff6-8734a5dcb988/)
+![](http://localhost:8484/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)

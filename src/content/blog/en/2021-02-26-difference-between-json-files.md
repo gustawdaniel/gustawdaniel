@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
-coverImage: https://ucarecdn.com/7f52c42e-103b-4ef9-b689-d08807ad2f7f/-/preview/1000x748/
+coverImage: http://localhost:8484/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
 date_updated: 2023-10-12
 description: Learn how to find missing translations in JSON files with dictionaries.
 excerpt: Learn how to find missing translations in JSON files with dictionaries.

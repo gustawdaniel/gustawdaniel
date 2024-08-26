@@ -330,7 +330,7 @@ And now we are going to
 
 If machine is able to understand it then we can assume that our movies are correct.
 
-![](__GHOST_URL__/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-13-43-03.png)
+![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-13-43-03.png)
 
 Unfortunately voice2json do not support all our languages
 
@@ -365,7 +365,7 @@ There are supported
 
 Using `voice2json` we can use only 12 languages.
 
-![](__GHOST_URL__/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-14-06-02.png)
+![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-14-06-02.png)
 
 Other tool is whisper also from openai
 
@@ -377,7 +377,7 @@ Robust Speech Recognition via Large-Scale Weak Supervision - GitHub - openai/whi
 
 ![](https://opengraph.githubassets.com/fe5e99c6eb3717c4ee426b34983b5a17162c217dce8f6791d0a371906b0cdfe7/openai/whisper)](https://github.com/openai/whisper)
 
-![](__GHOST_URL__/content/images/2023/03/language-breakdown.svg)
+![](https://preciselab.io/content/images/2023/03/language-breakdown.svg)
 
 we can't install it today because open issue
 
@@ -440,7 +440,7 @@ curl --request POST \
 
 It is hard to say if result is readable. But I am rather considering it as low quality.
 
-![](__GHOST_URL__/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-17-36-46.png)
+![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-17-36-46.png)
 
 To make it better I should add subtitles. I tried this service
 

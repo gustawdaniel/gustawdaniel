@@ -27,7 +27,7 @@ import BaseFooter from "../components/footer/BaseFooter.astro";
 <BaseLayoutHead
         title={`Daniel Gustaw${pageTitle ? (' - ' + pageTitle) : ''}`}
         description={description ?? "Daniel Gustaw's personal blog"}
-        ogImage={ogImage ?? 'https://ucarecdn.com/411d6d7d-6a1e-4096-9a88-fc16a9978f2f/-/preview/256x256/'}
+        ogImage={ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avif'}
 />
 <body class="dark:bg-slate-900">
 <Navigation/>
@@ -39,9 +39,6 @@ import BaseFooter from "../components/footer/BaseFooter.astro";
 <script>
     // @ts-ignore PagefindUI is global
     window.addEventListener('DOMContentLoaded', (_event) => {
-        console.log("ok");
-        console.log(document.querySelector("#search"));
-
         // @ts-ignore PagefindUI is global
         new PagefindUI({element: "#search", showSubResults: true, autofocus: true});
     });

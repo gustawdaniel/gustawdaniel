@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: last-occurrence-linear-search-easy
-coverImage: https://ucarecdn.com/f0cf18ae-5174-47c0-81af-cb479a0c36b3/
+coverImage: http://localhost:8484/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
 date_updated: 2022-11-28 14:40:24+00:00
 description: Find and print the index of the last occurrence of element in the array.
 excerpt: Find and print the index of the last occurrence of element in the array.

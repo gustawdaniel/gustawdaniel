@@ -2,7 +2,7 @@
 title: es3
 canonicalName: post-3
 author: Astro Learner
-coverImage: https://ucarecdn.com/d8bce439-7a26-4a7d-aef8-4308277995db/
+coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
 description: "I had some challenges, but asking in the community really helped!"
 image:
     url: "https://docs.astro.build/assets/rays.webp"

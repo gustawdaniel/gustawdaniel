@@ -154,6 +154,9 @@ hr {
                                                 <xsl:when test="contains(sitemap:loc, '/posts/')">
                                                     <xsl:text>📗 post</xsl:text>
                                                 </xsl:when>
+                                                <xsl:when test="contains(sitemap:loc, '/notes/')">
+                                                    <xsl:text>📙 note</xsl:text>
+                                                </xsl:when>
                                                  <xsl:otherwise>
                                                     <xsl:text>📘 page</xsl:text>
                                                 </xsl:otherwise>
@@ -183,24 +186,18 @@ hr {
                                         </td>
                                         <td>
                                              <xsl:if test="count(*[@hreflang='en']) > 0">
-                                                <a href="{(*[@hreflang='en'])/@href}">
-                                                    🇺🇸
-                                                </a>
+                                                <a href="{(*[@hreflang='en'])/@href}">🇺🇸</a>
                                              </xsl:if>
                                         </td>
                                         <td>
                                              <xsl:if test="count(*[@hreflang='pl']) > 0">
-                                                <a href="{(*[@hreflang='pl'])/@href}">
-                                                    🇵🇱
-                                                </a>
+                                                <a href="{(*[@hreflang='pl'])/@href}">🇵🇱</a>
                                                 <xsl:text> </xsl:text>
                                              </xsl:if>
                                         </td>
                                         <td>     
                                              <xsl:if test="count(*[@hreflang='es']) > 0">
-                                                <a href="{(*[@hreflang='es'])/@href}">
-                                                    🇪🇸
-                                                </a>
+                                                <a href="{(*[@hreflang='es'])/@href}">🇪🇸</a>
                                              </xsl:if>
                                         </td>
                                         <td>

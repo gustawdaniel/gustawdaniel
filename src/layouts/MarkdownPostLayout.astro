@@ -1,17 +1,29 @@
 ---
 import PostsList from "../components/PostsList.astro";
 import BaseLayout from "./BaseLayout.astro";
-import type { InferEntrySchema } from 'astro:content'
+import type {InferEntrySchema, CollectionEntry} from 'astro:content'
 import AvatarPublicationDateReadTime from "../components/blog/AvatarPublicationDateReadTime.astro";
-import { Picture } from 'astro:assets';
+import {Picture} from 'astro:assets';
 import PostTagBadge from "../components/blog/PostTagBadge.astro";
+import CommentsSection from "../components/blog/CommentsSection.astro";
 
 interface Props {
     frontmatter: InferEntrySchema<"blog">;
     body: string;
 }
 
-const { frontmatter, body } = Astro.props;
+const {frontmatter, body} = Astro.props;
+
+function* shuffle<T>(arr: T[]): Generator<T> {
+    arr = [...arr];
+    while (arr.length) yield arr.splice(Math.random() * arr.length | 0, 1)[0]
+}
+
+
+const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"blog">[] => {
+    return [...shuffle<CollectionEntry<"blog">>(collection)]
+        .filter((_, i) => i < 3);
+}
 ---
 
 <BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImage={frontmatter.coverImage}>
@@ -20,9 +32,9 @@ const { frontmatter, body } = Astro.props;
             <section class="prose lg:prose-xl m-auto dark:prose-invert">
 
                 <div class="py-3">
-{frontmatter.tags.filter((_,i) => i<3).map(tag =>
-<PostTagBadge className="mr-2 text-sm" tag={tag} />
-)}
+                    {frontmatter.tags.filter((_, i) => i < 3).map(tag =>
+                            <PostTagBadge className="mr-2 text-sm" tag={tag}/>
+                    )}
                 </div>
 
                 <h1>{frontmatter.title}</h1>
@@ -31,7 +43,7 @@ const { frontmatter, body } = Astro.props;
 
 
                 <div class="not-prose">
-                    <AvatarPublicationDateReadTime data={frontmatter} body={body} />
+                    <AvatarPublicationDateReadTime data={frontmatter} body={body}/>
                 </div>
 
             </section>
@@ -52,8 +64,16 @@ const { frontmatter, body } = Astro.props;
 
         </section>
 
-<hr>
+        <aside class="my-20">
+        <CommentsSection/>
+        </aside>
 
-<PostsList/>
-  </article>
+        <div class="mx-auto max-w-2xl text-center mt-10">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Other articles</h2>
+            <p class="mt-2 text-lg leading-8 text-gray-600">You can find interesting also.</p>
+        </div>
+
+        <PostsList featured={false} reducer={postsReducer}/>
+
+    </article>
 </BaseLayout>

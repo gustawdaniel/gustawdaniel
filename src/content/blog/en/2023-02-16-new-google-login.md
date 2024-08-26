@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
-coverImage: https://ucarecdn.com/08a5e268-fcf7-4af8-ba14-376a20394223/
+coverImage: http://localhost:8484/08a5e268-fcf7-4af8-ba14-376a20394223.avif
 date_updated: 2023-02-16 13:20:19+00:00
 description: New Google Identity installation for Nuxt 3 with credentials verification
   in fastify.
@@ -42,7 +42,7 @@ Second simply could not work giving error that was suggesting that something is 
 
 I checked official Google Docs and see this:
 
-![](https://ucarecdn.com/dc0afc0e-9d09-400f-98f2-f68c6026058b/)
+![](http://localhost:8484/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
 
 [Integrating Google Sign-In into your web app | Authentication | Google Developers
 
@@ -52,7 +52,7 @@ I checked official Google Docs and see this:
 
 Looks terrible, but hepilly I integrated google sign in button quite fast without external libs. In this article I will show how to implement new Google Identity with Nuxt 3.
 
-![](https://ucarecdn.com/9704407b-d5fc-4e05-84c3-95547050aa0c/)
+![](http://localhost:8484/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
 
 ## Google Identity - how it is different
 
@@ -64,7 +64,7 @@ Because image is worth more than thousand of words, new login button contains av
 
 ![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
-![](https://ucarecdn.com/7e73b9a3-da99-4b05-92af-1d98c1196fdf/)
+![](http://localhost:8484/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
 
 ## Sign In button HTML
 
@@ -98,7 +98,7 @@ or prepare your own in configurator
 
 ![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/tools/configurator)
 
-![](https://ucarecdn.com/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a/)
+![](http://localhost:8484/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
 
 There are three elements that we have to connect:
 
@@ -207,11 +207,11 @@ useHead({
 
 Now you should see login button. You should be able to click on it, login and see credentials in console. Assuming that you correctly configured OAuth 2.0 Client
 
-![](https://ucarecdn.com/1fa9c03c-8be1-48fe-b53a-ccff8d83e079/)
+![](http://localhost:8484/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
 
 And added localhost to Authorized JavaScript origins
 
-![](https://ucarecdn.com/5da80aad-7e3a-4158-9fd7-25e34653b891/)
+![](http://localhost:8484/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
 
 After login in console you will see array with single object like this
 
@@ -247,7 +247,7 @@ Credentail token is `JWT` with payload
 
 To verify it you should send it to backend.
 
-![](https://ucarecdn.com/dd66e012-cd3b-4e6d-b07f-c332f74da32b/)
+![](http://localhost:8484/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
 
 ## Backend verification for Google credential
 
@@ -258,7 +258,7 @@ As backend we can use fastify. I described fastify config on this blog here
 We're building from scratch rest api in fastify using mongodb connected by prisma as a database,
 jest as a test framework and etherjs to verify signatures signed by metamask.
 
-![](https://ucarecdn.com/18bd8f03-626e-4f55-9b2c-881b9c569978/)](/login-by-metamask-rest-backend-in-fastify/)
+![](http://localhost:8484/18bd8f03-626e-4f55-9b2c-881b9c569978.avif)](/login-by-metamask-rest-backend-in-fastify/)
 
 so now I assume you have done step "Add Fastify with first endpoint" from this article.
 
@@ -350,9 +350,9 @@ if(process.client) {
 
 we forgot about `cors`
 
-![](https://ucarecdn.com/a131da56-cca9-4264-844b-dd6592ce593d/)
+![](http://localhost:8484/a131da56-cca9-4264-844b-dd6592ce593d.avif)
 
-![](https://ucarecdn.com/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c/)
+![](http://localhost:8484/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
 
 so quick fix
 
@@ -372,7 +372,7 @@ import cors from '@fastify/cors'
 
 and we can see in console all user's details
 
-![](https://ucarecdn.com/90ad6daa-3859-4482-979f-f01507bc1de7/)
+![](http://localhost:8484/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 
@@ -380,4 +380,4 @@ We do not want to call `await client.verifyIdToken(` on any request so we have t
 
 We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
 
-![](https://ucarecdn.com/18bd8f03-626e-4f55-9b2c-881b9c569978/)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)
+![](http://localhost:8484/18bd8f03-626e-4f55-9b2c-881b9c569978.avif)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)

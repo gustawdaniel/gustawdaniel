@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
-coverImage: https://ucarecdn.com/9f33d20f-8d16-4a99-82b4-180bd4877124/
+coverImage: http://localhost:8484/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
 date_updated: 2021-04-20 19:28:39+00:00
 description: git styled calendar created from list of dates saved as csv file
 excerpt: git styled calendar created from list of dates saved as csv file
@@ -18,7 +18,7 @@ Let us assume that you have a set of dates. You want to display these dates in a
 
 For example like this:
 
-![](https://ucarecdn.com/121db3d7-7ea4-4dd3-a4bc-9f7195206354/gitcalendar.png)
+![](http://localhost:8484/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avifgitcalendar.png)
 
 So I have great info. It is required an hour of coding. It is one line of code, maybe two...
 
@@ -83,4 +83,4 @@ I hope you like this article. For me, it is a great example of how a small amoun
 
 Screenshot from my console
 
-![](https://ucarecdn.com/24696782-aeaa-4c8d-985c-9fc092980381/-/preview/922x227/)
+![](http://localhost:8484/24696782-aeaa-4c8d-985c-9fc092980381.avif)

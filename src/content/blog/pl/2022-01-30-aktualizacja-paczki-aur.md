@@ -8,7 +8,7 @@ date_updated: 2022-01-29T20:34:39.000Z
 tags: ['arch', 'aur', 'linux']
 description: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
 excerpt: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
-coverImage: https://ucarecdn.com/f3b21d8a-2483-40fe-8603-d39fb987ebf8/
+coverImage: http://localhost:8484/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
 ---
 
 Znalazłem w repozytorium aur paczkę, która nie jest regularnie aktualizowana. Nauczyłem się jak mogę ją utrzymywać i ten wpis pozwoli Ci przejść przez wszystkie kroki potrzebne do tego, żebyś sam mógł utrzymywać lub publikować pakiety w repozytorium użytkowników Arch Linux.
@@ -25,7 +25,7 @@ Po założeniu konta na stronie
 
 przejdź do zakładki "moje konto" i uzupełnij "Klucz publiczny SSH"
 
-![](https://ucarecdn.com/08559ea5-1a3c-40c5-96f0-d5e3b34148cf/)
+![](http://localhost:8484/08559ea5-1a3c-40c5-96f0-d5e3b34148cf.avif)
 
 ### Pobierz paczkę, którą chcesz zaktualizować
 
@@ -90,7 +90,7 @@ The official Infinity Wallet releases for desktop. Contribute to InfinityWallet/
 
 ![](https://opengraph.githubassets.com/35c9d7d692036ba82a86d7902eb4aa0e971f98303fbf7e3d573a97a339c532b2/InfinityWallet/Releases)](https://github.com/InfinityWallet/Releases/releases)
 
-![](https://ucarecdn.com/03aa2c9c-5c02-48c1-b89a-5b6dc474378b/)
+![](http://localhost:8484/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
 
 A wersję dla Debiana znajdziemy pod adresem
 
@@ -130,7 +130,7 @@ Możemy sprawdzić czy instalacja przebiega pomyślnie wpisując
 makepkg -si
 ```
 
-![](https://ucarecdn.com/edfefedf-af85-409b-9e6d-ff33fbeefd07/)
+![](http://localhost:8484/edfefedf-af85-409b-9e6d-ff33fbeefd07.avif)
 
 ### Wysyłamy zmiany do repozytorium
 

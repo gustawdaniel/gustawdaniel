@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
-coverImage: https://ucarecdn.com/add30d50-3b0e-4cd7-9720-f990331f1806/
+coverImage: http://localhost:8484/add30d50-3b0e-4cd7-9720-f990331f1806.avif
 date_updated: 2023-10-12
 description: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny
   przykład zastosowania funkcji rekurencyjnej.
@@ -119,13 +119,13 @@ Problem stanowi to, że `i18next` nie wykrył wszystkich tłumaczeń.
 
 Na początku wykonałem pracę ręcznie. Posortowałem oba pliki w serwisie: `codeshack.io/json-sorter`
 
-![](https://ucarecdn.com/5459cca6-ed9e-4f75-8933-90306a6307fc/)
+![](http://localhost:8484/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
 
 https://codeshack.io/json-sorter/
 
 Następnie w serwisie `diffchecker` wyznaczyłem różnice między
 
-![](https://ucarecdn.com/6028a6b5-ca6a-4baa-b16d-fb66a7199df3/)
+![](http://localhost:8484/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
 
 https://www.diffchecker.com/yffDMWff
 
@@ -137,7 +137,7 @@ node ../DevTools/json-diff.js src/locales/en_old.json src/locales/en.json > src/
 
 Plik wyświetlony i formatowany przez `jq` wygląda tak:
 
-![](https://ucarecdn.com/dd621642-427b-4560-9f26-b08150f04e97/)
+![](http://localhost:8484/dd621642-427b-4560-9f26-b08150f04e97.avif)
 
 Widzimy, że zawiera wszystkie brakujące klucze.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: communication-between-vue-components-in-meteor
-coverImage: https://ucarecdn.com/355876fb-80ec-4ae0-862e-9382ebf1a833/
+coverImage: http://localhost:8484/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
 date_updated: 2021-04-20 21:12:22+00:00
 description: There is few methods of sending data between unrelated vue components.
   Some of these are universal, other typical for vue, another for Meteor. We compare
@@ -110,7 +110,7 @@ In following sections we can see results in table with applied spectre.css, but 
 
 In simplest cases when we do not want to operate on submitted data we can use old school direct dom modification. Listen on changes in first component, then select and directly modify `innerHTML` of elements in other.
 
-![meteor-vue-1-input.gif](https://ucarecdn.com/e0f5478a-b6ee-4b6c-90f0-5531c6397f96/)
+![meteor-vue-1-input.gif](http://localhost:8484/e0f5478a-b6ee-4b6c-90f0-5531c6397f96.avif)
 
 To obtain this result we can write the following code in first component
 
@@ -475,7 +475,7 @@ Advantages
 
 We presented some methods of communicating components. Some of them are universal, two last methods are typical for `vue-meteor` integration. There is not best or worse. You will create best code if you will know and understood all and select right one in dependent from your needs.
 
-![vue-meteor-2-summary](https://ucarecdn.com/996e2a24-44f2-4b1f-8fbe-3ef42357032d/-/preview/687x293/)
+![vue-meteor-2-summary](http://localhost:8484/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
 
 All methods presented in this article with input and output components.
 

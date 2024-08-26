@@ -1,0 +1,35 @@
+---
+import type {InferEntrySchema} from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import CommentsSection from "../components/blog/CommentsSection.astro";
+
+interface Props {
+    frontmatter: InferEntrySchema<"note">;
+    body: string;
+}
+
+const {frontmatter} = Astro.props;
+
+const description = `Dev note: ${frontmatter.title}`;
+---
+
+<BaseLayout pageTitle={frontmatter.title} description={description}>
+    <article class="container px-2 my-4 sm:my-10 lg:my-20 m-auto">
+        <header class="mb-20">
+            <section class="prose lg:prose-xl m-auto dark:prose-invert">
+
+                    <h1 >{frontmatter.title}</h1>
+
+            </section>
+        </header>
+
+        <section class="prose lg:prose-xl m-auto dark:prose-invert">
+            <slot/>
+        </section>
+
+        <aside class="my-20">
+            <CommentsSection/>
+        </aside>
+
+    </article>
+</BaseLayout>

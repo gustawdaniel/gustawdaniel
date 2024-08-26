@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { defaultLocale, locales } from "./src/locales.ts";
 import tailwind from "@astrojs/tailwind";
-import vue from '@astrojs/vue';
 import alpinejs from "@astrojs/alpinejs";
 import type { Locales } from "astro";
 import { redirects } from "./src/helpers/redirects.ts";
@@ -21,7 +20,7 @@ export default defineConfig({
   },
   integrations: [tailwind({
     applyBaseStyles: false
-  }), vue(), alpinejs()],
+  }), alpinejs()],
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)

@@ -118,4 +118,4 @@ npm run start
 
 pod adresem `localhost:4000` zobaczymy
 
-![](__GHOST_URL__/content/images/2021/07/Screenshot-from-2021-07-03-19-37-56.png)
+![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-03-19-37-56.png)

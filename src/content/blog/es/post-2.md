@@ -2,7 +2,7 @@
 title: es2
 canonicalName: post-2
 author: Astro Learner
-coverImage: https://ucarecdn.com/d8bce439-7a26-4a7d-aef8-4308277995db/
+coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
 
 description: "After learning some Astro, I couldn't stop!"
 image:

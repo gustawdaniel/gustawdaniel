@@ -186,7 +186,7 @@ MongoLink is a set of tools for working with MongoDB. This tutorial shows how to
 
 Dlatego w tym przypadku lepiej wyeksportować dane z mongo do csv na przykład przez mongo compass.
 
-![](__GHOST_URL__/content/images/2021/07/Screenshot-from-2021-07-14-15-47-48.png)
+![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-14-15-47-48.png)
 
 Te pliki nie są posortowane, ponieważ `cryptoquant` zwraca je w kolejności odwrotnej niż upływ czasu. Sortujemy je poleceniami:
 
@@ -211,7 +211,7 @@ Dzięki wykonaniu `head` oraz `tail` na posortowanym pliku widzimy zakres naszej
 * Start - blok 173949 - 2012-04-02
 * Koniec - blok 690974 - 2021-07-14
 
-![](__GHOST_URL__/content/images/2021/07/Screenshot-from-2021-07-14-15-58-17-1.png)
+![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-14-15-58-17-1.png)
 
 Aby pobrać zawartość plików do nootebooka w `Mathematica` wpisujemy:
 
@@ -244,7 +244,7 @@ Ten moduł pozwoli nam zobaczyć jak ewoluowała zmienność rezerwy na przestrz
 
 Na histogramie nie jest to wyraźnie widoczne. Można nawet odnieść mylne wrażenie, że w początkowym okresie istnienia Bitcoina koncentracja względnej zmienności rezerwy woków jedynki (czyli jej stała wartość) była dominująca. Jest to mylne wrażenie, bo jednocześnie z wysoką koncentracją współwystępowały znacznie częstsze niż obecnie wartości skrajne.
 
-![](__GHOST_URL__/content/images/2021/07/res-2.svg)
+![](https://gustawdaniel.com/content/images/2021/07/res-2.svg)
 
 Jeśli podzielimy cały rozważany okres na 100 części i policzymy wariancję względnej zmiany rezerwy co jeden blok z tego okresu to okaże się, że początkowo ta wariancja miała nie tylko wyższe wartości ale i wyższy rozrzut. To znaczy, zdarzały się takie okresy, kiedy z rezerwą działo się bardzo niewiele.
 
@@ -294,7 +294,7 @@ Show[
   "Wariancja względnej zmienności rezerwy BTC w kolejnych okresach czasu\nz dopasowaniem 7.18*10^-6*e^-0.051 x) (przy poziomie ufności 0.7)\nx to numer przedziału czasowego od 1 do 100 z okresu 2012-04-02 - 2021-07-14", ImageSize -> Full]
 ```
 
-![](__GHOST_URL__/content/images/2021/07/res2.svg)
+![](https://gustawdaniel.com/content/images/2021/07/res2.svg)
 
 Z wykresu widzimy, że zmienność rezerwy systematycznie spada i można założyć, że jest to spadek wykładniczy analogiczny do znanego nam z codzienności stygnięcia herbaty.
 

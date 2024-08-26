@@ -1,3 +1,9 @@
+---
+title: Flags
+publishDate: 2021-10-10
+---
+
+
 Get flags
 
 ```bash

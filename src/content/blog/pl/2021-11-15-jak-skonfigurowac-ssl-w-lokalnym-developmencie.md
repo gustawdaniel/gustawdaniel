@@ -8,7 +8,7 @@ date_updated: 2021-11-15T16:47:42.000Z
 tags: ['ssl', 'https', 'security']
 description: Ustawienie połączenia https na domenie localhost może być wyzwaniem jeśli robimy to pierwszy raz. Ten wpis jest bardzo szczegółowym tutorialem ze wszystkimi komendami i screenshotami.
 excerpt: Ustawienie połączenia https na domenie localhost może być wyzwaniem jeśli robimy to pierwszy raz. Ten wpis jest bardzo szczegółowym tutorialem ze wszystkimi komendami i screenshotami.
-coverImage: https://ucarecdn.com/54493527-eac3-463a-a991-b0d4ced05f23/
+coverImage: http://localhost:8484/54493527-eac3-463a-a991-b0d4ced05f23.avif
 ---
 
 Ustawianie certyfikatu ssl podczas developmentu może być poważnym wyzwaniem. Nie wynika to ze złożoności tego zadania, ale z pułapek, w jakie można wpaść jeśli posiada się luki w wiedzy na temat sieci, certyfikatów i protokołu https.
@@ -110,7 +110,7 @@ php -S 0.0.0.0:8000 index.php
 
 Tym razem działa on poprawnie.
 
-![](https://ucarecdn.com/d280540b-5da1-4b91-87e3-c85834524e59/)
+![](http://localhost:8484/d280540b-5da1-4b91-87e3-c85834524e59.avif)
 
 Dlaczego tak jest? Sam localhost stanowi tylko alias względem adresu `127.0.0.1`. Nasza domena `local.dev` też jest aliasem do `127.0.0.1` ale już nie do `localhost`. Ustawiając serwer komendą: `php -S 127.0.0.1:8000 index.php`, też uzyskaliśmy pożądany wynik. Chyba, że pracowali byśmy z adresacją ipv6, wtedy zamiast lub obok `127.0.0.1` w `/etc/hosts` ustawili byśmy `::1`. Jeśli temat różnic między `localhost` a `127.0.0.1` jest dla Ciebie nowy polecam Ci artykuł:
 
@@ -148,7 +148,7 @@ Sam nie używał bym tego drugiego polecenia na komputerze lokalnym, ponieważ n
 
 Po instalacji `nginx` przywitał nas swoją stroną startową na porcie `80`.
 
-![](https://ucarecdn.com/edc5f538-f5d8-4da4-b860-1e724fff2f49/)
+![](http://localhost:8484/edc5f538-f5d8-4da4-b860-1e724fff2f49.avif)
 
 ### Nginx w Mac OS
 
@@ -444,21 +444,21 @@ chrome://settings/certificates
 
 Zobaczymy:
 
-![](https://ucarecdn.com/6c552745-d6d7-452f-a6a8-c82b77ee9398/)
+![](http://localhost:8484/6c552745-d6d7-452f-a6a8-c82b77ee9398.avif)
 
 Po kliknięciu import i wybraniu pliku `myCA.pem` zaznaczamy jakim operacjom tej organizacji chcemy ufać:
 
-![](https://ucarecdn.com/e185608f-e06f-465d-98bc-e75a4927ef7e/)
+![](http://localhost:8484/e185608f-e06f-465d-98bc-e75a4927ef7e.avif)
 
 #### Zaufanie organizacji certyfikującej w Firefox
 
 W Firefox wchodzimy na adres `about:preferences#privacy` i w zakładce "Certificates" do "View Certificates". Następnie wybieramy import i plik `myCA.pem`
 
-![](https://ucarecdn.com/cdd83c80-7b45-4b9d-a265-ceeb578f1ebf/)
+![](http://localhost:8484/cdd83c80-7b45-4b9d-a265-ceeb578f1ebf.avif)
 
 od razu zaznaczamy organizację certyfikującą jako zaufaną
 
-![](https://ucarecdn.com/dd644237-d42b-4a95-8b0b-1d956846ab83/)
+![](http://localhost:8484/dd644237-d42b-4a95-8b0b-1d956846ab83.avif)
 
 W przeciwieństwie do Chrome, te ustawienia są niezależne od systemu operacyjnego.
 
@@ -466,15 +466,15 @@ W przeciwieństwie do Chrome, te ustawienia są niezależne od systemu operacyjn
 
 Na komputerach z `Mac OS` nie możemy zmienić ustawień bezpośrednio w chome. Zamiast tego otwieramy finder. Znajdujemy w nim plik `myCA.pem` i klikamy go dwa razy.
 
-![](https://ucarecdn.com/9991f51f-8d61-4770-81e8-8f154afa0a68/)
+![](http://localhost:8484/9991f51f-8d61-4770-81e8-8f154afa0a68.avif)
 
 po potwierdzeniu hasłem powinniśmy zobaczyć w programie "Pęk Kluczy" (Keychain) naszą organizację w zakładce "Certificates"
 
-![](https://ucarecdn.com/5b588af5-97db-419c-ab7e-8f481ee6a521/)
+![](http://localhost:8484/5b588af5-97db-419c-ab7e-8f481ee6a521.avif)
 
 Teraz musimy oznaczyć ten certyfikat jako zaufany wybierając opcję "Always Trust".
 
-![](https://ucarecdn.com/5aba5b59-a2de-432c-b7a7-15812fc0ea64/)
+![](http://localhost:8484/5aba5b59-a2de-432c-b7a7-15812fc0ea64.avif)
 
 #### Konfiguracja Nginx jako proxy
 
@@ -525,11 +525,11 @@ możemy cieszyć się widokiem kłódki przy adresie lokalnej strony:
 
 * na Chrome
 
-![](https://ucarecdn.com/36f90ff2-6819-4123-a28a-fb0283c960fc/)
+![](http://localhost:8484/36f90ff2-6819-4123-a28a-fb0283c960fc.avif)
 
 * oraz na Firefox
 
-![](https://ucarecdn.com/5ea4ee9a-1437-4038-90f3-a30f91344a6e/)
+![](http://localhost:8484/5ea4ee9a-1437-4038-90f3-a30f91344a6e.avif)
 
 W konsoli nie zobaczymy jednak poprawnego wyniku:
 
@@ -551,13 +551,13 @@ lub na `Mac OS`
 http --verify /usr/local/etc/nginx/ssl/myCA.pem https://local.dev
 ```
 
-![](https://ucarecdn.com/cc8230e1-7e35-4f2e-a9c9-9cd0c9d7c0b3/)
+![](http://localhost:8484/cc8230e1-7e35-4f2e-a9c9-9cd0c9d7c0b3.avif)
 
 ### Zastosowania lokalnego certyfikatu SSL
 
 Pokazaliśmy jak skonfigurować połączenie po https na lokalnym komputerze, co jest szczególnie przydatne w developmencie aplikacji webowych. Zwykle można rozwijać swoje projekty lokalnie z użyciem `http`.
 
-![](https://ucarecdn.com/a6538c2f-4169-43c1-85bb-ab1883ab4b05/)
+![](http://localhost:8484/a6538c2f-4169-43c1-85bb-ab1883ab4b05.avif)
 
 Czasami `https` jest wymagany przez takie mechanizmy jak:
 
@@ -605,15 +605,15 @@ I mamy następujący efekt:
 
 1. Na chrome działa nam kłódka na stronie `https://localhost`
 
-![](https://ucarecdn.com/975e97f2-7903-46e8-b69b-0fa9209c7699/)
+![](http://localhost:8484/975e97f2-7903-46e8-b69b-0fa9209c7699.avif)
 
 2\. Na Firefox `https://localhost` nie działa
 
-![](https://ucarecdn.com/e0abd4de-a853-465b-bda9-30ccae9ef5d4/)
+![](http://localhost:8484/e0abd4de-a853-465b-bda9-30ccae9ef5d4.avif)
 
 3\. Z poziomu linii komend (httpie) też nie działa
 
-![](https://ucarecdn.com/da304157-3ba2-45fa-8d0e-61352c24a8c5/)
+![](http://localhost:8484/da304157-3ba2-45fa-8d0e-61352c24a8c5.avif)
 
 4\. Z drugiej strony curl działa `curl [https://localhost](https://localhost)`.
 

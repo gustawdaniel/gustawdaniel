@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: sterowanie-procesami-w-node-js
-coverImage: https://ucarecdn.com/d8bce439-7a26-4a7d-aef8-4308277995db/
+coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
 date_updated: 2021-07-17 13:57:27+00:00
 description: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać
   ich ilością i prowadzić z nimi dwustronną komunikację.
@@ -21,7 +21,7 @@ W tym wpisie nauczymy się jak tworzyć i kończyć podprocesy w Node JS oraz ja
 
 Jeśli program wykonuje ciężkie obliczenia, ale nie jest zrównoleglony, stan Twojego procesora może wyglądać tak:
 
-![](https://ucarecdn.com/3b1ed569-b0e0-490f-81a6-df3454db4788/)
+![](http://localhost:8484/3b1ed569-b0e0-490f-81a6-df3454db4788.avif)
 
 Dlatego warto zgłębić ten temat niezależnie od języka, w którym piszesz.
 
@@ -92,7 +92,7 @@ Znak zapisany w `key` jest obiektem o następujących kluczach
 W prezentowanym kodzie obsługujemy zamknięcie procesu kombinacją `ctrl+c` oraz wypisanie w konsoli znaku wybranego na
 klawiaturze. Wpisywanie kolejnych znaków będzie za każdym razem pokazywało je w terminalu.
 
-![](https://ucarecdn.com/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8/)
+![](http://localhost:8484/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8.avif)
 
 Następnym krokiem jest zastąpienie wypisywania znaków przez tworzenie lub kasowanie procesów obciążających procesor.
 
@@ -114,7 +114,7 @@ const forks = [];
 Jeśli zapomnielibyśmy o nich przy zamykaniu programu to stały by się one procesami `zombie` - czyli takimi, które żyją
 nadal i bez nadzoru pożerają zasoby komputera.
 
-![](https://ucarecdn.com/b76d2cab-977e-458c-bf42-027fe76d3234/)
+![](http://localhost:8484/b76d2cab-977e-458c-bf42-027fe76d3234.avif)
 
 Aby je usunąć, przed zamknięciem naszego skryptu piszemy kod:
 
@@ -176,17 +176,17 @@ czyli kod napisany tylko po to, żeby symulować obciążenie.
 Po włączeniu programu i wyborze kilku opcji obciążenia widzimy, jak procesy są tworzone oraz kasowane. Dzięki `htop`
 możemy zobaczyć, jak w tym czasie zmienia się zużycie procesora.
 
-![](https://ucarecdn.com/a089f093-d5f3-443b-ab10-728a38ca6a6b/)
+![](http://localhost:8484/a089f093-d5f3-443b-ab10-728a38ca6a6b.avif)
 
 Nawet ładniejszy interfejs do monitoringu procesora ma `bashtop`, ponieważ wyświetla również historyczne zużycie. Na
 screenshocie poniżej widzimy, jak modyfikując ilość procesów w naszym programie mogłem symulować różne poziomy obłożenia
 procesora zadaniami.
 
-![](https://ucarecdn.com/47bf0bb1-95cc-46b4-9d29-237b504b6a29/)
+![](http://localhost:8484/47bf0bb1-95cc-46b4-9d29-237b504b6a29.avif)
 
 Oraz jak wyglądało wykorzystanie rdzeni, kiedy wybrałem opcję utworzenia 16 procesów.
 
-![](https://ucarecdn.com/05911406-d43c-4316-b265-9202b0042ea1/)
+![](http://localhost:8484/05911406-d43c-4316-b265-9202b0042ea1.avif)
 
 Tego programu możemy używać do symulowania obciążenia. W pliku `bomb.js` możemy zastąpić losowanie liczb operacją
 wysyłania żądań http lub zużywania innych zasobów, na przykład pamięci operacyjnej lub dysku.
@@ -254,7 +254,7 @@ już jak złe może to mieć skutki dla wydajności w artykule:
 Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak
 używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
 
-![](https://ucarecdn.com/e4679649-0445-42f4-9890-f45307625bd6/)
+![](http://localhost:8484/e4679649-0445-42f4-9890-f45307625bd6.avif)
 
 https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
 
@@ -267,7 +267,7 @@ https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
 Zamiast rozładowywać kolejkę będziemy odczytywać z niej wartości za pomocą zmiennego indeksu, który będzie przesuwał się
 wzdłuż niej. Schemat blokowy programu, który napiszemy jest następujący:
 
-![](https://ucarecdn.com/50ac21aa-497e-4dca-8292-d672a9cd5198/)
+![](http://localhost:8484/50ac21aa-497e-4dca-8292-d672a9cd5198.avif)
 
 Jego kod to:
 
@@ -335,7 +335,7 @@ Następnie włączamy nasz program i widzimy jak po kolei sprawdza hasła z kole
 time node force-single.js
 ```
 
-![](https://ucarecdn.com/72cbd407-9321-4ca7-b7e9-b57a8911bad8/)
+![](http://localhost:8484/72cbd407-9321-4ca7-b7e9-b57a8911bad8.avif)
 
 W kolumnach mamy kolejno indeks, sprawdzaną sekwencję, czas od włączenia programu w milisekundach, informację, czy hasło
 pasuje do hashu oraz aktualną długość kolejki.
@@ -368,19 +368,19 @@ znacznego wzrostu wydajności tego zadania jeśli użyjemy do niego wielu rdzeni
 nasz program tak, aby główny proces zamiast wykonywać sprawdzanie haseł zajmował się obsługą kolejki i zlecaniem
 sprawdzania podrzędnym procesom.
 
-![](https://ucarecdn.com/cffe8d53-af1d-41cc-afd9-9559222f20c6/)
+![](http://localhost:8484/cffe8d53-af1d-41cc-afd9-9559222f20c6.avif)
 
 Schemat naszego programu dzieli się na proces główny oraz podprocesy. W procesie głównym tworzona jest lista procesów
 podrzędnych, kolejka oraz nasłuchy na wiadomości z podprocesów. Na końcu każdy podproces dostaje do wykonania zadanie z
 kolejki. Podprocesy po ich wykonaniu zgłaszają się do głównego wątku z odpowiedzą, a ten podnosi indeks i przydziela im
 nowe zadania. Dzieje się tak aż do znalezienia poprawnego hasła.
 
-![](https://ucarecdn.com/9f6ce1ed-a710-42bb-890e-1def30a24127/)
+![](http://localhost:8484/9f6ce1ed-a710-42bb-890e-1def30a24127.avif)
 
 Warto zwrócić uwagę na to, że niezależne dzieci będą wykonywały zadania z różną prędkością, co wpłynie na kolejność
 zgłaszania odpowiedzi. Przykładowy output programu to:
 
-![](https://ucarecdn.com/ba051803-3c65-464d-8441-1368270ef48e/)
+![](http://localhost:8484/ba051803-3c65-464d-8441-1368270ef48e.avif)
 
 Kod dzieli się na dwa pliki:
 
@@ -537,28 +537,28 @@ Jeśli nie słyszałeś o uniwersalnym prawie skalowania, to szybko wprowadzę C
 świecie, gdyby systemy były skalowalne liniowo, to znaczyło by, że dołożenie `n` razy więcej zasobów podnosi wydajność
 lub przepustowość systemu `n` razy. Taką sytuację może obrazować rysunek:
 
-![](https://ucarecdn.com/b551739b-a90e-4e7d-b275-9cbf067b2c02/)
+![](http://localhost:8484/b551739b-a90e-4e7d-b275-9cbf067b2c02.avif)
 
 Takich sytuacji nie spotyka się jednak w świecie rzeczywistym. Zawsze bowiem występuje pewna nieefektywność związana z
 przydzielaniem danych do węzłów (serwerów lub wątków) oraz z ich zbieraniem. Opóźnienia związane z przydzielaniem i
 odbieraniem danych nazywa się serializacją, czasami można spotkać termin `contention`:
 
-![](https://ucarecdn.com/3f245c79-a00f-42ed-9050-209d5a69e8d9/)
+![](http://localhost:8484/3f245c79-a00f-42ed-9050-209d5a69e8d9.avif)
 
 Uwzględnienie tego zjawiska prowadzi do modelu Amdahl\`a. Okazuje się jednak, że jest on niewystarczający dla większości
 systemów IT ponieważ całkowicie pomija drugi główny czynnik ograniczający skalowanie - komunikację między
 procesami - `crosstalk`. Graficznie można ją przedstawić tak:
 
-![](https://ucarecdn.com/a3003513-1d18-4386-85cf-e6d83bdc3581/)
+![](http://localhost:8484/a3003513-1d18-4386-85cf-e6d83bdc3581.avif)
 
 O ile serializacja ma koszt proporcjonalny do ilości węzłów, to komunikacja jest proporcjonalna do ich kwadratu - tak
 jak liczba przekątnych wielokąta do ilości kątów
 
-![](https://ucarecdn.com/0a680f83-94b6-4398-aeda-28b4186f3e8b/)
+![](http://localhost:8484/0a680f83-94b6-4398-aeda-28b4186f3e8b.avif)
 
 Na wykresie widzimy krzywe porównujące wpływ ilości węzłów na wydajność w systemu według tych trzech modeli.
 
-![](https://ucarecdn.com/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0/)
+![](http://localhost:8484/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0.avif)
 
 Dobre (50 stron) opracowanie na ten temat znajduje się pod linkiem:
 
@@ -603,7 +603,7 @@ Show[ListPlot[{#[[1]], #[[2]]/firstMean} & /@ loadEff],
   PlotLabel -> "Gain of efficiency relative to single process"]
 ```
 
-![](https://ucarecdn.com/ae266323-acb4-4792-a077-286260383b11/)
+![](http://localhost:8484/ae266323-acb4-4792-a077-286260383b11.avif)
 
 Warto pokazać tu bardzo ładny wzór na teoretyczne maksimum
 
@@ -612,7 +612,7 @@ Solve[D[\[Lambda] n/(1 + \[Sigma] (n - 1) + \[Kappa] n (n - 1)),
    n] == 0, n]
 ```
 
-![](https://ucarecdn.com/5eeff6fb-5759-4d91-b8bf-7a9684533bf7/)
+![](http://localhost:8484/5eeff6fb-5759-4d91-b8bf-7a9684533bf7.avif)
 
 Wyliczona numerycznie
 

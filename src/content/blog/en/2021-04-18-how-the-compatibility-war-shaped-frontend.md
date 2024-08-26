@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-did-the-compatibility-war-shape-the-frontend
-coverImage: https://ucarecdn.com/3737c82b-a958-48dd-a968-3cec36f8e7ee/-/preview/626x352/
+coverImage: http://localhost:8484/3737c82b-a958-48dd-a968-3cec36f8e7ee.avif
 date_updated: 2023-03-10 15:56:02+00:00
 description: We describe how abandonment and backward compatibility have influenced
   the direction of development in web technologies.

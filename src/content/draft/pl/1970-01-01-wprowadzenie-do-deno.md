@@ -16,7 +16,7 @@ Pod tym względem można go porównać do `php6`, z tą różnicą, że `deno` s
 
 Zwykle łamanie kompatybilności w celu naprawienia czegoś nie kończy się dobrze, bo ciężko o użytkowników, którzy zgodzą się nie używać swoich ulubionych paczek. Z tego powodu po tym jak usłyszałem o `deno` w maju 2020, postanowiłem dać mu trochę czasu i zajrzeć do niego po dwóch latach. Na razie jego popularność nie rośnie, ale
 
-![](__GHOST_URL__/content/images/2022/06/2022-06-11_21-24.png)
+![](https://gustawdaniel.com/content/images/2022/06/2022-06-11_21-24.png)
 
 Możemy go zainstalować poleceniem:
 

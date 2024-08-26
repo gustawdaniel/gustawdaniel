@@ -39,7 +39,7 @@ davinci resolve alternatives
 
 to google and seen this:
 
-![](__GHOST_URL__/content/images/2023/01/Zrzut-ekranu-z-2023-01-21-14-01-42.png)
+![](https://preciselab.io/content/images/2023/01/Zrzut-ekranu-z-2023-01-21-14-01-42.png)
 
 from my previous research I remembered that for many people these programs can satisfy criteria, but i wanted:
 

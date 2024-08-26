@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analiza-czestosci-nazw-altcoinow-w-korpusie-jezyka-angielskiego
-coverImage: https://ucarecdn.com/13fd8113-13b0-4f44-a262-90a5e01d4714/
+coverImage: http://localhost:8484/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
 date_updated: 2021-06-30 10:22:00+00:00
 description: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw
   kryptowalut, te nie występujące w języku naturalnym.
@@ -130,7 +130,7 @@ Rdzeń programu `getAltcoins.ts` możemy przenieść z naszego niedawnego wpisu:
 
 Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
 
-![](https://ucarecdn.com/44ccfa64-eac4-4bf7-a306-a51b534b6395/)](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+![](http://localhost:8484/44ccfa64-eac4-4bf7-a306-a51b534b6395.avif)](./scraping-najbardziej-popularnych-kont-na-twitterze/)
 
 Czyli mniej więcej tak:
 
@@ -388,7 +388,7 @@ Compare genres, dialects, time periods. Search by PoS, collocates, synonyms, and
 
 Jest to scam. Zawiera informację, że jest darmowa i wystarczy zarejestrować konto
 
-![](https://ucarecdn.com/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017/)
+![](http://localhost:8484/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
 
 ale posiada ograniczenia przez które możemy skanować dziennie jedynie 50 słów. Straciłem czas próbując automatyzować pobieranie danych z tego serwisu.
 
@@ -680,11 +680,11 @@ ts-node src/preparePhrases.ts
 
 Możemy zobaczyć, że dla bardzo mało znanych coinów, ale za to popularnych słów nasz współczynnik jest bardzo niski.
 
-![](https://ucarecdn.com/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f/)
+![](http://localhost:8484/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
 
 możemy się spodziewać wielu tweetów ze słowami takimi jak `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` czy `kind` w których autor nie miał na myśli kryptowalut. Z drugiej strony nie istnieje obiektywne kryterium odcięcia.
 
-![](https://ucarecdn.com/693ef6c8-ca55-4450-9373-407542eb3313/)
+![](http://localhost:8484/693ef6c8-ca55-4450-9373-407542eb3313.avif)
 
 Gdybym ustawił je na 100, wycięte zostało by 2328/16395 = 14% fraz. Przy wartości `5` mamy odcięcie 1560/16395 = 9.5%.
 

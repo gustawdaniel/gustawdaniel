@@ -2,10 +2,9 @@
 import type {InferEntrySchema} from "astro:content";
 import {Picture} from 'astro:assets';
 
-import dayjs from "dayjs";
 
-import 'dayjs/locale/pl'
-import 'dayjs/locale/es'
+import {prettyDate} from "../../helpers/prettyDate";
+import {readingTime} from "../../helpers/readingTime";
 
 interface Props {
     data: InferEntrySchema<"blog">;
@@ -17,30 +16,11 @@ const {data, body} = Astro.props;
 const locale = Astro.currentLocale ?? 'en';
 
 
-function readingTime(text: string): string {
-    const averageWPM = 265;
 
-    const adjustedText = text.replace(/(.)\1+/g, '$1');
-
-    const adjustedSentences = adjustedText.replace(/([.!?])\s*\1+/g, '$1');
-
-    const adjustedCharCount = adjustedSentences.length;
-
-    const adjustedWords = adjustedSentences.trim().split(/\s+/);
-
-    const adjustedWordCount = adjustedWords.length;
-    const averageWordLength = adjustedCharCount / adjustedWordCount;
-
-    const adjustedTime = (adjustedWordCount / averageWPM) * (averageWordLength / 5);
-
-    const formattedAdjustedTime = adjustedTime > 1 ? Math.round(adjustedTime) + " min" : "Less than 1 min";
-
-    return formattedAdjustedTime;
-}
 ---
 
 <div class="relative mt-8 flex items-center gap-x-4">
-    <Picture src="https://ucarecdn.com/411d6d7d-6a1e-4096-9a88-fc16a9978f2f/-/preview/688x1000/"
+    <Picture src="http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avif"
              widths={[256]}
              formats={['avif']}
              alt={data.author} inferSize={true}
@@ -58,7 +38,7 @@ function readingTime(text: string): string {
         </p>
         <p class="text-gray-500 dark:text-gray-400 my-0">
             <time datetime="2020-03-16"
-                  class="text-gray-500 dark:text-gray-400">{dayjs(data.publishDate).locale(locale).format(locale === 'pl' ? 'DD MMM YYYY' : 'MMM DD, YYYY')}</time>
+                  class="text-gray-500 dark:text-gray-400">{prettyDate(data.publishDate, locale)}</time>
             <span class="mx-1 text-gray-400 dark:text-gray-500">•</span>
             <span>{readingTime(body)} read</span></p>
     </div>

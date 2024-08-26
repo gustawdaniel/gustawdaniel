@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
-coverImage: https://ucarecdn.com/8b3fb584-7d88-42e4-b053-b66de5ddfd09/
+coverImage: http://localhost:8484/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
 date_updated: 2021-07-23 09:22:25+00:00
 description: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych
   między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
@@ -107,21 +107,21 @@ Przy okazji użyliśmy tu innego API - performance:
 
 Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
 
-![](https://ucarecdn.com/460465c8-3065-49e4-9856-b06dbd448dcd/)
+![](http://localhost:8484/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
 
 Nic nie stoi na przeszkodzie, żebyśmy włączyli cztery karty na raz. Wtedy wiadomości od trzech pozostałych w każdej z nich będą się wzajemnie przeplatać.
 
-![](https://ucarecdn.com/7d5446fd-3412-4adb-aaa2-ee9f4493f039/)
+![](http://localhost:8484/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
 
 Możemy wrócić do dwóch kart i odświeżyć kilka razy tą z prawej strony. W wyniku takiego działania ta po lewej dostanie kilkukrotnie nowe powiadomienia, a na tej prawej nie będzie widać nic poza jej własnym przedstawieniem się ponieważ lewa karta zakończyła już nadawanie wiadomości. Konkretny wynik odświeżania prawej karty przedstawia screenshot:
 
-![](https://ucarecdn.com/b0784926-0177-48cb-9841-b51e8bc24203/)
+![](http://localhost:8484/b0784926-0177-48cb-9841-b51e8bc24203.avif)
 
 Widzimy tu, że wiadomości pochodzą od różnych ID, bo karta po prawej zmienia ID przy każdym odświeżeniu.
 
 Kolejny eksperyment to sprawdzenie czy Broad Cast Channel działa między różnymi przeglądarkami:
 
-![](https://ucarecdn.com/a391acb2-05de-4311-ab57-d5cb2b76007f/)
+![](http://localhost:8484/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
 
 Okazało się, że nie. Ma to sens, bo jeśli miało by działać między przeglądarkami, to musiała by istnieć komunikacja między procesami utrzymującymi przeglądarki.
 
@@ -135,7 +135,7 @@ Więcej o samym Origin możemy przeczytać w słowniku Mozilla Developers
 
 Sprawdzimy czy dla różnych komputerów też będzie działał poprawnie. W tym celu musimy zmienić ustawienia parcela, bo obecnie wystawia on nasz serwis na localhost
 
-![](https://ucarecdn.com/f181a0be-8a4c-460e-8b88-af06434063a3/)
+![](http://localhost:8484/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
 
 Nasz obecny adres IP możemy sprawdzić poleceniem
 
@@ -143,7 +143,7 @@ Nasz obecny adres IP możemy sprawdzić poleceniem
 ip route
 ```
 
-![](https://ucarecdn.com/3dc7b0ef-fae0-45df-9f23-179df34c5106/)
+![](http://localhost:8484/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
 
 Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 
@@ -157,7 +157,7 @@ Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 parce index.html --host 192.168.2.162
 ```
 
-![](https://ucarecdn.com/ea9494ab-6361-42e8-a9c8-88e8e2a3646d/)
+![](http://localhost:8484/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
 
 Okazało się, że komunikacja nie jest przesyłana między różnymi komputerami.
 

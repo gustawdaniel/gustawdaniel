@@ -8,7 +8,7 @@ date_updated: 2021-11-22T14:38:00.000Z
 tags: ['javascript', 'numbers-therory', 'mathematica']
 description: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
 excerpt: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
-coverImage: https://ucarecdn.com/2584a854-c1e8-458d-8add-5e70e49ef101/
+coverImage: http://localhost:8484/2584a854-c1e8-458d-8add-5e70e49ef101.avif
 ---
 
 W serwisie Hacker Earth można znaleźć wiele ciekawych zadań dla programistów.
@@ -51,7 +51,7 @@ Ograniczenia
 1 <= k_i <= 48
 ```
 
-![](https://ucarecdn.com/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1/)
+![](http://localhost:8484/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
 
 Wyjaśnienie
 
@@ -77,11 +77,11 @@ Kluczowe wzory to:
 
 * Fundamentalne twierdzenie arytmetyki - każdą dodatnią całkowitą liczbę przedstawimy jako unikalny iloczyn jej czynników pierwszych z odpowiednimi potęgami
 
-![](https://ucarecdn.com/20687346-ea6f-43fc-8b22-7a7573819554/)
+![](http://localhost:8484/20687346-ea6f-43fc-8b22-7a7573819554.avif)
 
 * Najmniejszą wspólną wielokrotność (lcm) pary liczb wyliczymy używając tego rozkładu
 
-![](https://ucarecdn.com/29216930-efaf-40f6-81e6-49f186d6a8fc/)
+![](http://localhost:8484/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
 
 Istnieją sposoby liczenia `lcm` bez rozkładu na czynniki, np przez związek z największym wspólnym dzielnikiem (gcd) i algorytm euklidesa, tu jednak posłużymy się rozkładem na czynniki.
 
@@ -97,7 +97,7 @@ Widzimy, że pierwszym wyzwaniem jest rozłożenie liczby na czynniki.
 
 W tym zagadnieniu bardzo pomocny jest graficzny schemat algorytmu
 
-![](https://ucarecdn.com/102c0a22-4b94-4642-97b0-6e96f9d9bd47/)
+![](http://localhost:8484/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
 
 [Prime Factor: Algorithm
 

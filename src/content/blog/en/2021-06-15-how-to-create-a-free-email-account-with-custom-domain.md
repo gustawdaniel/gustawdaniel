@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-create-a-free-email-account-with-custom-domain
-coverImage: https://ucarecdn.com/5152692c-b9ae-4f97-9f52-4d36fabe8670/
+coverImage: http://localhost:8484/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
 date_updated: 2021-06-15 07:30:11+00:00
 description: In this article, you will learn how to create a free email with a custom
   domain. I've shown how to configure Yandex with your DNS.
@@ -24,7 +24,7 @@ After both Google and Microsoft enabled creation of custom emails only for paid 
 
 First we will go to [https://mail.yandex.com/](https://mail.yandex.com/) and create new Yandex account which will be organization-wide admin account.
 
-![](https://ucarecdn.com/ea76807c-665f-4dcf-936d-dd79cf9c0c26/)
+![](http://localhost:8484/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
 
 You can choose to verify your account with phone number or a security question.
 
@@ -34,7 +34,7 @@ Login to newly created account on [https://mail.yandex.com/](https://mail.yandex
 
 As an option choose DNS and add TXT record to your domain provider's DNS zone.
 
-![](https://ucarecdn.com/ecaba573-f41c-40a9-a41b-d5881287d213/)
+![](http://localhost:8484/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
 
 It should look simmilar to this.
 
@@ -44,7 +44,7 @@ To create a new email account go to [https://connect.yandex.com/portal/admin/use
 Then click **Все сотрудники**and add a new user by clicking "Add" and choosing "Add a person".
 You can also create mailing lists by "Creating a department" and adding people to it.
 
-![](https://ucarecdn.com/f37e8ee3-9030-4be4-8de2-391e9f0c799b/)
+![](http://localhost:8484/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
 
 Congratulations! You've just created a custom email for free!
 

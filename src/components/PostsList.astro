@@ -1,13 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
-
+import {getCollection, type CollectionEntry} from "astro:content";
 const locale = Astro.currentLocale ?? 'en';
+
+interface Props {
+    featured: boolean;
+    reducer?: (collection: CollectionEntry<"blog">[]) => CollectionEntry<"blog">[];
+}
+
+const {featured, reducer} = Astro.props;
 
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import {stripLang} from "../helpers/i18n/stripLang";
 import {fixBlogLocale} from "../helpers/i18n/fixBlogLocale";
 
-const allBlogPosts = await getCollection(
+const allBlogPosts: CollectionEntry<"blog">[] = await getCollection(
     'blog',
     (post) => post.slug.startsWith(locale)
 );
@@ -15,22 +21,21 @@ const allBlogPosts = await getCollection(
 import PostCoverOnList from "./blog/PostCoverOnList.astro";
 import PostDescriptionOnList from "./blog/PostDescriptionOnList.astro";
 import FirstPostCardOnList from "./blog/FirstPostCardOnList.astro";
+
+const postsToDisplay = reducer ? reducer(allBlogPosts) : allBlogPosts;
 ---
 
 
 <div class="bg-white dark:bg-slate-900">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <!--<div class="mx-auto max-w-2xl text-center">-->
-        <!--    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>-->
-        <!--    <p class="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p>-->
-        <!--</div>-->
+
 
         <!--<div class="grid  lg:mx-0 lg:max-w-none lg:grid-cols-3 max-w-2xl mx-auto">-->
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mt-16 ">
 
-            {allBlogPosts.length && <FirstPostCardOnList article={allBlogPosts.at(-1)!} />}
-            {allBlogPosts.reverse().filter((_,i) => i>0).map(p =>
+            {postsToDisplay.length && featured && <FirstPostCardOnList article={postsToDisplay.at(-1)!} />}
+            {postsToDisplay.reverse().filter((_,i:number) => i>(Number(Boolean(featured)) - 1)).map(p =>
                     <a  href={
                         fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(p.slug)), locale)
                     }>

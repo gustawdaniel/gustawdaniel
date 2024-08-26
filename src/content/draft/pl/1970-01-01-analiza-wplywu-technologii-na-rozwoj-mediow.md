@@ -32,7 +32,7 @@ Istnieje bardzo szerokie spektrum manipulacji medialnych od ewidentnych kłamstw
 
 Historia wojny o umysły jest równie ciekawa co obszerna. W tym opracowaniu skupimy się jedynie na najnowszych nabytkach arsenału defensywnego i ofensywnego tej walki. Dzięki opracowaniu Gartnera\[9\] możemy przyjrzeć się całemu wachlarzowi technologii, które w tym momencie wchodzą lub będą wchodzić do codziennego użycia.
 
-![](__GHOST_URL__/content/images/2021/04/gartner.png)
+![](https://gustawdaniel.com/content/images/2021/04/gartner.png)
 
 Rysunek 1: „Hype Cycle” pokazuje na jakim etapie rozwoju jest dana techno-logia (fot. Gartner)
 
@@ -103,7 +103,7 @@ Mimo to firmy takie jak Google i Facebook dostrzegając skalę problemu i długo
 
 Z drugiej strony ta sama technologia uczenia maszynowego może być rozwijana nie w celu wykrywania, lecz w celu tworzenia zmanipulowanych wiadomości. Naśladując ludzi sztuczna inteligencja może wytwarzać treści, a boty mające dostęp do serwisów społecznościowych mogą je tam rozpowszechniać. Przykład: niemal 20 proc. tweetów związanych z wyborami w USA stworzyły boty\\cite{crazynauka\_prawda}. Jednak to nic w porównaniu z technologią tworzenia bardzo realistycznie wyglądających video w których zarówno prezentowana osoba, jak i jej głos mogą być dowolnie modelowane przez twórców. Jest ona wykorzystywana do prezentowania wiadomości w Chińskiej Republice Ludowej, a jej szeroko komentowana demonstracja dostępna jest pod linkiem.
 
-![](__GHOST_URL__/content/images/2021/04/obama.jpg)
+![](https://gustawdaniel.com/content/images/2021/04/obama.jpg)
 
 Wycinek video na któym Jordan Peele prezentuje Deep Fake z prezydentem Obamą
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: instalacja-odnawialnego-certyfikatu-tls-certbot-apache-na-ubuntu
-coverImage: https://ucarecdn.com/c29ee70d-e79e-4738-b1dd-fa9818d798a9/
+coverImage: http://localhost:8484/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
 date_updated: 2021-06-22 09:05:15+00:00
 description: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch
   http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem

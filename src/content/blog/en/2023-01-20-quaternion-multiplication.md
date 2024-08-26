@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
-coverImage: https://ucarecdn.com/d49f26ae-0d28-40ec-a9ec-a242c016b45d/
+coverImage: http://localhost:8484/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
 date_updated: 2023-01-20 02:19:57+00:00
 description: In this article, we will see how to implement the multiplication of quaternions
   in Rust and NodeJS. You will learn about parsing and algebra.
@@ -109,7 +109,7 @@ We can divide our problem to three steps:
 * multiplication of Quaternions
 * formatting Quaternion again to string
 
-![](https://ucarecdn.com/8467207d-4e35-4dd6-ac96-8b874028e6ef/)
+![](http://localhost:8484/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
 
 These high-level operations can be implemented in NodeJS
 
@@ -154,7 +154,7 @@ should be treated as array of quaternions - separated by brackets. In any bracke
 * creating Quaternions from arrays of coefficients
 * extracing number from coefficient
 
-![](https://ucarecdn.com/dd766517-6a3f-4c23-b9df-dbf68b0c0c80/)
+![](http://localhost:8484/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
 
 In NodeJS we can start from two tests. First for simple cases:
 
@@ -370,7 +370,7 @@ or in `rust`:
 
 Multiplication of two quaternions is similar to multiplication of polynomials. Firstly we muliply any components pairs each other. Then we can group them by component type and finally add coefficients. Difference is that in polynomial multiplication we always adding powers, but in Quaternions we using noncommutative division algebra presented on table:
 
-![](https://ucarecdn.com/c7947573-0696-486e-8bd7-ffbfc5b8c85c/)
+![](http://localhost:8484/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
 
 So basically we can divide our problem to:
 
@@ -613,7 +613,7 @@ but generally idea is the same.
 
 Now we have program that can read input, convert it to array of Quaternions and multiply them.
 
-![](https://ucarecdn.com/0dd8108f-02cd-4dfd-84c6-63517935dd45/)
+![](http://localhost:8484/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
 
 Last lacking element is formatting result as string.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-javascript
-coverImage: https://ucarecdn.com/014d0920-5eca-46f4-b476-960e0fa98596/
+coverImage: http://localhost:8484/014d0920-5eca-46f4-b476-960e0fa98596.avif
 date_updated: 2021-04-20 21:46:37+00:00
 description: This simple project is great as an introduction to JavaScript programming.
   The emphasis is on ES6 elements and the frontend.
@@ -23,7 +23,7 @@ This simple project learn you how to apply interface `fetch` , shows examples of
 
 After finishing project will looks following:
 
-![js-es6-1](https://ucarecdn.com/2f16cf65-198d-462d-9fe2-2a9e496aabbd/-/preview/666x447/)
+![js-es6-1](http://localhost:8484/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
 To Do List typed in pure JavaScript that will be presented in this article.
 
@@ -69,7 +69,7 @@ node node_modules/json-server/bin/index.js --watch db.json
 
 If everything works we should see something like this
 
-![js-es6-2](https://ucarecdn.com/4193b63c-cfa6-4828-a4a1-ae620dd8de2f/-/preview/800x264/)
+![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif-/preview/800x264/)
 
 Server with application (on the right) and with REST API connected with db.json file (on the left)
 

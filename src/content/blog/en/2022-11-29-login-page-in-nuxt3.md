@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-component-in-nuxt-rest-strapi
-coverImage: https://ucarecdn.com/e5269211-5b98-4476-abdf-2196dfc06c7d/
+coverImage: http://localhost:8484/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
 date_updated: 2022-11-29 19:22:30+00:00
 description: Simple example of login page in nuxt3 written as base to copy and paste
   in many similar projects.
@@ -20,7 +20,7 @@ title: Login Component in Nuxt (Rest Strapi)
 
 How many times in your live did you implemented login view? I did it too much times. Finally to no search code to copy in my projects I decided to paste here easy instruction how to build simple login component in nuxt.
 
-![](https://ucarecdn.com/6aa24b83-38f2-470e-a682-95fa9766363d/)
+![](http://localhost:8484/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
 
 This setup using strapi as backend, but I will works with any rest API after body and url modifications. In next part we will create nuxt3 project, build login page and pass info about user by cookie to profile component.
 
@@ -152,7 +152,7 @@ In template we adding super minimalistic frontend with login form and `pre` tags
 </template>
 ```
 
-![](https://ucarecdn.com/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5/)
+![](http://localhost:8484/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
 
 ### Passing user token between components
 
@@ -194,7 +194,7 @@ function login() {
 
 this change allow to execute login many times with she same payload.
 
-![](https://ucarecdn.com/70488004-a8c7-468a-974b-0f6cc66ee09e/)
+![](http://localhost:8484/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
 
 It is especially important to avoid bugs, because we now added also `logout` function
 
@@ -274,4 +274,4 @@ That's it. We built super simple front with login and profile pages. There is no
 I skipped part with strapi setup. But thanks to these simplifications it is useful as base to speedup setting up new 
 nuxt3 projects. I hope it will be useful for you and help to avoid situations like on image below:
 
-![](https://ucarecdn.com/dc2ca83a-d254-4988-af9e-451a4487403f/)
+![](http://localhost:8484/dc2ca83a-d254-4988-af9e-451a4487403f.avif)

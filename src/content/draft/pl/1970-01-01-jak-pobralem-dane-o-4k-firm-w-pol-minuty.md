@@ -82,7 +82,7 @@ npx ts-node app.ts
 
 zobaczyć listę firm
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-20-39.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-20-39.png)
 
 ## Pobranie danych o firmach z KRS
 
@@ -188,11 +188,11 @@ zobaczymy
 
 Wynika to z własności wyszukiwarki `rejestr.io` która nie zwraca poprawnych wyników jeśli nazwy zawierają typ podmiotu, np rodzaj spółki
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-39-42.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-39-42.png)
 
 Po wycięciu `SPÓŁKA AKCYJNA` zobaczymy poprawne wyniki
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-41-57.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-27-23-41-57.png)
 
 
 
@@ -319,7 +319,7 @@ main().catch(console.error)
 
 Okazuje się, że nie wszystkie firmy pobieramy prawidłowo:
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-12-48.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-12-48.png)
 
 Powtarza się ten sam motyw co ze spółką akcyjną. `Grupa Kapitałowa` powoduje, że firma jest źle wyszukiwana. Podobnie `OPERATOR` występujące na końcu nazwy.
 
@@ -331,7 +331,7 @@ Kolejne kolumny to:
 * numer porządkowy (liczony od 0)
 * ilość firm dopasowanych w Rejestr.io
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-28-51.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-28-51.png)
 
 O słabej jakości bazy świadczą takie kwiatki jak:
 
@@ -443,7 +443,7 @@ Jego mocne strony to:
 
 Niestety w pobranych danych nie ma kapitału zakładowego. Przykładowy obiekt ma dane:
 
-![](__GHOST_URL__/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-40-49.png)
+![](https://gustawdaniel.com/content/images/2021/04/Zrzut-ekranu-z-2021-04-28-00-40-49.png)
 
 ## Szczegółowe zapytania
 

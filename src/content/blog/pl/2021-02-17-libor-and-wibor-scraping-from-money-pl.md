@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-z-money-pl-w-30-liniach-kodu
-coverImage: https://ucarecdn.com/f92c69bd-529d-4ea3-9094-69da20ca9232/
+coverImage: http://localhost:8484/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
 date_updated: 2021-02-17 21:03:26+00:00
 description: Zobacz proste case study pobrania i przetworzenia danych z paginowanej
   tabeli.
@@ -27,11 +27,11 @@ Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `
 
 [Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
-![](https://ucarecdn.com/3d264f28-b578-4109-a4e7-939d74de1e3f/)
+![](http://localhost:8484/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
 
 Klikam pobierz i nawet dostaję plik, ale po zaznaczeniu pełnego okresu, wybraniu poprawnych danych widzę:
 
-![](https://ucarecdn.com/da1f58ed-b8f1-431c-a159-8caf6f8d1356/)
+![](http://localhost:8484/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
 
 > Liczba wierszy ograniczona do 50
 
@@ -52,7 +52,7 @@ Główne cele:
 
 Okazuje się, że jak wyświetlimy tabelę to dane można z niej odczytać i będzie ona paginowana.
 
-![](https://ucarecdn.com/f21ad04b-f819-4688-9304-ca972265f3cf/)
+![](http://localhost:8484/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
 
 Linki mają kształt:
 
@@ -68,7 +68,7 @@ https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBOR
 
 Renderowane są po stronie backendu co widzimy sprawdzając źródło strony:
 
-![](https://ucarecdn.com/d2d08c47-c9b0-4aca-bd95-24bc095de2e1/)
+![](http://localhost:8484/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
 
 Potencjalnie plan 1:
 
@@ -119,15 +119,15 @@ HTTP request sent, awaiting response... 403 Forbidden
 
 Czyżby ta strona była tak często czesana `wgetem`, że admini zablokowali żądania dla domyślnego user agent wgeta?
 
-![](https://ucarecdn.com/a01f54f5-5d4c-47d2-b9b8-220e924bed30/)
+![](http://localhost:8484/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
 
 Nie zdziwił bym się, biorąc po uwagę fakt, że Wget wcale się nie kryje ze swoją tożsamością. Httpie nie jest lepszy
 
-![](https://ucarecdn.com/2d2cbb6c-17d2-451f-95ab-a67271405e5f/)
+![](http://localhost:8484/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
 
 ale jest mniej znany, dlatego działa
 
-![](https://ucarecdn.com/f636546c-641b-4405-853f-faa0c337217d/)
+![](http://localhost:8484/f636546c-641b-4405-853f-faa0c337217d.avif)
 
 Do pobrania plików jak obiecałem wystarczy po 1 linii dla każdego rodzaju:
 
@@ -145,7 +145,7 @@ mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/de
 
 W katalogu `raw` mamy już wszystkie pliki wymagane do przetworzenia
 
-![](https://ucarecdn.com/6a907b6c-e625-46a2-be35-270e2fdc5229/)
+![](http://localhost:8484/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
 
 # Opisanie docelowej struktury
 
@@ -203,7 +203,7 @@ const getFiles = (): { type: string, content: string }[] => fs
 
 Teraz je przetworzymy pojedynczą tabelę:
 
-![](https://ucarecdn.com/ad5cde4e-061f-48f4-b58c-9a9dd680399e/)
+![](http://localhost:8484/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
 
 Ta linia wykonana w kosoli przeglądarki jest sercem całego programu. Należy ją przenieść do `node js`. Abyśmy bez problemu wykonali dynamiczną destrukturyzację potrzebujemy zmienić `target` w `tsconfig.json` na wyższy niż `es5` na przykład `ES2020`.
 
@@ -243,7 +243,7 @@ console.dir(main())
 
 Wykonanie zwraca dane, które musimy jeszcze zredukować do tylko pary kluczy - `LIBORCHF3M` oraz `WIBOR3M`
 
-![](https://ucarecdn.com/67386ff8-1f34-41e8-b420-8de3aba109bd/)
+![](http://localhost:8484/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
 
 Redukcja wymaga mergowania objektów na kluczach, dlatego dopiszemy do niej funkcję
 
@@ -300,11 +300,11 @@ fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 
 Ilość linii prawdziwego kodu: 30
 
-![](https://ucarecdn.com/903a0aff-c5e9-444b-b7eb-ce8eb9910c17/)
+![](http://localhost:8484/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
 
 Czas wykonania: 1min 15sec
 
-![](https://ucarecdn.com/9c30542e-2868-494f-b185-951200f3aece/)
+![](http://localhost:8484/9c30542e-2868-494f-b185-951200f3aece.avif)
 
 Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
 

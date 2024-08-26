@@ -144,3 +144,9 @@ Real dates of drafts
 2018-07-08-measuring-the-amount-of-text-and-code-in-my-blog-posts.md
 2019-07-08-badanie-wydajności-insertów-mysql.md
 ```
+
+In scripts
+
+```
+caddy run
+```
