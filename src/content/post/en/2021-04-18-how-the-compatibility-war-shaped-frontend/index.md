@@ -5,6 +5,7 @@ publishDate: 2023-03-10T15:56:01.000Z
 date_updated: 2023-03-10T15:56:02.000Z
 draft: true
 excerpt: We describe how abandonment and backward compatibility have influenced the direction of development in web technologies.
+coverImage: https://ucarecdn.com/3737c82b-a958-48dd-a968-3cec36f8e7ee/-/preview/626x352/
 ---
 
 The issue of incompatible software or hardware versions has probably caused us problems in our daily lives more than once. You may have encountered situations or noticed:

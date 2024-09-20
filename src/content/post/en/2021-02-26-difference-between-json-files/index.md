@@ -5,6 +5,7 @@ publishDate: 2021-02-26
 date_updated: 2023-10-12
 tags: [ 'i18next' ]
 excerpt: Learn how to find missing translations in JSON files with dictionaries.
+coverImage: https://ucarecdn.com/7f52c42e-103b-4ef9-b689-d08807ad2f7f/-/preview/1000x748/
 ---
 
 In this article, we will demonstrate how to create a function that identifies the differences between two JSON files.

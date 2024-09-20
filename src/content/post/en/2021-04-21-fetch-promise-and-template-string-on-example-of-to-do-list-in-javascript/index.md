@@ -5,13 +5,14 @@ publishDate: 2021-04-20T21:46:37.000Z
 date_updated: 2021-04-20T21:46:37.000Z
 tags: ['js', 'es6', 'html', 'css']
 excerpt: This simple project is great as an introduction to JavaScript programming. The emphasis is on ES6 elements and the frontend.
+#coverImage: https://ucarecdn.com/2288498c-bdd8-451b-bb48-f558f60eb488/-/preview/1000x562/
 ---
 
 This simple project learn you how to apply interface `fetch` , shows examples of usage of `promises` and some interesting `css` properties like `transform` , `user-select` or directive `@media`.
 
 After finishing project will looks following:
 
-![](../../../../assets/2021-04-21/1_qm93PtCN3Y0mZWzQrqVAFw--1-.png)
+![js-es6-1](https://ucarecdn.com/2f16cf65-198d-462d-9fe2-2a9e496aabbd/-/preview/666x447/)
 
 To Do List typed in pure JavaScript that will be presented in this article.
 
@@ -57,7 +58,7 @@ node node_modules/json-server/bin/index.js --watch db.json
 
 If everything works we should see something like this
 
-![](../../../../assets/2021-04-21/1_PD3FHn76We8mFzIivvnpvg--1-.png)
+![js-es6-2](https://ucarecdn.com/4193b63c-cfa6-4828-a4a1-ae620dd8de2f/-/preview/800x264/)
 
 Server with application (on the right) and with REST API connected with db.json file (on the left)
 

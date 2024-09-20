@@ -44,25 +44,33 @@ const t = useTranslations(locale);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">{t("nav.home")}</h1>
-		<p class="mb-4">
-			{t("home.intro")}
-		</p>
-		<SocialList />
+	<!--<section>-->
+	<!--	<h1 class="title mb-6">{t("nav.home")}</h1>-->
+	<!--	<p class="mb-4">-->
+	<!--		{t("home.intro")}-->
+	<!--	</p>-->
+	<!--	<SocialList />-->
+	<!--</section>-->
+
+	<section aria-label="Blog post list" class="font-sans leading-normal tracking-normal">
+		<!--<h2 class="title mb-4 text-xl">Posts</h2>-->
+		<div class="container mx-auto max-w-6xl px-4 md:px-0">
+			<div class="mx-0 sm:mx-6">
+				<div class="w-full rounded-t text-xl leading-normal text-gray-800 md:text-2xl">
+					<div class="-mx-6 flex flex-wrap justify-between pt-12">
+						{
+							allPostsByDate.map((p) => (
+								<div class="flex w-full flex-shrink flex-grow flex-col p-6 md:w-1/2">
+									<PostPreview post={p} />
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+
 	<section class="mt-16">
 		<h2 class="title mb-4 text-xl">{t("home.projects")}</h2>
 		<ul class="space-y-4 sm:space-y-2">

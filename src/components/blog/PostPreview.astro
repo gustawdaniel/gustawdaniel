@@ -15,8 +15,12 @@ const postDate = post.data.updatedDate ?? post.data.publishDate;
 
 <FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
 <Tag>
-	<!--<pre>{post.slug} / {stripLangFromSlug(post.slug)}</pre>-->
-	<a href={`/posts/${stripLangFromSlug(post.slug)}/`} class="cactus-link" rel="prefetch">
+	<pre>{JSON.stringify(post.data)}</pre>
+	<a
+		href={`/posts/${stripLangFromSlug(post.slug)}/`}
+		class="cactus-link dark:text-white"
+		rel="prefetch"
+	>
 		{post.data.title}
 	</a>
 </Tag>

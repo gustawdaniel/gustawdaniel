@@ -5,6 +5,7 @@ publishDate: 2021-04-20T21:12:22.000Z
 date_updated: 2021-04-20T21:12:22.000Z
 tags: ['vue', 'meteor']
 excerpt: There is few methods of sending data between unrelated vue components. Some of these are universal, other typical for vue, another for Meteor. We compare all of them.
+#coverImage: https://ucarecdn.com/8844f448-8806-4658-8aa6-1fea4a28c6cf/-/preview/1000x420/
 ---
 
 ## What we have and what we want?
@@ -98,7 +99,7 @@ In following sections we can see results in table with applied spectre.css, but 
 
 In simplest cases when we do not want to operate on submitted data we can use old school direct dom modification. Listen on changes in first component, then select and directly modify `innerHTML` of elements in other.
 
-![](../../../../assets/2021-04-21/1_8pl-wsHGBftLFxMOiyBZXA.gif)
+![meteor-vue-1-input.gif](https://ucarecdn.com/e0f5478a-b6ee-4b6c-90f0-5531c6397f96/)
 
 To obtain this result we can write the following code in first component
 
@@ -463,7 +464,7 @@ Advantages
 
 We presented some methods of communicating components. Some of them are universal, two last methods are typical for `vue-meteor` integration. There is not best or worse. You will create best code if you will know and understood all and select right one in dependent from your needs.
 
-![](../../../../assets/2021-04-21/1_m73DyRU5IRqiUrZa6pIgkQ.png)
+![vue-meteor-2-summary](https://ucarecdn.com/996e2a24-44f2-4b1f-8fbe-3ef42357032d/-/preview/687x293/)
 
 All methods presented in this article with input and output components.
 
@@ -487,12 +488,7 @@ Vue Meteor Tracker
 
 > [https://github.com/meteor-vue/vue-meteor-tracker](https://github.com/meteor-vue/vue-meteor-tracker)
 
-This blog post is published also there:
+This blog post is published also there: https://medium.com/@gustaw.daniel/communication-between-vue-components-in-meteor-29006be3dae9
 
-[Communication between Vue components in Meteor
 
-Full repository with all these method can be found there: https://github.com/gustawdaniel/vue-meteor-components-communication-tutorial We assume that you can create meteor project with Vue. If not…
-
-![](https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png)MediumDaniel Gustaw
-
-![](https://miro.medium.com/max/687/1*m73DyRU5IRqiUrZa6pIgkQ.png)](https://medium.com/@gustaw.daniel/communication-between-vue-components-in-meteor-29006be3dae9)
+Full repository with all these method can be found there: https://github.com/gustawdaniel/vue-meteor-components-communication-tutorial

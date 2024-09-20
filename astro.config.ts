@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -22,7 +22,9 @@ export default defineConfig({
 	},
 	image: {
 		// https://docs.astro.build/en/guides/assets/#using-sharp
-		service: sharpImageService(),
+		// service: sharpImageService(),
+		domains: ["astro.build"],
+		remotePatterns: [{ protocol: "https" }],
 	},
 	integrations: [
 		mdx({}),

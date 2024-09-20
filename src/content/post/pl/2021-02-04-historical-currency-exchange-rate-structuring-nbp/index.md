@@ -17,7 +17,7 @@ Od razu zaznaczę, że historyczne kursy walut są świetnie prezentowane na str
 
 Za przykład weźmy kurs franka szwajcarskiego:
 
-![](../../../../assets/2021-02-04/Screenshot-from-2021-02-16-19-13-56.png)
+![](../../../../assets/2021-02-04/chf-1-price-history.png)
 
 https://stooq.com/q/?s=chfpln&c=mx&t=l&a=ln&b=0
 
