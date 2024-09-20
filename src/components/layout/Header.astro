@@ -2,7 +2,7 @@
 import ThemeToggle from "../ThemeToggle.astro";
 import Search from "../Search.astro";
 import LanguageSelector from "../LanguageSelector.astro";
-import { MENU_LINKS } from "@/data/constants";
+import { menuLinks } from "@/site-config";
 
 const url = new URL(Astro.request.url);
 ---
@@ -50,15 +50,15 @@ const url = new URL(Astro.request.url);
 					fill="#53C68C"></path>
 				<path d="M45.334 240 0 213.334v120L45.334 360V240Z" fill="#B04304"></path>
 			</svg>
-			<span class="text-xl font-bold sm:text-2xl">Astro Cactus</span>
+			<span class="text-xl font-bold sm:text-2xl">Daniel Gustaw</span>
 		</a>
 		<nav
 			id="navigation-menu"
-			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-[--theme-menu-bg] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
 			aria-label="Main menu"
 		>
 			{
-				MENU_LINKS.map((link) => (
+				menuLinks.map((link) => (
 					<a
 						href={link.path}
 						class="px-4 py-4 sm:py-0 sm:hover:underline"
