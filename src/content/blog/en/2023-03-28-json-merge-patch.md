@@ -119,7 +119,6 @@ If the patch document is not an object, we simply replace the target document wi
 Now that we have implemented the JSON Merge Patch algorithm, let's test it using a few examples:
 
 ```rust
-
 #[cfg(test)]
 mod tests {
     use super::*;
