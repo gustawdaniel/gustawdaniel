@@ -2,6 +2,8 @@
 import PageLayout from "@/layouts/Base";
 import { Image } from "astro:assets";
 import aboutImg from "~/assets/about-astro.png";
+import { getLocale } from "@/i18n/utils";
+const locale = getLocale();
 
 const meta = {
 	title: "About",
@@ -10,41 +12,118 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
-	<div class="space-y-6">
-		<h1 class="title">About</h1>
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<div class="flex justify-center">
-			<Image
-				src={aboutImg}
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				loading="eager"
-				fetchpriority="high"
-			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
-		<p>
-			Clone or fork my
-			<a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="github repository"
-			>
-				repo
-			</a> if you like me!
-		</p>
-	</div>
+	{
+		locale === "en" && (
+			<div class="space-y-6">
+				<h1 class="title">About me</h1>
+				<p>I love coding at night and in the morning watch at sunrise over ocean.</p>
+
+				<p>What I believe:</p>
+				<ul class="list-inside list-disc">
+					<li>Live is too short to duplicate code</li>
+					<li>Every line is potential bug</li>
+					<li>AI will kill us, but we can't change it</li>
+					<li>Fortunately "Brain - Computer" interface will depreciate html adn css before</li>
+					<li>I love Arch btw but can't install it now because of my Nvidia RTX 3060</li>
+				</ul>
+
+				<p>My fav animal is a cat... owned by Schrödinger.</p>
+			</div>
+		)
+	}
+
+	{
+		locale === "pl" && (
+			<div class="space-y-6">
+				<h1 class="title">O mnie</h1>
+				<p>Uwielbiam kodować nocą i rano patrzeć na wschód słońca nad oceanem.</p>
+
+				<p>W co wierzę:</p>
+				<ul class="list-inside list-disc">
+					<li>Życie jest zbyt krótkie, aby dublować kod</li>
+					<li>Każda linia to potencjalny błąd</li>
+					<li>AI nas zabije, ale nie możemy tego zmienić</li>
+					<li>Na szczęście interfejs "Mózg - Komputer" uczyni HTML i CSS zbędnymi wcześniej</li>
+					<li>
+						Uwielbiam Arch btw, ale teraz nie mogę go zainstalować z powodu mojego Nvidia RTX 3060
+					</li>
+				</ul>
+
+				<p>Moim ulubionym zwierzęciem jest kot... posiadany przez Schrödingera.</p>
+			</div>
+		)
+	}
+
+	{
+		locale === "de" && (
+			<div class="space-y-6">
+				<h1 class="title">Über mich</h1>
+				<p>
+					Ich liebe es, nachts zu programmieren und morgens den Sonnenaufgang über dem Ozean zu
+					beobachten.
+				</p>
+
+				<p>Woran ich glaube:</p>
+				<ul class="list-inside list-disc">
+					<li>Das Leben ist zu kurz, um Code zu duplizieren</li>
+					<li>Jede Zeile ist ein potenzieller Fehler</li>
+					<li>AI wird uns töten, aber wir können nichts daran ändern</li>
+					<li>
+						Zum Glück wird die "Gehirn - Computer" Schnittstelle HTML und CSS vorher veralten lassen
+					</li>
+					<li>
+						Ich liebe Arch übrigens, kann es aber wegen meiner Nvidia RTX 3060 nicht installieren
+					</li>
+				</ul>
+
+				<p>Mein Lieblingstier ist eine Katze... die Schrödinger gehört.</p>
+			</div>
+		)
+	}
+
+	{
+		locale === "es" && (
+			<div class="space-y-6">
+				<h1 class="title">Sobre mí</h1>
+				<p>Me encanta programar por la noche y por la mañana ver el amanecer sobre el océano.</p>
+
+				<p>En lo que creo:</p>
+				<ul class="list-inside list-disc">
+					<li>La vida es demasiado corta para duplicar código</li>
+					<li>Cada línea es un posible error</li>
+					<li>La IA nos matará, pero no podemos cambiarlo</li>
+					<li>
+						Afortunadamente, la interfaz "Cerebro - Computadora" hará obsoletos a HTML y CSS antes
+					</li>
+					<li>
+						Me encanta Arch por cierto, pero no puedo instalarlo ahora debido a mi Nvidia RTX 3060
+					</li>
+				</ul>
+
+				<p>Mi animal favorito es un gato... que pertenece a Schrödinger.</p>
+			</div>
+		)
+	}
+
+	{
+		locale === "ru" && (
+			<div class="space-y-6">
+				<h1 class="title">Обо мне</h1>
+				<p>Люблю программировать ночью и утром смотреть на восход солнца над океаном.</p>
+
+				<p>Во что я верю:</p>
+				<ul class="list-inside list-disc">
+					<li>Жизнь слишком коротка, чтобы дублировать код</li>
+					<li>Каждая строка - потенциальная ошибка</li>
+					<li>ИИ уничтожит нас, но мы не можем этого изменить</li>
+					<li>К счастью, интерфейс "Мозг - Компьютер" сделает HTML и CSS устаревшими раньше</li>
+					<li>
+						Мне нравится Arch, кстати, но я не могу установить его из-за моего Nvidia RTX 3060
+					</li>
+				</ul>
+
+				<p>Мое любимое животное - это кот... который принадлежит Шрёдингеру.</p>
+			</div>
+		)
+	}
 </PageLayout>
