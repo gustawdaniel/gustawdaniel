@@ -5,7 +5,7 @@ interface Props {
     ogImage: string;
 }
 
-const { title, description, ogImage} = Astro.props as Props;
+const {title, description, ogImage} = Astro.props as Props;
 console.log(Astro.url.pathname, ogImage)
 const permalink = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avif';
@@ -17,27 +17,47 @@ const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc1
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <meta name="title" content={title}/>
+    <meta name="description" content={description}/>
 
     <!-- The rest of your head content -->
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={permalink} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content={permalink}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:image" content={ogImageURL}/>
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={permalink} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImageURL} />
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content={permalink}/>
+    <meta property="twitter:title" content={title}/>
+    <meta property="twitter:description" content={description}/>
+    <meta property="twitter:image" content={ogImageURL}/>
 
-    <!-- Sitemap / RSS -->
-    <link rel="sitemap" href={new URL("sitemap.xml", Astro.site)} />
+    <!--<script defer src="https://cloud.umami.is/script.js"-->
+    <!--        data-website-id="5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c"></script>-->
+
+    <!-- AMP -->
+    <!--<link rel="canonical" href={permalink}>-->
+    <!--<script async src="https://cdn.ampproject.org/v0.js"></script>-->
+    <!--<style amp-boilerplate>-->
+    <!--    body{-->
+    <!--        -webkit-animation:-amp-start 0s steps(1,end) 0s 1 normal both;-->
+    <!--        -moz-animation:-amp-start 0s steps(1,end) 0s 1 normal both;-->
+    <!--        -ms-animation:-amp-start 0s steps(1,end) 0s 1 normal both;-->
+    <!--        animation:-amp-start 0s steps(1,end) 0s 1 normal both-->
+    <!--    }-->
+
+    <!--    @-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}-->
+    <!--    @-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}-->
+    <!--    @-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}-->
+    <!--    @-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}-->
+    <!--    @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}-->
+    <!--</style>-->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <!-- Sitemap / RSS   <link rel="sitemap" href={new URL("sitemap.xml", Astro.site)} />
     <link
             rel="alternate"
             type="application/rss+xml"

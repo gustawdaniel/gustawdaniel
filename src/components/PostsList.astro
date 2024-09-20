@@ -27,12 +27,12 @@ const postsToDisplay = reducer ? reducer(allBlogPosts) : allBlogPosts;
 
 
 <div class="bg-white dark:bg-slate-900">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 
 
         <!--<div class="grid  lg:mx-0 lg:max-w-none lg:grid-cols-3 max-w-2xl mx-auto">-->
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mt-16 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 gap-y-10 sm:gap-y-20 sm:mt-16 ">
 
             {postsToDisplay.length && featured && <FirstPostCardOnList article={postsToDisplay.at(-1)!} />}
             {postsToDisplay.reverse().filter((_,i:number) => i>(Number(Boolean(featured)) - 1)).map(p =>

@@ -2,6 +2,7 @@
 title: How to manage zsh plugins with antigen?
 publishDate: 2024-08-10
 ---
+
 Install antigen
 
 ```bash

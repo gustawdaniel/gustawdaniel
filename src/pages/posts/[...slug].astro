@@ -14,6 +14,6 @@ const {entry} = Astro.props;
 const {Content} = await entry.render();
 ---
 
-<MarkdownPostLayout frontmatter={entry.data} body={entry.body}>
+<MarkdownPostLayout id={entry.id} frontmatter={entry.data} body={entry.body}>
     <Content/>
 </MarkdownPostLayout>

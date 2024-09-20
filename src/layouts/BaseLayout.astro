@@ -19,6 +19,7 @@ import BaseFooter from "../components/footer/BaseFooter.astro";
 // window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
 
 ---
+<!doctype html>
 <html lang={locale}
       x-data="{ darkMode: localStorage.getItem('theme') || (localStorage.setItem('theme', 'system') || 'system')}"
       x-init="$watch('darkMode', val => localStorage.setItem('theme', val))"
@@ -36,12 +37,12 @@ import BaseFooter from "../components/footer/BaseFooter.astro";
 
 <BaseFooter/>
 
-<script>
-    // @ts-ignore PagefindUI is global
-    window.addEventListener('DOMContentLoaded', (_event) => {
-        // @ts-ignore PagefindUI is global
-        new PagefindUI({element: "#search", showSubResults: true, autofocus: true});
-    });
-</script>
+<!--<script>-->
+<!--    // @ts-ignore PagefindUI is global-->
+<!--    window.addEventListener('DOMContentLoaded', (_event) => {-->
+<!--        // @ts-ignore PagefindUI is global-->
+<!--        new PagefindUI({element: "#search", showSubResults: true, autofocus: true});-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

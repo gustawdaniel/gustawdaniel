@@ -7,14 +7,18 @@ export const ui = {
         'nav.home': 'Home',
         'nav.about': 'About',
         'nav.twitter': 'Twitter',
+        'contact.header': 'Let\'s hack together',
+        'contact.text': 'Find contacts channels in cli.',
     },
     pl: {
         'lang.en': 'English',
         'lang.pl': 'Polish',
         'lang.es': 'Spanish',
         'nav.read-in-other-lang': 'Czytaj w innym języku',
-        'nav.home': 'Accueil',
-        'nav.about': 'À propos',
+        'nav.home': 'Dom',
+        'nav.about': 'O mnie',
+        'contact.header': 'Kodujmy razem?',
+        'contact.text': 'Znajdź kanały kontaktowe w cli.',
     },
     es: {
         'lang.en': 'English',
@@ -23,5 +27,7 @@ export const ui = {
         'nav.read-in-other-lang': 'Leer en otro idioma',
         'nav.home': 'Accueil',
         'nav.about': 'À propos',
+        'contact.header': 'Hagámoslo juntos',
+        'contact.text': 'Mis canales de contacto están en la CLI.',
     },
 } as const;

@@ -1,0 +1,45 @@
+---
+import '../../../../public/contact/terminal/style.css';
+---
+
+<div id="wasm-terminal-wrapper" class="h-[55vh] bg-black p-2 invert dark:invert-0">
+  <div id="terminal" class="overflow-auto"><div><span>Loading...<span><div></div>
+  <div id="hidey-hole" hidden><span id='cursor'>_</span></div>
+</div>
+
+<script is:inline src="/contact/terminal/term.js"></script>
+<script type="module">
+  import init, { begin } from '/contact/terminal/its_a_unix_system.js';
+  await init();
+  begin()
+</script>
+<script>
+// Function to scroll to the bottom
+function scrollToBottom() {
+  const contentDiv = document.getElementById('wasm-terminal-wrapper');
+  if(contentDiv)
+    contentDiv.scrollTop = contentDiv.scrollHeight;
+}
+
+// Using MutationObserver to detect content changes
+const observer = new MutationObserver(() => {
+  scrollToBottom();
+});
+
+const targetNode = document.getElementById('wasm-terminal-wrapper');
+const config = { childList: true, subtree: true };
+
+// Start observing the target node for changes
+if(targetNode) {
+  observer.observe(targetNode, config);
+}
+
+window.addEventListener('keydown', (e) => {
+  console.log('bottom', e);
+  scrollToBottom();
+  if(e.key === 'ArrowUp' || e.key === ' ') {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+})
+</script>

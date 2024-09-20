@@ -4,13 +4,16 @@ import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
 import type { Locales } from "astro";
 import { redirects } from "./src/helpers/redirects.ts";
-
+import pagefind from "astro-pagefind";
 // redirect /author/daniel/
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
+  build: {
+    format: "file",
+  },
   image: {
     domains: ['ucarecdn.com']
   },
@@ -18,9 +21,11 @@ export default defineConfig({
     defaultLocale,
     locales: locales as unknown as Locales
   },
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), alpinejs()],
+  integrations: [
+    tailwind({ applyBaseStyles: false }),
+    alpinejs(),
+    pagefind()
+  ],
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)

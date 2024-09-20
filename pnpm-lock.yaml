@@ -41,6 +41,9 @@ importers:
       astro:
         specifier: ^4.14.2
         version: 4.14.2(@types/node@22.5.0)(rollup@4.19.2)(typescript@5.5.4)
+      astro-pagefind:
+        specifier: ^1.6.0
+        version: 1.6.0(astro@4.14.2(@types/node@22.5.0)(rollup@4.19.2)(typescript@5.5.4))
       tailwindcss:
         specifier: ^3.4.7
         version: 3.4.7
@@ -543,6 +546,9 @@ packages:
     cpu: [x64]
     os: [darwin]
 
+  '@pagefind/default-ui@1.1.1':
+    resolution: {integrity: sha512-ZM0zDatWDnac/VGHhQCiM7UgA4ca8jpjA+VfuTJyHJBaxGqZMQnm4WoTz9E0KFcue1Bh9kxpu7uWFZfwpZZk0A==}
+
   '@pagefind/linux-arm64@1.1.0':
     resolution: {integrity: sha512-8zjYCa2BtNEL7KnXtysPtBELCyv5DSQ4yHeK/nsEq6w4ToAMTBl0K06khqxdSGgjMSwwrxvLzq3so0LC5Q14dA==}
     cpu: [arm64]
@@ -561,6 +567,9 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@polka/url@1.0.0-next.28':
+    resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -842,6 +851,11 @@ packages:
 
   asap@2.0.6:
     resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
+
+  astro-pagefind@1.6.0:
+    resolution: {integrity: sha512-U/WuE0ktkZkoFJf6yopWO4DjIJ3+wrnopE2L3kUYiyqNTJpqmp13bFLR8gir6B+KzQ5dsXQtJZYTQtKJg1FxIA==}
+    peerDependencies:
+      astro: ^2.0.4 || ^3.0.0 || ^4.0.0
 
   astro@4.14.2:
     resolution: {integrity: sha512-x9VeYx8Ih6kYKBMVwwsfRzsZVq30+SUhiawnYQ6+46qQnEx3zH05KcH24HsJMe6dVpHD8HdH7CWR5C4o7Q/jeg==}
@@ -1928,6 +1942,10 @@ packages:
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
 
+  sirv@2.0.4:
+    resolution: {integrity: sha512-94Bdh3cC2PKrbgSOUqTiGPWVZeSiXfKOVZNJniWoqrWrRkB1CJzBU3NEbiTsPcYy1lDsANA/THzS+9WBiy5nfQ==}
+    engines: {node: '>= 10'}
+
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
@@ -2015,6 +2033,10 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+
+  totalist@3.0.1:
+    resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
+    engines: {node: '>=6'}
 
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
@@ -2813,6 +2835,8 @@ snapshots:
   '@pagefind/darwin-x64@1.1.0':
     optional: true
 
+  '@pagefind/default-ui@1.1.1': {}
+
   '@pagefind/linux-arm64@1.1.0':
     optional: true
 
@@ -2824,6 +2848,8 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@polka/url@1.0.0-next.28': {}
 
   '@rollup/pluginutils@5.1.0(rollup@4.19.2)':
     dependencies:
@@ -3129,6 +3155,13 @@ snapshots:
   array-iterate@2.0.1: {}
 
   asap@2.0.6: {}
+
+  astro-pagefind@1.6.0(astro@4.14.2(@types/node@22.5.0)(rollup@4.19.2)(typescript@5.5.4)):
+    dependencies:
+      '@pagefind/default-ui': 1.1.1
+      astro: 4.14.2(@types/node@22.5.0)(rollup@4.19.2)(typescript@5.5.4)
+      pagefind: 1.1.0
+      sirv: 2.0.4
 
   astro@4.14.2(@types/node@22.5.0)(rollup@4.19.2)(typescript@5.5.4):
     dependencies:
@@ -4518,6 +4551,12 @@ snapshots:
     dependencies:
       is-arrayish: 0.3.2
 
+  sirv@2.0.4:
+    dependencies:
+      '@polka/url': 1.0.0-next.28
+      mrmime: 2.0.0
+      totalist: 3.0.1
+
   sisteransi@1.0.5: {}
 
   source-map-js@1.2.0: {}
@@ -4623,6 +4662,8 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
+
+  totalist@3.0.1: {}
 
   trim-lines@3.0.1: {}
 

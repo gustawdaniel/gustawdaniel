@@ -1,0 +1,25 @@
+{
+  "name": "its-a-unix-system",
+  "type": "module",
+  "collaborators": [
+    "Property404 <git@dagans.dev>"
+  ],
+  "description": "A unix terminal for your website",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Property404/its-a-unix-system"
+  },
+  "files": [
+    "its_a_unix_system_bg.wasm",
+    "its_a_unix_system.js",
+    "its_a_unix_system.d.ts",
+    "LICENSE_MIT"
+  ],
+  "main": "its_a_unix_system.js",
+  "types": "its_a_unix_system.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

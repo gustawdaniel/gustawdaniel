@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+}
+
+#terminal {
+    background-color:black;
+    color:white;
+    margin:0;
+    width: 100%;
+    height: 100%;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+#terminal div {
+    min-height: 1.2rem;
+}
+
+#cursor {
+    display:inline-block;
+    max-width: 0;
+}
+
+.ct-normal {}
+.ct-black { color: black; }
+.ct-white { color: white; }
+.ct-blue { color: #99f; }
+.ct-cyan { color: cyan; }
+.ct-green { color: green; }
+.ct-red { color: red; }
+.ct-yellow { color: yellow; }
+.ct-magenta { color: magenta; }

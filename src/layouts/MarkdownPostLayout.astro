@@ -6,19 +6,20 @@ import AvatarPublicationDateReadTime from "../components/blog/AvatarPublicationD
 import {Picture} from 'astro:assets';
 import PostTagBadge from "../components/blog/PostTagBadge.astro";
 import CommentsSection from "../components/blog/CommentsSection.astro";
+import EditPageButton from "../components/github/EditPageButton.astro";
 
 interface Props {
+    id: string;
     frontmatter: InferEntrySchema<"blog">;
     body: string;
 }
 
-const {frontmatter, body} = Astro.props;
+const {id, frontmatter, body} = Astro.props;
 
 function* shuffle<T>(arr: T[]): Generator<T> {
     arr = [...arr];
     while (arr.length) yield arr.splice(Math.random() * arr.length | 0, 1)[0]
 }
-
 
 const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"blog">[] => {
     return [...shuffle<CollectionEntry<"blog">>(collection)]
@@ -64,8 +65,13 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
 
         </section>
 
-        <aside class="my-20">
-        <CommentsSection/>
+        <aside class="my-20 prose lg:prose-xl m-auto">
+
+            <EditPageButton id={`post/${id}`}/>
+        </aside>
+
+        <aside class="my-20 ">
+            <CommentsSection/>
         </aside>
 
         <div class="mx-auto max-w-2xl text-center mt-10">
