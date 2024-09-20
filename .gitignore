@@ -1,3 +1,4 @@
+local
 # build output
 dist/
 .output/
@@ -23,3 +24,5 @@ pnpm-debug.log*
 *.pem
 .cache
 .astro
+
+.idea
