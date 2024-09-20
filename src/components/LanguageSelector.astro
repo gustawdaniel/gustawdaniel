@@ -1,12 +1,14 @@
 ---
-import { getLocale } from "astro-i18n-aut";
-
-const locale = getLocale(Astro.url) ?? "en";
-
 import { locales } from "@/data/locales";
-import { useTranslatedPath } from "../i18n/utils";
+import { useTranslatedPath, getLocale } from "@/i18n/utils";
+const currentPath = Astro.url.pathname;
 
+const locale = getLocale();
 const translatePath = useTranslatedPath(locale);
+
+function isMultiLangPath(path) {
+	return ["/about/", "/posts/"].includes(path);
+}
 ---
 
 <div class="ms-auto">
@@ -14,7 +16,9 @@ const translatePath = useTranslatedPath(locale);
 		{
 			Object.values(locales).map((lang) => (
 				<li class={`${locale === lang ? "text-accent" : ""}`}>
-					<a href={translatePath("/", lang)}>{lang.toUpperCase()}</a>
+					<a href={translatePath(isMultiLangPath(currentPath) ? currentPath : "/", lang)}>
+						{lang.toUpperCase()}
+					</a>
 				</li>
 			))
 		}

@@ -1,12 +1,12 @@
 ---
-import type { SiteMeta } from "@/data/siteMeta";
+import type { SiteMeta } from "@/data/types";
 import BaseHead from "@/components/BaseHead";
 import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipLink from "@/components/SkipLink";
 import { siteConfig } from "@/site-config";
-import { getLangFromUrl } from "../i18n/utils";
+
 interface Props {
 	meta: SiteMeta;
 }
@@ -14,11 +14,9 @@ interface Props {
 const {
 	meta: { title, description = siteConfig.description, ogImage, articleDate },
 } = Astro.props;
-
-const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang={lang}>
+<html lang={siteConfig.lang}>
 	<head>
 		<BaseHead title={title} description={description} ogImage={ogImage} articleDate={articleDate} />
 	</head>
@@ -27,10 +25,6 @@ const lang = getLangFromUrl(Astro.url);
 		<SkipLink />
 		<Header />
 		<main id="main" class="flex-1">
-			<hr />
-			<pre>{lang}</pre>
-			<hr />
-
 			<slot />
 		</main>
 		<Footer />

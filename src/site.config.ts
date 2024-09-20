@@ -1,19 +1,7 @@
-interface SiteConfig {
-	author: string;
-	title: string;
-	description: string;
-	lang: string;
-	ogLocale: string;
-	themeColorLight: string;
-	themeColorDark: string;
-	date: {
-		locale: string | string[] | undefined;
-		options: Intl.DateTimeFormatOptions;
-	};
-}
+import type { SiteConfig } from "@/data/types";
+import { getLocale } from "@/i18n/utils";
 
 export const siteConfig: SiteConfig = {
-	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Daniel Gustaw",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: "Programmers blog",
@@ -21,12 +9,9 @@ export const siteConfig: SiteConfig = {
 	description:
 		"Blog about scraping, data processing and programming in node js, typescript, perl, php, python technologies.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "en-GB",
+	lang: getLocale(),
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "en_GB",
-	// Sets the metadata theme-color, found in src/components/BaseHead.astro L:34. Toggling the dark mode will update the meta content with either light/dark color, implementation in src/layouts/Base.astro L:41.
-	themeColorLight: "#fafafa",
-	themeColorDark: "#1d1f21",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
@@ -37,3 +22,19 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 };
+
+// Used to generate links in both the Header & Footer.
+export const menuLinks: Array<{ title: string; path: string }> = [
+	{
+		title: "Home",
+		path: "/",
+	},
+	{
+		title: "About",
+		path: "/about/",
+	},
+	{
+		title: "Blog",
+		path: "/posts/",
+	},
+];
