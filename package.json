@@ -35,7 +35,7 @@
 		"concurrently": "^8.2.1",
 		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
-		"eslint-import-resolver-typescript": "^3.5.5",
+		"eslint-import-resolver-typescript": "^3.6.0",
 		"eslint-plugin-astro": "^0.27.2",
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
