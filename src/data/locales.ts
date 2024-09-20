@@ -1,3 +1,4 @@
+// TODO:NEW
 export const locales = {
 	en: "en", // the `defaultLocale` value must present in `locales` keys
 	pl: "pl",
@@ -5,3 +6,5 @@ export const locales = {
 	de: "de",
 	ru: "ru",
 } as const;
+
+export const defaultLang = "en" as const;

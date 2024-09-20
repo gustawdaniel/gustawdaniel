@@ -1,0 +1,103 @@
+---
+title: How to transform BTC blockchain to neo4j on Fedora Linux
+slug: btc-neo4j-fedora
+publishDate: 1970-01-01T00:00:00.000Z
+date_updated: 2023-04-27T07:25:49.000Z
+draft: true
+---
+
+This article is heavily inspired by repository, but add some context for Fedora Linux and analyse chance of speedup data preparation.
+
+[GitHub - in3rsha/bitcoin-to-neo4j: Import the Bitcoin blockchain in to a Neo4j graph database.
+
+Import the Bitcoin blockchain in to a Neo4j graph database. - GitHub - in3rsha/bitcoin-to-neo4j: Import the Bitcoin blockchain in to a Neo4j graph database.
+
+![](https://github.com/fluidicon.png)GitHubin3rsha
+
+![](https://opengraph.githubassets.com/f9c733461e4a4160f29d0b3378a672d46fad2d238c35d0399ee26462d4aff62f/in3rsha/bitcoin-to-neo4j)](https://github.com/in3rsha/bitcoin-to-neo4j)
+
+## Setup BTC node
+
+Firstly we need to install Bitcoin node
+
+```
+dnf install bitcoin-core-server
+```
+
+And start it by
+
+```
+bitcoin-core-server
+```
+
+You will see something like this
+
+![](__GHOST_URL__/content/images/2023/04/Zrzut-ekranu-z-2023-04-27-13-59-54.png)
+
+You should expect about half of TB of data. So you can measure it by
+
+```
+du -h ~/.bitcoin
+```
+
+Expected time of synchronization can be estimated as 1-5 days.
+
+## Setup neo4j server
+
+Second step is installation of neo4j database.
+
+[Red Hat, CentOS, Fedora, and Amazon Linux distributions (.rpm) - Operations Manual
+
+How to deploy Neo4j using the Neo4j RPM package on Red Hat, CentOS, Fedora, or Amazon Linux distributions.
+
+![](https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico)Neo4j Graph Data Platform
+
+![](https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png)](https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/)
+
+In my case there was java already installed
+
+```
+java --version
+openjdk 17.0.6 2023-01-17
+OpenJDK Runtime Environment (Red_Hat-17.0.6.0.10-1.fc37) (build 17.0.6+10)
+OpenJDK 64-Bit Server VM (Red_Hat-17.0.6.0.10-1.fc37) (build 17.0.6+10, mixed mode, sharing)
+```
+
+So lacking steps was:
+
+```
+sudo rpm --import https://debian.neo4j.com/neotechnology.gpg.key
+sudo cat <  /etc/yum.repos.d/neo4j.repo
+[neo4j]
+name=Neo4j RPM Repository
+baseurl=https://yum.neo4j.com/stable/5
+enabled=1
+gpgcheck=1
+EOF
+```
+
+and
+
+```
+sudo dnf install neo4j
+```
+
+It installed both db server and shell to `cypher` that is general language for graph data
+
+![](__GHOST_URL__/content/images/2023/04/Zrzut-ekranu-z-2023-04-27-14-05-32.png)
+
+Finally i started neo4j db
+
+```
+sudo service neo4j start
+```
+
+Next step was installation neo4j desktop interface.
+
+[Neo4j Desktop User Interface Guide - Developer Guides
+
+This article demonstrates how to use the Neo4j Desktop GUI for managing instances of Neo4j locally for development.
+
+![](https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico)Neo4j Graph Data Platform
+
+![](https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png)](https://neo4j.com/developer/neo4j-desktop/)

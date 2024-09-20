@@ -1,24 +1,17 @@
-import { defineConfig, sharpImageService } from "astro/config";
-import { defaultLocaleSitemapFilter, i18n } from "astro-i18n-aut/integration";
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import remarkUnwrapImages from "remark-unwrap-images";
-import { locales } from "./src/data/locales";
-
-const defaultLocale = "en";
+import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
-	site: "https://gustawdaniel.com/",
-	trailingSlash: "never",
-	build: {
-		format: "file",
-	},
+	site: process.env.SITE ?? "https://gustawdaniel.com",
 	markdown: {
-		remarkPlugins: [remarkUnwrapImages],
+		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		shikiConfig: {
 			theme: "dracula",
 			wrap: true,
@@ -29,26 +22,16 @@ export default defineConfig({
 	},
 	image: {
 		// https://docs.astro.build/en/guides/assets/#using-sharp
-		service: sharpImageService(),
+		// service: sharpImageService(),
+		domains: ["astro.build"],
+		remotePatterns: [{ protocol: "https" }],
 	},
 	integrations: [
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		i18n({
-			locales,
-			defaultLocale,
-		}),
 		mdx({}),
 		tailwind({
 			applyBaseStyles: false,
 		}),
-		sitemap({
-			i18n: {
-				locales,
-				defaultLocale,
-			},
-			filter: defaultLocaleSitemapFilter({ defaultLocale }),
-		}),
+		sitemap(),
 		prefetch(),
 	],
 	compressHTML: true,

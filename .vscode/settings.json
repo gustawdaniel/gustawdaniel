@@ -13,8 +13,8 @@
 	"eslint.validate": [
 		"javascript",
 		"javascriptreact",
-		"astro",
-		"typescript",
+		"astro", // Enable .astro
+		"typescript", // Enable .ts
 		"typescriptreact"
 	]
 }

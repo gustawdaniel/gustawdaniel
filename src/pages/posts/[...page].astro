@@ -6,12 +6,14 @@ import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import Pagination from "@/components/Paginator";
 import { getUniqueTags, sortMDByDate } from "@/utils";
-import { getLocale } from "astro-i18n-aut";
-
-const locale = getLocale(Astro.url) ?? "en";
+import { getLocale } from "@/i18n/utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const allPosts = await getCollection("post");
+	const locale = getLocale();
+
+	const allPosts = await getCollection("post", ({ id }) => {
+		return id.startsWith(`${locale}/`);
+	});
 	const allPostsByDate = sortMDByDate(allPosts);
 	const uniqueTags = getUniqueTags(allPosts);
 	return paginate(allPostsByDate, { props: { uniqueTags }, pageSize: 10 });
