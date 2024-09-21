@@ -96,7 +96,7 @@ const forks = [];
 
 If we forgot about them when closing the program, they would become zombie processes - that is, ones that continue to live and consume computer resources without supervision.
 
-![](https://gustawdaniel.com/content/images/2021/07/one-does-not-simply-kill-a-zombie-process.jpg)
+![](http://localhost:8484/bb0823de-fbc5-47ab-ba5e-6ebf8e911cc9.avif)
 
 To remove them before closing our script, we write the code:
 
