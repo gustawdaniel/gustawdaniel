@@ -153,4 +153,4 @@ file `collins-head.txt` was created by command
 
 ## Newton method of searching
 
-![](https://preciselab.io/content/images/2022/12/2022-12-15_21-05.png)
+![](http://localhost:8484/0daeec16-6073-46b3-98d3-16edfc24111f.avif)

@@ -330,7 +330,7 @@ And now we are going to
 
 If machine is able to understand it then we can assume that our movies are correct.
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-13-43-03.png)
+![](http://localhost:8484/20327e1a-2079-4d81-9b2f-dfd16bc4fa36.avif)
 
 Unfortunately voice2json do not support all our languages
 
@@ -359,7 +359,7 @@ There are supported
 
 Using `voice2json` we can use only 12 languages.
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-14-06-02.png)
+![](http://localhost:8484/89d5d3c8-eacb-413f-a1b8-d1c00dd17793.avif)
 
 Other tool is whisper also from openai
 
@@ -422,7 +422,7 @@ curl --request POST \
 
 It is hard to say if result is readable. But I am rather considering it as low quality.
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-17-17-36-46.png)
+![](http://localhost:8484/edf29629-a893-4bc5-968c-11a80efd96ab.avif)
 
 To make it better I should add subtitles. I tried this service
 

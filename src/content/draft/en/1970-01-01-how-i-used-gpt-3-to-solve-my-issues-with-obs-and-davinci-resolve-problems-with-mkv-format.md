@@ -33,7 +33,7 @@ davinci resolve alternatives
 
 to google and seen this:
 
-![](https://preciselab.io/content/images/2023/01/Zrzut-ekranu-z-2023-01-21-14-01-42.png)
+![](http://localhost:8484/b622a29c-7cb1-4748-b628-abbe7ab0fdee.avif)
 
 from my previous research I remembered that for many people these programs can satisfy criteria, but i wanted:
 
