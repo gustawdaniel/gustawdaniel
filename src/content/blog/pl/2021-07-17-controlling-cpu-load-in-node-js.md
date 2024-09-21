@@ -249,9 +249,6 @@ używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na ta
 
 ![](http://localhost:8484/e4679649-0445-42f4-9890-f45307625bd6.avif)
 
-https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
-
-
 Zamiast rozładowywać kolejkę będziemy odczytywać z niej wartości za pomocą zmiennego indeksu, który będzie przesuwał się
 wzdłuż niej. Schemat blokowy programu, który napiszemy jest następujący:
 
