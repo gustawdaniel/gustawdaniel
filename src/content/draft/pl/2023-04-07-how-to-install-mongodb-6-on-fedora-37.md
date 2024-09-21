@@ -28,7 +28,7 @@ Now you can install by
 sudo dnf install -y mongodb-org
 ```
 
-![](https://preciselab.io/content/images/2023/03/1_SwgB2rxPWgOjbh030ETxyg.png)
+![](http://localhost:8484/00d06666-8a8b-455f-a59a-61f38715187c.avif)
 
 so there are two assumptions that are correct:
 
@@ -41,7 +41,7 @@ sudo systemctl start mongod
 
 And you can connect with mongodb by mongosh
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-02-13-19-32.png)
+![](http://localhost:8484/0c47cbe5-a4e4-4133-abcb-939e156e64eb.avif)
 
 Mongosh is better than mongo command because of colors and autocompletion, so use mongosh instead of mongo.
 
@@ -63,7 +63,7 @@ and install it
 sudo dnf install -y mongodb-compass-1.35.0.x86_64.rpm
 ```
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-02-13-41-28.png)
+![](http://localhost:8484/0f3059c4-8227-4540-ae16-35d48c55238d.avif)
 
 ## Enable Mongo Replica Set locally
 
@@ -104,7 +104,7 @@ then you can confirm changes by
 rs.status()
 ```
 
-![](https://preciselab.io/content/images/2023/03/Zrzut-ekranu-z-2023-03-02-13-30-41.png)
+![](http://localhost:8484/446aec3f-3531-45e6-a6d4-95f0f078ca3c.avif)
 
 If you experiencing more complications there is great article with advanced config
 
