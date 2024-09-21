@@ -201,14 +201,7 @@ dodatkowo nasze możliwości łamania haseł podnoszą układy graficzne i proce
 znacznie trudniej jest zgromadzić wymagane do tego ilości pamięci operacyjnej w ramach jednej maszyny. Mój bardzo krótki
 opis warto rozszerzyć lekturą artykułu:
 
-> Password Hashing: PBKDF2, Scrypt, Bcrypt and ARGON2
-
-There's always a lot of debate in regard to how to safely store passwords and what algorithm to use: MD5, SHA1, SHA256,
-PBKDF2, Bcrypt, Scrypt, Argon2, plaintext?? So I tried to analyse and…
-
-![](https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png)Analytics VidhyaMichele Preziuso
-
-![](https://miro.medium.com/max/1200/1*6AmtTHis9u0viVhIzg9tsA.png)](https://medium.com/analytics-vidhya/password-hashing-pbkdf2-scrypt-bcrypt-and-argon2-e25aaf41598e)
+[Password Hashing: PBKDF2, Scrypt, Bcrypt and ARGON2](https://medium.com/analytics-vidhya/password-hashing-pbkdf2-scrypt-bcrypt-and-argon2-e25aaf41598e)
 
 W dalszej części wpisu pokażemy jak stosowanie wielu rdzeni przyśpiesza łamanie hasła zahashowanego algorytmem `bcrypt`.
 
@@ -257,11 +250,6 @@ używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na ta
 ![](http://localhost:8484/e4679649-0445-42f4-9890-f45307625bd6.avif)
 
 https://gustawdaniel.com/ile-rodzin-zmiesci-sie-w-samolocie/
-
-
-
-
-
 
 
 Zamiast rozładowywać kolejkę będziemy odczytywać z niej wartości za pomocą zmiennego indeksu, który będzie przesuwał się
