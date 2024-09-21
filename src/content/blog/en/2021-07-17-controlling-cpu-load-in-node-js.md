@@ -20,7 +20,7 @@ In this post, we will learn how to create and terminate subprocesses in Node.js,
 
 If a program is performing heavy computations but is not parallelized, the state of your processor may look like this:
 
-![](https://gustawdaniel.com/content/images/2021/07/cpu0-12.png)
+![](http://localhost:8484/1f2ff241-da0f-4b1a-95a0-c63558838eb9.avif)
 
 That's why it's worth delving into this topic regardless of the language you're writing in.
 
@@ -76,7 +76,7 @@ The symbol saved in key is an object with the following keys.
 
 In the presented code, we handle the closing of the process with the ctrl+c combination and printing the chosen keyboard character to the console. Typing in successive characters will always show them in the terminal.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-16-18-15-24.png)
+![](http://localhost:8484/f4105937-be8c-44c9-95c2-b052f07aeab6.avif)
 
 The next step is to replace typing in characters with creating or deleting processor-intensive processes.
 
@@ -152,15 +152,15 @@ This means code written only to simulate load.
 
 After launching the program and selecting several load options, we can see how processes are being created and deleted. Thanks to htop, we can observe how CPU usage changes during this time.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-16-18-51-17.png)
+![](http://localhost:8484/feb71513-a009-4fe8-ad08-421a67515ad5.avif)
 
 BashTop has an even nicer interface for monitoring your processor, as it also displays historical usage. In the screenshot below, we can see how by modifying the number of processes in our program, I was able to simulate different levels of processor load with tasks.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-16-15-26-13.png)
+![](http://localhost:8484/e2caaca2-b2aa-47a6-8744-c8935e2d9ce3.avif)
 
 And what was the utilization of the cores like when I selected the option to create 16 processes?
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-16-15-30-03.png)
+![](http://localhost:8484/c9540043-27f1-48bd-b68a-5ae36856e097.avif)
 
 We can use this program to simulate load testing. In the bomb.js file, we can replace random number generation with operations such as sending HTTP requests or consuming other resources, such as RAM or disk space.
 
@@ -206,7 +206,7 @@ In a brute-force attack, the key is the set of characters that we use to iterate
 
 Instead of emptying the queue, we will read values from it using a variable index that will move along it. The flowchart of the program we will write is as follows:
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-13-44-09.png)
+![](http://localhost:8484/83267071-63cd-4968-83c6-2fb24f1e7e90.avif)
 
 His code is:
 
@@ -274,7 +274,7 @@ Next, we start our program and see how it sequentially checks passwords from the
 time node force-single.js
 ```
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-13-48-47.png)
+![](http://localhost:8484/0ffa84a9-f5d6-455c-80d3-6c868a79d959.avif)
 
 In the columns, we have the index, the sequence being checked, the time elapsed in milliseconds since the program started, the information on whether the password matches the hash, and the current length of the queue.
 
@@ -302,15 +302,15 @@ node force-single.js  0.17s user 0.03s system 103% cpu 0.188 total
 
 Because checking the compatibility of a password and a hash is a processor-intensive operation, we expect a significant improvement in performance for this task if we use multiple cores simultaneously. Therefore, we will rewrite our program so that the main process handles the queue and assigns the task of checking passwords to subordinate processes.
 
-![](https://gustawdaniel.com/content/images/2021/07/bFbMbDgAT6M6T4zsVmk16Oiip7vIOWaeuEY0vTkkZoU.png)
+![](http://localhost:8484/b802e1c6-07da-44bc-aa7b-390fda198caf.avif)
 
 Our program structure is divided into a main thread and sub processes. In the main thread, a list of sub processes, a queue, and a listener for messages from sub processes are created. Ultimately, each sub process is assigned a task from the queue to execute. After executing a task, a sub process reports back to the main thread with a response. The main thread then increments the index and assigns the sub process a new task. This process continues until a correct password is found.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-16-35.png)
+![](http://localhost:8484/eaa46c55-d0d1-4905-884f-0e4720adafd1.avif)
 
 It is worth noting that independent children will complete tasks at different speeds, which will affect the order of their response submissions. An exemplary output of the program is:
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-26-11.png)
+![](http://localhost:8484/b3011b99-08a7-485d-8df0-de589ede21e4.avif)
 
 The code is divided into two files:
 
@@ -452,19 +452,19 @@ According to the General Law of Scaling, we expect a performance increase up to 
 
 If you haven't heard of the universal scaling law, I will introduce you to the topic quickly. It means that in an ideal world, if systems were linearly scalable, adding n times more resources would increase the system's performance or throughput by n times. This situation can be illustrated by the diagram:
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-56-29.png)
+![](http://localhost:8484/ef12d056-4a22-4591-9eed-791af5e4aa0d.avif)
 
 However, such situations are not encountered in the real world. There is always some inefficiency associated with assigning data to nodes (servers or threads) and collecting them. Delays related to data assignment and retrieval are called serialization. Sometimes the term contention is used.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-56-40.png)
+![](http://localhost:8484/7cb8df98-100b-406e-a978-347b4adebf22.avif)
 
 Taking this phenomenon into account leads to the Amdahl's Model. However, it turns out that it is insufficient for most IT systems because it completely overlooks the second major factor limiting scaling - inter-process communication, or crosstalk. It can be graphically represented as follows:
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-56-46.png)
+![](http://localhost:8484/56861abe-d571-4ed6-b320-cfc199cbd765.avif)
 
 If serialization has a cost proportional to the number of nodes, then communication is proportional to their square - just like the number of diagonals of a polygon is proportional to the number of its angles.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-14-56-51.png)
+![](http://localhost:8484/068a4a11-01ed-4e65-a1a1-a0305f6f5735.avif)
 
 On the graph, we can see curves comparing the impact of the number of nodes on system performance according to these three models.
 
@@ -521,7 +521,7 @@ Solve[D[\[Lambda] n/(1 + \[Sigma] (n - 1) + \[Kappa] n (n - 1)),
    n] == 0, n]
 ```
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-17-15-21-22.png)
+![](http://localhost:8484/314991fd-12d0-45fd-a371-9f7bdfd5fc2b.avif)
 
 Numerically calculated.
 
