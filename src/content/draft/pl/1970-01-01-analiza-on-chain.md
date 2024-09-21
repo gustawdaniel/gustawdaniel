@@ -182,7 +182,7 @@ Para tych parametrów pozwala na wskazanie zakresów w których wzrost rezerwy w
 
 Dlatego w tym przypadku lepiej wyeksportować dane z mongo do csv na przykład przez mongo compass.
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-14-15-47-48.png)
+![](http://localhost:8484/5c870232-6004-49b2-8ad6-13c3e0490186.avif)
 
 Te pliki nie są posortowane, ponieważ `cryptoquant` zwraca je w kolejności odwrotnej niż upływ czasu. Sortujemy je poleceniami:
 
@@ -207,7 +207,7 @@ Dzięki wykonaniu `head` oraz `tail` na posortowanym pliku widzimy zakres naszej
 * Start - blok 173949 - 2012-04-02
 * Koniec - blok 690974 - 2021-07-14
 
-![](https://gustawdaniel.com/content/images/2021/07/Screenshot-from-2021-07-14-15-58-17-1.png)
+![](http://localhost:8484/75fba08d-97f9-44b8-96a1-9d84e9b1d5fc.avif)
 
 Aby pobrać zawartość plików do nootebooka w `Mathematica` wpisujemy:
 

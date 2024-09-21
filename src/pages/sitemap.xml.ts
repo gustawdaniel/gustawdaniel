@@ -153,9 +153,9 @@ export async function GET() {
     console.log('pages', pages);
 
     const data: { pages: SitemapItem[] } = {pages: [...pages, ...posts, ...notes]};
-    const output = nunjucks.renderString(template, data);
+    const output:string = nunjucks.renderString(template, data);
 
-    return new Response(output.split('\n').filter(l => l.trim()).join('\n').trim(), {
+    return new Response(output.split('\n').filter((l:string) => l.trim()).join('\n').trim(), {
         headers: {
             'Content-Type': 'application/xml',
         }

@@ -8,7 +8,7 @@ draft: true
 
 [Strapi](https://strapi.io/) to wgodny CMS pozwalający wyklikać model danych i wygenerować na jego podstawie rest api oraz graphql.
 
-![](https://gustawdaniel.com/content/images/2022/06/2022-06-11_14-13.png)
+![](http://localhost:8484/bd346aa0-be28-426a-aa3e-04a4e91914f0.avif)
 
 [Emaillabs](https://emaillabs.io/) to polski serwis obsługujący wysyłkę e-maili.
 
@@ -170,15 +170,15 @@ Pełen interfejs pokazanej tu metody znajdziemy w dokumentacji strapi:
 
 Do `.env` dodajemy smtp i klucze api, `EMAILLABS_SMTP` znajdziemy na głównej stronie
 
-![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-01.png)
+![](http://localhost:8484/799dbb6f-19df-41a6-a04b-d8b80b43dae2.avif)
 
 klucze api w zakładce "Administrator -> Api"
 
-![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-02.png)
+![](http://localhost:8484/6b273a58-4de6-44ae-973f-57fc51c8875f.avif)
 
 Należy też pamiętać o autoryzacji nadawcy, żeby nasze e-maile dochodziły. Będzie to wymagało dodania odpowiednich rekordów w DNS, ale wykracza to poza zakres tego wpisu.
 
-![](https://gustawdaniel.com/content/images/2022/10/2022-10-06_23-04.png)
+![](http://localhost:8484/fa5b0eae-a93a-4b35-ba1d-cfc343859b0a.avif)
 
 Ponownie wysyłając zapytanie o konfigurację e-maila, które wysłaliśmy na początku
 

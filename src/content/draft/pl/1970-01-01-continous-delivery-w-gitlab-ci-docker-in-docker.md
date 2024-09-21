@@ -120,7 +120,7 @@ Klucz publiczny wgrywamy na serwer dołączając jego zawartość do `~/.ssh/aut
 
 Klucz prywatny musimy umieścić w zmiennych środowiskowych gitlaba. Nie możemy tego zrobić bezpośrednio, ponieważ wielo-liniowe zmienne nie mogą być maskowane.
 
-![](https://gustawdaniel.com/content/images/2021/04/Screenshot-from-2021-04-27-14-14-01.png)
+![](http://localhost:8484/d9cd5743-abe7-44c9-97b5-335a5b6176c0.avif)
 
 Dzięki poleceniu
 
@@ -148,21 +148,21 @@ Drugim kluczem jest `DOCKER_TOKEN`. Metoda jego uzyskania zależy od repozytoriu
 
 Dla Digital Ocean po wybraniu "Container Registry" wybieramy "Actions" i pobieramy token o uprawnieniach "Read and Write".
 
-![](https://gustawdaniel.com/content/images/2021/04/Screenshot-from-2021-04-27-18-30-21.png)
+![](http://localhost:8484/184c43df-c784-4598-a349-cecb8f8cf622.avif)
 
 ### Dodanie zmiennych do Gitlaba
 
 W gitlabie wybieramy grupę lub projekt dla których chcemy ustawić zmienne, przechodzimy do "Settings", "CI/CD", rozwijamy "Variables"
 
-![](https://gustawdaniel.com/content/images/2021/04/Screenshot-from-2021-04-27-18-38-08.png)
+![](http://localhost:8484/9b2de431-c018-42cf-8078-e8d97e9b4186.avif)
 
 Zakodowany klucz widoczny dzięki poleceniu `cat ~/.ssh/ci | base64 -w0` nazwiemy `SSH_PRIVATE_KEY_BASE64`. Ważne, żebyśmy dodając tą zmienną ustawili protected i mask.
 
-![](https://gustawdaniel.com/content/images/2021/04/Screenshot-from-2021-04-27-18-42-36.png)
+![](http://localhost:8484/b18aebd3-23e9-4caf-96ae-40cf9784dd2a.avif)
 
 Poprawnie ustawiając te zmienne zobaczymy tabelę:
 
-![](https://gustawdaniel.com/content/images/2021/04/Screenshot-from-2021-04-27-18-45-02.png)
+![](http://localhost:8484/453f79d5-7412-46e1-9851-c90483eecc83.avif)
 
 Niektóre repozytoria dockera mogą rozróżniać `DOCKER_USER` i `DOCKER_PASSWORD`. Wykorzystanie `DOCKER_TOKEN` jest typowe dla konwencji z Digital Ocean.
 
@@ -170,7 +170,7 @@ Niektóre repozytoria dockera mogą rozróżniać `DOCKER_USER` i `DOCKER_PASSWO
 
 W gitlabie mamy możliwość oznaczenia zmiennych jako "protected" lub "masked". Opcja "protected" pozwala na udostępnienie zmiennych jedynie w gałęziach lub tagach, które też oznaczone są jako protected. Pozwala to na przypisanie im uprawnień, określenie, kto może dołączać kod do tych gałęzi, czy wymaga on akceptacji przez właściciela kodu.
 
-![](https://gustawdaniel.com/content/images/2021/04/protected_branches_page_v12_3.png)
+![](http://localhost:8484/5ba85090-a33d-4c81-8dd0-ed0e5d9e4639.avif)
 
 Więcej na temat chronionych gałęzi możecie przeczytaj tutaj:
 

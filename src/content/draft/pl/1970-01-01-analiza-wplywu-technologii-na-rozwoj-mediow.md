@@ -32,7 +32,7 @@ Istnieje bardzo szerokie spektrum manipulacji medialnych od ewidentnych kłamstw
 
 Historia wojny o umysły jest równie ciekawa co obszerna. W tym opracowaniu skupimy się jedynie na najnowszych nabytkach arsenału defensywnego i ofensywnego tej walki. Dzięki opracowaniu Gartnera\[9\] możemy przyjrzeć się całemu wachlarzowi technologii, które w tym momencie wchodzą lub będą wchodzić do codziennego użycia.
 
-![](https://gustawdaniel.com/content/images/2021/04/gartner.png)
+![](https://ucarecdn.com/d3a41597-c8b7-4df7-b58c-ea8d82c8edc8/)
 
 Rysunek 1: „Hype Cycle” pokazuje na jakim etapie rozwoju jest dana techno-logia (fot. Gartner)
 

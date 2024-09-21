@@ -20,7 +20,7 @@ JavaScript 49.5% CSS 40.3% HTML 10.2%
 
 Po napisaniu projekt będzie wyglądał tak:
 
-![](https://gustawdaniel.com/content/images/2021/04/1_qm93PtCN3Y0mZWzQrqVAFw.png)
+![](http://localhost:8484/1c86d671-0d5d-4b7a-aae6-979c1aae1882.avif)
 
 To Do List typed in pure JavaScript that will be presented in this article.
 
@@ -58,7 +58,7 @@ node node_modules/json-server/bin/index.js --watch db.json
 
 Jeśli wszystko poszło dobrze powinniśmy zobaczyć coś takiego:
 
-![](https://gustawdaniel.com/content/images/2021/04/1_PD3FHn76We8mFzIivvnpvg.png)
+![](http://localhost:8484/e9880e23-ad2a-4178-acb0-0ec0ab614f9b.avif)
 
 Server with application (on the right) and with REST API connected with db.json file (on the left)
 
