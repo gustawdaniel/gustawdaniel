@@ -1,4 +1,5 @@
 ---
+import {useTranslations} from "../../i18n/utils";
 import SingleDesktopNavigationLink from "./links/SingleDesktopNavigationLink.astro";
 const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
 
@@ -6,10 +7,10 @@ const links: Array<{
     path: string;
     name: string;
 }> = [
-    {path: '/', name: 'Blog'},
-    {path: '/notes', name: 'Dev Notes'},
-    {'path': '/projects', name: 'Projects'},
-    {'path': '/contact', name: 'Contact'}
+    {path: '/', name: useTranslations(currentLocale)('nav.blog')},
+    {path: '/notes', name: useTranslations(currentLocale)('nav.notes')},
+    // {path: '/projects', name: 'Projects'},
+    {path: '/contact', name: useTranslations(currentLocale)('nav.contact')}
 ]
 ---
 

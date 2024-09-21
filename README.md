@@ -146,3 +146,6 @@ In scripts
 ```
 caddy run
 ```
+
+TODO:
+- [ ] add projects page
