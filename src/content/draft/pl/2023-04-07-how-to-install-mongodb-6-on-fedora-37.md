@@ -110,4 +110,4 @@ If you experiencing more complications there is great article with advanced conf
 
 [https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04/](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04/)
 
-![](https://preciselab.io/content/images/2023/03/mongodb-is-web-scale-v0-twb0dwtz8sw81.jpeg)
+![](http://localhost:8484/83bcae60-a174-467f-bbc7-54dc36cec7c0.avif)
