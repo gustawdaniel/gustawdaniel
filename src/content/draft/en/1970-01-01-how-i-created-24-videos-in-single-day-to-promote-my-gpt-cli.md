@@ -365,7 +365,7 @@ Other tool is whisper also from openai
 
 [GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://github.com/openai/whisper)
 
-![](https://preciselab.io/content/images/2023/03/language-breakdown.svg)
+![](http://localhost:8484/a9bcccba-cb93-4d61-8739-45c59e1a456e.svg)
 
 we can't install it today because open issue
 

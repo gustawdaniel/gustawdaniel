@@ -202,8 +202,6 @@ main().then(p => {
 
 In a brute-force attack, the key is the set of characters that we use to iterate over the sequences that we will check. We will use the standard alphabet from a to z and repeatedly generate sequences of characters to check. The process of generating and processing these sequences can be implemented using a recursive function, but this would make it difficult to control the order in which they are generated. Instead, we will use a simple queue stored in memory. This queue will not be emptied, as emptying it from the front would change the indexing within the queue, which could negatively affect performance as already discussed in the article.
 
-![](https://gustawdaniel.com/favicon.ico)
-
 Instead of emptying the queue, we will read values from it using a variable index that will move along it. The flowchart of the program we will write is as follows:
 
 ![](http://localhost:8484/83267071-63cd-4968-83c6-2fb24f1e7e90.avif)
@@ -468,7 +466,7 @@ If serialization has a cost proportional to the number of nodes, then communicat
 
 On the graph, we can see curves comparing the impact of the number of nodes on system performance according to these three models.
 
-![](https://gustawdaniel.com/content/images/2021/07/usl.svg)
+![](http://localhost:8484/6373c1a3-edfe-4697-9765-87e23f68d27d.svg)
 
 A good (50-page) study on this topic can be found at the link:
 
@@ -512,7 +510,7 @@ Show[ListPlot[{#[[1]], #[[2]]/firstMean} & /@ loadEff],
   PlotLabel -> "Gain of efficiency relative to single process"]
 ```
 
-![](https://gustawdaniel.com/content/images/2021/07/gain-eff.svg)
+![](http://localhost:8484/8770c5f5-95d3-4577-b5be-cc376a12f2f0.svg)
 
 It is worth showing a very nice example of theoretical maximum here.
 

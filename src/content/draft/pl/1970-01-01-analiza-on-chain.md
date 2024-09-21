@@ -240,7 +240,7 @@ Ten moduł pozwoli nam zobaczyć jak ewoluowała zmienność rezerwy na przestrz
 
 Na histogramie nie jest to wyraźnie widoczne. Można nawet odnieść mylne wrażenie, że w początkowym okresie istnienia Bitcoina koncentracja względnej zmienności rezerwy woków jedynki (czyli jej stała wartość) była dominująca. Jest to mylne wrażenie, bo jednocześnie z wysoką koncentracją współwystępowały znacznie częstsze niż obecnie wartości skrajne.
 
-![](https://gustawdaniel.com/content/images/2021/07/res-2.svg)
+![](http://localhost:8484/1b933b6f-f764-4e56-9ec9-84d32480d7a5.svg)
 
 Jeśli podzielimy cały rozważany okres na 100 części i policzymy wariancję względnej zmiany rezerwy co jeden blok z tego okresu to okaże się, że początkowo ta wariancja miała nie tylko wyższe wartości ale i wyższy rozrzut. To znaczy, zdarzały się takie okresy, kiedy z rezerwą działo się bardzo niewiele.
 
@@ -290,7 +290,7 @@ Show[
   "Wariancja względnej zmienności rezerwy BTC w kolejnych okresach czasu\nz dopasowaniem 7.18*10^-6*e^-0.051 x) (przy poziomie ufności 0.7)\nx to numer przedziału czasowego od 1 do 100 z okresu 2012-04-02 - 2021-07-14", ImageSize -> Full]
 ```
 
-![](https://gustawdaniel.com/content/images/2021/07/res2.svg)
+![](http://localhost:8484/c7b9a59e-fa22-4c19-99c8-d7f4e183299a.svg)
 
 Z wykresu widzimy, że zmienność rezerwy systematycznie spada i można założyć, że jest to spadek wykładniczy analogiczny do znanego nam z codzienności stygnięcia herbaty.
 
