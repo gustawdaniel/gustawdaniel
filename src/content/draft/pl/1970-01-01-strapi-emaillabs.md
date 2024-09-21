@@ -12,7 +12,7 @@ draft: true
 
 [Emaillabs](https://emaillabs.io/) to polski serwis obsługujący wysyłkę e-maili.
 
-![](https://gustawdaniel.com/content/images/2022/06/Send-us-all.jpg)
+![](http://localhost:8484/e75a7406-4771-4950-b527-bdc298ce6e68.avif)
 
 ## Wprowadzenie do strapi
 
@@ -76,7 +76,7 @@ module.exports = ({ env }) => ({
 
 Częstym błędem jest podanie tej samej domeny adresu nadawcy i odbiorcy. Nie można tak robić, bo wysyłka między tymi samymi domenami przez zewnętrznego dostawcę jakim jest Emaillabs może zostać zablokowana. Za adres testowy należy wybrać adres z innej domeny.
 
-![](https://gustawdaniel.com/content/images/2022/06/email1.jpg)
+![](http://localhost:8484/926a4a8c-51f8-4280-8efe-21190294bab7.avif)
 
 Sam kod naszego providera umieszczamy w pliku `providers/strapi-provider-email-emaillabs/index.js`
 
@@ -202,6 +202,6 @@ powinniśmy zobaczyć
 
 Przetestujmy to i przejdziemy do tematu załączników.
 
-![](https://gustawdaniel.com/content/images/2022/06/uns09pyvenq71.jpg)
+![](http://localhost:8484/c0a1f344-ad80-4f11-b853-5644983f0304.avif)
 
-![](https://gustawdaniel.com/content/images/2022/06/sending-email-like-a-boss.jpg)
+![](http://localhost:8484/9f743993-73c0-4099-824b-3d2b54c54007.avif)

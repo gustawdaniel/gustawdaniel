@@ -10,7 +10,7 @@ Skrót CI/CD - ciągła integracja i ciągłe dostarczanie oznaczają, że zamia
 
 W artykule opiszę korzyści z implementacji tego podejścia oraz konfigurację, której używam w swojej organizacji. Mam nadzieję, że będzie mogła ona posłużyć komuś jako wzór. Być może dzięki waszym komentarzom będę w stanie ją ulepszyć.
 
-![](https://gustawdaniel.com/content/images/2021/04/EUO5sFpWoAMaecY.jpg)
+![](http://localhost:8484/68814d2a-60aa-4e46-8fce-4fa55fdac395.avif)
 
 ## Wartość biznesowa CI/CD
 
