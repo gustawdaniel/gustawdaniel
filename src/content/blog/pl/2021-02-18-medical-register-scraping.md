@@ -222,13 +222,7 @@ Aby go włączyć musimy zainstalować sterowniki do `mongo` oraz `assert`.
 
 Wersja `@3.6.3` wynika z występowania błędu z brakującym `MongoError` w wersji `3.6.4`.
 
-[Warning: Accessing non-existent property ‘MongoError’ of module exports inside circular dependency
-
-Hi, I am getting a warning consistently each time our webserver or another process connects to the DB. (node:24990) Warning: Accessing non-existent property ‘MongoError’ of module exports inside circular dependency at emitCircularRequireWarning (internal/modules/cjs/loader.js:650:11) at Ob…
-
-![](https://developer.mongodb.com/community/forums/uploads/default/optimized/1X/c436b6a5eb8cba8ca954e71fccfae95c4a5b569f_2_180x180.svg)MongoDB Developer Community ForumsLaurens
-
-![](https://developer.mongodb.com/community/forums/uploads/default/original/1X/c436b6a5eb8cba8ca954e71fccfae95c4a5b569f.svg)](https://developer.mongodb.com/community/forums/t/warning-accessing-non-existent-property-mongoerror-of-module-exports-inside-circular-dependency/15411)
+[Warning: Accessing non-existent property ‘MongoError’ of module exports inside circular dependency](https://developer.mongodb.com/community/forums/t/warning-accessing-non-existent-property-mongoerror-of-module-exports-inside-circular-dependency/15411)
 
 Ten zaprezentowany kod poza wykonaniem agregacji nic nie robi. Jeśli wynik agregacji chcieli byśmy zapisać do pliku należy go delikatnie zmodyfikować dodając na początku niezbędny import
 
@@ -280,12 +274,4 @@ Tylko KRS, NIP, REGON, ADRES, IMIĘ, NAZWISKO, NAZWA
 
 > [https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/ra-project.json](https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/ra-project.json)
 
-Jeśli chesz rzucić mi wyzwanie i zaproponować stronę, którą warto zescrapować, nie miej oporów przed umówieniem niezobowiązującej bezpłatnej konsultacji
-
-[Daniel Gustaw
-
-Welcome to my scheduling page. Please follow the instructions to add an event to my calendar.
-
-![](https://assets.calendly.com/assets/touch-icon-ipad-retina-7a95e0c775301f4c0a22002bdf0a95d3c2b9cbe95af29c64f9c9573bac1f01e4.png)Calendly
-
-![](https://assets.calendly.com/assets/ogimage-a63bb2f442cd9e6345a5e4d7fe75393c6cfcc1ff29e48e858742d43573a8b02c.png?source&#x3D;opengraph)](https://calendly.com/gustaw-daniel)
+Jeśli chcesz rzucić mi wyzwanie i zaproponować stronę, którą warto zescrapować, nie miej oporów przed umówieniem niezobowiązującej bezpłatnej konsultacji

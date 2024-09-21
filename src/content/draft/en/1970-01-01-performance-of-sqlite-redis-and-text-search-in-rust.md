@@ -16,13 +16,7 @@ We have sorted dictionary with English words. Our goal is write program that che
 
 We have got dictionary from repository `wwfred`
 
-[GitHub - gonsie/wwfred: Words With Friends RegExp Dictionary
-
-Words With Friends RegExp Dictionary. Contribute to gonsie/wwfred development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgonsie
-
-![](https://opengraph.githubassets.com/f97300f56c2cee93b137b3e0e5a0b248ec5f4c49314b86bbde0bb4d3575e25d5/gonsie/wwfred)](https://github.com/gonsie/wwfred)
+[GitHub - gonsie/wwfred: Words With Friends RegExp Dictionary](https://github.com/gonsie/wwfred)
 
 Stats of file:
 

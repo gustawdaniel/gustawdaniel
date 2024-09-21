@@ -22,11 +22,7 @@ title: How to install MongoDB 6 on Fedora 37
 
 In official docs there is instruction only for Redhat
 
-[Install MongoDB Community Edition on Red Hat or CentOS — MongoDB Manual
-
-![](https://www.mongodb.com/docs/assets/favicon.ico)
-
-![](https://www.mongodb.com/docs/assets/meta_generic.png)](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-red-hat/)
+[Install MongoDB Community Edition on Red Hat or CentOS — MongoDB Manual](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-red-hat/)
 
 and it contains `$releasever` in repository file. But on fedora `$releasever` is not defined. So to fix it you can check url
 
@@ -76,11 +72,7 @@ Mongosh is better than `mongo` command because of colors and autocompletion, so 
 
 To browse mongo in graphic mode you will probably choose compass. Following after
 
-[Download and Install Compass — MongoDB Compass
-
-![](https://www.mongodb.com/docs/assets/favicon.ico)
-
-![](https://www.mongodb.com/docs/assets/meta_generic.png)](https://www.mongodb.com/docs/compass/master/install/)
+[Download and Install Compass — MongoDB Compass](https://www.mongodb.com/docs/compass/master/install/)
 
 you can download `rpm` packages
 
@@ -139,12 +131,6 @@ rs.status()
 
 If you experiencing more complications there is great article with advanced config
 
-[How To Configure a MongoDB Replica Set on Ubuntu 20.04 | DigitalOcean
-
-The practice of synchronizing data across multiple separate databases is called replication. In MongoDB, a group of servers that maintain the same data set through replication are referred to as a replica set. This tutorial provides a brief overview of how replication works in MongoDB before outlini…
-
-![](https://www.digitalocean.com/_next/static/media/android-chrome-512x512.5f2e6221.png)DigitalOceanMark Drake
-
-![](https://www.digitalocean.com/_next/static/media/intro-to-cloud.d49bc5f7.jpeg)](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04)
+[How To Configure a MongoDB Replica Set on Ubuntu 20.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04)
 
 ![](http://localhost:8484/dd7f7dee-6cd4-4048-bc05-f83127be372f.avif)

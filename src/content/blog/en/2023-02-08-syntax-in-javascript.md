@@ -133,13 +133,7 @@ In our example there is `console.log` but you can use any logic in get or set tr
 
 There is 13 traps in Proxy that are described here:
 
-[Looking at All 13 JavaScript Proxy Traps | DigitalOcean
-
-A collection of code snippets to show all 13 Javascript Proxy traps in action.
-
-![](https://www.digitalocean.com/_next/static/media/android-chrome-512x512.5f2e6221.png)DigitalOceanJack Misteli
-
-![](https://www.digitalocean.com/_next/static/media/intro-to-cloud.d49bc5f7.jpeg)](https://www.digitalocean.com/community/tutorials/js-proxy-traps)
+[Looking at All 13 JavaScript Proxy Traps | DigitalOcean](https://www.digitalocean.com/community/tutorials/js-proxy-traps)
 
 I will show only 3 most popular `get`, `set` and `has`. In example below we can build handler that allow us to build objects that prevent to access to "private" properties.
 
@@ -203,13 +197,7 @@ Private fields provide a way to encapsulate an object's internal state and preve
 
 It is great that this feature was introduced but i think it seems to be still quite unknown. More detailed specs below:
 
-[Private class features - JavaScript | MDN
-
-Class fields are public by default, but private class members can be created by using a hash # prefix. The privacy encapsulation of these class features is enforced by JavaScript itself.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+[Private class features - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
 ## Promise.allSettled() \[ for concurrent programming \]
 
@@ -238,13 +226,7 @@ In this example, we create three promises: `p1`, `p2`, and `p3`. `p1` is a resol
 
 The `Promise.allSettled()` method is useful when you want to wait for multiple promises to complete, but you don't need to know the outcome of each promise in order to continue. Unlike `Promise.all()`, which rejects with the first error that occurs, `Promise.allSettled()` will wait for all promises to settle before resolving, even if some of them are rejected.
 
-[Promise.allSettled() - JavaScript | MDN
-
-The Promise.allSettled() static method takes an iterable of promises as input and returns a single Promise. This returned promise fulfills when all of the input’s promises settle (including when an empty iterable is passed), with an array of objects that describe the outcome of each promise.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
+[Promise.allSettled() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
 
 ![](http://localhost:8484/9ec41cb4-0b3c-4f77-9906-74048d4e67ed.avif)
 
@@ -282,13 +264,7 @@ BigInt(1) / 0; // Uncaught TypeError: Cannot mix BigInt and other types, use exp
 
 BigInt provides a way to represent and manipulate large integers in JavaScript without the loss of precision that can occur with the `Number` type. It is particularly useful in cases where you need to perform calculations with values that exceed the maximum safe integer value of `Number`.
 
-[BigInt - JavaScript | MDN
-
-BigInt values represent numeric values which are too large to be represented by the number primitive.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
+[BigInt - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
 ![](http://localhost:8484/e6c62d94-225d-4f29-be1e-04a75c8c51c3.avif)
 
@@ -347,23 +323,11 @@ Dynamic Import provides a flexible and powerful way to load code asynchronously 
 
 You can learn more comparing docs of static import
 
-[import - JavaScript | MDN
-
-The static import declaration is used to import read-only live bindings which are exported by another module. The imported bindings are called live bindings because they are updated by the module that exported the binding, but cannot be re-assigned by the importing module.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+[import - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 
 With dynamic import described here
 
-[import() - JavaScript | MDN
-
-The import() syntax, commonly called dynamic import, is a function-like expression that allows loading an ECMAScript module asynchronously and dynamically into a potentially non-module environment.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
+[import() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
 
 Thanks to dynamic imports you can manage both time of importing and patch to imported module in runtime what can be useful for example if you have to load dictionary with translations of your website or picking one component instead of all to display first page.
 
@@ -637,13 +601,7 @@ execution will print in console:
 
 You can read about more awesome await features here:
 
-[await - JavaScript | MDN
-
-The await operator is used to wait for a Promise and get its fulfillment value. It can only be used inside an async function or at the top level of a module.
-
-![](https://developer.mozilla.org/apple-touch-icon.6803c6f0.png)MDN Web Docs
-
-![](https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+[await - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
 ---
 

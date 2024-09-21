@@ -147,11 +147,7 @@ ip route
 
 Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 
-[? CLI
-
-![](https://parceljs.org/assets/favicon.ico)Parcel
-
-![](https://parceljs.org/assets/parcel.png)](https://parceljs.org/cli.html)
+[Parcel CLI](https://parceljs.org/cli.html)
 
 ```
 parce index.html --host 192.168.2.162
@@ -502,18 +498,6 @@ Jeśli potrzebujemy komunikacji między komputerami to Broadcast Channel API nam
 
 Polecane materiały oraz dokumentacja:
 
-[Broadcast Channel API - Web APIs | MDN
+[Broadcast Channel API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 
-The Broadcast Channel API allows basic communication between browsing contexts (that is, windows, tabs, frames, or iframes) and workers on the same origin.
-
-![](https://developer.mozilla.org/apple-touch-icon.0ea0fa02.png)MDN
-
-![](https://developer.mozilla.org/mdn-social-share.0ca9dbda.png)](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
-
-[BroadcastChannel API: A Message Bus for the Web | Google Developers
-
-BroadcastChannel API can be used for simple pub/sub between windows, tabs, iframes, or workers.
-
-![](https://www.gstatic.com/devrel-devsite/prod/v5f61782021051fb502364887a46a1c5ce2cd6f3d29a3549e907afe67612e9bba/developers/images/touchicon-180.png)Google DevelopersEric Bidelman
-
-![](https://developers.google.com/web/images/social-webfu-16x9.png)](https://developers.google.com/web/updates/2016/09/broadcastchannel)
+[BroadcastChannel API: A Message Bus for the Web | Google Developers](https://developers.google.com/web/updates/2016/09/broadcastchannel)

@@ -178,11 +178,7 @@ Para tych parametrów pozwala na wskazanie zakresów w których wzrost rezerwy w
 
 Żeby pobrać dane z Mongo do programu Mathematica możemy używać pakietu `MongoLinks`, ale okazuje się on bardzo źle zoptymalizowany.
 
-[MongoLink Introduction—Wolfram Language Documentation
-
-MongoLink is a set of tools for working with MongoDB. This tutorial shows how to perform the most common MongoDB operations using MongoLink. This tutorial assumes that a MongoDB server is running on your local machine at the default host and port. For platform-dependent instructions for running a Mo…
-
-![](https://reference.wolfram.com/common/framework/img/spikey.en.png)](https://reference.wolfram.com/language/MongoLink/tutorial/MongoLinkSimpleTutorial.html)
+[MongoLink Introduction—Wolfram Language Documentation](https://reference.wolfram.com/language/MongoLink/tutorial/MongoLinkSimpleTutorial.html)
 
 Dlatego w tym przypadku lepiej wyeksportować dane z mongo do csv na przykład przez mongo compass.
 

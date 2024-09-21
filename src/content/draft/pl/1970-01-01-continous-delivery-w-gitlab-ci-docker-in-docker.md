@@ -174,13 +174,7 @@ W gitlabie mamy możliwość oznaczenia zmiennych jako "protected" lub "masked".
 
 Więcej na temat chronionych gałęzi możecie przeczytaj tutaj:
 
-[Protected branches | GitLab
-
-Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.
-
-![](https://docs.gitlab.com/assets/images/apple-touch-icon.png)GitLab Docs
-
-![](https://docs.gitlab.com/assets/images/gitlab-logo.svg)](https://docs.gitlab.com/ee/user/project/protected_branches.html)
+[Protected branches | GitLab](https://docs.gitlab.com/ee/user/project/protected_branches.html)
 
 Druga opcja: "masked" oznacza, że zmienne nie będą widoczne w logach. Muszą spełniać kilka wymagań, między innymi ich wartości powinny mieścić się w jednej linii. Właśnie z tego powodu przetworzyliśmy klucz prywatny na postać zakodowaną przez `base64`.
 
@@ -258,31 +252,15 @@ Jest to bardzo wygodna konfiguracja ponieważ egzekutor dockerowy jest jednym z 
 
 Pełne zestawienie egzekutorów:
 
-[Executors | GitLab
-
-Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.
-
-![](https://docs.gitlab.com/assets/images/apple-touch-icon.png)GitLab Docs
-
-![](https://docs.gitlab.com/assets/images/gitlab-logo.svg)](https://docs.gitlab.com/runner/executors/)
+[Executors | GitLab](https://docs.gitlab.com/runner/executors/)
 
 Przykładowa minimalna konfiguracja `dind` (bardzo podobna do mojej)
 
-[GitLab CI - Testcontainers
-
-![](https://www.testcontainers.org/favicon.ico)Testcontainers
-
-![](https://d33wubrfki0l68.cloudfront.net/13c9a4b570398ec611da4ec48085caaa48c5f2d2/39fb0/logo.svg)](https://www.testcontainers.org/supported_docker_environment/continuous_integration/gitlab_ci/)
+[GitLab CI - Testcontainers](https://www.testcontainers.org/supported_docker_environment/continuous_integration/gitlab_ci/)
 
 Pełna dokumentacja `dind`
 
-[Use Docker to build Docker images | GitLab
-
-Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.
-
-![](https://docs.gitlab.com/assets/images/apple-touch-icon.png)GitLab Docs
-
-![](https://docs.gitlab.com/assets/images/gitlab-logo.svg)](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-workflow-with-docker-executor)
+[Use Docker to build Docker images | GitLab](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-workflow-with-docker-executor)
 
 Brak ustawienia `DOCKER_HOST` będzie powodował błąd:
 
@@ -293,13 +271,7 @@ Brak ustawienia `DOCKER_HOST` będzie powodował błąd:
 
 Więcej o tych sterownikach mówi dokumentacja:
 
-[Use the OverlayFS storage driver
-
-Learn how to optimize your use of OverlayFS driver.
-
-![](https://docs.docker.com/favicons/docs@2x.ico)Docker Documentation
-
-![](https://docs.docker.com/favicons/docs@2x.ico)](https://docs.docker.com/storage/storagedriver/overlayfs-driver/)
+[Use the OverlayFS storage driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/)
 
 #### Obrazy
 
@@ -420,19 +392,11 @@ Wynikiem włączenia tego polecenia jest możliwość wysyłania zbudowanego obr
 
 O tym problemie pisałem kiedyś na stackoverflow:
 
-[ansible returns with “Failed to import the required Python library (Docker SDK for Python: docker (Python >&#x3D; 2.7) or docker-py (Python 2.6))
-
-I am running myserver in ubuntu: + sudo cat /etc/os-releaseNAME&#x3D;“Ubuntu”VERSION&#x3D;“16.04.6 LTS (Xenial Xerus)”ID&#x3D;ubuntuID\_LIKE&#x3D;debianPRETTY\_NAME&#x3D;“Ubuntu 16.04.6 LTS”VERSION\_ID&#x3D;“16.04″HOME\_URL...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowLearner
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/59384708/ansible-returns-with-failed-to-import-the-required-python-library-docker-sdk-f/65495769#65495769)
+[ansible returns with “Failed to import the required Python library (Docker SDK for Python: docker (Python >&#x3D; 2.7) or docker-py (Python 2.6))](https://stackoverflow.com/questions/59384708/ansible-returns-with-failed-to-import-the-required-python-library-docker-sdk-f/65495769#65495769)
 
 Dokumentacja omawiająca te wymagania dostępna jest pod linkiem:
 
-[community.docker.docker\_compose – Manage multi-container Docker applications with Docker Compose. — Ansible Documentation
-
-![](https://docs.ansible.com/ansible/latest/_static/images/logo_invert.png)](https://docs.ansible.com/ansible/latest/collections/community/docker/docker_compose_module.html#ansible-collections-community-docker-docker-compose-module)
+[community.docker.docker\_compose – Manage multi-container Docker applications with Docker Compose. — Ansible Documentation](https://docs.ansible.com/ansible/latest/collections/community/docker/docker_compose_module.html#ansible-collections-community-docker-docker-compose-module)
 
 ##### Włączenie agenta ssh
 
@@ -442,13 +406,7 @@ eval $(ssh-agent -s)
 
 Powoduje to uruchomienie agenta ssh w tle i ustawienie odpowiednich zmiennych środowiskowych dla bieżącej powłoki
 
-[ssh keys ssh-agent bash and ssh-add
-
-I am new to ssh keys. Can anyone explain how the ssh-agent bash and ssh-add works? I need to understand its internals in future.
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon.png?v&#x3D;0ad5b7a83e49)Super Usermaneeshshetty
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon@2.png?v&#x3D;e869e4459439)](https://superuser.com/questions/284374/ssh-keys-ssh-agent-bash-and-ssh-add)
+[ssh keys ssh-agent bash and ssh-add](https://superuser.com/questions/284374/ssh-keys-ssh-agent-bash-and-ssh-add)
 
 ##### Dodanie klucza prywatnego
 

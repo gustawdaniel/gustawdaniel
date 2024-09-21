@@ -23,13 +23,7 @@ title: 'CodinGame: Best fit to data - Rust - Regression Analysis'
 
 We will discuss exercise:
 
-[Coding Games and Programming Challenges to Code Better
-
-CodinGame is a challenge-based training platform for programmers where you can play with the hottest programming topics. Solve games, code AI bots, learn from your peers, have fun.
-
-![](https://static.codingame.com/assets/apple-touch-icon-152x152-precomposed.5cb052db.png)CodinGame
-
-![](https://files.codingame.com/codingame/codingame_share_pics.jpg)](https://www.codingame.com/ide/puzzle/blunder-episode-3)
+[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/ide/puzzle/blunder-episode-3)
 
 Goal is find best fitting model for given dataset. For example for data:
 
@@ -85,42 +79,57 @@ because of is is similar to linear growth.
 ## Least Square Fitting
 
 We can derive equation on coefficient and assuming that we want to minimize sum of second powers of differences between measurement and prediction of our model.
-$$ R^2 = \\sum\_i \\left( t\_i - f(n\_i, a) \\right)^2 $$
+
+$$ 
+R^2 = \sum_i \left( t_i - f(n_i, a) \right)^2 
+$$
 
 
 This approach is called least squares fitting, and you can read more about it on MathWorld
 
-[Least Squares Fitting -- from Wolfram MathWorld
-
-A mathematical procedure for finding the best-fitting curve to a given set of points by minimizing the sum of the squares of the offsets (“the residuals”) of the points from the curve. The sum of the squares of the offsets is used instead of the offset absolute values because this allows the residua…
-
-from Wolfram MathWorld
-
-![](https://mathworld.wolfram.com/images/socialmedia/share.png)](https://mathworld.wolfram.com/LeastSquaresFitting.html)
+[Least Squares Fitting -- from Wolfram MathWorld](https://mathworld.wolfram.com/LeastSquaresFitting.html)
 
 Minimal value means that partial derivative by parameter of model `a` is 0.
-$$ \\frac{\\partial (R^2)}{\\partial a} = - 2 \\sum\_i \\left( t\_i - f(n\_i, a) \\right) \\frac{\\partial f(n\_i, a)}{\\partial a} = 0 $$
+
+$$ 
+\frac{\partial (R^2)}{\partial a} = - 2 \sum_i \left( t_i - f(n_i, a) \right) \frac{\partial f(n_i, a)}{\partial a} = 0 
+$$
 
 ## Linear Regression
 
 Now we can assume that function is linearly dependent from scaling parameter `a`.
-$$ f(n\_i, a) = a \* f(n\_i) $$
+
+$$ 
+f(n_i, a) = a * f(n_i) 
+$$
 
 
 Our goal is find equation to compute `a` and then `R^2`. Our derivative can be simplified:
-$$ \\frac{\\partial f(n\_i, a)}{\\partial a} = \\frac{\\partial a f(n\_i)}{\\partial a} = f(n\_i) $$
+
+$$ 
+\frac{\partial f(n_i, a)}{\partial a} = \frac{\partial a f(n_i)}{\partial a} = f(n_i) 
+$$
 
 
 Using last equation from `Linear Square Fitting` we can compute `a`
-$$ \\sum\_i \\left( t\_i f(n\_i) - a (f(n\_i))^2 \\right) = 0 $$
+
+$$ 
+\sum_i \left( t_i f(n_i) - a (f(n_i))^2 \right) = 0 
+$$
 
 
 so
-$$ a = \\frac{\\sum\_i t\_i f(n\_i)}{\\sum (f(n\_i))^2 } $$
+
+$$ 
+a = \frac{\sum_i t_i f(n_i)}{\sum (f(n_i))^2 } 
+$$
 
 
 and
-$$ R^2 = \\sum\_i \\left( t\_i - a f(n\_i) \\right)^2 $$
+
+$$ 
+R^2 = \sum_i \left( t_i - a f(n_i) \right)^2 
+$$
 
 
 Our equations looks beautifully but the devil is in the details.
@@ -137,13 +146,7 @@ and remember models that we need to test it is easy too see that we will operate
 
 For example `2^n` with `n = 15 000` is much more than max range of 64 bit float
 
-[MAX in std::f64 - Rust
-
-Largest finite `f64` value. Use \[`f64::MAX`\] instead.
-
-![](https://doc.rust-lang.org/favicon1.66.1.svg)logo
-
-![](https://doc.rust-lang.org/rust-logo1.66.1.svg)](https://doc.rust-lang.org/std/f64/constant.MAX.html)
+[MAX in std::f64 - Rust](https://doc.rust-lang.org/std/f64/constant.MAX.html)
 
 that is constrained to `2^1024`. There are tricks that allow to operate on these ranges, but instead of hacking computers constrains we will use math.
 
@@ -154,27 +157,53 @@ Instead of operating on big numbers we will use their logarithm to computation.
 Our solution is consequence of observation that if we will match logarithms of models to logarithms of `t` data then in result will will select the same model.
 
 So adding `log` both to data and function we getting equation:
-$$ \\frac{\\partial (R^2)}{\\partial a} = - 2 \\sum\_i \\left( log( t\_i) - log(a f(n\_i) ) \\right) \\frac{\\partial log( a f(n\_i) )}{\\partial a} = 0 $$
+
+$$ 
+\frac{\partial (R^2)}{\partial a} = - 2 \sum_i \left( log( t_i) - log(a f(n_i) ) \right) \frac{\partial log( a f(n_i) )}{\partial a} = 0 
+$$
 
 
 rewriting this equation we can obtain `a`
-$$ \\sum\_i \\left( log( t\_i) - log(a) - log( f(n\_i)) ) \\right) \\frac{\\partial log( a ) + log(f(n\_i) )}{\\partial a} = 0 $$$$ \\sum\_i \\left( log( t\_i) - log(a) - log( f(n\_i)) ) \\right) \\frac{1}{a} = 0 $$$$ a = exp( \\frac{\\sum\_i log(t\_i) - \\sum\_i log(f(n\_i))}{N} ) $$
+
+$$ 
+\sum_i \left( log( t_i) - log(a) - log( f(n_i)) ) \right) \frac{\partial log( a ) + log(f(n_i) )}{\partial a} = 0 
+$$
+
+$$ 
+\sum_i \left( log( t_i) - log(a) - log( f(n_i)) ) \right) \frac{1}{a} = 0 
+$$
+
+$$ 
+a = exp( \frac{\sum_i log(t_i) - \sum_i log(f(n_i))}{N} ) 
+$$
 
 
 where
-$$ N = \\sum\_i 1 $$
+
+$$ 
+N = \sum_i 1 
+$$
 
 
 and rewriting equation for `R^2` we see:
-$$ R^2 = \\sum\_i ( log( t\_i) - log( a \* f(n\_i) ) )^2 = \\sum\_i ( log( t\_i) - log( f(n\_i) ) - log(a) )^2 $$
+
+$$
+R^2 = \sum_i ( log( t_i) - log( a * f(n_i) ) )^2 = \sum_i ( log( t_i) - log( f(n_i) ) - log(a) )^2 
+$$
 
 
 Lets introduce new variable `c` defined as
-$$ c = log(a) = 1/N ( \\sum\_i log( t\_i) - \\sum\_i log( f(n\_i)) ) ) $$
+
+$$ 
+c = log(a) = 1/N ( \sum_i log( t_i) - \sum_i log( f(n_i)) ) ) 
+$$
 
 
 and then `R^2` can be rewritten as
-$$ R^2 = \\sum\_i ( log( t\_i) - log( f(n\_i) ) - c )^2 $$
+
+$$ 
+R^2 = \sum_i ( log( t_i) - log( f(n_i) ) - c )^2 
+$$
 
 
 we can see that now there is no chance to operate on too big numbers so we can start implementation of these equations.
@@ -389,12 +418,6 @@ and our program works.
 
 Traditionally you can check full code with test on my github
 
-[GitHub - gustawdaniel/codingame-computational-complexity
-
-Contribute to gustawdaniel/codingame-computational-complexity development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/b83a08ea9a2eb23cbe830b203c1492ccd02096878a68b63e97a8a741dd437a78/gustawdaniel/codingame-computational-complexity)](https://github.com/gustawdaniel/codingame-computational-complexity)
+[GitHub - gustawdaniel/codingame-computational-complexity](https://github.com/gustawdaniel/codingame-computational-complexity)
 
 ![](http://localhost:8484/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)

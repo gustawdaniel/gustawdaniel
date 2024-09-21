@@ -10,11 +10,7 @@ O firmach wiedziałem tylko jak się nazywają. Potrzebowałem ich adresów, ...
 
 Żeby to osiągnąć wydałem 20 zł w rejestr.io na dostęp do 10k żądań api. Dostałem klucz. Dokumentacja Rejestr.io dostępna jest pod linkiem:
 
-[Dokumentacja API | Rejestr.io
-
-![](https://rejestr.io/apple-touch-icon.png)Rejestr.io
-
-![](https://rejestr.io/img/logo.svg)](https://rejestr.io/api-krs)
+[Dokumentacja API | Rejestr.io](https://rejestr.io/api-krs)
 
 ## Przygotowanie danych wejściowych
 
@@ -37,13 +33,7 @@ libreoffice --headless --convert-to csv raw/base.xlsx --outdir raw --infilter=cs
 
 Zagadkowa flaga `infilter` pozwala konwertować do formatu UTF-8 z poprawną obsługą polskich znaków. Więcej na jej temat możecie poczytać pod linkiem:
 
-[Specify encoding with libreoffice --convert-to csv
-
-Excel files can be converted to CSV using: $ libreoffice --convert-to csv --headless --outdir dir file.xlsx Everything appears to work just fine. The encoding, though, is set to something wonky.
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon.png?v&#x3D;5cf7fe716a89)Unix & Linux Stack ExchangeScott Deerwester
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon@2.png?v&#x3D;32fb07f7ce26)](https://unix.stackexchange.com/questions/259361/specify-encoding-with-libreoffice-convert-to-csv)
+[Specify encoding with libreoffice --convert-to csv](https://unix.stackexchange.com/questions/259361/specify-encoding-with-libreoffice-convert-to-csv)
 
 Ten plik odczytujemy w skrypcie linia po linii i dzielimy ze względu na przecinki, tak aby dostać tablicę z samymi nazwami firm.
 

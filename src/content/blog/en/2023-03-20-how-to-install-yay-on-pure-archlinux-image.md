@@ -123,12 +123,6 @@ perl -e 'sub f{ $_[0] < 2 ? $_[0] : f($_[0]-1) + f($_[0]-2) }; foreach(0..9){ pr
 
 You can read full docs of `gpt-cli` on github.
 
-[GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.: “show my graphic card” instead “lspci | grep VGA”
-
-Run linux commands with natural language. Eg.: &quot;show my graphic card&quot; instead &quot;lspci | grep VGA&quot; - GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.:…
-
-![](https://github.com/fluidicon.png)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/aa00a9518a887f37dbe73838a74aa076bca5d0859690077b9357932f1bf89b74/gustawdaniel/gpt-cli)](https://github.com/gustawdaniel/gpt-cli)
+[GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.: “show my graphic card” instead “lspci | grep VGA”](https://github.com/gustawdaniel/gpt-cli)
 
 I hope that blog post will help you in installing yay on arch docker image.

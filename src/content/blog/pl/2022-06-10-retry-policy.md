@@ -45,7 +45,7 @@ class Rectangle {
 
 Argumentem funkcji `field` jest prawdopodobieństwo błędu.
 
-Teraz zobaczmy jak wyglądało by użycie obiektu tej klasy i policzmy ilość błędów
+Teraz zobaczmy jak wyglądałoby użycie obiektu tej klasy i policzmy ilość błędów
 
 ```typescript
 async function main() {
@@ -80,7 +80,9 @@ Jest niemal pewne, że w 10.000 przypadków znajdziemy przynajmniej jeden błąd
 
 Okazuje się, że nie tylko jest to możliwe, ale nie zajmie nawet dużo czasu. Całkowity czas działania programu, stosującego metodę ponownego próbowania dla otrzymanych błędów liczymy jako
 
-\\\[ T = T\_0 \\sum\_{n=0}^{\\infty} p\_e^n = T\_0 \\exp(p\_e) \\approx (1+p\_e) T\_0 \\\]
+$$
+T = T_0 \sum_{n=0}^{\infty} p_e^n = T_0 \exp(p_e) \approx (1+p_e) T_0
+$$
 
 W naszym przypadku będzie to oznaczało, że być może zdarzą się serie 6 nie udanych prób pod rząd, ale cały program zamiast zwracać błędy po prostu będzie działał średnio jedynie o 1/10 dłużej.
 
@@ -126,7 +128,7 @@ jest prawie pewne, że zobaczymy:
 { ok: 10000, fail: 0 }
 ```
 
-Jeśli chcemy aby było to pewne, można zmienić `maxTry` z `6` na `Infinity`, ale tu jest pułapka. Taka wartość owszem obniżyła by szansę, że jakiś nie reprodukowalny, losowy błąd zepsuje nam wynik końcowy, ale wraz z każdą kolejną próbą rośnie szansa, że błąd, z którym mamy do czynienia wcale nie jest losowy i wcale nie zniknie wraz z kolejną iteracją.
+Jeśli chcemy, aby było to pewne, można zmienić `maxTry` z `6` na `Infinity`, ale tu jest pułapka. Taka wartość owszem obniżyła by szansę, że jakiś nie odtwarzalny, losowy błąd zepsuje nam wynik końcowy, ale wraz z każdą kolejną próbą rośnie szansa, że błąd, z którym mamy do czynienia wcale nie jest losowy i wcale nie zniknie wraz z kolejną iteracją.
 
 Czasami przyczyną błędu może być brak dostępu do jakiegoś zasobu właśnie dlatego, że odpytujemy o niego zbyt często. Wtedy warto przy każdej kolejnej próbie czekać coraz dłużej. Często jednak trafimy na błędy, których nie można po prostu naprawić metodą "wyłącz i spróbuj jeszcze raz". W ich przypadku zbyt duża wartość `maxTry` podnosi nam łączny czas poświęcony przez program na bezcelowe działania.
 
@@ -144,13 +146,7 @@ Niestety paczka `ts-retry` nie obsługuje ani `exponential backoff` ani różneg
 
 Więcej o optymalnych strategiach `retry` możesz przeczytać w artykule Prof. Douglas Thain - Exponential Backoff in Distributed Systems z 2009.
 
-[Exponential Backoff in Distributed Systems
-
-In response to my previous article, a commenter asked: Why exponential backoff? To put a finer point on the question, How should I choose t...
-
-![](http://dthain.blogspot.com/favicon.ico)Prof. Douglas ThainDouglas Thain
-
-![](http://4.bp.blogspot.com/_0DkxYiRVGyA/SaIUoVsKoqI/AAAAAAAAAC0/APiyDxuzvzs/w1200-h630-p-k-no-nu/ethernet.gif)](http://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
+[Exponential Backoff in Distributed Systems](http://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
 
 Aby użyć `ts-retry-promise` do importów dodamy:
 
@@ -213,17 +209,11 @@ Jej zadaniem jest ukrycie logiki translacji błędów zwracanych przez `Rectangl
 
 Prezentowany tu kod znajdziesz pod linkiem:
 
-[GitHub - gustawdaniel/blog-retry-policy
+[GitHub - gustawdaniel/blog-retry-policy](https://github.com/gustawdaniel/blog-retry-policy)
 
-Contribute to gustawdaniel/blog-retry-policy development by creating an account on GitHub.
+## Co, jeśli błędu nie da się obsłużyć
 
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/6f9afa0b36f147e1bb2f10a10dd4521b32ed20808119c9483a2e2659717a1b65/gustawdaniel/blog-retry-policy)](https://github.com/gustawdaniel/blog-retry-policy)
-
-## Co jeśli błędu nie da się obsłużyć
-
-Wtedy trzeba poinformować użytkownika końcowego stosując się do następujących reguł:
+Wtedy trzeba poinformować użytkownika końcowego, stosując się do następujących reguł:
 
 * nie można mu powiedzieć o błędzie za dużo, bo może być hackerem i to wykorzystać
 * nie można mu powiedzieć za mało, bo w dziale supportu nie będzie dało się mu pomóc

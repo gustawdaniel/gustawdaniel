@@ -20,23 +20,11 @@ I was scared today because two great libraries did not work with Google Sign In 
 
 From stack overflow
 
-[How to use nuxtjs/auth-next module with Nuxt3?
-
-Just trying to add authentication to my NuxtJs 3 app folloging nuxt/auth configuration docs, but still get an error during app start: // nuxt.config.js export default defineNuxtConfig({ auth...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack Overflowfudo
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/74559363/how-to-use-nuxtjs-auth-next-module-with-nuxt3)
+[How to use nuxtjs/auth-next module with Nuxt3?](https://stackoverflow.com/questions/74559363/how-to-use-nuxtjs-auth-next-module-with-nuxt3)
 
 I learned that first one is incompatible with nuxt 3, but it is planned on roadmap
 
-[Roadmap · Nuxt
-
-Nuxt is constantly evolving, with new features and modules being added all the time.
-
-![](https://nuxt.com/icon.png)
-
-![](https://flat.badgen.net/npm/v/nuxt)](https://nuxt.com/docs/community/roadmap#%EF%B8%8F-roadmap)
+[Roadmap · Nuxt](https://nuxt.com/docs/community/roadmap#%EF%B8%8F-roadmap)
 
 Second simply could not work giving error that was suggesting that something is wrong with my client id.
 
@@ -44,11 +32,7 @@ I checked official Google Docs and see this:
 
 ![](http://localhost:8484/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
 
-[Integrating Google Sign-In into your web app | Authentication | Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/touchicon-180.png)Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/sign-in/web/sign-in)
+[Integrating Google Sign-In into your web app | Authentication | Google Developers](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/sign-in/web/sign-in)
 
 Looks terrible, but hepilly I integrated google sign in button quite fast without external libs. In this article I will show how to implement new Google Identity with Nuxt 3.
 
@@ -58,11 +42,7 @@ Looks terrible, but hepilly I integrated google sign in button quite fast withou
 
 Because image is worth more than thousand of words, new login button contains avatar:
 
-[Sign in with Google button UX | Authentication | Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/touchicon-180.png)Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/guides/personalized-button)
+[Sign in with Google button UX | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
 ![](http://localhost:8484/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
 
@@ -92,11 +72,7 @@ To add it to your component you will need paste below html
 
 or prepare your own in configurator
 
-[Generate HTML code | Authentication | Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/touchicon-180.png)Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/tools/configurator)
+[Generate HTML code | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/tools/configurator)
 
 ![](http://localhost:8484/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
 
@@ -110,13 +86,7 @@ There are three elements that we have to connect:
 
 To pass .env to nuxt 3 you can follow this answer
 
-[How to pass env variables to nuxt in production?
-
-nuxt.config.js modules: \[ ‘@nuxtjs/dotenv’ \], server/index.js const express &#x3D; require(‘express’)const consola &#x3D; require(‘consola’)const { Nuxt, Builder } &#x3D; require(‘nuxt’)const app &#x3D; ex...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowRounak Jain
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/53993890/how-to-pass-env-variables-to-nuxt-in-production/74463160#74463160)
+[How to pass env variables to nuxt in production?](https://stackoverflow.com/questions/53993890/how-to-pass-env-variables-to-nuxt-in-production/74463160#74463160)
 
 You create `.env` file with
 
@@ -181,11 +151,7 @@ if(process.client) {
 
 Google mentions about this step on page
 
-[Load the client library | Authentication | Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/touchicon-180.png)Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/guides/client-library)
+[Load the client library | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/guides/client-library)
 
 But you should not add
 
@@ -253,12 +219,7 @@ To verify it you should send it to backend.
 
 As backend we can use fastify. I described fastify config on this blog here
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
-
-We're building from scratch rest api in fastify using mongodb connected by prisma as a database,
-jest as a test framework and etherjs to verify signatures signed by metamask.
-
-![](http://localhost:8484/18bd8f03-626e-4f55-9b2c-881b9c569978.avif)](/login-by-metamask-rest-backend-in-fastify/)
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)
 
 so now I assume you have done step "Add Fastify with first endpoint" from this article.
 
@@ -276,11 +237,7 @@ So in `googleVerify` we will to check if credentials are correctly created by go
 
 To verify we need install `google` package on backend according to instruction
 
-[Verify the Google ID token on your server side | Authentication | Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/touchicon-180.png)Google Developers
-
-![](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/gsi/web/guides/verify-google-id-token)
+[Verify the Google ID token on your server side | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/guides/verify-google-id-token)
 
 ```
 npm install google-auth-library --save
@@ -376,8 +333,4 @@ and we can see in console all user's details
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)
-
-We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
-
-![](http://localhost:8484/18bd8f03-626e-4f55-9b2c-881b9c569978.avif)](__GHOST_URL__/login-by-metamask-rest-backend-in-fastify/)
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)

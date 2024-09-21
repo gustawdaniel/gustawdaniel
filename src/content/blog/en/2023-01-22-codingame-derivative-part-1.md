@@ -20,13 +20,7 @@ title: 'CodinGame: Derivative Time - Part 1, Recursion (Typescript)'
 
 Now we will solve exercise `DERIVATIVE TIME`:
 
-[Coding Games and Programming Challenges to Code Better
-
-CodinGame is a challenge-based training platform for programmers where you can play with the hottest programming topics. Solve games, code AI bots, learn from your peers, have fun.
-
-![](https://static.codingame.com/assets/apple-touch-icon-152x152-precomposed.5cb052db.png)CodinGame
-
-![](https://files.codingame.com/codingame/codingame_share_pics.jpg)](https://www.codingame.com/training/medium/derivative-time---part1)
+[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/training/medium/derivative-time---part1)
 
 Our goal is, evaluate the partial derivative of a given formula.
 
@@ -51,11 +45,7 @@ vars may be in other forms other than x, y, and z. Similar to identifiers in man
 
 link about calculus rules:
 
-[Differentiation rules - Wikipedia
-
-![](https://en.wikipedia.org/static/apple-touch/wikipedia.png)Wikimedia Foundation, Inc.Contributors to Wikimedia projects
-
-![](https://wikimedia.org/api/rest_v1/media/math/render/svg/86a67b81c2de995bd608d5b2df50cd8cd7d92455)](https://en.wikipedia.org/wiki/Differentiation_rules)
+[Differentiation rules - Wikipedia](https://wikimedia.org/api/rest_v1/media/math/render/svg/86a67b81c2de995bd608d5b2df50cd8cd7d92455)](https://en.wikipedia.org/wiki/Differentiation_rules)
 
 The rules needed here:
 
@@ -71,11 +61,9 @@ a'=0
 
 To compute derivative of function we have to represent function as object possible to manipulate. One of possibilities is representing it as an array with operation placed on the beginning and with arguments occupying rest of positions.
 
-This concept is intensively used in some of languages as Lisp or Scheme. If you do not know Lisp you can easy learn it in `y` minutes on page:
+This concept is intensively used in some of the languages as Lisp or Scheme. If you do not know Lisp you can easy learn it in `y` minutes on page:
 
-[Learn Common Lisp in Y Minutes
-
-![](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)](https://learnxinyminutes.com/docs/common-lisp/)
+[Learn Common Lisp in Y Minutes](https://learnxinyminutes.com/docs/common-lisp/)
 
 So instead of write
 
@@ -806,13 +794,7 @@ jobs:
 
 In codingame there is also second part of this exercise:
 
-[Coding Games and Programming Challenges to Code Better
-
-CodinGame is a challenge-based training platform for programmers where you can play with the hottest programming topics. Solve games, code AI bots, learn from your peers, have fun.
-
-![](https://static.codingame.com/assets/apple-touch-icon-152x152-precomposed.5cb052db.png)CodinGame
-
-![](https://files.codingame.com/codingame/codingame_share_pics.jpg)](https://www.codingame.com/training/medium/derivative-time---part2)
+[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/training/medium/derivative-time---part2)
 
 that will include trigonometric functions, logarithm, exponent and even the chain rule.
 
@@ -822,10 +804,4 @@ You can invite me to your friends on this platform using link:
 
 You can find all presented code on my github:
 
-[GitHub - gustawdaniel/codingame-derivative-time-part-1
-
-Contribute to gustawdaniel/codingame-derivative-time-part-1 development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/f239053bc814122dc1c46e68d764599685c1bcf41c7c4651e8f19786982fa0db/gustawdaniel/codingame-derivative-time-part-1)](https://github.com/gustawdaniel/codingame-derivative-time-part-1)
+[GitHub - gustawdaniel/codingame-derivative-time-part-1](https://opengraph.githubassets.com/f239053bc814122dc1c46e68d764599685c1bcf41c7c4651e8f19786982fa0db/gustawdaniel/codingame-derivative-time-part-1)](https://github.com/gustawdaniel/codingame-derivative-time-part-1)

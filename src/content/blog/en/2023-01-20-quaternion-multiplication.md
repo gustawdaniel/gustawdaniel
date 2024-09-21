@@ -23,24 +23,12 @@ title: 'CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra'
 
 In this article we will see how to implement the multiplication of quaternions in Rust and NodeJS. I encourage you to try solve this problem before seeing solutions. Below I attaching link to this exercise:
 
-[Coding Games and Programming Challenges to Code Better
-
-CodinGame is a challenge-based training platform for programmers where you can play with the hottest programming topics. Solve games, code AI bots, learn from your peers, have fun.
-
-![](https://static.codingame.com/assets/apple-touch-icon-152x152-precomposed.5cb052db.png)CodinGame
-
-![](https://files.codingame.com/codingame/codingame_share_pics.jpg)](https://www.codingame.com/training/medium/quaternion-multiplication)
+[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/training/medium/quaternion-multiplication)
 
 The quaternions belong to a number system that extends the complex numbers. A quaternion is defined by the sum of scalar multiples of the constants **i**,**j**,**k** and **1**.
 More information is available at:
 
-[Quaternion -- from Wolfram MathWorld
-
-The quaternions are members of a noncommutative division algebra first invented by William Rowan Hamilton. The idea for quaternions occurred to him while he was walking along the Royal Canal on his way to a meeting of the Irish Academy, and Hamilton was so pleased with his discovery that he scratche…
-
-from Wolfram MathWorld
-
-![](https://mathworld.wolfram.com/images/socialmedia/share.png)](https://mathworld.wolfram.com/Quaternion.html)
+[Quaternion -- from Wolfram MathWorld](https://mathworld.wolfram.com/Quaternion.html)
 
 Consider the following properties:
 **jk** = **i**
@@ -95,13 +83,7 @@ i-j
 
 I decided to present only most important parts here. Full solution can be found in repository:
 
-[GitHub - gustawdaniel/codingame-quaternion-multiplication
-
-Contribute to gustawdaniel/codingame-quaternion-multiplication development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/85682fcbd54214a903a6cb968a0137db1d1243d42b118b9e0764ac9229c76d63/gustawdaniel/codingame-quaternion-multiplication)](https://github.com/gustawdaniel/codingame-quaternion-multiplication)
+[GitHub - gustawdaniel/codingame-quaternion-multiplication](https://opengraph.githubassets.com/85682fcbd54214a903a6cb968a0137db1d1243d42b118b9e0764ac9229c76d63/gustawdaniel/codingame-quaternion-multiplication)](https://github.com/gustawdaniel/codingame-quaternion-multiplication)
 
 We can divide our problem to three steps:
 

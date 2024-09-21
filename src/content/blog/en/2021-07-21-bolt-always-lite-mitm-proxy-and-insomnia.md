@@ -26,21 +26,13 @@ This is the first part on how we made ordering Bolt Lite always possible. In thi
 
 Since Bolt app doesn't use mechanism known as Certificate Pinning it should be an easy job to capture all data sent in the packets.Google has been suggesting implementing CP to all the developers since quite some time, but a few of developers still use it. From the apps that I use most frequently, it is only used by banks and cryptowallets.If there would be certificate pinning in Bolt app, the app would seem disconnected from the internet when sniffing.It is still possible to connect with API when certificate pinning is in place but it involves some APK reverse engineering. If you're interested in how to do that read an excellent @XeEaton article and after you've done with patching the APK come back to my article.
 
-[Reverse engineering and removing Pokémon GO’s certificate pinning | Eaton Works
-
-Eaton Works
-
-![](https://eaton-works.com/wp-content/uploads/PGOCP1.png)](https://eaton-works.com/2016/07/31/reverse-engineering-and-removing-pokemon-gos-certificate-pinning/)
+[Reverse engineering and removing Pokémon GO’s certificate pinning | Eaton Works](https://eaton-works.com/2016/07/31/reverse-engineering-and-removing-pokemon-gos-certificate-pinning/)
 
 ## **MITM Proxy**
 
 To sniff on packets sent by the Bolt Android App we will be using mitmproxy, which is an open source project.
 
-[mitmproxy - an interactive HTTPS proxy
-
-![](https://mitmproxy.org/favicon.ico)an interactive HTTPS proxy
-
-![](https://mitmproxy.org/logo-navbar.png)](https://mitmproxy.org/)
+[mitmproxy - an interactive HTTPS proxy](https://mitmproxy.org/)
 
 If your Android version is higher than Nougat (Android 7), which probably is the case since you're a mega geek and you're reading this article, you'll also need:
 

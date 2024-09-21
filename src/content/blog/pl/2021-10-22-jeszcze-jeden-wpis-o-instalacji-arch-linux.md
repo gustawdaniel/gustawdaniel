@@ -15,11 +15,7 @@ Arch Linux jest systemem, który kocham za elastyczność i wygodę użytkowania
 
 Za przykład niech posłuży wybór klienta DHCP, dzięki któremu możemy dostać adres IP, maskę podsieci, adres bramy domyślnej i adresy serwerów DNS. Są dwa dostępne programy do obsługi protokołu DHCP. Od Ciebie zależy, który z nich zainstalujesz:
 
-[Network configuration (Polski) - ArchWiki
-
-![](https://wiki.archlinux.org/favicon.ico)ArchWiki
-
-![](https://wiki.archlinux.org/images/3/38/Tango-view-fullscreen.png)](https://wiki.archlinux.org/title/Network_configuration_(Polski)#DHCP)
+[Network configuration (Polski) - ArchWiki](https://wiki.archlinux.org/title/Network_configuration_(Polski)#DHCP)
 
 Tego typu decyzji podejmujemy przy instalacji arch linux więcej, dlatego najlepszym źródłem wiedzy będzie zawsze ArchWiki. Ten artykuł ma na celu pokazanie mojej instalacji, którą możesz powtórzyć w całości lub wybrać z niej wartościowe dla Ciebie elementy i wkomponować je we własną pasującą do Ciebie instalację.
 
@@ -40,11 +36,7 @@ Rdzeń instalacji przedstawia poniższa grafika, ale niektóre komendy będą si
 
 Obraz ISO Archa możemy pobrać z torrentów:
 
-[Arch Linux - Downloads
-
-![](https://archlinux.org/static/logos/apple-touch-icon-144x144.38cf584757c3.png)Downloads
-
-![](https://archlinux.org/static/magnet.29ed728b8ae4.png)](https://archlinux.org/download/)
+[Arch Linux - Downloads](https://archlinux.org/download/)
 
 Jednak ponieważ płyty CD nie są już używane, domyślnym działaniem jest wgranie go na USB. Żeby to zrobić wkładamy pendrive do komputera i sprawdzamy jaką nazwę dostał jednym z poleceń `dmesg | grep Attached`, `df -h` lub `lsblk`.
 
@@ -86,13 +78,7 @@ Podłączamy się do wybranej sieci poleceniem `station wlan0 connect TP-Link_CE
 
 W przypadku bardzo starego laptopa Acer Aspire One - miałem błąd ze sterownikami wifi i musiałem podłączyć się przez ethernet.
 
-[Arch Linux (dual boot with Win 10). Kernel panic - not syncing: Fatal exception in interrupt. Caps Lock indicator blinking until reboot
-
-On my laptop I have Arch Linux and Windows 10 installed (BIOS MBR). When I’m using Arch occasional kernel panic occurs. This happens mostly when I install some packages using pacman.Last time I st...
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon.png?v&#x3D;0ad5b7a83e49)Super Userquantumleap
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon@2.png?v&#x3D;e869e4459439)](https://superuser.com/questions/1581961/arch-linux-dual-boot-with-win-10-kernel-panic-not-syncing-fatal-exception/1582265#1582265)
+[Arch Linux (dual boot with Win 10). Kernel panic - not syncing: Fatal exception in interrupt. Caps Lock indicator blinking until reboot](https://superuser.com/questions/1581961/arch-linux-dual-boot-with-win-10-kernel-panic-not-syncing-fatal-exception/1582265#1582265)
 
 Aby wyłączyć `iwctl` wpisujemy `quit`.
 
@@ -122,11 +108,7 @@ Jeśli twój internet jest wolny dodaj falgę `--download-timeout`, np.:
 reflector -c "Poland" --latest 5 --sort rate --download-timeout 60 --save /etc/pacman.d/mirrorlist
 ```
 
-[Reflector returns “failed to rate http(s) download: Download ......” ! / Newbie Corner / Arch Linux Forums
-
-![](https://bbs.archlinux.org/style/ArchLinux/favicon.ico)
-
-![](https://bbs.archlinux.org/img/smilies/big_smile.png)](https://bbs.archlinux.org/viewtopic.php?id&#x3D;262621)
+[Reflector returns “failed to rate http(s) download: Download ......” ! / Newbie Corner / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id&#x3D;262621)
 
 Za pomocą `fdisk -l` lub `lsblk` wyświetlamy dostępne dyski
 
@@ -407,13 +389,7 @@ set 1 bios_grub on
 q
 ```
 
-[grub2-install: “this GPT partition label contains no BIOS Boot Partition”
-
-There seems to be quite a bit of discussion about this but I can’t find a simple answer. When I try to install grub2 I get this error: # grub2-install /dev/sdaInstalling for i386-pc platform.gr...
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon.png?v&#x3D;0ad5b7a83e49)Super UserRobert S
-
-![](https://cdn.sstatic.net/Sites/superuser/Img/apple-touch-icon@2.png?v&#x3D;e869e4459439)](https://superuser.com/a/1610045/1216455)
+[grub2-install: “this GPT partition label contains no BIOS Boot Partition”](https://superuser.com/a/1610045/1216455)
 
 W przypadku błędu
 
@@ -425,13 +401,7 @@ wychodzimy z `chroot` przez `exit` i wpisujemy
 modprobe efivars
 ```
 
-[“EFI variables are not supported on this system”
-
-I am attempting to install Arch linux to a new (and very crappy) HP Pavillion 15 Notebook. This is a UEFI-based machine. After several swings at it, I have managed to get pretty far. Legacy mode...
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon.png?v&#x3D;5cf7fe716a89)Unix & Linux Stack ExchangeJohn Dibling
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon@2.png?v&#x3D;32fb07f7ce26)](https://unix.stackexchange.com/a/91623/431667)
+[“EFI variables are not supported on this system”](https://unix.stackexchange.com/a/91623/431667)
 
 Jeśli zobaczymy błąd
 
@@ -527,13 +497,7 @@ Do sprawdzenia, które interfejsy warto włączyć przydatne może być `nmcli`.
 
 Jeśli nie możesz włączyć interfejsu, ale znasz nazwę i hasło sieci możesz spróbować bezpośredniego połączenia podążając za zaleceniami z linku:
 
-[how do I attach devices to connections using nmcli?
-
-An installation of CentOS 7 has two connections and three devices. How can I attach the device ens7 to the connection my-bridge? And how can I attach the device eth0 to the connection my-eth1? ...
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon.png?v&#x3D;5cf7fe716a89)Unix & Linux Stack ExchangeCodeMed
-
-![](https://cdn.sstatic.net/Sites/unix/Img/apple-touch-icon@2.png?v&#x3D;32fb07f7ce26)](https://unix.stackexchange.com/a/613819/431667)
+[how do I attach devices to connections using nmcli?](https://unix.stackexchange.com/a/613819/431667)
 
 nie mam pojęcia dlaczego to działa.
 
@@ -593,13 +557,7 @@ i zainstalować poleceniami
 cd yay && makepkg -si
 ```
 
-[Arch Linux How to Install Yay - Super EASY | Low Orbit Flux
-
-Arch Linux How to Install Yay - Super EASY | Low Orbit Flux
-
-![](https://low-orbit.net/favicon.png)Low Orbit Flux
-
-![](https://low-orbit.net/low-orbit-logo-2-d.png)](https://low-orbit.net/arch-linux-how-to-install-yay)
+[Arch Linux How to Install Yay - Super EASY | Low Orbit Flux](https://low-orbit.net/arch-linux-how-to-install-yay)
 
 # Instalacja I3
 
@@ -643,11 +601,7 @@ yay -S xf86-video-intel
 
 Jeśli nie wiesz jaką paczkę zainstalować dla swojej karty polecam poszukać na stronie:
 
-[Xorg - ArchWiki
-
-![](https://wiki.archlinux.org/favicon.ico)ArchWiki
-
-![](https://wiki.archlinux.org/images/d/d6/Tango-inaccurate.png)](https://wiki.archlinux.org/title/xorg)
+[Xorg - ArchWiki](https://wiki.archlinux.org/title/xorg)
 
 Aby obsługiwać dźwięk dodajemy też `alsa-utils`, `pulseaudio` i `pavucontrol`
 
@@ -682,13 +636,7 @@ teraz możemy włączyć tryb graficzny wpisując
 startx
 ```
 
-[Arch Linux How to Install i3 Gaps - Super EASY | Low Orbit Flux
-
-Arch Linux How to Install i3 Gaps - Super EASY | Low Orbit Flux
-
-![](https://low-orbit.net/favicon.png)Low Orbit Flux
-
-![](https://low-orbit.net/low-orbit-logo-2-d.png)](https://low-orbit.net/arch-linux-how-to-install-i3-gaps)
+[Arch Linux How to Install i3 Gaps - Super EASY | Low Orbit Flux](https://low-orbit.net/arch-linux-how-to-install-i3-gaps)
 
 Potwierdzamy wygenerowanie konfiguracji przez `ENTER` oraz potwierdzamy klawisz `win` jako główny klawisz.
 
@@ -698,13 +646,7 @@ Wartościowe wprowadzenie do `i3` nagrał `Distroverse`:
 
 Wzorowałem się na nim tworząc swoją konfigurację. Znajdziesz ją w repozytorium
 
-[my-arch-i3-config/config at main · gustawdaniel/my-arch-i3-config
-
-Contribute to gustawdaniel/my-arch-i3-config development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/c7e9ab912b1bb2522df5792cd3bf38216fc9c7e33d89de79f8f0dd67df2a6c22/gustawdaniel/my-arch-i3-config)](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.config/i3/config)
+[my-arch-i3-config/config at main · gustawdaniel/my-arch-i3-config](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.config/i3/config)
 
 ale polecam Ci przejrzeć kilka różnych konfiguracji i poczytać dokumentację i3, która jest jedną z lepszych dokumentacji managerów okien.
 
@@ -905,13 +847,7 @@ gem install tmuxinator
 
 Jego konfiguracja:
 
-[my-arch-i3-config/.tmux.conf at main · gustawdaniel/my-arch-i3-config
-
-Contribute to gustawdaniel/my-arch-i3-config development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/329bf602abfbb3c32fc70733557d3fb9f40c7171acdb51064027ff062f032e06/gustawdaniel/my-arch-i3-config)](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.tmux.conf)
+[my-arch-i3-config/.tmux.conf at main · gustawdaniel/my-arch-i3-config](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.tmux.conf)
 
 ![](http://localhost:8484/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e.avif)
 

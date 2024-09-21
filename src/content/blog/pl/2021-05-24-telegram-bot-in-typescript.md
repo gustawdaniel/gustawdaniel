@@ -31,13 +31,7 @@ npm init -y
 
 Instalujemy `telebot` - paczkę zapewniającą SDK telegrama. Jej dokumentacja znajduje się tutaj:
 
-[mullwar/telebot
-
-The easy way to write Telegram bots in Node.js. Contribute to mullwar/telebot development by creating an account on GitHub.
-
-GitHubmullwar
-
-![](https://opengraph.githubassets.com/28e2e0d632e6c5b5866fa981f2f368713cd217aeac325b6e15a0a50d59af327a/mullwar/telebot)](https://github.com/mullwar/telebot)
+[mullwar/telebot](https://github.com/mullwar/telebot)
 
 razem z nią instalujemy niezbędny zestaw bibliotek do `typescript`:
 

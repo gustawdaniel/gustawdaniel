@@ -2,13 +2,15 @@
 import type {InferEntrySchema} from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import CommentsSection from "../components/blog/CommentsSection.astro";
+import EditPageButton from "../components/github/EditPageButton.astro";
 
 interface Props {
+    id: string;
     frontmatter: InferEntrySchema<"note">;
     body: string;
 }
 
-const {frontmatter} = Astro.props;
+const {id, frontmatter} = Astro.props;
 
 const description = `Dev note: ${frontmatter.title}`;
 ---
@@ -28,6 +30,10 @@ const description = `Dev note: ${frontmatter.title}`;
         </section>
 
         <aside class="my-20">
+            <div class="mb-5 prose lg:prose-xl m-auto">
+                <EditPageButton id={`note/${id}`}/>
+            </div>
+
             <CommentsSection/>
         </aside>
 

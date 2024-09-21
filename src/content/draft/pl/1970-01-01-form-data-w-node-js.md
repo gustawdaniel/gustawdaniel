@@ -32,10 +32,4 @@ touch app.ts
 
 W `tsconfig.json` wymieniamy `target` na `ESNEXT`.
 
-[axios post request to send form data
-
-axios POST request is hitting the url on the controller but setting null values to my POJO class, when I go through developer tools in chrome, the payload contains data. What am I doing wrong? Axios
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowSrikanth Gowda
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data)
+[axios post request to send form data](https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data)

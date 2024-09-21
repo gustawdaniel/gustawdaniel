@@ -166,13 +166,7 @@ ${entity.notes}`
 
 Pełen interfejs pokazanej tu metody znajdziemy w dokumentacji strapi:
 
-[Email - Strapi Developer Docs
-
-Send email from your server or externals providers.
-
-![](https://strapi.io/assets/favicon-32x32.png)Strapi Developer Docs
-
-![](https://strapi.io/documentation/assets/meta.png)](https://docs.strapi.io/developer-docs/latest/plugins/email.html#configure-the-plugin)
+[Email - Strapi Developer Docs](https://docs.strapi.io/developer-docs/latest/plugins/email.html#configure-the-plugin)
 
 Do `.env` dodajemy smtp i klucze api, `EMAILLABS_SMTP` znajdziemy na głównej stronie
 

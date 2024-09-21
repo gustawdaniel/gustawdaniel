@@ -21,13 +21,7 @@ ZeroMQ is a messaging library that enables fast and efficient communication betw
 
 In this article, we will explore how to use the ZeroMQ library in Node.js by examining a code snippet that demonstrates how to send and receive messages using the ZeroMQ `Push` and `Pull` sockets. The code shows how to create a `push` function that sends a message to a `Pull` socket, and a `pull` function that receives messages from a `Push` socket. We will examine the various components of the code and explain how they work together to create a reliable messaging system. We will also explore some best practices for using ZeroMQ in Node.js and discuss some common use cases for the library.
 
-[ZeroMQ
-
-An open-source universal messaging library
-
-![](https://zeromq.org/apple-touch-icon.png)
-
-![](https://zeromq.org/images/logo.gif)](https://zeromq.org/)
+[ZeroMQ](https://zeromq.org/)
 
 The built-in core ZeroMQ patterns are:
 

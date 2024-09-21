@@ -19,13 +19,7 @@ Unfortunately my screen-casting program OBS produce `mkv` format, that is too co
 
 is explained here:
 
-[Transcode and Import MKV to DaVinci Resolve
-
-Failed to import MKV files to DaVinci Resolve 10/11/12/13/14/15/16 for further editing? Don’t worry! An easy way is to transcode MKV to DaVinci Resolve compatible video formats. Below is the how to.
-
-![](https://www.easefab.com/favicon.ico)EaseFab - Best DVD/Blu-ray Ripper/Copy Software, Video Converter and iPhone Data Recovery Software Provider | OFFICIALMKV Tips
-
-![](https://www.easefab.com/images/icon_download.png)](https://www.easefab.com/mkv-tips/import-mkv-to-davinci-resolve.html)
+[Transcode and Import MKV to DaVinci Resolve](https://www.easefab.com/mkv-tips/import-mkv-to-davinci-resolve.html)
 
 I was trying to change settings of `OBS` to produce formats supported by `Davinci Resolve` but without success. I was trying to convert `MKV` to different formats and then import them, but this also failed. Additionally Davinci Resolve 100% load on 2 CPU cores on my computer, even in iddle state so finally I decided to find replacement for it.
 

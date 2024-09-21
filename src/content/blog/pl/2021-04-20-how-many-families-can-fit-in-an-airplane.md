@@ -329,11 +329,7 @@ zobaczymy logi uporządkowane względem procentowego udziału w czasie wykonywan
 
 Ten widok pozwala wyłowić najcięższe funkcje względem całkowitego czasu wykonywania. Więcej o profilowaniu możesz poczytać w dokumentacji WebStorms.
 
-[V8 CPU and memory profiling | WebStorm
-
-![](https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-180x180.png)WebStorm Help
-
-![](https://resources.jetbrains.com/storage/products/webstorm/img/meta/preview.png)](https://www.jetbrains.com/help/webstorm/v8-cpu-and-memory-profiling.html#ws_node_cpu_profiling)
+[V8 CPU and memory profiling | WebStorm](https://www.jetbrains.com/help/webstorm/v8-cpu-and-memory-profiling.html#ws_node_cpu_profiling)
 
 Ponowny przegląda kodu i zestawienie logów z informacją, że to ilość zajętych miejsc tak bardzo obniża wydajność skryptu wskazują, że należy szukać problemu w funkcji `shift`
 
@@ -343,13 +339,7 @@ const place = places.shift();
 
 Poświęcono temu wątek na stack overflow
 
-[Why is pop faster than shift?
-
-Douglas Crockford, in JavaScript: The Good Parts, states that “shift is usually much slower than pop”. jsPerf confirms this. Does anyone know why this is the case? From an unsophisticated point of ...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack Overflowzjmiller
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/6501160/why-is-pop-faster-than-shift)
+[Why is pop faster than shift?](https://stackoverflow.com/questions/6501160/why-is-pop-faster-than-shift)
 
 Zmiana tej jednej linii
 
@@ -505,13 +495,7 @@ tests.forEach(function (count) {
 
 Wykres zależności czasu od długości tablicy wygenerujemy w `chart.js`
 
-[Getting Started | Chart.js
-
-Open source HTML5 Charts for your website
-
-![](https://www.chartjs.org/docs/latest/favicon.ico)Chart.js
-
-![](https://www.chartjs.org/docs/latest/favicon.ico)](https://www.chartjs.org/docs/latest/getting-started/)
+[Getting Started | Chart.js](https://www.chartjs.org/docs/latest/getting-started/)
 
 ```
 let res = [[10000,3],[20000,3],[30000,4],[40000,193],[50000,304],[60000,450],[70000,625],[80000,859],[90000,1081],[100000,1419],[110000,1704],[120000,2040],[130000,2466],[140000,2936],[150000,3429],[160000,3948],[170000,4509],[180000,5158],[190000,5852],[200000,6450]];

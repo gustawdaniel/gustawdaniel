@@ -334,13 +334,7 @@ If machine is able to understand it then we can assume that our movies are corre
 
 Unfortunately voice2json do not support all our languages
 
-[voice2json
-
-Command-line tools for speech and intent recognition on Linux
-
-voice2json
-
-![](http://voice2json.org/img/voice2json.svg)](http://voice2json.org/#getting-started)
+[voice2json](http://voice2json.org/#getting-started)
 
 There are supported
 
@@ -369,25 +363,13 @@ Using `voice2json` we can use only 12 languages.
 
 Other tool is whisper also from openai
 
-[GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision
-
-Robust Speech Recognition via Large-Scale Weak Supervision - GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision
-
-![](https://github.com/fluidicon.png)GitHubopenai
-
-![](https://opengraph.githubassets.com/fe5e99c6eb3717c4ee426b34983b5a17162c217dce8f6791d0a371906b0cdfe7/openai/whisper)](https://github.com/openai/whisper)
+[GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://github.com/openai/whisper)
 
 ![](https://preciselab.io/content/images/2023/03/language-breakdown.svg)
 
 we can't install it today because open issue
 
-[Python 3.11 · Issue #8304 · numba/numba
-
-This is the meta/coordination issue for Python 3.11 support for Numba and llvmlite. Note: The issue text will be updated continuously to reflect the current process and progress. As Numba interface…
-
-![](https://github.com/fluidicon.png)GitHubnumba
-
-![](https://opengraph.githubassets.com/14a5903c4c15226547b397ba736a2869d14420f2b2a20941b978c12cef4f1a78/numba/numba/issues/8304)](https://github.com/numba/numba/issues/8304#issuecomment-1456646575)
+[Python 3.11 · Issue #8304 · numba/numba](https://github.com/numba/numba/issues/8304#issuecomment-1456646575)
 
 but there is `api`
 
@@ -444,33 +426,15 @@ It is hard to say if result is readable. But I am rather considering it as low q
 
 To make it better I should add subtitles. I tried this service
 
-[Free online subtitle translator.
-
-Free online subtitles translator. Quickly translate multiple subtitle files at once. Supports major file formats and allows you to translate to over 80 different languages.
-
-![](https://subtitlestranslator.com/resources/images/icon.png)Subtitles Translator
-
-![](https://subtitlestranslator.com/resources/images/left_arrow.svg)](https://subtitlestranslator.com/en/)
+[Free online subtitle translator.](https://subtitlestranslator.com/en/)
 
 But it does not provide api, and process part of files on fronted, but part on backend. I was also considering this one
 
-[Automatyczna transkrypcja nagrań
-
-Twórz napisy do nagrań wideo i audio. Stenograf to narzędzie do automatycznej konwersji audio na tekst. Wypróbuj za darmo!
-
-![](https://stenograf.io/img/favicon-gradient.ico)
-
-![](https://www.stenograf.io/img/StenografBigLogo.png)](https://stenograf.io/)
+[Automatyczna transkrypcja nagrań](https://stenograf.io/)
 
 but it is also gui tool without API. I rejected also this one with price $0.0005 per word.
 
-[Translation Software API
-
-Need a cloud translation software API for websites, documents & more? Learn about Pairaphrase’s secure language translation API.
-
-![](https://www.pairaphrase.com/wp-content/uploads/2022/10/icon.png?v&#x3D;1)Pairaphrase
-
-![](https://www.pairaphrase.com/wp-content/uploads/2020/10/translation-software-api-1-300x252.png)](https://www.pairaphrase.com/how-it-works/api-for-developers/)
+[Translation Software API](https://www.pairaphrase.com/how-it-works/api-for-developers/)
 
 In the English language, people speak about 140 words per minute. A fast speaker will get to 170. So with super fast speaker it will cost $6 per hour. Not bad, but this price require package that costs 400 USD.
 
@@ -482,13 +446,7 @@ GPT_SYSTEM_PROMPT="I am sbv files translator to polish. I need to translate this
 
 Results was weak again so I decided to change workflow. Research showed that there are more tools, like this one:
 
-[Checksub: Create impactful videos | Add Captions and Subtitles easily
-
-Create an impactful video💥 thanks to the best subtitling and captioning platform. Generate your captions and translate them automatically.
-
-![](https://www.checksub.com/wp-content/themes/checksub/images/favicon.png?v&#x3D;1660724351970)Checksub
-
-![](https://www.checksub.com/wp-content/themes/checksub/images/Cheksub-white-min.png)](https://www.checksub.com/)
+[Checksub: Create impactful videos | Add Captions and Subtitles easily](https://www.checksub.com/)
 
 But finally I stopped with the following flow:
 

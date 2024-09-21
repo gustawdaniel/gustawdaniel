@@ -107,13 +107,7 @@ Currently project is slowly growing.
 
 You can download it and use because it is open source.
 
-[GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.: “show my graphic card” instead “lspci | grep VGA”
-
-Run linux commands with natural language. Eg.: &quot;show my graphic card&quot; instead &quot;lspci | grep VGA&quot; - GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.:…
-
-![](https://github.com/fluidicon.png)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/9f789f058f621f6205f218bdd2b378ad57eae198b84698269172e967e6b57906/gustawdaniel/gpt-cli)](https://github.com/gustawdaniel/gpt-cli)
+[GitHub - gustawdaniel/gpt-cli: Run linux commands with natural language. Eg.: “show my graphic card” instead “lspci | grep VGA”](https://github.com/gustawdaniel/gpt-cli)
 
 ## Conclusion
 

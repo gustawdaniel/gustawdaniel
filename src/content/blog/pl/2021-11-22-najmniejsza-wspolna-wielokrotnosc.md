@@ -15,13 +15,7 @@ W serwisie Hacker Earth można znaleźć wiele ciekawych zadań dla programistó
 
 Jedno z nich: "Archery" prezentuję w tym wpisie wraz z omówieniem rozwiązania.
 
-[Archery | Practice Problems
-
-Prepare for your technical interviews by solving questions that are asked in interviews of various companies. HackerEarth is a global hub of 5M+ developers. We help companies accurately assess, interview, and hire top developers for a myriad of roles.
-
-![](https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_identity.png)HackerEarth
-
-![](https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_cover.jpg)](https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/archery-1/)
+[Archery | Practice Problems](https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/practice-problems/algorithm/archery-1/)
 
 ### Treść zadania
 
@@ -67,11 +61,7 @@ Najmniejszym celem, do którego strzelają wszyscy łucznicy, jest 12.
 
 Zadzierając z problemu opowieść związaną z łucznikami zostajemy z zadaniem polegającym na znalezieniu najmniejszej wspólnej wielokrotności.
 
-[Least common multiple - Wikipedia
-
-![](https://en.wikipedia.org/static/apple-touch/wikipedia.png)Wikimedia Foundation, Inc.Contributors to Wikimedia projects
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Symmetrical_5-set_Venn_diagram_LCM_2_3_4_5_7.svg/1200px-Symmetrical_5-set_Venn_diagram_LCM_2_3_4_5_7.svg.png)](https://en.wikipedia.org/wiki/Least_common_multiple)
+[Least common multiple - Wikipedia](https://en.wikipedia.org/wiki/Least_common_multiple)
 
 Kluczowe wzory to:
 
@@ -99,21 +89,11 @@ W tym zagadnieniu bardzo pomocny jest graficzny schemat algorytmu
 
 ![](http://localhost:8484/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
 
-[Prime Factor: Algorithm
-
-Step by Step Algorithm of Prime factor using spreadsheet
-
-![](https://people.revoledu.com/kardi/images/favicon.ico)Kardi Teknomo
-
-![](https://people.revoledu.com/kardi/tutorial/image/Prime.png)](https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/Algorithm-PrimeFactor.html?txtInput&#x3D;10&txtResult&#x3D;4+is+a+Composite+number.%0D%0A%0D%0APrime+factorization%3A+%0D%0A4+%3D+2%5E2%0D%0A%0D%0AThere+are+3+divisors.+%0D%0ADivisors+of+4+are+1%2C2%2C4%0D%0A)
+[Prime Factor: Algorithm](https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/Algorithm-PrimeFactor.html?txtInput&#x3D;10&txtResult&#x3D;4+is+a+Composite+number.%0D%0A%0D%0APrime+factorization%3A+%0D%0A4+%3D+2%5E2%0D%0A%0D%0AThere+are+3+divisors.+%0D%0ADivisors+of+4+are+1%2C2%2C4%0D%0A)
 
 Ten algorytm nazywa się "Trial division" i jest najmniej oszczędnym, ale najprostszym do zrozumienia algorytmem faktoryzacji. Inne wymienione są tutaj:
 
-[Integer factorization - Wikipedia
-
-![](https://en.wikipedia.org/static/apple-touch/wikipedia.png)Wikimedia Foundation, Inc.Contributors to Wikimedia projects
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/PrimeDecompositionExample.svg/220px-PrimeDecompositionExample.svg.png)](https://en.wikipedia.org/wiki/Integer_factorization)
+[Integer factorization - Wikipedia](https://en.wikipedia.org/wiki/Integer_factorization)
 
 Przed implementacją ustalmy jeszcze sposób zapisu wyniku faktoryzacji. Posłużymy się obiektem, w którym klucze to czynniki, a wartości to ilości ich wystąpień. Np do zapisania liczby `12` czyli `2 * 2 * 3` stworzymy obiekt
 

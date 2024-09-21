@@ -279,13 +279,7 @@ powinniśmy zobaczyć czas trwania zapytania wyrażony w pikosekundach
 
 Jeśli temat konfiguracji mechanizmu profilowania Cię zainteresował możesz pogłębić wiedzę bezpośrednio w dokumentacji:
 
-[Performance Schema Overview
-
-Quick overview of the Performance Schema.
-
-![](https://mariadb.com/kb/static/images/favicons/apple-touch-icon.159e713979be.png)MariaDB KnowledgeBase
-
-![](http://mariadb.comaskmonty-logo.png)](https://mariadb.com/kb/en/performance-schema-overview/)
+[Performance Schema Overview](https://mariadb.com/kb/en/performance-schema-overview/)
 
 ### Procedura testująca (InnoDB)
 

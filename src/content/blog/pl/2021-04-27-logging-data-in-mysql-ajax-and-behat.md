@@ -32,9 +32,12 @@ PHP 43.2% Perl 19.8% HTML 19.6% Cucumber 7.4% JavaScript 6.5% CSS 3.5%
 
 Po napisaniu projekt będzie wyglądał tak:
 
+![](http://localhost:8484/0cd60295-e8e0-49fb-aa4b-a6a818262939.avif)
+
 ## Instalacja
 
-**Uwaga! Zanim włączysz install.pl upewnij się, że nie masz bazy o nazwie calc, zanim włączysz install.sh upewnij się, że nie masz chrome w sources.list. Skrypy instalacyjne w perlu i bashu nie są długie, zapoznaj się z nimi przed uruchomieniem.**
+**Uwaga! Zanim włączysz install.pl, upewnij się, że nie masz bazy o nazwie calc i chrome w sources.list. 
+Skrypty instalacyjne w perlu i bash nie są długie, zapoznaj się z nimi przed uruchomieniem.**
 
 Instalację projektu zalecam przeprowadzić na maszynie wirtualnej, np.: `Lubuntu`.
 

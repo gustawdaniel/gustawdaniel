@@ -24,13 +24,7 @@ title: Scraping najbardziej popularnych kont na twitterze
 
 Listę najbardziej popularnych kont w serwisie Twitter możemy znaleźć na stronie Trackalytics:
 
-[The Most Followed Twitter Profiles | Trackalytics
-
-The Most Followed Twitter Profiles | Trackalytics
-
-Trackalytics
-
-![](https://www.trackalytics.com/assets/images/trackalytics-icon.png)](https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/)
+[The Most Followed Twitter Profiles | Trackalytics](https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/)
 
 W tym wpisie pokażę, jak pobrać te dane i posortujemy je względem ilości tweetów na ilość obserwujących. Następnie przeanalizujemy, jaką liczbę twórców mogli byśmy obserwować jednocześnie aby nie przekroczyć limitu darmowego api Twittera: 500 tys tweetów / msc.
 
@@ -226,13 +220,7 @@ W `node js` nie mamy obiektu `document` i aby wykonywać selektory na drzewie do
 
 Zrobiłem kiedyś ich porównanie pod względem wydajności:
 
-[Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio
-
-This part of the readme has been written 3,5 years ago. ba80a89 Is it still the case (especially regarding the 4.x serie of jsdom)?
-
-GitHub cheeriojs
-
-![](https://opengraph.githubassets.com/1cad19803f841f3c43f5ded49564813f7387da844013345c0f13caeea312cc46/cheeriojs/cheerio/issues/700)](https://github.com/cheeriojs/cheerio/issues/700)
+[Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio](https://github.com/cheeriojs/cheerio/issues/700)
 
 Wszystko wskazuje na to, że `cheerio` jest znacznie lepszym wyborem.
 

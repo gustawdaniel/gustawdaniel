@@ -27,7 +27,18 @@ The first line consists of 2 integers *N* and *M* denoting the size of the array
 Print a single integer denoting the index of the last occurrence of integer *M* in the array if it exists, otherwise print -1.
 
 **Constraints**
-$$1 \\le N \\le 10^5$$ $$1 \\le A\[i\] \\le 10^9$$ $$1 \\le M \\le 10^9$$
+
+$$
+1 \le N \le 10^5
+$$
+
+$$
+1 \le A[i] \le 10^9
+$$
+
+$$
+1 \le M \le 10^9
+$$
 
 
 **SAMPLE INPUT**

@@ -110,13 +110,7 @@ Najbardziej interesują nas parametry:
 * symbol
 * quotes\[0\].marketCap albo jego znormalizowana wersja quotes\[0\].dominance
 
-[Dominance | CoinMarketCap
-
-A measure of Bitcoin’s value in the context of the larger cryptocurrency market.
-
-![](https://assets-global.website-files.com/5f3306add5c511a054f17da5/5f3306add5c51111caf17f0c_Icon-App-256x256%403x.png)CoinMarketCap
-
-![](https://assets-global.website-files.com/5f3306add5c511a054f17da5/5f3306add5c5114bcef17ddf_icon-arrow-up.svg)](https://coinmarketcap.com/alexandria/glossary/dominance)
+[Dominance | CoinMarketCap](https://coinmarketcap.com/alexandria/glossary/dominance)
 
 Pobierzemy wszystkie dane o kryptowalutach i zapiszemy je w pliku. Przygotowujemy projekt:
 
@@ -126,11 +120,7 @@ npm init -y && tsc --init && npm i axios && npm i -D @types/node && mkdir -p src
 
 Rdzeń programu `getAltcoins.ts` możemy przenieść z naszego niedawnego wpisu:
 
-[Scraping najbardziej popularnych kont na twitterze
-
-Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
-
-![](http://localhost:8484/44ccfa64-eac4-4bf7-a306-a51b534b6395.avif)](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+[Scraping najbardziej popularnych kont na twitterze](./scraping-najbardziej-popularnych-kont-na-twitterze/)
 
 Czyli mniej więcej tak:
 
@@ -378,13 +368,7 @@ w katalogu `out/coins.json` dostajemy plik, który zamieściłem pod linkiem:
 
 Po wpisaniu frazy "english corpus" bardzo szybko trafiamy na stronę
 
-[English Corpora: most widely used online corpora. Billions of words of data: free online access
-
-Compare genres, dialects, time periods. Search by PoS, collocates, synonyms, and much more.
-
-![](https://www.english-corpora.org/favicon.ico)
-
-![](https://www.english-corpora.org/images/words.jpg)](https://www.english-corpora.org/)
+[English Corpora: most widely used online corpora. Billions of words of data: free online access](https://www.english-corpora.org/)
 
 Jest to scam. Zawiera informację, że jest darmowa i wystarczy zarejestrować konto
 
@@ -396,13 +380,7 @@ Pobranie z niego próbek prowadzi do tego, że mamy poszatkowane dane nie zdatne
 
 Na szczęście udało mi się pobrać wymagane dane ze strony o znacznie gorszym pozycjonowaniu, ale za to dużo bardziej wartościowej:
 
-[English Word Frequency
-
-\### Context: How frequently a word occurs in a language is an important piece of information for natural language processing and linguists. In natural language processing, very frequent words tend to be less informative than less frequent one and are often removed during preprocessing. Human langu…
-
-![](https://www.kaggle.com/static/images/favicon.ico)Kaggle
-
-![](https://storage.googleapis.com/kaggle-datasets-images/2367/3976/89827c5d6650a01f5bed5d768983f781/dataset-card.jpg)](https://www.kaggle.com/rtatman/english-word-frequency)
+[English Word Frequency](https://www.kaggle.com/rtatman/english-word-frequency)
 
 Tam też rejestracja jest wymagana, ale w zamian dostajemy dostęp do ciekawych danych, interesujących treści i fantastycznego kursu. Nawet jak tego nie potrzebujemy to po prostu dane mamy za darmo. Jest to 5MB plik csv z kolumnami zawierającymi słowo oraz ilość zliczeń.
 
@@ -460,13 +438,7 @@ wykonanie tego pliku zwróci nam częstości:
 
 z tego co wiem, to wykorzystanie systemowego grepa jest jedną z najbardziej wydajnych metod w tym konkretnym przypadku, ponieważ nie wymaga ładowania całego pliku do pamięci, pisania logiki wyszukiwania a jednocześnie pozwala zrzucić odpowiedzialność za optymalizację wyszukiwania na twórców `grep`. Sam nie robiłem takich eksperymentów, ale czytałem, że do 2-3 tysięcy linii można w node js wyszukać szybciej, bo nie tracimy czasu na włączanie osobnego procesu, ale przy większych plikach okazuje się, że optymalizacja grepa nadrabia opóźnienia związane z wykonywaniem komend przez `child_process`.
 
-[From node.js, which is faster, shell grep or fs.readFile?
-
-I have a long running node.js process and I need to scan a log file for a pattern. I have at least two obvious choices: spawn a grep process or read the file using fs.read\* and parse the buffer/str...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowMatt Simerson
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/28400727/from-node-js-which-is-faster-shell-grep-or-fs-readfile)
+[From node.js, which is faster, shell grep or fs.readFile?](https://stackoverflow.com/questions/28400727/from-node-js-which-is-faster-shell-grep-or-fs-readfile)
 
 ## Połączenie częstości z nazwami coinów
 

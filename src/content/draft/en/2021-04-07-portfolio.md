@@ -27,9 +27,7 @@ Precise Sale
 
 Omnisys
 
-[OMNISYS | System v3
-
-![](http://v3.omnisys.pl/favicon.ico)System v3](http://v3.omnisys.pl/)
+[OMNISYS | System v3](http://v3.omnisys.pl/)
 
 ![](https://preciselab.io/content/images/2021/04/79044650-88809e80-7c06-11ea-9409-a3bcb19b9953.png)
 
@@ -37,11 +35,7 @@ Omnisys
 
 Lotnicy
 
-[Flight Preselection
-
-Web application of test and pre-selection applying for the profession of pilot
-
-![](http://prepilots.pl/flight-24px.svg)Precise Lab Sp. z o.o. http://www.preciselab.io officepreciselab.io](http://prepilots.pl/)
+[Flight Preselection](http://prepilots.pl/)
 
 ![](https://preciselab.io/content/images/2021/04/Screenshot_4.png)
 

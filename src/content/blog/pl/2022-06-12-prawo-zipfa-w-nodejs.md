@@ -19,29 +19,25 @@ Innymi słowy występuje liniowa zależność o ujemnym współczynniku między 
 
 lub dzięki prostemu przekształceniu:
 
-\\\[ f \* r = const \\Leftrightarrow \\log(f \*r) = const \\Leftrightarrow \\log(f) = const - \\log(r) \\\]
+$$
+f * r = const \Leftrightarrow \log(f *r) = const \Leftrightarrow \log(f) = const - \log(r)
+$$
 
-[Zipf’s law - Wikipedia
-
-![](https://en.wikipedia.org/static/apple-touch/wikipedia.png)Wikimedia Foundation, Inc.Contributors to Wikimedia projects
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Zipf_distribution_PMF.png/1200px-Zipf_distribution_PMF.png)](https://en.wikipedia.org/wiki/Zipf%27s_law)
+[Zipf’s law - Wikipedia](https://en.wikipedia.org/wiki/Zipf%27s_law)
 
 Wiemy, że jest to prawdą i na Wikipedii można znaleźć wykresy wykonane na podstawie korpusów z wielu języków. My sprawdzamy to dla zabawy i z miłości do nauki.
 
-Teksty do wzięliśmy z Ukraińskiego prawodastwa, pół miliarda słów powinno wystarczyć.
+Teksty do wzięliśmy z Ukraińskiego prawodawstwa, pół miliarda słów powinno wystarczyć.
 
-[Corpora: lang-uk
+[Corpora: lang-uk](https://lang.org.ua/en/corpora/)
 
-![](http://lang.org.ua/static/images/converted/lang-uk-logo-big.png)](https://lang.org.ua/en/corpora/)
-
-Na stronie mamy wersję z tokenizacją czyli podziałem na słowa, i lemmatyzacja, która dodatkowo scala odmian słów zastępując je domyślną nie odmienioną formą. Więcej o tokenizacji i lemmatyzacji możecie przeczytać pod linkiem:
+Na stronie mamy wersję z tokenizacją, czyli podziałem na słowa, i lematyzacja, która dodatkowo scala odmian słów zastępując je domyślną nie odmienioną formą. Więcej o tokenizacji i lemmatyzacji możecie przeczytać pod linkiem:
 
 [https://medium.com/mlearning-ai/nlp-tokenization-stemming-lemmatization-and-part-of-speech-tagging-9088ac068768](https://medium.com/mlearning-ai/nlp-tokenization-stemming-lemmatization-and-part-of-speech-tagging-9088ac068768)
 
 ## Przygotowanie danych od analizy
 
-Dla nas wygodniejsza będzie lemmatyzacja, bo nie chcemy analizować treści, a jedynie statystyki tego słownictwa. Pobieramy plik
+Dla nas wygodniejsza będzie lematyzacja, bo nie chcemy analizować treści, a jedynie statystyki tego słownictwa. Pobieramy plik
 
 ```bash
 wget https://lang.org.ua/static/downloads/corpora/laws.txt.lemmatized.bz2
@@ -53,7 +49,7 @@ rozpakowujemy go:
 tar -xf laws.txt.lemmatized.bz2
 ```
 
-i przygotowujemy jego skrót aby móc testować aplikację na mniejszym pliku
+i przygotowujemy jego skrót, aby móc testować aplikację na mniejszym pliku
 
 ```
 head -n 200 laws.txt.lemmatized > laws.txt.lemmatized.head

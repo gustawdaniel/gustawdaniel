@@ -238,13 +238,7 @@ i generuje plik o wadze `5.1M`
 
 Repozytorium z kodem można znaleźć tutaj:
 
-[Processing tables with lawyers data (1b87854f) · Commits · gustawdaniel / lawyers-scraper
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/lawyers-scraper/-/commit/1b87854fd741d6bfc10f8c36c21b7390a3095260)
+[Processing tables with lawyers data (1b87854f) · Commits · gustawdaniel / lawyers-scraper](https://gitlab.com/gustawdaniel/lawyers-scraper/-/commit/1b87854fd741d6bfc10f8c36c21b7390a3095260)
 
 ## Pobranie podstron
 
@@ -379,15 +373,11 @@ const main = async () => {
 
 Poniżej widzimy fragment z wywołania tak przepisanego programu:
 
+![](http://localhost:8484/0cd60295-e8e0-49fb-aa4b-a6a81826293a.avif)
+
 Kod można sprawdzić w commicie:
 
-[Parallel scraping of profile pages (ca8895f1) · Commits · gustawdaniel / lawyers-scraper
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/lawyers-scraper/-/commit/ca8895f1d3474881269fbf3ef088a7ff03f9010f)
+[Parallel scraping of profile pages (ca8895f1) · Commits · gustawdaniel / lawyers-scraper](https://gitlab.com/gustawdaniel/lawyers-scraper/-/commit/ca8895f1d3474881269fbf3ef088a7ff03f9010f)
 
 ## Przetworzenie stron profilowych
 
@@ -603,6 +593,8 @@ W mongo charts możemy w chwilę wyklikać kilka wykresów, np wspomniany wcześ
 
 Interaktywny wykres dostępny do zagnieżdżenia jako `iframe` możemy zobaczyć poniżej.
 
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-oreyr/embed/charts?id=b1bd9eb7-ff8c-4cdd-8999-fb66d8c252e3&amp;theme=light"></iframe>
+
 Kolejny wykres przedstawia roczną liczbę wpisów do rejestru. Można się było spodziewać, że w danych pobieranych z internetu są błędy. Tak było i tym razem. Musieliśmy wyrzucić wszystkie wpisy pozbawione dat, z datami "0000-00-00" i jeden z datą "2019-00-01". za pomocą filtru
 
 ```json
@@ -631,11 +623,15 @@ Możemy zdefiniować wykres
 
 Podobnie przygotowujemy wykres ze średnią liczbą specjalizacji
 
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-oreyr/embed/charts?id=4b75fd41-8d05-422c-bae0-b642342842b4&amp;theme=light"></iframe>
+
 Za pomocą konfiguracji
 
 ![](http://localhost:8484/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
 
 możemy pokazać częstotliwość wybieranych specjalizacji
+
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-oreyr/embed/charts?id=9fe8232b-7a1d-444b-9ccb-05dd85743fae&amp;theme=light"></iframe>
 
 Na koniec załączam tabelę z danymi kontaktowymi. Nie zawiera ona wszystkich adwokatów, lecz jedynie tych mających poprawne numery telefonów, czyli spełniających warunek
 
@@ -643,12 +639,6 @@ Na koniec załączam tabelę z danymi kontaktowymi. Nie zawiera ona wszystkich a
 {phone: /^(\d|-)+$/}
 ```
 
+<iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-oreyr/embed/charts?id=69075db2-104d-45c4-ae3f-98ff90f5f9f0&amp;theme=light"></iframe>
+
 Mam nadzieję, że lektura tego wpisu rozszerzyła Twój arsenał narzędzi do scrapingu i wizualizacji danych. Jeśli chcesz porozmawiać o projektach z tego zakresu, myślisz o zamówieniu scrapingu lub po prostu chcesz wymienić się doświadczeniem zapraszam do kontaktu.
-
-[Daniel Gustaw
-
-Welcome to my scheduling page. Please follow the instructions to add an event to my calendar.
-
-![](https://assets.calendly.com/assets/touch-icon-ipad-retina-7a95e0c775301f4c0a22002bdf0a95d3c2b9cbe95af29c64f9c9573bac1f01e4.png)Calendly
-
-![](https://assets.calendly.com/assets/ogimage-a63bb2f442cd9e6345a5e4d7fe75393c6cfcc1ff29e48e858742d43573a8b02c.png?source&#x3D;opengraph)](https://calendly.com/gustaw-daniel)

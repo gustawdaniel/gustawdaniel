@@ -42,10 +42,4 @@ cat ~/.ssh/new_key.pub
 
 Świetny artykuł o kluczach znajdziemy tutaj:
 
-[GitLab and SSH keys | GitLab
-
-Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.
-
-![](https://docs.gitlab.com/assets/images/apple-touch-icon.png)GitLab Docs
-
-![](https://docs.gitlab.com/assets/images/gitlab-logo.svg)](https://docs.gitlab.com/ee/ssh/)
+[GitLab and SSH keys | GitLab](https://docs.gitlab.com/ee/ssh/)

@@ -2,14 +2,14 @@
 author: Daniel Gustaw
 canonicalName: scraping-wordpress-4300-wyrokow-sadow-w-sprawach-frankowych-bez-linii-kodu
 coverImage: http://localhost:8484/8a96e11b-a834-413b-a886-3b5eb059ba3e.avif
-date_updated: 2021-04-20 12:18:07+00:00
+date_updated: 2021-04-19 12:18:07+00:00
 description: Nie często się zdarza, żeby wykonanie usługi trwało której, niż jej wycenienie,
   ale przy scrapingu może się tak stać. Zobacz jak łatwe może być pobranie danych,
   szczególnie z Wordpressa.
 excerpt: Nie często się zdarza, żeby wykonanie usługi trwało której, niż jej wycenienie,
   ale przy scrapingu może się tak stać. Zobacz jak łatwe może być pobranie danych,
   szczególnie z Wordpressa.
-publishDate: 2021-04-20 12:14:43+00:00
+publishDate: 2021-04-19 12:14:43+00:00
 slug: pl/scraping-wordpressa
 tags:
 - wordpress
@@ -47,13 +47,7 @@ Są to wystarczające poszlaki, by sądzić, że dane do tabeli są ładowane z 
 
 Reszta usługi polegała już tylko na zaznaczeniu tych kilu tysięcy linii tekstu i zapisaniu ich w pliku `json`. Potencjalnie dla wygody końcowego odbiorcy konwersja do `csv` lub `xlsx`, na przykład na stronie
 
-[JSON to CSV - CSVJSON
-
-Online tool for converting JSON to CSV or TSV. Convert JSON to Excel.
-
-![](https://csvjson.com/img/favicon.ico)CSVJSON
-
-![](https://csvjson.com/img/logo-sponsor-flatfile.svg)](https://csvjson.com/json2csv)
+[JSON to CSV - CSVJSON](https://csvjson.com/json2csv)
 
 ![](http://localhost:8484/2ae82148-8458-4caa-bb30-2376d9db19d8.avif)
 

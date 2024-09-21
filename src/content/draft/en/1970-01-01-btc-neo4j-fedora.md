@@ -8,13 +8,7 @@ draft: true
 
 This article is heavily inspired by repository, but add some context for Fedora Linux and analyse chance of speedup data preparation.
 
-[GitHub - in3rsha/bitcoin-to-neo4j: Import the Bitcoin blockchain in to a Neo4j graph database.
-
-Import the Bitcoin blockchain in to a Neo4j graph database. - GitHub - in3rsha/bitcoin-to-neo4j: Import the Bitcoin blockchain in to a Neo4j graph database.
-
-![](https://github.com/fluidicon.png)GitHubin3rsha
-
-![](https://opengraph.githubassets.com/f9c733461e4a4160f29d0b3378a672d46fad2d238c35d0399ee26462d4aff62f/in3rsha/bitcoin-to-neo4j)](https://github.com/in3rsha/bitcoin-to-neo4j)
+[GitHub - in3rsha/bitcoin-to-neo4j: Import the Bitcoin blockchain in to a Neo4j graph database.](https://github.com/in3rsha/bitcoin-to-neo4j)
 
 ## Setup BTC node
 
@@ -46,13 +40,7 @@ Expected time of synchronization can be estimated as 1-5 days.
 
 Second step is installation of neo4j database.
 
-[Red Hat, CentOS, Fedora, and Amazon Linux distributions (.rpm) - Operations Manual
-
-How to deploy Neo4j using the Neo4j RPM package on Red Hat, CentOS, Fedora, or Amazon Linux distributions.
-
-![](https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico)Neo4j Graph Data Platform
-
-![](https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png)](https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/)
+[Red Hat, CentOS, Fedora, and Amazon Linux distributions (.rpm) - Operations Manual](https://neo4j.com/docs/operations-manual/current/installation/linux/rpm/)
 
 In my case there was java already installed
 
@@ -94,10 +82,4 @@ sudo service neo4j start
 
 Next step was installation neo4j desktop interface.
 
-[Neo4j Desktop User Interface Guide - Developer Guides
-
-This article demonstrates how to use the Neo4j Desktop GUI for managing instances of Neo4j locally for development.
-
-![](https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico)Neo4j Graph Data Platform
-
-![](https://dist.neo4j.com/wp-content/uploads/20210423062553/neo4j-social-share-21.png)](https://neo4j.com/developer/neo4j-desktop/)
+[Neo4j Desktop User Interface Guide - Developer Guides](https://neo4j.com/developer/neo4j-desktop/)

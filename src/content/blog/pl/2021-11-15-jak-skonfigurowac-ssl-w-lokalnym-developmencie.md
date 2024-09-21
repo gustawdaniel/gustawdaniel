@@ -27,11 +27,7 @@ Ustawienia `DNS` dla naszego komputera możemy sprawdzić w pliku `resolv.conf`
 cat /etc/resolv.conf
 ```
 
-[Domain name resolution - ArchWiki
-
-![](https://wiki.archlinux.org/favicon.ico)ArchWiki
-
-![](https://wiki.archlinux.org/images/3/38/Tango-view-fullscreen.png)](https://wiki.archlinux.org/index.php/Domain_name_resolution)
+[Domain name resolution - ArchWiki](https://wiki.archlinux.org/index.php/Domain_name_resolution)
 
 Nie zawsze jednak musimy pytać o IP serwerów `DNS`. Zapytania do zewnętrznych serwerów DNS możemy przesłonić naszymi wpisami w pliku `/etc/hosts`.
 
@@ -114,13 +110,7 @@ Tym razem działa on poprawnie.
 
 Dlaczego tak jest? Sam localhost stanowi tylko alias względem adresu `127.0.0.1`. Nasza domena `local.dev` też jest aliasem do `127.0.0.1` ale już nie do `localhost`. Ustawiając serwer komendą: `php -S 127.0.0.1:8000 index.php`, też uzyskaliśmy pożądany wynik. Chyba, że pracowali byśmy z adresacją ipv6, wtedy zamiast lub obok `127.0.0.1` w `/etc/hosts` ustawili byśmy `::1`. Jeśli temat różnic między `localhost` a `127.0.0.1` jest dla Ciebie nowy polecam Ci artykuł:
 
-[Difference between localhost and 127.0.0.1
-
-Lots of people would think what the address 127.0.0.1 is when first seeing this address. In fact, 127.0.0.1 is a loopback address which refers to the local machine. It is generally used for local test
-
-Pixelstech.net
-
-![](https://www.pixelstech.net/images/logo.png)](https://www.pixelstech.net/article/1538275121-Difference-between-localhost-and-127-0-0-1)
+[Difference between localhost and 127.0.0.1](https://www.pixelstech.net/article/1538275121-Difference-between-localhost-and-127-0-0-1)
 
 ## Instalacja Nginx
 
@@ -164,13 +154,7 @@ launchctl load /usr/local/Cellar/nginx/1.21.4/homebrew.mxcl.nginx.plist
 
 przy czym wersja w Twoim systemie może różnić się od tej podanej przeze mnie. Odpowiednikiem archowego `enable` jest opcjonalna flaga `-w`
 
-[Launchctl difference between load and start, unload and stop
-
-I was reading through the launchctl man page and have a few questions about its functioning: What is the difference between load and start, unload and stop?Where do I find the job label for a dae...
-
-![](https://cdn.sstatic.net/Sites/apple/Img/apple-touch-icon.png?v&#x3D;daa7ff1d953e)Ask DifferentJason Rubenstein
-
-![](https://cdn.sstatic.net/Sites/apple/Img/apple-touch-icon@2.png?v&#x3D;b514451ec60c)](https://apple.stackexchange.com/a/308421)
+[Launchctl difference between load and start, unload and stop](https://apple.stackexchange.com/a/308421)
 
 ## Przygotowanie certyfikatu self-signed
 
@@ -178,11 +162,7 @@ Aby móc posługiwać się certyfikatem SSL podczas lokalnego developmentu aplik
 
 Jego utworzenie opisano w dokumentacji archa:
 
-[nginx - ArchWiki
-
-![](https://wiki.archlinux.org/favicon.ico)ArchWiki
-
-![](https://wiki.archlinux.org/images/8/87/Tango-edit-clear.png)](https://wiki.archlinux.org/index.php/nginx)
+[nginx - ArchWiki](https://wiki.archlinux.org/index.php/nginx)
 
 Interesujące nas polecenia to:
 
@@ -247,13 +227,7 @@ lub na `Mac OS`
 sudo brew services restart nginx
 ```
 
-[How to restart Nginx on Mac OS X? | Newbedev
-
-Solution 1: sudo nginx -s stop && sudo nginx Solution 2: For a one-liner, you could just do: sudo nginx -s reload The -s options stands for signal, and is the o
-
-![](https://newbedev.com/android-icon-192x192.png)NewbeDEV
-
-![](https://newbedev.sfo3.digitaloceanspaces.com/wp-content/uploads/2021/11/12032228/BANNER-NEWBEDEV-15.png)](https://newbedev.com/how-to-restart-nginx-on-mac-os-x)
+[How to restart Nginx on Mac OS X? | Newbedev](https://newbedev.com/how-to-restart-nginx-on-mac-os-x)
 
 zobaczymy, że domyślna strona nginx jest dostępna pod `https`:
 
@@ -569,13 +543,7 @@ Czasami `https` jest wymagany przez takie mechanizmy jak:
 
 Auth0 w swojej dokumentacji rekomenduje wykorzystanie programu `caddy`.
 
-[HTTPS in Development
-
-Securing local development servers to work with samesite cookies
-
-![](https://cdn.auth0.com/website/new-homepage/dark-favicon.png)Auth0 DocsAuth0
-
-![](https://cdn2.auth0.com/docs/media/social-media/fb-card.png)](https://auth0.com/docs/libraries/secure-local-development#how-to-set-up-a-secure-local-server)
+[HTTPS in Development](https://auth0.com/docs/libraries/secure-local-development#how-to-set-up-a-secure-local-server)
 
 Jego instalacja to
 
@@ -619,38 +587,14 @@ I mamy następujący efekt:
 
 Czyli "caddy" to metoda na bardzo szybkie konfigurowanie lokalnego ssl ale z ograniczeniami. Ich dokumentacja wygląda obiecująco, ale można się spodziewać, że napotykając na błędy będziemy mieli znacznie mniejsze szanse na support od community, niż w przypadku samodzielnej konfiguracji zgodnie z krokami przedstawionymi w tym wpisie. Jeśli zaczniemy od Caddy bez rozumienia jak skonfigurować ssl samodzielnie, to szansa, że spotkane błędy zatrzymają nas na długi czas znacznie wzrośnie.
 
-[Getting Started - Caddy Documentation
-
-Caddy is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go
-
-![](https://caddyserver.com/resources/images/favicon.png)Caddy Web Server
-
-![](https://caddyserver.com/resources/images/caddy-open-graph.jpg)](https://caddyserver.com/docs/getting-started)
+[Getting Started - Caddy Documentation](https://caddyserver.com/docs/getting-started)
 
 #### Wartościowe linki pogłębiające temat SSL
 
 Przygotowując ten wpis korzystałem z wielu zewnętrznych źródeł. Najbardziej wartościowe jakie znalazłem są podlinkowane poniżej.
 
-[How to use a CA (like curl’s --cacert) with HTTPie
+[How to use a CA (like curl’s --cacert) with HTTPie](https://stackoverflow.com/questions/44443269/how-to-use-a-ca-like-curls-cacert-with-httpie/67326625#67326625)
 
-In curl I can connect with a private key, client cert, and a ca cert like this curl --cert cert.pem --key key.pem --cacert ca.pem https://example.org I can see the --cert and --cert-key options in
+[Setup (https) SSL on localhost for meteor development](https://stackoverflow.com/a/35867609/6398044)
 
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowAhmadster
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/44443269/how-to-use-a-ca-like-curls-cacert-with-httpie/67326625#67326625)
-
-[Setup (https) SSL on localhost for meteor development
-
-How do you create a self signed SSL certificate to use on local server on mac 10.9? I require my localhost serving as https://localhost I am using the linkedin API. The feature which requires the...
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowmeteorBuzz
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/a/35867609/6398044)
-
-[error 18 at 0 depth lookup: self signed certificate
-
-I was trying to test SSL connection between MySQL client and server. For that I created SSL certificate and keys by following the MySQL doc...
-
-![](http://markstutpnt.blogspot.com/favicon.ico)BloggerAbhishek G
-
-![](https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A&#x3D;w1200)](http://markstutpnt.blogspot.com/2019/01/error-18-at-0-depth-lookup-self-signed.html)
+[error 18 at 0 depth lookup: self signed certificate](http://markstutpnt.blogspot.com/2019/01/error-18-at-0-depth-lookup-self-signed.html)

@@ -133,13 +133,7 @@ MANHATTAN
 
 This exercise can be found on codingame.com
 
-[Coding Games and Programming Challenges to Code Better
-
-CodinGame is a challenge-based training platform for programmers where you can play with the hottest programming topics. Solve games, code AI bots, learn from your peers, have fun.
-
-![](https://static.codingame.com/assets/apple-touch-icon-152x152-precomposed.5cb052db.png)CodinGame
-
-![](https://files.codingame.com/codingame/codingame_share_pics.jpg)](https://www.codingame.com/ide/puzzle/ascii-art)
+[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/ide/puzzle/ascii-art)
 
 ## Solution in NodeJs
 
@@ -272,13 +266,7 @@ testInOut() {
 
 There is fragment `${file/in/"out"}` - it means that we replacing `in` by `out` in paths to files. Files in `cases` are starting from `in` or `out` having rest of names the same. You can check them in github repository:
 
-[asci-art-rust-node-js/cases at main · gustawdaniel/asci-art-rust-node-js
-
-Contribute to gustawdaniel/asci-art-rust-node-js development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/eab81b748e6df897c8f1f504304f64535b3fe2515345883fefb716d3ffe7889d/gustawdaniel/asci-art-rust-node-js)](https://github.com/gustawdaniel/asci-art-rust-node-js/tree/main/cases)
+[asci-art-rust-node-js/cases at main · gustawdaniel/asci-art-rust-node-js](https://opengraph.githubassets.com/eab81b748e6df897c8f1f504304f64535b3fe2515345883fefb716d3ffe7889d/gustawdaniel/asci-art-rust-node-js)](https://github.com/gustawdaniel/asci-art-rust-node-js/tree/main/cases)
 
 Node workflow is the following
 

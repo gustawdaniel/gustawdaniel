@@ -2,12 +2,12 @@
 author: Daniel Gustaw
 canonicalName: wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 coverImage: http://localhost:8484/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
-date_updated: 2021-04-20 18:45:26+00:00
+date_updated: 2021-04-21 18:45:26+00:00
 description: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można
   wygodnie wydobyć dane z plików PDF.
 excerpt: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie
   wydobyć dane z plików PDF.
-publishDate: 2021-04-20 18:45:26+00:00
+publishDate: 2021-04-21 18:45:26+00:00
 slug: pl/wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 tags:
 - pdf
@@ -261,16 +261,6 @@ ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\
 ![](http://localhost:8484/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
 
 Podsumowując. Nie napracowaliśmy się tutaj za bardzo ale właśnie to było celem. Pokazanie jak jedną linią kodu można posumować ceny lub wyrysować wykres z danych, które pozornie są niedostępne, bo ich format nie jest tak oczywisty jak w przypadku uporządkowanych danych zapisanych w bazie o dobrze określonej strukturze.
-
-Jeśli jesteś przedsiębiorcą i zainteresował Cię temat automatyzacji przetwarzania dokumentów umów się ze mną na darmową konsultację korzystając z linku
-
-[Daniel Gustaw
-
-Welcome to my scheduling page. Please follow the instructions to add an event to my calendar.
-
-![](https://assets.calendly.com/assets/touch-icon-ipad-retina-7a95e0c775301f4c0a22002bdf0a95d3c2b9cbe95af29c64f9c9573bac1f01e4.png)Calendly
-
-![](https://assets.calendly.com/assets/ogimage-a63bb2f442cd9e6345a5e4d7fe75393c6cfcc1ff29e48e858742d43573a8b02c.png?source&#x3D;opengraph)](https://calendly.com/gustaw-daniel)
 
 Jeśli chcesz poszerzyć swoją wiedzę i zapoznać się z narzędziami z których korzystaliśmy linki do nich znajdziesz poniżej:
 

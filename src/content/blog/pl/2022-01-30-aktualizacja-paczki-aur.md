@@ -17,11 +17,7 @@ Znalazłem w repozytorium aur paczkę, która nie jest regularnie aktualizowana.
 
 Po założeniu konta na stronie
 
-[AUR (en) - Home
-
-![](https://aur.archlinux.org/images/favicon.ico)Home
-
-![](https://aur.archlinux.org/images/rss.svg)](https://aur.archlinux.org/)
+[AUR (en) - Home](https://aur.archlinux.org/)
 
 przejdź do zakładki "moje konto" i uzupełnij "Klucz publiczny SSH"
 
@@ -31,11 +27,7 @@ przejdź do zakładki "moje konto" i uzupełnij "Klucz publiczny SSH"
 
 W naszym przypadku aktualizujemy `infinitywallet`.
 
-[AUR (en) - infinitywallet
-
-Digital asset wallet
-
-![](https://aur.archlinux.org/images/favicon.ico)infinitywallet](https://aur.archlinux.org/packages/infinitywallet/)
+[AUR (en) - infinitywallet](https://aur.archlinux.org/packages/infinitywallet/)
 
 Pobieramy repozytorium komendą
 
@@ -82,13 +74,7 @@ mamy informację o źródle. Jest to wersja z Ubuntu/Debiana o numerze 1.2.1.
 
 Tym czasem pod linkiem z wydaniami z Githuba mamy wersję 1.4.0
 
-[Releases · InfinityWallet/Releases
-
-The official Infinity Wallet releases for desktop. Contribute to InfinityWallet/Releases development by creating an account on GitHub.
-
-![](https://github.githubassets.com/favicons/favicon.svg)GitHubInfinityWallet
-
-![](https://opengraph.githubassets.com/35c9d7d692036ba82a86d7902eb4aa0e971f98303fbf7e3d573a97a339c532b2/InfinityWallet/Releases)](https://github.com/InfinityWallet/Releases/releases)
+[Releases · InfinityWallet/Releases](https://github.com/InfinityWallet/Releases/releases)
 
 ![](http://localhost:8484/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
 

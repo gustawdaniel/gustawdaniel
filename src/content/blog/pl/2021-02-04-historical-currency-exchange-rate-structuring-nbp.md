@@ -320,13 +320,7 @@ I jest to świetny wynik, ponieważ dokładnie takie wartości mieliśmy wydoby�
 
 Cały kod `app.ts` na tym etapie można znaleźć pod linkiem:
 
-[app.ts · ccd18f1f1f96ad13fad8157101f7632c4c1df73b · gustawdaniel / nbp
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/nbp/-/blob/ccd18f1f1f96ad13fad8157101f7632c4c1df73b/app.ts)
+[app.ts · ccd18f1f1f96ad13fad8157101f7632c4c1df73b · gustawdaniel / nbp](https://gitlab.com/gustawdaniel/nbp/-/blob/ccd18f1f1f96ad13fad8157101f7632c4c1df73b/app.ts)
 
 ## Przetworzenie wartości
 
@@ -391,13 +385,7 @@ Test poprawnej struktury danych mógł by wyglądać tak:
 
 Cały kod można przejrzeć tutaj:
 
-[app.ts · 9d401a925bc9e115dfaf9efe6528484f62cf2263 · gustawdaniel / nbp
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/nbp/-/blob/9d401a925bc9e115dfaf9efe6528484f62cf2263/app.ts)
+[app.ts · 9d401a925bc9e115dfaf9efe6528484f62cf2263 · gustawdaniel / nbp](https://gitlab.com/gustawdaniel/nbp/-/blob/9d401a925bc9e115dfaf9efe6528484f62cf2263/app.ts)
 
 Tu artykuł by mógł kończyć się połączeniem plików jedną funkcją i prezentacją ostatecznego wyniku...
 
@@ -561,11 +549,7 @@ Jednak dotyczy ona waluty `ECU` więc najrozsądniej jest pominąć tą linię z
 
 Cały kod z tego etapu znajduje się pod linkiem:
 
-[app.ts · 845527b631054744329b53293bfbf6705956b361 · gustawdaniel / nbp
-
-
-
-[GitLab.com](https://gitlab.com/gustawdaniel/nbp/-/blob/845527b631054744329b53293bfbf6705956b361/app.ts)
+[app.ts · 845527b631054744329b53293bfbf6705956b361 · gustawdaniel / nbp](https://gitlab.com/gustawdaniel/nbp/-/blob/845527b631054744329b53293bfbf6705956b361/app.ts)
 
 Jednak jego wykonanie wciąż powoduje błędy
 
@@ -628,9 +612,7 @@ Po wprowadzeniu tych poprawek możemy zobaczyć wymaganą strukturę dla kolejny
 
 Link do zmiany w kodzie
 
-[Dropped junk lines (fd13a96c) · Commits · gustawdaniel / nbp
-
-[GitLab.com](https://gitlab.com/gustawdaniel/nbp/-/commit/fd13a96ceb1effe2471445a1e954600fb51c56af)
+[Dropped junk lines (fd13a96c) · Commits · gustawdaniel / nbp](https://gitlab.com/gustawdaniel/nbp/-/commit/fd13a96ceb1effe2471445a1e954600fb51c56af)
 
 Wystarczy jednak przetworzyć kilka kolejnych plików, aby wrócić do punktu wyjścia, zobaczyć
 
@@ -1189,13 +1171,7 @@ Ponowne wygenerowanie danych pozwala zobaczyć wykres
 
 Aby wykonać deployment użyjemy serwisu Netlify.
 
-[Kurs CHF w PLN
-
-Wykres kursu Polskiej złotówki wzglęm Franka Szwajcarskiego. Od 1995 są PLN, wcześniej były PLZ.
-
-Precise LabDaniel Gustaw
-
-![](https://blog.gustawdaniel.com/content/images/size/w1000/2021/02/Screenshot-from-2021-02-04-04-56-56.png)](https://chf-pln.netlify.app/)
+[Kurs CHF w PLN](https://chf-pln.netlify.app/)
 
 W tym celu dołączamy `parcel` do zależności deweloperskich projektu:
 

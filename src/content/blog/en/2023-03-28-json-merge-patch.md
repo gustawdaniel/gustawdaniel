@@ -352,13 +352,7 @@ We used the `serde_json` crate to work with JSON data in Rust. You can find more
 
 The complete source code for this implementation, including tests, is available on GitHub:
 
-[GitHub - gustawdaniel/json-merge-patch: Rust implementation of RFC 7396 - JSON Merge Patch
-
-Rust implementation of RFC 7396 - JSON Merge Patch - GitHub - gustawdaniel/json-merge-patch: Rust implementation of RFC 7396 - JSON Merge Patch
-
-![](https://github.com/fluidicon.png)GitHubgustawdaniel
-
-![](https://opengraph.githubassets.com/c34b4e8cb98eeb7a9a0e63c0affcb870059934bbf93121f05f370c5b89e57e83/gustawdaniel/json-merge-patch)](https://github.com/gustawdaniel/json-merge-patch)
+[GitHub - gustawdaniel/json-merge-patch: Rust implementation of RFC 7396 - JSON Merge Patch](https://github.com/gustawdaniel/json-merge-patch)
 
 Feel free to explore, contribute, or use it as a starting point for your own projects.
 

@@ -322,25 +322,13 @@ Dane są dostępne do pobrania pod linkiem:
 
 Kod programu w tej wersji znajdziecie w repozytorium
 
-[app.ts · 0e96ff56b983c86d0b2bb50dcd7760063a16681c · gustawdaniel / money-pl-scraper
-
-GitLab.com
-
-![](https://assets.gitlab-static.net/assets/touch-icon-ipad-retina-8ebe416f5313483d9c1bc772b5bbe03ecad52a54eba443e5215a22caed2a16a2.png)GitLab
-
-![](https://assets.gitlab-static.net/assets/gitlab_logo-7ae504fe4f68fdebb3c2034e36621930cd36ea87924c11ff65dbcb8ed50dca58.png)](https://gitlab.com/gustawdaniel/money-pl-scraper/-/blob/0e96ff56b983c86d0b2bb50dcd7760063a16681c/app.ts)
+[app.ts · 0e96ff56b983c86d0b2bb50dcd7760063a16681c · gustawdaniel / money-pl-scraper](https://gitlab.com/gustawdaniel/money-pl-scraper/-/blob/0e96ff56b983c86d0b2bb50dcd7760063a16681c/app.ts)
 
 ## Cheerio vs JSDOM
 
 Jakiś czas po napisaniu tego artykułu spotkałem się z problemem wysokiego zużycia pamięci w JSDOM. Potwierdziłem to eksperymentalnie w issue:
 
-[Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio
-
-This part of the readme has been written 3,5 years ago. ba80a89 Is it still the case (especially regarding the 4.x serie of jsdom)?
-
-GitHub cheeriojs
-
-![](https://avatars.githubusercontent.com/u/7230330?s&#x3D;400&v&#x3D;4)](https://github.com/cheeriojs/cheerio/issues/700)
+[Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio](https://github.com/cheeriojs/cheerio/issues/700)
 
 Teraz pokażę jak przepisać ten kod na `cheerio` oraz jak podniesie się jego wydajność
 
@@ -377,10 +365,6 @@ ts-node app.ts  29.53s user 1.21s system 141% cpu 21.729 total
 Pełny DIFF jest dostępny pod linkiem:
 
 [JSDOM replaced by Cheerio (3.4) times faster (4cff4a83) · Commits · gustawdaniel / money-pl-scraper](https://gitlab.com/gustawdaniel/money-pl-scraper/-/commit/4cff4a835589976ca26a7852f67dd42f2c4f2525)
-
-Jeśli chcesz porozmawiać o scrapingu w ramach bezpłatnej, nie zobowiązującej konsultacji, zapraszam Cię na mój Calendy.
-
-[Daniel Gustaw Calendly](https://calendly.com/gustaw-daniel)
 
 Warto przeczytać też
 

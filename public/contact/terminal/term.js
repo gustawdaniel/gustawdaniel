@@ -192,11 +192,11 @@ function js_term_write(str) {
                 } else {
                     console.error("UNIMPLEMENTED ANSI CODE DIRECTION", result.direction);
                 }
-            } else if (result.type == ESCAPE_ENUM.CLEAR) {
+            } else if (result.type === ESCAPE_ENUM.CLEAR) {
                 js_term_clear();
-            } else if (result.type == ESCAPE_ENUM.CLEAR_LINE) {
+            } else if (result.type === ESCAPE_ENUM.CLEAR_LINE) {
                 current_line().replaceChildren();
-            } else if (result.type == ESCAPE_ENUM.CLEAR_TO_END) {
+            } else if (result.type === ESCAPE_ENUM.CLEAR_TO_END) {
                 move_cursor(cursorx, cursory);
                 const line = cursor.parentElement;
                 let element = cursor.nextSibling;
@@ -205,18 +205,18 @@ function js_term_write(str) {
                     element = element.nextSibling;
                     line.removeChild(temp);
                 }
-            } else if (result.type == ESCAPE_ENUM.ABS_POS) {
+            } else if (result.type === ESCAPE_ENUM.ABS_POS) {
                 cursory = result.row;
                 cursorx = result.column;
-            } else if (result.type == ESCAPE_ENUM.POP_TOP) {
+            } else if (result.type === ESCAPE_ENUM.POP_TOP) {
                 hidey_hole.appendChild(cursor)
                 terminal.removeChild(terminal.firstChild);
                 move_cursor(cursorx, cursory);
-            } else if (result.type == ESCAPE_ENUM.POP_BOTTOM) {
+            } else if (result.type === ESCAPE_ENUM.POP_BOTTOM) {
                 hidey_hole.appendChild(cursor)
                 terminal.removeChild(terminal.lastChild);
                 move_cursor(cursorx, cursory);
-            } else if (result.type == ESCAPE_ENUM.PUSH_TOP) {
+            } else if (result.type === ESCAPE_ENUM.PUSH_TOP) {
                 terminal.insertBefore(document.createElement("div"), terminal.firstChild);
             } else {
                 console.error("UNIMPLEMENTED ANSI CODE", result);
@@ -240,7 +240,7 @@ function current_line() {
         line = line_from_top(cursory);
     }
 
-    if (line == null) {
+    if (line === null) {
         throw new Error("NULL LINE");
     }
 
@@ -282,7 +282,7 @@ function write_to_line(line, str) {
 
     for (let i = 0; i < str.length; i++) {
         const c = str[i];
-        if (c == '\n') {
+        if (c === '\n') {
             let new_line;
             if (cursory === null) {
                 new_line = document.createElement("div");
@@ -295,7 +295,7 @@ function write_to_line(line, str) {
             write_to_line(new_line, str.substr(i + 1));
             return;
         }
-        if (c == '\b') {
+        if (c === '\b') {
             if (cursorx > 0) {
                 cursorx -= 1;
             }

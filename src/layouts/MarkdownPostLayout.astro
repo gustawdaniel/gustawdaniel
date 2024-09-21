@@ -65,12 +65,11 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
 
         </section>
 
-        <aside class="my-20 prose lg:prose-xl m-auto">
-
-            <EditPageButton id={`post/${id}`}/>
-        </aside>
-
         <aside class="my-20 ">
+            <div class="mb-5 prose lg:prose-xl m-auto">
+            <EditPageButton id={`blog/${id}`}/>
+            </div>
+
             <CommentsSection/>
         </aside>
 

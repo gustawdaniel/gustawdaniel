@@ -103,15 +103,7 @@ process.stdout.write(JSON.stringify(getDiff(base, comp)))
 Ten program nie obsługuje tablic. W przypadku plików z tłumaczeniami nie są potrzebne. Jeśli chcesz poczytać o bardziej
 zaawansowanych metodach porównywania plików JSON. Dobrym punktem startu jest wątek na stack overflow.
 
-[Using jq or alternative command line tools to compare JSON files
-
-Are there any command line utilities that can be used to find if two JSON files are identical with invariance to
-within-dictionary-key and within-list-element ordering? Could this be done with jq or
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v&#x3D;c78bd457575a)Stack OverflowAmelio
-Vazquez-Reina
-
-![](https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v&#x3D;73d79a89bded)](https://stackoverflow.com/questions/31930041/using-jq-or-alternative-command-line-tools-to-compare-json-files)
+[Using jq or alternative command line tools to compare JSON files](https://stackoverflow.com/questions/31930041/using-jq-or-alternative-command-line-tools-to-compare-json-files)
 
 Zobaczmy teraz, jak program działa w praktyce. Na plikach z tłumaczeniami. Pierwszy plik jest przygotowany ręcznie i
 pokrywa wszystkie tłumaczenia w aplikacji `en_old.json`, drugi jest wygenerowany przez `i18next` nazywa się `en.json`.
@@ -183,8 +175,4 @@ Jeśli chcesz wymienić doświadczenia, związane z automatyzacją pracy z tłum
 dowiem się jakich narzędzi używacie i czy też czasami piszecie własne pomocnicze skrypty czy polecacie jakiś zestaw
 narzędzi jak
 
-[Introduction
-
-![](https://gblobscdn.gitbook.com/spaces%2F-L9iS6Wm2hynS5H9Gj7j%2Favatar.png?alt&#x3D;media)i18next documentation
-
-![](https://app.gitbook.com/share/space/thumbnail/-L9iS6Wm2hynS5H9Gj7j.png)](https://www.i18next.com/)
+[Introduction](https://www.i18next.com/)

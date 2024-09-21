@@ -12,13 +12,7 @@ draft: true
 npm install -D prisma typescript ts-node @types/node jest ts-jest @types/jest
 ```
 
-[Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.
-
-A new tool that blends your everyday work apps into one. It’s the all-in-one workspace for you and your team
-
-![](https://www.notion.so/images/logo-ios.png)Notion
-
-![](https://www.notion.so/images/meta/default.png)](https://www.notion.so/Getting-Started-with-MongoDB-and-Prisma-58b41c67eb554787944c600d2239801f)
+[Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.](https://www.notion.so/Getting-Started-with-MongoDB-and-Prisma-58b41c67eb554787944c600d2239801f)
 
 [https://www.notion.so/Getting-Started-with-MongoDB-and-Prisma-58b41c67eb554787944c600d2239801f](https://www.notion.so/Getting-Started-with-MongoDB-and-Prisma-58b41c67eb554787944c600d2239801f)
 

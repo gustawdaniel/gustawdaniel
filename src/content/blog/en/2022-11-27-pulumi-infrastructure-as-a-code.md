@@ -2,12 +2,12 @@
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
 coverImage: http://localhost:8484/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
-date_updated: 2022-11-28 12:53:23+00:00
+date_updated: 2022-11-27 12:53:23+00:00
 description: With Pulumi you can define your it infrastructure in your file described
   by your favourite programming language. This article shows how to do it.
 excerpt: With Pulumi you can define your it infrastructure in your file described
   by your favourite programming language. This article shows how to do it.
-publishDate: 2022-11-28 12:52:11+00:00
+publishDate: 2022-11-27 12:52:11+00:00
 slug: en/pulumi-infrastructure-as-a-code
 tags:
 - pulumi
@@ -78,13 +78,7 @@ resource "aws_instance" "web" {
 
 We will not focus on any line of this code. If you are interesed in this and know polish language I wrote article about terraform here:
 
-[Infrastrukura defniowana przez kod (terraform + digital ocean)
-
-W scrapingu ważnym czynnikiem jest skala do jakiej możemy rozszerzyć tempopobierania i przetwarzania danych. Kiedy kilka lat temu pisałem swój pierwszysystem, który równolegle zbierał dane używając kilkunastu serwerów, każdy z tychserwerów był przeze mnie “wyklikany” w panelu dostawcy. Teraz pok…
-
-![](https://gustawdaniel.com/favicon.ico)Daniel GustawDaniel Gustaw
-
-![](https://gustawdaniel.com/content/images/2021/04/image6-1.png)](https://gustawdaniel.com/infrastrukura-defniowana-jako-kod/)
+[Infrastrukura defniowana przez kod (terraform + digital ocean)](https://gustawdaniel.com/infrastrukura-defniowana-jako-kod/)
 
 Now we will focus on competitor of Terraform. Lets discuss pulumi.
 

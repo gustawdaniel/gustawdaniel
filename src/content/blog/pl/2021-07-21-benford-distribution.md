@@ -57,11 +57,7 @@ Jest to ponad 100 stronnicowa publikacja bardzo obszernie omawiająca temat i po
 
 Przykłady rozkładów spełniających prawo Benforda mamy w przejrzysty sposób pokazane pod linkiem:
 
-[Testing Benford’s Law
-
-An experiment to test Benford’s Law against large, publicly available datasets.
-
-Jason Long (jasonlong) and Bryce Thornton (@brycethornton)](https://testingbenfordslaw.com/)
+[Testing Benford’s Law](https://testingbenfordslaw.com/)
 
 Intuicyjnym powodem wyższej reprezentacji niższych cyfr jest wyższe prawdopodobieństwo wystąpienia wielu mniejszych wartości, które nakładając się na skokowo zmienną gęstość cyfr wraz ze wzrostem rzędu wielkości powoduje przesunięcie w stronę wyższej reprezentacji niższych cyfr na pierwszych pozycjach.
 
@@ -111,11 +107,7 @@ gdzie
 
 Jego własności opisane są w Math World.
 
-[Fibonacci Number -- from Wolfram MathWorld
-
-from Wolfram MathWorldEric Weisstein
-
-![](https://mathworld.wolfram.com/images/topbar/logo.png)](https://mathworld.wolfram.com/FibonacciNumber.html)
+[Fibonacci Number -- from Wolfram MathWorld](https://mathworld.wolfram.com/FibonacciNumber.html)
 
 Jego początkowe wartości to:
 
@@ -129,11 +121,7 @@ Jest to ciąg, którego występowanie możemy często obserwować w przyrodzie: 
 
 Stosunki kolejnych wartości ciągu dążą do złotej proporcji. Dowód wynika wprost z definicji.
 
-[Golden Ratio -- from Wolfram MathWorld
-
-from Wolfram MathWorldEric Weisstein
-
-![](https://mathworld.wolfram.com/images/topbar/logo.png)](https://mathworld.wolfram.com/GoldenRatio.html)
+[Golden Ratio -- from Wolfram MathWorld](https://mathworld.wolfram.com/GoldenRatio.html)
 
 Pierwiastki ciągu Fibonacciego również zbiegają do stałego stosunku ze wzrostem `n`, a sam ciąg bardzo szybko zaczyna rosnąć tak szybko, rozciąga się na wiele rzędów wielkości.
 
@@ -212,9 +200,7 @@ Projekty w `Rust` rozpoczynamy poleceniem
 cargo new benford
 ```
 
-[First Steps with Cargo - The Cargo Book
-
-![](https://doc.rust-lang.org/cargo/favicon.png)The Cargo Book](https://doc.rust-lang.org/cargo/getting-started/first-steps.html)
+[First Steps with Cargo - The Cargo Book](https://doc.rust-lang.org/cargo/getting-started/first-steps.html)
 
 w katalogu `benford` powstaje plik `Cargo.toml` o zawartości
 
