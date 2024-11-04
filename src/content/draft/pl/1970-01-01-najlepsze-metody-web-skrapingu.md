@@ -2,7 +2,7 @@
 title: Najlepsze metody web-scrapingu
 slug: najlepsze-metody-web-skrapingu
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-09T19:48:53.000Z
+updateDate: 2021-04-09T19:48:53.000Z
 draft: true
 ---
 

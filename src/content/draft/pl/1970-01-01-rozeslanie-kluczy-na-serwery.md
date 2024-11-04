@@ -2,7 +2,7 @@
 title: Rozesłanie kluczy na serwery
 slug: rozeslanie-kluczy-na-serwery
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-29T12:06:59.000Z
+updateDate: 2021-04-29T12:06:59.000Z
 draft: true
 ---
 

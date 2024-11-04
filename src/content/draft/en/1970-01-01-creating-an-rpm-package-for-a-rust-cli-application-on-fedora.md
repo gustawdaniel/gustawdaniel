@@ -2,7 +2,7 @@
 title: Creating an RPM Package for a Rust CLI Application on Fedora
 slug: creating-an-rpm-package-for-a-rust-cli-application-on-fedora
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2023-03-21T12:34:48.000Z
+updateDate: 2023-03-21T12:34:48.000Z
 draft: true
 ---
 

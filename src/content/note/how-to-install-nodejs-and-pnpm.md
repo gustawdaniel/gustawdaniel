@@ -5,6 +5,12 @@ publishDate: 2024-08-08
 Install nvm
 
 ```bash
+yay -S nvm
+```
+
+or install from source
+
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
 

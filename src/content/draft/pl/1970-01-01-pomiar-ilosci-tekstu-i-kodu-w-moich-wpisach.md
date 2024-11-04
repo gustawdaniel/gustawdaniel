@@ -2,7 +2,7 @@
 title: Pomiar ilości tekstu i kodu w moich wpisach
 slug: pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:35:08.000Z
+updateDate: 2021-04-20T20:35:08.000Z
 draft: true
 ---
 

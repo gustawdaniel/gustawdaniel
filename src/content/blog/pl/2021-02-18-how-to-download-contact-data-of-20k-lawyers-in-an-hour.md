@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine
 coverImage: http://localhost:8484/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
-date_updated: 2021-02-17 20:59:14+00:00
+updateDate: 2021-02-17 20:59:14+00:00
 description: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć
   pobieranie danych.
 excerpt: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć

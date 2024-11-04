@@ -2,7 +2,7 @@
 title: Performance of SQLite, Redis and Text search in Rust
 slug: performance-of-sqlite-redis-and-text-search-in-rust
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2022-12-15T17:06:59.000Z
+updateDate: 2022-12-15T17:06:59.000Z
 draft: true
 ---
 

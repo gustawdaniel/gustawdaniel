@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: wplyw-indeksacji-na-wydajnosc-wyszukiwania-w-bazie-mysql
 coverImage: http://localhost:8484/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
-date_updated: 2021-06-27 17:40:00+00:00
+updateDate: 2021-06-27 17:40:00+00:00
 description: Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkość tabel
   spowalniając modyfikacje. Artykuł pokazuje jak profilować zapytania i mierzyć wpływ
   indeksów na wydajność wyszukiwania.

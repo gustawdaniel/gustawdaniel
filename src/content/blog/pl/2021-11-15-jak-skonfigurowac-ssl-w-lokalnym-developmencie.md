@@ -4,7 +4,7 @@ title: Jak skonfigurować SSL w lokalnym developmencie
 canonicalName: jak-skonfigurowac-ssl-w-lokalnym-developmencie
 slug: pl/jak-skonfigurowac-ssl-w-lokalnym-developmencie
 publishDate: 2021-11-15T16:47:42.000Z
-date_updated: 2021-11-15T16:47:42.000Z
+updateDate: 2021-11-15T16:47:42.000Z
 tags: ['ssl', 'https', 'security']
 description: Ustawienie połączenia https na domenie localhost może być wyzwaniem jeśli robimy to pierwszy raz. Ten wpis jest bardzo szczegółowym tutorialem ze wszystkimi komendami i screenshotami.
 excerpt: Ustawienie połączenia https na domenie localhost może być wyzwaniem jeśli robimy to pierwszy raz. Ten wpis jest bardzo szczegółowym tutorialem ze wszystkimi komendami i screenshotami.

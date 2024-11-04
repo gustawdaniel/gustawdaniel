@@ -15,8 +15,8 @@ const currentPath = stripLang(Astro.url.pathname).replace(/\/$/, '') || '/';
 
 <a href={getRelativeLocaleUrl(locale, path)}
    class:list={['inline-flex items-center rounded-md px-3 py-2 text-sm font-medium',
-    {
-        'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white': currentPath === path,
-        'text-gray-900 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white': currentPath !== path
-    }]}
-   aria-current="page">{name}</a>
+       {
+           'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white': currentPath === path,
+           'text-gray-900 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white': currentPath !== path
+       }]}
+   {...(currentPath === path ? { 'aria-current': 'page' } : {})}>{name}</a>

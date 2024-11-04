@@ -2,7 +2,7 @@
 title: The best web-scrapping methods
 slug: the-best-web-scrapping-methods
 publishDate: 2021-04-29T22:45:55.000Z
-date_updated: 2021-04-29T22:46:02.000Z
+updateDate: 2021-04-29T22:46:02.000Z
 draft: true
 excerpt: web scraping methods with these pros and cons
 ---

@@ -2,7 +2,7 @@
 title: Snake game in JavaScript (part 3 - Vue)
 slug: snake-game-in-javascript-part-3-vue
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:48:16.000Z
+updateDate: 2021-04-20T20:48:16.000Z
 tags: ['js', 'game', 'snake']
 draft: true
 ---

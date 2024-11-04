@@ -2,7 +2,7 @@
 title: Apollo Server w Node JS + Mongo DB + Prisma
 slug: jak-napisac-backend-w-apollo
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-07-03T17:36:42.000Z
+updateDate: 2021-07-03T17:36:42.000Z
 draft: true
 ---
 

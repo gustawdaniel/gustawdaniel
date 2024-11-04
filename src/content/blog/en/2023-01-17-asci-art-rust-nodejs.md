@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: codingame-asci-art-rust-nodejs-strings-arrays-loops
 coverImage: http://localhost:8484/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
-date_updated: 2023-01-17 18:31:50+00:00
+updateDate: 2023-01-17 18:31:50+00:00
 description: Solving this puzzle teaches how to manage strings and array arithmetics.
   You'll know how to split a string into separate parts and concatenate them into
   a new one. You can use indexes of arrays

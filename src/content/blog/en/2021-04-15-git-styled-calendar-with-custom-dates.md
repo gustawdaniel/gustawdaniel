@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
 coverImage: http://localhost:8484/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
-date_updated: 2021-04-20 19:28:39+00:00
+updateDate: 2021-04-20 19:28:39+00:00
 description: git styled calendar created from list of dates saved as csv file
 excerpt: git styled calendar created from list of dates saved as csv file
 publishDate: 2021-04-20 19:28:40+00:00

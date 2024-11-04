@@ -2,7 +2,7 @@
 title: Snake game in JavaScript (part 1 - objects)
 slug: snake-game-in-javascript-part-1-objects
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:43:51.000Z
+updateDate: 2021-04-20T20:43:51.000Z
 tags: ['json', 'game', 'snake']
 draft: true
 ---

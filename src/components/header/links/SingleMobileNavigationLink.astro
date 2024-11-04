@@ -1,0 +1,25 @@
+---
+import {stripLang} from "../../../helpers/i18n/stripLang";
+const locale = Astro.currentLocale ?? 'en';
+import {getRelativeLocaleUrl} from 'astro:i18n';
+
+interface Props {
+    name: string;
+    path: string;
+}
+
+const {name, path} = Astro.props;
+
+const currentPath = stripLang(Astro.url.pathname).replace(/\/$/, '') || '/';
+---
+
+<a href={getRelativeLocaleUrl(locale, path)}
+   class:list={[
+       'block rounded-md px-3 py-2 text-base font-medium',
+       {
+           'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white': currentPath === path,
+           'text-gray-900 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white': currentPath !== path
+       }
+   ]}
+   {...(currentPath === path ? { 'aria-current': 'page' } : {})}
+>{name}</a>

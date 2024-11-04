@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: quicksort-implementation-in-rust-typescript-and-go
 coverImage: http://localhost:8484/7b891521-d7d2-4d7b-8cf7-ec59c58053a1.avif
-date_updated: 2023-02-21 03:51:40+00:00
+updateDate: 2023-02-21 03:51:40+00:00
 description: Master QuickSort with our in-depth guide and implementation examples
   in three popular programming languages, and sort large datasets quickly and efficiently.
 excerpt: Master QuickSort with our in-depth guide and implementation examples in three

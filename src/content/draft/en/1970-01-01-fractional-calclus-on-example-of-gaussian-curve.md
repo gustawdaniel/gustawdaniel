@@ -2,7 +2,7 @@
 title: Fractional calclus on example of gaussian curve
 slug: fractional-calclus-on-example-of-gaussian-curve
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T19:32:37.000Z
+updateDate: 2021-04-20T19:32:37.000Z
 draft: true
 ---
 

@@ -360,7 +360,7 @@ in `/etc/hostname` set hostname
 in `/etc/hosts` add
 
 ```
-127.0.0.1    localhost.localdomain    <hostname>
+127.0.0.1    localhost localhost.localdomain    <hostname>
 ```
 
 where `<hostname>` is name in `/etc/hostname`

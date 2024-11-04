@@ -1,23 +1,22 @@
 ---
+import {useTranslations} from "../../i18n/utils";
+import SingleMobileNavigationLink from "./links/SingleMobileNavigationLink.astro";
 
+const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
+
+const links: Array<{
+    path: string;
+    name: string;
+}> = [
+    {path: '/', name: useTranslations(currentLocale)('nav.blog')},
+    {path: '/notes', name: useTranslations(currentLocale)('nav.notes')},
+    // {path: '/projects', name: 'Projects'},
+    {path: '/contact', name: useTranslations(currentLocale)('nav.contact')}
+]
 ---
 
 <div class="space-y-1 px-2 pb-3 pt-2">
-    <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-900 hover:bg-gray-50 hover:text-gray-900" -->
-    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium
-    bg-gray-100 text-gray-900
-    dark:bg-gray-900 dark:text-white
-    " aria-current="page">Blog</a>
-    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium
-    text-gray-900 hover:bg-gray-50 hover:text-gray-900
-    dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white
-    ">Dev Notes</a>
-    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium
-    text-gray-900 hover:bg-gray-50 hover:text-gray-900
-    dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white
-    ">Projects</a>
-    <a href="#" class="block rounded-md px-3 py-2 text-base font-medium
-    text-gray-900 hover:bg-gray-50 hover:text-gray-900
-    dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white
-    ">Contact</a>
+    {links.map(link =>
+            <SingleMobileNavigationLink path={link.path} name={link.name}/>
+    )}
 </div>

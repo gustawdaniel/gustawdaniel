@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: login-by-metamask-rest-backend-in-fastify-node-typescript-prisma
 coverImage: http://localhost:8484/4063ad62-79ab-432e-94a1-7ec1bbd852b8.avif
-date_updated: 2022-11-30 17:23:41+00:00
+updateDate: 2022-11-30 17:23:41+00:00
 description: We building from scratch rest api in fastify using mongodb connected
   by prisma as database, jest as test framework and etherjs to verify signatures signed
   by metamask.

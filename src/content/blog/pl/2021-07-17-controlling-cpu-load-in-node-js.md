@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
 coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
-date_updated: 2021-07-17 13:57:27+00:00
+updateDate: 2021-07-17 13:57:27+00:00
 description: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać
   ich ilością i prowadzić z nimi dwustronną komunikację.
 excerpt: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać

@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: rozklad-benforda-dla-ciagu-fibonacciego-w-java-rust-i-node-js
 coverImage: http://localhost:8484/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
-date_updated: 2021-07-22 10:10:14+00:00
+updateDate: 2021-07-22 10:10:14+00:00
 description: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu
   pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią
   i jak ich wydajność zależy od długości ciągu.

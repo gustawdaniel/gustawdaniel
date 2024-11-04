@@ -2,7 +2,7 @@
 title: How I used GPT-3 to solve my issues with OBS and Davinci Resolve problems with MKV format
 slug: how-i-used-gpt-3-to-solve-my-issues-with-obs-and-davinci-resolve-problems-with-mkv-format
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2023-01-21T13:56:18.000Z
+updateDate: 2023-01-21T13:56:18.000Z
 draft: true
 ---
 

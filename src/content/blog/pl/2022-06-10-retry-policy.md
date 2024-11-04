@@ -4,7 +4,7 @@ title: Retry Policy - Jak obsługiwać losowe, nieprzewidywalne błędy
 canonicalName: retry-policy
 slug: pl/retry-policy
 publishDate: 2022-06-10T16:14:57.000Z
-date_updated: 2022-06-10T16:14:57.000Z
+updateDate: 2022-06-10T16:14:57.000Z
 tags: ['typescript', 'nodejs', 'error']
 description: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.
 excerpt: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.

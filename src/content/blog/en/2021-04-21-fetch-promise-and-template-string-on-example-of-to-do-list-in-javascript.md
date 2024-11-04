@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-javascript
 coverImage: http://localhost:8484/014d0920-5eca-46f4-b476-960e0fa98596.avif
-date_updated: 2021-04-20 21:46:37+00:00
+updateDate: 2021-04-20 21:46:37+00:00
 description: This simple project is great as an introduction to JavaScript programming.
   The emphasis is on ES6 elements and the frontend.
 excerpt: This simple project is great as an introduction to JavaScript programming.

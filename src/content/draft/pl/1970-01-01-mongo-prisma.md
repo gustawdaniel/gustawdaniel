@@ -2,7 +2,7 @@
 title: Konsolowy CRM z Prisma i MongoDB
 slug: mongo-prisma
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-06-25T18:28:28.000Z
+updateDate: 2021-06-25T18:28:28.000Z
 draft: true
 ---
 

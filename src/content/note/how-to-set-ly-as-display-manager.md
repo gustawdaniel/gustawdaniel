@@ -27,5 +27,7 @@ animation = matrix
 And install cmatrix:
 
 ```bash
-yay -S cmatrix
+yay -S cmatrix-git
 ```
+
+Git version of cmatrix is required for [transparent background](https://www.reddit.com/r/bspwm/comments/sl2kkm/making_cmatrix_transparent_background/).

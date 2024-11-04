@@ -4,7 +4,7 @@ title: Publikacja aktualizacji paczki w repozytorium AUR
 canonicalName: aktualizacja-paczki-aur
 slug: pl/aktualizacja-paczki-aur
 publishDate: 2022-01-29T20:34:39.000Z
-date_updated: 2022-01-29T20:34:39.000Z
+updateDate: 2022-01-29T20:34:39.000Z
 tags: ['arch', 'aur', 'linux']
 description: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
 excerpt: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.

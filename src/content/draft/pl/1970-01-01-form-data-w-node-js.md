@@ -2,7 +2,7 @@
 title: Form Data w Node JS
 slug: form-data-w-node-js
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-03-18T12:32:13.000Z
+updateDate: 2021-03-18T12:32:13.000Z
 draft: true
 ---
 

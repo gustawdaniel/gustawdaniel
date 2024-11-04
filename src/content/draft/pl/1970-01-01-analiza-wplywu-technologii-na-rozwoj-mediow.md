@@ -2,7 +2,7 @@
 title: Analiza wpływu technologii na rozwój mediów.
 slug: analiza-wplywu-technologii-na-rozwoj-mediow
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2022-06-11T10:05:35.000Z
+updateDate: 2022-06-11T10:05:35.000Z
 draft: true
 ---
 

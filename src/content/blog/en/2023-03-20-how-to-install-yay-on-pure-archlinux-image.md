@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: how-to-install-yay-on-a-pure-arch-linux-docker-image
 coverImage: http://localhost:8484/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1.avif
-date_updated: 2023-03-20 06:03:00+00:00
+updateDate: 2023-03-20 06:03:00+00:00
 description: Yay installation require few steps like user creation, base-devel and
   git installation, change in /etc/sudousers, cloning yay repo and makepkg on it.
   This posts covering this process steps by steps.

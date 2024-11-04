@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: selected-syntax-in-javascript-es2020-es2021-and-es2022
 coverImage: http://localhost:8484/dc12881c-1152-4886-bd6b-32ec7961740c.avif
-date_updated: 2023-02-08 16:39:54+00:00
+updateDate: 2023-02-08 16:39:54+00:00
 description: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled,
   BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment,
   Top level await

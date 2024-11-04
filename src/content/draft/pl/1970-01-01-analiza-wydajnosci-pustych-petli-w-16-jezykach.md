@@ -2,7 +2,7 @@
 title: Analiza wydajności pustych pętli w 16 językach
 slug: analiza-wydajnosci-pustych-petli-w-16-jezykach
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:33:48.000Z
+updateDate: 2021-04-20T20:33:48.000Z
 draft: true
 ---
 

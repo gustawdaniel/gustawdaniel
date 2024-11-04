@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: scrapowanie-danych-w-jezyku-perl
 coverImage: http://localhost:8484/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
-date_updated: 2021-06-22 09:00:09+00:00
+updateDate: 2021-06-22 09:00:09+00:00
 description: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania
   trzech rejestrów danych jego kod jest wyjątkowo krótki.
 excerpt: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania trzech

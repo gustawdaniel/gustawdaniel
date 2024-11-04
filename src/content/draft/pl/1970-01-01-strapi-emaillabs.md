@@ -2,7 +2,7 @@
 title: Konfiguracja wysyłki emaili w Strapi przez Emaillabs
 slug: strapi-emaillabs
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2022-10-06T19:10:57.000Z
+updateDate: 2022-10-06T19:10:57.000Z
 draft: true
 ---
 

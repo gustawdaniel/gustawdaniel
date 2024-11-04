@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
 coverImage: http://localhost:8484/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
-date_updated: 2022-11-27 12:53:23+00:00
+updateDate: 2022-11-27 12:53:23+00:00
 description: With Pulumi you can define your it infrastructure in your file described
   by your favourite programming language. This article shows how to do it.
 excerpt: With Pulumi you can define your it infrastructure in your file described

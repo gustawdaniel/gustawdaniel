@@ -2,7 +2,7 @@
 title: Wpływ zmian rezerwy na giełdach na cenę BTC
 slug: analiza-on-chain
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-07-15T14:18:03.000Z
+updateDate: 2021-07-15T14:18:03.000Z
 draft: true
 ---
 

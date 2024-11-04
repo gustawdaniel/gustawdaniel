@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: analiza-logow-apache-z-goaccess
 coverImage: http://localhost:8484/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
-date_updated: 2021-07-18 18:21:38+00:00
+updateDate: 2021-07-18 18:21:38+00:00
 description: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje
   z plików generowanych automatycznie podczas pracy serwera.
 excerpt: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje

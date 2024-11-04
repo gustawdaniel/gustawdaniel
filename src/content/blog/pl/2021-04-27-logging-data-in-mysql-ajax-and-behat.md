@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: logowanie-danych-w-mysql-ajax-i-behat
 coverImage: http://localhost:8484/8a528c93-b962-4ba4-b410-944fd27661e1.avif
-date_updated: 2021-06-21 16:39:24+00:00
+updateDate: 2021-06-21 16:39:24+00:00
 description: Napiszemy prostą aplikację webową - kalkulator. Na jego przykładzie pokażemy
   jak skonfigurować selenium z behatem i wykonać na nim testy automatyczne.
 excerpt: Napiszemy prostą aplikację webową - kalkulator. Na jego przykładzie pokażemy

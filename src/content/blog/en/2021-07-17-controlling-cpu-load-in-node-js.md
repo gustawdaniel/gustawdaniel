@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
 coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
-date_updated: 2023-04-05 09:44:58+00:00
+updateDate: 2023-04-05 09:44:58+00:00
 description: Learn how to create and terminate subprocesses in Node.js, dynamically
   manage their quantity, and establish bidirectional communication with them.
 draft: true

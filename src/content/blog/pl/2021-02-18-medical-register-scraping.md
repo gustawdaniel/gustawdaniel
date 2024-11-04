@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: scraping-rejestru-aptek
 coverImage: http://localhost:8484/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
-date_updated: 2021-02-17 23:27:35+00:00
+updateDate: 2021-02-17 23:27:35+00:00
 description: Administratorzy danych go nienawidzą. Zobacz jak wpisując dwa polecenia
   w konsolę pobrał rejestr wszystkich aptek w Polsce.
 excerpt: Administratorzy danych go nienawidzą. Zobacz jak wpisując dwa polecenia w

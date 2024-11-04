@@ -2,7 +2,7 @@
 title: Problem with standard Auth flow
 slug: is-login-registration
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2023-04-19T05:39:46.000Z
+updateDate: 2023-04-19T05:39:46.000Z
 draft: true
 ---
 

@@ -4,7 +4,7 @@ title: Najmniejsza wspólna wielokrotność - teoria liczb
 canonicalName: najmniejsza-wspolna-wielokrotnosc
 slug: pl/najmniejsza-wspolna-wielokrotnosc
 publishDate: 2021-11-22T14:38:00.000Z
-date_updated: 2021-11-22T14:38:00.000Z
+updateDate: 2021-11-22T14:38:00.000Z
 tags: ['javascript', 'numbers-therory', 'mathematica']
 description: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
 excerpt: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.

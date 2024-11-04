@@ -2,7 +2,7 @@
 title: Fetch, Promise oraz  Template String
 slug: fetch-promise-oraz-string-templates
 publishDate: 2021-04-20T21:28:44.000Z
-date_updated: 2021-04-20T21:34:41.000Z
+updateDate: 2021-04-20T21:34:41.000Z
 tags: ['es6', 'js', 'html', 'css']
 draft: true
 excerpt: Ten prosty projekt nadaje się świetnie jako wprowadzenie do programowania w JavaScript. Nacisk położony jest na elementy ES6 oraz frontend.

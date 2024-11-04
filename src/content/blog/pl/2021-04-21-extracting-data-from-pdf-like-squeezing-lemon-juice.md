@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 coverImage: http://localhost:8484/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
-date_updated: 2021-04-21 18:45:26+00:00
+updateDate: 2021-04-21 18:45:26+00:00
 description: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można
   wygodnie wydobyć dane z plików PDF.
 excerpt: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie

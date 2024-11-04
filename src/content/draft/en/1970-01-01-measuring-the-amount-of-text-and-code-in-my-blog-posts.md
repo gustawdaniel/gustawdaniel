@@ -2,7 +2,7 @@
 title: Measuring the amount of text and code in my blog posts
 slug: measuring-the-amount-of-text-and-code-in-my-blog-posts
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:49:54.000Z
+updateDate: 2021-04-20T20:49:54.000Z
 draft: true
 ---
 

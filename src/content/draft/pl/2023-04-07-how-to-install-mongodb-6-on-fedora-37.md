@@ -2,7 +2,7 @@
 title: How to install MongoDB 6 on Fedora 37
 slug: how-to-install-mongodb-6-on-fedora-37
 publishDate: 2023-04-07T06:06:07.000Z
-date_updated: 2023-04-07T06:06:08.000Z
+updateDate: 2023-04-07T06:06:08.000Z
 draft: true
 ---
 

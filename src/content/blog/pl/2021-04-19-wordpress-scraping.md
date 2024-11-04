@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: scraping-wordpress-4300-wyrokow-sadow-w-sprawach-frankowych-bez-linii-kodu
 coverImage: http://localhost:8484/8a96e11b-a834-413b-a886-3b5eb059ba3e.avif
-date_updated: 2021-04-19 12:18:07+00:00
+updateDate: 2021-04-19 12:18:07+00:00
 description: Nie często się zdarza, żeby wykonanie usługi trwało której, niż jej wycenienie,
   ale przy scrapingu może się tak stać. Zobacz jak łatwe może być pobranie danych,
   szczególnie z Wordpressa.

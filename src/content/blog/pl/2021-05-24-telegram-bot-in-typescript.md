@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: bot-telegramowy-w-typescript
 coverImage: http://localhost:8484/2dcee1e9-a7f9-48db-a443-eb083a918a4d.avif
-date_updated: 2021-05-24 11:06:00+00:00
+updateDate: 2021-05-24 11:06:00+00:00
 description: Dowiedz się jak stworzyć bota na telegramie, dodać w nim nasłuch na komendy
   oraz skonfigurować wysyłanie powiadomień.
 excerpt: Dowiedz się jak stworzyć bota na telegramie, dodać w nim nasłuch na komendy

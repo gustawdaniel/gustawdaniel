@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: zeromq-pull-push-pattern-for-node-js
 coverImage: http://localhost:8484/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4.avif
-date_updated: 2023-02-19 09:43:53+00:00
+updateDate: 2023-02-19 09:43:53+00:00
 description: The article emphasizes ZeroMQ's flexibility for messaging in Node.js,
   highlighting the pull-push pattern ideal for high-volume distributed systems.
 excerpt: The article emphasizes ZeroMQ's flexibility for messaging in Node.js, highlighting

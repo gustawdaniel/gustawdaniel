@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
 coverImage: http://localhost:8484/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
-date_updated: 2022-12-14 21:02:01+00:00
+updateDate: 2022-12-14 21:02:01+00:00
 description: In TypeScript, we can specify a function that can be called in different
   ways by writing overload signatures. You can use this to define functions with returned
   type dependent from arguments values.

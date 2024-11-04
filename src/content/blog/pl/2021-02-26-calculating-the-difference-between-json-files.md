@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
 coverImage: http://localhost:8484/add30d50-3b0e-4cd7-9720-f990331f1806.avif
-date_updated: 2023-10-12
+updateDate: 2023-10-12
 description: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny
   przykład zastosowania funkcji rekurencyjnej.
 excerpt: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny przykład

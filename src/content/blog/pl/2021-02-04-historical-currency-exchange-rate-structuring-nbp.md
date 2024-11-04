@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: structuring-historical-currency-rates-nbp
 coverImage: http://localhost:8484/df272521-e61f-4143-bcb4-a664b6cc1384.avif
-date_updated: 2021-02-17 15:21:43+00:00
+updateDate: 2021-02-17 15:21:43+00:00
 description: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu
   case study z dziedziny finansów.
 excerpt: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu

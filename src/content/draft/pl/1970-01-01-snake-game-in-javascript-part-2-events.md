@@ -2,7 +2,7 @@
 title: Snake game in JavaScript (part 2 - events)
 slug: snake-game-in-javascript-part-2-events
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-20T20:45:02.000Z
+updateDate: 2021-04-20T20:45:02.000Z
 tags: ['js', 'game', 'snake']
 draft: true
 ---

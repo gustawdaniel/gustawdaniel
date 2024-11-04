@@ -2,7 +2,7 @@
 title: Ugoda KNF, Odfrankowienie oraz Unieważnienie kredytu indeksowanego w CHF
 slug: obliczanie-alternatywnych-rozliczen-dla-kredytow-indeksowanych-w-chf
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-02-09T10:20:01.000Z
+updateDate: 2021-02-09T10:20:01.000Z
 draft: true
 ---
 

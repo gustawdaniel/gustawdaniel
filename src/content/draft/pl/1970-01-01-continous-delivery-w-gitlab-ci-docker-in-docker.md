@@ -2,7 +2,7 @@
 title: Continuous Delivery w Gitlab Ci (Docker in Docker)
 slug: continous-delivery-w-gitlab-ci-docker-in-docker
 publishDate: 1970-01-01T00:00:00.000Z
-date_updated: 2021-04-28T14:31:15.000Z
+updateDate: 2021-04-28T14:31:15.000Z
 draft: true
 ---
 

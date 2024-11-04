@@ -4,7 +4,7 @@ title: Analiza Prawa Zipfa w Node.js
 canonicalName: prawo-zipfa-w-nodejs
 slug: pl/prawo-zipfa-w-nodejs
 publishDate: 2022-06-11T22:50:51.000Z
-date_updated: 2022-06-11T23:06:08.000Z
+updateDate: 2022-06-11T23:06:08.000Z
 tags: ['nodejs', 'zipf', 'typescript']
 description: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.
 excerpt: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.

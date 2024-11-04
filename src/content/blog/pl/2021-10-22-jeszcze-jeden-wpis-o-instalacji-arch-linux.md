@@ -3,7 +3,7 @@ author: Daniel Gustaw
 canonicalName: jeszcze-jeden-wpis-o-instalacji-arch-linux
 slug: pl/jeszcze-jeden-wpis-o-instalacji-arch-linux
 publishDate: 2021-10-22T01:24:19.000Z
-date_updated: 2021-10-30T12:31:37.000Z
+updateDate: 2021-10-30T12:31:37.000Z
 tags: ['arch', 'linux']
 description: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
 excerpt: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
@@ -42,7 +42,7 @@ Jednak ponieważ płyty CD nie są już używane, domyślnym działaniem jest wg
 
 ![](http://localhost:8484/d4303721-d034-4dc5-9b98-2aa9ae5553b2.avif)
 
-W naszym przypadku jest to `sde`. Odmontowujemy pendrive komedą:
+W naszym przypadku jest to `sde`. Odmontowujemy pendrive komendą:
 
 ```
 sudo umount /dev/sde1
@@ -56,7 +56,7 @@ sudo dd bs=8M if=arch.iso of=/dev/sde status=progress
 
 Po włożeniu pendrive do docelowej maszyny i uruchomieniu zwykle należy użyć `F12` przy starcie, ale to zależy od modelu komputera i ustawień BIOS.
 
-Jeśli się uda powinniśmy zobaczyć:
+Jeśli się uda, powinniśmy zobaczyć:
 
 ![](http://localhost:8484/049176bc-bcf4-4774-9275-0edd0d980b37.avif)
 
@@ -295,7 +295,7 @@ W `/etc/hostname` ustawiamy nazwę hosta. Jest to nazwa naszego komputera - przy
 W `/etc/hosts` dodajemy linie
 
 ```
-127.0.0.1    localhost.localdomain    preciselab
+127.0.0.1    localhost localhost.localdomain    preciselab
 ```
 
 trzecia kolumna zawiera nazwę hosta wybrana poprzednio.
@@ -303,13 +303,13 @@ trzecia kolumna zawiera nazwę hosta wybrana poprzednio.
 Instalujemy `networkmanager`.
 
 ```
-pacman -S networkmanager dhcpcd
+pacman -S networkmanager kea
 ```
 
 Włączamy usługę `NetworkManager`
 
 ```
-systemctl enable NetworkMananger
+systemctl enable NetworkManager
 ```
 
 ### Przydatne paczki
@@ -564,7 +564,7 @@ cd yay && makepkg -si
 Sam manager okien instaluje się poleceniem
 
 ```
-yay -S i3-gaps
+yay -S i3
 ```
 
 Należy do niego dodać czcionkę i pasek
@@ -680,10 +680,10 @@ xrdb ~/.Xresources
 
 ### Przeglądarka
 
-Instalujemy przeglądarkę, której wybór ponownie jest Twoim wyborem. W przypadku najpopularniejszej przeglądarki - google chrome jest to:
+Instalujemy przeglądarkę, której wybór ponownie jest Twoim wyborem. W przypadku fantastycznej przeglądarki - Zen jest to:
 
 ```
-yay -S google-chrome
+yay -S zen-browser-bin
 ```
 
 Pierwszy dodatkiem jest `Ublock Origin`.

@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
 coverImage: http://localhost:8484/08a5e268-fcf7-4af8-ba14-376a20394223.avif
-date_updated: 2023-02-16 13:20:19+00:00
+updateDate: 2023-02-16 13:20:19+00:00
 description: New Google Identity installation for Nuxt 3 with credentials verification
   in fastify.
 excerpt: New Google Identity installation for Nuxt 3 with credentials verification

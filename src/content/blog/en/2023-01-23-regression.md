@@ -2,7 +2,7 @@
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
 coverImage: http://localhost:8484/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
-date_updated: 2023-01-22 23:09:20+00:00
+updateDate: 2023-01-22 23:09:20+00:00
 description: Linear and logarithmic regressions were derived here. Models were fitted
   in rust language. This article shows that sometimes it's worth improving the theoretical
   model before starting implementation.
