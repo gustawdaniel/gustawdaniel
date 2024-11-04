@@ -16,9 +16,9 @@ Let us assume that you have a set of dates. You want to display these dates in a
 
 For example like this:
 
-![](http://localhost:8484/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avifgitcalendar.png)
+![](http://localhost:8484/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
 
-So I have great info. It is required an hour of coding. It is one line of code, maybe two...
+So I have great info. It is one line of code, maybe two...
 
 ### In this article I will show how to generate an image like these.
 
@@ -61,7 +61,7 @@ Now if you want to display these dates, you need to type
 cli-gh-cal --data "$(jq -R '[inputs | [.,1] ]' < /tmp/dates.csv)"
 ```
 
-In this case, we put to work `jq` - powerfull templater for json files. It allows replacing the list of dates to json string required by `cli-gh-cal`. After executing this command you should see an image similar to presented at the beginning.
+In this case, we put to work `jq` - powerful templater for json files. It allows replacing the list of dates to json string required by `cli-gh-cal`. After executing this command you should see an image similar to presented at the beginning.
 
 ### Required packages
 
@@ -69,7 +69,7 @@ To work there, have to be installed `node`. I recommend installing it with `nvm`
 
 > [https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04)
 
-Next package - `cli-gh-cal` can be installed by `npm` - node pacakges manager
+Next package - `cli-gh-cal` can be installed by `npm` - node packages manager
 
 > [https://github.com/IonicaBizau/cli-gh-cal](https://github.com/IonicaBizau/cli-gh-cal)
 
