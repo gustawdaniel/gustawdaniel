@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: how-did-the-compatibility-war-shape-the-frontend
+canonicalName: how-the-compatibility-war-shaped-frontend
 coverImage: http://localhost:8484/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
 updateDate: 2021-04-2 18:51:16+00:00
 description: Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną wpływało
