@@ -33,7 +33,7 @@ export const redirects: Record<string, string | {
     '/scraping-wordpressa/': '/posts/pl/scraping-wordpressa/',
     '/rails/': '/posts/pl/rails/',
     '/infrastrukura-defniowana-jako-kod/': '/posts/pl/infrastrukura-defniowana-jako-kod/',
-    '/wyznaczenie-roznicy-plikow-json/': '/posts/pl/wyznaczenie-roznicy-plikow-json/',
+    '/wyznaczenie-roznicy-plikow-json/': '/posts/pl/obliczanie-roznicy-miedzy-plikami-json/',
     '/scraping-rejestrow-medycznych/': '/posts/pl/scraping-rejestrow-medycznych/',
     '/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine/': '/posts/pl/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine/',
     '/scraping-libor-oraz-wibor-z-money-pl/': '/posts/pl/scraping-libor-oraz-wibor-z-money-pl/',

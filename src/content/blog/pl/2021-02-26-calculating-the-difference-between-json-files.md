@@ -1,41 +1,27 @@
 ---
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
-coverImage: http://localhost:8484/add30d50-3b0e-4cd7-9720-f990331f1806.avif
-updateDate: 2023-10-12
-description: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny
-  przykład zastosowania funkcji rekurencyjnej.
-excerpt: Zobacz jak wyznaczyć różnicę między dwoma plikami JSON. Jest to świetny przykład
-  zastosowania funkcji rekurencyjnej.
+coverImage: http://localhost:8484/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
+description: Dowiedz się, jak znaleźć brakujące tłumaczenia w plikach JSON przy użyciu słowników.
+excerpt: Dowiedz się, jak znaleźć brakujące tłumaczenia w plikach JSON przy użyciu słowników.
 publishDate: 2021-02-26
-slug: pl/wyznaczenie-roznicy-plikow-json
+slug: pl/obliczanie-roznicy-miedzy-plikami-json
 tags:
 - diff
 - i18next
-title: Wyznaczenie różnicy plików JSON
+title: Obliczanie różnicy między plikami JSON
+updateDate: 2023-10-12
 ---
 
+W tym artykule pokażemy, jak stworzyć funkcję, która identyfikuje różnice między dwoma plikami JSON.
 
+Z edukacyjnego punktu widzenia jest to doskonały przykład wykorzystania funkcji rekurencyjnych. Z praktycznego punktu widzenia to cenne narzędzie do zarządzania tłumaczeniami.
 
-W tym artykule pokażemy jak napisać funkcję do wyznaczenia różnicy między dwoma plikami JSON.
-
-Z edukacyjnego punktu widzenia jest to świetny przykład zastosowania funkcji rekurencyjnej. Z praktycznego jest to
-przydatne narzędzie do pracy z tłumaczeniami.
-
-Skryptu będziemy używali z poziomu linii komend:
-
-```bash
-node json-diff.js src/locales/en_old.json src/locales/en.json
-```
-
-Po takiej komendzie będziemy spodziewać się, że pliki zostaną odczytane i wszystkie klucze, które występują w pierwszym
-pliku, ale nie ma ich w drugim pliku, zostaną wypisane na standardowym wyjściu.
-
-Pokażemy teraz kod źródłowy pliku `json-diff.js`.
+Na początek stworzymy polecenie, które odczyta pliki i wyświetli wszystkie klucze obecne w pierwszym pliku, ale brakujące w drugim pliku na standardowym wyjściu.
 
 Zaczniemy od sprawdzenia, czy pliki wskazane jako argumenty istnieją:
 
-```javascript
+```js
 const fs = require('fs')
 
 const pathBase = `${process.cwd()}/${process.argv[2]}`;
@@ -52,14 +38,14 @@ if (!fs.existsSync(pathComp)) {
 }
 ```
 
-Następnie odczytujemy zawartość tych plików i konwertujemy JSON do obiektów
+Następnie odczytamy zawartość tych plików i przekształcimy JSON na obiekty:
 
 ```javascript
 const base = JSON.parse(fs.readFileSync(pathBase).toString());
 const comp = JSON.parse(fs.readFileSync(pathComp).toString());
 ```
 
-Teraz piszemy funkcję do znajdowania różnic
+Teraz zdefiniujemy funkcję do wykrywania różnic:
 
 ```javascript
 function getDiff(a, b) {
@@ -84,57 +70,45 @@ function getDiff(a, b) {
 }
 ```
 
-Jej zadaniem jest przyjęcie pary obiektów i przejście po kluczach pierwszego z nich (bazowego). Jeśli drugi obiekt (
-odejmowany) jej nie posiada, to ten klucz należy włożyć do wyniku.
+Ta funkcja przyjmuje parę obiektów i iteruje przez klucze pierwszego (podstawowego) obiektu. Jeśli drugi obiekt (porównawczy) nie ma klucza, jest on dodawany do wyniku. Jeśli klucz jest obecny, sprawdza, czy typ jest obiektem i, jeśli tak, rekurencyjnie wywołuje funkcję getDiff.
 
-W przeciwnym wypadku należy sprawdzić, czy typ nie jest obiektem. Wówczas może się okazać, że należy wykonać sprawdzenie
-wewnątrz tego klucza.
-
-Tu mamy kluczową linię - użycie funkcji `getDiff` wewnątrz niej samej.
-
-Na końcu kasujemy te klucze, dla których wartością jest pusty obiekt.
-
-Ostatnią linią programu jest wypisanie wyników na ekranie
+Na koniec usuwamy klucze z pustymi obiektami przed wyświetleniem wyników:
 
 ```javascript
 process.stdout.write(JSON.stringify(getDiff(base, comp)))
 ```
 
-Ten program nie obsługuje tablic. W przypadku plików z tłumaczeniami nie są potrzebne. Jeśli chcesz poczytać o bardziej
-zaawansowanych metodach porównywania plików JSON. Dobrym punktem startu jest wątek na stack overflow.
+Ten program nie obsługuje tablic. Dla plików tłumaczeń nie są one konieczne. Jeśli chcesz przeczytać o bardziej zaawansowanych metodach porównywania plików JSON, dobrym punktem wyjścia jest wątek na Stack Overflow:
 
-[Using jq or alternative command line tools to compare JSON files](https://stackoverflow.com/questions/31930041/using-jq-or-alternative-command-line-tools-to-compare-json-files)
+[Użycie jq lub alternatywnych narzędzi wiersza poleceń do porównywania plików JSON](https://stackoverflow.com/questions/31930041/using-jq-or-alternative-command-line-tools-to-compare-json-files)
 
-Zobaczmy teraz, jak program działa w praktyce. Na plikach z tłumaczeniami. Pierwszy plik jest przygotowany ręcznie i
-pokrywa wszystkie tłumaczenia w aplikacji `en_old.json`, drugi jest wygenerowany przez `i18next` nazywa się `en.json`.
-Problem stanowi to, że `i18next` nie wykrył wszystkich tłumaczeń.
+Teraz zobaczmy, jak program działa w praktyce z plikami tłumaczeń. Pierwszy plik, en_old.json, został przygotowany ręcznie i obejmuje wszystkie tłumaczenia w aplikacji, podczas gdy drugi plik, en.json, został wygenerowany przez i18next. Problem polega na tym, że i18next nie wykrył wszystkich tłumaczeń.
 
-Na początku wykonałem pracę ręcznie. Posortowałem oba pliki w serwisie: `codeshack.io/json-sorter`
+Na początku ręcznie posortowałem oba pliki za pomocą usługi: codeshack.io/json-sorter
 
 ![](http://localhost:8484/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
 
 https://codeshack.io/json-sorter/
 
-Następnie w serwisie `diffchecker` wyznaczyłem różnice między
+Następnie użyłem `diffchecker`, aby znaleźć różnice między nimi:
 
 ![](http://localhost:8484/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
 
 https://www.diffchecker.com/yffDMWff
 
-Teraz utworzyłem pik z brakującymi tłumaczeniami
+A potem stworzyłem plik z brakującymi tłumaczeniami:
 
 ```bash
 node ../DevTools/json-diff.js src/locales/en_old.json src/locales/en.json > src/locales/en-codes.json
 ```
 
-Plik wyświetlony i formatowany przez `jq` wygląda tak:
+Plik, wyświetlany i formatowany przez jq, wygląda tak:
 
 ![](http://localhost:8484/dd621642-427b-4560-9f26-b08150f04e97.avif)
 
 Widzimy, że zawiera wszystkie brakujące klucze.
 
-Importując pliki z tłumaczeniami możemy użyć paczki `deepmerge`. Plik z konfiguracją `i18n` mógł by wyglądać na przykład
-tak:
+Podczas importowania plików tłumaczeń możemy użyć pakietu deepmerge. Plik konfiguracyjny i18n może wyglądać tak:
 
 ```javascript
 import Vue from 'vue'
@@ -171,8 +145,4 @@ export const languages = [
 ];
 ```
 
-Jeśli chcesz wymienić doświadczenia, związane z automatyzacją pracy z tłumaczeniami zapraszam do komentowania. Chętnie
-dowiem się jakich narzędzi używacie i czy też czasami piszecie własne pomocnicze skrypty czy polecacie jakiś zestaw
-narzędzi jak
-
-[Introduction](https://www.i18next.com/)
+Jeśli masz jakiekolwiek doświadczenia związane z automatyzacją pracy tłumaczeniowej lub rekomendacje dotyczące narzędzi i skryptów, śmiało podziel się nimi w komentarzach. Interesuje mnie poznanie narzędzi i podejść, które stosujesz.
