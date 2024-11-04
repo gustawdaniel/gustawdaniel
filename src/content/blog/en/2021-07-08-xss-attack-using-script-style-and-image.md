@@ -2,13 +2,8 @@
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
 coverImage: http://localhost:8484/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
-updateDate: 2021-07-08 13:51:40+00:00
-description: Learn how to infect a page using an XSS attack with the script, style,
-  or image tags. You can see how to replace the content of the page with your own
-  even without javascript.
-excerpt: Learn how to infect a page using an XSS attack with the script, style, or
-  image tags. You can see how to replace the content of the page with your own even
-  without javascript.
+description: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
+excerpt: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
 publishDate: 2021-07-08 13:51:40+00:00
 slug: en/xss-attack-using-script-style-and-image
 tags:
@@ -16,9 +11,8 @@ tags:
 - hacking
 - attack
 title: Xss attack using script style and image
+updateDate: 2021-07-08 13:51:40+00:00
 ---
-
-
 
 This article describes examples of XSS attacks. Usage of script tags is probably the most known case, but there also other possibilities. You can change the content of the website on your own using an image tag or pure css.
 

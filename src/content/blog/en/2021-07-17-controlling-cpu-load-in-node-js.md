@@ -2,19 +2,16 @@
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
 coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
-updateDate: 2023-04-05 09:44:58+00:00
-description: Learn how to create and terminate subprocesses in Node.js, dynamically
-  manage their quantity, and establish bidirectional communication with them.
+description: Learn how to create and terminate subprocesses in Node.js, dynamically manage their quantity, and establish bidirectional communication with them.
 draft: true
-excerpt: Learn how to create and terminate subprocesses in Node.js, dynamically manage
-  their quantity, and establish bidirectional communication with them.
+excerpt: Learn how to create and terminate subprocesses in Node.js, dynamically manage their quantity, and establish bidirectional communication with them.
 publishDate: 2023-04-05 09:44:19+00:00
 slug: en/managing-processes-in-node-js
-title: Managing processes in Node JS.
 tags:
-  - cpu
+- cpu
+title: Managing processes in Node JS.
+updateDate: 2023-04-05 09:44:58+00:00
 ---
-
 
 In this post, we will learn how to create and terminate subprocesses in Node.js, and how to transmit data between them.
 

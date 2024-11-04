@@ -2,11 +2,8 @@
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
 coverImage: http://localhost:8484/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
-updateDate: 2022-11-27 12:53:23+00:00
-description: With Pulumi you can define your it infrastructure in your file described
-  by your favourite programming language. This article shows how to do it.
-excerpt: With Pulumi you can define your it infrastructure in your file described
-  by your favourite programming language. This article shows how to do it.
+description: With Pulumi you can define your it infrastructure in your file described by your favourite programming language. This article shows how to do it.
+excerpt: With Pulumi you can define your it infrastructure in your file described by your favourite programming language. This article shows how to do it.
 publishDate: 2022-11-27 12:52:11+00:00
 slug: en/pulumi-infrastructure-as-a-code
 tags:
@@ -14,9 +11,8 @@ tags:
 - iac
 - deployment
 title: Pulumi - Infrastructure as a Code [ Digital Ocean ]
+updateDate: 2022-11-27 12:53:23+00:00
 ---
-
-
 
 ### How deployment evolved by years?
 

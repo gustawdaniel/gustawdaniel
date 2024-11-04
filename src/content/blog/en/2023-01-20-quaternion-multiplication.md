@@ -2,11 +2,8 @@
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
 coverImage: http://localhost:8484/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
-updateDate: 2023-01-20 02:19:57+00:00
-description: In this article, we will see how to implement the multiplication of quaternions
-  in Rust and NodeJS. You will learn about parsing and algebra.
-excerpt: In this article, we will see how to implement the multiplication of quaternions
-  in Rust and NodeJS. You will learn about parsing and algebra.
+description: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
+excerpt: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
 publishDate: 2023-01-20 02:19:57+00:00
 slug: en/quaternion-multiplication
 tags:
@@ -17,9 +14,8 @@ tags:
 - mathematics
 - parsing
 title: 'CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra'
+updateDate: 2023-01-20 02:19:57+00:00
 ---
-
-
 
 In this article we will see how to implement the multiplication of quaternions in Rust and NodeJS. I encourage you to try solve this problem before seeing solutions. Below I attaching link to this exercise:
 

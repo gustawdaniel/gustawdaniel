@@ -2,19 +2,15 @@
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
 coverImage: http://localhost:8484/08a5e268-fcf7-4af8-ba14-376a20394223.avif
-updateDate: 2023-02-16 13:20:19+00:00
-description: New Google Identity installation for Nuxt 3 with credentials verification
-  in fastify.
-excerpt: New Google Identity installation for Nuxt 3 with credentials verification
-  in fastify.
+description: New Google Identity installation for Nuxt 3 with credentials verification in fastify.
+excerpt: New Google Identity installation for Nuxt 3 with credentials verification in fastify.
 publishDate: 2023-02-16 13:20:19+00:00
 slug: en/new-google-login
 tags:
 - google
 title: New Google Identity in Nuxt 3
+updateDate: 2023-02-16 13:20:19+00:00
 ---
-
-
 
 I was scared today because two great libraries did not work with Google Sign In for Nuxt 3. I mean `auth.nuxtjs` and `nuxt-vue3-google-signin`.
 

@@ -2,7 +2,6 @@
 author: Daniel Gustaw
 canonicalName: last-occurrence-linear-search-easy
 coverImage: http://localhost:8484/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
-updateDate: 2022-11-28 14:40:24+00:00
 description: Find and print the index of the last occurrence of element in the array.
 excerpt: Find and print the index of the last occurrence of element in the array.
 publishDate: 2022-11-16 17:22:37+00:00
@@ -12,9 +11,8 @@ tags:
 - linear search
 - easy
 title: Last Occurrence [Linear Search] easy
+updateDate: 2022-11-28 14:40:24+00:00
 ---
-
-
 
 You have been given an array of size *N* consisting of integers. In addition you have been given an element *M* you need to find and print the index of the last occurrence of this element *M* in the array if it exists in it, otherwise print -1. Consider this array to be 1 indexed.
 

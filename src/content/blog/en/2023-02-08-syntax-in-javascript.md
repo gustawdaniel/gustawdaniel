@@ -2,22 +2,16 @@
 author: Daniel Gustaw
 canonicalName: selected-syntax-in-javascript-es2020-es2021-and-es2022
 coverImage: http://localhost:8484/dc12881c-1152-4886-bd6b-32ec7961740c.avif
-updateDate: 2023-02-08 16:39:54+00:00
-description: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled,
-  BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment,
-  Top level await
-excerpt: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled,
-  BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment,
-  Top level await
+description: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled, BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment, Top level await
+excerpt: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled, BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment, Top level await
 publishDate: 2023-02-08 16:39:54+00:00
 slug: en/syntax-in-javascript
 tags:
 - javascript
 - es6
 title: Selected syntax in JavaScript ES2020, ES2021 and ES2022
+updateDate: 2023-02-08 16:39:54+00:00
 ---
-
-
 
 Javascript is main primary language. But his dynamic development insist from me constant updates of my knowledge about it. In this article I will show few syntax that I learned in last two years and which was not available if you get know JavaScript earlier.
 

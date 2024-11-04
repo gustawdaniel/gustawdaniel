@@ -2,19 +2,16 @@
 author: Daniel Gustaw
 canonicalName: how-did-the-compatibility-war-shape-the-frontend
 coverImage: http://localhost:8484/3737c82b-a958-48dd-a968-3cec36f8e7ee.avif
-updateDate: 2023-03-10 15:56:02+00:00
-description: We describe how abandonment and backward compatibility have influenced
-  the direction of development in web technologies.
+description: We describe how abandonment and backward compatibility have influenced the direction of development in web technologies.
 draft: true
-excerpt: We describe how abandonment and backward compatibility have influenced the
-  direction of development in web technologies.
+excerpt: We describe how abandonment and backward compatibility have influenced the direction of development in web technologies.
 publishDate: 2023-03-10 15:56:01+00:00
 slug: en/how-did-the-compatibility-war-shape-the-frontend
-title: How did the compatibility war shape the frontend?
 tags:
-  - compatibility
+- compatibility
+title: How did the compatibility war shape the frontend?
+updateDate: 2023-03-10 15:56:02+00:00
 ---
-
 
 The issue of incompatible software or hardware versions has probably caused us problems in our daily lives more than once. You may have encountered situations or noticed:
 

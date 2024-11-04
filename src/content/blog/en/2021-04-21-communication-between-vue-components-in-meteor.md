@@ -2,22 +2,16 @@
 author: Daniel Gustaw
 canonicalName: communication-between-vue-components-in-meteor
 coverImage: http://localhost:8484/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
-updateDate: 2021-04-20 21:12:22+00:00
-description: There is few methods of sending data between unrelated vue components.
-  Some of these are universal, other typical for vue, another for Meteor. We compare
-  all of them.
-excerpt: There is few methods of sending data between unrelated vue components. Some
-  of these are universal, other typical for vue, another for Meteor. We compare all
-  of them.
+description: There is few methods of sending data between unrelated vue components. Some of these are universal, other typical for vue, another for Meteor. We compare all of them.
+excerpt: There is few methods of sending data between unrelated vue components. Some of these are universal, other typical for vue, another for Meteor. We compare all of them.
 publishDate: 2021-04-20 21:12:22+00:00
 slug: en/communication-between-vue-components-in-meteor
 tags:
 - vue
 - meteor
 title: Communication between Vue components in Meteor
+updateDate: 2021-04-20 21:12:22+00:00
 ---
-
-
 
 ## What we have and what we want?
 

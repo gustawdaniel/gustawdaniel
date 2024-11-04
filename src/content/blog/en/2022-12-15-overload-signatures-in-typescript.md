@@ -2,13 +2,8 @@
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
 coverImage: http://localhost:8484/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
-updateDate: 2022-12-14 21:02:01+00:00
-description: In TypeScript, we can specify a function that can be called in different
-  ways by writing overload signatures. You can use this to define functions with returned
-  type dependent from arguments values.
-excerpt: In TypeScript, we can specify a function that can be called in different
-  ways by writing overload signatures. You can use this to define functions with returned
-  type dependent from arguments values.
+description: In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. You can use this to define functions with returned type dependent from arguments values.
+excerpt: In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. You can use this to define functions with returned type dependent from arguments values.
 publishDate: 2022-12-14 21:02:01+00:00
 slug: en/overload-signatures-in-typescript
 tags:
@@ -16,9 +11,8 @@ tags:
 - signatures
 - javascript
 title: Overload Signatures in Typescript
+updateDate: 2022-12-14 21:02:01+00:00
 ---
-
-
 
 When do you have function that returns different types in dependence from parameter values `overload signatures` can be exactly what do you need.
 

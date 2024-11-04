@@ -2,11 +2,8 @@
 author: Daniel Gustaw
 canonicalName: tutorial-for-esm-commonjs-package-creators
 coverImage: http://localhost:8484/1f726cb6-0ad6-4680-8f5f-dc939d66358c.avif
-updateDate: 2023-03-26 15:10:40+00:00
-description: There is intense debate in the JS community on dropping CommonJS or using
-  dual packages. I've curated key links and written a tutorial for dual package publishing.
-excerpt: There is intense debate in the JS community on dropping CommonJS or using
-  dual packages. I've curated key links and written a tutorial for dual package publishing.
+description: There is intense debate in the JS community on dropping CommonJS or using dual packages. I've curated key links and written a tutorial for dual package publishing.
+excerpt: There is intense debate in the JS community on dropping CommonJS or using dual packages. I've curated key links and written a tutorial for dual package publishing.
 publishDate: 2023-03-26 01:12:20+00:00
 slug: en/simplest-tutorial-for-esm-commonjs-package-creators
 tags:
@@ -14,9 +11,8 @@ tags:
 - cjs
 - typescript
 title: Tutorial for ESM + CommonJS package creators
+updateDate: 2023-03-26 15:10:40+00:00
 ---
-
-
 
 I will start from sources and context, then show practical implementation.
 

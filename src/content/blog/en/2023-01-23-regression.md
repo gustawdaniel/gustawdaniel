@@ -2,13 +2,8 @@
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
 coverImage: http://localhost:8484/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
-updateDate: 2023-01-22 23:09:20+00:00
-description: Linear and logarithmic regressions were derived here. Models were fitted
-  in rust language. This article shows that sometimes it's worth improving the theoretical
-  model before starting implementation.
-excerpt: Linear and logarithmic regressions were derived here. Models were fitted
-  in rust language. This article shows that sometimes it's worth improving the theoretical
-  model before starting implementation.
+description: Linear and logarithmic regressions were derived here. Models were fitted in rust language. This article shows that sometimes it's worth improving the theoretical model before starting implementation.
+excerpt: Linear and logarithmic regressions were derived here. Models were fitted in rust language. This article shows that sometimes it's worth improving the theoretical model before starting implementation.
 publishDate: 2023-01-22 23:09:20+00:00
 slug: en/regression
 tags:
@@ -17,9 +12,8 @@ tags:
 - mathematics
 - codingame
 title: 'CodinGame: Best fit to data - Rust - Regression Analysis'
+updateDate: 2023-01-22 23:09:20+00:00
 ---
-
-
 
 We will discuss exercise:
 

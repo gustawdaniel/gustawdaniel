@@ -2,13 +2,8 @@
 author: Daniel Gustaw
 canonicalName: rust-implementation-of-rfc-7396-json-merge-patch
 coverImage: http://localhost:8484/7ce53036-1711-40b9-90bf-0369f97b2f84.avif
-updateDate: 2023-03-28 11:43:54+00:00
-description: Rust's speed and reliability make it ideal for implementing JSON Merge
-  Patch, as defined in RFC 7396. This specification enables efficient and safe partial
-  updates to JSON documents.
-excerpt: Rust's speed and reliability make it ideal for implementing JSON Merge Patch,
-  as defined in RFC 7396. This specification enables efficient and safe partial updates
-  to JSON documents.
+description: Rust's speed and reliability make it ideal for implementing JSON Merge Patch, as defined in RFC 7396. This specification enables efficient and safe partial updates to JSON documents.
+excerpt: Rust's speed and reliability make it ideal for implementing JSON Merge Patch, as defined in RFC 7396. This specification enables efficient and safe partial updates to JSON documents.
 publishDate: 2023-03-28 11:43:54+00:00
 slug: en/json-merge-patch
 tags:
@@ -16,9 +11,8 @@ tags:
 - rfc
 - rust
 title: Rust implementation of RFC 7396 - JSON Merge Patch
+updateDate: 2023-03-28 11:43:54+00:00
 ---
-
-
 
 JSON Merge Patch is a standardized algorithm for describing changes to a JSON document by treating it as a collection of unordered key-value pairs. Defined in RFC 7396, JSON Merge Patch provides a simple and efficient way to update JSON documents in a consistent manner. In this blog post, we will demonstrate how to implement the JSON Merge Patch algorithm in Rust, a systems programming language that emphasizes safety, concurrency, and performance.
 
