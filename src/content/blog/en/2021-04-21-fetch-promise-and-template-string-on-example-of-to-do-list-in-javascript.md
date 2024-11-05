@@ -15,17 +15,21 @@ title: Fetch, Promise and Template String on example of To Do List in JavaScript
 updateDate: 2021-04-20 21:46:37+00:00
 ---
 
+### Project description
+
 This simple project learn you how to apply interface `fetch` , shows examples of usage of `promises` and some interesting `css` properties like `transform` , `user-select` or directive `@media`.
+
+Source code composition:
+
+```
+JavaScript 49.5% CSS 40.3% HTML 10.2%
+```
 
 After finishing project will looks following:
 
 ![js-es6-1](http://localhost:8484/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
 To Do List typed in pure JavaScript that will be presented in this article.
-
-Text was initially posted in polish language nearly one year ago and and for polish reader is still available here:
-
-> [https://gustawdaniel.com/fetch-promise-oraz-string-templates/](https://gustawdaniel.com/fetch-promise-oraz-string-templates/)
 
 You can see all source code under link
 
@@ -51,21 +55,21 @@ Now you should install dependencies
 npm i
 ```
 
-To setup servers we will need two terminals. In firs one we run server with our projct
+To set up servers we will need two terminals. In firs one we run server with our project
 
 ```bash
 node node_modules/http-server/bin/http-server
 ```
 
-In second terminal `ctrl+n` we setup `REST API` server provided by `json-server` package.
+In second terminal `ctrl+n` we set up `REST API` server provided by `json-server` package.
 
 ```bash
-node node_modules/json-server/bin/index.js --watch db.json
+node node_modules/json-server/lib/bin.js --watch db.json
 ```
 
 If everything works we should see something like this
 
-![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif-/preview/800x264/)
+![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
 
 Server with application (on the right) and with REST API connected with db.json file (on the left)
 
@@ -152,7 +156,7 @@ In part `main` there is list with three exemplary elements. Elements has his own
 </main>
 ```
 
-At the end we attaching script, which we describe later. Now it can be empty file.
+At the end we're attaching script, which we describe later. Now it can be empty file.
 
 ```html
 <script src="app.js"></script>
@@ -188,7 +192,7 @@ body {
 }
 ```
 
-In header we centering form and removing his natural margins
+In header, we're centering form and removing his natural margins
 
 ```css
 header {
@@ -258,7 +262,7 @@ The situation is completely different for `.list-elem-body` . There not margins,
 
 ```css
 .list-elem-body {
-    margin-left: 50px;
+    margin-left: 70px;
     padding: 20px 20px 20px 20px;
     border-left: solid 1px rgba(220, 20, 60, 0.52);
 }
@@ -316,7 +320,29 @@ First of these packages it is http server that serve our app on port 8080. In th
 
 Second package is REST server that provide saving data to `db.json` file. In file `README.md` there are placed commands to run these servers and requests that we can do to communicate with API.
 
-To add new task there is needed POST request
+You can achieve this typing.:
+
+```bash
+npm init -y
+npm add http-server json-server
+```
+
+Then setup both servers in distinct terminals. In first one you should run server with our project
+
+```bash
+node node_modules/http-server/bin/http-server
+```
+
+In second terminal open `REST API` server provided by `json-server` package.
+
+```bash
+echo '{"todo":[]}' > db.json
+node node_modules/json-server/lib/bin.js --watch db.json
+````
+
+To add new task there is needed POST request.
+
+We will use `httpie` cli program to send requests.
 
 ```bash
 http POST localhost:3000/todo text="First One"
@@ -334,7 +360,7 @@ To remove `n-th` task send DELETE request indicating which task should be remove
 http DELETE localhost:3000/todo/n
 ```
 
-Our initial state of `db.json` can looks following:
+Our initial state of `db.json` can look following:
 
 ```javascript
 {
@@ -357,7 +383,7 @@ Our initial state of `db.json` can looks following:
 
 Now we can talk about logic of application placed in `app.js` . Before this we need remove form `index.html` exemplary list elements. I mean removing everything between `<ul></ul>` . We modifying `index.html` in this way now because responsibility for managing tasks is transferred to `app.js` .
 
-All script is placed in anonymous function executed after event `DOMContentLoaded` . It prevent to executing script before loading `DOM` .
+All script is placed in anonymous function executed after event `DOMContentLoaded` . It prevents to executing script before loading `DOM` .
 
 ```js
 document.addEventListener('DOMContentLoaded',function () {
