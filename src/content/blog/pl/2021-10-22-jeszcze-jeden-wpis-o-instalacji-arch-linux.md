@@ -680,7 +680,7 @@ xrdb ~/.Xresources
 
 ### Przeglądarka
 
-Instalujemy przeglądarkę, której wybór ponownie jest Twoim wyborem. W przypadku fantastycznej przeglądarki - Zen jest to:
+Instalujemy przeglądarkę, której wybór ponownie jest Twoim wyborem. W przypadku fantastycznej przeglądarki: Zen. Jest to:
 
 ```
 yay -S zen-browser-bin
@@ -690,7 +690,7 @@ Pierwszy dodatkiem jest `Ublock Origin`.
 
 ### Polski układ klawiatury w X11
 
-Aby używać polskich znaków w środowisku graficznym ustaw layout klawiatury wstawiając do pliku `/usr/share/X11/xorg.conf.d/10-keyboard.conf` konfigurację
+Aby używać polskich znaków, w środowisku graficznym ustaw layout klawiatury wstawiając do pliku `/usr/share/X11/xorg.conf.d/10-keyboard.conf` konfigurację
 
 ```
 Section "InputClass"
@@ -726,7 +726,7 @@ bindsym Print exec flameshot gui
 
 ### Sterowanie innymi komputerami
 
-Jeśli używamy kilku komputerów i chcemy sterować nimi używając jednej myszki i klawiatury na wszystkich komputerach możemy zainstalować `barrier`.
+Jeśli używamy kilku komputerów i chcemy sterować nimi, używając jednej myszki i klawiatury na wszystkich komputerach możemy zainstalować `barrier`.
 
 ```
 yay -S barrier
@@ -748,7 +748,7 @@ W przypadku problemów z zestawieniem połączenia zawsze pomagało wyłączenie
 
 ### Oh my zsh
 
-Zsh jest powłoką alternatywną do `bash` o więszych możliwościach customizacji i rozszerzania. Instalujemy ją poleceniem:
+Zsh jest powłoką alternatywną do `bash` o większych możliwościach customizacji i rozszerzania. Instalujemy ją poleceniem:
 
 ```
 yay -S zsh
@@ -809,7 +809,7 @@ yay -S neovim
 
 ### Synchronizacja zegara systemowego
 
-Jeśli w dacie lub godzinie pojawia się rozbieżność warto włączyć synchronizację z serwerami wskazującymi poprawny czas.
+Jeśli w dacie lub godzinie pojawia się rozbieżność, warto włączyć synchronizację z serwerami wskazującymi poprawny czas.
 
 ```
 sudo timedatectl set-ntp true
@@ -838,7 +838,7 @@ sudo systemctl enable ly.service
 
 ### Tmux i Tmuxinator
 
-Do zarządzania sesjami, oknami i podziałem okien w terminalu używam tmuxa.
+Do zarządzania sesjami, oknami i podziałem okien w terminalu używam `tmux`.
 
 ```
 yay -S tmux ruby
@@ -853,7 +853,7 @@ Jego konfiguracja:
 
 ### Bitwarden
 
-Do zarządzania hasłami używałem keeweb. Obecnie korzystam z bitwarden:
+Do zarządzania hasłami używałem `keeweb`. Obecnie korzystam z `bitwarden`:
 
 ```
 yay -S bitwardern

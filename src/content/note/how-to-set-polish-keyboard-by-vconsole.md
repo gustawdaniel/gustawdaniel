@@ -11,7 +11,7 @@ FONT=Lat2-Terminus16
 FONT_MAP=8859-2
 ```
 
-Or using oneline command
+Or using one line command
 
 ```bash
 echo -e "KEYMAP=pl\nFONT=Lat2-Terminus16\nFONT_MAP=8859-2" | sudo tee /etc/vconsole.conf > /dev/null

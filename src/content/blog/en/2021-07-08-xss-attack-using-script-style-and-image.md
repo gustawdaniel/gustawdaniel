@@ -16,7 +16,7 @@ updateDate: 2021-07-08 13:51:40+00:00
 
 This article describes examples of XSS attacks. Usage of script tags is probably the most known case, but there also other possibilities. You can change the content of the website on your own using an image tag or pure css.
 
-This is educational material and you should remember that hacking is illegal if you are caught red-handed. :)
+This is educational material, and you should remember that hacking is illegal if you are caught red-handed. :)
 
 ## Website code
 
