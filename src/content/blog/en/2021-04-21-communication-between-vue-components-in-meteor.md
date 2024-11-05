@@ -128,7 +128,7 @@ To obtain this result we can write the following code in first component
 
 As you can see we listen on `keyup` on input element and execute method `update` that looking for `#dom-target` and directly modify their content.
 
-In second we do not want even JavaScript
+In second file, we even do not use JavaScript
 
 ```html
 <template>
