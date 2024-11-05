@@ -4,6 +4,7 @@ slug: analiza-on-chain
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-07-15T14:18:03.000Z
 draft: true
+canonicalName: on-chain-analysis
 ---
 
 Każdy inwestor interesujący się kryptowalutami wie, że trzymanie środków na giełdzie eksponuje go na stałe ryzyko:

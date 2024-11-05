@@ -4,6 +4,7 @@ slug: pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T20:35:08.000Z
 draft: true
+canonicalName: measuring-the-amount-of-text-and-code-in-my-blog-posts
 ---
 
 ## Opis projektu

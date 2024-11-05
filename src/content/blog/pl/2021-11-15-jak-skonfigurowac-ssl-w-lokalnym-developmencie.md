@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 title: Jak skonfigurować SSL w lokalnym developmencie
-canonicalName: jak-skonfigurowac-ssl-w-lokalnym-developmencie
+canonicalName: how-to-configure-ssl-in-local-development
 slug: pl/jak-skonfigurowac-ssl-w-lokalnym-developmencie
 publishDate: 2021-11-15T16:47:42.000Z
 updateDate: 2021-11-15T16:47:42.000Z

@@ -1,9 +1,10 @@
 ---
-title: Fractional calclus on example of gaussian curve
-slug: fractional-calclus-on-example-of-gaussian-curve
+title: Fractional calculus on example of gaussian curve
+slug: fractional-calculus-on-example-of-gaussian-curve
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T19:32:37.000Z
 draft: true
+canonicalName: fractional-calculus-on-example-of-gaussian-curve
 ---
 
 The fractional calculus is a extension of traditional calcus by noninteger orders of integrals and derivatives. Allows to generalize these operations and parametrize them to better understood how a functions that are these derivatives inject on each oder smoothly.

@@ -4,6 +4,7 @@ slug: strapi-emaillabs
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2022-10-06T19:10:57.000Z
 draft: true
+canonicalName: strapi-email-labs-integration
 ---
 
 [Strapi](https://strapi.io/) to wgodny CMS pozwalający wyklikać model danych i wygenerować na jego podstawie rest api oraz graphql.

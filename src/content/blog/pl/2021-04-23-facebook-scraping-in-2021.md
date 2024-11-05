@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: scraping-facebooka-w-2021-roku
+canonicalName: facebook-scraping-in-2021
 coverImage: http://localhost:8484/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
 updateDate: 2021-04-24 11:23:36+00:00
 description: Artykuł ma na celu zapoznanie czytelnika z metodą na scaping portalu

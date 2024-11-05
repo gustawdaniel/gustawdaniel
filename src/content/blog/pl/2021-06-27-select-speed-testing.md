@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: wplyw-indeksacji-na-wydajnosc-wyszukiwania-w-bazie-mysql
+canonicalName: impact-indexation-on-performance-of-search-in-base-mysql
 coverImage: http://localhost:8484/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 updateDate: 2021-06-27 17:40:00+00:00
 description: Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkość tabel

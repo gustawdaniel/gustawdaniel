@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 title: Publikacja aktualizacji paczki w repozytorium AUR
-canonicalName: aktualizacja-paczki-aur
+canonicalName: aur-package-publication
 slug: pl/aktualizacja-paczki-aur
 publishDate: 2022-01-29T20:34:39.000Z
 updateDate: 2022-01-29T20:34:39.000Z

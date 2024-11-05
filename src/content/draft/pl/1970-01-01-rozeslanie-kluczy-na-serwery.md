@@ -4,6 +4,7 @@ slug: rozeslanie-kluczy-na-serwery
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-29T12:06:59.000Z
 draft: true
+canonicalName: keys-distribution-for-many-servers
 ---
 
 Aby wygenerować parę kluczy `ssh` w określonej lokalizacji, używamy flagi `-f`. Na przykład:

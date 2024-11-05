@@ -4,6 +4,7 @@ slug: creating-an-rpm-package-for-a-rust-cli-application-on-fedora
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2023-03-21T12:34:48.000Z
 draft: true
+canonicalName: creating-an-rpm-package-for-a-rust-cli-application-on-fedora
 ---
 
 In this blog post, we will explore the process of creating an RPM package for a Rust-based Command Line Interface (CLI) application on Fedora. The RPM package will allow users to easily install and manage the Rust CLI application on their Fedora systems.

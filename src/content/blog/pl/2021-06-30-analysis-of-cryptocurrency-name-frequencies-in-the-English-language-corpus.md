@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: analiza-czestosci-nazw-altcoinow-w-korpusie-jezyka-angielskiego
+canonicalName: analysis-frequency-names-of-altcoins-in-english-language
 coverImage: http://localhost:8484/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
 updateDate: 2021-06-30 10:22:00+00:00
 description: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw

@@ -4,6 +4,7 @@ slug: how-i-created-24-videos-in-single-day-to-promote-my-gpt-cli
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2023-03-18T03:44:21.000Z
 draft: true
+canonicalName: how-i-created-24-videos-in-single-day-to-promote-my-gpt-cli
 ---
 
 I created awesome tool that allow you to ask gpt3.5 for linux commands. It is so awesome, that I decided to put more effort in advertising it. In this article I am showing how I did it.

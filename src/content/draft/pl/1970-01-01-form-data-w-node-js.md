@@ -4,6 +4,7 @@ slug: form-data-w-node-js
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-03-18T12:32:13.000Z
 draft: true
+canonicalName: form-data-in-node-js
 ---
 
 Wysyłanie żądań HTTP jest podstawową umiejętnością programisty webowego. W tym wpisie pokażemy jak za pomocą przeglądarki oraz node js wysyłać żądania typu `application/x-www-form-urlencoded` znane też jako `form data` za pomocą biblioteki axios.

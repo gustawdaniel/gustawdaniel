@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: scraping-z-money-pl-w-30-liniach-kodu
+canonicalName: scraping-from-money-pl-in-30-lines-of-code
 coverImage: http://localhost:8484/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
 updateDate: 2021-02-17 21:03:26+00:00
 description: Zobacz proste case study pobrania i przetworzenia danych z paginowanej

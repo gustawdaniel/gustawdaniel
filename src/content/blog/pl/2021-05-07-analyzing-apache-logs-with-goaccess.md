@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: analiza-logow-apache-z-goaccess
+canonicalName: analysis-of-apache-logs-with-goaccess
 coverImage: http://localhost:8484/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
 updateDate: 2021-07-18 18:21:38+00:00
 description: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje

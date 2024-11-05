@@ -4,6 +4,7 @@ slug: jak-pobralem-dane-o-4k-firm-w-pol-minuty
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-27T22:50:23.000Z
 draft: true
+canonicalName: how-i-downloaded-data-about-4k-companies-in-half-an-hour
 ---
 
 O firmach wiedziałem tylko jak się nazywają. Potrzebowałem ich adresów, ...

@@ -4,6 +4,7 @@ slug: najlepsze-metody-web-skrapingu
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-09T19:48:53.000Z
 draft: true
+canonicalName: best-web-scraping-methods
 ---
 
 Zanim rozpoczniesz rozmowę o możliwościach, technologii i nowoczesnych metodach scrapingu stron internetowych, zadbaj o sformułowanie problemu.

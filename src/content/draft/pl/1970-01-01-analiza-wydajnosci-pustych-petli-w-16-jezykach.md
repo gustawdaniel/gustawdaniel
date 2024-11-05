@@ -4,6 +4,7 @@ slug: analiza-wydajnosci-pustych-petli-w-16-jezykach
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T20:33:48.000Z
 draft: true
+canonicalName: performance-of-empty-loops-in-16-languages
 ---
 
 ## Opis projektu

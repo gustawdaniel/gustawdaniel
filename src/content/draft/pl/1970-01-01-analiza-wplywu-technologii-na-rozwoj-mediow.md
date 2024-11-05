@@ -4,6 +4,7 @@ slug: analiza-wplywu-technologii-na-rozwoj-mediow
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2022-06-11T10:05:35.000Z
 draft: true
+canonicalName: technology-impact-on-media-development
 ---
 
 Artykuł stanowi lekkie wprowadzenie do tematyki fałszywych wiadomości, post prawdy i manipulacji medialnej. Zagadnienia te omawiane są w kontekście dynamicznego rozwoju technologii, która z jednej strony pozwala je skuteczniej wykrywać, a z drugiej strony wytwarzać. Tekstu nie należy traktować jak opracowania naukowego, jest to raczej wyrażenie opinii autora i spekulacja na temat kierunku w jakim ewoluować będzie zjawisko publikowania “fake news”.

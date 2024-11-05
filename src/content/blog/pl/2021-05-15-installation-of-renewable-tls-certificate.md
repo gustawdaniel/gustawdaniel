@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: instalacja-odnawialnego-certyfikatu-tls-certbot-apache-na-ubuntu
+canonicalName: install-renewable-certificate-tls-certbot-apache-on-ubuntu
 coverImage: http://localhost:8484/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
 updateDate: 2021-06-22 09:05:15+00:00
 description: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch

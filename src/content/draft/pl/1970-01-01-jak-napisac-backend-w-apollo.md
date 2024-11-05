@@ -4,6 +4,7 @@ slug: jak-napisac-backend-w-apollo
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-07-03T17:36:42.000Z
 draft: true
+canonicalName: apollo-server-in-node-js
 ---
 
 Pokażę jak napisać aplikację, która wylicza wpływ nagłych zmiany rezerwy BTC na giełdach na ich cenę. Kod piszemy od zera w technologiach

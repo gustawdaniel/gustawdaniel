@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: kompilacja-interpretera-php-7-w-bunsenlabs
+canonicalName: compile-php-7-interpreter-in-bunsenlabs
 coverImage: http://localhost:8484/7befcf74-cca9-4f73-b2fb-92961cbcefbd.avif
 updateDate: 2021-06-21 17:02:31+00:00
 description: Kompilacja to proces, który czasami wymaga instalacji paczek lub linkowania

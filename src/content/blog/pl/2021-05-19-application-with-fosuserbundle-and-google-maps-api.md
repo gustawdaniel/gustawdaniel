@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: aplikacja-z-fosuserbundle-i-api-google-maps
+canonicalName: symfony-app-with-google-maps-api
 coverImage: http://localhost:8484/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
 updateDate: 2021-06-22 09:23:37+00:00
 description: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala

@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: scrapowanie-danych-w-jezyku-perl
+canonicalName: scraping-data-in-perl-language
 coverImage: http://localhost:8484/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 updateDate: 2021-06-22 09:00:09+00:00
 description: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania

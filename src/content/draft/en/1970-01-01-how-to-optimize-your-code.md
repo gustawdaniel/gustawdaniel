@@ -4,6 +4,7 @@ slug: how-to-optimize-your-code
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T19:20:49.000Z
 draft: true
+canonicalName: how-to-optimize-your-code
 ---
 
 There are some places where you should optimize code

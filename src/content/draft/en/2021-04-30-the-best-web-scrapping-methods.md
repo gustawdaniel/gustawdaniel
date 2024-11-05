@@ -5,6 +5,7 @@ publishDate: 2021-04-29T22:45:55.000Z
 updateDate: 2021-04-29T22:46:02.000Z
 draft: true
 excerpt: web scraping methods with these pros and cons
+canonicalName: the-best-web-scrapping-methods
 ---
 
 Before you start a conversation about the possibilities, technologies and methods of modern website hijackers, be sure to formulate your problem.

@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: ile-rodzin-zmiesci-sie-w-samolocie-zadanie-z-algorytmiki
+canonicalName: how-many-families-can-fit-in-an-airplane
 coverImage: http://localhost:8484/e241188a-23c6-41d5-a640-95085128893c.avif
 updateDate: 2021-04-20 18:41:10+00:00
 description: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych

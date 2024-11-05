@@ -5,6 +5,7 @@ publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T20:45:02.000Z
 tags: ['js', 'game', 'snake']
 draft: true
+canonicalName: snake-game-in-javascript-part-2-events
 ---
 
 ## About project

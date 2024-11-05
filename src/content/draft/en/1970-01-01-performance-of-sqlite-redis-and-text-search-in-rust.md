@@ -4,6 +4,7 @@ slug: performance-of-sqlite-redis-and-text-search-in-rust
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2022-12-15T17:06:59.000Z
 draft: true
+canonicalName: performance-of-sqlite-redis-and-text-search-in-rust
 ---
 
 We have sorted dictionary with English words. Our goal is write program that check if words is present in dictionary. Open question remains which tools should be selected. We will consider comparison of:

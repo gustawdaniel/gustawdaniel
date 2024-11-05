@@ -4,6 +4,7 @@ slug: continous-delivery-w-gitlab-ci-docker-in-docker
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-28T14:31:15.000Z
 draft: true
+canonicalName: continuous-delivery-in-gitlab
 ---
 
 Skrót CI/CD - ciągła integracja i ciągłe dostarczanie oznaczają, że zamiast manualnego wdrażania systemu na serwer zmiana kodu źródłowego powoduje wykonanie się testów automatycznych i aktualizację systemu na serwerze.

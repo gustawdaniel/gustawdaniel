@@ -3,6 +3,7 @@ title: Portfolio
 slug: portfolio
 publishDate: 2021-04-07T10:36:11.000Z
 updateDate: 2021-04-12T12:36:32.000Z
+canonicalName: portfolio
 ---
 
 Quantum hash

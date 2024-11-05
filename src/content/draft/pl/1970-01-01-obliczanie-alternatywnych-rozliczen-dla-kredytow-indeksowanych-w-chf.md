@@ -4,6 +4,7 @@ slug: obliczanie-alternatywnych-rozliczen-dla-kredytow-indeksowanych-w-chf
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-02-09T10:20:01.000Z
 draft: true
+canonicalName: chf-credit-settlement
 ---
 
 Kredytem CHF nazywa się potocznie w Polsce kredyt który został zaciągnięty w tej walucie mimo, że spłacany był często w złotówkach przez osoby mieszkające w naszym kraju. Popularność tego rozwiązania w latach 2004-2008 spowodowana była niskim kursem franka szwajcarskiego oraz niską wartością LIBOR, czyli stawką po której największe banki świata pożyczają sobie pieniądze. Tym czasem WIBOR, który doliczany był do marży polskich kredytów był wyższy przez to potencjalne warunki tego kredytu w momencie jego zaciągania mogły się wydawać lepsze.

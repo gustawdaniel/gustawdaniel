@@ -4,6 +4,7 @@ slug: mongo-prisma
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-06-25T18:28:28.000Z
 draft: true
+canonicalName: mongo-prisma-review
 ---
 
 18 kwietnia 2021 została

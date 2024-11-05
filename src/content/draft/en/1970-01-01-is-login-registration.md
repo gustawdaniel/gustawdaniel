@@ -4,6 +4,7 @@ slug: is-login-registration
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2023-04-19T05:39:46.000Z
 draft: true
+canonicalName: is-login-registration
 ---
 
 In most apps we have to register account to act as user. On the other hand we living in society when instant gratification is extremely important force in shaping humans behaviour.

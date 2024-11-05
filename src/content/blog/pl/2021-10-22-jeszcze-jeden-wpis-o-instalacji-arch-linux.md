@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: jeszcze-jeden-wpis-o-instalacji-arch-linux
+canonicalName: one more-article-about-installation-arch-linux
 slug: pl/jeszcze-jeden-wpis-o-instalacji-arch-linux
 publishDate: 2021-10-22T01:24:19.000Z
 updateDate: 2021-10-30T12:31:37.000Z

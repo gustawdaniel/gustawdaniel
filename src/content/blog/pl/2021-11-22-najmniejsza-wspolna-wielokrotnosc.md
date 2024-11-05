@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 title: Najmniejsza wspólna wielokrotność - teoria liczb
-canonicalName: najmniejsza-wspolna-wielokrotnosc
+canonicalName: smallest-common-multiple
 slug: pl/najmniejsza-wspolna-wielokrotnosc
 publishDate: 2021-11-22T14:38:00.000Z
 updateDate: 2021-11-22T14:38:00.000Z

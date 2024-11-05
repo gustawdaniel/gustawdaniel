@@ -4,6 +4,7 @@ slug: how-i-used-gpt-3-to-solve-my-issues-with-obs-and-davinci-resolve-problems-
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2023-01-21T13:56:18.000Z
 draft: true
+canonicalName: obs-and-davinci-resolve-problems-with-mkv-format
 ---
 
 I see value in creation content that in affordable and helpful for other people. From this reason I switched from Polish language to English and now considering move from text content to video.

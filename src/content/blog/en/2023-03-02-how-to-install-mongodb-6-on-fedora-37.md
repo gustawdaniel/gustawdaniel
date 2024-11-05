@@ -52,7 +52,7 @@ so there are two assumptions that are correct:
 
 Now you have to start `mongod` service
 
-```
+```bash
 sudo systemctl start mongod
 ```
 
@@ -92,32 +92,32 @@ is required by `prisma` so I am enabling it locally.
 
 In file `/etc/mongod.conf` you have to replace
 
-```
+```yaml
 #replication:
 ```
 
 by
 
-```3
+```yaml
 replication:
   replSetName: "rs0"
 ```
 
 then reload `mongod` service
 
-```
+```bash
 sudo systemctl restart mongod
 ```
 
 Login to database by `mongosh` and use command
 
-```
+```sh
 rs.initiate()
 ```
 
 then you can confirm changes by
 
-```
+```sh
 rs.status()
 ```
 

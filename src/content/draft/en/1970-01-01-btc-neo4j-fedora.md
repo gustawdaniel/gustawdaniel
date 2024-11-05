@@ -1,6 +1,7 @@
 ---
 title: How to transform BTC blockchain to neo4j on Fedora Linux
 slug: btc-neo4j-fedora
+canonicalName: btc-neo4j-fedora
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2023-04-27T07:25:49.000Z
 draft: true

@@ -4,6 +4,7 @@ slug: badanie-wydajnosci-insertow-mysql
 publishDate: 1970-01-01T00:00:00.000Z
 updateDate: 2021-04-20T20:51:58.000Z
 draft: true
+canonicalName: insert-mysql-performance-review
 ---
 
 ## Struktura bazy danych

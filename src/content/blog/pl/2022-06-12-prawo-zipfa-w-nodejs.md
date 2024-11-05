@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 title: Analiza Prawa Zipfa w Node.js
-canonicalName: prawo-zipfa-w-nodejs
+canonicalName: zipfs-law-in-nodejs
 slug: pl/prawo-zipfa-w-nodejs
 publishDate: 2022-06-11T22:50:51.000Z
 updateDate: 2022-06-11T23:06:08.000Z

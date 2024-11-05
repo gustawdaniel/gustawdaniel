@@ -1,6 +1,6 @@
 ---
 author: Daniel Gustaw
-canonicalName: scraping-najbardziej-popularnych-kont-na-twitterze
+canonicalName: scraping-the-most-popular-accounts-on-twitter
 coverImage: http://localhost:8484/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
 updateDate: 2021-06-26 09:35:10+00:00
 description: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym
