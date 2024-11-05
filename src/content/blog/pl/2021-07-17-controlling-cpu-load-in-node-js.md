@@ -17,7 +17,7 @@ title: Sterowanie procesami w Node JS
 
 
 
-W tym wpisie nauczymy się jak tworzyć i kończyć podprocesy w Node JS oraz jak przesyłać między nimi dane.
+W tym wpisie nauczymy się jak tworzyć i kończyć `podprocesy` w Node JS oraz jak przesyłać między nimi dane.
 
 Jeśli program wykonuje ciężkie obliczenia, ale nie jest zrównoleglony, stan Twojego procesora może wyglądać tak:
 
