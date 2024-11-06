@@ -2,10 +2,10 @@
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
 coverImage: http://localhost:8484/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
-description: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
-excerpt: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
+description: En este artículo, veremos cómo implementar la multiplicación de cuaterniones en Rust y NodeJS. Aprenderás sobre el análisis y el álgebra.
+excerpt: En este artículo, veremos cómo implementar la multiplicación de cuaterniones en Rust y NodeJS. Aprenderás sobre el análisis y el álgebra.
 publishDate: 2023-01-20 02:19:57+00:00
-slug: en/quaternion-multiplication
+slug: es/multiplicacion-de-cuaterniones
 tags:
 - quaternion
 - rust
@@ -13,82 +13,82 @@ tags:
 - algebra
 - mathematics
 - parsing
-title: 'CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra'
+title: 'CodinGame: Multiplicación de cuaterniones - Rust, NodeJS - Análisis, Álgebra'
 updateDate: 2023-01-20 02:19:57+00:00
 ---
 
-In this article we will see how to implement the multiplication of quaternions in Rust and NodeJS. I encourage you to try to solve this problem before seeing solutions. Below I am attaching a link to this exercise:
+En este artículo veremos cómo implementar la multiplicación de cuaterniones en Rust y NodeJS. Te animo a que intentes resolver este problema antes de ver las soluciones. A continuación, adjunto un enlace a este ejercicio:
 
-[Coding Games and Programming Challenges to Code Better](https://www.codingame.com/training/medium/quaternion-multiplication)
+[Juegos de Codificación y Desafíos de Programación para Mejorar el Código](https://www.codingame.com/training/medium/quaternion-multiplication)
 
-The quaternions belong to a number system that extends the complex numbers. A quaternion is defined by the sum of scalar multiples of the constants **i**, **j**, **k** and **1**. More information is available at:
+Los cuaterniones pertenecen a un sistema numérico que extiende los números complejos. Un cuaternión se define por la suma de múltiplos escalares de las constantes **i**, **j**, **k** y **1**. Más información está disponible en:
 
-[Quaternion -- from Wolfram MathWorld](https://mathworld.wolfram.com/Quaternion.html)
+[Cuaternión -- de Wolfram MathWorld](https://mathworld.wolfram.com/Quaternion.html)
 
-Consider the following properties:  
+Considere las siguientes propiedades:  
 **jk** = **i**  
 **ki** = **j**  
 **ij** = **k**  
 **i**² = **j**² = **k**² = **\-1**  
 
-These properties also imply that:  
+Estas propiedades también implican que:  
 **kj** = **\-i**  
 **ik** = **\-j**  
 **ji** = **\-k**  
 
-The order of multiplication is important.
+El orden de la multiplicación es importante.
 
-Your program must output the result of the product of a number of bracketed simplified quaternions.
+Tu programa debe mostrar el resultado del producto de una serie de cuaterniones simplificados entre paréntesis.
 
-**Pay attention to the formatting**  
-The coefficient is appended to the left of the constant.  
-If a coefficient is **1** or **\-1**, don't include the **1** symbol.  
-If a coefficient or scalar term is **0**, don't include it.  
-The terms must be displayed in order: a**i** + b**j** + c**k** + d.
+**Presta atención al formato**  
+El coeficiente se agrega a la izquierda de la constante.  
+Si un coeficiente es **1** o **\-1**, no incluyas el símbolo **1**.  
+Si un coeficiente o término escalar es **0**, no lo incluyas.  
+Los términos deben mostrarse en el siguiente orden: a**i** + b**j** + c**k** + d.
 
-**Example Multiplication**  
+**Multiplicación de Ejemplo**  
 (2i+2j)(j+1) = (2ij+2i+2j² +2j) = (2k+2i-2+2j) = (2i+2j+2k-2)
 
 ---
 
-**Input:**
+**Entrada:**
 
-**Line 1**: The expression expr to evaluate. This will always be the product of simplified bracketed expressions.
+**Línea 1**: La expresión expr a evaluar. Este siempre será el producto de expresiones simplificadas entre paréntesis.
 
-**Output:** A single line containing the simplified result of the product expression. No brackets are required.
+**Salida:** Una sola línea que contiene el resultado simplificado de la expresión del producto. No se requieren paréntesis.
 
-**Constraints:** All coefficients in any part of evaluation will be less than **10^9**  
-The input contains no more than 10 simplified bracketed expressions
+**Restricciones:** Todos los coeficientes en cualquier parte de la evaluación serán menores que **10^9**  
+La entrada no contiene más de 10 expresiones simplificadas entre paréntesis.
 
-**Example**
+**Ejemplo**
 
-**Input**
+**Entrada**
 
 ```
 (i+j)(k)
 ```
 
-**Output**
+**Salida**
 
 ```
 i-j
 ```
 
-# Solution
+# Solución
 
-I decided to present only the most important parts here. The full solution can be found in the repository:
+Decidí presentar solo las partes más importantes aquí. La solución completa se puede encontrar en el repositorio:
 
 [GitHub - gustawdaniel/codingame-quaternion-multiplication](https://opengraph.githubassets.com/85682fcbd54214a903a6cb968a0137db1d1243d42b118b9e0764ac9229c76d63/gustawdaniel/codingame-quaternion-multiplication)](https://github.com/gustawdaniel/codingame-quaternion-multiplication)
 
-We can divide our problem into three steps:
+Podemos dividir nuestro problema en tres pasos:
 
-* parsing input to Quaternion structure
-* multiplication of Quaternions
-* formatting Quaternion back to string
+* análisis de entrada a la estructura Quaternion
+* multiplicación de Quaterniones
+* formateo de Quaternion de vuelta a cadena
 
 ![](http://localhost:8484/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
 
-These high-level operations can be implemented in NodeJS
+Estas operaciones de alto nivel se pueden implementar en NodeJS.
 
 ```typescript
 import {Quaternion} from "./lib";
@@ -100,7 +100,7 @@ process.stdin.on('data', (buff) => {
 })
 ```
 
-and in Rust
+y en Rust
 
 ```rust
 fn main() {
@@ -114,26 +114,26 @@ fn main() {
 }
 ```
 
-You can see that this code is really similar but in both cases we have to implement `Struct/Class` named `Quaternion`. Now we will go through three steps mentioned before using `TDD`. Tests are natively supported in rust, but in `NodeJS` I decided to use `jest` as testing framework.
+Puedes ver que este código es muy similar, pero en ambos casos tenemos que implementar `Struct/Class` llamado `Quaternion`. Ahora pasaremos por los tres pasos mencionados anteriormente utilizando `TDD`. Las pruebas son nativamente compatibles en rust, pero en `NodeJS` decidí usar `jest` como marco de pruebas.
 
-## Parsing input to Quaternion structure
+## Análisis de la entrada a la estructura Quaternion
 
-Our input
+Nuestra entrada
 
 ```
 (i+j)(k)
 ```
 
-should be treated as an array of quaternions - separated by brackets. In any brackets, we have an array of coefficients. So we can divide our parsing into 4 parts:
+debe ser tratado como un arreglo de cuaterniones - separados por corchetes. En cualquier corchete, tenemos un arreglo de coeficientes. Así que podemos dividir nuestro análisis en 4 partes:
 
-* splitting by brackets
-* splitting any bracket into coefficients
-* creating Quaternions from arrays of coefficients
-* extracting number from coefficient
+* división por corchetes
+* división de cualquier corchete en coeficientes
+* creación de cuaterniones a partir de arreglos de coeficientes
+* extracción de números de coeficientes
 
 ![](http://localhost:8484/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
 
-In NodeJS we can start with two tests. First for simple cases:
+En NodeJS podemos comenzar con dos pruebas. Primero para casos simples:
 
 ```typescript
     it('simple parse', () => {
@@ -146,7 +146,7 @@ In NodeJS we can start with two tests. First for simple cases:
     });
 ```
 
-Second for more advanced coefficients:
+Segundo para coeficientes más avanzados:
 
 ```typescript
     it('complex parse', () => {
@@ -164,7 +164,7 @@ Second for more advanced coefficients:
     });
 ```
 
-The identical tests in `rust` can be expressed as
+Las pruebas idénticas en `rust` se pueden expresar como
 
 ```rust
 #[cfg(test)]
@@ -199,7 +199,7 @@ mod tests {
 }
 ```
 
-Our base `Quaternion` class will have `4` properties. In NodeJS:
+Nuestra clase base `Quaternion` tendrá `4` propiedades. En NodeJS:
 
 ```typescript
 export class Quaternion {
@@ -210,7 +210,7 @@ export class Quaternion {
 }
 ```
 
-where `r` means `real` part that inherits arithmetic from real numbers. In `rust` we are using `struct` keyword instead of `class`
+donde `r` significa `parte` real que hereda la aritmética de los números reales. En `rust` estamos usando la palabra clave `struct` en lugar de `class`
 
 ```rust
 #[derive(Debug)]
@@ -222,9 +222,9 @@ struct Quaternion {
 }
 ```
 
-### Splitting string using regular expressions
+### Division de cadenas usando expresiones regulares
 
-To split input and provide arrays of coefficients to Quaternion constructors, we can write methods in NodeJS:
+Para dividir la entrada y proporcionar arreglos de coeficientes a los constructores de Quaternion, podemos escribir métodos en NodeJS:
 
 ```typescript
     static parse(input: string): Quaternion[] {
@@ -241,7 +241,7 @@ To split input and provide arrays of coefficients to Quaternion constructors, we
     }
 ```
 
-and Rust
+y Rust
 
 ```rust
 impl Quaternion {
@@ -264,17 +264,17 @@ impl Quaternion {
 }
 ```
 
-Generally there are the same regex expressions but `rust` requires here external library called `regex`. Additionally `rust` checks correctness of regex expressions and ensures handling errors in them, that can be skipped by default in `node js` code. Generally, I feel that `node js` approach to regex is more clean and readable.
+Generalmente, hay las mismas expresiones regex, pero `rust` requiere aquí una biblioteca externa llamada `regex`. Además, `rust` verifica la corrección de las expresiones regex y asegura el manejo de errores en ellas, lo cual se puede omitir por defecto en el código de `node js`. En general, siento que el enfoque de `node js` hacia regex es más limpio y legible.
 
-Now we have the following problem. Our coefficients can contain numbers, numbers with names of components like: `i`, `j`, or `k`, or even lonely letters like `i` which means `1i`. There are also possible signs like `-k`.
+Ahora tenemos el siguiente problema. Nuestros coeficientes pueden contener números, números con nombres de componentes como: `i`, `j` o `k`, o incluso letras solitarias como `i` que significa `1i`. También hay signos posibles como `-k`.
 
-We need code that will extract numbers from them. Let's name `i`, `j`, or `k` as `type` and the full coefficient string as `input`. Then extracting a number can be considered as:
+Necesitamos un código que extraiga números de ellos. Llamemos `i`, `j` o `k` como `tipo` y la cadena completa del coeficiente como `entrada`. Entonces, extraer un número puede considerarse como:
 
-* removing `type` from `input`
-* if the rest does not end with a digit then add `1` on the end (example is `-`)
-* finally parse it as float
+* eliminar `tipo` de `entrada`
+* si el resto no termina con un dígito, entonces agregar `1` al final (el ejemplo es `-`)
+* finalmente, analizarlo como float
 
-Implementation in `node js`
+Implementación en `node js`
 
 ```typescript
     static getCoefficient(type: string, input: string): number {
@@ -283,7 +283,7 @@ Implementation in `node js`
     }
 ```
 
-and analogical in rust
+y analógico en rust
 
 ```rust
     fn get_coefficient(t: &str, input: String) -> f64 {
@@ -296,9 +296,9 @@ and analogical in rust
     }
 ```
 
-In Rust, generally handling conversions between types requires more characters but is more reliable. In this case, writing `unwrap` enforces us to think about possible ways to handle problems with parsing.
+En Rust, generalmente manejar conversiones entre tipos requiere más caracteres pero es más confiable. En este caso, escribir `unwrap` nos obliga a pensar en posibles formas de manejar problemas con el análisis.
 
-Now we can present constructors. In them, we will pass an array of strings with coefficients like `8`, `-9k`, or `i`. In `Node.js`:
+Ahora podemos presentar constructores. En ellos, pasaremos un arreglo de cadenas con coeficientes como `8`, `-9k` o `i`. En `Node.js`:
 
 ```typescript
     constructor(args: Array<string>) {
@@ -316,7 +316,7 @@ Now we can present constructors. In them, we will pass an array of strings with 
     }
 ```
 
-or in `rust`:
+o en `rust`:
 
 ```rust
     fn new(args: Vec<String>) -> Quaternion {
@@ -343,20 +343,20 @@ or in `rust`:
     }
 ```
 
-## Multiplication of Quaternions
+## Multiplicación de Cuaterniones
 
-Multiplication of two quaternions is similar to multiplication of polynomials. Firstly, we multiply any pairs of components with each other. Then we can group them by component type and finally add coefficients. The difference is that in polynomial multiplication we are always adding powers, but in Quaternions we are using noncommutative division algebra presented in the table:
+La multiplicación de dos cuaterniones es similar a la multiplicación de polinomios. Primero, multiplicamos cualquier par de componentes entre sí. Luego podemos agruparlas por tipo de componente y, finalmente, sumar los coeficientes. La diferencia es que en la multiplicación de polinomios siempre estamos sumando potencias, pero en los cuaterniones estamos utilizando álgebra de división no conmutativa presentada en la tabla:
 
 ![](http://localhost:8484/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
 
-So basically we can divide our problem into:
+Así que básicamente podemos dividir nuestro problema en:
 
-* multiplication of base elements
-* multiplication of linear combinations of base elements
+* multiplicación de elementos base
+* multiplicación de combinaciones lineales de elementos base
 
-### Multiplication of base elements
+### Multiplicación de elementos base
 
-I rewrote all possible cases in the test file in `NodeJS`
+Reescribí todos los casos posibles en el archivo de prueba en `NodeJS`
 
 ```typescript
     it('multiply base', () => {
@@ -382,7 +382,7 @@ I rewrote all possible cases in the test file in `NodeJS`
     })
 ```
 
-and `Rust`
+y `Rust`
 
 ```rust
     #[test]
@@ -409,7 +409,7 @@ and `Rust`
     }
 ```
 
-In `Rust`, I have to define `SignedCoefficient`, which were simple anonymous objects in `node`.
+En `Rust`, tengo que definir `SignedCoefficient`, que eran objetos anónimos simples en `node`.
 
 ```rust
 #[derive(Debug)]
@@ -419,7 +419,7 @@ struct SignedCoefficient {
 }
 ```
 
-additionally I have to implement equation relation on them to use `assert_eq`.
+además, tengo que implementar la relación de ecuación en ellos para usar `assert_eq`.
 
 ```rust
 impl PartialEq<SignedCoefficient> for SignedCoefficient {
@@ -429,13 +429,13 @@ impl PartialEq<SignedCoefficient> for SignedCoefficient {
 }
 ```
 
-Function `multiplyBase` is super simple and to build it we have to see that:
+La función `multiplyBase` es super simple y para construirla tenemos que ver que:
 
-* multiplication by 1 is always the other element. `a * 1 = a` and `1 * a = a`
-* excluding 1 we always have `a * a = -1`
-* excluding 1 and diagonal we always receive coefficient different from these used to multiply, sign can be determined using `%2` operation and direction of multiplication.
+* la multiplicación por 1 es siempre el otro elemento. `a * 1 = a` y `1 * a = a`
+* excluyendo 1 siempre tenemos `a * a = -1`
+* excluyendo 1 y la diagonal siempre recibimos un coeficiente diferente de aquellos utilizados para multiplicar, el signo se puede determinar utilizando la operación `%2` y la dirección de la multiplicación.
 
-Using these observations we can define multiplication in `node` as
+Usando estas observaciones podemos definir la multiplicación en `node` como
 
 ```typescript
     static multiplyBase(a: Base, b: Base): { c: -1 | 1, d: Base } {
@@ -450,7 +450,7 @@ Using these observations we can define multiplication in `node` as
     }
 ```
 
-and in `rust`
+y en `rust`
 
 ```rust
     fn multiply_base(a: char, b: char) -> SignedCoefficient {
@@ -466,9 +466,9 @@ and in `rust`
     }
 ```
 
-### Multiplication of linear combinations
+### Multiplicación de combinaciones lineales
 
-I divided multiplication tests into simple and complex cases.
+Dividí las pruebas de multiplicación en casos simples y complejos.
 
 ```typescript
     it('simple multiply', () => {
@@ -492,7 +492,7 @@ I divided multiplication tests into simple and complex cases.
     })
 ```
 
-and
+y
 
 ```rust
     #[test]
@@ -522,7 +522,7 @@ and
     }
 ```
 
-here to compare Quaternions we have to implement `PartialEq`
+aquí para comparar cuaterniones tenemos que implementar `PartialEq`
 
 ```rust
 impl PartialEq<Quaternion> for Quaternion {
@@ -532,7 +532,7 @@ impl PartialEq<Quaternion> for Quaternion {
 }
 ```
 
-In `NodeJS`, it can be reduced to a nested loop like this
+En `NodeJS`, se puede reducir a un bucle anidado como este
 
 ```typescript
     multiply(a: Quaternion): Quaternion {
@@ -547,9 +547,9 @@ In `NodeJS`, it can be reduced to a nested loop like this
     }
 ```
 
-`c` is a sign, `d` is the name of the coefficient.
+`c` es un signo, `d` es el nombre del coeficiente.
 
-In `Rust`, we can't access dynamic properties that are chars, so we have to add two auxiliary methods to get and set values using chars.
+En `Rust`, no podemos acceder a propiedades dinámicas que son caracteres, así que tenemos que añadir dos métodos auxiliares para obtener y establecer valores usando caracteres.
 
 ```rust
     fn get(&self, key: char) -> f64 {
@@ -586,22 +586,22 @@ In `Rust`, we can't access dynamic properties that are chars, so we have to add 
     }
 ```
 
-but generally the idea is the same.
+pero generalmente la idea es la misma.
 
-Now we have a program that can read input, convert it to an array of Quaternions, and multiply them.
+Ahora tenemos un programa que puede leer la entrada, convertirla a un arreglo de cuaterniones y multiplicarlos.
 
 ![](http://localhost:8484/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
 
-Last lacking element is formatting result as string.
+El último elemento que falta es formatear el resultado como cadena.
 
-## Formatting Quaternion to strings
+## Formateando cuaterniones a cadenas
 
-Formatting results can be considered as:
+Los resultados de formateo se pueden considerar como:
 
-* formatting any single coefficient using special treatments for `1`
-* building ordered array of coefficients that is joined as string
+* formatear cualquier coeficiente individual usando tratamientos especiales para `1`
+* construir un array ordenado de coeficientes que se unen como cadena
 
-These operations are inversion of parsing presented in first part. Lest start from tests in `node js`
+Estas operaciones son la inversa del análisis presentado en la primera parte. Comencemos con las pruebas en `node js`
 
 ```typescript
     it('format coefficient', () => {
@@ -620,7 +620,7 @@ These operations are inversion of parsing presented in first part. Lest start fr
     })
 ```
 
-Analogical tests in `rust`
+Pruebas analógicas en `rust`
 
 ```rust
     #[test]
@@ -640,7 +640,7 @@ Analogical tests in `rust`
     }
 ```
 
-In the function `formatCoefficient`, we handle cases such as `1`, `-`, and determine whether component names like `i`, `j`, or `k` should be included in the result.
+En la función `formatCoefficient`, manejamos casos como `1`, `-`, y determinamos si nombres de componentes como `i`, `j` o `k` deben ser incluidos en el resultado.
 
 ```typescript
     static formatCoefficient(type: Base | '', value: number) {
@@ -651,7 +651,7 @@ In the function `formatCoefficient`, we handle cases such as `1`, `-`, and deter
     }
 ```
 
-and
+y
 
 ```rust
     fn format_coefficient(t: char, value: f64) -> String {
@@ -673,7 +673,7 @@ and
 }
 ```
 
-In the function `format`, we collect these components and decide on how to join them. We can't join using `+` because some elements start with `-`. However, we must handle the case of `0`. Finally, in `NodeJS`, we have:
+En la función `format`, recopilamos estos componentes y decidimos cómo unirlos. No podemos unir usando `+` porque algunos elementos comienzan con `-`. Sin embargo, debemos manejar el caso de `0`. Finalmente, en `NodeJS`, tenemos:
 
 ```typescript
     format(): string {
@@ -699,7 +699,7 @@ In the function `format`, we collect these components and decide on how to join 
     }
 ```
 
-while in `rust` implementation of formatting can be done by `fmt` function
+mientras que en la implementación de `rust` el formateo se puede hacer mediante la función `fmt`
 
 ```rust
 impl fmt::Display for Quaternion {
@@ -735,9 +735,9 @@ impl fmt::Display for Quaternion {
 }
 ```
 
-### Final e2e tests
+### Pruebas e2e finales
 
-To verify that all components of the programs correspond with one another, we can prepare some `e2e` test cases in `node`
+Para verificar que todos los componentes de los programas correspondan entre sí, podemos preparar algunos casos de prueba `e2e` en `node`
 
 ```typescript
     it('e2e', () => {
@@ -767,7 +767,7 @@ To verify that all components of the programs correspond with one another, we ca
     })
 ```
 
-and analogously in `rust`
+y de manera análoga en `rust`
 
 ```rust
 #[test]
@@ -803,6 +803,6 @@ and analogously in `rust`
     }
 ```
 
-It is the end of this exercise. If you are interested in learning more about Quaternions multiplication and how it is connected with geometry I recommend you video:
+Es el final de este ejercicio. Si estás interesado en aprender más sobre la multiplicación de cuaterniones y cómo se conecta con la geometría, te recomiendo el video:
 
-As you can see `rust` and `typescript` have a lot of similar elements. All descriptions and logic elements are identical and only differences can be seen on level of syntax, that is more focused on elimination of undefined behaviors in rust. On the other hand in typescript code can be written in a little more concise way that can improve readability.
+Como puedes ver, `rust` y `typescript` tienen muchos elementos similares. Todas las descripciones y los elementos lógicos son idénticos y solo las diferencias se pueden ver en el nivel de la sintaxis, que está más enfocada en la eliminación de comportamientos indefinidos en rust. Por otro lado, en typescript el código se puede escribir de una manera un poco más concisa que puede mejorar la legibilidad.

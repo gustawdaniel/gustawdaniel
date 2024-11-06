@@ -154,7 +154,7 @@ In template we adding super minimalistic frontend with login form and `pre` tags
 
 To share state between components we can use store like `pinia`, that can be persisted by `local-sorage`. Other solution is `cookie`. In our case we will show cokkie implementation because it is build in nuxt and require less lines of code. In biger projects you should consider pinia as more extendable and solution but cookies also have advantages in security area.
 
-Lets create two variables by `useCookie` function.
+Let's create two variables by `useCookie` function.
 
 ```typescript
 const token = useCookie('token');
