@@ -149,3 +149,4 @@ caddy run
 
 TODO:
 - [ ] add projects page
+- [ ] polish link fix replace (Nie będziemy się skupiać na tej części kodu. Jeśli jesteś tym zainteresowany i znasz język polski, napisałem artykuł na temat terraform tutaj:) by link per language

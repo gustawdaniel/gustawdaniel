@@ -72,7 +72,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-We will not focus on any line of this code. If you are interesed in this and know polish language I wrote article about terraform here:
+We will not focus on any line of this code. If you are interested in this and know Polish language I wrote article about terraform here:
 
 [Infrastrukura defniowana przez kod (terraform + digital ocean)](https://gustawdaniel.com/infrastrukura-defniowana-jako-kod/)
 
