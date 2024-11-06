@@ -2,86 +2,86 @@
 author: Daniel Gustaw
 canonicalName: scraping-from-money-pl-in-30-lines-of-code
 coverImage: http://localhost:8484/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
-description: Zobacz proste case study pobrania i przetworzenia danych z paginowanej tabeli.
-excerpt: Zobacz proste case study pobrania i przetworzenia danych z paginowanej tabeli.
+description: See a simple case study of downloading and processing data from a paginated table.
+excerpt: See a simple case study of downloading and processing data from a paginated table.
 publishDate: 2021-02-17 15:10:17+00:00
-slug: pl/scraping-libor-oraz-wibor-z-money-pl
+slug: en/scraping-libor-and-wibor-from-money-pl
 tags:
 - libor
 - mongo
 - scraping
-title: Scraping z money.pl w 30 liniach kodu.
+title: Scraping from money.pl in 30 lines of code.
 updateDate: 2021-02-17 21:03:26+00:00
 ---
 
-Dane finansowe w dobrej jakości i wygodne do pobrania polecam pobierać ze Stooq.
+Financial data in good quality and convenient to download is recommended to be downloaded from Stooq.
 
-Zanim jednak dowiedziałem się o tym serwisie, pobierałem je z innych źródeł. W tym artykule prezentuję taki właśnie przypadek, gdzie nieprzyjazny interfejs serwisu internetowego zmusił mnie do wykonania na nim scrapingu i pobrania danych, których potrzebowałem.
+However, before I learned about this service, I was downloading it from other sources. In this article, I present such a case where the unfriendly interface of the website forced me to scrape it and download the data I needed.
 
-Z artykułu dowiesz się, jak robić to szybko. Zobaczysz jakich narzędzi używam i w jaki sposób organizuję kod projektów scrapingowych.
+From the article, you will learn how to do it quickly. You will see what tools I use and how I organize the code for scraping projects.
 
-Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `WIBOR3M`. Znajduję nawet stronę, która takie dane udostępnia:
+As if nothing happened, I go online and want to download `LIBORCHF3M` and `WIBOR3M`. I even find a website that provides such data:
 
-[Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
+[Archive of quotes for LIBOR Swiss franc 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
 ![](http://localhost:8484/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
 
-Klikam pobierz i nawet dostaję plik, ale po zaznaczeniu pełnego okresu, wybraniu poprawnych danych widzę:
+I click download and I even receive the file, but after selecting the full period and choosing the correct data I see:
 
 ![](http://localhost:8484/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
 
-> Liczba wierszy ograniczona do 50
+> Number of rows limited to 50
 
-Kto to ograniczył? Po co ten formularz, jak nie można z niego skorzystać!? Wiadomo, że jak ktoś chce przetwarzać dane to najlepiej najszerszy możliwy zakres.
+Who limited it? What's the point of this form if it can't be used!? It is known that when someone wants to process data, it is best to have the broadest possible range.
 
-W tym wpisie pokażę jak minimalną liczbą linii kodu ominąć problem i wykonać szybki scraping. Poniżej plan działań jakie zaprezentuję:
+In this entry, I will show how to bypass the problem with a minimal amount of lines of code and perform quick scraping. Below is the plan of action that I will present:
 
-1. Sprawdzenie jak dostać się do tych danych.
-2. Pobranie danych na maszynę lokalną.
-3. Opisanie docelowej struktury.
-4. Przetworzenie pobranych stron.
+1. Check how to access this data.
+2. Download the data to the local machine.
+3. Describe the target structure.
+4. Process the downloaded pages.
 
-Główne cele:
+Main goals:
 
-* minimalizacja czasu i linii kodu na to zadanie
+* minimize the time and lines of code for this task
 
-# Jak dostać się do danych
+# How to access the data
 
-Okazuje się, że jak wyświetlimy tabelę to dane można z niej odczytać i będzie ona paginowana.
+It turns out that when we display the table, the data can be read from it and it will be paginated.
 
 ![](http://localhost:8484/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
 
-Linki mają kształt:
+Links have the shape:
 
 ```
 BASE_PREFIX${index}BASE_POSTFIX
 ```
 
-Na przykład
+For example
 
 ```
 https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html
 ```
 
-Renderowane są po stronie backendu co widzimy sprawdzając źródło strony:
+Rendered on the backend, which we see by checking the page source:
 
 ![](http://localhost:8484/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
 
-Potencjalnie plan 1:
+Potential plan 1:
 
-* pobrać wszystkie pętlą w bashu na wget - jedna linia
-* przetworzyć wszystkie pobrane pliki w `node` z `jsdom` 30 linii
+* download all loops in bash using wget - one line
+* process all downloaded files in `node` with `jsdom` 30 lines
 
-Potencjalnie plan 2
+Potential plan 2
 
-* pobrać pliki CSV co 50 dni z zakresie dat - około 40 linii `node`
-* przetworzyć je około 1 linii w sed / awk / perl / bash
+* download CSV files every 50 days within the date range - about 40 lines of `node`
+* process them about 1 line in sed / awk / perl / bash
 
-Opcja z CSV była by prostsza gdyby nie problematyczne paginowanie po datach. Operowanie na datach w `js` jest raczej nieprzyjemne, mimo to obie strategie są racjonalne. Jeśli oszczędzał bym transfer sieciowy czy moc obliczeniową to plan 2 bije na głowę plan 1. Jednak celujemy w minimalizację ilości kodu więc zrobimy to pierwszym sposobem.
+The option with CSV would be simpler if it weren't for the problematic pagination by dates. Working with dates in `js` is rather unpleasant, nevertheless both strategies are rational. If I were to save network transfer or computational power, plan 2 clearly beats plan 1. However, we aim to minimize the amount of code, so we will do it the first way.
 
-# Pobranie danych
+# Data Retrieval
 
-Linki:
+Links:
 
 ```
 LIBOR:
@@ -97,13 +97,13 @@ https://www.money.pl/pieniadze/depozyty/zlotowearch/1921-02-05,2021-02-05,WIBOR3
 Stron: 178
 ```
 
-Będziemy potrzebować pętli `for` oraz `wget`. Testowo sprawdzimy `i=1`
+We will need a `for` loop and `wget`. For testing, we will check `i=1`.
 
 ```
 for i in {1..1}; do wget "https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,$i.html" -O raw; done
 ```
 
-Okazuje się jednak, że odpowiedź do `403`
+It turns out that the response to `403`
 
 ```
 --2021-02-05 16:59:56--  https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html
@@ -114,39 +114,37 @@ HTTP request sent, awaiting response... 403 Forbidden
 2021-02-05 16:59:56 ERROR 403: Forbidden.
 ```
 
-Czyżby ta strona była tak często czesana `wgetem`, że admini zablokowali żądania dla domyślnego user agent wgeta?
+Could it be that this page was crawled so often with `wget` that the admins blocked requests for the default user agent of wget?
 
 ![](http://localhost:8484/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
 
-Nie zdziwił bym się, biorąc po uwagę fakt, że Wget wcale się nie kryje ze swoją tożsamością. Httpie nie jest lepszy
+I wouldn't be surprised, considering the fact that Wget does not hide its identity at all. Httpie is not better.
 
 ![](http://localhost:8484/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
 
-ale jest mniej znany, dlatego działa
+but it is less known, which is why it works
 
 ![](http://localhost:8484/f636546c-641b-4405-853f-faa0c337217d.avif)
 
-Do pobrania plików jak obiecałem wystarczy po 1 linii dla każdego rodzaju:
-
-Dla `LIBORCHF3M`
+For `LIBORCHF3M`
 
 ```
 mkdir -p raw && for i in {1..245}; do http -b "https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,$i.html" > "raw/l${i}.html";echo $i; done
 ```
 
-Dla `WIBOR3M`
+For `WIBOR3M`
 
 ```
 mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/depozyty/zlotowearch/1921-02-05,2021-02-05,WIBOR3M,strona,$i.html" > "raw/w${i}.html";echo $i; done
 ```
 
-W katalogu `raw` mamy już wszystkie pliki wymagane do przetworzenia
+In the `raw` directory, we already have all the files required for processing.
 
 ![](http://localhost:8484/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
 
-# Opisanie docelowej struktury
+# Describing the target structure
 
-Na wyjściu chcę mieć plik `json` o następującej strukturze
+I want to have a `json` file with the following structure as output
 
 ```
 {
@@ -155,23 +153,23 @@ Na wyjściu chcę mieć plik `json` o następującej strukturze
 }
 ```
 
-# Przetworzenie pobranych stron
+# Processing Downloaded Pages
 
-Startujemy projekt
+We are starting the project
 
 ```
 npm init -y && tsc --init && touch app.ts
 ```
 
-Instalujemy `jsdom` do parsowania drzewa dom po stronie node js.
+Installing `jsdom` for parsing the DOM tree on the Node.js side.
 
 ```
 npm i jsdom @types/jsdom @types/node
 ```
 
-Na koniec porównamy `jsdom` z `cheerio`. Lecz teraz załóżmy, że wykonamy zadanie używając tej pierwszej biblioteki.
+At the end we will compare `jsdom` with `cheerio`. But for now, let's assume we will accomplish the task using the first library.
 
-Bazowy szkielet jest dość przewidywalny.
+The base structure is quite predictable.
 
 ```
 import fs from 'fs';
@@ -187,7 +185,7 @@ const main = () => {
 console.dir(main())
 ```
 
-Chcemy teraz odczytać wszystkie pliki. Piszemy do tego funkcję:
+We now want to read all the files. We write a function for this:
 
 ```
 const getFiles = (): { type: string, content: string }[] => fs
@@ -198,13 +196,11 @@ const getFiles = (): { type: string, content: string }[] => fs
   }))
 ```
 
-Teraz je przetworzymy pojedynczą tabelę:
+Now we will process a single table:
 
 ![](http://localhost:8484/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
 
-Ta linia wykonana w kosoli przeglądarki jest sercem całego programu. Należy ją przenieść do `node js`. Abyśmy bez problemu wykonali dynamiczną destrukturyzację potrzebujemy zmienić `target` w `tsconfig.json` na wyższy niż `es5` na przykład `ES2020`.
-
-Definiujemy interfejsy
+Defining Interfaces
 
 ```
 interface FileInput {
@@ -217,7 +213,7 @@ interface Output {
 }
 ```
 
-Funkcja przetwarzająca pliki przyjmie kształt:
+The function processing files will take the form:
 
 ```
 const processFile = ({ type, content }: FileInput): Output => ({
@@ -228,7 +224,7 @@ const processFile = ({ type, content }: FileInput): Output => ({
 })
 ```
 
-jej użycie mogło by wyglądać tak
+its usage could look like this
 
 ```
 const main = () => {
@@ -238,11 +234,11 @@ const main = () => {
 console.dir(main())
 ```
 
-Wykonanie zwraca dane, które musimy jeszcze zredukować do tylko pary kluczy - `LIBORCHF3M` oraz `WIBOR3M`
+The execution returns data that we still need to reduce to just a pair of keys - `LIBORCHF3M` and `WIBOR3M`
 
 ![](http://localhost:8484/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
 
-Redukcja wymaga mergowania objektów na kluczach, dlatego dopiszemy do niej funkcję
+Reduction requires merging objects on keys, so we will add a function to it.
 
 ```
 const reducer = (p: Output, n: Output): Output => {
@@ -253,7 +249,7 @@ const reducer = (p: Output, n: Output): Output => {
 }
 ```
 
-Całość kodu może finalnie wygląda tak
+The entire code may finally look like this
 
 ```ts
 import fs from 'fs'
@@ -295,53 +291,53 @@ const main = () => {
 fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 ```
 
-Ilość linii prawdziwego kodu: 30
+Number of lines of real code: 30
 
 ![](http://localhost:8484/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
 
-Czas wykonania: 1min 15sec
+Execution time: 1min 15sec
 
 ![](http://localhost:8484/9c30542e-2868-494f-b185-951200f3aece.avif)
 
-Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
+The size of the downloaded HTML files is 43MB. The weight of the extracted data is 244KB in JSON format. If we wanted to keep them in CSV, the saving would only be 2 quotes per line. With about 13 thousand lines, that gives 26KB of unnecessary characters when converting to CSV, which is 10%. This is very little.
 
-Jednak pamiętajmy, że kolejne 4 znaki można zaoszczędzić na zmiane konwencji zapisu dat z `YYYY-MM-DD` na `YYMMDD`, a pewnie jeszcze więcej kodując daty w formacie o wyższej entropii niż używany przez ludzi na codzień.
+However, let's remember that another 4 characters can be saved by changing the date format from `YYYY-MM-DD` to `YYMMDD`, and probably even more by encoding dates in a format with higher entropy than used by people on a daily basis.
 
-Znacznie więcej, bo 15 znaków na linię oszczędziliśmy na decyzji, że daty będą tu kluczami.
+Significantly more, because we saved 15 characters per line on the decision that dates would be keys here.
 
 ```
 15 znaków = date (4) + value (5) + cudzysłowy do nich (4), dwókropek (1), przecinek (1)
 ```
 
-Dane są dostępne do pobrania pod linkiem:
+Data is available for download at the link:
 
 [https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/bank-rates.json](https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/bank-rates.json)
 
-Kod programu w tej wersji znajdziecie w repozytorium
+The code in this version can be found in the repository
 
 [app.ts · 0e96ff56b983c86d0b2bb50dcd7760063a16681c · gustawdaniel / money-pl-scraper](https://gitlab.com/gustawdaniel/money-pl-scraper/-/blob/0e96ff56b983c86d0b2bb50dcd7760063a16681c/app.ts)
 
 ## Cheerio vs JSDOM
 
-Jakiś czas po napisaniu tego artykułu spotkałem się z problemem wysokiego zużycia pamięci w JSDOM. Potwierdziłem to eksperymentalnie w issue:
+Some time after writing this article, I encountered a problem with high memory consumption in JSDOM. I confirmed this experimentally in the issue:
 
 [Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio](https://github.com/cheeriojs/cheerio/issues/700)
 
-Teraz pokażę jak przepisać ten kod na `cheerio` oraz jak podniesie się jego wydajność
+Now I will show how to rewrite this code in `cheerio` and how its performance will increase
 
-1. Instalujemy Cheerio
+1. We install Cheerio
 
 ```
 npm i cheerio
 ```
 
-2\. Podmieniamy import na
+2. We replace the import with
 
 ```ts
 import cheerio from 'cheerio';
 ```
 
-3\. Podmieniamy funkcję przetwarzającą plik na
+3. We replace the function processing the file with
 
 ```ts
 const processFile = ({type, content}: FileInput): Output => ({
@@ -352,17 +348,17 @@ const processFile = ({type, content}: FileInput): Output => ({
 })
 ```
 
-Wynik poprawił się `3.4` krotnie
+The result improved by `3.4` times
 
 ```
 time ts-node app.ts
 ts-node app.ts  29.53s user 1.21s system 141% cpu 21.729 total
 ```
 
-Pełny DIFF jest dostępny pod linkiem:
+The full DIFF is available at the link:
 
 [JSDOM replaced by Cheerio (3.4) times faster (4cff4a83) · Commits · gustawdaniel / money-pl-scraper](https://gitlab.com/gustawdaniel/money-pl-scraper/-/commit/4cff4a835589976ca26a7852f67dd42f2c4f2525)
 
-Warto przeczytać też
+It's also worth reading
 
 [Downlevel Iteration for ES3/ES5 in TypeScript](https://mariusschulz.com/blog/downlevel-iteration-for-es3-es5-in-typescript)

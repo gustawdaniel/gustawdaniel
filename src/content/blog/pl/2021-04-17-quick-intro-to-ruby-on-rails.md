@@ -2,20 +2,16 @@
 author: Daniel Gustaw
 canonicalName: quick-intro-to-ruby-on-rails
 coverImage: http://localhost:8484/d85ff050-96df-4cb7-9058-f9097653e3ad.avif
-updateDate: 2021-04-17 12:18:38+00:00
-description: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe,
-  mailera oraz komunikację przez web sockets.
-excerpt: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe, mailera
-  oraz komunikację przez web sockets.
+description: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe, mailera oraz komunikację przez web sockets.
+excerpt: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe, mailera oraz komunikację przez web sockets.
 publishDate: 2021-04-17 11:28:00+00:00
 slug: pl/rails
 tags:
 - rails
 - ruby
 title: Ruby on Rails - szybkie wprowadzenie
+updateDate: 2021-04-17 12:18:38+00:00
 ---
-
-
 
 W roku 2019 przepisywałem pewien system medyczny z Rails na PHP, w 2021 z Rails na NodeJS. Być może ty też spotykasz się z systemami opartymi na Rails, które tracą utrzymanie. To wprowadzenie pomoże Ci szybko zapoznać się z podstawami tego frameworka.
 

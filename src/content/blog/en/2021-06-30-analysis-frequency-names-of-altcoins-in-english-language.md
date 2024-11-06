@@ -2,38 +2,26 @@
 author: Daniel Gustaw
 canonicalName: analysis-frequency-names-of-altcoins-in-english-language
 coverImage: http://localhost:8484/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
-description: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw kryptowalut, te nie występujące w języku naturalnym.
-excerpt: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw kryptowalut, te nie występujące w języku naturalnym.
+description: The aim of the article is to show how to filter out from all cryptocurrency names those that do not appear in natural language.
+excerpt: The aim of the article is to show how to filter out from all cryptocurrency names those that do not appear in natural language.
 publishDate: 2021-06-30 10:22:00+00:00
-slug: pl/analiza-czestosci-nazw-kryptowalut-w-korpusie-jezyka-angielskiego
+slug: en/analysis-of-cryptocurrency-name-frequency-in-the-english-language-corpus
 tags:
 - maxdata
 - typescript
-title: Analiza częstości nazw altcoinów w korpusie języka angielskiego
+title: Analysis of the frequency of altcoin names in the English language corpus
 updateDate: 2021-06-30 10:22:00+00:00
 ---
 
-Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw altcoinów, te nie występujące w języku naturalnym. Zastosowanie tej techniki pozwoliło nam na skuteczny monitoring wzmianek na temat tysięcy kryptowalut na Twitterze w projekcie `MaxData` .
-
-Plan działania:
-
-1. Musimy mieć nazwy kryptowalut. Pokażę jak je pobrać i uporządkować.
-2. Musimy mieć korpus języka. Pokażę jak się do niego dostać.
-3. Musimy połączyć oba zbiory danych i wyznaczyć kryterium odcięcia kryptowaluty z monitoringu.
-
-Jeśli bardzo zależało by nam na obserwacji frazy występującej w języku naturalnym wymagało by to analizy kontekstu. Jest to oczywiście możliwe, ale w naszym przypadku prościej jest nam odciąć kilka altcoinów o nazwach występujących w korpusie niż analizować kontekst. Głównie dlatego, że te odcięte altcoiny stanowią niewielki ułamek całości rynku, a ich uwzględnienie podniosło by poziom skomplikowania wielokrotnie.
-
-## Nazwy altcoinów
-
-Nazwy kryptowalut pobraliśmy z `Coin Market Cap` za pomocą końcówki
+## Altcoin Names
 
 ```
 https://api.coinmarketcap.com/data-api/v3/cryptocurrency/listing
 ```
 
-z parametrem `start` iterowanym po `1+100*n` dla `n` od `0` do momentu gdzie odpowiedź nie będzie zawierała klucza `data`.
+with the parameter `start` iterated over `1+100*n` for `n` from `0` until the response does not contain the key `data`.
 
-Przykładowa dobra odpowiedź to:
+An example of a good response is:
 
 ```
 {
@@ -86,7 +74,7 @@ Przykładowa dobra odpowiedź to:
 }
 ```
 
-A kiedy wyjdziemy poza zakres dostaniemy:
+And when we go beyond the range we will get:
 
 ```
 {
@@ -100,25 +88,25 @@ A kiedy wyjdziemy poza zakres dostaniemy:
 }
 ```
 
-Najbardziej interesują nas parametry:
+We are most interested in the parameters:
 
 * name
 * symbol
-* quotes\[0\].marketCap albo jego znormalizowana wersja quotes\[0\].dominance
+* quotes\[0\].marketCap or its normalized version quotes\[0\].dominance
 
 [Dominance | CoinMarketCap](https://coinmarketcap.com/alexandria/glossary/dominance)
 
-Pobierzemy wszystkie dane o kryptowalutach i zapiszemy je w pliku. Przygotowujemy projekt:
+We will download all data about cryptocurrencies and save it in a file. We are preparing the project:
 
 ```
 npm init -y && tsc --init && npm i axios && npm i -D @types/node && mkdir -p src raw out && touch src/getAltcoins.ts
 ```
 
-Rdzeń programu `getAltcoins.ts` możemy przenieść z naszego niedawnego wpisu:
+The core of the program `getAltcoins.ts` can be taken from our recent post:
 
-[Scraping najbardziej popularnych kont na twitterze](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+[Scraping the most popular Twitter accounts](./scraping-najbardziej-popularnych-kont-na-twitterze/)
 
-Czyli mniej więcej tak:
+That is roughly like this:
 
 ```
 import * as fs from "fs";
@@ -171,9 +159,9 @@ main().then((coins) => {
 }).catch(console.error)
 ```
 
-### Implementacja interfejsu CmcCoin
+### Implementation of CmcCoin Interface
 
-Najprostszą metodą jest przyjrzenie się temu co zwraca API dla Bitcoina:
+The simplest method is to look at what the Bitcoin API returns:
 
 ```
 {
@@ -243,7 +231,7 @@ Najprostszą metodą jest przyjrzenie się temu co zwraca API dla Bitcoina:
 }
 ```
 
-i przerobienie tego na interfejs:
+and converting it to an interface:
 
 ```
 interface CmcCoin {
@@ -281,15 +269,15 @@ interface CmcCoin {
 }
 ```
 
-### Synchronizacja
+### Synchronization
 
-Po dodaniu paczki `debug` poleceniem
+After adding the `debug` package with the command
 
 ```
 npm i debug && npm i -D @types/debug
 ```
 
-i kilku importów
+and several imports
 
 ```
 import axios from "axios";
@@ -299,7 +287,7 @@ import Debug from 'debug';
 const debug = Debug('app');
 ```
 
-analogicznie jak w poprzednio wspomnianym artykule implementujemy `sync`
+similarly to the previously mentioned article we implement `sync`
 
 ```
     async sync() {
@@ -323,19 +311,19 @@ analogicznie jak w poprzednio wspomnianym artykule implementujemy `sync`
     }
 ```
 
-Jedyną różnicą jest tu `JSON.stringify` ponieważ chcemy zapisać do pliku ciąg znaków a nie obiekt. Tym razem korzystamy z `api` a nie pobieramy `html`.
+The only difference here is `JSON.stringify` because we want to write a string to a file and not an object. This time we use `api` instead of fetching `html`.
 
-Możemy napisać to nawet uniwersalniej
+We can even write it more universally.
 
 ```
 typeof data === 'string' ? data : JSON.stringify(data)
 ```
 
-co pozwoli nam na używanie wielokrotnie tego raz napisanego kodu.
+what will allow us to reuse this written code multiple times.
 
-### Parsowanie
+### Parsing
 
-Metoda do parsowania jest wyjątkowo prosta:
+The method for parsing is exceptionally simple:
 
 ```
     parse(): CmcCoin[] {
@@ -348,63 +336,63 @@ Metoda do parsowania jest wyjątkowo prosta:
     }
 ```
 
-polega na próbie wydobycia listy pod określonym kluczem, a jeśli to niemożliwe zwraca pustą tablicę powodując zakończenie głównej pętli programu.
+it involves trying to extract a list under a specific key, and if that is not possible, it returns an empty array causing the main program loop to end.
 
-Finalnie po włączeniu programu:
+Ultimately, upon running the program:
 
 ```
 DEBUG=app ts-node src/getAltcoins.ts
 ```
 
-w katalogu `out/coins.json` dostajemy plik, który zamieściłem pod linkiem:
+In the directory `out/coins.json` we get a file that I placed under the link:
 
 [https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/coins.json](https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/coins.json)
 
-## Pobranie i obsługa korpusu językowego
+## Downloading and handling the language corpus
 
-Po wpisaniu frazy "english corpus" bardzo szybko trafiamy na stronę
+After typing the phrase "english corpus" we quickly land on the page
 
 [English Corpora: most widely used online corpora. Billions of words of data: free online access](https://www.english-corpora.org/)
 
-Jest to scam. Zawiera informację, że jest darmowa i wystarczy zarejestrować konto
+This is a scam. It contains information that it is free and all you need to do is register an account.
 
 ![](http://localhost:8484/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
 
-ale posiada ograniczenia przez które możemy skanować dziennie jedynie 50 słów. Straciłem czas próbując automatyzować pobieranie danych z tego serwisu.
+but it has limitations that allow us to scan only 50 words per day. I wasted time trying to automate data extraction from this service.
 
-Pobranie z niego próbek prowadzi do tego, że mamy poszatkowane dane nie zdatne do żadnego zastosowania i dopiero wejście w cennik wyjaśnia, że można u nich kupić korpus za kilkaset dolarów.
+Extracting samples from it leads to fragmented data that is not suitable for any application, and only checking the pricing explains that you can purchase a corpus from them for several hundred dollars.
 
-Na szczęście udało mi się pobrać wymagane dane ze strony o znacznie gorszym pozycjonowaniu, ale za to dużo bardziej wartościowej:
+Fortunately, I managed to extract the required data from a website with much worse positioning, but much more valuable:
 
 [English Word Frequency](https://www.kaggle.com/rtatman/english-word-frequency)
 
-Tam też rejestracja jest wymagana, ale w zamian dostajemy dostęp do ciekawych danych, interesujących treści i fantastycznego kursu. Nawet jak tego nie potrzebujemy to po prostu dane mamy za darmo. Jest to 5MB plik csv z kolumnami zawierającymi słowo oraz ilość zliczeń.
+Registration is also required there, but in return we get access to interesting data, engaging content, and a fantastic course. Even if we don't need it, we simply get the data for free. It is a 5MB csv file with columns containing the word and the count.
 
-Umieściłem ten plik pod ścieżką `dict/unigram_freq.csv`. Aby zapytać o ilość zliczeń słowa `credit` wystarczy wpisać:
+I placed this file under the path `dict/unigram_freq.csv`. To query the count of the word `credit`, simply enter:
 
 ```
 grep -E '^credit,' dict/unigram_freq.csv
 ```
 
-dostajemy:
+we receive:
 
 ```
 credit,175916536
 ```
 
-Analogicznie dla frazy:
+Analogously for the phrase:
 
 ```
 grep -E '^theta,' dict/unigram_freq.csv
 ```
 
-mamy:
+we have:
 
 ```
 theta,5070673
 ```
 
-Za pomocą typescriptu mogli byśmy zapisać to tak:
+Using TypeScript, we could write it like this:
 
 ```
 import child_process from 'child_process';
@@ -425,20 +413,14 @@ checkFrequency('credit').then(console.log).catch(console.error)
 checkFrequency('theta').then(console.log).catch(console.error)
 ```
 
-wykonanie tego pliku zwróci nam częstości:
+executing this file will return the frequencies:
 
 ```
 175916536
 5070673
 ```
 
-z tego co wiem, to wykorzystanie systemowego grepa jest jedną z najbardziej wydajnych metod w tym konkretnym przypadku, ponieważ nie wymaga ładowania całego pliku do pamięci, pisania logiki wyszukiwania a jednocześnie pozwala zrzucić odpowiedzialność za optymalizację wyszukiwania na twórców `grep`. Sam nie robiłem takich eksperymentów, ale czytałem, że do 2-3 tysięcy linii można w node js wyszukać szybciej, bo nie tracimy czasu na włączanie osobnego procesu, ale przy większych plikach okazuje się, że optymalizacja grepa nadrabia opóźnienia związane z wykonywaniem komend przez `child_process`.
-
-[From node.js, which is faster, shell grep or fs.readFile?](https://stackoverflow.com/questions/28400727/from-node-js-which-is-faster-shell-grep-or-fs-readfile)
-
-## Połączenie częstości z nazwami coinów
-
-Wykonałem drobny refactoring. W `src` utworzyłem katalogi `interface` oraz `helpers`. Do `interface` przeniosłem `CmcCoin`, oraz utworzyłem `CoinWithFrequency.ts` zawierający
+## Combining Frequency with Coin Names
 
 ```
 import {CmcCoin} from "./CmcCoin";
@@ -452,9 +434,9 @@ export interface CoinWithFrequency extends CmcCoin {
 }
 ```
 
-jest to struktura danych pozwalająca nam ująć możliwie dokładne dane dotyczące częstotliwości występowania nie tylko nazw ale też symboli i potencjalnie `slug` coinów.
+it is a data structure that allows us to capture data regarding the frequency of occurrence of not only names but also symbols and potentially `slug` of coins.
 
-Do `helpers` przeniosłem klasę `Page`, oraz funkcje `grepWithFork` i `checkFrequency` z tym, że ta druga dostała obsługę wyjątków:
+I moved the `Page` class, as well as the `grepWithFork` and `checkFrequency` functions to `helpers`, with the latter receiving exception handling:
 
 ```
 import {grepWithFork} from "./grepWithFork";
@@ -471,7 +453,7 @@ export const checkFrequency = (word: string): number => {
 }
 ```
 
-Ostatnią zmianą jest wyrzucenie z `getAltcoins` funkcji `main` i nazwanie jej `getCoins`. W pliku o tej samej nazwie w `helpers` znalazł się teraz kod
+The last change is the removal of the `main` function from `getAltcoins` and renaming it to `getCoins`. The code is now in the file of the same name in `helpers`.
 
 ```
 import {CmcCoin} from "../interface/CmcCoin";
@@ -490,7 +472,7 @@ export const getCoins = async ():Promise<CmcCoin[]> => {
 }
 ```
 
-Nową funkcją jest bardzo prosta funkcja `enhanceSingleCoin` umieszczona też w `helpers` w pliku z tą nazwą o treści:
+The new feature is a very simple function `enhanceSingleCoin` also placed in `helpers` in the file with that name containing:
 
 ```
 import {CmcCoin} from "../interface/CmcCoin";
@@ -509,7 +491,7 @@ export const enhanceSingleCoin = (coin: CmcCoin): CoinWithFrequency => {
 }
 ```
 
-Iterując za jej pomocą po tablicy walut przetwarzamy je kolejno
+By iterating through the currency array using it, we process them one by one.
 
 ```
 import {CoinWithFrequency} from "../interface/CoinWithFrequency";
@@ -528,9 +510,9 @@ export const enhanceCoins = async (): Promise<CoinWithFrequency[]> => {
 }
 ```
 
-Ponieważ trwa to chwilę do funkcji dodałem proste wyświetlanie postępu oraz czasu wykonywania.
+Since it takes a moment, I added a simple display of progress and execution time to the function.
 
-Nasz ostatni skrypt: `enhanceCoinsByFrequenceis.ts` zawiera jedynie zapisanie wyników tej funkcji do pliku:
+Our last script: `enhanceCoinsByFrequenceis.ts` only includes saving the results of this function to a file:
 
 ```
 import fs from "fs";
@@ -542,17 +524,17 @@ enhanceCoins().then((coins) => {
 }).catch(console.error)
 ```
 
-Po jego wykonaniu poleceniem
+After executing the command
 
 ```
 DEBUG=app ts-node src/enhanceCoinsByFrequenceis.ts
 ```
 
-dostajemy plik z walutami wzbogaconymi o częstości `/out/coins-with-freq.json`.
+we receive a file with currencies enriched with frequency `/out/coins-with-freq.json`.
 
-### Sortowanie fraz
+### Sorting phrases
 
-Przyjrzyjmy się teraz posortowanej względem stosunku `quotes[0].marketCap` do parametrów określonych pod kluczem `frequency`. Zaczniemy od ustalenia struktury danych wyjściowych:
+Now let’s take a look at the sorted data regarding the ratio of `quotes[0].marketCap` to the parameters defined under the key `frequency`. We will start by determining the structure of the output data:
 
 ```
 import {CoinWithFrequency} from "./CoinWithFrequency";
@@ -572,9 +554,9 @@ export interface Phrase {
 }
 ```
 
-Parametr `coin` nie jest wymagany, bo zakładam, że dla celów analizy może się przydać, ale ilość danych w tym parametrze jest na tyle duża, że może się okazać, że warto oczyścić z niego ostateczny wynik.
+The `coin` parameter is not required, as I assume it may be useful for analysis purposes, but the amount of data in this parameter is so large that it may turn out that it is worth cleaning the final result from it.
 
-Podstawową cegiełkę ostatniej fazy stanowi zamiana coinów na frazy
+The basic building block of the last phase is converting coins to phrases.
 
 ```
 import {CoinWithFrequency} from "../interface/CoinWithFrequency";
@@ -603,7 +585,7 @@ export const convertCoinsToPhrases = (
 }
 ```
 
-importowane tu opcje sortowania:
+imported sorting options:
 
 ```
 export interface SortOptions {
@@ -611,9 +593,9 @@ export interface SortOptions {
 }
 ```
 
-sprowadzają się jedynie do określenia, czy chcemy widzieć wyniki z innymi danymi o coinie.
+they come down to just determining whether we want to see the results with other data about the coin.
 
-Do sortowania użyjemy funkcji:
+We will use the function for sorting:
 
 ```
 import {SortOptions} from "../interface/SortOptions";
@@ -628,7 +610,7 @@ export const sortCurrencies = async (options: SortOptions) => {
 }
 ```
 
-stąd już prosta droga do zapisania wyników do pliku skryptem `src/preparePhrases.ts`
+from here it's a straightforward path to save the results to a file using the script `src/preparePhrases.ts`
 
 ```
 import fs from 'fs';
@@ -640,26 +622,26 @@ sortCurrencies({withCoin: false}).then((coins) => {
 }).catch(console.error)
 ```
 
-Po jego włączeniu poleceniem:
+By turning it on with the command:
 
 ```
 ts-node src/preparePhrases.ts
 ```
 
-Możemy zobaczyć, że dla bardzo mało znanych coinów, ale za to popularnych słów nasz współczynnik jest bardzo niski.
+We can see that for very obscure coins, the ratio is very low despite the popular words.
 
 ![](http://localhost:8484/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
 
-możemy się spodziewać wielu tweetów ze słowami takimi jak `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` czy `kind` w których autor nie miał na myśli kryptowalut. Z drugiej strony nie istnieje obiektywne kryterium odcięcia.
+we can expect many tweets with words like `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` or `kind` where the author did not mean cryptocurrencies. On the other hand, there is no objective cutoff criterion.
 
 ![](http://localhost:8484/693ef6c8-ca55-4450-9373-407542eb3313.avif)
 
-Gdybym ustawił je na 100, wycięte zostało by 2328/16395 = 14% fraz. Przy wartości `5` mamy odcięcie 1560/16395 = 9.5%.
+If I set it to 100, 2328/16395 = 14% of phrases would be cut. At a value of `5`, we have a cutoff of 1560/16395 = 9.5%.
 
-## Podsumowanie
+## Summary
 
-Obiektywne wyznaczenie kryterium odcięcia altcoinów z monitoringu okazało się niemożliwe, ale konieczność podjęcia kilku tysięcy decyzji typu "włączyć/wyłączyć" z obserwacji została zastąpiony jedną decyzją o granicznym stosunku wartości coina względem częstości użycia jego nazwy w języku angielskim.
+An objective determination of the cutoff criterion for altcoins from monitoring turned out to be impossible, but the need to make several thousand "enable/disable" decisions from observations was replaced by one decision on the boundary ratio of the coin's value to the frequency of its name usage in English.
 
-Widzimy, że ogromna większość szumu jest wycinana jeśli zrezygnujemy z obserwacji około 10% altcoinów o nazwach lub skrótach będących popularnymi zwrotami.
+We see that a huge majority of the noise is cut out if we refrain from observing about 10% of altcoins with names or abbreviations that are popular phrases.
 
-Całość zamknęła się w około 211 liniach typescriptu, z czego 57 to interfejsy.
+The whole thing was encapsulated in about 211 lines of TypeScript, of which 57 are interfaces.

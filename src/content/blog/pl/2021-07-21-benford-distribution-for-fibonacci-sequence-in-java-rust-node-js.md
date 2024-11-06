@@ -2,13 +2,8 @@
 author: Daniel Gustaw
 canonicalName: benford-distribution-for-fibonacci-sequence-in-java-rust-node-js
 coverImage: http://localhost:8484/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
-updateDate: 2021-07-22 10:10:14+00:00
-description: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu
-  pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią
-  i jak ich wydajność zależy od długości ciągu.
-excerpt: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu
-  pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią
-  i jak ich wydajność zależy od długości ciągu.
+description: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią i jak ich wydajność zależy od długości ciągu.
+excerpt: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią i jak ich wydajność zależy od długości ciągu.
 publishDate: 2021-07-21 15:57:21+00:00
 slug: pl/rozklad-benforda
 tags:
@@ -16,9 +11,8 @@ tags:
 - java
 - nodejs
 title: Rozkład Benforda dla Ciągu Fibonacciego w Java, Rust i Node JS
+updateDate: 2021-07-22 10:10:14+00:00
 ---
-
-
 
 Był rok 1992. W miasteczku Wayne (Arizona USA) zapadał wyrok na Jamesa Nelsona - głównego księgowego i zarządzającego Arizona State Treasurer. Jego fałszywe czeki, dzięki którym zdefraudował prawie 2 miliony dolarów zostały wykryte ponieważ rozkład częstości pierwszych cyfr w wyłudzonych kwotach odbiegał od rozkładu Benforta.
 
@@ -598,7 +592,6 @@ java java Benford $i > /dev/null  0.12s user 0.02s system 152% cpu 0.091 total 0
 ```
 
 Jest tak dlatego, że `i` nie istnieje wewnątrz `print` jeśli go tam nie włożymy. Zatem `$i` wynosi tyle samo co `$0` co odpowiada całej linii, a nie wybranej kolumnie. Aby używać zmiennych wewnątrz kontekstu `print` w `awk` możemy użyć flagi `-v`. Poprawna składnia polecenia to:
-
 
 ```bash
 for i in $(seq 5 5 25); do (time java Benford $i > /dev/null) 2>&1 | awk -v i=$i '{print $1,i,$6,$10,$12}' | tr -d "s%" | tee -a logs; done;

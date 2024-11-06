@@ -1,19 +1,16 @@
 ---
 author: Daniel Gustaw
 canonicalName: infrastructure-as-code-terraform-digital-ocean
-updateDate: 2021-04-07 10:30:29+00:00
 coverImage: http://localhost:8484/27abc6de-a862-4788-8803-a28567286529.avif
-description: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
-  \ poleceń terraform."
-excerpt: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\
-  \ poleceń terraform."
+description: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\ \ poleceń terraform."
+excerpt: "We wpisie pokazuję w jaki sposób rozstawić serwery z linii\ \ poleceń terraform."
 publishDate: 2021-03-04 18:19:11+00:00
 slug: pl/infrastruktura-definiowana-jako-kod
-title: Infrastruktura jako kod (terraform + digital ocean)
 tags:
-  - iac
+- iac
+title: Infrastruktura jako kod (terraform + digital ocean)
+updateDate: 2021-04-07 10:30:29+00:00
 ---
-
 
 W scrapingu ważnym czynnikiem jest skala, do jakiej możemy rozszerzyć tempo pobierania i przetwarzania danych. Kiedy kilka lat temu pisałem swój pierwszy system, który równolegle zbierał dane używając kilkunastu serwerów, każdy z tych serwerów był przeze mnie "wyklikany" w panelu dostawcy.
 

@@ -1,14 +1,14 @@
 ---
 author: Daniel Gustaw
-title: Najmniejsza wspólna wielokrotność - teoria liczb
 canonicalName: smallest-common-multiple
-slug: pl/najmniejsza-wspolna-wielokrotnosc
-publishDate: 2021-11-22T14:38:00.000Z
-updateDate: 2021-11-22T14:38:00.000Z
-tags: ['javascript', 'numbers-therory', 'mathematica']
+coverImage: http://localhost:8484/2584a854-c1e8-458d-8add-5e70e49ef101.avif
 description: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
 excerpt: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
-coverImage: http://localhost:8484/2584a854-c1e8-458d-8add-5e70e49ef101.avif
+publishDate: 2021-11-22T14:38:00.000Z
+slug: pl/najmniejsza-wspolna-wielokrotnosc
+tags: ['javascript', 'numbers-therory', 'mathematica']
+title: Najmniejsza wspólna wielokrotność - teoria liczb
+updateDate: 2021-11-22T14:38:00.000Z
 ---
 
 W serwisie Hacker Earth można znaleźć wiele ciekawych zadań dla programistów.

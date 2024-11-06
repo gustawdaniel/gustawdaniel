@@ -1,14 +1,14 @@
 ---
 author: Daniel Gustaw
-title: Publikacja aktualizacji paczki w repozytorium AUR
 canonicalName: aur-package-publication
-slug: pl/aktualizacja-paczki-aur
-publishDate: 2022-01-29T20:34:39.000Z
-updateDate: 2022-01-29T20:34:39.000Z
-tags: ['arch', 'aur', 'linux']
+coverImage: http://localhost:8484/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
 description: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
 excerpt: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
-coverImage: http://localhost:8484/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
+publishDate: 2022-01-29T20:34:39.000Z
+slug: pl/aktualizacja-paczki-aur
+tags: ['arch', 'aur', 'linux']
+title: Publikacja aktualizacji paczki w repozytorium AUR
+updateDate: 2022-01-29T20:34:39.000Z
 ---
 
 Znalazłem w repozytorium aur paczkę, która nie jest regularnie aktualizowana. Nauczyłem się jak mogę ją utrzymywać i ten wpis pozwoli Ci przejść przez wszystkie kroki potrzebne do tego, żebyś sam mógł utrzymywać lub publikować pakiety w repozytorium użytkowników Arch Linux.

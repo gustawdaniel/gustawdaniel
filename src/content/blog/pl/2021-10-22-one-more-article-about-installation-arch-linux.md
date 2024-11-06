@@ -1,14 +1,14 @@
 ---
 author: Daniel Gustaw
 canonicalName: one-more-article-about-installation-arch-linux
-slug: pl/jeszcze-jeden-wpis-o-instalacji-arch-linux
-publishDate: 2021-10-22T01:24:19.000Z
-updateDate: 2021-10-30T12:31:37.000Z
-tags: ['arch', 'linux']
+coverImage: http://localhost:8484/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
 description: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
 excerpt: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
+publishDate: 2021-10-22T01:24:19.000Z
+slug: pl/jeszcze-jeden-wpis-o-instalacji-arch-linux
+tags: ['arch', 'linux']
 title: Jeszcze jedna instrukcja instalacji Arch Linux (i3)
-coverImage: http://localhost:8484/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
+updateDate: 2021-10-30T12:31:37.000Z
 ---
 
 Arch Linux jest systemem, który kocham za elastyczność i wygodę użytkowania. Jego instalacja uchodzi za jedną z trudniejszych, ponieważ przenosi na nas ciężar decydowania o wielu szczegółach, którymi nie przejmujemy się podczas codziennej pracy z komputerem.

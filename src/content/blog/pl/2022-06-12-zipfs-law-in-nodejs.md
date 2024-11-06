@@ -1,14 +1,14 @@
 ---
 author: Daniel Gustaw
-title: Analiza Prawa Zipfa w Node.js
 canonicalName: zipfs-law-in-nodejs
-slug: pl/prawo-zipfa-w-nodejs
-publishDate: 2022-06-11T22:50:51.000Z
-updateDate: 2022-06-11T23:06:08.000Z
-tags: ['nodejs', 'zipf', 'typescript']
+coverImage: http://localhost:8484/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
 description: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.
 excerpt: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.
-coverImage: http://localhost:8484/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
+publishDate: 2022-06-11T22:50:51.000Z
+slug: pl/prawo-zipfa-w-nodejs
+tags: ['nodejs', 'zipf', 'typescript']
+title: Analiza Prawa Zipfa w Node.js
+updateDate: 2022-06-11T23:06:08.000Z
 ---
 
 Prawo Zipfa mówi, że jeśli posortuje się słowa w danym języku względem częstości ich występowania, to to częstość będzie odwrotnie proporcjonalna do pozycji (rangi) słowa.

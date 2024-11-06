@@ -2,50 +2,50 @@
 author: Daniel Gustaw
 canonicalName: how-many-families-can-fit-in-an-airplane
 coverImage: http://localhost:8484/e241188a-23c6-41d5-a640-95085128893c.avif
-description: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
-excerpt: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
+description: We compare two solutions to the problem of counting free sets of adjacent seats. You will learn how to use Profiling and how much difference the use of pop and shift makes on arrays in js.
+excerpt: We compare two solutions to the problem of counting free sets of adjacent seats. You will learn how to use Profiling and how much difference the use of pop and shift makes on arrays in js.
 publishDate: 2021-04-20 18:41:10+00:00
-slug: pl/ile-rodzin-zmiesci-sie-w-samolocie
+slug: en/how-many-families-fit-in-a-plane
 tags:
 - algorithm
-title: Ile rodzin zmieści się w samolocie - zadanie z algorytmiki
+title: How many families can fit on the plane - an algorithmics problem
 updateDate: 2021-04-20 18:41:10+00:00
 ---
 
-Omówimy dwa rozwiązania zadania, które stosowane było podczas pewnej rekrutacji. Jeśli potraficie pisać kod, zalecam wam samodzielne rozwiązanie po przeczytaniu treści, zajmie to około 10 do 30 minut i pozwoli Wam porównać wasze rozwiązanie z tymi prezentowanymi poniżej:
+We will discuss two solutions to the problem that was used during a certain recruitment. If you can write code, I recommend solving it on your own after reading the content; it will take about 10 to 30 minutes and allow you to compare your solution with those presented below:
 
-## Treść zadania
+## Problem Statement
 
-W samolocie rozmieszczone są miejsca. Tworzą one trzy zestawy zawierające kolejno 3, 4 i 3 siedzenia sąsiadujące ze sobą. Zakładamy, że wiersze liczone są od 1 a kolumny indeksowane za pomocą liter alfabetu jak w tabeli EXCEL (od A do K). Schemat samolotu przedstawia poniższy rysunek. Zakładamy, że wszystkie miejsca mają taki sam układ jak te oznaczone na niebiesko.
+In the airplane, there are seats arranged in three sets containing 3, 4, and 3 adjacent seats, respectively. We assume that the rows are counted from 1 and the columns are indexed using the letters of the alphabet as in an EXCEL table (from A to K). The diagram of the airplane is shown in the image below. We assume that all seats have the same layout as those marked in blue.
 
 ![](http://localhost:8484/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
 
-Zakładamy, że samolot ma długość `N` rzędów z miejscami. Znamy też aktualne zapełnienie miejsc, które zapisane jest w postaci ciągu znakowego `S` jako oddzielone spacją współrzędne numeru wiersza i kolumny, np:
+We assume that the airplane has a length of `N` rows with seats. We also know the current occupancy of the seats, which is recorded in the form of a string `S` as space-separated coordinates of the row and column number, e.g.:
 
 ```
 S=1A 3C 2B 40G 5A
 ```
 
-oznacza zajęcie miejsc `1A`, `3C`, `2B`, `40G` oraz `5A`.
+means taking seats `1A`, `3C`, `2B`, `40G` and `5A`.
 
-Naszym celem jest napisanie funkcji, która zliczy ile 3 osobowych rodzin wymagających zajęcia miejsc bezpośrednio obok siebie zmieści się w samolocie.
+Our goal is to write a function that counts how many 3-person families needing adjacent seats can fit in the plane.
 
-Na przykład dla danych:
+For example, for the data:
 
 ```
 const S = "1A 2F 1C"
 const N = 2;
 ```
 
-poprawnym wynikiem będzie 4.
+the correct result will be 4.
 
 ---
 
-To jest najlepsze miejsce, aby wykonać to zadanie samodzielnie i porównać z prezentowanymi poniżej rozwiązaniami.
+This is the best place to complete this task on your own and compare with the solutions presented below.
 
-## Rozwiązanie Marcina
+## Marcin's Solution
 
-Pierwsze rozwiązanie wytworzył mój kolega Marcin. Ma ono krótki, czytelny kod. Rozpina dwuwymiarową tablicę wszystkich miejsc, oznacza zaznaczone wartościami `false`, na końcu przechodzi po rzędach doliczając wolne sloty w oparciu o stosowne kryteria dla każdego z nich.
+The first solution was created by my friend Marcin. It has short, readable code. It initializes a two-dimensional array of all places, marks them with `false`, and finally iterates through the rows counting free slots based on the appropriate criteria for each of them.
 
 ```javascript
 function solution(N, S) {
@@ -84,9 +84,9 @@ function solution(N, S) {
 module.exports = {solution};
 ```
 
-## Rozwiązanie Daniela
+## Daniel's Solution
 
-Drugie posługuje się bezpośrednio tablicą slotów, składając je w jeden wymiar. Nie stosując struktury danych o indeksowaniu analogicznym do miejsc zmuszeni jesteśmy indeks slotu wyliczać za każdym razem z rzędu oraz instrukcji warunkowych nałożonych na kolumny. Kod jest trudniejszy do czytania i wymaga kilku linii komentarzy z opisem przyjętej konwencji. Jego zaletą jest operowanie na mniejszej strukturze danych, a wadą bardziej złożone instrukcje warunkowe.
+The second directly uses a slot array, folding it into one dimension. Without using an indexing data structure analogous to the places, we are forced to calculate the slot index every time sequentially, along with conditional statements imposed on columns. The code is harder to read and requires several lines of comments describing the adopted convention. Its advantage is operating on a smaller data structure, while its disadvantage is more complex conditional statements.
 
 ```javascript
 // DOCS
@@ -135,9 +135,9 @@ function solution(N, S) {
 module.exports = {solution};
 ```
 
-## Porównanie wydajności rozwiązań
+## Performance Comparison of Solutions
 
-W celu porównania szybkości działania tych kodów dopiszemy generator współrzędnych z miejscami:
+To compare the execution speed of these codes, we will add a coordinate generator with locations:
 
 ```
 const fs = require('fs');
@@ -177,9 +177,9 @@ function generatePlaces(N, M) {
 module.exports = generatePlaces;
 ```
 
-Linie z `fs` pozwalają nam na zapis wygenerowanej listy miejsc w cache i nie generowanie jej od nowa przy powtarzaniu testów.
+Lines from `fs` allow us to save the generated list of locations in cache and not regenerate it when retesting.
 
-Tworzymy też skrypt testujący szybkość działania obu algorytmów:
+We also create a script to test the performance of both algorithms:
 
 ```
 const d = require('./d');
@@ -206,7 +206,7 @@ console.timeEnd('d');
 console.log(endM, endD);
 ```
 
-Hipotetycznie załóżmy, że mamy bardzo długi samolot (pół miliona rzędów). Sprawdzimy po kolei przypadki prawie pustego lotu `1000` zajętych miejsc. Liczba występująca po `m` to czas dla rozwiązania `Marcina`, a po `d` to czas dla `Daniela`.
+Hypothetically, let's assume we have a very long plane (half a million rows). We will sequentially check the cases of a nearly empty flight with `1000` occupied seats. The number that follows `m` is the time for Marcin's solution, and the one after `d` is the time for Daniel's.
 
 ```
 time node test.js 500000 1000
@@ -214,7 +214,7 @@ m: 1.339s
 d: 151.637ms
 ```
 
-Widzimy, że rozwiązanie zliczające jedynie sloty wykrywa 8.8 raza pod względem szybkości. Dla `20k` zajętych już miejsc:
+We see that the solution counting only slots detects 8.8 times faster. For `20k` already occupied places:
 
 ```
 time node test.js 500000 20000
@@ -222,7 +222,7 @@ m: 1.462s
 d: 276.517ms
 ```
 
-ta przewaga spada do 5.3 raza. Jeśli zajętych miejsc będzie `40k`, to wyniki będą różnić się następująco:
+this advantage drops to 5.3 times. If there are `40k` occupied places, the results will differ as follows:
 
 ```
 time node test.js 500000 40000
@@ -230,7 +230,7 @@ m: 1.386s
 d: 606.803ms
 ```
 
-Rozwiązanie Daniela wciąż będzie szybsze, ale tylko 2.2 razy. Dla `80k` zajętych miejsc sytuacja się odwraca i rozwiązanie Marcina staje się 1.62 razy szybsze.
+Daniel's solution will still be faster, but only 2.2 times. For `80k` occupied seats, the situation reverses and Marcin's solution becomes 1.62 times faster.
 
 ```
 time node test.js 500000 80000
@@ -238,7 +238,7 @@ m: 1.385s
 d: 2.257s
 ```
 
-Przy `100k` miejsc skrypt Marcina osiąga już 4.7 raza lepsze wyniki
+At `100k` places, Marcin's script achieves results that are already 4.7 times better.
 
 ```
 time node test.js 500000 100000
@@ -248,11 +248,7 @@ d: 6.656s
 
 ---
 
-## Pułapka
-
-Gdybyśmy nie zachowali ostrożności mogli byśmy uznać, że finalnym wnioskiem były by zdania: "Algorytm Daniela sprawdza się lepiej przy pustym samolocie, a Marcina przy pełnym" oraz "Algorytm Daniela silnie zależy od ilości miejsc, a Marcina ma stabilny mniej więcej stały czas działania".
-
-Tak wynika z testów, ale jeśli wytniemy z pomiarów kod Marcina to dla takiego kodu testującego
+## Trap
 
 ```
 const d = require('./d');
@@ -279,7 +275,7 @@ console.timeEnd('d');
 // console.log(endM, endD);
 ```
 
-wynik pomiaru czasu znacznie wzrośnie:
+the measurement time result will increase significantly:
 
 ```
 time node test.js 500000 100000
@@ -287,7 +283,7 @@ d: 26.454s
 node test.js 500000 100000  26.42s user 0.08s system 99% cpu 26.524 total
 ```
 
-A w ten sam wyizolowany sposób testując kod Marcina dostaniemy ponownie ten sam wynik zbliżony do półtorej sekundy
+And in the same isolated way, testing Marcin's code will give us again the same result close to one and a half seconds.
 
 ```
 time node test.js 500000 100000
@@ -295,59 +291,59 @@ m: 1.437s
 node test.js 500000 100000  1.66s user 0.09s system 115% cpu 1.515 total
 ```
 
-Do profilowania możemy użyć flagi `--porf`, spowoduje ona powstanie pliku z logami o wielkości około `4MB`.
+For profiling, we can use the `--porf` flag, which will create a log file of about `4MB`.
 
-Jego przeglądanie nie jest łatwe jeśli nie wie się czego szukać. Ten plik wygląda mniej więcej tak:
+Reviewing it is not easy if you don’t know what to look for. This file looks something like this:
 
 ![](http://localhost:8484/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
 
-Na szczęście Webstorm ma ciekawe narzędzia do profilowania, które pod spodem robią to samo co ta flaga, ale nakładają graficzną nakładkę i wykresy, które pozwalają na odnalezienie się w logach i szybkie dotarcie do źródła problemu. Aby skonfigurować profilowanie zaznaczamy w ustawieniach `Coding assistance for Node.js`
+Fortunately, Webstorm has interesting profiling tools that do the same thing as this flag underneath, but they apply a graphical overlay and graphs that allow you to navigate the logs and quickly get to the source of the problem. To configure profiling, we check `Coding assistance for Node.js` in the settings.
 
 ![](http://localhost:8484/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
 
-Następnie tworzymy profil, który wystartuje nasz skrypt z odpowiednimi parametrami
+Next, we create a profile that will launch our script with the appropriate parameters.
 
 ![](http://localhost:8484/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
 
-a w zakładce `V8 Profiling` zaznaczamy opcję profilowania.
+and in the `V8 Profiling` tab, we select the profiling option.
 
 ![](http://localhost:8484/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
 
-Po wybraniu zielonego trójkąta startującego profilowanie
+After selecting the green triangle, profiling starts.
 
 ![](http://localhost:8484/69644d36-ba44-4026-b579-442715c7f781.avif)
 
-zobaczymy logi uporządkowane względem procentowego udziału w czasie wykonywania.
+we will see the logs sorted by percentage share over execution time.
 
 ![](http://localhost:8484/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
 
-Ten widok pozwala wyłowić najcięższe funkcje względem całkowitego czasu wykonywania. Więcej o profilowaniu możesz poczytać w dokumentacji WebStorms.
+This view allows you to extract the most time-consuming functions relative to the total execution time. You can read more about profiling in the WebStorm documentation.
 
 [V8 CPU and memory profiling | WebStorm](https://www.jetbrains.com/help/webstorm/v8-cpu-and-memory-profiling.html#ws_node_cpu_profiling)
 
-Ponowny przegląda kodu i zestawienie logów z informacją, że to ilość zajętych miejsc tak bardzo obniża wydajność skryptu wskazują, że należy szukać problemu w funkcji `shift`
+A re-examination of the code and the log summary with the information that the amount of occupied spaces significantly reduces the script's performance indicate that the problem should be sought in the `shift` function.
 
 ```
 const place = places.shift();
 ```
 
-Poświęcono temu wątek na stack overflow
+A thread on stack overflow was devoted to this
 
 [Why is pop faster than shift?](https://stackoverflow.com/questions/6501160/why-is-pop-faster-than-shift)
 
-Zmiana tej jednej linii
+Changing this one line
 
 ```
 const place = places.shift();
 ```
 
-na
+on
 
 ```
 const place = places.pop();
 ```
 
-w algorytmie Daniela przywraca mu poprawne tępo działania nie zależnie od tego czy kod Marcina jest wykonywany, czy nie
+in Daniel's algorithm restores its correct pace of operation regardless of whether Marcin's code is executed or not
 
 ```
 time node test.js 500000 100000
@@ -357,7 +353,7 @@ d: 233.327ms
 node test.js 500000 100000  1.89s user 0.13s system 114% cpu 1.768 total
 ```
 
-oraz
+and
 
 ```
 time node test.js 500000 100000
@@ -365,7 +361,7 @@ d: 238.217ms
 node test.js 500000 100000  0.27s user 0.04s system 101% cpu 0.311 total
 ```
 
-Po delikatnej modyfikacji kodu napisanego przez `bhirt` na Slack Overflow:
+After a slight modification of the code written by `bhirt` on Slack Overflow:
 
 ```
 let sum;
@@ -405,7 +401,7 @@ tests.forEach(function (count) {
 });
 ```
 
-widzimy, że najnowsza wersja `node` nie naprawiła tego problemu
+we see that the latest version of `node` did not fix this issue
 
 ```
 {"node":"15.8.0","v8":"8.6.395.17-node.23","uv":"1.40.0","zlib":"1.2.11","brotli":"1.0.9","ares":"1.17.1","modules":"88","nghttp2":"1.42.0","napi":"7","llhttp":"2.1.3","openssl":"1.1.1i","cldr":"38.1","icu":"68.2","tz":"2020d","unicode":"13.0"}
@@ -443,11 +439,11 @@ Testing arrays of size 130000
  -> 5702ms: sum with shift() 130000 elements, sum = 454068
 ```
 
-W przeglądarce te operacje trwają dwa razy krócej ale i tak różnica między `pop` a `shift` jest ogromna i każde 50-100 elementów tablic dodaje milisekundę do czasu wykonywania `shift`.
+In the browser, these operations take half as long, but the difference between `pop` and `shift` is still huge, and every 50-100 elements added to the array adds a millisecond to the execution time of `shift`.
 
 ![](http://localhost:8484/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
 
-Przerabiając ten kod do testowania po raz drugi możemy uzyskać wersję, która będzie dobrze działać w przeglądarce i pozwoli na wygenerowanie danych do narysowania wykresu:
+By modifying this code for testing a second time, we can obtain a version that works well in the browser and allows for generating data to draw a chart:
 
 ```
 var sum;
@@ -487,9 +483,7 @@ tests.forEach(function (count) {
 });
 ```
 
-Wykres zależności czasu od długości tablicy wygenerujemy w `chart.js`
-
-[Getting Started | Chart.js](https://www.chartjs.org/docs/latest/getting-started/)
+We will generate a chart showing the dependence of time on the array length in `chart.js`
 
 ```
 let res = [[10000,3],[20000,3],[30000,4],[40000,193],[50000,304],[60000,450],[70000,625],[80000,859],[90000,1081],[100000,1419],[110000,1704],[120000,2040],[130000,2466],[140000,2936],[150000,3429],[160000,3948],[170000,4509],[180000,5158],[190000,5852],[200000,6450]];
@@ -508,11 +502,11 @@ const data = {
 
 ![](http://localhost:8484/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
 
-## Ponowne porównanie rozwiązań
+## Re-evaluation of solutions
 
-Oryginalnie Marcin napisał lepszy kod niż Ja. Wpadka z `shift` zrujnowała cały zysk wydajnościowy z koncepcji, żeby operować na slotach, a nie poszczególnych miejscach. Jeśli jednak pozwolimy na wymianę `shift` na `pop` w moim kodzie (Daniela) to okazuje się on ostatecznie kilka do kilkunastu razy szybszy niż kod Marcina.
+Originally, Marcin wrote better code than I did. The `shift` mishap ruined all the performance gains from the concept of operating on slots instead of individual places. However, if we allow the replacement of `shift` with `pop` in my code (Daniel's), it turns out to be ultimately several to dozens of times faster than Marcin's code.
 
-Za zestawienie wyników odpowiada zmodyfikowany plik `test.js`
+The modified file `test.js` is responsible for comparing the results.
 
 ```javascript
 const d = require('./d');
@@ -556,6 +550,6 @@ for (let N = 250000; N < 1000000; N += 250000) {
 }
 ```
 
-Wyniki prezentują czas w milisekundach. Są to kolejno czasy Daniela, Marcina i stosunki czasów Marcina do Daniela. Kolumny pokazują ilość zajętych miejsc, a wiersze ilość rzędów w samolocie.
+The results present time in milliseconds. These are the times of Daniel, Marcin, and the ratios of Marcin's time to Daniel's. The columns show the number of occupied seats, and the rows show the number of rows in the plane.
 
 ![](http://localhost:8484/0497009b-a592-4043-8759-fc5d86f31cf6.avif)

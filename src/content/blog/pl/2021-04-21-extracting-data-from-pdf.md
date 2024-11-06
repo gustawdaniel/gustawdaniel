@@ -2,19 +2,15 @@
 author: Daniel Gustaw
 canonicalName: extracting-data-from-pdf
 coverImage: http://localhost:8484/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
-updateDate: 2021-04-21 18:45:26+00:00
-description: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można
-  wygodnie wydobyć dane z plików PDF.
-excerpt: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie
-  wydobyć dane z plików PDF.
+description: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF.
+excerpt: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF.
 publishDate: 2021-04-21 18:45:26+00:00
 slug: pl/wyciskamy-dane-z-pdf-jak-sok-z-cytryny
 tags:
 - pdf
 title: Wyciskamy dane z PDF jak sok z cytryny
+updateDate: 2021-04-21 18:45:26+00:00
 ---
-
-
 
 Dane są wszystkim co jest lub może być przetwarzane umysłowo lub komputerowo. Przy obróbce komputerowej niektóre formy ich zapisu są mniej lub bardziej wygodne. Na przykład PDF uznawany jest za formę wygodną dla człowieka, ale często nie doceniamy możliwości maszyn w automatyzacji procesów opartych o pliki PDF.
 

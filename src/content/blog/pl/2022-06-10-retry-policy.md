@@ -1,14 +1,14 @@
 ---
 author: Daniel Gustaw
-title: Retry Policy - Jak obsługiwać losowe, nieprzewidywalne błędy
 canonicalName: retry-policy
-slug: pl/retry-policy
-publishDate: 2022-06-10T16:14:57.000Z
-updateDate: 2022-06-10T16:14:57.000Z
-tags: ['typescript', 'nodejs', 'error']
+coverImage: http://localhost:8484/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
 description: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.
 excerpt: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.
-coverImage: http://localhost:8484/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
+publishDate: 2022-06-10T16:14:57.000Z
+slug: pl/retry-policy
+tags: ['typescript', 'nodejs', 'error']
+title: Retry Policy - Jak obsługiwać losowe, nieprzewidywalne błędy
+updateDate: 2022-06-10T16:14:57.000Z
 ---
 
 Czasami z szeregu różnych przyczyn programy komputerowe potrafią zwracać dziwne błędy, których odtworzenie jest niezwykle trudne, a naprawienie nie możliwe. Jeśli jednak poprawne działanie programu udaje się uzyskać w skończonej ilości ponownych jego uruchomień, może to stanowić optymalny sposób rozwiązania tego problemu.

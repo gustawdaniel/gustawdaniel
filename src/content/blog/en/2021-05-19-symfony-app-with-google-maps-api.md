@@ -2,44 +2,44 @@
 author: Daniel Gustaw
 canonicalName: symfony-app-with-google-maps-api
 coverImage: http://localhost:8484/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
-description: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych przez api od google.
-excerpt: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych przez api od google.
+description: A simple app integrating the fos user bundle with Google Maps. The service allows for logging in, registration, and saving your list of locations validated by the Google API.
+excerpt: A simple app integrating the fos user bundle with Google Maps. The service allows for logging in, registration, and saving your list of locations validated by the Google API.
 publishDate: 2021-05-18 20:50:00+00:00
-slug: pl/aplikacja-z-fosuserbundle-i-api-google-maps
+slug: en/application-with-fosuserbundle-and-google-maps-api
 tags:
 - symfony
 - fosuserbundle
 - google maps
 - twig
 - css
-title: Aplikacja z FOSUserBundle i API Google Maps
+title: Application with FOSUserBundle and Google Maps API
 updateDate: 2021-06-22 09:23:37+00:00
 ---
 
-## Opis projektu
+## Project Description 
 
-Jest to projekt napisany jako jedna z funkcjonalności podczas mojej współpracy z `Smartselect`. Najzabawniejsze jest to, że był to mój pierwszy kontakt z `FOSUserBundle`, `Api Google Maps` i obiektem `navigator`. Kiedy go pisałem nie znałem `JavaScriptu`. Mimo, że przed publikacją kod wymagał odrobiny odświeżenia i dokładnego oddzielenie od innych funkcjonalności całej aplikacji, okazało się, że nie było to trudne i w tym wpisie przedstawiłem jak plik po pliku zbudować go od zera.
+This is a project written as one of the functionalities during my collaboration with `Smartselect`. The funniest thing is that it was my first contact with `FOSUserBundle`, `Google Maps API`, and the `navigator` object. When I was writing it, I didn't know `JavaScript`. Although the code required a little refreshment and a thorough separation from other functionalities of the entire application before publication, it turned out that it was not difficult, and in this entry, I presented how to build it file by file from scratch.
 
-Z wpisu dowiesz się jak zainstalować, skonfigurować i nadpisywać `FOSUserBundle` - najpopularniejszą paczkę do obsługi użytkowników w `Symfony`. Stworzymy kilka widoków związanych z logowaniem, rejestracją, zarządzaniem kontem, resetowaniem hasła i tak dalej. Jeśli lubisz front, to przez większość tego wpisu będziesz czuł się jak ryba w wodzie. Do backendu zejdziemy przy logice aplikacji, czyli wykorzystywaniu `API Google Maps` do tłumaczenia tekstowych adresów, albo współrzędnych na encje naszej bazy danych. Nie zabraknie Ajaxa, zobaczymy jak obiekt `navigator` pozwala nam dostać się do połorzenia przeglądarki oraz jak pogodzić twiga i JavaScript w jednym froncie.
+From the entry, you will learn how to install, configure, and override `FOSUserBundle` - the most popular package for user management in `Symfony`. We will create several views related to logging in, registration, account management, password resetting, and so on. If you like the frontend, you will feel like a fish in water for most of this entry. We will dive into the backend with the application logic, which involves using the `Google Maps API` to translate textual addresses or coordinates into entities in our database. Ajax will not be missing, we will see how the `navigator` object allows us to access the browser's location and how to reconcile Twig and JavaScript in one frontend.
 
-Działanie aplikacji możesz zobaczyć na poniższym video:
+You can see the application in action in the video below:
 
-Skład kodu źródłowego to:
+The source code composition is:
 
 ```
 PHP 69.7% HTML 20.9% CSS 5.8% ApacheConf 3.1% JavaScript 0.5%
 ```
 
-## Instalacja
+## Installation
 
-Są dwa sposoby stawiania nowego projektu Symfony: [instalacja od zera](http://symfony.com/doc/current/best_practices/creating-the-project.html) oraz klonowanie z githuba.
+There are two ways to set up a new Symfony project: [installation from scratch](http://symfony.com/doc/current/best_practices/creating-the-project.html) and cloning from GitHub.
 
-Jeśli chcesz zainstalowawć projekt najprostszym możliwym sposobem, możesz pobrać go z [githuba](https://github.com/gustawdaniel/geo_local)
-i zainstalować go zgodnie z instrukcją z `README.md`.
+If you want to install the project in the simplest possible way, you can download it from [GitHub](https://github.com/gustawdaniel/geo_local)
+and install it according to the instructions in `README.md`.
 
-W tym wpisie pokażę jak instalować projekt od zera. Możesz nie zaglądać do mojego repo i wykonując wszystkie komendy i tworząc poniższe pliki powinienneś otrzymać praktycznie to samo. Jedyne różnice będą polagać na tym, że na blogu dla większej przjejrzystości nie umieściłem kilku i tak nie używanych widoków jak panel admina czy kontakt.
+In this post, I will show you how to install the project from scratch. You can avoid looking at my repo and by executing all the commands and creating the files below you should get practically the same result. The only differences will be that for greater clarity, I did not include several unused views, such as the admin panel or contact.
 
-Wracając do instalacji. Jeśli chcesz instalować od zera to dokumentacja Symfony zaleca użycie jej instalatora.
+Back to the installation. If you want to install from scratch, Symfony's documentation recommends using its installer.
 
 ```
 symfony new geo_local && cd geo_local
@@ -47,15 +47,15 @@ symfony new geo_local && cd geo_local
 
 ## FosUserBundle
 
-Będziemy chcieli stworzyć użytkowników. W tym celu wykorzystamy jedną z najpopularniejszych paczek - [FOSUserBundle](https://symfony.com/doc/master/bundles/FOSUserBundle/index.html).
+We will want to create users. For this purpose, we will use one of the most popular packages - [FOSUserBundle](https://symfony.com/doc/master/bundles/FOSUserBundle/index.html).
 
 ```
 composer require friendsofsymfony/user-bundle "~2.0@dev"
 ```
 
-Żeby ją wykorzystać musimy zarejestrować ją a jądrze aplikacji poprzez dodanie elementu: `new FOS\UserBundle\FOSUserBundle()` do tablicy `$bundles` w pliku `app/AppKernel.php`.
+To use it, we need to register it in the application kernel by adding the element: `new FOS\UserBundle\FOSUserBundle()` to the `$bundles` array in the `app/AppKernel.php` file.
 
-Następnie rozszerzamy klasę `BaseUser` żeby móc modyfikować klasę opisującą Użytkowników (zakładam, że będziemy korzystać z mysql, dla innych silników baz danych konfiguracja może wyglądać trochę inaczej):
+Next, we extend the `BaseUser` class to be able to modify the class describing Users (I assume we will be using MySQL, for other database engines the configuration may look a bit different):
 
 ```php
 <?php
@@ -86,7 +86,7 @@ class User extends BaseUser
 }
 ```
 
-Zmieniamy zawartość pliku: `app/config/security.yml`
+We are changing the contents of the file: `app/config/security.yml`
 
 ```yml
 security:
@@ -120,7 +120,7 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
 ```
 
-Na koniec w pliku `app/config/config.yml` odkomentowujemy linię zawierającą wpis `#translator: { fallbacks: ["%locale%"] }`. I na końcu dodajemy:
+Finally, in the file `app/config/config.yml`, uncomment the line containing the entry `#translator: { fallbacks: ["%locale%"] }`. And finally, add:
 
 ```yml
 fos_user:
@@ -129,33 +129,33 @@ fos_user:
     user_class: AppBundle\Entity\User
 ```
 
-Powinniśmy też dodać dwie linie do routingu `app/config/routing.yml`:
+We should also add two lines to the routing `app/config/routing.yml`:
 
 ```yml
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 ```
 
-Żeby wszystko działało powinniśmy jeszcze ustawić sobie parametry połączenia z bazą danych. W moim przypadku sprowadza się to do ustawienia: wpisu `database_name: geo_local` w plikach: `app/config/parameters.yml` i `app/config/parameters.yml.dist`.
+To make everything work, we should also set our database connection parameters. In my case, this boils down to setting: the entry `database_name: geo_local` in the files: `app/config/parameters.yml` and `app/config/parameters.yml.dist`.
 
-Tworzymy bazę danych i potrzebne tabele za pomocą komend:
+We create the database and the necessary tables using the commands:
 
 ```bash
 php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 ```
 
-Teraz wszystko powinno działać. Mam na myśli, że po uruchomieniu serwera komendą `php bin/console server:run` i wpisaniu w przeglądarkę adresu `127.0.0.1:8000/login` zobaczymy coś takiego:
+Now everything should work. I mean that after starting the server with the command `php bin/console server:run` and entering the address `127.0.0.1:8000/login` in the browser, we should see something like this:
 
 ![domyślny_login_fos_user_bundle](http://i.imgur.com/cCUzKD4.png)
 
-### Nadpisywanie zachowania FOSUserBundle
+### Overriding FOSUserBundle Behavior
 
-Mamy teraz dwa problemy, pierwszy, że nie wygląda to ładnie, drugi, że chcemy zamiast `username` używać `email`, a po zalogowaniu chcemy dodać nasze własne przekierowanie. Zaczniemy od logiki, a front zostawimy na później.
+We now have two problems, the first is that it doesn't look nice, the second is that we want to use `email` instead of `username`, and after logging in, we want to add our own redirect. We'll start with the logic and leave the front for later.
 
-#### Zastąpienie `username` przez `e-mail`
+#### Replacing `username` with `email`
 
-Bardzo czytelną instrukcję pozbywania się pola `username` można znaleźć na [stacku](http://stackoverflow.com/questions/8832916/remove-replace-the-username-field-with-email-using-fosuserbundle-in-symfony2). W klasie `User` nadpisujemy setter dla pola e-mail.
+A very clear instruction on removing the `username` field can be found on [stack](http://stackoverflow.com/questions/8832916/remove-replace-the-username-field-with-email-using-fosuserbundle-in-symfony2). In the `User` class, we override the setter for the email field.
 
 ```php
 public function setEmail($email)
@@ -168,7 +168,7 @@ public function setEmail($email)
 }
 ```
 
-Nie podążymy jednak za tą instrukcję zbyt dosłownie, dlatego, że w oficjalnej dokumentacji można wyczytać między wierszami lepszy sposób. Wspomagając się dokumentacją [nadpisywania formularzy](http://symfony.com/doc/master/bundles/FOSUserBundle/overriding_forms.html), tworzymy plik `src/AppBundle/Form/RegistrationType.php` który nadpisze nam domyśny formularz rejestracji. Przy rejestracji chcemy wymagać od użytkownika tylko jednego hasła, dlatego upieczemy dwie pieczenie na jednym ogniu nadpisując ten formulaż. Oto treść pliku:
+We will not follow this instruction too literally, because in the official documentation, you can read between the lines a better way. Using the documentation on [overriding forms](http://symfony.com/doc/master/bundles/FOSUserBundle/overriding_forms.html), we create the file `src/AppBundle/Form/RegistrationType.php` which will override the default registration form for us. When registering, we want to require the user to provide only one password, so we will kill two birds with one stone by overriding this form. Here is the content of the file:
 
 ```php
 <?php
@@ -199,7 +199,7 @@ class RegistrationType extends AbstractType
 }
 ```
 
-Usuwając i dodając hasło pozbywamy się dość ciekawej i zaawansowanej sztuczki z powtarzaniem tego pola, jaką stosuje `FOSUserBundle`. Analogicznie nadpisujemy edycję profilu `src/AppBundle/Type/ProfileType.php`:
+By removing and adding the password, we eliminate quite an interesting and advanced trick of repeating this field, which is used by `FOSUserBundle`. Similarly, we overwrite the profile edit in `src/AppBundle/Type/ProfileType.php`:
 
 ```php
 <?php
@@ -227,7 +227,7 @@ class ProfileType extends AbstractType
 }
 ```
 
-Rejestrujemy nasze formularze jako usługi modyfikując plik `app/config/services.yml`:
+We register our forms as services by modifying the `app/config/services.yml` file:
 
 ```yml
 services:
@@ -241,7 +241,7 @@ services:
             - { name: form.type, alias: app_user_profile }
 ```
 
-Na końcu w konfiguracji paczki ustawiamy nasze formularze jako te, które mają nadpisać domyślne.
+At the end of the package configuration, we set our forms as those that are to override the defaults.
 
 ```yml
 fos_user:
@@ -256,11 +256,11 @@ fos_user:
             type: AppBundle\Form\ProfileType
 ```
 
-Nie ruszamy w ogóle walidacji. Należy pamiętać, że [link](http://stackoverflow.com/questions/8832916/remove-replace-the-username-field-with-email-using-fosuserbundle-in-symfony2) z instrukcją odnosił się do wersji 2 Symfony, a w naszym projekcie używamy 3.
+We do not touch validation at all. It should be noted that the [link](http://stackoverflow.com/questions/8832916/remove-replace-the-username-field-with-email-using-fosuserbundle-in-symfony2) with instructions referred to version 2 of Symfony, while in our project we use version 3.
 
-#### Przekierowanie po logowaniu
+#### Redirect After Login
 
-Domyślnie po zalogowaniu `FOSUserBundle` przekierowuje nas do profilu użytkownika. Jest to logiczne, ale nie praktyczne w naszym przypadku. Główna funkcjonalność aplikacji nie będzie polegała na zmienianiu swojego e-maila i hasła. Zamiast tego chcemy przekierować użytkownika do ścieżki nazywanej `homepage`, a dopiero jej kontroler będzie wysyłał zalogowanych do panelu z miejscami, a nie zalogowanych do strony informacyjnej. Żeby po zalogowaniu móc przekierować użytkownika do `homepage` wykonamy następujące zmiany: dodamy plik `src/AppBundle/Security/LoginSuccessHandler.php` o treści:
+By default, after logging in, `FOSUserBundle` redirects us to the user's profile. This is logical, but not practical in our case. The main functionality of the application will not revolve around changing one's email and password. Instead, we want to redirect the user to a path called `homepage`, and only its controller will send logged-in users to the panel with places, not logged-in to the informational page. In order to redirect the user to `homepage` after logging in, we will make the following changes: we will add the file `src/AppBundle/Security/LoginSuccessHandler.php` with the content:
 
 ```php
 <?php
@@ -289,7 +289,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface {
 }
 ```
 
-W serwisach (`app/config/services.yml`) powinniśmy dodać usługę:
+In the services (`app/config/services.yml`) we should add the service:
 
 ```yml
     authentication.handler.login_success_handler:
@@ -297,7 +297,7 @@ W serwisach (`app/config/services.yml`) powinniśmy dodać usługę:
         arguments:  ['@router', '@security.authorization_checker']
 ```
 
-Powinniśmy dodać parametr `success_handler` do pliku `app/config/security.yml`
+We should add the `success_handler` parameter to the `app/config/security.yml` file.
 
 ```yml
     firewalls:
@@ -309,31 +309,31 @@ Powinniśmy dodać parametr `success_handler` do pliku `app/config/security.yml`
                 success_handler: authentication.handler.login_success_handler
 ```
 
-### Nadpisanie wyglądu FOSUserBundle
+### Overriding the appearance of FOSUserBundle
 
-Teraz mając odpowiednią ilość pól w formularzu możemy zmienić wygląd, tak, żeby nie straszył, i nie powodował koszmarów u użytkowników. Listę ścieżek jakimi powinniśmy się zająć wyświetlimy komendą:
+Now that we have the right amount of fields in the form, we can change the appearance so that it doesn't scare users and doesn't cause nightmares. We will display the list of paths we should take care of with the command:
 
 ```bash
 php bin/console debug:router | grep fos_user
 ```
 
-Najprostszą metodą nadpisania domyślnego wyglądu jest wykonanie następującej komendy.
+The simplest way to override the default appearance is to execute the following command.
 
 ```bash
 mkdir -p app/Resources/FOSUserBundle/views && cp -r vendor/friendsofsymfony/user-bundle/Resources/views/* "$_"
 ```
 
-#### Dodawanie zewnętrznych bibliotek
+#### Adding External Libraries
 
-Zainstalujemy teraz biblioteki frontowe i dodamy nasze własne style oraz skrypty.
-Żeby nie było problemów z cache twiga, wyłączymy go w trybie deweloperskim dodając do pliku `app/config/config_dev.yml` linie:
+We will now install frontend libraries and add our own styles and scripts.
+To avoid problems with Twig caching, we will disable it in development mode by adding the following lines to the file `app/config/config_dev.yml`:
 
 ```yml
 twig:
     cache: false
 ```
 
-Twożymy plik `.bowerrc` o treści:
+We create a `.bowerrc` file with the content:
 
 ```json
 {
@@ -341,28 +341,27 @@ Twożymy plik `.bowerrc` o treści:
 }
 ```
 
-Inicjalizujemy bowera komendą:
+We initialize bower with the command:
 
 ```
 bower init
 ```
 
-Instalujemy bootstrapa 3, animate.css, components-font-awesome, jQuery i iCheck - małą bibliotekę opartą na jQuery do wyświetlania efektów związanych z zaznaczaniem pól formularzy i checkboxów:
+We are installing bootstrap 3, animate.css, components-font-awesome, jQuery, and iCheck - a small library based on jQuery for displaying effects related to checking form fields and checkboxes:
 
 ```
 bower install --save bootstrap#^3.3.7 animate.css#^3.5.2 components-font-awesome#^4.7.0 iCheck#^1.0.2 jquery#^3.1.1
 ```
 
-Do `.gitignore` dodajemy linie:
+We add lines to `.gitignore`:
 
 ```
 /.idea
 /web/bower_components
 ```
 
-Nie jestem dobrym frontowcem, dlatego kupuję fronty. Tak było i w tym przypadku. CSS, który załączam kupiłem na stronie
-[wrapbootstrap.com](https://wrapbootstrap.com/theme/eternity-forms-WB0G8810G). Wyciąłem z niego połowę nie wykorzystywanej
-funkcjonalności i zmieniłem linki do skinów `iCheck`. Umieściłem plik `css` w lokacji `src/AppBundle/Resources/public/css/forms.css`.
+I am not a good front-end developer, so I buy front-end designs. This was also the case here. The CSS I am attaching was purchased from the website 
+[wrapbootstrap.com](https://wrapbootstrap.com/theme/eternity-forms-WB0G8810G). I cut out half of the unused functionality and changed the links to the `iCheck` skins. I placed the `css` file in the location `src/AppBundle/Resources/public/css/forms.css`.
 
 ```css
 .eternity-form-modal {
@@ -602,7 +601,7 @@ funkcjonalności i zmieniłem linki do skinów `iCheck`. Umieściłem plik `css`
 }
 ```
 
-Potrzebujemy jeszcze jednego skryptu - `src/AppBundle/Resources/public/js/iCheck-config.js` jest to konfiguracja wtyczki `iCheck` służącej do interaktywnego podświetlania aktywnych pól formularz:
+We need one more script - `src/AppBundle/Resources/public/js/iCheck-config.js` is the configuration of the `iCheck` plugin used for interactively highlighting active form fields:
 
 ```js
     $(function () {
@@ -629,15 +628,15 @@ Potrzebujemy jeszcze jednego skryptu - `src/AppBundle/Resources/public/js/iCheck
     });
 ```
 
-Linkujemy go z katalogiem `web` komendą
+We link it with the `web` directory using the command
 
 ```
 php bin/console assets:install --symlink
 ```
 
-Nie jest to najlepsza dostępna metoda. Lepszą jest zastosowanie `gulpa`, ale jest najprostsza. Przy trzech kilku plikach styli i skryptów i kilku zewnętrznych bibliotekach brak konkatenacji i minifikacji nie jest niczym strasznym. Oczywiście tworzenie pliku ze stylami bezpośrednio w katalogu web jest prostsze, ale niepoprawne.
+This is not the best available method. A better one is using `gulp`, but it is the simplest. With a few style and script files and some external libraries, the lack of concatenation and minification is nothing terrible. Of course, creating a file with styles directly in the web directory is simpler, but incorrect.
 
-Ostatnią rzeczą jaka została nam do zrobienia jest dodanie bootstrapowych formularzy jako domyślnych dla twiga, w pliku `app/config/config.yml` dodajemy linie:
+The last thing we have to do is add Bootstrap forms as defaults for Twig, in the file `app/config/config.yml` we add the line:
 
 ```yml
 twig:
@@ -645,9 +644,9 @@ twig:
         - 'bootstrap_3_layout.html.twig'
 ```
 
-#### Szablon bazowy
+#### Base template
 
-Zaczniemy od dostosowania wyglądu loginu. Login będzie dziedziczył z `layout.html.twig` z FOSUserBundle, a ten będzie dziedziczył z `base.html.twig`. Żeby więc budować dom od fundamentów, nie od dachu, przyjrzymy się bazowemu szablonowi - `app/Resources/views/base.html.twig`.
+We will start by customizing the appearance of the login. The login will inherit from `layout.html.twig` from FOSUserBundle, and this will inherit from `base.html.twig`. So to build the house from the foundations, not from the roof, we will take a look at the base template - `app/Resources/views/base.html.twig`.
 
 ```html
 <!DOCTYPE html>
@@ -716,11 +715,11 @@ Zaczniemy od dostosowania wyglądu loginu. Login będzie dziedziczył z `layout.
 </html>
 ```
 
-Co my tu mamy? Jest `viewport` - strona działa na urządzeniach mobilnych. Podpinamy style, które mają się znaleźć wszędzie - bootstrap i forms. Dodaliśmy skrypty - jQuery i bootstrap. Nie ma tu potrzeby ładownia skryptów typu `iCheck` alby styli jak `animate.css` jeśli nie każda strona będzie ich potrzebować. Nie chcemy przecież zirytować użytkownika ciągłym animowaniem wszystkiego, tylko ucieszyć go animacjami przy logowaniu lub rejestracji - to wystarczy. Tag `<body>` zawiera jedynie pasek nawigacji. Nawigacja jednak posiada logikę odpowiadającą za wyświetlanie nie zalogowanemu użytkownikowi pól "login" i "rejestracja", a zalogowanemu "moje konto" i "wyloguj".
+What do we have here? There is `viewport` - the page works on mobile devices. We are linking styles that need to be everywhere - bootstrap and forms. We added scripts - jQuery and bootstrap. There is no need to load scripts like `iCheck` or styles like `animate.css` if not every page will need them. We don't want to irritate the user with constant animations, but rather please them with animations during login or registration - that will suffice. The `<body>` tag contains only the navigation bar. However, the navigation has logic that displays "login" and "registration" fields to the unauthenticated user, and "my account" and "logout" to the authenticated user.
 
-#### Layout dla FOSUserBundle
+#### Layout for FOSUserBundle
 
-Teraz przyjrzymy się plikowi `app/Resources/FOSUserBundle/layout.html.twig` - czyli szablonowi, który dziedziczy z `base` i jest jednocześnie rodzicem dla wszystkiego co będziemy nadpisywali w `FOSUserBundle`:
+Now let's take a look at the file `app/Resources/FOSUserBundle/layout.html.twig` - which is a template that inherits from `base` and is also the parent for everything we will override in `FOSUserBundle`:
 
 ```twig
 {% extends '::base.html.twig' %}
@@ -766,11 +765,11 @@ Teraz przyjrzymy się plikowi `app/Resources/FOSUserBundle/layout.html.twig` - c
 {% endblock %}
 ```
 
-W tym pliku dodaliśmy style i skrypty potrzebne tylko przy obsłudze użytkownika oraz podpięliśmy blok `fos_user_content` bezpośrednio pod nawigacją zapisaną w `base.html.twig`.
+In this file, we added styles and scripts needed only for user handling and directly connected the `fos_user_content` block under the navigation saved in `base.html.twig`.
 
 #### Login
 
-Plik `app/Resources/FOSUserBundle/views/Security/login.html.twig` pozostawiamy praktycznie nie zmieniony, dodjemy jedynie tytuł:
+The file `app/Resources/FOSUserBundle/views/Security/login.html.twig` remains virtually unchanged, we will only add a title:
 
 ```twig
 {% extends "@FOSUser/layout.html.twig" %}
@@ -782,7 +781,7 @@ Plik `app/Resources/FOSUserBundle/views/Security/login.html.twig` pozostawiamy p
 {% block title %}Login Form{% endblock %}
 ```
 
-Dużo więcej kodu zostało dodanego w pliku `app/Resources/FOSUserBundle/views/Security/login_content.html.twig`
+A lot more code has been added to the file `app/Resources/FOSUserBundle/views/Security/login_content.html.twig`
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -847,14 +846,14 @@ Dużo więcej kodu zostało dodanego w pliku `app/Resources/FOSUserBundle/views/
 </div>
 ```
 
-Jednak, jest to tylko front - formularz logowania i dwa linki w twigu. A ponieważ o frontach obraz mówi więcej niż tysiąc słów więc zamiast go opisywać wklejam screen:
+However, this is just the front - a login form and two links in the twig. And since the front speaks more than a thousand words, instead of describing it, I am pasting the screenshot:
 
 ![login](http://i.imgur.com/avrKaZd.png)
 
-#### Rejestracja
+#### Registration
 
-Rejstracja wygląda podobnie.
-Plik: `app/Resources/FOSUserBundle/views/Registration/register.html.twig`
+The registration looks similar.  
+File: `app/Resources/FOSUserBundle/views/Registration/register.html.twig`
 
 ```twig
 {% extends "@FOSUser/layout.html.twig" %}
@@ -866,7 +865,7 @@ Plik: `app/Resources/FOSUserBundle/views/Registration/register.html.twig`
 {% block title %}Register{% endblock %}
 ```
 
-Plik: `app/Resources/FOSUserBundle/views/Registration/register_content.html.twig`
+File: `app/Resources/FOSUserBundle/views/Registration/register_content.html.twig`
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -912,11 +911,11 @@ Plik: `app/Resources/FOSUserBundle/views/Registration/register_content.html.twig
 </div>
 ```
 
-Efekt:
+Effect:
 
 ![register](http://i.imgur.com/i9BZooS.png)
 
-Jeśli rejestracja przebiega pomyślnie, gratulujemy użytkonikowi komunikatem z pliku: `app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig`
+If the registration is successful, we congratulate the user with a message from the file: `app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig`
 
 ```twig
 {% extends "@FOSUser/layout.html.twig" %}
@@ -939,13 +938,13 @@ Jeśli rejestracja przebiega pomyślnie, gratulujemy użytkonikowi komunikatem z
 {% endblock fos_user_content %}
 ```
 
-Który prezentuje się tak:
+Which presents itself as follows:
 
 ![confirm](http://i.imgur.com/8v1SLZ1.png)
 
-#### Resetowanie hasła
+#### Password Reset
 
-Jeśli posiadający konto użytkownik zapomni hasła, może je wysłać na swój e-mail (jeśli w `app/config/parameters.yml` są odpowiednie parametry umożliwiające wysłanie e-maila) za pomocą formularza, którego kod znajduje się w pliku `app/Resources/FOSUserBundle/views/Resetting/request_content.html.twig`
+If a user with an account forgets their password, they can send it to their email (if the appropriate parameters for sending emails are set in `app/config/parameters.yml`) using a form whose code is located in the file `app/Resources/FOSUserBundle/views/Resetting/request_content.html.twig`
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -974,11 +973,11 @@ Jeśli posiadający konto użytkownik zapomni hasła, może je wysłać na swój
 </div>
 ```
 
-Formularz wygląda tak:
+The form looks like this:
 
 ![reset](http://i.imgur.com/XfCorCh.png)
 
-Za to co pojawi się na ekranie po wpisaniu e-maila odpowiada plik: `app/Resources/FOSUserBundle/views/Resetting/check_email.html.twig` o treści
+The file responsible for what appears on the screen after entering the email is: `app/Resources/FOSUserBundle/views/Resetting/check_email.html.twig` with the content
 
 ```twig
 {% extends "@FOSUser/layout.html.twig" %}
@@ -998,11 +997,11 @@ Za to co pojawi się na ekranie po wpisaniu e-maila odpowiada plik: `app/Resourc
 {% endblock %}
 ```
 
-który prezentuje się tak:
+which looks like this:
 
 ![check](http://i.imgur.com/hZy5ERk.png)
 
-W e-mailu mamy link zmiany hasła. Szablon twiga znajduje się w pliku: `app/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig` i ma kod:
+In the email, we have a password reset link. The Twig template is located in the file: `app/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig` and has the code:
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -1022,13 +1021,13 @@ W e-mailu mamy link zmiany hasła. Szablon twiga znajduje się w pliku: `app/Res
 </div>
 ```
 
-Formularz zmiany hasła tak:
+Password change form as follows:
 
 ![](http://i.imgur.com/N7Ot9V6.png)
 
-#### Panel użytkownika
+#### User Panel
 
-Jeśli jako zalogowany użytkownik wybierzemy `MyAccount` z menu, zostaniemy przekierowani do widoku konta. Jego html generowany jest z pliku `app/Resources/FOSUserBundle/views/Profile/show_content.html.twig`
+If we, as a logged-in user, select `MyAccount` from the menu, we will be redirected to the account view. Its html is generated from the file `app/Resources/FOSUserBundle/views/Profile/show_content.html.twig`
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -1047,11 +1046,11 @@ Jeśli jako zalogowany użytkownik wybierzemy `MyAccount` z menu, zostaniemy prz
 </div>
 ```
 
-i wygląda tak:
+and it looks like this:
 
 ![profile](http://i.imgur.com/jwR8Nlg.png)
 
-Przycisk `Edit Places` będzie prowadził do głównej funkcjonalności aplikacji. Jednak żeby dokończyć to co związane z `FOSUserBundle` pokażemy teraz edycję profilu i zmanę hasła. Edycja profilu: `app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig`
+The `Edit Places` button will lead to the main functionality of the application. However, to complete what is related to `FOSUserBundle`, we will now show profile editing and password change. Profile editing: `app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig`
 
 ```twig
 {% trans_default_domain 'FOSUserBundle' %}
@@ -1081,9 +1080,9 @@ Przycisk `Edit Places` będzie prowadził do głównej funkcjonalności aplikacj
 
 ![edit](http://i.imgur.com/QVWyPri.png)
 
-Cały formularz sprowadza się do jednego pola - `email`, ponieważ jest to jedyna własność jaką chcemy nadawać użytkownikowi.
+The entire form comes down to one field - `email`, as it is the only attribute we want to assign to the user.
 
-Zmiana hasła ma szablon w pliku `app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig`
+The password change template is in the file `app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig`
 
 ```html
 {% trans_default_domain 'FOSUserBundle' %}
@@ -1105,25 +1104,25 @@ Zmiana hasła ma szablon w pliku `app/Resources/FOSUserBundle/views/ChangePasswo
 
 ![password](http://i.imgur.com/cQkQC91.png)
 
-Są to wszystkie zmiany jakie zrobiłem, żeby dostosować `FOSUserBundle` do swoich wymagań. W `app/Resources/FOSUserBundle` Są pliki, których nie zmieniałem, na przykład cały katalog `Group`, który jest związany z interakcjami między użytkonikami, ale ta funkcjonalność nie jest przez nas wykorzystywana. Zostawiłem równiż e-mail do resetu hasła, który bez grafik wygląda tak:
+These are all the changes I made to adapt `FOSUserBundle` to my requirements. In `app/Resources/FOSUserBundle`, there are files that I did not modify, for example, the entire `Group` directory, which is related to interactions between users, but this functionality is not used by us. I also left the email for password reset, which without graphics looks like this:
 
 ![reset](http://i.imgur.com/zksqsDt.png)
 
-Ale w przypadku e-maila jest to jak najbardziej dopuszczalne.
+But in the case of email, it is completely permissible.
 
 ## AppBundle
 
-Kiedy mamy już działającą obsługę użytkowników, warto było by dać im ciekawą funkcjonalność. Żeby zachować balans między rozbudowaną aplikacją, a dobrym przykładem postawimy następujące wymagania przed logiką biznesową aplikacji:
+Once we have a functioning user management system, it would be worthwhile to provide them with an interesting feature. To maintain a balance between a comprehensive application and a good example, we will set the following requirements for the application's business logic:
 
-* Użytkownik może dodać dowolną liczbę miejsc do swojego konta
-* Miejsca wybiera się wpisując je w formulażu lub używając geolokalizacji
-* Dane miejsce może zostać odłączone od konta, ale nie zniknie z bazy
-* Do danego miejsca może być przypisanych dowolnie wielu użytkowników
-* Zarządanie miejscami (dodawanie, usównie, lokalizowanie) nie przeładowuje strony
+* The user can add any number of places to their account
+* Places are selected by entering them in the form or using geolocation
+* A given place can be detached from the account, but it will not disappear from the database
+* Any number of users can be assigned to a given place
+* Managing places (adding, removing, locating) does not overload the page
 
-### Baza danych (Model)
+### Database (Model)
 
-Zaczniemy od przygotowania bazy. Chcemy dodać w niej tablelę z miejscami oraz utowrzyć relację wiele do wielu między nią a tabelą `users`. Tworzymy plik `src/AppBundle/Entity/Place.php` w którym definiujemy klasę odpowiadającą za reprezentowanie miejsc. Standardowo zaczynamy od własności
+We will start by preparing the database. We want to add a table for places and create a many-to-many relationship between it and the `users` table. We create the file `src/AppBundle/Entity/Place.php` in which we define the class responsible for representing places. By default, we start with properties.
 
 ```php
 <?php
@@ -1191,7 +1190,7 @@ class Place
     protected $country;
 ```
 
-Poza standardowymi własnościami dotyczącymy lokalizacji mamy tu własność `$users`. W bazie danych będzie odpowiadała ona występowaniu tabeli `users_places` z identyfikatorami użytkownika i miejsca. Wymagać to będzie jeszcze paru zmian w klasie `User`, ale o tym później. Teraz przejrzymy metody klasy `Place`.
+Apart from the standard properties related to location, we have the property `$users`. In the database, it will correspond to the occurrence of the `users_places` table with user and place identifiers. This will require a few more changes in the `User` class, but we'll talk about that later. Now let's review the methods of the `Place` class.
 
 ```php
     public function __construct() {
@@ -1200,7 +1199,7 @@ Poza standardowymi własnościami dotyczącymy lokalizacji mamy tu własność `
     }
 ```
 
-Konstruktor ustawia datę dodania miejsca oraz zmienną `$users` jako `ArrayCollection`. Jest to obiekt podobny do zwykłej tablicy, ale ma kilka metod wygodnych dla stosowania go jako zbiór obiektów. Mamy też geter i setter dla `$googleId`:
+The constructor sets the date of adding the place and the variable `$users` as `ArrayCollection`. It is an object similar to a regular array, but it has several methods convenient for using it as a collection of objects. We also have a getter and setter for `$googleId`:
 
 ```php
     /**
@@ -1220,7 +1219,7 @@ Konstruktor ustawia datę dodania miejsca oraz zmienną `$users` jako `ArrayColl
     }
 ```
 
-Do operowani na zmiennej `$users` mamy trzy metody.
+For the variable `$users`, we have three methods.
 
 ```php
     /**
@@ -1248,9 +1247,9 @@ Do operowani na zmiennej `$users` mamy trzy metody.
     }
 ```
 
-Widać jak korzystamy tu z zalet `ArrayCollection`, gdyby `$users` było zwykłą tablicą, te operacje wyglądały by nieco mniej zgrabnie.
+You can see how we take advantage of `ArrayCollection` here; if `$users` were a regular array, these operations would look a bit less elegant.
 
-Kolejnymi metodami są pary getterów i setterów dla adresu: `$formattedAddress`, współrzędnych `$lon`, `$lat` i czasu dodania adresu do bazy `$addAt`:
+The next methods are pairs of getters and setters for the address: `$formattedAddress`, coordinates `$lon`, `$lat`, and the time the address was added to the database `$addAt`:
 
 ```php
     /**
@@ -1318,7 +1317,7 @@ Kolejnymi metodami są pary getterów i setterów dla adresu: `$formattedAddress
     }
 ```
 
-Dla pozostałych parametrów nie będziemy stosować już pary getter, setter. Z powodu ich ustrukturyzowanego występowania w api google maps, z którego będziemy korzystać ustawimy jeden setter dla nich wszystkich. Gettery nie będą nam potrzebne więc metody do obsługi pozostałych parametów wyglądają następująco:
+For the remaining parameters, we will not use the getter-setter pair anymore. Due to their structured occurrence in the Google Maps API, which we will use, we will set one setter for all of them. Getters will not be needed, so the methods to handle the remaining parameters look as follows:
 
 ```php
     public function getParams()
@@ -1343,9 +1342,9 @@ Dla pozostałych parametrów nie będziemy stosować już pary getter, setter. Z
     }
 ```
 
-Pierwsza z nich zwraca listę nazw obsługiwanych przez drugą metodę, te nazwy można jako `string` podstawić jako `$name`. Funkcja zaczynająca się od `lcfirst` odpowiada za zmianę notacji z `a_b` na `aB`, czyli usówa podkreślenia i zmienia małe litery po podkreśleniach na duże.
+The first of them returns a list of names supported by the second method, these names can be substituted as a `string` for `$name`. The function starting with `lcfirst` is responsible for changing the notation from `a_b` to `aB`, which means it removes underscores and changes lowercase letters after underscores to uppercase.
 
-Została nam jeszcze jedna metoda - do rzutowania obiektu na string.
+We have one more method left - for casting an object to a string.
 
 ```php
     public function __toString()
@@ -1355,7 +1354,7 @@ Została nam jeszcze jedna metoda - do rzutowania obiektu na string.
 }
 ```
 
-Żeby tabela łącząca została poprawnie dodana wprowadzimy teraz zmiany w klasie `User` i dodamy do pliku `src/AppBundle/Entity/User.php` linie:
+To correctly add the linking table, we will now make changes to the `User` class and add the lines to the file `src/AppBundle/Entity/User.php`:
 
 ```php
 use Doctrine\Common\Collections\ArrayCollection;
@@ -1400,19 +1399,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 ```
 
-Możemy teraz zregenerować bazę danych komendą:
+We can now regenerate the database with the command:
 
 ```
 php bin/console doctrine:schema:update --force
 ```
 
-Na koniec załączam wizualizację schematu bazy
+Finally, I am attaching a visualization of the database schema.
 
 ![database](http://i.imgur.com/jfjLAoV.png)
 
-### Logika serwera (Kontroler)
+### Server Logic (Controller)
 
-Mamy model. Teraz kontrolery. Na końcu zrobimy widoki. W defaultowym kontrolerze (`src/AppBundle/Controller/DefaultController`) ustawimy przekierowanie zalogowanych użytkowników do ścieżki z miejscami:
+We have the model. Now the controllers. Finally, we will create the views. In the default controller (`src/AppBundle/Controller/DefaultController`), we will set up redirection for logged-in users to the path with places:
 
 ```php
     /**
@@ -1427,9 +1426,8 @@ Mamy model. Teraz kontrolery. Na końcu zrobimy widoki. W defaultowym kontrolerz
     }
 ```
 
-To wszystko jeśli chodzi o defaultową logikę.
-W kontrolerze `src/AppBundle/Controller/PlacesController` będzie znacznie więcej logiki. Oto metoda
-do wyświetlania ścieżki `places`, do której chcemy przekierowywać logowanych użytkowników.
+That's all regarding the default logic.  
+In the controller `src/AppBundle/Controller/PlacesController` there will be much more logic. Here is the method for displaying the `places` path, to which we want to redirect logged-in users.
 
 ```php
 <?php
@@ -1468,7 +1466,7 @@ Class PlacesController extends Controller
     }
 ```
 
-Zanim przejdziemy dalej zwrócę uwagę na dwie rzeczy - pierwsza to brak obsługi formularza i przyjmowania requestów. Tworzymy tutaj formularz, wysyłamy go do Twiga, ale nie będziemy go odbierać tutaj. Jego obsługą zajmie się JavaScript. Druga rzecz to sama klasa `PlaceType` została ona tutaj zastosowana, chociaż jeszcze je nie defniowaliśmy. Zrobię małą dygresję i pokażę kod tej klasy. Jest on umieszczony w pliku `src/AppBundle/Form/PlaceType.php`
+Before we proceed, I will point out two things - the first is the lack of form handling and request processing. We are creating a form here, sending it to Twig, but we will not be receiving it here. JavaScript will handle its processing. The second thing is that the `PlaceType` class has been used here, although we have not defined it yet. I will make a small digression and show the code of this class. It is located in the file `src/AppBundle/Form/PlaceType.php`.
 
 ```php
 <?php
@@ -1497,7 +1495,7 @@ class PlaceType extends AbstractType implements FormTypeInterface
 }
 ```
 
-Z php na nasze: ta klasa odpowada z to, że formularz, który reprezentuje ma jedno pole. Wracamy teraz do kontrolera `src/AppBundle/Form/PlaceType.php`. Kolejna metoda będzie odpowiadała za zapisywanie miejsca do bazy danych
+From PHP to our language: this class is responsible for having a single field in the form it represents. We are now returning to the controller `src/AppBundle/Form/PlaceType.php`. The next method will be responsible for saving the place to the database.
 
 ```php
     /**
@@ -1526,13 +1524,13 @@ Z php na nasze: ta klasa odpowada z to, że formularz, który reprezentuje ma je
     }
 ```
 
-Można ją wywołać z parametrem `debug` w ścieżce, ale nie trzeba. Działanie metody jest następujące: pobiera ona zawartość requestu do zmiennej `$content`, do zmiennej `$params` zapisuje tablicę odpowiadającą treści requestu, do zmiennej `$formattedAddress` zapisujemy wartość odpowiadającą kluczowi `formatted_address`. Jest to dokładnie to co powinno zostać wysłane przez formularz definiowany klasą `PlaceType` prezentowaną przed chwilą.
+It can be called with the `debug` parameter in the path, but it is not necessary. The method operates as follows: it retrieves the contents of the request into the variable `$content`, saves the array corresponding to the request content into the variable `$params`, and we store the value corresponding to the key `formatted_address` in the variable `$formattedAddress`. This is exactly what should be sent by the form defined by the class `PlaceType` presented a moment ago.
 
-Teraz linia `$address = $this->getAddress($formattedAddress);` robi bardzo ważną rzecz. Wysyła request do API Google w celu przetłumaczenia tego co wpisał użytkownik na to co Google rozumie jako lokalizację, którą prawdopodobnie miał na myśli. Do metody `getAddress` jeszcze przejdziemy, ale teraz dokończę omawianie metody `ajaxGeoSave`. Otrzymany adres jest tablicą. Jeśli metodę włączono z parametrem `debug` to zostaje on zwrócony jako `JSON` z kodem HTTP 200 i dalsza część metody nie jest wykonywana. W przeciwnym wypadku, czyli w sytuacji zwyczajnego użycia wywołujemy metodę `getPlace`, która transformuje nam tablicę `$address` do obiektu `$place`. Trzy kolejne linie to zapis do bazy. Na końcu zwracamy `$address` jak z metodzie z parametrem `debug`, ale ponieważ wykonaliśmy poprawny zapis do bazy, zmieniamy kod HTTP na 201.
+Now, the line `$address = $this->getAddress($formattedAddress);` does something very important. It sends a request to the Google API to translate what the user entered into what Google understands as the location that they likely meant. We will come back to the `getAddress` method, but now I will finish discussing the `ajaxGeoSave` method. The obtained address is an array. If the method was invoked with the `debug` parameter, it is returned as `JSON` with an HTTP code of 200 and the rest of the method is not executed. Otherwise, in the case of normal usage, we call the `getPlace` method, which transforms the array `$address` into the object `$place`. The next three lines are the database write. Finally, we return `$address` as in the method with the `debug` parameter, but since we successfully wrote to the database, we change the HTTP code to 201.
 
-Mamy tu więc dwie ważne transformacje danych - z tego co wpisał użytkownik na tablicę z danymi adresowymi od Google, oraz z tablicy na naszą strukturę danych - klasę `Place`.
+So we have two important data transformations here - from what the user entered to an array of address data from Google, and from the array to our data structure - the `Place` class.
 
-Może jednak tak się zdarzyć, że użytkownikowi nie che się pisać swojego adresu, albo zgubił się i nie wie gdzie jest. W takim wypadku możemy wykorzystać metodę `geolocation` obiektu `navigator` dostępnego w `javascript`. Zwraca ona współrzędne geograficzne. Chcieli byśmy tłumaczyć je na adres czytelny dla człowieka. Do tego posłuży druga metoda kontrolera:
+However, it may happen that the user does not want to write their address, or they got lost and do not know where they are. In that case, we can use the `geolocation` method of the `navigator` object available in `javascript`. It returns geographical coordinates. We would like to translate them into a human-readable address. For this purpose, we will use the second method of the controller:
 
 ```php
     /**
@@ -1552,9 +1550,9 @@ Może jednak tak się zdarzyć, że użytkownikowi nie che się pisać swojego a
     }
 ```
 
-Jej struktura jest bardzo przejrzysta. Pobieramy dane z requesta, wykonujemy transformację metodą `getAddress`, zwracamy tablicę z adresem. Należy zauważyć, że tym razem `getAddress` przyjmuję tablicę a nie string. Mimo to działa poprawnie, ponieważ w zależności od tego co dostała metoda `getAddress` wykonuje nieco inną logikę dostosowaną zarówno do tekstowych adresów jak i par współrzędnych.
+Its structure is very clear. We obtain data from the request, perform a transformation using the method `getAddress`, and return an array with the address. It should be noted that this time `getAddress` takes an array and not a string. Nevertheless, it works correctly, as depending on what it received, the `getAddress` method executes slightly different logic tailored to both textual addresses and pairs of coordinates.
 
-Kolejna metoda wiąże się ze smutnym eventem jakim jest usunięcie adresu przez użytkownika.
+The next method is related to the sad event of a user deleting an address.
 
 ```php
     /**
@@ -1582,9 +1580,9 @@ Kolejna metoda wiąże się ze smutnym eventem jakim jest usunięcie adresu prze
     }
 ```
 
-Adres jest wyszukiwany po `googleId`. Jeśli nie zostanie znaleziony odsyłamy błąd `404`, jeśli zostanie, to usunięte zostaje jedynie łącznie między użytkownikiem a miejscem, natomiast miejsce cały zostaje w bazie nawet jeśli nie będzie już połączone z żadnym użytkownikiem.
+The address is searched by `googleId`. If it is not found, we return a `404` error; if it is found, only the link between the user and the place is removed, while the place remains in the database even if it is no longer linked to any user.
 
-Najwyższy czas na zaprezentowanie pierwszego z transformatorów danych - metody `getAddress`
+It's high time to present the first of the data transformers - the `getAddress` method.
 
 ```php
     /**
@@ -1609,15 +1607,15 @@ Najwyższy czas na zaprezentowanie pierwszego z transformatorów danych - metody
     }
 ```
 
-Ta metoda sprawdza czy dostała współrzędne czy tekstowy adres i w zależności od tego przygotowuje trochę inny `$url`. Następnie za pomocą najprostszego requestu `file_get_contents` odbiera to co odpowie Google, wycina to co nie potrzebne i odsyła dalej.
+This method checks whether it received coordinates or a textual address and, depending on that, prepares a slightly different `$url`. Then, using the simplest request `file_get_contents`, it retrieves what Google replies, trims out what is unnecessary, and sends it back.
 
-Myślę, że to dobry moment, żeby pokazać do dokładnie jest odsyłane. Wykonamy request do `ajax_geo_save` z parametrem `debug`, żeby zobaczyć jak wygląda `json` na wyjściu tej metody.
+I think this is a good time to show what exactly is being sent back. We will make a request to `ajax_geo_save` with the parameter `debug` to see what the `json` looks like at the output of this method.
 
 ![api1](http://i.imgur.com/My3cMbW.png)
 
 ![api2](http://i.imgur.com/88vr0jN.png)
 
-Widać, że `formatted_address`, `place_id` oraz współrzędne mają tu dobrze określone miejsce, ale pozostałe własności adresu zostały spakowane do jednej tablicy `address_components` i są tagowane za pomocą typów, które mogą występować po kilka, ale niektórych może też wcale nie być. Do przetwarzania tej tablicy do postaci zgodnej z naszym modelem danych służy ostatnia metoda, którą zaprezentuję: `getPlace`
+It is clear that `formatted_address`, `place_id`, and coordinates have a well-defined location here, but other address properties have been packed into a single array `address_components` and are tagged using types that can occur multiple times, but some may also be absent. The last method I will present for processing this array into a format compliant with our data model is `getPlace`.
 
 ```php
     /**
@@ -1639,7 +1637,7 @@ Widać, że `formatted_address`, `place_id` oraz współrzędne mają tu dobrze 
             $place->setFormattedAddress($address['formatted_address']);
 ```
 
-Na początku sprawdzamy czy dany adres już znajduje się w naszej bazie. Jeśli tak, to możemy pominąć całe transformowanie, dodamy do niego aktualnego użytkownika i wystarczy. Załóżmy jednak, że to nowy adres. W takim przypadku powinniśmy w pierwszej kolejności ustawić mu `google_id`, współrzędne, oraz jego sformatowaną postać. Następnie zajmiemy się otagowanymi składowymi adresu.
+At the beginning, we check if the given address is already in our database. If so, we can skip the whole transformation, just add the current user to it, and that's enough. However, let's assume it's a new address. In that case, we should first set its `google_id`, coordinates, and its formatted version. Then we will deal with the tagged components of the address.
 
 ```php
             $params = $place->getParams();
@@ -1655,7 +1653,7 @@ Na początku sprawdzamy czy dany adres już znajduje się w naszej bazie. Jeśli
         }
 ```
 
-Będziemy je wyciągać w podwójnej pętli. Po komponentach adresu oraz po parametrach jakich szukamy. Jeśli jakiś parametr zostanie znaleziony, zapiszemy właściwość i usuniemy go z tablicy parametrów, tak, żeby nie nabijał pustych pętli.
+We will extract them in a double loop. By the components of the address and by the parameters we are looking for. If any parameter is found, we will save the property and remove it from the parameters array, to avoid empty loops.
 
 ```php
         $place->addUsers($this->getUser());
@@ -1665,11 +1663,7 @@ Będziemy je wyciągać w podwójnej pętli. Po komponentach adresu oraz po para
 }
 ```
 
-Na koniec niezależnie od tego, czy tworzyliśmy nowe miejsce, czy też wzięliśmy je z bazy, dołączamy do miejsca obecnego użytkownika. Jeśli zastanawia cię dlaczego nie sprawdzam czy ten użytkownik jest już dodany, to odpowiedź jest prosta. Sprawdzam, ale na poziomie metody dostępnej w `ArrayCollection` w encji a nie kontrolerze.
-
-### Widoki
-
-Bardzo dużą część widoków już przerobiliśmy. Zostały nam jeszcze dwa. Pierwszy z nich to strona główna dla niezalogowanych użytkowników. Strona po prostu informuje do czego jest aplikacja. Widok znajduje się w pliku `app/Resources/views/default/index.html.twig`, ma kod
+### Views
 
 ```twig
 {% extends 'base.html.twig' %}
@@ -1688,13 +1682,13 @@ Bardzo dużą część widoków już przerobiliśmy. Zostały nam jeszcze dwa. P
 {% endblock %}
 ```
 
-i wygląda tak:
+and it looks like this:
 
 ![olaces](http://i.imgur.com/7mkjpKI.png)
 
-Ciekawszym widokiem jest widok miejsc. Umieściliśmy go w pliku `app/Resources/views/places/places.html.twig`
+A more interesting view is the view of places. We placed it in the file `app/Resources/views/places/places.html.twig`
 
-Jego kod html jest dość prosty:
+Its HTML code is quite simple:
 
 ```twig
 {% extends 'base.html.twig' %}
@@ -1730,9 +1724,9 @@ Jego kod html jest dość prosty:
 {% endblock %}
 ```
 
-Warto zwrócić uwagę na to jak sprawnie będą uzupełniały się tutaj metody zarządzania widokiem po stronie serwera (pętla w twigu) oraz po stronie klienta. Od momentu wygenerowania początkowego widoku wszystkie zmiany robi już `javascript`.
+It is worth noting how efficiently the view management methods will complement each other here on the server side (Twig loop) and on the client side. From the moment the initial view is generated, all changes are made by `javascript`.
 
-Widok wyposażony jest w swój styl, który zaciąga rozszerzając blok `stylesheets`
+The view is equipped with its own style, which is pulled in by extending the `stylesheets` block.
 
 ```twig
 {% block stylesheets %}
@@ -1741,7 +1735,7 @@ Widok wyposażony jest w swój styl, który zaciąga rozszerzając blok `stylesh
 {% endblock %}
 ```
 
-Styl znajduje się w pliku `src/AppBundle/Resources/public/css/place.css` i ma tylko 4 reguł:
+The style is located in the file `src/AppBundle/Resources/public/css/place.css` and has only 4 rules:
 
 ```css
 .place-name {
@@ -1762,7 +1756,7 @@ Styl znajduje się w pliku `src/AppBundle/Resources/public/css/place.css` i ma t
 }
 ```
 
-Jeśli piszę w `css` to zwykle ograniczam się do takiego właśnie minimalizmu. Co innego z `javascriptem`. W widoku (`app/Resources/views/places/places.html.twig`) jest go objętościowo więcej niż `html`. Spełnia on następujące zadania:
+If I write in `css`, I usually stick to such minimalism. It's different with `javascript`. In the view (`app/Resources/views/places/places.html.twig`), there is more of it in terms of volume than `html`. It performs the following tasks:
 
 ```js
 {% block javascripts %}
@@ -1775,9 +1769,9 @@ Jeśli piszę w `css` to zwykle ograniczam się do takiego właśnie minimalizmu
     {% endfor %}
 ```
 
-Przy ładowaniu strony zapisuje do JavaScriptowej zmiennej `places` tablicę z tekstowymi reprezentacjami obiektów `Place` przekazanych do twigowej zmiennej. Będą nam one potrzebne do unikania duplikacji treści. Dzięki temu rozwiązaniu mamy stan aplikacji w zmiennej oraz na ekranie jednocześnie.
+When loading the page, it saves an array of textual representations of `Place` objects passed to the Twig variable into a JavaScript variable `places`. We will need them to avoid content duplication. Thanks to this solution, we have the application state in a variable and on the screen at the same time.
 
-Następnie robię to co zawsze robię rozpoczynając skrypt
+Next, I do what I always do when starting the script.
 
 ```js
     var info = document.getElementById("info");
@@ -1785,7 +1779,7 @@ Następnie robię to co zawsze robię rozpoczynając skrypt
     var list = document.getElementsByClassName("list")[0];
 ```
 
-identyfikuję potrzebne elementy za pomocą selektorów. Później robię to co zawsze robię w skryptach po identyfikacji elementów.
+I identify the necessary elements using selectors. Then I do what I always do in scripts after identifying the elements.
 
 ```js
     area.addEventListener('click',function(e){
@@ -1799,9 +1793,9 @@ identyfikuję potrzebne elementy za pomocą selektorów. Później robię to co 
     });
 ```
 
-Dodaję jeden (staram się zwykle dodawać tylko jeden) listener, w którym przyporządkowują akcje wykrytym eventom. Mamy tu do wyboru trzy akcje: sprawdzenie lokacji za pomocą obiektu `navigarot` przeglądarki, zapisanie i usunięcie lokacji.
+I add one (I usually try to add only one) listener, in which I assign actions to detected events. We have three actions to choose from: checking location using the browser's `navigator` object, saving, and deleting the location.
 
-Za obsługę `navigatora` odpowiada poniższy kod.
+The code responsible for handling the `navigator` is below.
 
 ```js
     function getLocation() {
@@ -1813,7 +1807,7 @@ Za obsługę `navigatora` odpowiada poniższy kod.
     }
 ```
 
-Jeśli użytkownik wyrazi zgodę na dostęp do jego lokalizacji, jest ona przekazywana do funkcji `showPosition`.
+If the user consents to access their location, it is passed to the `showPosition` function.
 
 ```js
     function showPosition(position) {
@@ -1831,9 +1825,9 @@ Jeśli użytkownik wyrazi zgodę na dostęp do jego lokalizacji, jest ona przeka
     }
 ```
 
-Ta funkcja z kolei wysyła odpowiedni request i wypełnia pole formularza sformatowanym adresem odpowiadającym współrzędnych przeglądarki.
+This function, in turn, sends the appropriate request and fills the form field with the formatted address corresponding to the browser's coordinates.
 
-Zapisanie lokacji - czyli wysłanie formularza realizowane jest przez kolejną funkcję:
+Saving the location - that is, submitting the form is done by another function:
 
 ```js
     function saveLocation(){
@@ -1854,9 +1848,9 @@ Zapisanie lokacji - czyli wysłanie formularza realizowane jest przez kolejną f
     }
 ```
 
-Jej działanie zaczyna się od wysłania requestu POST z treścią formularza. Jeśli otrzymamy odpowiedź, sprawdzamy czy miejsce jest już przypisane do użytkownika filtrując tablicę `places`. Jeśli tak, nic więcej nie robimy. Jeśli nie było, to dodajemy je do tablicy `places` i do listy miejsc dołączamy lokację za pomocą składni `.innerHTML +=`. Są do tego metody polegające na traktowaniu htmla jako drzewa DOM, ale są one efektywne jeśli są stosowane w szerszym kontekście. W tym przypadku metoda doklejenia treści mimo, że mniej elegancka została wybrana ze względu na większą prostotę.
+Its operation starts with sending a POST request with the form content. If we receive a response, we check if the place is already assigned to the user by filtering the `places` array. If so, we do nothing more. If it wasn't, we add it to the `places` array and append the location to the list of places using the syntax `.innerHTML +=`. There are methods that treat HTML as a DOM tree, but they are effective when used in a broader context. In this case, the content appending method, although less elegant, was chosen for its greater simplicity.
 
-Ostatnia metoda odpowiada za usunięcie miejsca z listy miejsc użytkownika.
+The last method is responsible for removing a place from the user's list of places.
 
 ```js
     function deleteLocation(googleId){
@@ -1874,14 +1868,14 @@ Ostatnia metoda odpowiada za usunięcie miejsca z listy miejsc użytkownika.
 {% endblock %}
 ```
 
-Tutaj odwrotnie niż przy zapisywaniu, usuwamy element z tablicy `places` i czyścimy `HTML` odpowiadający miejscu, które usuwamy. Na koniec dodajemy screen z przykładowego użytkowania:
+Here, unlike when saving, we remove the element from the `places` array and clear the `HTML` corresponding to the place we are removing. Finally, we add a screenshot from an example usage:
 
 ![](http://i.imgur.com/YwW9q5l.png)
 
-To cały kod źródłowy. Nie ma tutaj testów, nie ma DoctrineFixturesBundle, nie ma panelu admina, nie ma gulpa.
-Przede wszystkim jednak nie ma miejsca. Z tego względu wszystkie wspomniane rzeczy zostały wycięte.
-Ten wpis i tak jest chyba najdłuższym jaki napisałem. Jego celem nie było przedstawianie kompleksowej aplikacji
-tylko przykładu zastosowania FOSUserBundle.
+This is the entire source code. There are no tests here, no DoctrineFixturesBundle, no admin panel, no gulp.
+However, most importantly, there is no room. For this reason, all the mentioned things have been cut out.
+This entry is still probably the longest one I have written. Its purpose was not to present a comprehensive application
+but an example of using FOSUserBundle.
 
-Mam nadzieję, że komuś pomoże to przy wdrażaniu tej znakomitej paczki w swoim projekcie. Jak zwykle czekam na waszą krytykę,
-pytania oraz wskazówki, co mogę poprawić.
+I hope this will help someone in implementing this excellent package in their project. As always, I am looking forward to your criticism,
+questions, and suggestions on what I can improve.

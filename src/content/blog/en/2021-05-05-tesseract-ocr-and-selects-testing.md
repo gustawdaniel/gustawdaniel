@@ -2,81 +2,81 @@
 author: Daniel Gustaw
 canonicalName: tesseract-ocr-and-selects-testing
 coverImage: http://localhost:8484/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
-description: Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy w behacie kilka testów na zapytania bazodanowe.
-excerpt: Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy w behacie kilka testów na zapytania bazodanowe.
+description: We will read the content of the database table from the photo and write a few tests for database queries in Behat.
+excerpt: We will read the content of the database table from the photo and write a few tests for database queries in Behat.
 publishDate: 2021-05-04 20:18:00+00:00
-slug: pl/tesseract-ocr-i-testowanie-selektow
+slug: en/tesseract-ocr-and-testing-selectors
 tags:
 - mysql
 - behat
 - perl
-title: Tesseract-OCR i testowanie selektów.
+title: Tesseract-OCR and testing selects.
 updateDate: 2021-06-21 16:53:20+00:00
 ---
 
-## Opis projektu
+## Project description
 
-Miałem tylko odświeżyć sobie pisanie zapytań do bazy, a skończyłem instalując `DataGrip` i `Tesseracta`. Pierwszy program jest to IDE do baz danych od `JetBrains`, drugi jest oprogramowaniem OCR - służy do rozpoznawania tekstów w grafice rastrowej.
+I only intended to refresh my knowledge of writing database queries, but I ended up installing `DataGrip` and `Tesseract`. The first program is an IDE for databases from `JetBrains`, the second is OCR software - used for recognizing text in raster graphics.
 
-Naszym zadaniem będzie **utworzenie schematów baz** danych, **odczytanie tekstu z plików graficznych**, wrzucenie odczytanej zawartości **napisanie kilku zapytań** i **testowanie zawartości** za pomocą `behata`. Jeśli jesteś ciekaw jak to się robi, zapraszam do lektury.
+Our task will be **to create database schemas**, **to read text from image files**, to upload the read content, **to write several queries**, and **to test the content** using `behat`. If you are curious how to do this, feel free to read on.
 
-Skład kodu:
+Code structure:
 
 ```
 Cucumber 49.9% Perl 26.7% PHP 21.8% Shell 1.6%
 ```
 
-## Instalacja
+## Installation
 
-Pobieramy repozytorium:
+We download the repository:
 
 ```bash
 git clone https://github.com/gustawdaniel/image_to_database_converter_example.git && cd image_to_database_converter_example
 ```
 
-Instalujemy zależności.
+Installing dependencies.
 
 ```bash
 sudo apt-get install tesseract-ocr
 ```
 
-Przetważamy obrazki na teksty
+We convert images into texts
 
 ```
 bash process.sh
 ```
 
-Tworzymy bazy i wrzucamy do nich dane. Ten skrypt na początku usunie bazy o nazwach w z `config/parameters.yml`, sprawdź konfigurację przed jego wykonaniem.
+We create databases and insert data into them. This script will first delete the databases named in `config/parameters.yml`, check the configuration before executing it.
 
 ```
 perl insert.pl
 ```
 
-Instalujemy paczki `php`
+Installing `php` packages
 
 ```
 composer install
 ```
 
-Wykonujemy testy
+We are conducting tests
 
 ```
 vendor/bin/behat
 ```
 
-Po instalacji wykonanie przetważania obrazu, oczyszczenie danych, zapis treści oraz testowanie bazy wyglądają następująco.
+After installation, image processing, data cleaning, content saving, and database testing look as follows.
 
-## Struktura baz
+## Database structure
 
-Za punkt wyjścia przyjmiemy zadania `2.4.1` i `2.4.3` z rozdziału [`2`](http://infolab.stanford.edu/~ullman/fcdb/ch2.pdf) książki `Database Systems: The Complete Book`. Zadanie polegają na napisaniu selektów.
+We will take tasks `2.4.1` and `2.4.3` from chapter [`2`](http://infolab.stanford.edu/~ullman/fcdb/ch2.pdf) of the book `Database Systems: The Complete Book` as the starting point. The task involves writing selects.
 
-Będziemy tworzyć dwie bazy. Pierwsza zawiera magazyn sklepu elektronicznego.
+We will create two databases. The first contains the inventory of an electronic store.
 
 > `electronic_store`
 
 ![struktura bazy 1](https://github.com/gustawdaniel/image_to_database_converter_example/raw/master/sql/electronic_store.png)
 
-Jej kod w sql wygląda następująco:
+Her code in SQL looks as follows: 
 
 > sql/electronic\_store.sql
 
@@ -116,15 +116,11 @@ CREATE TABLE printer (
 );
 ```
 
-Druga to baza z danymi dotyczącymi okrętów liniowych drugiej wojny światowej.
-
-> `warships`
+The second is a database of data regarding battleships of the Second World War.
 
 ![struktura bazy 2](https://github.com/gustawdaniel/image_to_database_converter_example/raw/master/sql/warships.png)
 
-Ma bardzo podobną strukturę kodu
-
-> sq/warships.sql
+It has a very similar code structure
 
 ```sql
 DROP DATABASE   IF     EXISTS warships;
@@ -159,28 +155,28 @@ CREATE TABLE outcomes (
 
 ```
 
-Dane nie są powiązane żadnymi więzami integralności referencyjnej.
+The data are not bound by any referential integrity constraints.
 
-## Źródło danych
+## Data Source
 
-Problem z danymi zaczyna się od tego, że baza jest zapisana w pliku `pdf`, jest to po prostu fragment książki. Jest to słabo zrobiony `pdf` i dane z niego nie nadają się do zaznaczenia i skopiowania. Na szczęście znajdziemy rozwiązanie stosując OCR.
+The problem with the data begins with the fact that the database is saved in a `pdf` file, which is simply a snippet of a book. It is a poorly made `pdf`, and the data from it are not suitable for highlighting and copying. Fortunately, we will find a solution by using OCR.
 
-### Grafiki
+### Images
 
-Zaczniemy od zrobienia screenów tabel z książki. W [repozytorium](https://github.com/gustawdaniel/image_to_database_converter_example), znajdują się te screeny. Są zapisane do plików o nazwach odpowiadających nazwom tabel w katalogu `raw/1` dla pierwszej bazy i `raw/2` dla drugiej. Przykładowy plik `raw/1/laptop.png` wygląda następująco.
+We will start by taking screenshots of the tables from the book. The [repository](https://github.com/gustawdaniel/image_to_database_converter_example) contains these screenshots. They are saved to files named according to the names of the tables in the `raw/1` directory for the first database and `raw/2` for the second. An example file `raw/1/laptop.png` looks as follows.
 
 ![laptop](http://i.imgur.com/CPRm97P.png)
 
-### Wydobycie tekstu (OCR)
+### Text Extraction (OCR)
 
-Teraz trzeba zainstalować `tesseract-ocr` komendą:
+Now we need to install `tesseract-ocr` with the command:
 
 ```
 sudo apt-get install tesseract-ocr
 
 ```
 
-Wykonamy rozpoznawanie tekstu na każdym z zapisanych plików. Pomoże nam w tym prosty skrypt:
+We will perform text recognition on each of the saved files. A simple script will help us with this:
 
 > process.sh
 
@@ -206,13 +202,7 @@ done
 
 ```
 
-Wyniki są w zasadzie dobre, poza tym, że czasami pojawiają się puste linie, w jednym miejscu pojawiła się spacja i `ram` został wczytany jako `mm`. Jednak poważnym problemem jest to, że w drugiej bazie część rekordów ma nazwy składające się z kilku wyrazów. Mimo to wyrażenia regularne szybko załatwią ten problem. Z wyrażeniami regularnymi i transformowaniem danych do strukturyzowanej postaci kojarzy mi się perl, dlatego ten język wykorzystamy do wypełnienia bazy danymi.
-
-### Przetworzenie tekstu
-
-Jak zwykle zaczynamy od konfiguracji, ponieważ korzystać z niej będą `perl` i `php`, wydzielamy ją do osobnego pliku.
-
-> config/parameters.yml
+### Text Processing
 
 ```yml
 config:
@@ -226,11 +216,11 @@ config:
 
 ```
 
-Teraz zajmiemy się poprawą jakości tekstu i wrzuceniem go do bazy.
+Now we will focus on improving the text quality and putting it into the database.
 
-#### Definicje
+#### Definitions
 
-Większość moich skryptów zaczyna się podobnie. Są to nagłówki z paczkami.
+Most of my scripts start similarly. These are headers with packages.
 
 > insert.pl
 
@@ -249,7 +239,7 @@ use open ':std', ':encoding(UTF-8)';
 
 ```
 
-Później wchodzą zmienne z konfiguracją związaną ze środowiskiem:
+Later, environment-related configuration variables come in:
 
 ```perl
 #----------------------------------------------------------------------#
@@ -265,7 +255,7 @@ my $config = $yaml->[0]->{config};
 
 ```
 
-Następnie mamy definicje. Jedyną zdefiniowaną tu funkcją jest procedura wykonywania wyrażeń regularnych - znajdź i zamień. Jest to zbiór filtrów przez jakie będzie przechodził tekst przeczytany przez OCR.
+Next, we have definitions. The only defined function here is the regular expression execution procedure - find and replace. It is a set of filters through which the text read by OCR will pass.
 
 ```perl
 #--------------------------------------------------------------#
@@ -296,15 +286,15 @@ sub fixStructure
 
 ```
 
-Funkcja nie ma parametrów, ponieważ działa na zmiennej `$_`. Warto przy tym zwrócić na pewną ciekawą właściwość `perla`, która wyróżnia go na tle innych języków. Jest to między innymi właśnie zmienna `$_` której wartość zależy od kontekstu i której nie trzeba nawet pisać jeśli kontekst wskazuje, że o nią chodzi. W zamyśle twórcy języka - Larry'ego Walla - upodabniało go to do języka mówionego, w którym nie wskazujemy ciągle podmiotu, jeśli jest on oczywisty. Z jednej strony pozwala to szybko pisać gęsty kod dużych możliwościach, z drugiej bardzo utrudnia jego czytanie, jeśli nie jest on wystarczająco dobrze udokumentowany, a osoba czytająca nie zna tego języka wystarczająco dobrze. Być może ta elastyczność jest jednym z powodów upadku tego języka w starciu z bardzo restrykcyjnym `pythonem`, ale dla mnie jest ona raczej zaletą niż wadą. W każdym razie u nas zmienna `$_` będzie przyjmować wartość ciągu znaków z jednej linii czytanego tekstu
+The function has no parameters because it operates on the variable `$_`. It is worth noting an interesting property of `perl` that sets it apart from other languages. This is, among other things, the variable `$_`, whose value depends on the context and which does not even need to be written if the context indicates that it is the subject. In the creator of the language - Larry Wall's - intention, this made it similar to spoken language, where we do not continuously specify the subject if it is obvious. On one hand, this allows for quickly writing dense code with great capabilities, on the other hand, it makes it very difficult to read if it is not sufficiently well documented, and the reader does not know the language well enough. Perhaps this flexibility is one of the reasons for the decline of this language in the face of the very restrictive `python`, but for me, it is more of an advantage than a disadvantage. In any case, for us, the variable `$_` will take the value of a single line string of the read text.
 
-Przyjrzyjmy się dokładnie regułom jakie wprowadziłem, bo to jest serce całego programu.
+Let's take a closer look at the rules I have introduced, as this is the heart of the entire program.
 
-Reguły `s/A/B/g` wykonują na zmiennej `$_` operację wyszukania ciągu `A` i zamiany go na ciąg `B`. Pierwsza z nich naprawia błędny odczyt kolumny `ram` odczytanej przez `OCR` jako `mm`, druga usuwa spację z jednego z identyfikatorów, kolejna pozbywa się linii pionowych. Dwie następne przekształcają wartości logiczne do postaci zero-jedynkowej. Wszystkie następne to wybieranie odpowiednich spacji i zastępowanie ich znakami `_`. Jest to poprawne podejście jeśli w analizowanym tekście nie ma znaku `_`, co jest prawdą w omawianym tutaj przykładzie.
+The rules `s/A/B/g` perform an operation on the variable `$_` that searches for the string `A` and replaces it with the string `B`. The first one fixes the incorrect reading of the column `ram` read by `OCR` as `mm`, the second removes a space from one of the identifiers, the next one eliminates vertical lines. The next two transform boolean values into binary form. All subsequent ones involve selecting appropriate spaces and replacing them with `_` characters. This is the correct approach if there are no `_` characters in the analyzed text, which is true in the example discussed here.
 
-#### Skrypt
+#### Script
 
-Wykonywalna część skryptu zaczyna się od iterowania po bazach danych wymienionych w konfiguracji:
+The executable part of the script starts with iterating over the databases listed in the configuration:
 
 ```perl
 #----------------------------------------------------------------------#
@@ -320,7 +310,7 @@ while (my ($baseNumber, $baseName) = each @{ $config->{"bases"} })
 
 ```
 
-Następnie dbamy o idempotentność czyli możliwość powtarzania skryptu wiele razy bez zmiany wyniku. Wykonujemy kody `sql` przywracające stany baz do czystej postaci. Możliwe, że w Twoim systemie będziesz musiał dopisać `sudo` przed komendą `mysql`. Ja jestem zwolennikiem raczej zmiany uprawnień dostępu do bazy, jeśli to mój prywatny, lokalny komputer, niż wpisywania haseł przy każdym włączaniu bazy z terminala.
+Next, we take care of idempotence, meaning the ability to repeat the script multiple times without changing the outcome. We execute `sql` codes that restore the database states to a clean form. It is possible that in your system you will need to prepend `sudo` before the `mysql` command. I prefer changing access rights to the database if it's my private, local computer, rather than entering passwords every time I start the database from the terminal.
 
 ```perl
     #--------------------------------------------------------------#
@@ -332,7 +322,7 @@ Następnie dbamy o idempotentność czyli możliwość powtarzania skryptu wiele
 
 ```
 
-Połączenie z bazą danych było już omawiane na tym blogu, dla przypomnienia, wygląda ono tak:
+The database connection has already been discussed on this blog; as a reminder, it looks like this:
 
 ```perl
     #--------------------------------------------------------------#
@@ -348,7 +338,7 @@ Połączenie z bazą danych było już omawiane na tym blogu, dla przypomnienia,
 
 ```
 
-Ciekawiej robi się przy pętli po wszystkich plikach:
+It gets more interesting when looping through all files:
 
 ```perl
             #--------------------------------------------------------------#
@@ -365,7 +355,7 @@ Ciekawiej robi się przy pętli po wszystkich plikach:
 
 ```
 
-W zmiennej `$name` zapisywane są nazwy pozbawione ścieżki i rozszerzenia. Tak się składa, że są to dokładnie nazwy tabel w naszej bazie. Jeszcze to wykorzystamy w przy składaniu insertów. Naturalną konsekwencją iterowania po plikach tekstowych jest otwieranie ich. Uchwyt pliku trzymamy w zmiennej `$fh`, więc wykonujemy po nim pętle:
+In the variable `$name`, names without paths and extensions are stored. It so happens that these are exactly the names of the tables in our database. We will make use of this when creating inserts. A natural consequence of iterating over text files is opening them. We hold the file handle in the variable `$fh`, so we perform loops on it:
 
 ```perl
         #--------------------------------------------------------------#
@@ -377,7 +367,7 @@ W zmiennej `$name` zapisywane są nazwy pozbawione ścieżki i rozszerzenia. Tak
 
 ```
 
-Przed pętlą zdefiniowaliśmy sobie dwie zmienne. `$index` pozwalającą odnieść się do numeru nie pustej linii, oraz `$statement`, która będzie przechowywała przygotowany insert. Odczytywane linie należy poddać pewnej obróbce przed zapisaniem. Zaczniemy od wycięcia znaków końca linii i pominięcia linii zawierających tylko spacje.
+Before the loop, we defined two variables. `$index` allowing us to refer to the number of a non-empty line, and `$statement`, which will store the prepared insert. The read lines need to be processed before saving. We will start by trimming newline characters and skipping lines that contain only spaces.
 
 ```perl
         #--------------------------------------------------------------#
@@ -390,14 +380,14 @@ Przed pętlą zdefiniowaliśmy sobie dwie zmienne. `$index` pozwalającą odnie�
 
 ```
 
-Tu właśnie objawia się magia zmiennej kontekstowej `$_`. Każdy wie, że iterując po liniach pliku, to właśnie te linie są w centrum zainteresowania. Dlatego nie musimy ich nawet nazywać. Zamiast pisać `chomp $line` możemy napisać `chomp $_`, ale po co, skoro wystarczy napisać `chomp`. Z kontekstu wynika, że znak nowej linii ma być wycięty ze zmiennej po której właśnie przechodzi bieżąca iteracja pętli. Tak więc po tym początkowym oczyszczeniu możemy zastosować nasze filtry. Nic prostszego. Odpowiada za to napis:
+This is where the magic of the context variable `$_` comes into play. Everyone knows that when iterating over lines of a file, it is those lines that are the focus of interest. Therefore, we don't even need to name them. Instead of writing `chomp $line`, we can write `chomp $_`, but why bother, since it’s enough to just write `chomp`. From the context, it is clear that the newline character is to be stripped from the variable currently being iterated over in the loop. Thus, after this initial cleaning, we can apply our filters. Nothing could be simpler. This is handled by the phrase:
 
 ```perl
                 &fixStructure;
 
 ```
 
-Na koniec rozbijamy naprawiony już wiersz `$_` spacjami i jako tablicę zapisujemy do zmiennej `@row`. Zwykle u mnie jest tak, że największa magia dzieje się na końcu skryptu, tak jest i tym razem.
+Finally, we split the already fixed row `$_` by spaces and store it as an array in the variable `@row`. Usually, for me, the biggest magic happens at the end of the script, and this time is no different.
 
 ```perl
         #--------------------------------------------------------------#
@@ -417,13 +407,13 @@ Na koniec rozbijamy naprawiony już wiersz `$_` spacjami i jako tablicę zapisuj
 
 ```
 
-W warunku `$if` sprawdzamy czy `$idnex` był wcześniej podnoszony jednocześnie go podnosząc. Dla pierwszego wykonania tablica `@row` powinna zawierać nazwy kolumn z tabeli `$name`. Przypominam, że `$name` było tak dobierane, żeby odpowiadało nazwom kolumn już na etapie robienia screenów. Przy pierwszym wykonaniu tworzymy `$query`, jest to treść inserta, który będziemy wykonywać dla wszystkich pozostałych linii pliku tekstowego.
+In the condition `$if` we check if `$idnex` has been raised earlier while simultaneously raising it. For the first execution, the array `@row` should contain the names of columns from the table `$name`. I remind you that `$name` was chosen to correspond to the column names already at the stage of taking screenshots. During the first execution, we create `$query`, which is the content of the insert that we will perform for all other lines of the text file.
 
-Fragment `join(",",$row)` wykonuje na tablicy `@row` operację rzutowania jej na `sting` i łączenia przecinkami.
+The fragment `join(",",$row)` performs an operation on the array `@row` that casts it to `string` and concatenates it with commas.
 
-Operacja `",?"x(@row-1)` również rzutuje tablicę `@row` ale tym razem w kontekście numerycznym - odejmujemy od niej jedynkę. Z tego względu rzutowanie wykonywane jest w najbardziej naturalny sposób na ilość elementów tablicy. Znak `x` bardzo typowy dla `perla` to operator powtarzania `stringa` określoną liczbę razy. Na przykład `"a"x3` jest równoważne napisaniu `"aaa"`.
+The operation `",?"x(@row-1)` also casts the array `@row` but this time in a numerical context – we subtract one from it. For this reason, the casting is done in the most natural way for the number of elements in the array. The `x` sign, very typical for `perl`, is the operator for repeating a `string` a specified number of times. For example, `"a"x3` is equivalent to writing `"aaa"`.
 
-Po określeniu tekstowej reprezentacji zapytania następuje jego przygotowanie, a przy każdej kolejnej linii przetworzonego tekstu, już tylko przywrócenie spacji zamiast znaków `_` wykonywane na każdym wyrazie tablicy osobno i wykonanie insertu.
+After determining the textual representation of the query, its preparation follows, and with each subsequent line of the processed text, only restoring spaces instead of `_` characters is performed on each word of the array separately, and the insert is executed.
 
 ```perl
         #-----------------------------------------------------------#
@@ -433,11 +423,11 @@ Po określeniu tekstowej reprezentacji zapytania następuje jego przygotowanie, 
 
 ```
 
-Na końcu zamykamy połączenie z bazą.
+At the end, we close the connection to the database.
 
-## Zapytania do bazy
+## Database Queries
 
-Po sklonowaniu repozytorium, możesz odtworzyć mój stan bazy wykonując komendy:
+After cloning the repository, you can restore my database state by executing the commands:
 
 ```bash
 bash process.sh
@@ -445,148 +435,144 @@ perl insert.pl
 
 ```
 
-Jeśli chodzi o oprogramowanie, to przez połowę życia pisałem zapytania bezpośrednio w konsoli `mysql`. Lubiłem to, ale często musiałem je kopiować do osobnego pliku, albo przepadały na zawsze. Było to trochę męczące przy opracowywaniu bardziej złożonych zapytań. Później przy pracy nad jednym z projektów zrobiłem research mając nadzieję, że znajdę jakieś przyjemne narzędzie. Udało się, trafiłem na `dbvis`. Pomogło mi przestać korzystać z `DIA`, które mimo, że jest użyteczne przy projektowaniu bazy nie nadaje się do utrzymywania jej aktualnego stanu. Teraz zacząłem korzystać z narzędzia `DataGrip`, które dostarczyło mi wszystko czego chciałem - podświetlanie składni, wizualizację schematów, zapisywanie selektów.
+### Electronic Store Database
 
-Przejdziemy teraz do zapytań, które będziemy projektować. Będę wymieniał na przemian pytanie i selekt, który daje odpowiedź.
-
-### Baza skelpu elektronicznego
-
-Które modele komputerów PC mają szybkość równą przynajmniej 3.00?
+Which PC models have a speed of at least 3.00?
 
 ```sql
 SELECT model FROM pc WHERE speed >= 3.0;
 
 ```
 
-Którzy producenci wytwarzają laptopy z dyskiem twardym o wielkości przynajmniej 100 gigabajtów?
+Which manufacturers produce laptops with a hard drive of at least 100 gigabytes?
 
 ```sql
 SELECT maker FROM product NATURAL JOIN laptop WHERE hd >= 100;
 
 ```
 
-Znajdź numery modeli i ceny wszystkich produktów dowolnego typu wytwarzanych przez producenta B
+Find model numbers and prices of all products of any type manufactured by producer B.
 
 ```sql
 SELECT model,price FROM laptop UNION SELECT model,price FROM pc UNION SELECT model,price FROM printer NATURAL JOIN product as p WHERE p.maker='B';
 
 ```
 
-Znajdź numery wszystkich kolorowych drukarek laserowych
+Find the numbers of all color laser printers
 
 ```sql
 SELECT model FROM printer WHERE color AND type='laser';
 
 ```
 
-Znajdź producentów sprzedających laptopy, ale już nie komputery pc
+Find manufacturers selling laptops, but no longer PCs.
 
 ```sql
 SELECT DISTINCT maker FROM laptop NATURAL JOIN product WHERE maker NOT IN (SELECT DISTINCT maker FROM pc NATURAL JOIN product);
 
 ```
 
-Znajdź wielkości dysków twardych występujące w przynajmniej dwóch komputerach pc
+Find the hard drive sizes occurring in at least two PCs
 
 ```sql
 SELECT hd FROM (SELECT count(*) as c, hd FROM pc GROUP BY hd) as calc WHERE c>=2;
 
 ```
 
-Znajdź pary modeli PC o tej samej ilości pamięci ram i szybkości. pary powinny pojawiać się jednokrotnie, na przykład, należy wymienić parę (i,j) ale już nie (j,i)
+Find pairs of PC models with the same amount of RAM and speed. Pairs should appear only once, for example, the pair (i,j) should be mentioned, but not (j,i).
 
 ```sql
 SELECT a.model, b.model FROM pc as a JOIN pc as b ON a.speed=b.speed AND a.ram=b.ram WHERE a.model>b.model;
 
 ```
 
-Znajdź producentów wytwarzjących przynajmniej dwa różne komputery pc lub laptopy o szybkości co najmniej 2.8
+Find manufacturers that produce at least two different PCs or laptops with a speed of at least 2.8.
 
 ```sql
 SELECT  maker from (SELECT maker, count(model) as c FROM product as p NATURAL JOIN (SELECT model, speed FROM pc WHERE speed>=2.8 UNION SELECT model, speed FROM laptop WHERE speed>=2.8) as u GROUP BY maker) as mc WHERE c>=2;
 
 ```
 
-Znajdź producenta lub producentów najszybszych komputerów (pc lub laptopów)
+Find the manufacturer or manufacturers of the fastest computers (PCs or laptops)
 
 ```sql
 SELECT DISTINCT maker FROM product as p NATURAL JOIN (SELECT model,speed FROM laptop UNION SELECT model,speed FROM pc) as c WHERE speed=(SELECT MAX(speed) FROM (SELECT speed FROM laptop UNION SELECT speed FROM pc) as u);
 
 ```
 
-Znajdź producentów komputerów PC o przynajmniej trzech różnych szybkościach
+Find PC manufacturers with at least three different speeds
 
 ```sql
 SELECT maker from (SELECT maker, count(speed) as c FROM product NATURAL JOIN pc GROUP BY maker) as s WHERE s.c>=3;
 
 ```
 
-Znajdź producentów którzy sprzedają dokładnie trzy różne modele komputerów PC
+Find manufacturers that sell exactly three different models of PCs.
 
 ```sql
 SELECT maker from (SELECT maker, count(model) as c FROM product NATURAL JOIN pc GROUP BY maker) as s WHERE s.c=3;
 
 ```
 
-### Baza okrętów liniowych
+### Battleship Fleet
 
-Podaj nazwy i kraje klas okrętów z działami o kalibrze przynajmniej szesnastu cali.
+List the names and countries of classes of ships with guns of at least sixteen inches caliber.
 
 ```sql
 SELECT name, country FROM classes NATURAL JOIN ships WHERE bore>=16;
 
 ```
 
-Znajdź okręty zwodowane przed 1921 rokiem
+Find ships launched before 1921
 
 ```sql
 SELECT name FROM ships WHERE launched<1921;
 
 ```
 
-Znajdź okręty zatopione w bitwie pod Denamrk Strait
+Find ships sunk in the Battle of Denmark Strait
 
 ```sql
 SELECT ship FROM outcomes WHERE result="sunk" AND battle="Denmark Strait";
 
 ```
 
-Traktat Waszyngtoński z 1921 zabraniał budowania okrętów liniowych o masie powyżej 35 000 ton. Wymień okręty niezgodne z traktatem.
+The Washington Treaty of 1921 prohibited the construction of battleships over 35,000 tons. List ships that are inconsistent with the treaty.
 
 ```sql
 SELECT name FROM classes NATURAL JOIN ships WHERE launched>1921 AND displacement>35000;
 
 ```
 
-Podać nazwę, wyporność i liczbę dział okrętów biorących udział w bitwie pod Guadalcanal
+Provide the name, displacement, and number of guns of the ships participating in the Battle of Guadalcanal
 
 ```sql
 SELECT DISTINCT name, displacement, numGuns FROM classes NATURAL JOIN ships NATURAL JOIN outcomes WHERE battle='Guadalcanal';
 
 ```
 
-Podaj wszystkie okręty znajdujące się bazie danych, pamiętaj, że niektóre okręty nie znajdują się w relacji Okręty
+Provide all ships in the database, remember that some ships are not in the Ships relation.
 
 ```sql
 SELECT name FROM ships UNION SELECT ship FROM outcomes;
 
 ```
 
-Znajdź klasy reprezentowane tylko przez jeden okręt
+Find classes represented by only one ship
 
 ```sql
 SELECT class FROM (SELECT class, count(class) as c FROM classes as cl NATURAL JOIN (SELECT ship, ship as class FROM outcomes as o UNION SELECT name, class FROM ships as s) as ext_ship GROUP BY class) as total WHERE c=1;
 
 ```
 
-Znajdź kraje które posiadały zarówno pancerniki jak i krążowniki
+Find countries that had both battleships and cruisers
 
 ```sql
 SELECT t1.country FROM classes as t1 JOIN classes as t2 ON t1.country=t2.country WHERE t1.type='bb' AND t2.type='bc';
 
 ```
 
-Znajdź okręty, które "przetrwały, ale mogły jeszcze wziąć udział w boju" - zostały uszkodzone w jednej bitwie, a później uczestniczyły w innej.
+Find ships that "survived but could still participate in battle" - were damaged in one battle and later participated in another.
 
 ```sql
 SELECT f.name as name FROM
@@ -597,36 +583,34 @@ SELECT f.name as name FROM
 
 ```
 
-Zdziwiło mnie to, ale baza nie zawiera żadnego rekordu odpowiadającego na ostatnie pytanie. Jednak sprawdziłem to ręcznie przeglądając bazę i faktycznie tak jest.
+## Tests
 
-## Testy
-
-Do testów wykorzystamy `behat`. Jeśli skopiowałeś to repozytorium, wystarczy, że wpiszesz `composer install` i nie musisz wykonywać żadnej z trzech poniższych instrukcji. W przeciwnym wypadku, możesz zainstalować `behat` komendą
+For testing, we will use `behat`. If you copied this repository, simply type `composer install` and you don't need to execute any of the three instructions below. Otherwise, you can install `behat` with the command
 
 ```
 composer require behat/behat
 
 ```
 
-Żeby nie wymyślać koła od nowa, do assertów podepniemy `phpunit`
+To avoid reinventing the wheel, we will attach `phpunit` to asserts.
 
 ```
 composer require phpunit/phpunit
 
 ```
 
-Przygodę z `behatem` zaczynamy od utworzenia pustego kontekstu za pomocą komendy.
+We start the adventure with `behat` by creating an empty context using the command.
 
 ```
 vendor/bin/behat --init
 
 ```
 
-Wypełnimy go teraz treścią.
+We will now fill it with content.
 
-### Kontekst
+### Context
 
-Zaczynamy od podpięcia klas, z których będziemy korzystać:
+We start by including the classes that we will use:
 
 > features/bootstrap/FeatureContext.php
 
@@ -646,7 +630,7 @@ class FeatureContext extends TestCase implements Context
 
 ```
 
-Nasz kontekst rozszerza klasę `TestCase`, dostarczaną przez `phpunit` abyśmy mogli łatwo narzucać warunki. Podczas działania testów będą nam potrzebne trzy zmienne.
+Our context extends the `TestCase` class provided by `phpunit` so that we can easily impose conditions. During the execution of tests, we will need three variables.
 
 ```php
 private $config;
@@ -655,7 +639,7 @@ private $data;
 
 ```
 
-Do zmiennej `$config` zapiszemy konfigurację z pliku `config/parameters.yml`, w `$pdo` będziemy trzymać połączenie z bazą, a `$data` będzie przechowywać wynik ostatniego zapytania. Dwóm pierwszym możemy przypisać wartości już w konstruktorze.
+We will save the configuration from the file `config/parameters.yml` to the variable `$config`, we will keep the connection to the database in `$pdo`, and `$data` will store the result of the last query. We can assign values to the first two already in the constructor.
 
 ```php
     public function __construct()
@@ -668,7 +652,7 @@ Do zmiennej `$config` zapiszemy konfigurację z pliku `config/parameters.yml`, w
 
 ```
 
-Dziedziczymy tutaj konstruktor z `phpunit`. Następnie ustawiany zmienną `$config`. Nie musimy instalować dodatkowego parsera do `yml` ponieważ `behat` wziął sobie ten z `symfony`, sam przecież używa swojej własnej konfiguracji w formacie `yml`. Na koniec ustawiamy połączenie z domyślną bazą - `electronic_store` za pomocą funkcji `setPdoUsingBaseNumber(0)`. Jej kod jest następujący:
+We inherit the constructor from `phpunit` here. Then we set the variable `$config`. We do not need to install an additional parser for `yml` because `behat` takes the one from `symfony`, as it uses its own configuration in `yml` format. Finally, we set the connection to the default database - `electronic_store` using the function `setPdoUsingBaseNumber(0)`. Its code is as follows:
 
 ```php
     private function setPdoUsingBaseNumber($baseNumber)
@@ -690,7 +674,7 @@ Dziedziczymy tutaj konstruktor z `phpunit`. Następnie ustawiany zmienną `$conf
 
 ```
 
-Generalnie można się było tego spodziewać. Z ciekawych rzeczy jest tu tylko ustawienie atrybutów naszego połączenia. Chcemy, żeby konwertował wyniki zapytań do obiektów. Mimo, że do większości assertów wykorzystamy `phpunit` nie ma on sprawdzania występowania w tablicy dla bardziej złożonych obiektów. Można by to ominąć serializując obiekty, ale tutaj zastosowałem inne podejście i porównałem je ręcznie.
+Generally, this could be expected. The only interesting thing here is the setting of the attributes of our connection. We want it to convert query results into objects. Although we will use `phpunit` for most assertions, it does not check for occurrence in an array for more complex objects. This could be bypassed by serializing objects, but here I used a different approach and compared them manually.
 
 ```php
     private function assertArrayContainsHash($theArray, $hash)
@@ -715,9 +699,9 @@ Generalnie można się było tego spodziewać. Z ciekawych rzeczy jest tu tylko 
 
 ```
 
-Te funkcje sprawdzają, czy w wyniku zapytania - `$theArray` pojawił się testowany przez nas zbiór atrybutów - `$hash`.
+These functions check whether the tested set of attributes - `$hash` appeared in the query result - `$theArray`.
 
-Teraz przedstawimy możliwe kroki, jakie mogą się pojawić podczas testowania.
+Now we will present the possible steps that may occur during testing.
 
 ```php
     /**
@@ -730,7 +714,7 @@ Teraz przedstawimy możliwe kroki, jakie mogą się pojawić podczas testowania.
 
 ```
 
-Przełączamy się między bazami, zmieniamy numerację `1`, `2` na tą w jakiej numeruje się indeksy tablicy. Teraz wybieranie selektów.
+We switch between databases, changing the numbering `1`, `2` to that which is used for array index numbering. Now selecting selects.
 
 ```php
     /**
@@ -746,7 +730,7 @@ Przełączamy się między bazami, zmieniamy numerację `1`, `2` na tą w jakiej
 
 ```
 
-Po prostu tworzymy zapytanie, wykonujemy je i wyniki zapisujemy do zmiennej `$data`. Dla zachowania porządku czyścimy zapytanie. Jeśli interesuje nas zobaczenie wyniku, przygotowałem na to metodę
+We simply create a query, execute it, and save the results to the variable `$data`. To keep things tidy, we clear the query. If we are interested in seeing the result, I have prepared a method for that.
 
 ```php
     /**
@@ -760,7 +744,7 @@ Po prostu tworzymy zapytanie, wykonujemy je i wyniki zapisujemy do zmiennej `$da
 
 ```
 
-Opcja formatowania do `jsona` też została przewidziana, ale ponieważ poza debugowaniem ten kod nie spełnia żadnego testowego zadania, nie tworzyłem dla niej osobnej metody. Czas na pierwsze z warunków jakie narzucamy na dane:
+The formatting option to `json` has also been provided, but since this code does not fulfill any test task other than debugging, I did not create a separate method for it. It's time for the first of the conditions we impose on the data:
 
 ```php
     /**
@@ -789,9 +773,9 @@ Opcja formatowania do `jsona` też została przewidziana, ale ponieważ poza deb
 
 ```
 
-Jeśli chemy odnieść się do ilości rekordów w wyniku naszego zapytania możemy zarządać, żeby była ona równa, nie mniejsza, bądź nie większa od podanej.
+If we want to refer to the number of records in the result of our query, we can demand that it is equal to, not less than, or not greater than the specified value.
 
-Kolejny możliwy krok to sprawdzenie wartości atrybutu dla pierwszego wiersza danego zapytania.
+Another possible step is to check the attribute value for the first row of the given query.
 
 ```php
     /**
@@ -806,7 +790,7 @@ Kolejny możliwy krok to sprawdzenie wartości atrybutu dla pierwszego wiersza d
 
 ```
 
-Kolejno sprawdzamy czy wynik ma pierwszy wiersz, czy istnieje w nim podany atrybut i czy ma wartość której oczekujemy. Ostatni krok jest tak ogólny, że jest stosowany przy prawie każdym scenariuszu w prawie każdym przykładnie.
+Next, we check if the result has the first row, if the given attribute exists in it, and if it has the value we expect. The last step is so general that it is applied in almost every scenario in almost every example.
 
 ```php
     /**
@@ -826,23 +810,23 @@ Kolejno sprawdzamy czy wynik ma pierwszy wiersz, czy istnieje w nim podany atryb
 
 ```
 
-Sprawdza on czy wynik zapytania zawiera określona wartości dla podanych pól, lub czy ich nie zawiera. Ta ogólność możliwa jest dzięki wykorzystaniu w składni `gherkina` znaku `?` ozaczającego wystąpienie `0` lub `1` raz. Jeśli nie napiszemy `not`, zmienna `$not` przyjmie wartość domyślną `null` i jej zaprzeczenie będzie prawdziwe. Jednak ciekawsze niż sama logika instrukcji warunkowej jest zastosowanie obiektu `TableNode`. Jest to obiekt dostarczany przez `behat` i zawiera wszystkie dane z tabel, które użytkownik podaje w plikach `feature`. Tabele te mają nagłówk i wartości zapisane w wierszach. Obiekt `TableNode` powstał żeby nie powtarzać sztuczki jaką w `perlu` wykorzystałem do osobnego traktowania nagłówka i nie przetważać tych danych ręcznie. Iterując po jego metodzie `getHash()` przechodzimy po wszystkich wierszach tej tabeli z pominięciem nagłówka. W zmiennej `$hash`, trzymamy tablicę asocjacyjną z kluczami pobranymi z nagłówka (atrybutami w tabeli) i wartościm pobranymi z danego wiersza.
+It checks if the query result contains specific values for the given fields, or if it does not contain them. This generality is possible due to the use of the `gherkina` syntax with the `?` character denoting an occurrence of `0` or `1` once. If we do not write `not`, the variable `$not` will take the default value of `null`, and its negation will be true. However, more interesting than the logic of the conditional statement is the use of the `TableNode` object. This object is provided by `behat` and contains all data from the tables that the user provides in the `feature` files. These tables have headers and values recorded in the rows. The `TableNode` object was created to avoid repeating the trick I used in `perl` for separately handling the header and not processing these data manually. By iterating through its `getHash()` method, we go through all the rows of this table, skipping the header. In the variable `$hash`, we hold an associative array with keys taken from the header (attributes in the table) and values taken from the given row.
 
-To właśnie tą tablicę asocjacyjną wrzucamy do pokazanych wczęśniej metod sprawdzania występowania danego rekordu w wyniku zapytania.
+It is this associative array that we pass to the methods shown earlier for checking the occurrence of a given record in the query result.
 
-### Scenariusze testowe
+### Test Scenarios
 
-W praktyce pisałem testy nie mając jeszcze zapytań i mój workflow był następujący:
+In practice, I wrote tests without having queries yet, and my workflow was as follows:
 
-1. Przeczytać treść zapytania w języku naturalnym.
-2. Napisać zapytanie w języku SQL.
-3. Spojrzeć na obrazki z danymi.
-4. Wybrać przykładowe rekordy, które powinny znaleźć się w odpowiedzi.
-5. Wybrać przykładowe rekordy które nie powinny znaleźć się w odpowiedzi.
-6. Wkleić selekt i dane do tabeli z testami.
-7. Jeśli warunki nie są standardowe, dopisać brakujący scenariusz.
+1. Read the content of the query in natural language.
+2. Write the query in SQL.
+3. Look at images with data.
+4. Choose sample records that should be in the response.
+5. Choose sample records that should not be in the response.
+6. Paste the select and data into the test table.
+7. If the conditions are not standard, add the missing scenario.
 
-Ostatecznie plik ze scenariuszami testowymi wyewoluował do takiego postaci:
+Ultimately, the file with test scenarios evolved into the following form:
 
 > features/select.feature
 
@@ -854,7 +838,7 @@ Feature: Selecting chosen fields from database
 
 ```
 
-To jest nagłówek, jest tylko dokumentacja, bo ten kod się nie wykonuje. Poniżej pierwszy scenariusz.
+This is a header, it is just documentation because this code does not execute. Below is the first scenario.
 
 ```gherkin
   Scenario Outline: Checking number of rows
@@ -876,7 +860,7 @@ To jest nagłówek, jest tylko dokumentacja, bo ten kod się nie wykonuje. Poni�
 
 ```
 
-Zostały tu sprawdzone czy ilości rekordów w bazie odpowiadają tym z ksiązki. Następnie zostają sprawdzone wszystkie zapytania, które mają tylko jedną kolumnę z wynikiem.
+It has been verified here whether the number of records in the database corresponds to those in the book. Then, all queries that have only one column with a result are checked.
 
 ```gherkin
   Scenario Outline: Testing query
@@ -909,9 +893,9 @@ Zostały tu sprawdzone czy ilości rekordów w bazie odpowiadają tym z ksiązki
 
 ```
 
-Ciężko to nawet skomentować, ponieważ ten kod jest samowyjaśniający się. Po prostu łączymy się z bazę, wykonujemy selekt, sprawdzamy czy rezultat zawiera dwie przykładowe wartości, których się spodziewamy i czy nie zawiera dwóch innych, których nie powinno być.
+It's hard to even comment on it, because this code is self-explanatory. We simply connect to the database, perform a select, check if the result contains the two example values we expect and does not contain the two others that should not be there.
 
-Zupełnie analogicznie wygląda sytuacja, jeśli mamy dwie kolumny w wyniku.
+The situation is completely analogous if we have two columns in the result.
 
 ```gherkin
   Scenario Outline: Testing query with two attributes
@@ -932,9 +916,9 @@ Zupełnie analogicznie wygląda sytuacja, jeśli mamy dwie kolumny w wyniku.
 
 ```
 
-Niestety nie znam mechanizmu, który pozwolił by połączyć te dwa scenariusze w jeden, nigdzie w dokumentacji nie było nawet słowa o dziedziczeniu scenariuszy. Może ktoś na [stacku](http://stackoverflow.com/questions/40941114/flexibility-of-scenarios-in-gherkin) zna na to jakiś hack.
+Unfortunately, I don't know the mechanism that would allow connecting these two scenarios into one; there wasn't even a word about scenario inheritance in the documentation. Maybe someone on [stack](http://stackoverflow.com/questions/40941114/flexibility-of-scenarios-in-gherkin) knows a hack for this.
 
-Jeśli masz przeczucie czym to się skończy, to właśnie tak się kończy.
+If you have a feeling about how this will end, this is exactly how it ends.
 
 ```gherkin
   Scenario: Testing query with three attributes
@@ -951,9 +935,9 @@ Jeśli masz przeczucie czym to się skończy, to właśnie tak się kończy.
 
 ```
 
-I stało się, powtarzam ten sam kod trzeci raz. Wyrywałem sobie włosy z głowy, kiedy to pisałem. Okazało się, że jest tylko jeden przypadek selekta z trzema kolumnami, ale już widzimy niedoskonałość tego kodu.
+And it happened, I am repeating the same code for the third time. I was tearing my hair out when I was writing this. It turned out that there is only one select case with three columns, but we already see the imperfection of this code.
 
-Czasem zdażało się, że chciałem przetestować występowanie tylko jednego wiersza, za to z dwoma atrybutami:
+Sometimes it happened that I wanted to test the occurrence of only one row, with two attributes instead:
 
 ```gherkin
   Scenario: Testing query (pairs)
@@ -965,7 +949,7 @@ Czasem zdażało się, że chciałem przetestować występowanie tylko jednego w
 
 ```
 
-Były też przypadki z jednym rezultatem i jednym atrybutem
+There were also cases with one result and one attribute.
 
 ```gherkin
   Scenario Outline: Testing query (max speed)
@@ -980,7 +964,7 @@ Były też przypadki z jednym rezultatem i jednym atrybutem
 
 ```
 
-I przypadek z w którym nie znałem dokładnej liczby wyników, ale mogłem określić przedział w jakim się znajduje.
+And a case where I didn't know the exact number of results, but I could determine the range in which it lies.
 
 ```gherkin
   Scenario: Select all ships
@@ -997,7 +981,7 @@ I przypadek z w którym nie znałem dokładnej liczby wyników, ale mogłem okre
 
 ```
 
-Na końcu zostałem zaskoczony przez scenariusz, w którym na wyjściu niczego nie dostałem.
+In the end, I was surprised by the scenario in which I received nothing at the exit.
 
 ```gherkin
   Scenario: Select null
@@ -1007,6 +991,6 @@ Na końcu zostałem zaskoczony przez scenariusz, w którym na wyjściu niczego n
 
 ```
 
-Tak doszliśmy dokońca projektu.
+This is how we completed the project.
 
-Mam nadzieję, że przedstawiony materiał Ci się spodbał. Daj znać w komentarzu, jeśli coś wymaga dodatkowego wyjaśnienia, albo jeśli wiesz jak mógł bym napisać bardziej ogólne testy niż te przedstawione powyżej. Mam na myśli jeden scenariusz dla N atrubutów, z M przykładami, które występują i L które nie występują.
+I hope you liked the presented material. Let me know in the comments if anything needs further clarification, or if you know how I could write more general tests than those presented above. I'm thinking of one scenario for N attributes, with M examples that occur and L that do not occur.

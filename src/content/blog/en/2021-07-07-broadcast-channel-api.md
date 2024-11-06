@@ -2,10 +2,10 @@
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
 coverImage: http://localhost:8484/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
-description: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
-excerpt: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
+description: This post shows how to use the Broadcast Channel API to send data between browser tabs or windows without using a server and sockets.
+excerpt: This post shows how to use the Broadcast Channel API to send data between browser tabs or windows without using a server and sockets.
 publishDate: 2021-07-07 11:08:19+00:00
-slug: pl/broadcast-channel-api
+slug: en/broadcast-channel-api
 tags:
 - web-api
 - broadcast
@@ -14,56 +14,56 @@ title: Broadcast Channel API
 updateDate: 2021-07-23 09:22:25+00:00
 ---
 
-Nauczymy się jak używać `Broadcast Channel API` do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
+We will learn how to use the `Broadcast Channel API` to send data between tabs or browser windows without using a server and sockets.
 
-## Parcel Bundler - intuicyjny i prosty builder
+## Parcel Bundler - intuitive and simple builder
 
-Jak zwykle prezentujemy kod od początku do końca. Zaczniemy od instalacji parcela - najprostszego bundler w świecie JS działającego out of the box w przeciwieństwie do webpacka, którego konfiguracja jest po prostu nudna. Parcela instalujemy komendą:
+As always, we present the code from start to finish. We will begin by installing Parcel - the simplest bundler in the JS world that works out of the box, unlike Webpack, whose configuration is simply tedious. We install Parcel with the command:
 
 ```
 npm install -g parcel-bundler
 ```
 
-Tworzymy pliki `html` i `ts` poleceniami:
+We create `html` and `ts` files with the commands:
 
 ```
 echo '<html><body><script src="./index.ts"></script></body></html>' > index.html
 touch index.ts
 ```
 
-I włączamy nasz serwer
+And we turn on our server
 
 ```
 parcel index.html
 ```
 
-## Podstawy działania Broadcast Channel API
+## Basics of the Broadcast Channel API
 
-Pokażemy teraz jak w konsoli przeglądarki zobaczyć najprostsze działanie Broadcast Channel Api. W pliku `index.ts` inicjalizujemy kanał.
+We will now show how to see the simplest operation of the Broadcast Channel API in the browser console. In the `index.ts` file, we initialize the channel.
 
 ```
 const bc = new BroadcastChannel('channel');
 ```
 
-Następnie przypiszemy naszej karcie w przeglądarce losowe ID
+Next, we will assign a random ID to our card in the browser.
 
 ```
 const id = Math.random();
 ```
 
-Oraz zapiszemy w pamięci liczniki wiadomości wysłanych i odebranych
+And we will store in memory the counters of sent and received messages.
 
 ```
 let send = 0, received = 0;
 ```
 
-Jako wiadomość powitalną wyświetlimy id wybrane dla naszej karty
+As a welcome message, we will display the ID selected for our card.
 
 ```
 console.log("START", id);
 ```
 
-Następnie ustawiamy nasłuch na wiadomości
+Next, we set up listening for messages.
 
 ```
 bc.onmessage = (e) => {
@@ -72,11 +72,11 @@ bc.onmessage = (e) => {
 }
 ```
 
-Podnosimy w nim licznik wiadomości odebranych oraz pokazujemy przysłane dane oraz wartości liczników w danej karcie.
+We increase the message count received in it and display the received data and the counter values on the given card.
 
-Teraz czas na wysyłanie wiadomości do kanału. Służą do tego funkcje `postMessage`.
+Now it's time to send messages to the channel. The `postMessage` functions are used for this.
 
-Chwilę po włączeniu karty chcemy wysłać wiadomość powitalną do innych kart
+A moment after the card is activated, we want to send a welcome message to other cards.
 
 ```
 setTimeout(() => {
@@ -84,9 +84,9 @@ setTimeout(() => {
 }, 250)
 ```
 
-Timeout pozwala poczekać na to, żeby inne karty się przeładowały. Gdyby nie on, to na kartach które nie są gotowe kiedy ta wiadomość jest wysyłana nie zobaczyli byśmy console loga.
+Timeout allows waiting for other tabs to reload. Without it, on the tabs that are not ready when this message is sent, we wouldn't see the console log.
 
-Następnie chcemy wysłać jeszcze dwie wiadomości, które przestawią nam liczniki wysłań
+Next, we want to send two more messages that will update our send counters.
 
 ```
 const i = setInterval(() => {
@@ -97,43 +97,43 @@ const i = setInterval(() => {
 }, 500)
 ```
 
-Przy okazji użyliśmy tu innego API - performance:
+By the way, we used a different API here - performance:
 
 [Performance - Web APIs | MDN](https://developer.mozilla.org/mdn-social-share.0ca9dbda.png)](https://developer.mozilla.org/en-US/docs/Web/API/Performance)
 
-Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
+For the two tabs, we can see that each tab has its own unique identifier and messages sent from the opposite tab.
 
 ![](http://localhost:8484/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
 
-Nic nie stoi na przeszkodzie, żebyśmy włączyli cztery karty na raz. Wtedy wiadomości od trzech pozostałych w każdej z nich będą się wzajemnie przeplatać.
+Nothing prevents us from enabling four cards at once. Then the messages from the three remaining ones will interweave with each other.
 
 ![](http://localhost:8484/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
 
-Możemy wrócić do dwóch kart i odświeżyć kilka razy tą z prawej strony. W wyniku takiego działania ta po lewej dostanie kilkukrotnie nowe powiadomienia, a na tej prawej nie będzie widać nic poza jej własnym przedstawieniem się ponieważ lewa karta zakończyła już nadawanie wiadomości. Konkretny wynik odświeżania prawej karty przedstawia screenshot:
+We can return to two tabs and refresh the one on the right several times. As a result of this action, the one on the left will receive several new notifications, while on the right one, nothing will be visible except for its own presentation since the left card has already finished sending messages. The specific result of refreshing the right card is shown in the screenshot:
 
 ![](http://localhost:8484/b0784926-0177-48cb-9841-b51e8bc24203.avif)
 
-Widzimy tu, że wiadomości pochodzą od różnych ID, bo karta po prawej zmienia ID przy każdym odświeżeniu.
+We see here that the messages come from different IDs because the card on the right changes ID with each refresh.
 
-Kolejny eksperyment to sprawdzenie czy Broad Cast Channel działa między różnymi przeglądarkami:
+The next experiment is to check if the Broad Cast Channel works between different browsers:
 
 ![](http://localhost:8484/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
 
-Okazało się, że nie. Ma to sens, bo jeśli miało by działać między przeglądarkami, to musiała by istnieć komunikacja między procesami utrzymującymi przeglądarki.
+It turned out that no. It makes sense because if it were to work between browsers, there would have to be communication between the processes maintaining the browsers.
 
-## Zasada Same Origin
+## Same Origin Policy
 
-Broadcast Channel ma zasięg działania w dla wszystkich kart, przeglądarek, iframes w ramach tego samego Origin czyli schematu (protokołu), hosta i portu.
+The Broadcast Channel has a range of operation for all tabs, browsers, and iframes within the same Origin, meaning the scheme (protocol), host, and port.
 
-Więcej o samym Origin możemy przeczytać w słowniku Mozilla Developers
+We can read more about the Origin itself in the Mozilla Developers dictionary
 
 [Origin - MDN Web Docs Glossary: Definitions of Web-related terms](https://developer.mozilla.org/en-US/docs/Glossary/Origin)
 
-Sprawdzimy czy dla różnych komputerów też będzie działał poprawnie. W tym celu musimy zmienić ustawienia parcela, bo obecnie wystawia on nasz serwis na localhost
+We will check if it will work correctly for different computers as well. To do this, we need to change the parcel settings, because it currently exposes our service on localhost.
 
 ![](http://localhost:8484/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
 
-Nasz obecny adres IP możemy sprawdzić poleceniem
+We can check our current IP address with the command.
 
 ```
 ip route
@@ -141,7 +141,7 @@ ip route
 
 ![](http://localhost:8484/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
 
-Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
+From the documentation, we can read that simply adding the `--host` flag is enough.
 
 [Parcel CLI](https://parceljs.org/cli.html)
 
@@ -151,32 +151,32 @@ parce index.html --host 192.168.2.162
 
 ![](http://localhost:8484/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
 
-Okazało się, że komunikacja nie jest przesyłana między różnymi komputerami.
+It turned out that communication is not transmitted between different computers.
 
-Jest to zgodne z intuicją. O ile w przypadku Web Socketów istnieje jakiś serwer do utrzymywania (czy nawet WebRCT do samego nawiązywania) połączenia, to tutaj jedyną warstwą transportu danych jest pamięć operacyjna komputera na którym używany jest Broadcast Channel.
+This is intuitive. While Web Sockets have some server to maintain (or even WebRTC for establishing) the connection, here the only layer of data transport is the RAM of the computer on which the Broadcast Channel is used.
 
-## Broadcast Channel API a Shared Workers, Message Channel i post Message
+## Broadcast Channel API vs Shared Workers, Message Channel, and post Message
 
-Być może zastanawiasz się jaka jest różnica między omawianym API a innymi metodami komunikacji między kontekstami jak:
+You may be wondering what the difference is between the discussed API and other methods of communication between contexts such as:
 
 * Shared Workers
 * Message Channel
 * window.postMessage()
 
-W przypadku SharedWorkers możesz zrobić to samo co za pomocą BroadcastChannel ale wymaga to większej ilości kodu. Zalecam używanie SharedWorkers do bardziej zaawansowanych zdań jak zarządzanie blokadami, współdzielenie stanu, synchronizacja zasobów czy dzielenie połączenia WebSocket między kartami.
+In the case of SharedWorkers, you can do the same as with BroadcastChannel, but it requires more code. I recommend using SharedWorkers for more advanced tasks such as managing locks, sharing state, synchronizing resources, or sharing a WebSocket connection between tabs.
 
-Natomiast Broadcast Channel Api jest wygodniejsze w prostych przypadkach, kiedy chcemy wysłać wiadomość do wszystkich okien, zakładek lub workerów.
+On the other hand, the Broadcast Channel API is more convenient in simple cases when we want to send a message to all windows, tabs, or workers.
 
-Co do MessageChannel API to główna różnica polega na tym, że w MessageChannel API wysyła się wiadomość do jednego odbiorcy, podczas gdy w Broadcast Channel wysyłający jest jeden, a odbiorcami są zawsze wszystkie pozostałe konteksty.
+As for the MessageChannel API, the main difference is that in the MessageChannel API, a message is sent to one recipient, while in the Broadcast Channel there is one sender and the recipients are always all other contexts.
 
-W window.postMessage wymagane jest z kolei utrzymywanie referencji do obiektu iframe lub workera, żeby nadawać komunikację, na przykład:
+In window.postMessage, on the other hand, it's required to maintain a reference to the iframe or worker object to transmit communication, for example:
 
 ```
 const popup = window.open('https://another-origin.com', ...);
 popup.postMessage('Sup popup!', 'https://another-origin.com');
 ```
 
-Z drugiej strony trzeba też pilnować, żeby przy odbieraniu sprawdzić źródło wiadomości ze względów bezpieczeństwa:
+On the other hand, you also need to ensure that when receiving, you check the source of the message for security reasons:
 
 ```
 const iframe = document.querySelector('iframe');
@@ -188,15 +188,15 @@ iframe.contentWindow.onmessage = function(e) {
 };
 ```
 
-Pod tym względem Broadcast Channel jest bardziej ograniczony, bo nie pozwala na komunikację między różnymi Origin, ale zapewnia to domyślnie wyższe bezpieczeństwo. Z drugiej strony window.postMessage nie pozwalał na wysyłkę do innych okien bo nie można do nich było złapać referencji.
+In this regard, Broadcast Channel is more limited because it does not allow communication between different Origins, but it provides higher security by default. On the other hand, window.postMessage did not allow sending to other windows because references to them could not be caught.
 
-## Rysowanie na Canvas w niezależnych kartach
+## Drawing on Canvas in Independent Tabs
 
-Czas na praktyczny przykład. No może nie super użyteczny, ale za to dobrze prezentujący możliwości Broadcast Channel API.
+Time for a practical example. Well, maybe not super useful, but it nicely showcases the capabilities of the Broadcast Channel API.
 
-Zaprogramujemy aplikację pozwalającą na przenoszenie rysowanych kształtów na płótnie między kartami przeglądarki.
+We will program an application that allows transferring drawn shapes on the canvas between browser tabs.
 
-Zaczniemy od zwykłego rysowania myszką na canvas. W tym celu zmienimy nasz kod `index.html` dodając do niego płótno i niezbędne style
+We will start with regular mouse drawing on the canvas. To do this, we will modify our `index.html` code by adding a canvas and the necessary styles.
 
 ```
 <html lang="en">
@@ -207,7 +207,7 @@ Zaczniemy od zwykłego rysowania myszką na canvas. W tym celu zmienimy nasz kod
 </html>
 ```
 
-W skrypcie `index.ts` wpisujemy
+In the script `index.ts` we enter
 
 ```
 interface Window {
@@ -215,7 +215,7 @@ interface Window {
 }
 ```
 
-Pozwoli nam to na trzymanie canvasu w oknie. Aby nie wyszukiwać go wiele razy możemy użyć `window` jako cache w którym będziemy go trzymać po pierwszym znalezieniu.
+This will allow us to keep the canvas in the window. To avoid searching for it multiple times, we can use `window` as a cache where we will keep it after the first find.
 
 ```
 const getCanvasAndCtx = (): { canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D } => {
@@ -233,7 +233,7 @@ const getCanvasAndCtx = (): { canvas: HTMLCanvasElement, ctx: CanvasRenderingCon
 }
 ```
 
-W celu dostrojenia wielkości canvasu deklarujemy funkcję `syncCanvasSize`
+To adjust the size of the canvas, we declare the function `syncCanvasSize`
 
 ```
 const syncCanvasSize = () => {
@@ -243,7 +243,7 @@ const syncCanvasSize = () => {
 }
 ```
 
-Wykonamy ją przy każdym evencie `resize` na `window` oraz po załadowaniu strony
+We will perform it on every `resize` event on the `window` and after the page loads.
 
 ```
 window.addEventListener('resize', syncCanvasSize)
@@ -253,7 +253,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const {canvas, ctx} = getCanvasAndCtx()
 ```
 
-Definiujemy kilka parametrów do określania stanu i historii kursora.
+We define several parameters to determine the state and history of the cursor.
 
 ```
     let flag = false,
@@ -263,7 +263,7 @@ Definiujemy kilka parametrów do określania stanu i historii kursora.
         currY = 0;
 ```
 
-Następnie definiujemy funkcje `drawLine` rysującą linię oraz `drawDot` rysującą kropkę
+Next, we define the `drawLine` function that draws a line and the `drawDot` function that draws a dot.
 
 ```
     function drawLine() {
@@ -284,7 +284,7 @@ Następnie definiujemy funkcje `drawLine` rysującą linię oraz `drawDot` rysuj
     }
 ```
 
-Oraz najważniejszą funkcję `findPosition` - sterującą logiką rysowania
+And the most important function `findPosition` - controlling the drawing logic
 
 ```
     function findPosition(res: EventType, e: { clientX: number, clientY: number }) {
@@ -311,7 +311,7 @@ Oraz najważniejszą funkcję `findPosition` - sterującą logiką rysowania
     }
 ```
 
-Na końcu dodajemy nasłuch na wydarzenia powiązane z myszą aby używać funkcji `findPosition`
+At the end, we add a listener for mouse-related events to use the `findPosition` function.
 
 ```
     canvas.addEventListener("mousemove", (e) => {
@@ -330,15 +330,15 @@ Na końcu dodajemy nasłuch na wydarzenia powiązane z myszą aby używać funkc
 })
 ```
 
-Powyższy kod pozwala nam to na rysowanie na canvasie w ramach pojedynczej karty. Żeby było możliwe przenoszenie obrazu między kartami wykorzystamy Broadcast Channel.
+The above code allows us to draw on the canvas within a single tab. To enable transferring the image between tabs, we will use the Broadcast Channel.
 
-Wymagana będzie jego inicjalizacja:
+Its initialization will be required:
 
 ```
 const bc = new BroadcastChannel('channel');
 ```
 
-Dodanie nasłuchu na polecenie `findPosition`.
+Adding a listener for the `findPosition` command.
 
 ```
 bc.onmessage = (e) => {
@@ -348,9 +348,9 @@ bc.onmessage = (e) => {
 }
 ```
 
-Do samej funkcji `findPosition` dodaliśmy trzeci argument - `propagate` mówiący czy wywołanie tej funkcji ma powodować wysłanie wiadomości do kanału. Wartość `false` pozwala unikną nieskończonego zagnieżdżenia.
+In the `findPosition` function, we added a third argument - `propagate` indicating whether the function call should send a message to the channel. The value `false` allows avoiding infinite nesting.
 
-Na końcu zmieniamy sygnaturę samej funkcji `findPosition` tak jak to opisaliśmy i dodajemy fragment kodu odpowiedzialny za wysyłkę wiadomości do innych kart
+Finally, we change the signature of the `findPosition` function as described and add a code snippet responsible for sending messages to other cards.
 
 ```
 function findPosition(res: EventType, e: {clientX: number, clientY: number}, propagate: boolean) {
@@ -360,9 +360,9 @@ function findPosition(res: EventType, e: {clientX: number, clientY: number}, pro
         }
 ```
 
-Warto zauważyć, że nie przekazujemy tu pełnych obiektów `event` a jedynie współrzędne. Jest to nie tylko optymalizacja. Klonowanie takich obiektów jak Event nie jest możliwe między kontekstami.
+It is worth noting that we are not passing full `event` objects here, but only the coordinates. This is not just an optimization. Cloning such objects as Event is not possible between contexts.
 
-Cały kod zawarty w `index.ts` prezentuję poniżej:
+The entire code contained in `index.ts` is presented below:
 
 ```
 interface Window {
@@ -477,22 +477,22 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 ```
 
-Aplikacja działa tak, że obraz rysowany w jednej karcie pojawia się we wszystkich pozostałych:
+The application works in such a way that the image drawn in one tab appears in all the others:
 
-## Zastosowania Broadcast Channel API
+## Uses of the Broadcast Channel API
 
-Przykładowa aplikacja pokazuje, że broadcast channel może być stosowany w bardzo wygodny sposób. Zapewnienie synchronizacji między kartami zostało wprowadzone przez dodanie 9 linii kodu z czego 3 to domknięcia nawiasów klamrowych.
+The example application shows that the broadcast channel can be used in a very convenient way. Synchronization between tabs was achieved by adding 9 lines of code, of which 3 are closing curly braces.
 
-Jego przykładowe zastosowania to:
+Some example uses are:
 
-* Wykrywanie akcji użytkownika w innych zakładkach
-* Sprawdzanie kiedy użytkownik zalogował się na swoje konto w innej zakładce lub oknie
-* Zlecenie Workerom wykonania jakichś zadań w tle
-* Rozsyłanie zdjęć załadowanych przez użytkownika w innych kartach
+* Detecting user actions in other tabs
+* Checking when the user logged into their account in another tab or window
+* Instructing Workers to perform some tasks in the background
+* Distributing photos uploaded by the user in other tabs
 
-Jeśli potrzebujemy komunikacji między komputerami to Broadcast Channel API nam nie pomoże i wtedy do komunikacji w czasie rzeczywistym należy użyć WebSockets lub WebRTC.
+If we need communication between computers, the Broadcast Channel API will not help, and we should use WebSockets or WebRTC for real-time communication.
 
-Polecane materiały oraz dokumentacja:
+Recommended resources and documentation:
 
 [Broadcast Channel API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 

@@ -2,69 +2,69 @@
 author: Daniel Gustaw
 canonicalName: scraping-the-most-popular-accounts-on-twitter
 coverImage: http://localhost:8484/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
-description: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
-excerpt: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
+description: Thanks to observing Twitter posts, we can track various trends. In this entry, I will show how to download data about accounts on this service and select those that have the highest influence ratio.
+excerpt: Thanks to observing Twitter posts, we can track various trends. In this entry, I will show how to download data about accounts on this service and select those that have the highest influence ratio.
 publishDate: 2021-06-21 16:24:01+00:00
-slug: pl/scraping-najbardziej-popularnych-kont-na-twitterze
+slug: en/scraping-the-most-popular-accounts-on-twitter
 tags:
 - twitter
 - cheerio
 - scraping
 - mongo
 - nodejs
-title: Scraping najbardziej popularnych kont na twitterze
+title: Scraping the most popular Twitter accounts
 updateDate: 2021-06-26 09:35:10+00:00
 ---
 
-Listę najbardziej popularnych kont w serwisie Twitter możemy znaleźć na stronie Trackalytics:
+The list of the most popular accounts on Twitter can be found on the Trackalytics page:
 
 [The Most Followed Twitter Profiles | Trackalytics](https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/)
 
-W tym wpisie pokażę, jak pobrać te dane i posortujemy je względem ilości tweetów na ilość obserwujących. Następnie przeanalizujemy, jaką liczbę twórców mogli byśmy obserwować jednocześnie aby nie przekroczyć limitu darmowego api Twittera: 500 tys tweetów / msc.
+In this post, I will show how to download this data and sort it based on the number of tweets to followers. Then we will analyze how many creators we could follow simultaneously without exceeding the limit of the free Twitter API: 500,000 tweets/month.
 
-### Analiza scrapowanej strony
+### Analysis of the Scraped Page
 
-Przed rozpoczęciem scrapingu należy zawsze wybrać odpowiedni wektor pozyskiwania danych. Pierwszą rzeczą, którą warto sprawdzać, jest zakładka network w przeglądarce. W naszym przypadku na stronie:
+Before starting the scraping, it is always necessary to choose an appropriate data acquisition vector. The first thing to check is the network tab in the browser. In our case, on the page:
 
 > [https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/](https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/)
 
-Mamy request o wyrenderowaną już stronę:
+We have a request for the already rendered page:
 
 ![](http://localhost:8484/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
 
-więc rendering musi odbywać się na backendzie. Potwierdzimy to sprawdzając źródło strony.
+so rendering must take place on the backend. We will confirm this by checking the page source.
 
 ```
 view-source:https://www.trackalytics.com/the-most-followed-twitter-profiles/page/1/
 ```
 
-Faktycznie widzimy tu dane gotowe do scrapingu:
+Indeed, we see data ready for scraping:
 
 ![](http://localhost:8484/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
 
-Napiszemy więc skrypt, który pobierze ja i przetworzy za pomocą biblioteki `cheerio`.
+We will write a script that fetches it and processes it using the `cheerio` library.
 
-### Przygotowanie projektu
+### Project Setup
 
-Projekt inicjalizujemy komendami:
+We initialize the project with the commands:
 
 ```bash
 npm init -y && tsc --init
 ```
 
-Tworzymy katalog `raw` na pobierane pliki
+We create a `raw` directory for downloaded files
 
 ```bash
 mkdir -p raw
 ```
 
-Instalujemy typescript
+We are installing TypeScript
 
 ```bash
 npm i -D @types/node
 ```
 
-Rdzeń naszego programu może wyglądać tak:
+The core of our program may look like this:
 
 ```ts
 interface TwitterAccount {
@@ -112,15 +112,15 @@ const main = async () => {
 main().then(console.log).catch(console.error)
 ```
 
-Mamy tu za zaimplementowania interfejs kont wynikający ze struktury pobieranych danych, funkcję do sprawdzania czy strona istnieje i zapisu danych oraz funkcję do parsowania.
+We have here to implement an interface for accounts resulting from the structure of the retrieved data, a function to check if a page exists and save data, and a function for parsing.
 
-### Model danych
+### Data Model
 
-Patrząc na wyświetlane dane:
+Looking at the displayed data:
 
 ![](http://localhost:8484/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
 
-Można stworzyć następujący interfejs opisujący konto Twittera
+You can create the following interface describing a Twitter account.
 
 ```ts
 interface TwitterAccount {
@@ -137,16 +137,16 @@ interface TwitterAccount {
 }
 ```
 
-### Pobieranie stron
+### Downloading Pages
 
-Do pobierania stron użyjemy biblioteki `axios`. Do logowania danych nada się `debug`.
+We will use the `axios` library for downloading pages. `debug` will be suitable for logging data.
 
 ```bash
 npm i axios debug
 npm i -D @types/debug
 ```
 
-Po wykonaniu kilku importów:
+After performing several imports:
 
 ```
 import axios from "axios";
@@ -156,7 +156,7 @@ import Debug from 'debug';
 const debug = Debug('app');
 ```
 
-Funkcja do synchronizacji mogła by wyglądać tak:
+The synchronization function could look like this:
 
 ```ts
     async sync() {
@@ -180,11 +180,7 @@ Funkcja do synchronizacji mogła by wyglądać tak:
     }
 ```
 
-Widzimy, że jeśli plik jest zapisany, to nie sprawdzamy dalej. Zatem nie ma ryzyka bombardowania strony docelowej nie potrzebnymi zapytaniami. To ważny aspekt scrapingu. Następnie jeśli strona zostanie poprawnie pobrana to jest zapisywana i również oznaczana jako istniejąca. Wynik negatywny dostaniemy jedynie w przypadku wystąpienia wyjątku oraz dla statusu innego niż 200.
-
-### Przetwarzanie stron
-
-Metoda `parse` obiektu `Page` powinna zwracać listę profili Twittera. Najprościej jest prototypować ją bezpośrednio w konsoli przeglądarki, a następnie przepisać taki selektor do cheerio. Tak właśnie zrobimy. Oto funkcja `parse` napisana w konsoli przeglądarki:
+### Processing Pages
 
 ```ts
 [...document.querySelectorAll('.post-content>table>tbody tr')].map(tr => {
@@ -207,18 +203,18 @@ return {
 
 ![](http://localhost:8484/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
 
-W `node js` nie mamy obiektu `document` i aby wykonywać selektory na drzewie dom musimy je zbudować z tekstu tak jak robi to przeglądarka. Z tym, że zamiast natywnie wbudowanego mechanizmu wykorzystamy do tego jedną z popularnych bibliotek. Najbardziej znane są:
+In `node js` we don't have a `document` object and to perform selectors on the DOM tree we need to build it from text as the browser does. However, instead of using the natively built-in mechanism, we will use one of the popular libraries. The most well-known are:
 
 * cheerio
-* js dom
+* jsdom
 
-Zrobiłem kiedyś ich porównanie pod względem wydajności:
+I once made a comparison of them in terms of performance:
 
 [Is cheerio still 8x faster than jsdom? · Issue #700 · cheeriojs/cheerio](https://github.com/cheeriojs/cheerio/issues/700)
 
-Wszystko wskazuje na to, że `cheerio` jest znacznie lepszym wyborem.
+Everything indicates that `cheerio` is a much better choice.
 
-Aby przetworzyć ją do postaci akceptowalnej przez cherio musimy `document` zastąpić przez `cheerio.load(content)`, a elementy należy otaczać `cheerio(element).find` aby szukać ich potomków. Do tego do atrybutów potrzebujemy funkcji `attr` i na tablicach funkcji `toArray`. To właściwie wszystkie zmiany, ich wprowadzenie zajmuje chwilę i w wyniku ich zastosowania do selektora działającego w przeglądarce dostaniemy implementację funkcji `parse`
+To process it into a form acceptable by cheerio, we need to replace `document` with `cheerio.load(content)`, and elements should be wrapped with `cheerio(element).find` to search for their descendants. For attributes, we need the `attr` function and for arrays, the `toArray` function. These are actually all the changes, implementing them takes a moment and as a result of their application to the selector working in the browser we will get the implementation of the `parse` function.
 
 ```ts
     parse(): TwitterAccount[] {
@@ -247,7 +243,7 @@ Aby przetworzyć ją do postaci akceptowalnej przez cherio musimy `document` zas
     }
 ```
 
-Dokładając do tego drobną modyfikację końcówki programu, żeby zapisywał uzyskane dane w pliku `json`
+Adding a small modification to the program's end so that it saves the obtained data in a `json` file
 
 ```ts
 const main = async () => {
@@ -272,29 +268,29 @@ main().then(a => {
 }).catch(console.error)
 ```
 
-po zainstalowaniu paczki `cheerio`
+after installing the `cheerio` package
 
 ```
 npm i cheerio
 ```
 
-możemy włączyć nasz program poleceniem
+we can start our program with a command
 
 ```
 time DEBUG=app ts-node index.ts
 ```
 
-Poniżej widzimy jak wygląda ono w otoczeniu programów `bmon` do monitorowania interfejsów sieciowych oraz `htop` do sprawdzania pamięci `ram` oraz zużycia procesora.
+Below we see what it looks like in the environment of the `bmon` program for monitoring network interfaces and `htop` for checking `ram` memory and processor usage.
 
 ![](http://localhost:8484/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
 
-Do zapisania tego pliku w bazie danych mongo możemy użyć polecenia:
+To save this file in the mongo database, we can use the command:
 
 ```
 mongoimport --collection twitter_accounts <connection_string>  --jsonArray --drop --file ./accounts.json
 ```
 
-Następnie wykonując agregację:
+Next, performing aggregation:
 
 ```json
 [{
@@ -319,7 +315,7 @@ Następnie wykonując agregację:
 }]
 ```
 
-możemy dowiedzieć się, że 16k najpopularniejszych kont na twitterze wytworzyło 0.6 miliarda tweetów, z czego 177 tysięcy dzisiaj.
+we can learn that the 16k most popular accounts on Twitter generated 0.6 billion tweets, of which 177 thousand today.
 
 ```
 tweets_today:177779
@@ -329,11 +325,11 @@ followers_total:20159062136
 count:16349
 ```
 
-Łączna liczba followersów to 20 mld (oczywiście są w tym liczne duplikaty), a dzisiaj pozyskani followersi tych kont to 10 mln.
+The total number of followers is 20 billion (of course, there are numerous duplicates), and today the followers gained by these accounts amount to 10 million.
 
-Darmowe api twittera pozwala na nasłuch w czasie rzeczywistym do 500 tys tweetów. Oznacza to, że dziennie można zbierać średnio 16 tysięcy.
+The free Twitter API allows for real-time listening of up to 500 thousand tweets. This means that on average, 16 thousand can be collected daily.
 
-Załóżmy, że naszym zadaniem jest obserwacja tych kont, które najmniejszą liczbą wpisów robią największe zasięgi. W ich odnalezieniu pomoże nam kolejna agregacja:
+Let's assume that our task is to observe those accounts that achieve the greatest reach with the fewest posts. The next aggregation will help us find them:
 
 ```json
 [{$match: {
@@ -364,7 +360,7 @@ Załóżmy, że naszym zadaniem jest obserwacja tych kont, które najmniejszą l
     }}]
 ```
 
-Dzięki niej możemy wybrać 3798 kont które dzienne postują jedynie 17161 tweetów ale mają zasięg do 14 mld użytkowników łącznie a dzisiaj pozyskali 8 mln.
+Thanks to it, we can select 3,798 accounts that post only 17,161 tweets daily but have a reach of up to 14 billion users combined, and today they gained 8 million.
 
 ```
 tweets_today:17161
@@ -374,12 +370,12 @@ followers_total:14860523601
 count:3798
 ```
 
-Oznacza to, że ilość obserwowanych kont spadła do 23%, ilość tweetów dziennie do 9%, ale ilość wszystkich followerów utrzymała się na poziomie 73% wcześniejszej wartości (oczywiście te obliczenia nie uwzględniają duplikacji), a ilość pozyskiwanych dzisiaj followerów przez te wybrane konta to 85% z pierwotnej wartości.
+This means that the number of observed accounts has dropped to 23%, the number of tweets per day to 9%, but the total number of followers has remained at 73% of the previous value (of course, these calculations do not account for duplication), and the number of followers being gained today by these selected accounts is 85% of the original value.
 
-Podsumowując. Wybraliśmy tylko część kont, które pisząc 9% tweetów względem całej grupy najpopularniejszych kont każdego dnia pozwalają uzyskać 85% z interesującego nas zasięgu.
+In summary. We selected only a portion of accounts that, writing 9% of the tweets in relation to the entire group of the most popular accounts each day, allow us to achieve 85% of the reach we are interested in.
 
-Naszym kryterium odcięcia jest uzyskiwanie przynajmniej 100 followersów na jednym tweecie. Powinniśmy się spodziewać około 17000/24/60 = 11 tweetów na minutę.
+Our cutoff criterion is to obtain at least 100 followers per tweet. We should expect about 17000/24/60 = 11 tweets per minute.
 
-Zgodnie z tradycją tego bloga na końcu podaję link do zescrapowanych danych:
+According to the tradition of this blog, at the end I provide a link to the scraped data:
 
 [https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/accounts.json](https://preciselab.fra1.digitaloceanspaces.com/blog/scraping/accounts.json)

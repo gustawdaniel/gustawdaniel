@@ -2,19 +2,15 @@
 author: Daniel Gustaw
 canonicalName: how-to-download-contact-data-of-20k-lawyers-in-an-hour
 coverImage: http://localhost:8484/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
-updateDate: 2021-02-17 20:59:14+00:00
-description: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć
-  pobieranie danych.
-excerpt: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć
-  pobieranie danych.
+description: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć pobieranie danych.
+excerpt: Poznaj technikę zrównoleglania scrapingu która może kilkukrotnie przyśpieszyć pobieranie danych.
 publishDate: 2021-02-17 20:59:14+00:00
 slug: pl/jak-pobrac-dane-kontaktowe-20k-adwokatow-w-godzine
 tags:
 - contact
 title: Jak pobrać dane kontaktowe 20k adwokatów w godzinę
+updateDate: 2021-02-17 20:59:14+00:00
 ---
-
-
 
 Strona internetowa "Rejestr Adwokatów" jest publicznym zbiorem danych. Zgodnie z obwiązującym prawem można gromadzić i przetwarzać publicznie dostępne dane osobowe z rejestrów.
 
