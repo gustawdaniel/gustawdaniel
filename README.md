@@ -150,3 +150,25 @@ caddy run
 TODO:
 - [ ] add projects page
 - [ ] polish link fix replace (Nie będziemy się skupiać na tej części kodu. Jeśli jesteś tym zainteresowany i znasz język polski, napisałem artykuł na temat terraform tutaj:) by link per language
+
+
+
+Images: https://cloud.digitalocean.com/spaces/preciselab?path=blog%2Fimg%2F&i=d27b97
+
+```bash
+s3cmd put --acl-public src/assets/images/* s3://preciselab/blog/img/
+```
+
+On deploy replace all
+
+http://localhost:8484
+
+by
+
+http://fra1.digitaloceanspaces.com/preciselab/blog/img
+
+Replace all img links
+
+```bash
+find src -type f -exec sed -i 's|http://localhost:8484|http://fra1.digitaloceanspaces.com/preciselab/blog/img|g' {} +
+```
