@@ -29,7 +29,7 @@ Po zakończeniu projekt będzie wyglądał następująco:
 
 ![js-es6-1](http://localhost:8484/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
-Lista zadań napisana w czystym JavaScripcie, która zostanie przedstawiona w tym artykule.
+Lista rzeczy do zrobienia napisana w czystym JavaScript, która będzie zaprezentowana w tym artykule.
 
 Możesz zobaczyć cały kod źródłowy pod tym linkiem
 
@@ -71,9 +71,9 @@ Jeśli wszystko działa, powinniśmy zobaczyć coś takiego
 
 ![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
 
-Serwer z aplikacją (po prawej) i z REST API podłączonym do pliku db.json (po lewej)
+Serwer z aplikacją (po prawej) i z REST API połączonym z plikiem db.json (po lewej)
 
-Strona powinna być dostępna pod adresem `localhost:8080`
+Strona internetowa powinna być dostępna pod adresem `localhost:8080`
 
 ### Struktura projektu
 

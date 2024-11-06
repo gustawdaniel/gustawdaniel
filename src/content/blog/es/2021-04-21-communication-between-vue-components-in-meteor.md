@@ -473,7 +473,7 @@ Hemos presentado algunos métodos de comunicación entre componentes. Algunos de
 
 Todos los métodos presentados en este artículo con componentes de entrada y salida.
 
-Si deseas añadir un método que olvidé o ves otra cosa que mejorar, no dudes en mencionarlo en los comentarios.
+Si deseas agregar un método que olvidé o ves algo más para mejorar, no dudes en mencionarlo en los comentarios.
 
 Fuentes:
 
@@ -493,6 +493,6 @@ Vue Meteor Tracker
 
 > [https://github.com/meteor-vue/vue-meteor-tracker](https://github.com/meteor-vue/vue-meteor-tracker)
 
-Esta publicación del blog también se publica allí: https://medium.com/@gustaw.daniel/communication-between-vue-components-in-meteor-29006be3dae9
+Esta publicación de blog también se publica allí: https://medium.com/@gustaw.daniel/communication-between-vue-components-in-meteor-29006be3dae9
 
 El repositorio completo con todos estos métodos se puede encontrar allí: https://github.com/gustawdaniel/vue-meteor-components-communication-tutorial

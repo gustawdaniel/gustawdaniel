@@ -71,25 +71,25 @@ El sitio web creado se ve como el siguiente
 
 ![](http://localhost:8484/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
-Es completamente funcional, permite agregar un comentario, guardarlo en json y mostrar una lista de comentarios. Si los usuarios quieren agregar texto, no hackearlo, podría ser el final de nuestra aventura. Pero debíamos asumir que al menos un usuario de un sitio web quiere hackearlo. :)
+Es completamente funcional, permite agregar un comentario, guardarlo en json y mostrar una lista de comentarios. Si los usuarios quieren agregar texto, no hackear, podría ser el final de nuestra aventura. Pero debemos asumir que al menos un usuario de un sitio web quiere hackearlo. :)
 
 ## ¿Cómo hackearlo?
 
-Este flujo de datos - guardado en el servidor y mostrado en el cliente - hace posible un ataque XSS si el texto no se filtra adecuadamente. XSS significa scripting de sitios cruzados y permite a los atacantes inyectar scripts del lado del cliente en páginas web vistas por otros usuarios.
+Este flujo de datos - guardando en el servidor y mostrando en el cliente - hace posible un ataque XSS si el texto no se filtra adecuadamente. XSS significa scripting entre sitios y permite a los atacantes inyectar scripts del lado del cliente en páginas web vistas por otros usuarios.
 
-El código ejecutable anexado es interpretado por el navegador, no por el servidor, por lo que no podemos conquistar el servidor con él, pero podemos intercambiar el comportamiento del cliente. Los beneficios ejemplares para los atacantes son los siguientes:
+El código ejecutable agregado es interpretado por el navegador, no por el servidor, así que no podemos conquistar el servidor con ello, pero podemos cambiar el comportamiento del cliente. Los beneficios ejemplares para los atacantes son los siguientes:
 
-* robar cookies (sesión) - tomando control sobre la sesión (conectada) de la víctima
+* robar cookies (de sesión) - tomar control sobre la (sesión iniciada) de la víctima
 * cambio dinámico del contenido del sitio web
-* habilitar un registrador de teclas en el navegador
+* habilitar un key logger en el navegador
 
-El script puede almacenarse en un servidor o incluirse en el enlace. En nuestro caso, queremos guardar el script en un archivo json escribiendo comentarios. Nos interesa cambiar el contenido del sitio web a "Hackeado por Daniel". En cualquier caso del método de ataque presentado a continuación, el sitio web se verá así:
+El script puede ser almacenado en un servidor o incluido en el enlace. En nuestro caso, queremos guardar el script en un archivo json escribiendo comentarios. Nos interesa cambiar el contenido del sitio web a "Hackeado por Daniel". En cualquier caso del método de ataque presentado a continuación, el sitio web se verá así:
 
 ![](http://localhost:8484/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
 ### Script
 
-La forma más sencilla es anexar un script que dinámicamente, después de cargar la página, cambie su contenido al requerido. Intenta agregar un comentario:
+La forma más sencilla es agregar un script que cambie dinámicamente su contenido a lo requerido después de que se cargue sile. Intenta agregar un comentario:
 
 ```html
 <script>document.querySelector('html').innerHTML="Hacked By Daniel"</script>
@@ -126,10 +126,10 @@ Para defenderse de este ataque necesitamos filtrar los comentarios de nuestros u
 +      $comments[] = htmlspecialchars($_POST["comment"]);
 ```
 
-Después de aplicar este texto fijo, el texto escrito en el formulario se mostrará en las listas de comentarios literalmente igual al texto tipeado por el usuario, y no se interpretará como etiqueta HTML.
+Después de aplicar este texto fijo, el texto escrito en el formulario se mostrará en las listas de comentarios exactamente igual al texto escrito por el usuario, y no se interpretará como etiqueta HTML.
 
 ![](http://localhost:8484/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Resumen
 
-Mostramos ejemplos simples de ataques XSS. Si usas un marco como Symfony, entonces el marco tiene mecanismos de seguridad integrados en su estructura, pero debes recordar la función `htmlspecialchars` si escribes en PHP puro.
+Mostramos ejemplos simples de ataques XSS. Si usas un framework como Symfony, entonces el framework tiene un mecanismo de seguridad integrado en su estructura, pero debes recordar la función `htmlspecialchars` si escribes en PHP puro.

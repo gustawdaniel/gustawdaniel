@@ -25,7 +25,7 @@ Composición del código fuente:
 JavaScript 49.5% CSS 40.3% HTML 10.2%
 ```
 
-Después de terminar, el proyecto se verá de la siguiente manera:
+Después de terminar el proyecto, se verá de la siguiente manera:
 
 ![js-es6-1](http://localhost:8484/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
@@ -37,7 +37,7 @@ Puedes ver todo el código fuente en el siguiente enlace
 
 ### Instalación
 
-Si deseas probar el código en tu computadora sin reescribirlo, la forma más sencilla es descargar la versión con el comando
+Si deseas probar el código en tu computadora sin reescribirlo, la forma más sencilla es descargar la versión mediante el comando
 
 ```bash
 wget -qO- https://github.com/gustawdaniel/simple-todo-app-js-tutorial/archive/1.0.tar.gz | tar xvz
@@ -67,7 +67,7 @@ En la segunda terminal `ctrl+n` configuramos el servidor `REST API` proporcionad
 node node_modules/json-server/lib/bin.js --watch db.json
 ```
 
-Si todo funciona deberíamos ver algo como esto
+Si todo funciona, deberíamos ver algo como esto.
 
 ![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
 

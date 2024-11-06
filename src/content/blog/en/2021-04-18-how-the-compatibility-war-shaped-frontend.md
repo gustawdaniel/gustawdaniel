@@ -7,7 +7,7 @@ excerpt: We describe how deprecation and maintaining backward compatibility have
 publishDate: 2021-04-22 18:51:16+00:00
 slug: en/how-the-compatibility-war-shaped-frontend
 tags:
-  - compatibility
+- compatibility
 title: How the war for compatibility shaped the frontend?
 updateDate: 2021-04-2 18:51:16+00:00
 ---

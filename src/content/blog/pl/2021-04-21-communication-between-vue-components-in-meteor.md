@@ -469,7 +469,7 @@ Zalety:
 
 Przedstawiliśmy kilka metod komunikacji między komponentami. Niektóre z nich są uniwersalne, dwie ostatnie metody są typowe dla integracji `vue-meteor`. Nie ma najlepszej lub gorszej metody. Stworzysz najlepszy kod, jeśli będziesz znał i rozumiał wszystkie metody i wybierzesz odpowiednią w zależności od swoich potrzeb.
 
-![vue-meteor-2-podsumowanie](http://localhost:8484/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
+![vue-meteor-2-summary](http://localhost:8484/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
 
 Wszystkie metody przedstawione w tym artykule z komponentami wejściowymi i wyjściowymi.
 
