@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "set-remote-images": "find src -type f -exec sed -i 's|http://localhost:8484|http://fra1.digitaloceanspaces.com/preciselab/blog/img|g' {} +",
+    "set-remote-images": "find src -type f -exec sed -i 's|http://localhost:8484|https://preciselab.fra1.digitaloceanspaces.com/blog/img|g' {} +",
     "build": "rm -rf public/pagefind && astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
     "preview": "astro preview",
     "astro": "astro"
