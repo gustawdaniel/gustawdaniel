@@ -126,5 +126,3 @@ And if you look into HTTP requests that are sent back and forth:
 ![](http://localhost:8484/a79b67c9-8fe9-45d9-8e98-4166d0281d01.avif)
 
 That's pretty much it! Thanks for reading folks!
-
-If You love what we do, feel free to reach me at [krzysztof.dziardziel@preciselab.io](mailto:krzysztof.dziardziel@preciselab.io).
