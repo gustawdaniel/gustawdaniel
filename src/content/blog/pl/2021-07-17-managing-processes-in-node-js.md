@@ -2,20 +2,16 @@
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
 coverImage: http://localhost:8484/d8bce439-7a26-4a7d-aef8-4308277995db.avif
-updateDate: 2021-07-17 13:57:27+00:00
-description: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać
-  ich ilością i prowadzić z nimi dwustronną komunikację.
-excerpt: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać
-  ich ilością i prowadzić z nimi dwustronną komunikację.
+description: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać ich ilością i prowadzić z nimi dwustronną komunikację.
+excerpt: Naucz się jak tworzyć i zabijać podprocesy w Node JS, dynamicznie zarządzać ich ilością i prowadzić z nimi dwustronną komunikację.
 publishDate: 2021-07-17 13:53:19+00:00
 slug: pl/sterowanie-obciazeniem-procesora-w-node-js
 tags:
 - nodejs
 - cpu
 title: Sterowanie procesami w Node JS
+updateDate: 2021-07-17 13:57:27+00:00
 ---
-
-
 
 W tym wpisie nauczymy się jak tworzyć i kończyć `podprocesy` w Node JS oraz jak przesyłać między nimi dane.
 
@@ -127,7 +123,6 @@ Aby je usunąć, przed zamknięciem naszego skryptu piszemy kod:
         process.exit();
     } else {
 ```
-
 
 W przypadku wybrania innych przycisków niż `c` w obecności `ctrl` odczytamy wartość liczbową tego przycisku i na jej
 podstawie dodamy lub zabijemy odpowiednią liczbę procesów aby ich ilość równa była tej liczbie.
