@@ -8,7 +8,7 @@ interface Props {
 const {title, description, ogImage} = Astro.props as Props;
 console.log(Astro.url.pathname, ogImage)
 const permalink = new URL(Astro.url.pathname, Astro.site).href;
-const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avif';
+const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avie';
 ---
 
 <head>
