@@ -170,5 +170,5 @@ http://fra1.digitaloceanspaces.com/preciselab/blog/img
 Replace all img links
 
 ```bash
-find src -type f -exec sed -i 's|http://localhost:8484|http://fra1.digitaloceanspaces.com/preciselab/blog/img|g' {} +
+find src -type f -exec sed -i 's|http://localhost:8484|http://preciselab.fra1.digitaloceanspaces.com/blog/img|g' {} +
 ```
