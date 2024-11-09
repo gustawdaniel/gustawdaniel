@@ -24,6 +24,8 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
     return [...shuffle<CollectionEntry<"blog">>(collection)]
         .filter((_, i) => i < 3);
 }
+
+// import {Picture} from 'astro:assets';
 ---
 
 <BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImage={frontmatter.coverImage}>
