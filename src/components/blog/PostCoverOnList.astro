@@ -11,17 +11,17 @@ const {data, type} = Astro.props;
 ---
 
 <div class="relative w-full">
-    <!--<Picture src={data.coverImage}-->
-    <!--         widths={type === 'large' ? [480, 768, 1024, 1440, 1920] : [480, 768]}-->
-    <!--         formats={['avif']}-->
-    <!--         alt={data.title}-->
-    <!--         inferSize={true}-->
-    <!--         class:list={['aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1]', type === 'large' ? 'lg:aspect-[2/1]' : 'lg:aspect-[3/2]']}-->
-    <!--&gt;</Picture>-->
+    <Picture src={data.coverImage}
+             widths={type === 'large' ? [480, 768, 1024, 1440, 1920] : [480, 768]}
+             formats={['avif']}
+             alt={data.title}
+             inferSize={true}
+             class:list={['aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1]', type === 'large' ? 'lg:aspect-[2/1]' : 'lg:aspect-[3/2]']}
+    ></Picture>
 
-    <img src={data.coverImage}
-         alt={data.title}
-         class:list={['aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1]', type === 'large' ? 'lg:aspect-[2/1]' : 'lg:aspect-[3/2]']}
-    >
+    <!--<img src={data.coverImage}-->
+    <!--     alt={data.title}-->
+    <!--     class:list={['aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1]', type === 'large' ? 'lg:aspect-[2/1]' : 'lg:aspect-[3/2]']}-->
+    <!--&gt;-->
     <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
 </div>

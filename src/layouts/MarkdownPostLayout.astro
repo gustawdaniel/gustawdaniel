@@ -25,7 +25,7 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
         .filter((_, i) => i < 3);
 }
 
-// import {Picture} from 'astro:assets';
+import {Picture} from 'astro:assets';
 ---
 
 <BaseLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImage={frontmatter.coverImage}>
@@ -53,17 +53,17 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
 
         </header>
 
-        <!--<Picture src={frontmatter.coverImage}-->
-        <!--         widths={[480, 768, 1024, 1440, 1920]}-->
-        <!--         formats={['avif']}-->
-        <!--         alt={frontmatter.title} inferSize={true}-->
-        <!--         class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}-->
-        <!--&gt;</Picture>-->
+        <Picture src={frontmatter.coverImage}
+                 widths={[480, 768, 1024, 1440, 1920]}
+                 formats={['avif']}
+                 alt={frontmatter.title} inferSize={true}
+                 class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
+        ></Picture>
 
-        <img src={frontmatter.coverImage}
-             alt={frontmatter.title}
-             class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
-        />
+        <!--<img src={frontmatter.coverImage}-->
+        <!--     alt={frontmatter.title}-->
+        <!--     class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}-->
+        <!--/>-->
 
         <section class="prose lg:prose-xl m-auto dark:prose-invert">
 
