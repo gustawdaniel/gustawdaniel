@@ -25,7 +25,7 @@ You can find detailed instruction for digital ocean here: https://docs.digitaloc
 
 Generally you have to visit https://cloud.digitalocean.com/account/api/spaces to get Access and Secret key. Rest can be filled as following.:
 
-```
+```yaml
 Access Key: 🍄🍄🍄🍄🍄🍄🍄🍄🍄
 Secret Key: 🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
 Default Region: fra1
@@ -40,14 +40,14 @@ HTTP Proxy server port: 0
 
 ## Check if it works
 
-````
+````bash
 $ s3cmd ls
 2022-07-29 21:37  s3://preciselab
 ````
 
 and
 
-```
+```bash
 $ s3cmd ls s3://preciselab
 DIR  s3://preciselab/blog/
 ```
@@ -62,7 +62,7 @@ s3cmd put --acl-public image.jpg s3://preciselab/blog/img
 
 Or just put all directory
 
-```
+```bash
 $ s3cmd put --acl-public src/assets/images/* s3://preciselab/blog/img/ 
 
 upload: 'src/assets/images/0062c4cc-438a-4837-b025-9a3bde260681.avif' -> 's3://preciselab/blog/img/0062c4cc-438a-4837-b025-9a3bde260681.avif'  [1 of 503]
@@ -73,7 +73,7 @@ Public URL of the object is: http://fra1.digitaloceanspaces.com/preciselab/blog/
 
 Much better option is `sync` that copying only new/changed files:
 
-```
+```bash
 s3cmd sync --acl-public src/assets/images s3://preciselab/blog/img/ 
 ```
 
@@ -81,14 +81,14 @@ s3cmd sync --acl-public src/assets/images s3://preciselab/blog/img/
 
 Now you can check if downloading by `curl` works:
 
-```
+```bash
 curl -sL https://fra1.digitaloceanspaces.com/preciselab/blog/img/0062c4cc-438a-4837-b025-9a3bde260681.avif -o image.avif
 feh image.avif 
 ```
 
 but you can also download by `s3cmd`:
 
-```
+```bash
 s3cmd get s3://preciselab/blog/img/0062c4cc-438a-4837-b025-9a3bde260681.avif
 feh 0062c4cc-438a-4837-b025-9a3bde260681.avif
 ```

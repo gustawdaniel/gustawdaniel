@@ -12,11 +12,8 @@ import remarkMath from "remark-math";
 export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
-  build: {
-    format: "file",
-  },
   image: {
-    domains: ['ucarecdn.com']
+    domains: ['ucarecdn.com', 'preciselab.fra1.digitaloceanspaces.com']
   },
   i18n: {
     defaultLocale,
