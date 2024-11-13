@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host 0.0.0.0",
     "start": "astro dev",
     "set-remote-images": "find src -type f -exec sed -i 's|http://localhost:8484|https://preciselab.fra1.digitaloceanspaces.com/blog/img|g' {} +",
     "set-local-images": "find src -type f -exec sed -i 's|https://preciselab.fra1.digitaloceanspaces.com/blog/img|http://localhost:8484|g' {} +",
