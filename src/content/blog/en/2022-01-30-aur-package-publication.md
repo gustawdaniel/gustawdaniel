@@ -139,3 +139,5 @@ That's all. Our update is now publicly available.
 * finally, you push the changes to master
 
 If anyone from you will be uploading packages to AUR and encounters any problems - feel free to ask, I’ll be happy to help.
+
+Source: https://wiki.archlinux.org/title/AUR_submission_guidelines
