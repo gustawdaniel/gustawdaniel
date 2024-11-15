@@ -3,6 +3,7 @@ import {useTranslations} from "../../i18n/utils";
 const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
 
 import {getRelativeLocaleUrl} from 'astro:i18n';
+const env = process.env.NODE_ENV
 ---
 
 <footer class="bg-white dark:bg-slate-900">
@@ -106,7 +107,9 @@ import {getRelativeLocaleUrl} from 'astro:i18n';
             </a>
 
         </div>
-        <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; <span
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500 flex
+        justify-center  flex-wrap">&copy; <span
                 x-text="new Date().getFullYear()"></span> Daniel Gustaw. All rights reserved.</p>
+        <p class="mt-10 text-center text-xs leading-5 text-gray-500">{Astro.url.hostname} | {Astro.site?.hostname} | {env}</p>
     </div>
 </footer>
