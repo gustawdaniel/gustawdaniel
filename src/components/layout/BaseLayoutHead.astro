@@ -38,7 +38,7 @@ const isProduction = process.env.NODE_ENV === 'production' && Astro.url.hostname
     <meta property="twitter:description" content={description}/>
     <meta property="twitter:image" content={ogImageURL}/>
 
-    {isProduction ?? <script defer src="https://cloud.umami.is/script.js" data-website-id="5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c"></script>}
+    {isProduction && <script defer src="https://cloud.umami.is/script.js" data-website-id="5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c"></script>}
 
     <!-- AMP -->
     <!--<link rel="canonical" href={permalink}>-->
