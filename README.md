@@ -41,6 +41,11 @@ https://dash.cloudflare.com/416275d8b658f8f343bf49806950ad25/web-analytics/overv
 
 https://cloud.umami.is/settings/websites/5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c
 
+## Search
+
+https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Agustawdaniel.com&breakdown=page
+
+
 ## Images
 
 Images: https://cloud.digitalocean.com/spaces/preciselab?path=blog%2Fimg%2F&i=d27b97
@@ -73,6 +78,7 @@ TODO:
 - [ ] separation on mobile between next articles
 - [ ] articles recommendations engine using vector db
 - [ ] dark mode colors are awful
+- [ ] fix Core Web Vitals https://dash.cloudflare.com/416275d8b658f8f343bf49806950ad25/web-analytics/overview/web-vitals?siteTag~in=deea757b9ff2486188009e891c56f064
 
 Daniel Homepage Review Report (v2)
 
