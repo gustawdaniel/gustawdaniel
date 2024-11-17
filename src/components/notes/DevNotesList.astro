@@ -11,7 +11,7 @@ import {computeMarkdownStatistics} from "../../helpers/computeMarkdownStatistics
 
 const locale = Astro.currentLocale ?? 'en';
 
-const enhancedDevNotes = allDevNotes.map(note => {
+const enhancedDevNotes = allDevNotes.reverse().map(note => {
     return {
         ...note,
         markdownStatistics: computeMarkdownStatistics(note.body),

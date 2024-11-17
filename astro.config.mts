@@ -34,7 +34,8 @@ export default defineConfig({
       // Alternatively, provide multiple themes
       // See note below for using dual light/dark themes
       themes: {
-        light: 'snazzy-light',
+        light: 'tokyo-night',
+        // light: 'snazzy-light',
         // 'github-light',
         dark: 'dracula'
       },

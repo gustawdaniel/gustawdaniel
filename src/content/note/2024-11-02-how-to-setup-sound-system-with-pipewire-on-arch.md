@@ -71,7 +71,7 @@ yay -S pavucontrol-qt
 
 Run `pavucontrol-qt`
 
-```
+```bash
 pavucontrol-qt
 ```
 

@@ -1,34 +1,52 @@
 ---
 import TerminalWasm from "./TerminalWasm.astro";
 import MatrixWordsCloud from "./MatrixWordsCloud.astro";
-import {useTranslations} from "../../../i18n/utils";
+import { useTranslations } from "../../../i18n/utils";
 
 const locale = (Astro.currentLocale ?? 'en') as 'en' | 'pl' | 'es';
 ---
 
+<div x-data="{
+        isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    }"
+     class="relative bg-white dark:bg-slate-900">
 
-<div class="relative bg-white dark:bg-slate-900">
     <div class="lg:absolute lg:inset-0 lg:left-1/2">
         <div class="h-64 w-full bg-black object-cover sm:h-80 lg:absolute lg:h-full">
             <MatrixWordsCloud />
         </div>
     </div>
+
     <div class="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
         <div class="px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
                     {useTranslations(locale)('contact.header')}
                 </h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
+
+                <!-- Show this paragraph only on desktop -->
+                <p x-show="!isMobile" class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
                     {useTranslations(locale)('contact.text')}
                 </p>
             </div>
 
             <div class="mt-10">
-                <TerminalWasm/>
+                <!-- Show TerminalWasm component on desktop, and <pre> on mobile -->
+                <template x-if="!isMobile">
+                    <TerminalWasm />
+                </template>
+
+                <div class="prose block">
+                    <p>Email: <a href="mailto:gustaw.daniel@gmail.com">gustaw.daniel@gmail.com</a></p>
+
+                    <p>Meet: <a href="https://calendly.com/gustaw-daniel">https://calendly.com/gustaw-daniel</a></p>
+
+                    <p>Telegram: <a href="https://t.me/gustawdaniel">@gustawdaniel</a></p>
+
+                    <p>Wire: <a href="https://account.wire.com/user-profile/?id=10a1e13f-8d13-487e-a269-b2ad334121d4">@gustawdaniel</a></p>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
-
-

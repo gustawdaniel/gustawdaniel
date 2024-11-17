@@ -34,11 +34,11 @@ Możliwe, że niektóre z nich są ci znane, ale mam nadzieję, że niektóre z 
 
 ![](http://localhost:8484/98e9fea6-990b-4122-bf8d-534cd0124cf5.avif)
 
-## Operator koalescencji nulli ?? \[ bardziej ścisły || \]
+## Operator koalescencji ?? \[bardziej ścisły || \]
 
-Operator koalescencji nulli (`??`) w JavaScript ES2020 jest operatorem logicznym, który zwraca operand po prawej stronie, gdy operand po lewej stronie jest `null` lub `undefined`, a w przeciwnym razie zwraca operand po lewej stronie.
+Operator koalescencji (`??`) w JavaScript ES2020 jest operatorem logicznym, który zwraca operand po prawej stronie, gdy operand po lewej stronie jest `null` lub `undefined`, a w przeciwnym razie zwraca operand po lewej stronie.
 
-Oto przykład, jak operator koalescencji nulli może być używany w JavaScript
+Oto przykład, jak operator koalescencji może być używany w JavaScript
 
 ```javascript
 let name = userName ?? 'default';
@@ -46,9 +46,9 @@ let name = userName ?? 'default';
 
 W tym przykładzie, jeśli `userName` jest `null` lub `undefined`, wartość `name` będzie ustawiona na `'default'`. Jeśli `userName` ma wartość prawdziwą, wartość `name` zostanie ustawiona na tę wartość.
 
-Operator koalescencji nulli różni się od wcześniej zastosowanych technik, takich jak operator OR logiczny (`||`), w tym, że operator OR logiczny zwraca operand po prawej stronie, gdy operand po lewej stronie jest fałszywy, co obejmuje nie tylko `null` i `undefined`, ale także wartości takie jak `0`, `''` i `false`.
+Operator koalescencji różni się od wcześniej zastosowanych technik, takich jak operator OR logiczny (`||`), w tym, że operator OR logiczny zwraca operand po prawej stronie, gdy operand po lewej stronie jest fałszywy, co obejmuje nie tylko `null` i `undefined`, ale także wartości takie jak `0`, `''` i `false`.
 
-Oto przykład, który ilustruje różnicę między operatorem koalescencji nulli a operatorem OR logicznym:
+Oto przykład, który ilustruje różnicę między operatorem koalescencji a operatorem OR logicznym:
 
 ```javascript
 let name = userName ?? 'default'; // using the nullish coalescing operator
@@ -57,11 +57,11 @@ let name = userName || 'default'; // using the logical OR operator
 
 W pierwszym przykładzie, jeśli `userName` jest `null` lub `undefined`, wartość `name` zostanie ustawiona na `'default'`. W drugim przykładzie, jeśli `userName` jest fałszywy, wartość `name` również zostanie ustawiona na `'default'`.
 
-Podsumowując, operator łączenia nulli jest bardziej surowym i specyficznym sposobem obsługi wartości domyślnych w JavaScript w porównaniu do operatora logicznego OR.
+Podsumowując, operator koalescencji jest bardziej precyzyjnym i specyficznym sposobem obsługi wartości domyślnych w JavaScript w porównaniu do operatora logicznego OR.
 
 ![](http://localhost:8484/0cd67446-74e2-4230-ad86-43ac76a47b6c.avif)
 
-## Opcjonalne łańcuchowanie .? \[ mniej surowy dostęp do właściwości \]
+## Opcjonalne łańcuchowanie .? \[ mniej restrykcyjny dostęp do właściwości \]
 
 Opcjonalne łańcuchowanie w JavaScript to funkcja wprowadzona w ECMAScript 2020, która pozwala na bezpieczny dostęp do właściwości obiektu, elementu tablicy lub wartości zwracanej przez funkcję oraz unikanie `TypeError` w przypadku dostępu do niezdefiniowanego obiektu lub wartości null. Jest zapisywane za pomocą składni `?.` i może być używane do uzyskiwania dostępu do zagnieżdżonych właściwości obiektu.
 
@@ -97,11 +97,11 @@ console.log(value); // Output: "value"
 
 Główna różnica między opcjonalnym łańcuchowaniem a tym podejściem polega na tym, że opcjonalne łańcuchowanie jest bardziej zwięzłe, czytelne i ekspresyjne. Jest również mniej podatne na błędy, ponieważ eliminuje potrzebę ręcznego sprawdzania wartości `null` i `undefined` na każdym kroku.
 
-## Proksy \[ do metaprogramowania, jak refleksja \]
+## Proksy \[ do meta-programowania jak refleksja \]
 
 Proksy w JavaScript to obiekt, który działa jako pośrednik między docelowym obiektem a kodem, który z nim współdziała. Proksy są używane do przechwytywania i modyfikowania operacji wykonywanych na docelowym obiekcie, takich jak dostęp do właściwości, wywołania metod i przypisania obiektów. Czyni to je potężnym narzędziem do dodawania niestandardowego zachowania do istniejących obiektów, egzekwowania ograniczeń i tworzenia abstrakcji.
 
-Przykładem użycia proksy jest dodanie mechanizmu logowania do obiektu, aby śledzić, kiedy jego właściwości są dostępne. Oto przykład, jak można to zrobić za pomocą proksy:
+Przykładem użycia proxy jest dodanie mechanizmu logowania do obiektu, aby śledzić, kiedy jego właściwości są dostępne. Oto przykład, jak można to zrobić, stosując proxy:
 
 ```javascript
 let target = { name: 'John Doe' };
@@ -121,7 +121,7 @@ console.log(proxy.name); // Output: Accessing property name
 
 W tym przykładzie definiujemy obiekt docelowy oraz obiekt handlera. Obiekt handlera zawiera metodę `get`, która loguje wiadomość i zwraca wartość właściwości obiektu docelowego. Na koniec tworzymy nowy obiekt proxy, przekazując obiekt docelowy i handler do konstruktora `Proxy`. Gdy uzyskujemy dostęp do właściwości `name` obiektu proxy, wywoływana jest metoda `get` handlera, która loguje wiadomość i zwraca wartość właściwości obiektu docelowego.
 
-To jest przykład refleksji - funkcji, która pozwala programowi na inspekcję i manipulację swoją własną strukturą i zachowaniem w czasie wykonywania. Obejmuje to introspekcję obiektów, klas i metod, a także modyfikację ich właściwości i zachowania.
+To jest przykład refleksji, czyli funkcji, która pozwala programowi na inspekcję i manipulację swoją własną strukturą i zachowaniem w czasie wykonywania. Obejmuje to introspekcję obiektów, klas i metod, a także modyfikację ich właściwości i zachowania.
 
 W naszym przykładzie jest `console.log`, ale możesz użyć dowolnej logiki w pułapkach get lub set. Na przykład powiadamianie innych części programu o zmianie lub rejestrowanie historii zmian. Proxy jest szeroko używane w implementacji reaktywności w frameworkach frontendowych, takich jak Vue.
 
@@ -155,7 +155,7 @@ var handler = {
 }
 ```
 
-Proxysy zasługują na osobny artykuł, ale mam nadzieję, że poczujesz się zainspirowany, aby zgłębić je bardziej.
+Proxy zasługują na osobny artykuł, ale mam nadzieję, że poczujesz się zainspirowany, aby zgłębić je bardziej.
 
 ![](http://localhost:8484/d5ed1e3f-839f-45b5-8042-0aa0d73a2daa.avif)
 
@@ -163,7 +163,7 @@ Proxysy zasługują na osobny artykuł, ale mam nadzieję, że poczujesz się za
 
 Prywatne pola w JavaScript to funkcja wprowadzona w ECMAScript 2020, która pozwala na definiowanie właściwości obiektu, które nie są dostępne z zewnątrz obiektu. Są one zapisywane za pomocą symbolu `#` przed nazwą właściwości i są dostępne tylko w metodach obiektu.
 
-Prywatne człony nie były natywne dla tego języka przed wprowadzeniem tej składni. W dziedziczeniu prototypowym, ich zachowanie można emulować za pomocą obiektów [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap#emulating_private_members) lub [zamknięć](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#emulating_private_methods_with_closures), ale nie mogą się one równać składni `#` pod względem ergonomii.
+Prywatne człony nie były natywne dla tego języka przed wprowadzeniem tej składni. W dziedziczeniu prototypowym ich zachowanie można emulować za pomocą obiektów [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap#emulating_private_members) lub [zamknięć](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#emulating_private_methods_with_closures), ale nie mogą się one równać składni `#` pod względem ergonomii.
 
 Oto przykład, jak prywatne pola mogą być używane w JavaScript:
 
@@ -189,7 +189,7 @@ W tym przykładzie definiujemy klasę `Person` z prywatnym polem `#name`. Pole `
 
 Prywatne pola zapewniają sposób kapsułkowania wewnętrznego stanu obiektu i zapobiegają jego modyfikacji lub bezpośredniemu dostępowi. Ułatwia to utrzymanie integralności danych obiektu i egzekwowanie jego wewnętrznych invariatów.
 
-To świetnie, że ta funkcja została wprowadzona, ale myślę, że wciąż wydaje się być mało znana. Bardziej szczegółowe specyfikacje poniżej:
+To świetnie, że ta funkcja została wprowadzona, ale myślę, że wciąż wydaje się mało znana. Bardziej szczegółowe specyfikacje poniżej:
 
 [Prywatne cechy klas - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
@@ -228,7 +228,7 @@ Metoda `Promise.allSettled()` jest przydatna, gdy chcesz poczekać na zakończen
 
 BigInt to nowy typ prymitywny w JavaScript, który został wprowadzony w ECMAScript 2020. Reprezentuje on dowolnie dużą liczbę całkowitą i pozwala na wykonywanie operacji arytmetycznych z wartościami, które mogą być większe niż maksymalna bezpieczna wartość całkowita typu `Number`, która wynosi `2^53 - 1`.
 
-Oto przykład, jak BigInt może być używany w JavaScript:
+Oto przykład, jak `BigInt` może być używany w JavaScript:
 
 ```javascript
 const a = BigInt(9007199254740992);
@@ -236,7 +236,7 @@ const b = BigInt(1);
 console.log(a + b); // Output: 9007199254740993n
 ```
 
-W tym przykładzie tworzymy dwie wartości BigInt i wykonujemy operację dodawania na nich. Wynik to wartość BigInt, która dokładnie reprezentuje rezultat obliczenia, nawet jeśli przekracza maksymalną bezpieczną wartość całkowitą `Number`.
+W tym przykładzie tworzymy dwie wartości BigInt i wykonujemy operację dodawania na nich. Wynik to wartość `BigInt`, która dokładnie reprezentuje rezultat obliczenia, nawet jeśli przekracza maksymalną bezpieczną wartość całkowitą `Number`.
 
 Dla porównania, dodając jeden do tak dużego `Number`, otrzymasz błędny wynik.
 
@@ -244,7 +244,7 @@ Dla porównania, dodając jeden do tak dużego `Number`, otrzymasz błędny wyni
 console.log(9007199254740992 + 1); // 9007199254740992
 ```
 
-Inna różnica polega na tym, że wartości BigInt obsługują bardziej ograniczony zestaw operacji arytmetycznych i porównawczych niż wartości `Number`. Na przykład wartości BigInt nie obsługują operacji takich jak dzielenie przez zero, NaN czy Infinity.
+Inna różnica polega na tym, że wartości `BigInt` obsługują bardziej ograniczony zestaw operacji arytmetycznych i porównawczych niż wartości `Number`. Na przykład wartości BigInt nie obsługują operacji takich jak dzielenie przez zero, `NaN` czy Infinity.
 
 ```javascript
 BigInt(1) / BigInt(0); // Uncaught RangeError: Division by zero
@@ -490,7 +490,7 @@ x ??= 1;
 console.log(x); // 2
 ```
 
-W pierwszym przypadku, x otrzymuje wartość 1, ponieważ null ?? 1 to 1. W drugim przypadku, x otrzymuje wartość 2, ponieważ 2 ?? 1 to 2. Operator ?? jest podobny do operatora ||, ale ocenia wyrażenie po prawej stronie tylko wtedy, gdy wyrażenie po lewej stronie jest null lub undefined.
+W pierwszym przypadku x otrzymuje wartość 1, ponieważ null ?? 1 to 1. W drugim przypadku x otrzymuje wartość 2, ponieważ 2 ?? 1 to 2. Operator ?? jest podobny do operatora ||, ale ocenia wyrażenie po prawej stronie tylko wtedy, gdy wyrażenie po lewej stronie jest null lub undefined.
 
 ![](http://localhost:8484/7fa48648-26df-4d5a-8137-72a13b00933a.avif)
 

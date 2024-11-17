@@ -9,6 +9,8 @@ const {title, description, ogImage} = Astro.props as Props;
 console.log(Astro.url.pathname, ogImage)
 const permalink = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc16a9978f2f.avie';
+
+const isProduction = process.env.NODE_ENV === 'production' && Astro.url.hostname === Astro.site?.hostname;
 ---
 
 <head>
@@ -36,8 +38,7 @@ const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc1
     <meta property="twitter:description" content={description}/>
     <meta property="twitter:image" content={ogImageURL}/>
 
-    <!--<script defer src="https://cloud.umami.is/script.js"-->
-    <!--        data-website-id="5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c"></script>-->
+    {isProduction && <script defer src="https://cloud.umami.is/script.js" data-website-id="5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c"></script>}
 
     <!-- AMP -->
     <!--<link rel="canonical" href={permalink}>-->
@@ -64,8 +65,8 @@ const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc1
             crossorigin="anonymous"
     />
 
-    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <!-- Sitemap / RSS   <link rel="sitemap" href={new URL("sitemap.xml", Astro.site)} />
+    <!--<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>-->
+    <!-- Sitemap / RSS   <link rel="sitemap" href={new URL("sitemap.xml", Astro.site)} />-->
     <link
             rel="alternate"
             type="application/rss+xml"
@@ -76,3 +77,5 @@ const ogImageURL = ogImage ?? 'http://localhost:8484/411d6d7d-6a1e-4096-9a88-fc1
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <script is:inline src="/pagefind/pagefind-ui.js"></script>
 </head>
+
+

@@ -21,7 +21,7 @@ import BaseFooter from "../components/footer/BaseFooter.astro";
 ---
 <!doctype html>
 <html lang={locale}
-      x-data="{ darkMode: localStorage.getItem('theme') || (localStorage.setItem('theme', 'system') || 'system')}"
+      x-data="{ darkMode: localStorage.getItem('theme') || (localStorage.setItem('theme', 'light') || 'light')}"
       x-init="$watch('darkMode', val => localStorage.setItem('theme', val))"
       x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
 >
