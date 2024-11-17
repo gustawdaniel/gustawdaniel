@@ -60,3 +60,9 @@ And confirm by
 $ docker compose version
 Docker Compose version 2.29.1
 ```
+
+Add buildx plugin
+
+```bash
+yay -S docker-buildx
+```
