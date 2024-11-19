@@ -134,9 +134,9 @@ async function getNotes(): Promise<SitemapItem[]> {
         const lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" ${path.resolve()}/src/content/note/${note.id}`).toString();
 
         return {
-            loc: `${siteUrl}/notes/${note.slug}`,
+            loc: `${siteUrl}/notes/${note.slug.substring(11)}`,
             lastMod: lastModified,
-            alternateLinks: [{hreflang: 'en', href: `${siteUrl}/notes/${note.slug}`}],
+            alternateLinks: [{hreflang: 'en', href: `${siteUrl}/notes/${note.slug.substring(11)}`}],
         }
     })
 }

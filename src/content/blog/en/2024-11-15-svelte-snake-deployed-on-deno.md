@@ -1,4 +1,4 @@
-_---
+---
 author: Daniel Gustaw_
 canonicalName: svelte-snake-deployed-on-deno
 coverImage: https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/
