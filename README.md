@@ -195,4 +195,6 @@ Tools:
 - https://app.ahrefs.com/dashboard
 - screaming frog
 
+Astro seo:
 
+https://destiner.io/blog/post/astro-seo/
