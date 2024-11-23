@@ -305,7 +305,7 @@ Czas wykonania: 1min 15sec
 
 Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
 
-Jednak pamiętajmy, że kolejne 4 znaki można zaoszczędzić na zmiane konwencji zapisu dat z `YYYY-MM-DD` na `YYMMDD`, a pewnie jeszcze więcej kodując daty w formacie o wyższej entropii niż używany przez ludzi na codzień.
+Jednak pamiętajmy, że kolejne 4 znaki można zaoszczędzić na zmianie konwencji zapisu dat z `YYYY-MM-DD` na `YYMMDD`, a pewnie jeszcze więcej kodując daty w formacie o wyższej entropii niż używany przez ludzi na codzień.
 
 Znacznie więcej, bo 15 znaków na linię oszczędziliśmy na decyzji, że daty będą tu kluczami.
 
