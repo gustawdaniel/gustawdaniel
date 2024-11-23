@@ -62,13 +62,13 @@ W oknie `Ubigraph` powinieneś zobaczyć wizualizację dynamicznej sieci korelac
 
 W tym rozdziale omówione są wszystkie kroki instalacji poza instalacją zależności.
 
-Zaczniemy od pobrania danych z archiwum domu maklerskiego [bossa](http://bossa.pl). W ich [publicznym archiwum](http://bossa.pl/pub/) znajdują się pliki z notowaniami w formacie `mst` (odmiana `csv`) spakowane w archiwa `zip`. Wszystkie adresy interesujących nas plików zaczynają się od `http://bossa.pl/pub/`, ale mają różne końcówki. Zapisałem je w pliku konfiguracyjnym.
+Zaczniemy od pobrania danych z archiwum domu maklerskiego [bossa](https://bossa.pl). W ich [publicznym archiwum](https://bossa.pl/pub/) znajdują się pliki z notowaniami w formacie `mst` (odmiana `csv`) spakowane w archiwa `zip`. Wszystkie adresy interesujących nas plików zaczynają się od `http://bossa.pl/pub/`, ale mają różne końcówki. Zapisałem je w pliku konfiguracyjnym.
 
 > config/wget\_data\_config.json
 
 ```json
 {
-  "uri1": "http://bossa.pl/pub/",
+  "uri1": "https://bossa.pl/pub/",
   "data": [
     {
       "uri2": "metastock/mstock/mstall.zip"
@@ -623,6 +623,6 @@ Jest to niestety poważny problem całej branży analizy danych. W wielu przypad
 
 Jednak sytuacja się polepsza. Coraz cześciej spotykane `API`, oraz wzrost popularności formatu `json` który wypiera powoli `xml` i `csv` są krokami w dobrym kierunku i ułatwiają pracę z danymi.
 
-![popularność json, xml, csv](http://i.imgur.com/OyhoigO.png)
+![popularność json, xml, csv](https://i.imgur.com/OyhoigO.png)
 
 Jak zawsze zachęcam do komentowania, wyrażania wątpliwości i zadawania pytań.

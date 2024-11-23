@@ -59,7 +59,7 @@ y en el archivo colocamos una línea
 
 Ahora podemos disfrutar de un candado verde en nuestro sitio.
 
-![](http://i.imgur.com/6LaRspC.png)
+![](https://i.imgur.com/6LaRspC.png)
 
 ## Fuentes:
 

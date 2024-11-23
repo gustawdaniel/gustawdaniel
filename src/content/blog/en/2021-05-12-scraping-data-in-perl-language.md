@@ -105,7 +105,7 @@ For data retrieval, the most important information is the `url` address from whi
 
 ```perl
 sub source { # arg index
-    return "http://ra.rejestrymedyczne.csioz.gov.pl/_layouts/15/RA/PharmacyDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
+    return "https://ra.rejestrymedyczne.csioz.gov.pl/_layouts/15/RA/PharmacyDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
 }
 ```
 
@@ -146,7 +146,7 @@ package RhfConfig;
 sub new { return bless {limit=>100000,rows=>'.pharmacyDetailsControl_Div.controlContainer'}, shift; }
 
 sub source {
-    return "http://rhf.rejestrymedyczne.csioz.gov.pl/_layouts/15/RHF/WarehouseDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
+    return "https://rhf.rejestrymedyczne.csioz.gov.pl/_layouts/15/RHF/WarehouseDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
 }
 
 sub invalid {
@@ -277,7 +277,7 @@ What it shows, the enormous potential inherent in parallelizing data retrieval o
 
 Example screen of data retrieval:
 
-![](http://i.imgur.com/yAuhj4a.png)
+![](https://i.imgur.com/yAuhj4a.png)
 
 ## Data Analysis
 
@@ -377,7 +377,7 @@ sys	0m0.000s
 
 Screen with a view of processed data
 
-![](http://i.imgur.com/Hs7axWN.png)
+![](https://i.imgur.com/Hs7axWN.png)
 
 ## Summary
 

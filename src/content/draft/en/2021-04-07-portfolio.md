@@ -12,13 +12,13 @@ Quantum hash
 
 Neuro Coach
 
-[http://vncoach.pl/](http://vncoach.pl/)
+[https://vncoach.pl/](https://vncoach.pl/)
 
 ![](http://localhost:8484/cd52a2d3-efb8-4f88-9348-552618e6d6b6.avif)
 
 Interview Record
 
-[http://interviewrecord.com/](http://interviewrecord.com/)
+[https://interviewrecord.com/](https://interviewrecord.com/)
 
 ![](http://localhost:8484/f54e27ac-487a-4880-9155-9c359fd4840c.avif)
 
@@ -28,7 +28,7 @@ Precise Sale
 
 Omnisys
 
-[OMNISYS | System v3](http://v3.omnisys.pl/)
+[OMNISYS | System v3](https://v3.omnisys.pl/)
 
 ![](http://localhost:8484/5ea77d0d-a893-46d0-8833-159da5b1ebb1.avif)
 
@@ -36,13 +36,13 @@ Omnisys
 
 Lotnicy
 
-[Flight Preselection](http://prepilots.pl/)
+[Flight Preselection](https://prepilots.pl/)
 
 ![](http://localhost:8484/d69af643-88ac-42ae-a637-c65d0bdc848e.avif)
 
 Mailing
 
-[http://mailing.preciselab.io/](http://mailing.preciselab.io/)
+[https://mailing.preciselab.io/](https://mailing.preciselab.io/)
 
 ![](http://localhost:8484/9ba694c6-0ff8-49d2-840b-60e87bbc4020.avif)
 

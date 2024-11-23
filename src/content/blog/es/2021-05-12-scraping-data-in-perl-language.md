@@ -105,7 +105,7 @@ Para la recuperación de datos, la información más importante es la dirección
 
 ```perl
 sub source { # arg index
-    return "http://ra.rejestrymedyczne.csioz.gov.pl/_layouts/15/RA/PharmacyDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
+    return "https://ra.rejestrymedyczne.csioz.gov.pl/_layouts/15/RA/PharmacyDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
 }
 ```
 
@@ -146,7 +146,7 @@ package RhfConfig;
 sub new { return bless {limit=>100000,rows=>'.pharmacyDetailsControl_Div.controlContainer'}, shift; }
 
 sub source {
-    return "http://rhf.rejestrymedyczne.csioz.gov.pl/_layouts/15/RHF/WarehouseDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
+    return "https://rhf.rejestrymedyczne.csioz.gov.pl/_layouts/15/RHF/WarehouseDetailsPublic.aspx?id=".$_[1]."&IsDlg=1";
 }
 
 sub invalid {
@@ -277,7 +277,7 @@ Lo que muestra, el enorme potencial inherente a la paralelización de las operac
 
 Ejemplo de pantalla de recuperación de datos:
 
-![](http://i.imgur.com/yAuhj4a.png)
+![](https://i.imgur.com/yAuhj4a.png)
 
 ## Análisis de Datos
 
@@ -377,7 +377,7 @@ sys	0m0.000s
 
 Pantalla con vista de datos procesados
 
-![](http://i.imgur.com/Hs7axWN.png)
+![](https://i.imgur.com/Hs7axWN.png)
 
 ## Resumen
 

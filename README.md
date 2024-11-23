@@ -187,6 +187,12 @@ Raport z przeglądu strony domowej Daniela przed przesiadką z Ghost na Astro.
 
 
 
+Seo roadmap:
 
+https://learningseo.io/
+
+Tools:
+- https://app.ahrefs.com/dashboard
+- screaming frog
 
 

@@ -62,13 +62,13 @@ En la ventana de `Ubigraph`, deberías ver una visualización de la red de corre
 
 Este capítulo discute todos los pasos de instalación excepto la instalación de dependencias.
 
-Comenzaremos descargando datos de la casa de corretaje [bossa](http://bossa.pl). En su [archivo público](http://bossa.pl/pub/), hay archivos con cotizaciones en formato `mst` (una variante de `csv`) empaquetados en archivos `zip`. Todas las direcciones de los archivos que nos interesan comienzan con `http://bossa.pl/pub/`, pero tienen diferentes extensiones. Los he guardado en un archivo de configuración.
+Comenzaremos descargando datos de la casa de corretaje [bossa](https://bossa.pl). En su [archivo público](https://bossa.pl/pub/), hay archivos con cotizaciones en formato `mst` (una variante de `csv`) empaquetados en archivos `zip`. Todas las direcciones de los archivos que nos interesan comienzan con `http://bossa.pl/pub/`, pero tienen diferentes extensiones. Los he guardado en un archivo de configuración.
 
 > config/wget\_data\_config.json
 
 ```json
 {
-  "uri1": "http://bossa.pl/pub/",
+  "uri1": "https://bossa.pl/pub/",
   "data": [
     {
       "uri2": "metastock/mstock/mstall.zip"
@@ -605,6 +605,6 @@ Desafortunadamente, este es un problema grave que enfrenta toda la industria del
 
 Sin embargo, la situación está mejorando. Las `APIs` cada vez son más comunes y la creciente popularidad del formato `json`, que está reemplazando lentamente a `xml` y `csv`, son pasos en la dirección correcta y facilitan el trabajo con datos.
 
-![popularność json, xml, csv](http://i.imgur.com/OyhoigO.png)
+![popularność json, xml, csv](https://i.imgur.com/OyhoigO.png)
 
 Como siempre, te animo a comentar, expresar dudas y hacer preguntas.

@@ -24,7 +24,7 @@ W tym artykule zainstalujemy `Bunsenlabs` na maszynie wirtualnej.
 
 Zaczniemy od pobrania dystrybucji ze strony: [https://www.bunsenlabs.org/installation.html](https://www.bunsenlabs.org/installation.html)
 
-[![instalacja](http://i.imgur.com/v4SafV3.png)](https://www.bunsenlabs.org/installation.html)
+[![instalacja](https://i.imgur.com/v4SafV3.png)](https://www.bunsenlabs.org/installation.html)
 
 Wybieramy `bl-Hydrogen-amd64_20160710.iso` i pobieramy (najlepiej przez klienta sieci Torrent). Cały proces instalacji od włączenia `VirtualBoxa` do skonfigurowania środowiska przedstawiony jest na poniższym video.
 
@@ -243,7 +243,7 @@ sudo make -j `cat /proc/cpuinfo | grep processor | wc -l`
 
 Dawno nie było obrazka więc oto screen z kompilacji:
 
-![komplacja](http://i.imgur.com/5HPC4MC.png)
+![komplacja](https://i.imgur.com/5HPC4MC.png)
 
 Ponieważ kompilowałem zalogowany przez `ssh` na wspomnianego laptopa, oraz maszynę wirtualną jednocześnie, mamy trzy htopy po prawej: pierwszy z 2 procesorami (notebook), środkowy z 1 procesorem (wirtualka), ostatni z 8 (maszyna lokalna na której piszę). Widać, jak mój główny komputer (trzeci htop) przerzuca sobie w tym momencie zadanie kompilacji wykonywane na maszynie wirtualnej między dwoma fizycznymi rdzeniami.
 

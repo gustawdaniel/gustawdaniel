@@ -147,7 +147,7 @@ php bin/console doctrine:schema:update --force
 
 Now everything should work. I mean that after starting the server with the command `php bin/console server:run` and entering the address `127.0.0.1:8000/login` in the browser, we should see something like this:
 
-![domyślny_login_fos_user_bundle](http://i.imgur.com/cCUzKD4.png)
+![domyślny_login_fos_user_bundle](https://i.imgur.com/cCUzKD4.png)
 
 ### Overriding FOSUserBundle Behavior
 
@@ -848,7 +848,7 @@ A lot more code has been added to the file `app/Resources/FOSUserBundle/views/Se
 
 However, this is just the front - a login form and two links in the twig. And since the front speaks more than a thousand words, instead of describing it, I am pasting the screenshot:
 
-![login](http://i.imgur.com/avrKaZd.png)
+![login](https://i.imgur.com/avrKaZd.png)
 
 #### Registration
 
@@ -913,7 +913,7 @@ File: `app/Resources/FOSUserBundle/views/Registration/register_content.html.twig
 
 Effect:
 
-![register](http://i.imgur.com/i9BZooS.png)
+![register](https://i.imgur.com/i9BZooS.png)
 
 If the registration is successful, we congratulate the user with a message from the file: `app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig`
 
@@ -940,7 +940,7 @@ If the registration is successful, we congratulate the user with a message from 
 
 Which presents itself as follows:
 
-![confirm](http://i.imgur.com/8v1SLZ1.png)
+![confirm](https://i.imgur.com/8v1SLZ1.png)
 
 #### Password Reset
 
@@ -975,7 +975,7 @@ If a user with an account forgets their password, they can send it to their emai
 
 The form looks like this:
 
-![reset](http://i.imgur.com/XfCorCh.png)
+![reset](https://i.imgur.com/XfCorCh.png)
 
 The file responsible for what appears on the screen after entering the email is: `app/Resources/FOSUserBundle/views/Resetting/check_email.html.twig` with the content
 
@@ -999,7 +999,7 @@ The file responsible for what appears on the screen after entering the email is:
 
 which looks like this:
 
-![check](http://i.imgur.com/hZy5ERk.png)
+![check](https://i.imgur.com/hZy5ERk.png)
 
 In the email, we have a password reset link. The Twig template is located in the file: `app/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig` and has the code:
 
@@ -1023,7 +1023,7 @@ In the email, we have a password reset link. The Twig template is located in the
 
 Password change form as follows:
 
-![](http://i.imgur.com/N7Ot9V6.png)
+![](https://i.imgur.com/N7Ot9V6.png)
 
 #### User Panel
 
@@ -1048,7 +1048,7 @@ If we, as a logged-in user, select `MyAccount` from the menu, we will be redirec
 
 and it looks like this:
 
-![profile](http://i.imgur.com/jwR8Nlg.png)
+![profile](https://i.imgur.com/jwR8Nlg.png)
 
 The `Edit Places` button will lead to the main functionality of the application. However, to complete what is related to `FOSUserBundle`, we will now show profile editing and password change. Profile editing: `app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig`
 
@@ -1078,7 +1078,7 @@ The `Edit Places` button will lead to the main functionality of the application.
 </div>
 ```
 
-![edit](http://i.imgur.com/QVWyPri.png)
+![edit](https://i.imgur.com/QVWyPri.png)
 
 The entire form comes down to one field - `email`, as it is the only attribute we want to assign to the user.
 
@@ -1102,11 +1102,11 @@ The password change template is in the file `app/Resources/FOSUserBundle/views/C
 </div>
 ```
 
-![password](http://i.imgur.com/cQkQC91.png)
+![password](https://i.imgur.com/cQkQC91.png)
 
 These are all the changes I made to adapt `FOSUserBundle` to my requirements. In `app/Resources/FOSUserBundle`, there are files that I did not modify, for example, the entire `Group` directory, which is related to interactions between users, but this functionality is not used by us. I also left the email for password reset, which without graphics looks like this:
 
-![reset](http://i.imgur.com/zksqsDt.png)
+![reset](https://i.imgur.com/zksqsDt.png)
 
 But in the case of email, it is completely permissible.
 
@@ -1407,7 +1407,7 @@ php bin/console doctrine:schema:update --force
 
 Finally, I am attaching a visualization of the database schema.
 
-![database](http://i.imgur.com/jfjLAoV.png)
+![database](https://i.imgur.com/jfjLAoV.png)
 
 ### Server Logic (Controller)
 
@@ -1611,9 +1611,9 @@ This method checks whether it received coordinates or a textual address and, dep
 
 I think this is a good time to show what exactly is being sent back. We will make a request to `ajax_geo_save` with the parameter `debug` to see what the `json` looks like at the output of this method.
 
-![api1](http://i.imgur.com/My3cMbW.png)
+![api1](https://i.imgur.com/My3cMbW.png)
 
-![api2](http://i.imgur.com/88vr0jN.png)
+![api2](https://i.imgur.com/88vr0jN.png)
 
 It is clear that `formatted_address`, `place_id`, and coordinates have a well-defined location here, but other address properties have been packed into a single array `address_components` and are tagged using types that can occur multiple times, but some may also be absent. The last method I will present for processing this array into a format compliant with our data model is `getPlace`.
 
@@ -1684,7 +1684,7 @@ We will extract them in a double loop. By the components of the address and by t
 
 and it looks like this:
 
-![olaces](http://i.imgur.com/7mkjpKI.png)
+![olaces](https://i.imgur.com/7mkjpKI.png)
 
 A more interesting view is the view of places. We placed it in the file `app/Resources/views/places/places.html.twig`
 
@@ -1870,7 +1870,7 @@ The last method is responsible for removing a place from the user's list of plac
 
 Here, unlike when saving, we remove the element from the `places` array and clear the `HTML` corresponding to the place we are removing. Finally, we add a screenshot from an example usage:
 
-![](http://i.imgur.com/YwW9q5l.png)
+![](https://i.imgur.com/YwW9q5l.png)
 
 This is the entire source code. There are no tests here, no DoctrineFixturesBundle, no admin panel, no gulp.
 However, most importantly, there is no room. For this reason, all the mentioned things have been cut out.

@@ -59,7 +59,7 @@ and in the file we place a line
 
 We can now enjoy a green padlock on our site.
 
-![](http://i.imgur.com/6LaRspC.png)
+![](https://i.imgur.com/6LaRspC.png)
 
 ## Sources:
 

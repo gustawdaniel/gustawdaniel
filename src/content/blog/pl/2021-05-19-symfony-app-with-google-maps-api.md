@@ -147,7 +147,7 @@ php bin/console doctrine:schema:update --force
 
 Teraz wszystko powinno działać. Mam na myśli, że po uruchomieniu serwera komendą `php bin/console server:run` i wpisaniu w przeglądarkę adresu `127.0.0.1:8000/login` zobaczymy coś takiego:
 
-![domyślny_login_fos_user_bundle](http://i.imgur.com/cCUzKD4.png)
+![domyślny_login_fos_user_bundle](https://i.imgur.com/cCUzKD4.png)
 
 ### Nadpisywanie zachowania FOSUserBundle
 
@@ -849,7 +849,7 @@ Dużo więcej kodu zostało dodanego w pliku `app/Resources/FOSUserBundle/views/
 
 Jednak, jest to tylko front - formularz logowania i dwa linki w twigu. A ponieważ o frontach obraz mówi więcej niż tysiąc słów więc zamiast go opisywać wklejam screen:
 
-![login](http://i.imgur.com/avrKaZd.png)
+![login](https://i.imgur.com/avrKaZd.png)
 
 #### Rejestracja
 
@@ -914,7 +914,7 @@ Plik: `app/Resources/FOSUserBundle/views/Registration/register_content.html.twig
 
 Efekt:
 
-![register](http://i.imgur.com/i9BZooS.png)
+![register](https://i.imgur.com/i9BZooS.png)
 
 Jeśli rejestracja przebiega pomyślnie, gratulujemy użytkonikowi komunikatem z pliku: `app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig`
 
@@ -941,7 +941,7 @@ Jeśli rejestracja przebiega pomyślnie, gratulujemy użytkonikowi komunikatem z
 
 Który prezentuje się tak:
 
-![confirm](http://i.imgur.com/8v1SLZ1.png)
+![confirm](https://i.imgur.com/8v1SLZ1.png)
 
 #### Resetowanie hasła
 
@@ -976,7 +976,7 @@ Jeśli posiadający konto użytkownik zapomni hasła, może je wysłać na swój
 
 Formularz wygląda tak:
 
-![reset](http://i.imgur.com/XfCorCh.png)
+![reset](https://i.imgur.com/XfCorCh.png)
 
 Za to co pojawi się na ekranie po wpisaniu e-maila odpowiada plik: `app/Resources/FOSUserBundle/views/Resetting/check_email.html.twig` o treści
 
@@ -1000,7 +1000,7 @@ Za to co pojawi się na ekranie po wpisaniu e-maila odpowiada plik: `app/Resourc
 
 który prezentuje się tak:
 
-![check](http://i.imgur.com/hZy5ERk.png)
+![check](https://i.imgur.com/hZy5ERk.png)
 
 W e-mailu mamy link zmiany hasła. Szablon twiga znajduje się w pliku: `app/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig` i ma kod:
 
@@ -1024,7 +1024,7 @@ W e-mailu mamy link zmiany hasła. Szablon twiga znajduje się w pliku: `app/Res
 
 Formularz zmiany hasła tak:
 
-![](http://i.imgur.com/N7Ot9V6.png)
+![](https://i.imgur.com/N7Ot9V6.png)
 
 #### Panel użytkownika
 
@@ -1049,7 +1049,7 @@ Jeśli jako zalogowany użytkownik wybierzemy `MyAccount` z menu, zostaniemy prz
 
 i wygląda tak:
 
-![profile](http://i.imgur.com/jwR8Nlg.png)
+![profile](https://i.imgur.com/jwR8Nlg.png)
 
 Przycisk `Edit Places` będzie prowadził do głównej funkcjonalności aplikacji. Jednak żeby dokończyć to co związane z `FOSUserBundle` pokażemy teraz edycję profilu i zmanę hasła. Edycja profilu: `app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig`
 
@@ -1079,7 +1079,7 @@ Przycisk `Edit Places` będzie prowadził do głównej funkcjonalności aplikacj
 </div>
 ```
 
-![edit](http://i.imgur.com/QVWyPri.png)
+![edit](https://i.imgur.com/QVWyPri.png)
 
 Cały formularz sprowadza się do jednego pola - `email`, ponieważ jest to jedyna własność jaką chcemy nadawać użytkownikowi.
 
@@ -1103,11 +1103,11 @@ Zmiana hasła ma szablon w pliku `app/Resources/FOSUserBundle/views/ChangePasswo
 </div>
 ```
 
-![password](http://i.imgur.com/cQkQC91.png)
+![password](https://i.imgur.com/cQkQC91.png)
 
 Są to wszystkie zmiany jakie zrobiłem, żeby dostosować `FOSUserBundle` do swoich wymagań. W `app/Resources/FOSUserBundle` Są pliki, których nie zmieniałem, na przykład cały katalog `Group`, który jest związany z interakcjami między użytkonikami, ale ta funkcjonalność nie jest przez nas wykorzystywana. Zostawiłem równiż e-mail do resetu hasła, który bez grafik wygląda tak:
 
-![reset](http://i.imgur.com/zksqsDt.png)
+![reset](https://i.imgur.com/zksqsDt.png)
 
 Ale w przypadku e-maila jest to jak najbardziej dopuszczalne.
 
@@ -1408,7 +1408,7 @@ php bin/console doctrine:schema:update --force
 
 Na koniec załączam wizualizację schematu bazy
 
-![database](http://i.imgur.com/jfjLAoV.png)
+![database](https://i.imgur.com/jfjLAoV.png)
 
 ### Logika serwera (Kontroler)
 
@@ -1613,9 +1613,9 @@ Ta metoda sprawdza czy dostała współrzędne czy tekstowy adres i w zależnoś
 
 Myślę, że to dobry moment, żeby pokazać do dokładnie jest odsyłane. Wykonamy request do `ajax_geo_save` z parametrem `debug`, żeby zobaczyć jak wygląda `json` na wyjściu tej metody.
 
-![api1](http://i.imgur.com/My3cMbW.png)
+![api1](https://i.imgur.com/My3cMbW.png)
 
-![api2](http://i.imgur.com/88vr0jN.png)
+![api2](https://i.imgur.com/88vr0jN.png)
 
 Widać, że `formatted_address`, `place_id` oraz współrzędne mają tu dobrze określone miejsce, ale pozostałe własności adresu zostały spakowane do jednej tablicy `address_components` i są tagowane za pomocą typów, które mogą występować po kilka, ale niektórych może też wcale nie być. Do przetwarzania tej tablicy do postaci zgodnej z naszym modelem danych służy ostatnia metoda, którą zaprezentuję: `getPlace`
 
@@ -1690,7 +1690,7 @@ Bardzo dużą część widoków już przerobiliśmy. Zostały nam jeszcze dwa. P
 
 i wygląda tak:
 
-![olaces](http://i.imgur.com/7mkjpKI.png)
+![olaces](https://i.imgur.com/7mkjpKI.png)
 
 Ciekawszym widokiem jest widok miejsc. Umieściliśmy go w pliku `app/Resources/views/places/places.html.twig`
 
@@ -1876,7 +1876,7 @@ Ostatnia metoda odpowiada za usunięcie miejsca z listy miejsc użytkownika.
 
 Tutaj odwrotnie niż przy zapisywaniu, usuwamy element z tablicy `places` i czyścimy `HTML` odpowiadający miejscu, które usuwamy. Na koniec dodajemy screen z przykładowego użytkowania:
 
-![](http://i.imgur.com/YwW9q5l.png)
+![](https://i.imgur.com/YwW9q5l.png)
 
 To cały kod źródłowy. Nie ma tutaj testów, nie ma DoctrineFixturesBundle, nie ma panelu admina, nie ma gulpa.
 Przede wszystkim jednak nie ma miejsca. Z tego względu wszystkie wspomniane rzeczy zostały wycięte.

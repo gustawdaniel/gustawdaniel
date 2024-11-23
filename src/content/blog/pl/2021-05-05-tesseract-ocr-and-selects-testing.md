@@ -68,7 +68,7 @@ Po instalacji wykonanie przetważania obrazu, oczyszczenie danych, zapis treści
 
 ## Struktura baz
 
-Za punkt wyjścia przyjmiemy zadania `2.4.1` i `2.4.3` z rozdziału [`2`](http://infolab.stanford.edu/~ullman/fcdb/ch2.pdf) książki `Database Systems: The Complete Book`. Zadanie polegają na napisaniu selektów.
+Za punkt wyjścia przyjmiemy zadania `2.4.1` i `2.4.3` z rozdziału [`2`](https://github.com/hexanome/Denmark/blob/master/Advanced%20Databases/Prentice.Hall.Database.Systems.The.Complete.Book.2nd.Edition.Jun.2008.pdf) książki `Database Systems: The Complete Book`. Zadanie polegają na napisaniu selektów.
 
 Będziemy tworzyć dwie bazy. Pierwsza zawiera magazyn sklepu elektronicznego.
 
@@ -169,7 +169,7 @@ Problem z danymi zaczyna się od tego, że baza jest zapisana w pliku `pdf`, jes
 
 Zaczniemy od zrobienia screenów tabel z książki. W [repozytorium](https://github.com/gustawdaniel/image_to_database_converter_example), znajdują się te screeny. Są zapisane do plików o nazwach odpowiadających nazwom tabel w katalogu `raw/1` dla pierwszej bazy i `raw/2` dla drugiej. Przykładowy plik `raw/1/laptop.png` wygląda następująco.
 
-![laptop](http://i.imgur.com/CPRm97P.png)
+![laptop](https://i.imgur.com/CPRm97P.png)
 
 ### Wydobycie tekstu (OCR)
 

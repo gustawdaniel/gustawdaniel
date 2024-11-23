@@ -22,13 +22,10 @@ PHP 32.9% HTML 22.6% JavaScript 20.5% Shell 18.5% CSS 5.5%
 
 ## Instalación de GoAccess
 
-GoAccess está adaptado para funcionar en muchos sistemas con varios tipos de registros. Asumo que tenemos una distribución con repositorios de Debian/Ubuntu y un servidor Apache2. En este caso, utilizaremos los siguientes comandos para [instalar GoAccess](https://goaccess.io/download):
+GoAccess está adaptado para funcionar en muchos sistemas con varios tipos de registros. Asumo que tenemos `arch linux` y un servidor Apache2. En este caso, utilizaremos los siguientes comandos para [instalar GoAccess](https://goaccess.io/download):
 
 ```bash
-echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/goaccess.list
-wget -O - https://deb.goaccess.io/gnugpg.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install goaccess
+yay -S goaccess
 ```
 
 La configuración implica eliminar comentarios del archivo de configuración `/etc/goaccess.conf` en las líneas que contienen entradas:
@@ -178,7 +175,7 @@ header('Content-Type: application/json');
 
 ```
 
-Adjuntando la configuración de esta manera [ya ha sido discutido](http://blog.gustawdaniel.pl/2016/12/02/tesseract-ocr-i-testowanie-selekt%C3%B3w.html#kontekst). La novedad es establecer la sesión. Esta es una función tan inteligente que crea una cookie con un número de sesión aleatorio para el usuario y simultáneamente guarda este número en el lado del servidor, para que se pueda referir a este número específico en la variable `$_SESSION` sin tener que verificar la cookie manualmente o preocuparse por el hecho de que.
+Adjuntando la configuración de esta manera [ya ha sido discutido](https://gustawdaniel.com/posts/es/tesseract-ocr-y-selectores-de-pruebas/#contexto). La novedad es establecer la sesión. Esta es una función tan inteligente que crea una cookie con un número de sesión aleatorio para el usuario y simultáneamente guarda este número en el lado del servidor, para que se pueda referir a este número específico en la variable `$_SESSION` sin tener que verificar la cookie manualmente o preocuparse por el hecho de que.
 
 La novedad es dividir la dirección `uri` en un array utilizando los caracteres `/`. Su primer elemento tendrá el valor `api.php`, por lo que capturamos los siguientes dos si existen. Establecemos un array vacío `data` para nosotros y finalmente agregamos encabezados que permiten eludir problemas de CORS y establecer el tipo de dato de retorno predeterminado.
 
@@ -304,7 +301,7 @@ http -v --pretty=all GET localhost:8000/api.php/report Authorization:api
 
 ```
 
-![api](http://i.imgur.com/PEjG18F.png)
+![api](https://i.imgur.com/PEjG18F.png)
 
 Recibimos una lista de archivos disponibles. Si queremos un archivo específico, ingresamos:
 
@@ -313,7 +310,7 @@ http -v --pretty=all GET localhost:8000/api.php/report/api_brainjinn Authorizati
 
 ```
 
-![api2](http://i.imgur.com/8p3nHB7.png)
+![api2](https://i.imgur.com/8p3nHB7.png)
 
 ## Frontend
 
@@ -521,7 +518,7 @@ Solo nos quedan 4 archivos por discutir de los componentes. Comenzaremos con la 
 
 Formulario simple con dos campos y un div para posibles errores. Se ve así:
 
-![login](http://i.imgur.com/yRTGig4.png)
+![login](https://i.imgur.com/yRTGig4.png)
 
 El script que lo soporta es un ejemplo de libro de texto de manejo de formularios en js.
 
@@ -586,7 +583,7 @@ La vista del informe es más interesante, ya que `mustache` crea un bucle aquí.
 
 El bucle sobre el array `report` muestra todos los elementos de la lista, adjuntando nombres y enlaces a ellos. Para mis registros, se ve así:
 
-![report](http://i.imgur.com/1Bb5BVf.png)
+![report](https://i.imgur.com/1Bb5BVf.png)
 
 El script solo cierra sesión aquí, y por eso es bastante corto: 
 
@@ -605,7 +602,7 @@ El script solo cierra sesión aquí, y por eso es bastante corto:
 
 Al final, también proporcionaré una captura de pantalla de un análisis de registro de muestra. Esta es la imagen que veremos después de seleccionar uno de los archivos desde la vista de `informe`. En este caso, estos son los registros de este blog.
 
-![log](http://i.imgur.com/n3sleEF.png)
+![log](https://i.imgur.com/n3sleEF.png)
 
 ## Despliegue
 

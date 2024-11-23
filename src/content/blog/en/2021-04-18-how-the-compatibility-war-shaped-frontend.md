@@ -73,8 +73,8 @@ The European Commission wants to force Apple to abandon Lightning in iPhones
 
 Problems with BIOS and drives
 
-[http://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/](http://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/)
+[https://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/](https://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/)
 
 History of W3C
 
-[http://www.tlumaczenia-angielski.info/w3c/history.html](http://www.tlumaczenia-angielski.info/w3c/history.html)
+[https://www.tlumaczenia-angielski.info/w3c/history.html](https://www.tlumaczenia-angielski.info/w3c/history.html)

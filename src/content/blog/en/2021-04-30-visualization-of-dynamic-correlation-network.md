@@ -62,13 +62,13 @@ In the `Ubigraph` window, you should see a visualization of the dynamic correlat
 
 This chapter discusses all the installation steps except for installing dependencies.
 
-We will start by downloading data from the brokerage house [bossa](http://bossa.pl). In their [public archive](http://bossa.pl/pub/), there are files with quotes in `mst` format (a variant of `csv`) packed in `zip` archives. All the addresses of the files we are interested in start with `http://bossa.pl/pub/`, but have different extensions. I have saved them in a configuration file.
+We will start by downloading data from the brokerage house [bossa](https://bossa.pl). In their [public archive](https://bossa.pl/pub/), there are files with quotes in `mst` format (a variant of `csv`) packed in `zip` archives. All the addresses of the files we are interested in start with `http://bossa.pl/pub/`, but have different extensions. I have saved them in a configuration file.
 
 > config/wget\_data\_config.json
 
 ```json
 {
-  "uri1": "http://bossa.pl/pub/",
+  "uri1": "https://bossa.pl/pub/",
   "data": [
     {
       "uri2": "metastock/mstock/mstall.zip"
@@ -611,6 +611,6 @@ Unfortunately, this is a serious problem facing the entire data analysis industr
 
 However, the situation is improving. Increasingly common `APIs` and the growing popularity of the `json` format, which is slowly replacing `xml` and `csv`, are steps in the right direction and make working with data easier.
 
-![popularność json, xml, csv](http://i.imgur.com/OyhoigO.png)
+![popularność json, xml, csv](https://i.imgur.com/OyhoigO.png)
 
 As always, I encourage you to comment, express doubts, and ask questions.

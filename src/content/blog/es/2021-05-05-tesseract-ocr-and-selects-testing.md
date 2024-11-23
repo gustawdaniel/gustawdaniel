@@ -68,7 +68,7 @@ Después de la instalación, el procesamiento de imágenes, la limpieza de datos
 
 ## Estructura de la base de datos
 
-Tomaremos las tareas `2.4.1` y `2.4.3` del capítulo [`2`](http://infolab.stanford.edu/~ullman/fcdb/ch2.pdf) del libro `Database Systems: The Complete Book` como punto de partida. La tarea implica escribir selecciones.
+Tomaremos las tareas `2.4.1` y `2.4.3` del capítulo [`2`](https://github.com/hexanome/Denmark/blob/master/Advanced%20Databases/Prentice.Hall.Database.Systems.The.Complete.Book.2nd.Edition.Jun.2008.pdf) del libro `Database Systems: The Complete Book` como punto de partida. La tarea implica escribir selecciones.
 
 Crearemos dos bases de datos. La primera contiene el inventario de una tienda de electrónica.
 
@@ -165,7 +165,7 @@ El problema con los datos comienza con el hecho de que la base de datos está gu
 
 Comenzaremos tomando capturas de pantalla de las tablas del libro. El [repositorio](https://github.com/gustawdaniel/image_to_database_converter_example) contiene estas capturas de pantalla. Se guardan en archivos nombrados de acuerdo a los nombres de las tablas en el directorio `raw/1` para la primera base de datos y `raw/2` para la segunda. Un archivo de ejemplo `raw/1/laptop.png` se ve de la siguiente manera.
 
-![laptop](http://i.imgur.com/CPRm97P.png)
+![laptop](https://i.imgur.com/CPRm97P.png)
 
 ### Extracción de texto (OCR)
 
