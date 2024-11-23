@@ -1,3 +1,3 @@
 User-agent: *
-Allow: /
+Disallow: /cdn-cgi/l/email-protection
 Sitemap: https://gustawdaniel.com/sitemap.xml

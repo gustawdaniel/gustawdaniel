@@ -18,7 +18,9 @@ From the article, you will learn how to analyze websites and what to pay attenti
 
 The article is based on an analysis of scraping in a specific case. Here it is the website:
 
-> [https://rejestrymedyczne.ezdrowie.gov.pl/main](https://rejestrymedyczne.ezdrowie.gov.pl/main)
+```
+https://rejestrymedyczne.ezdrowie.gov.pl/main
+```
 
 It contains several data registers related to medicine.
 

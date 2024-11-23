@@ -5,7 +5,7 @@ coverImage: http://localhost:8484/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 description: El artículo presenta un scraper simple escrito en Perl 5. A pesar de manejar tres registros de datos, su código es notablemente corto.
 excerpt: El artículo presenta un scraper simple escrito en Perl 5. A pesar de manejar tres registros de datos, su código es notablemente corto.
 publishDate: 2021-05-11 20:37:00+00:00
-slug: es/raspado-de-datos-en-Perl
+slug: es/raspado-de-datos-en-perl
 tags:
 - perl
 - scraping

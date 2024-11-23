@@ -64,7 +64,7 @@ Finalmente, ejecutamos el script de instalación.
 bash install.sh
 ```
 
-El proyecto debería ser accesible en el navegador en [localhost:8000](http://localhost:8000).
+El proyecto debería ser accesible en el navegador en `http://localhost:8000`.
 
 ## Análisis de registros
 

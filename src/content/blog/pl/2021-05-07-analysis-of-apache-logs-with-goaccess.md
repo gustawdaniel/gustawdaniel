@@ -70,7 +70,7 @@ Na koniec wykonujemy skrypt instalacyjny
 bash install.sh
 ```
 
-Projekt powinien być dostępny w przeglądarce pod adresem [localhost:8000](http://localhost:8000).
+Projekt powinien być dostępny w przeglądarce pod adresem `http://localhost:8000`.
 
 ## Parsowanie logów
 

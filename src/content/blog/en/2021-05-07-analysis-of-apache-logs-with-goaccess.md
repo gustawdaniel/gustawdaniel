@@ -68,7 +68,7 @@ Finally, we execute the installation script.
 bash install.sh
 ```
 
-The project should be accessible in the browser at [localhost:8000](http://localhost:8000).
+The project should be accessible in the browser at `http://localhost:8000`.
 
 ## Log Parsing
 
