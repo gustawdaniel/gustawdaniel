@@ -59,7 +59,7 @@ a w pliku umieszczamy linię
 
 Możemy cieszyć się już zieloną kłódką na naszej stronie.
 
-![](http://i.imgur.com/6LaRspC.png)
+![](https://i.imgur.com/6LaRspC.png)
 
 ## Żródła:
 

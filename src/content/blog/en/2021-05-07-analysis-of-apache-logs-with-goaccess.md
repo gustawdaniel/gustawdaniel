@@ -26,13 +26,10 @@ PHP 32.9% HTML 22.6% JavaScript 20.5% Shell 18.5% CSS 5.5%
 
 ## Installation of GoAccess
 
-GoAccess is adapted to work on many systems with various types of logs. I assume that we have a distribution with Debian/Ubuntu repositories and an Apache2 server. In this case, we will use the following commands for [installing GoAccess](https://goaccess.io/download):
+GoAccess is adapted to work on many systems with various types of logs. I assume that we have `arch linux` and an Apache2 server. In this case, we will use the following commands for [installing GoAccess](https://goaccess.io/download):
 
 ```bash
-echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/goaccess.list
-wget -O - https://deb.goaccess.io/gnugpg.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install goaccess
+yay -S goaccess
 ```
 
 The configuration involves cutting out comments from the configuration file `/etc/goaccess.conf` at the lines containing entries:
@@ -71,7 +68,7 @@ Finally, we execute the installation script.
 bash install.sh
 ```
 
-The project should be accessible in the browser at [localhost:8000](http://localhost:8000).
+The project should be accessible in the browser at `http://localhost:8000`.
 
 ## Log Parsing
 
@@ -182,7 +179,7 @@ header('Content-Type: application/json');
 
 ```
 
-Attaching configuration in this way [has already been discussed](http://blog.gustawdaniel.pl/2016/12/02/tesseract-ocr-i-testowanie-selekt%C3%B3w.html#kontekst). The novelty is setting the session. This is such a clever feature that it creates a cookie with a random session number for the user and simultaneously saves this number on the server side, so that one can refer to this specific number in the `$_SESSION` variable without having to check the cookie manually or worry about the fact that.
+Attaching configuration in this way [has already been discussed](https://gustawdaniel.com/posts/en/tesseract-ocr-and-testing-selectors/#context). The novelty is setting the session. This is such a clever feature that it creates a cookie with a random session number for the user and simultaneously saves this number on the server side, so that one can refer to this specific number in the `$_SESSION` variable without having to check the cookie manually or worry about the fact that.
 
 The novelty is splitting the `uri` address into an array using the `/` characters. Its first element will have the value `api.php`, so we capture the next two if they exist. We set an empty array `data` for ourselves and finally add headers that allow bypassing CORS issues and setting the default return data type.
 
@@ -308,7 +305,7 @@ http -v --pretty=all GET localhost:8000/api.php/report Authorization:api
 
 ```
 
-![api](http://i.imgur.com/PEjG18F.png)
+![api](https://i.imgur.com/PEjG18F.png)
 
 We received a list of available files. If we want a specific file, we enter:
 
@@ -317,7 +314,7 @@ http -v --pretty=all GET localhost:8000/api.php/report/api_brainjinn Authorizati
 
 ```
 
-![api2](http://i.imgur.com/8p3nHB7.png)
+![api2](https://i.imgur.com/8p3nHB7.png)
 
 ## Frontend
 
@@ -527,7 +524,7 @@ We have only 4 files left to discuss from the components. We'll start with the l
 
 Simple form with two fields and a div for potential errors. It looks like this:
 
-![login](http://i.imgur.com/yRTGig4.png)
+![login](https://i.imgur.com/yRTGig4.png)
 
 The script that supports it is a textbook example of form handling in js.
 
@@ -592,7 +589,7 @@ The report view is more interesting, as `mustache` creates a loop here.
 
 The loop over the `report` array displays all elements of the list, attaching names and links to them. For my logs, it looks like this:
 
-![report](http://i.imgur.com/1Bb5BVf.png)
+![report](https://i.imgur.com/1Bb5BVf.png)
 
 The script only logs out here, and that’s why it’s quite short: 
 
@@ -611,7 +608,7 @@ The script only logs out here, and that’s why it’s quite short:
 
 At the end, I will also provide a screenshot of a sample log analysis. This is the image we will see after selecting one of the files from the `report` view. In this case, these are the logs of this blog.
 
-![log](http://i.imgur.com/n3sleEF.png)
+![log](https://i.imgur.com/n3sleEF.png)
 
 ## Deployment
 

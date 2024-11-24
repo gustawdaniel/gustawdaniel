@@ -53,7 +53,7 @@ use HTML::TagParser;
 Później następuje deklaracja zmiennych
 
 ```perl
-my $url = 'https://blog.gustawdaniel.pl';
+my $url = 'https://gustawdaniel.com';
 my @tags = ("h1 h2 h3 h4 li p","pre");
 ```
 

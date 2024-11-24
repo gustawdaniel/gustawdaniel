@@ -28,13 +28,10 @@ Po napisaniu projekt będzie wyglądał tak:
 
 ## Instalcja GoAccess
 
-GoAccess jest przystosowany do działania na wielu systemach z różnymi rodzajami logów. Zakładam, że, mamy dystrybucję z repozytoriami Debiana/Ubuntu, serwer Apache2. W tym przypadku do [instalacji GoAccess](https://goaccess.io/download) posłużą nam komendy:
+GoAccess jest przystosowany do działania na wielu systemach z różnymi rodzajami logów. Zakładam, że, mamy `arch linux`, serwer Apache2. W tym przypadku do [instalacji GoAccess](https://goaccess.io/download) posłuży nam komenda:
 
 ```bash
-echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/goaccess.list
-wget -O - https://deb.goaccess.io/gnugpg.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install goaccess
+yay -S goaccess
 ```
 
 Konfiguracja polega na wycięciu komentarzy z pliku konfiguracyjnego `/etc/goaccess.conf` przy liniach zawierających wpisy:
@@ -73,7 +70,7 @@ Na koniec wykonujemy skrypt instalacyjny
 bash install.sh
 ```
 
-Projekt powinien być dostępny w przeglądarce pod adresem [localhost:8000](http://localhost:8000).
+Projekt powinien być dostępny w przeglądarce pod adresem `http://localhost:8000`.
 
 ## Parsowanie logów
 
@@ -184,7 +181,7 @@ header('Content-Type: application/json');
 
 ```
 
-Podpinanie konfiguracji w ten sposób [było już omawiane](http://blog.gustawdaniel.pl/2016/12/02/tesseract-ocr-i-testowanie-selekt%C3%B3w.html#kontekst). Nowością jest ustawianie sesji. Jest to na tyle sprytna funkcja, że tworzy u użytkownika plik cookie z losowym numerem sesji i jednocześnie ten numer zapisuje po stronie serwera, tak aby w zmiennej `$_SESSION` można było odwoływać się do tej konkretnej ani nie sprawdzając cookie ręcznie, ani nie martwiąc się o to, że
+Podpinanie konfiguracji w ten sposób [było już omawiane](https://gustawdaniel.com/posts/pl/tesseract-ocr-i-testowanie-selektow/#kontekst). Nowością jest ustawianie sesji. Jest to na tyle sprytna funkcja, że tworzy u użytkownika plik cookie z losowym numerem sesji i jednocześnie ten numer zapisuje po stronie serwera, tak aby w zmiennej `$_SESSION` można było odwoływać się do tej konkretnej ani nie sprawdzając cookie ręcznie, ani nie martwiąc się o to, że
 
 Nowością jest cięcie adresu `uri` na tablicę za pomocą znaków `/`. Pierwszy jej element będzie miał wartość `api.php` dlatego wychwytujemy dwa kolejne jeśli istnieją. Ustawiamy sobie pustą tablicę `data` i na koniec dodajemy nagłówki pozwalające ominąć problemy z CORS oraz ustawić domyślny typ zwracanych danych.
 
@@ -310,7 +307,7 @@ http -v --pretty=all GET localhost:8000/api.php/report Authorization:api
 
 ```
 
-![api](http://i.imgur.com/PEjG18F.png)
+![api](https://i.imgur.com/PEjG18F.png)
 
 Otrzymaliśmy listę dostępnych plików. Jeśli chcemy konkretny plik wpisujemy:
 
@@ -319,7 +316,7 @@ http -v --pretty=all GET localhost:8000/api.php/report/api_brainjinn Authorizati
 
 ```
 
-![api2](http://i.imgur.com/8p3nHB7.png)
+![api2](https://i.imgur.com/8p3nHB7.png)
 
 ## Frontend
 
@@ -529,7 +526,7 @@ Do omówienia zostały nam już tylko 4 pliki z komponentów. Zaczniemy od szabl
 
 Prosty formularz z dwoma polami i div na potencjalne błędy. Wygląda tak:
 
-![login](http://i.imgur.com/yRTGig4.png)
+![login](https://i.imgur.com/yRTGig4.png)
 
 Skrypt który go obsługuje jest podręcznikowym przykładem obsługi formulaża w js
 
@@ -594,7 +591,7 @@ W widoku raportu jest ciekawiej, bo tu `mustache` robi pętlę.
 
 Pętla po tablicy `report` wyświetla wszystkie elementy listy podpinając do nich nazwy oraz linki. Dla moich logów wygląda to tak:
 
-![report](http://i.imgur.com/1Bb5BVf.png)
+![report](https://i.imgur.com/1Bb5BVf.png)
 
 Skrypt robi tu jedynie wylogowanie i dlatego jest dość któdki:
 
@@ -613,7 +610,7 @@ Skrypt robi tu jedynie wylogowanie i dlatego jest dość któdki:
 
 Na koniec podam jeszcze screen z przykładowej analizy logów. Jest to obraz jaki zobaczymy po wybraniu któregoś z listy plików z widoku `report`. W tym przypadku są to logi tego bloga.
 
-![log](http://i.imgur.com/n3sleEF.png)
+![log](https://i.imgur.com/n3sleEF.png)
 
 ## Deployment
 

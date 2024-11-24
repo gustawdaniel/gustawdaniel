@@ -146,7 +146,7 @@ Niestety paczka `ts-retry` nie obsługuje ani `exponential backoff` ani różneg
 
 Więcej o optymalnych strategiach `retry` możesz przeczytać w artykule Prof. Douglas Thain - Exponential Backoff in Distributed Systems z 2009.
 
-[Exponential Backoff in Distributed Systems](http://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
+[Exponential Backoff in Distributed Systems](https://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
 
 Aby użyć `ts-retry-promise` do importów dodamy:
 

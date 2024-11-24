@@ -116,7 +116,7 @@ npm init -y && tsc --init && npm i axios && npm i -D @types/node && mkdir -p src
 
 Rdzeń programu `getAltcoins.ts` możemy przenieść z naszego niedawnego wpisu:
 
-[Scraping najbardziej popularnych kont na twitterze](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+[Scraping najbardziej popularnych kont na twitterze](https://gustawdaniel.com/posts/pl/scraping-najbardziej-popularnych-kont-na-twitterze/)
 
 Czyli mniej więcej tak:
 

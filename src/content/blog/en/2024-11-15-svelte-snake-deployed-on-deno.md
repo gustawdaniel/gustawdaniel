@@ -1,5 +1,5 @@
 ---
-author: Daniel Gustaw
+author: Daniel Gustaw_
 canonicalName: svelte-snake-deployed-on-deno
 coverImage: https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/
 description: Svelte Snake is a simple game written in Svelte. It's deployed on Deno, a secure runtime for JavaScript and TypeScript.
@@ -552,6 +552,6 @@ Repository with project
 
 https://github.com/gustawdaniel/snake_js
 
-I added few changes in css to make game more playable, that are not enough interesting to attach them here but you can check them in commit
+I added few changes in css to make game more playable, that are not enough interesting to attach them here but you can check them in [commit](https://github.com/gustawdaniel/snake_js/commit/6d8c681ece83a43a1f505cd89579c4e939386251)
 
 ![](https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/)

@@ -146,7 +146,7 @@ php bin/console doctrine:schema:update --force
 
 Ahora todo debería funcionar. Quiero decir que después de iniciar el servidor con el comando `php bin/console server:run` y entrar la dirección `127.0.0.1:8000/login` en el navegador, deberíamos ver algo como esto:
 
-![domyślny_login_fos_user_bundle](http://i.imgur.com/cCUzKD4.png)
+![domyślny_login_fos_user_bundle](https://i.imgur.com/cCUzKD4.png)
 
 ### Sobrescribiendo el Comportamiento de FOSUserBundle
 
@@ -839,7 +839,7 @@ Se ha añadido mucho más código al archivo `app/Resources/FOSUserBundle/views/
 
 Sin embargo, esto es solo el front - un formulario de inicio de sesión y dos enlaces en el twig. Y dado que el front habla más que mil palabras, en lugar de describirlo, estoy pegando la captura de pantalla:
 
-![login](http://i.imgur.com/avrKaZd.png)
+![login](https://i.imgur.com/avrKaZd.png)
 
 #### Registro
 
@@ -904,7 +904,7 @@ Archivo: `app/Resources/FOSUserBundle/views/Registration/register_content.html.t
 
 Efecto:
 
-![register](http://i.imgur.com/i9BZooS.png)
+![register](https://i.imgur.com/i9BZooS.png)
 
 Si el registro es exitoso, felicitamos al usuario con un mensaje del archivo: `app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig`
 
@@ -931,7 +931,7 @@ Si el registro es exitoso, felicitamos al usuario con un mensaje del archivo: `a
 
 Que se presenta de la siguiente manera:
 
-![confirm](http://i.imgur.com/8v1SLZ1.png)
+![confirm](https://i.imgur.com/8v1SLZ1.png)
 
 #### Restablecimiento de Contraseña
 
@@ -966,7 +966,7 @@ Si un usuario con una cuenta olvida su contraseña, puede enviarla a su correo e
 
 El formulario se ve así:
 
-![reset](http://i.imgur.com/XfCorCh.png)
+![reset](https://i.imgur.com/XfCorCh.png)
 
 El archivo responsable de lo que aparece en la pantalla después de ingresar el correo electrónico es: `app/Resources/FOSUserBundle/views/Resetting/check_email.html.twig` con el contenido
 
@@ -990,7 +990,7 @@ El archivo responsable de lo que aparece en la pantalla después de ingresar el 
 
 que se ve así:
 
-![check](http://i.imgur.com/hZy5ERk.png)
+![check](https://i.imgur.com/hZy5ERk.png)
 
 En el correo electrónico, tenemos un enlace para restablecer la contraseña. La plantilla Twig se encuentra en el archivo: `app/Resources/FOSUserBundle/views/Resetting/reset_content.html.twig` y tiene el código:
 
@@ -1014,7 +1014,7 @@ En el correo electrónico, tenemos un enlace para restablecer la contraseña. La
 
 Formulario de cambio de contraseña como sigue:
 
-![](http://i.imgur.com/N7Ot9V6.png)
+![](https://i.imgur.com/N7Ot9V6.png)
 
 #### Panel de Usuario
 
@@ -1039,7 +1039,7 @@ Si nosotros, como usuario conectado, seleccionamos `MiCuenta` en el menú, serem
 
 y se ve así:
 
-![profile](http://i.imgur.com/jwR8Nlg.png)
+![profile](https://i.imgur.com/jwR8Nlg.png)
 
 El botón `Editar Lugares` llevará a la funcionalidad principal de la aplicación. Sin embargo, para completar lo relacionado con `FOSUserBundle`, ahora mostraremos la edición del perfil y el cambio de contraseña. Edición del perfil: `app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig`
 
@@ -1069,7 +1069,7 @@ El botón `Editar Lugares` llevará a la funcionalidad principal de la aplicaci�
 </div>
 ```
 
-![edit](http://i.imgur.com/QVWyPri.png)
+![edit](https://i.imgur.com/QVWyPri.png)
 
 Todo el formulario se reduce a un campo - `email`, ya que es el único atributo que queremos asignar al usuario.
 
@@ -1093,11 +1093,11 @@ La plantilla de cambio de contraseña está en el archivo `app/Resources/FOSUser
 </div>
 ```
 
-![password](http://i.imgur.com/cQkQC91.png)
+![password](https://i.imgur.com/cQkQC91.png)
 
 Estos son todos los cambios que hice para adaptar `FOSUserBundle` a mis requisitos. En `app/Resources/FOSUserBundle`, hay archivos que no modifiqué, por ejemplo, todo el directorio `Group`, que está relacionado con las interacciones entre usuarios, pero esta funcionalidad no es utilizada por nosotros. También dejé el correo electrónico para restablecer la contraseña, que sin gráficos se ve así:
 
-![reset](http://i.imgur.com/zksqsDt.png)
+![reset](https://i.imgur.com/zksqsDt.png)
 
 Pero en el caso del correo electrónico, es completamente permisible.
 
@@ -1398,7 +1398,7 @@ php bin/console doctrine:schema:update --force
 
 Finalmente, adjunto una visualización del esquema de la base de datos.
 
-![database](http://i.imgur.com/jfjLAoV.png)
+![database](https://i.imgur.com/jfjLAoV.png)
 
 ### Lógica del Servidor (Controlador)
 
@@ -1602,9 +1602,9 @@ Este método verifica si recibió coordenadas o una dirección textual y, depend
 
 Creo que este es un buen momento para mostrar lo que exactamente se está enviando de vuelta. Haremos una solicitud a `ajax_geo_save` con el parámetro `debug` para ver cómo se ve el `json` en la salida de este método.
 
-![api1](http://i.imgur.com/My3cMbW.png)
+![api1](https://i.imgur.com/My3cMbW.png)
 
-![api2](http://i.imgur.com/88vr0jN.png)
+![api2](https://i.imgur.com/88vr0jN.png)
 
 Es claro que `formatted_address`, `place_id` y coordenadas tienen una ubicación bien definida aquí, pero otras propiedades de dirección se han empaquetado en un solo array `address_components` y están etiquetadas usando tipos que pueden ocurrir múltiples veces, pero algunos pueden estar ausentes. El último método que presentaré para procesar este array en un formato compatible con nuestro modelo de datos es `getPlace`.
 
@@ -1675,7 +1675,7 @@ Los extraeremos en un bucle doble. Por los componentes de la dirección y por lo
 
 y se ve así:
 
-![olaces](http://i.imgur.com/7mkjpKI.png)
+![olaces](https://i.imgur.com/7mkjpKI.png)
 
 Una vista más interesante es la vista de lugares. La colocamos en el archivo `app/Resources/views/places/places.html.twig`
 
@@ -1861,7 +1861,7 @@ El último método es responsable de eliminar un lugar de la lista de lugares de
 
 Aquí, a diferencia de al guardar, eliminamos el elemento del array `places` y limpiamos el `HTML` correspondiente al lugar que estamos eliminando. Finalmente, añadimos una captura de pantalla de un ejemplo de uso:
 
-![](http://i.imgur.com/YwW9q5l.png)
+![](https://i.imgur.com/YwW9q5l.png)
 
 Este es el código fuente completo. No hay pruebas aquí, ni DoctrineFixturesBundle, ni panel de administración, ni gulp.  
 Sin embargo, lo más importante, no hay espacio. Por esta razón, todas las cosas mencionadas han sido eliminadas.  

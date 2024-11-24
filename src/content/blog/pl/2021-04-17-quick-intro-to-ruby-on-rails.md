@@ -88,7 +88,9 @@ rails server
 
 Ogromną zaletą rails jest, że już teraz możemy korzystać z działającego CRUD pod linkiem
 
-[http://127.0.0.1:3000/posts](http://127.0.0.1:3000/posts)
+```
+http://127.0.0.1:3000/posts
+```
 
 Po wytworzeniu posta ręcznie dostajemy:
 
@@ -461,7 +463,9 @@ CommentsMailer.submitted Comment.first
 
 Pod adresem
 
-[http://localhost:3000/rails/mailers/comments\_mailer/submitted](http://localhost:3000/rails/mailers/comments_mailer/submitted)
+```
+http://localhost:3000/rails/mailers/comments\_mailer/submitted
+```
 
 Możemy zobaczyć podgląd tego e-maila
 

@@ -146,7 +146,7 @@ Desafortunadamente, el paquete `ts-retry` no soporta ni `reintento exponencial` 
 
 Puedes leer más sobre estrategias de `retry` óptimas en el artículo del Prof. Douglas Thain - Retroceso Exponencial en Sistemas Distribuidos de 2009.
 
-[Retroceso Exponencial en Sistemas Distribuidos](http://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
+[Retroceso Exponencial en Sistemas Distribuidos](https://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
 
 Para usar `ts-retry-promise` para importaciones añadiremos:
 

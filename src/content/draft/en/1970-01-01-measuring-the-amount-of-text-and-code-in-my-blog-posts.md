@@ -72,7 +72,7 @@ use HTML :: TagParser;
 Then the declaration of variables follows
 
 ```Perl
-my $ url = 'https://blog.gustawdaniel.pl';
+my $ url = 'https://gustawdaniel.com';
 my @tags = ("h1 h2 h3 h4 li p", "pre");
 ```
 

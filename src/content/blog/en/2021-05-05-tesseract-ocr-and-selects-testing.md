@@ -68,7 +68,7 @@ After installation, image processing, data cleaning, content saving, and databas
 
 ## Database structure
 
-We will take tasks `2.4.1` and `2.4.3` from chapter [`2`](http://infolab.stanford.edu/~ullman/fcdb/ch2.pdf) of the book `Database Systems: The Complete Book` as the starting point. The task involves writing selects.
+We will take tasks `2.4.1` and `2.4.3` from chapter [`2`](https://github.com/hexanome/Denmark/blob/master/Advanced%20Databases/Prentice.Hall.Database.Systems.The.Complete.Book.2nd.Edition.Jun.2008.pdf) of the book `Database Systems: The Complete Book` as the starting point. The task involves writing selects.
 
 We will create two databases. The first contains the inventory of an electronic store.
 
@@ -165,7 +165,7 @@ The problem with the data begins with the fact that the database is saved in a `
 
 We will start by taking screenshots of the tables from the book. The [repository](https://github.com/gustawdaniel/image_to_database_converter_example) contains these screenshots. They are saved to files named according to the names of the tables in the `raw/1` directory for the first database and `raw/2` for the second. An example file `raw/1/laptop.png` looks as follows.
 
-![laptop](http://i.imgur.com/CPRm97P.png)
+![laptop](https://i.imgur.com/CPRm97P.png)
 
 ### Text Extraction (OCR)
 

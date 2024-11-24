@@ -19,7 +19,7 @@ Every marketer wants to optimize their forms to get more leads, but how do you d
 
 ![](https://unbounce.com/photos/cropped-unbounce-favicon-2-270x270.png)UnbounceOli Gardner
 
-![](http://unbounce.com/photos/never-submit1.png)](https://unbounce.com/conversion-rate-optimization/how-to-optimize-contact-forms/)
+![](https://unbounce.com/photos/never-submit1.png)](https://unbounce.com/conversion-rate-optimization/how-to-optimize-contact-forms/)
 
 But what will happen if I will reduce number of questions to **"0".**
 

@@ -18,7 +18,9 @@ Del artículo, aprenderás cómo analizar sitios web y en qué debes prestar ate
 
 El artículo se basa en un análisis de scraping en un caso específico. Aquí está el sitio web:
 
-> [https://rejestrymedyczne.ezdrowie.gov.pl/main](https://rejestrymedyczne.ezdrowie.gov.pl/main)
+```
+https://rejestrymedyczne.ezdrowie.gov.pl/main
+```
 
 Contiene varios registros de datos relacionados con la medicina.
 

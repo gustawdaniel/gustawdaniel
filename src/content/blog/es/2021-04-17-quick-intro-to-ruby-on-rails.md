@@ -88,7 +88,9 @@ rails server
 
 Una gran ventaja de Rails es que ya podemos usar un CRUD funcional en el enlace
 
-[http://127.0.0.1:3000/posts](http://127.0.0.1:3000/posts)
+```
+http://127.0.0.1:3000/posts
+```
 
 Después de crear manualmente una publicación, obtenemos:
 
@@ -461,7 +463,9 @@ CommentsMailer.submitted Comment.first
 
 En la dirección
 
-[http://localhost:3000/rails/mailers/comments\_mailer/submitted](http://localhost:3000/rails/mailers/comments_mailer/submitted)
+```
+http://localhost:3000/rails/mailers/comments\_mailer/submitted
+```
 
 Podemos ver una vista previa de este correo electrónico
 

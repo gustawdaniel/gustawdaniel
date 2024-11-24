@@ -104,7 +104,7 @@ npm init -y && tsc --init && npm i axios && npm i -D @types/node && mkdir -p src
 
 The core of the program `getAltcoins.ts` can be taken from our recent post:
 
-[Scraping the most popular Twitter accounts](./scraping-najbardziej-popularnych-kont-na-twitterze/)
+[Scraping the most popular Twitter accounts](https://gustawdaniel.com/posts/en/scraping-the-most-popular-accounts-on-twitter/)
 
 That is roughly like this:
 

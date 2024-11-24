@@ -146,7 +146,7 @@ Unfortunately, the `ts-retry` package does not support either `exponential backo
 
 You can read more about optimal `retry` strategies in Prof. Douglas Thain's article - Exponential Backoff in Distributed Systems from 2009.
 
-[Exponential Backoff in Distributed Systems](http://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
+[Exponential Backoff in Distributed Systems](https://dthain.blogspot.com/2009/02/exponential-backoff-in-distributed.html)
 
 To use `ts-retry-promise` for imports we will add:
 

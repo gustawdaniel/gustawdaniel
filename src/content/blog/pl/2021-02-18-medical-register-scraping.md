@@ -18,7 +18,9 @@ Z artykułu dowiesz się jak badać strony internetowe i na co zwracać uwagę p
 
 Artykuł oparty jest o analizę scrapingu na konkretnym przypadku. Tutaj jest to strona:
 
-> [https://rejestrymedyczne.ezdrowie.gov.pl/main](https://rejestrymedyczne.ezdrowie.gov.pl/main)
+```
+https://rejestrymedyczne.ezdrowie.gov.pl/main
+```
 
 Zawiera ona kilka rejestrów danych powiązanych z medycyną
 
@@ -26,7 +28,9 @@ Zawiera ona kilka rejestrów danych powiązanych z medycyną
 
 Załóżmy, że chcemy pobrać wszystkie dane o aptekach z tej strony. Klikamy na rejestr aptek i widzimy:
 
-> [https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public](https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public)
+```
+https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public
+```
 
 ![](http://localhost:8484/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
 

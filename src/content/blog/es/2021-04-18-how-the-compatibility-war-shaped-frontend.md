@@ -73,8 +73,8 @@ La Comisión Europea quiere obligar a Apple a abandonar Lightning en los iPhones
 
 Problemas con BIOS y unidades
 
-[http://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/](http://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/)
+[https://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/](https://itfocus.pl/dzial-it/storage/duze-dyski-duze-klopoty/)
 
 Historia del W3C
 
-[http://www.tlumaczenia-angielski.info/w3c/history.html](http://www.tlumaczenia-angielski.info/w3c/history.html)
+[https://www.tlumaczenia-angielski.info/w3c/history.html](https://www.tlumaczenia-angielski.info/w3c/history.html)
