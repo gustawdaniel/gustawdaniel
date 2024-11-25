@@ -457,7 +457,7 @@ and was unsatisfied with result. So tried to fix it by providing subtitles that 
 
 ---
 
-I did not found solution for it now because I have to create multilingual context anyway, so I hope I will improve this process in future. Now as proof of concept I decided to write one more script to:
+I did not find solution for it now because I have to create multilingual context anyway, so I hope I will improve this process in future. Now as proof of concept I decided to write one more script to:
 
 * translate transcriptions
 * translate title
