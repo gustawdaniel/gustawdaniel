@@ -515,4 +515,4 @@ Mam nadzieję, że ten artykuł będzie pomocny w nauce podstawowych pojęć z r
 
 Jeśli chcesz rozwiązywać podobne problemy, możesz założyć konto na `codingame` korzystając z linku:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657

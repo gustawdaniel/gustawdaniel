@@ -864,9 +864,7 @@ Plik projektu zawierający `126` linii kodu dostępny jest pod linkiem:
 
 Jeśli potrzebujesz tych danych, możesz samodzielnie odtworzyć wszystkie kroki lub pobrać gotowe dane JSON z linku
 
-TODO: this page not found
-
-[https://chf-pnl.netlify.app/chf.json](https://chf-pln.netlify.app/chf.json)
+https://gitlab.com/gustawdaniel/nbp/-/blob/master/out/chf.json
 
 # Wizualizacja
 

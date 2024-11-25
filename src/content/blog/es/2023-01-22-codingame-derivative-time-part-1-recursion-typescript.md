@@ -796,8 +796,8 @@ que incluirá funciones trigonométricas, logaritmos, exponentes e incluso la re
 
 Puedes invitarme a tus amigos en esta plataforma utilizando el enlace:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657
 
 Puedes encontrar todo el código presentado en mi github:
 
-[GitHub - gustawdaniel/codingame-derivative-time-part-1](https://opengraph.githubassets.com/f239053bc814122dc1c46e68d764599685c1bcf41c7c4651e8f19786982fa0db/gustawdaniel/codingame-derivative-time-part-1)](https://github.com/gustawdaniel/codingame-derivative-time-part-1)
+https://github.com/gustawdaniel/codingame-derivative-time-part-1
