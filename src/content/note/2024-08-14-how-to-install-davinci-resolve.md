@@ -122,3 +122,28 @@ Run with
 ```
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia /opt/resolve/bin/resolve
 ```
+
+### Audio
+
+By default, aac is not supported by DaVinci Resolve. You can convert it to mp3:
+
+```bash
+ffmpeg -i input.mkv -c:v copy -c:a libmp3lame -q:a 2 output.mkv
+```
+
+### Silence removal
+
+Clone repo: https://github.com/carykh/jumpcutter/tree/master
+
+Install python dependencies, then remove silence
+
+```bash
+python jumpcutter.py --input_file input.mkv --output_file output.mkv --silent_speed 999
+```
+
+You can compare video length with:
+
+```bash
+ffmpeg -i input.mkv 2>&1 | grep "Duration"
+ffmpeg -i output.mkv 2>&1 | grep "Duration"
+```

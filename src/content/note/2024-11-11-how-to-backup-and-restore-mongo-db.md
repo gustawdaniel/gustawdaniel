@@ -14,12 +14,12 @@ yay -S mongodb-tools
 ## Backup
 
 ```bash
-mongodump --uri="mongodb://localhost:27017/scraped_data" --out=/tmp/dump
+mongodump --uri="mongodb://localhost:27017/matrix_aggregator" --out=/tmp/dump
 ```
 
 ## Restore
 
 ```bash
-mongorestore --uri="mongodb://localhost:27017" /tmp/dump/scraped_data --nsInclude="scraped_data.*" --nsFrom="scraped_data.*" --nsTo="matrix_aggregator.*" --db=matrix_aggregator
+mongorestore --uri="mongodb://localhost:27017" /tmp/dump/matrix_aggregator --nsInclude="scraped_data.*" --nsFrom="scraped_data.*" --nsTo="matrix_aggregator.*" --db=matrix_aggregator
 ```
 
