@@ -74,7 +74,7 @@ resource "aws_instance" "web" {
 
 No nos enfocaremos en ninguna línea de este código. Si estás interesado en esto y sabes polaco, escribí un artículo sobre terraform aquí:
 
-[Infrastrukura defniowana przez kod (terraform + digital ocean)](https://gustawdaniel.com/infrastrukura-defniowana-jako-kod/)
+[Pulumi - Infraestructura como Código (Digital Ocean)](https://gustawdaniel.com/posts/es/pulumi-infraestructura-como-codigo/)
 
 Ahora nos enfocaremos en el competidor de Terraform. Vamos a discutir Pulumi.
 

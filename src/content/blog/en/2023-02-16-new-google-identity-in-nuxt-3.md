@@ -215,7 +215,7 @@ To verify it you should send it to backend.
 
 As backend we can use fastify. I described fastify config on this blog here
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](https://gustawdaniel.com/posts/en/login-by-metamask-rest-backend-in-fastify/)
 
 so now I assume you have done step "Add Fastify with first endpoint" from this article.
 
@@ -329,4 +329,4 @@ and we can see in console all user's details
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)
+[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](https://gustawdaniel.com/posts/en/login-by-metamask-rest-backend-in-fastify/)

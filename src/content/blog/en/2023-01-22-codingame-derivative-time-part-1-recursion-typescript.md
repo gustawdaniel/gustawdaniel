@@ -796,8 +796,8 @@ that will include trigonometric functions, logarithm, exponent and even the chai
 
 You can invite me to your friends on this platform using link:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657
 
 You can find all presented code on my github:
 
-[GitHub - gustawdaniel/codingame-derivative-time-part-1](https://opengraph.githubassets.com/f239053bc814122dc1c46e68d764599685c1bcf41c7c4651e8f19786982fa0db/gustawdaniel/codingame-derivative-time-part-1)](https://github.com/gustawdaniel/codingame-derivative-time-part-1)
+https://github.com/gustawdaniel/codingame-derivative-time-part-1

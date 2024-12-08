@@ -851,9 +851,7 @@ The project file containing `126` lines of code is available at the link:
 
 If you need this data, you can recreate all the steps yourself or download the ready-made JSON data from the link
 
-TODO: this page not found
-
-[https://chf-pnl.netlify.app/chf.json](https://chf-pln.netlify.app/chf.json)
+https://gitlab.com/gustawdaniel/nbp/-/blob/master/out/chf.json
 
 # Visualization
 

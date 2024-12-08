@@ -215,7 +215,7 @@ Para verificarlo, debes enviarlo al backend.
 
 Como backend podemos usar fastify. Describí la configuración de fastify en este blog aquí
 
-[Inicio de sesión con Metamask - Backend Rest en Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)
+[Iniciar sesión con Metamask - Backend Rest en Fastify (Node, Typescript, Prisma)](https://gustawdaniel.com/posts/es/login-por-metamask-backend-rest-en-fastify/)
 
 así que ahora asumo que has completado el paso "Agregar Fastify con el primer punto de acceso" de este artículo.
 
@@ -329,4 +329,4 @@ y podemos ver en la consola todos los detalles del usuario
 
 No queremos llamar a `await client.verifyIdToken(` en ninguna solicitud, por lo que tenemos que intercambiar el JWT de Google por el nuestro. Así que vale la pena crear un usuario en tu base de datos y generar un token JWT para él, pero lo describí en el artículo mencionado anteriormente:
 
-[Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma)](/login-by-metamask-rest-backend-in-fastify/)
+[Iniciar sesión con Metamask - Backend Rest en Fastify (Node, Typescript, Prisma)](https://gustawdaniel.com/posts/es/login-por-metamask-backend-rest-en-fastify/)

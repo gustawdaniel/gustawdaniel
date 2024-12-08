@@ -851,9 +851,7 @@ El archivo del proyecto que contiene `126` líneas de código está disponible e
 
 Si necesitas estos datos, puedes recrear todos los pasos tú mismo o descargar los datos JSON ya preparados desde el enlace
 
-TODO: esta página no encontrada
-
-[https://chf-pnl.netlify.app/chf.json](https://chf-pln.netlify.app/chf.json)
+https://gitlab.com/gustawdaniel/nbp/-/blob/master/out/chf.json
 
 # Visualización
 

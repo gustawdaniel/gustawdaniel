@@ -72,7 +72,6 @@ find src -type f -exec sed -i 's|http://localhost:8484|http://preciselab.fra1.di
 
 TODO:
 - [ ] add projects page
-- [ ] polish link fix replace (Nie będziemy się skupiać na tej części kodu. Jeśli jesteś tym zainteresowany i znasz język polski, napisałem artykuł na temat terraform tutaj:) by link per language
 - [ ] tags in white mode more visible
 - [ ] footer not visually separated
 - [ ] separation on mobile between next articles
@@ -116,12 +115,6 @@ Raport z przeglądu strony domowej Daniela przed przesiadką z Ghost na Astro.
 - [ ] B3: Tagi po najechaniu myszką zachowują się jak linki (zmiana kursora, podświetlenie), ale nie da się w nie kliknąć.
 - [ ] B4: W treści wpisu przy każdej sekcji przydałby się link z odnośnikiem (tak jak na GitHub lub Wikipedii).
 - [ ] B5: Wszystkie kody źródłowe inline są obudowane w apostrofy – warto rozważyć zmianę tego stylu.
-- [ ] B6: Wpis https://gustawdaniel.com/posts/en/codingame-derivative-part-1/ zawiera błąd w ostatnim linku/obrazku.
-- [ ] B7: Przykłady niepoprawnych odnośników do wpisów:
-    - [ ] Wpis https://gustawdaniel.com/posts/en/pulumi-infrastructure-as-a-code/ odsyła do https://gustawdaniel.com/infrastrukura-defniowana-jako-kod/ (literówka w slugu)
-    - [ ] Wpis https://gustawdaniel.com/posts/en/new-google-login/ odsyła do https://gustaw-daniel.com/login-by-metamask-rest-backend-in-fastify/
-    - [ ] Wpis https://gustawdaniel.com/posts/en/analysis-of-cryptocurrency-name-frequency-in-the-english-language-corpus/ odsyła do https://gustawdaniel.com/posts/en/analysis-of-cryptocurrency-name-frequency-in-the-english-language-corpus/scraping-najbardziej-popularnych-kont-na-twitterze/
-- [ ] B8: We wpisie https://gustawdaniel.com/posts/en/structuring-historical-exchange-rates-nbp/ pozostawiono TODO.
 
 ### Images
 - [ ] B9: W wielu miejscach używasz niepoprawnych adresów obrazów. Obrazy te pochodzą z ser-

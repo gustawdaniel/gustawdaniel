@@ -796,8 +796,8 @@ która obejmie funkcje trygonometryczne, logarytm, eksponent i nawet regułę ł
 
 Możesz zaprosić mnie do swoich znajomych na tej platformie używając linku:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657
 
 Wszystkie przedstawione kody znajdziesz na moim githubie:
 
-[GitHub - gustawdaniel/codingame-derivative-time-part-1](https://opengraph.githubassets.com/f239053bc814122dc1c46e68d764599685c1bcf41c7c4651e8f19786982fa0db/gustawdaniel/codingame-derivative-time-part-1)](https://github.com/gustawdaniel/codingame-derivative-time-part-1)
+https://github.com/gustawdaniel/codingame-derivative-time-part-1

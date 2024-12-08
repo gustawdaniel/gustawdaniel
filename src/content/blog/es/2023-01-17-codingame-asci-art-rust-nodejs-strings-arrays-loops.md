@@ -515,4 +515,4 @@ Espero que este artículo sea útil para aprender conceptos básicos de rust o j
 
 Si quieres resolver problemas similares, puedes crear una cuenta en `codingame` usando el siguiente enlace:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657

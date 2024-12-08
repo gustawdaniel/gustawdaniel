@@ -515,4 +515,4 @@ I hope this article will be helpful for learning basic concepts from rust or jav
 
 If you want to solve similar problems you can create account on `codingame` using link:
 
-[https://www.codingame.com/servlet/urlinvite?u=5287657](https://www.codingame.com/servlet/urlinvite?u=5287657)
+https://www.codingame.com/servlet/urlinvite?u=5287657
