@@ -1,5 +1,5 @@
 ---
-Title: Arch i3 Ricing Guide
+title: Arch i3 Ricing Guide
 publishDate: 2024-11-30
 ---
 

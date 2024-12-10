@@ -1,5 +1,5 @@
 ---
-Title: How to count files in directories in S3
+title: How to count files in directories in S3
 publishDate: 2024-11-28
 ---
 
