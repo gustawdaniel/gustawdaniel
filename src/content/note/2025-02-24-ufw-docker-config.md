@@ -1,5 +1,5 @@
 ---
-Title: UFW Docker config
+title: UFW Docker config
 publishDate: 2025-02-24
 ---
 
