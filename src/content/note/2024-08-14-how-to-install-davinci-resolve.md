@@ -133,7 +133,7 @@ ffmpeg -i input.mkv -c:v copy -c:a libmp3lame -q:a 2 output.mkv
 
 ### Silence removal
 
-Clone repo: https://github.com/carykh/jumpcutter/tree/master
+Clone repo: https://github.com/carykh/jumpcutter.git
 
 Install python dependencies, then remove silence
 

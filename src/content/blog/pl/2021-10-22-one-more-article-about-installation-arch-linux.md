@@ -353,7 +353,7 @@ pacman -S grub
 używamy komendy `grub-install`
 
 ```
-grub-install /dev/sda
+grub-install /dev/sda --force
 ```
 
 i tworzymy plik konfiguracyjny gruba

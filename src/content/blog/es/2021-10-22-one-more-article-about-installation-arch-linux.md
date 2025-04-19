@@ -351,7 +351,7 @@ pacman -S grub
 utilizamos el comando `grub-install`
 
 ```
-grub-install /dev/sda
+grub-install /dev/sda --force
 ```
 
 y creamos el archivo de configuración de grub
