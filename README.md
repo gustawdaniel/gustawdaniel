@@ -68,6 +68,24 @@ Replace all img links
 find src -type f -exec sed -i 's|http://localhost:8484|http://preciselab.fra1.digitaloceanspaces.com/blog/img|g' {} +
 ```
 
+## Get images from Digital Ocean
+
+```bash
+mkdir -p src/assets
+mkdir -p src/assets/images
+s3cmd get s3://preciselab/blog/img/ src/assets/images/
+```
+
+## Caddy
+
+caddy file that shows images from src/assets/images on localhost:8484
+
+```caddyfile
+localhost:8484 {
+    root /home/daniel/pro/blog/src/assets/images
+}
+```
+
 ## Planned fixes
 
 TODO:
