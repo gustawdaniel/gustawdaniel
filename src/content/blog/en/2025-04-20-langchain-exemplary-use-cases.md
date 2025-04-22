@@ -9,6 +9,7 @@ slug: en/langchain-exemplary-use-cases
 tags:
   - langchain
   - openai  
+  - rag
 title: LangChain Exemplary Use Cases
 updateDate: 2025-04-20 00:00:00+00:00
 ---
