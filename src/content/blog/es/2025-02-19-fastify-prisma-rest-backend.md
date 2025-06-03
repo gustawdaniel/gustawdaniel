@@ -2,24 +2,24 @@
 author: Daniel Gustaw
 canonicalName: fastify-prisma-rest-backend
 coverImage: https://ucarecdn.com/9f3ddfd7-f948-4087-a77f-12cc87372c70/-/preview/1000x1000/
-description: Typescript template for Fastify REST API with Prisma and JWT authentication.
-excerpt: Typescript template for Fastify REST API with Prisma and JWT authentication.
+description: Plantilla de TypeScript para API REST de Fastify con autenticación JWT y Prisma.
+excerpt: Plantilla de TypeScript para API REST de Fastify con autenticación JWT y Prisma.
 publishDate: 2025-02-19 00:00:00+00:00
-slug: en/fastify-prisma-rest-backend
+slug: es/backend-rest-prisma-fastify
 tags:
-  - typescript
-  - fastify
-  - prisma
-  - jwt
-title: Fastify Prisma REST backend
+- typescript
+- fastify
+- prisma
+- jwt
+title: Backend REST de Fastify Prisma
 updateDate: 2025-02-19 00:00:00+00:00
 ---
 
 ## Fastify Prisma REST backend
 
-I am creating a lot of Fastify projects and in this article I gathered most common parts of them.
+Estoy creando muchos proyectos de Fastify y en este artículo he reunido las partes más comunes de ellos.
 
-Project setup:
+Configuración del proyecto:
 
 ```bash
 pnpm init
@@ -27,7 +27,7 @@ pnpm --package=typescript dlx tsc --init
 pnpm add -D typescript @types/node
 ```
 
-optionally add
+opcionalmente agregar
 
 ```json
 {
@@ -37,18 +37,18 @@ optionally add
 }
 ```
 
-to `package.json` to avoid `pnpm` asking for approval for every build.
+a `package.json` para evitar que `pnpm` pida aprobación para cada compilación.
 
-## Env validation
+## Validación de entorno
 
-We do not want to allow for serving of project if there are missing env variables. Thanks to `zod` we can validate if .env contains all required values.
+No queremos permitir la ejecución del proyecto si faltan variables de entorno. Gracias a `zod` podemos validar si .env contiene todos los valores requeridos.
 
 ```bash
 mkdir -p src && touch src/config.ts
 pnpm add zod
 ```
 
-add file `src/config.ts`
+agregar archivo `src/config.ts`
 
 ```typescript
 import { z } from 'zod';
@@ -67,40 +67,40 @@ export const serverVariables = z.object({
 export const config = serverVariables.parse(process.env);
 ```
 
-## Prisma connection
+## Conexión de Prisma
 
-Most of the projects need a database. 
+La mayoría de los proyectos necesita una base de datos.
 
 ```bash
 pnpm add prisma @prisma/client
 npx prisma init
 ```
 
-then agree for builds.
+entonces acuerde para las compilaciones.
 
 ```bash
 pnpm approve-builds
 ```
 
-Sync prisma schema if exists
+Sincroniza el esquema de prisma si existe
 
 ```bash
 pnpm dlx prisma db pull
 touch src/db.ts
 ```
 
-## Add Fastify
+## Agregar Fastify
 
-Uncomment `"resolveJsonModule": true,` line in `tsconfig.json`.
+Descomenta la línea `"resolveJsonModule": true,` en `tsconfig.json`.
 
-Install packages
+Instala paquetes
 
 ```bash
 pnpm add fastify @fastify/cors @fastify/sensible jsonwebtoken
 pnpm add -D @types/jsonwebtoken tsx
 ```
 
-Add file `src/fastify.ts`
+Añadir archivo `src/fastify.ts`
 
 ```typescript
 import fastify, {
@@ -218,7 +218,7 @@ export function getFastifyInstance(): FastifyInstance {
 }
 ```
 
-This is minimalistic setup with users validation. We can import it in `src/index.ts`
+Esta es una configuración minimalista con validación de usuarios. Podemos importarlo en `src/index.ts`
 
 ```typescript
 import {getFastifyInstance} from './fastify';
@@ -237,7 +237,7 @@ app.listen(
 );
 ```
 
-add script `dev` to `package.json`
+agregar script `dev` a `package.json`
 
 ```json
 {
@@ -247,26 +247,26 @@ add script `dev` to `package.json`
 }
 ```
 
-Test by
+Prueba por
 
 ```bash
 pnpm dev
 ```
 
-and
+y
 
 ```bash
 http localhost:4747
 ```
 
-## Building
+## Construcción
 
 ```
 pnpm add -D tsup
 ```
 
-add scripts
-    
+agregar scripts
+
 ```json
 {
     "scripts": {
@@ -276,13 +276,13 @@ add scripts
 }
 ```
 
-## E2E test
+## Prueba E2E
 
 ```bash
 pnpm add -D vitest
 ```
 
-add file `test/version.e2e.spec.ts`
+agregar archivo `test/version.e2e.spec.ts`
 
 ```typescript
 import {it, expect} from "vitest";
@@ -305,7 +305,7 @@ it('should return version', async () => {
 })
 ```
 
-and script
+y guion
 
 ```json
 {
@@ -315,22 +315,22 @@ and script
 }
 ```
 
-call
+llamar
 
 ```bash
 pnpm test
 ```
 
-## Test protected route
+## Probar ruta protegida
 
-create route
+crear ruta
 
 ```bash
 mkdir -p src/controller/auth
 touch src/controller/auth/me.ts
 ```
 
-add file `src/controller/auth/me.ts`
+agregar archivo `src/controller/auth/me.ts`
 
 ```typescript
 import {FastifyRequest} from "fastify";
@@ -341,7 +341,7 @@ export function me(req: FastifyRequest): UserProjection | null {
 }
 ```
 
-where `src/types/auth.ts` contains types excluded from fastify.ts
+donde `src/types/auth.ts` contiene tipos excluidos de fastify.ts
 
 ```typescript
 export interface TokenPayload {
@@ -355,7 +355,7 @@ export interface UserProjection {
 }
 ```
 
-We can also exclude `router.ts` from `fastify.ts` to separate file
+También podemos excluir `router.ts` de `fastify.ts` a un archivo separado.
 
 ```typescript
 import {FastifyInstance, FastifyPluginOptions, RouteShorthandOptions} from "fastify";
@@ -377,7 +377,7 @@ export function router(
 }
 ```
 
-and move `version` to `controllers/app/version.ts`
+y mueve `version` a `controllers/app/version.ts`
 
 ```typescript
 import {FastifyReply, FastifyRequest} from "fastify";
@@ -391,7 +391,7 @@ export function version(_req: FastifyRequest, res: FastifyReply): void {
 }
 ```
 
-Now we can test it in file `test/auth.e2e.spec.ts`
+Ahora podemos probarlo en el archivo `test/auth.e2e.spec.ts`
 
 ```typescript
 import {it, expect} from "vitest";
@@ -423,7 +423,7 @@ it('should return me', async () => {
 })
 ```
 
-## Deployment
+## Implementación
 
 Dockerfile
 
@@ -465,7 +465,7 @@ services:
       - INFISICAL_TOKEN
 ```
 
-Hosts file
+Archivo de hosts
 
 ```hosts
 [local]
@@ -514,18 +514,18 @@ Ansible playbook `deploy.yml`
         chdir: '{{ path }}'
 ```
 
-Go to infisical access control, select service token and create new with `read` permissions selecting scope `/**` and expiration time `never`.
+Ve a control de acceso de Infisical, selecciona el token de servicio y crea uno nuevo con permisos de `lectura` seleccionando el alcance `/**` y el tiempo de expiración `nunca`.
 
-Finally add deploy command to `Makefile`
+Finalmente, agrega el comando de despliegue al `Makefile`.
 
 ```makefile
 deploy:
 	ansible-playbook -i "hosts.${ENV}" deploy.yml
 ```
 
-Then having `hosts.prod` and `hosts.stag` you can deploy by running `ENV=prod make deploy` or `ENV=stag make deploy`.
+Luego, teniendo `hosts.prod` y `hosts.stag`, puedes desplegar ejecutando `ENV=prod make deploy` o `ENV=stag make deploy`.
 
-To tie deployment with domain on server add to `/etc/caddy/Caddyfile` lines
+Para vincular el despliegue con el dominio en el servidor, añade al archivo `/etc/caddy/Caddyfile` las líneas
 
 ```caddyfile
 api.domain.com {
@@ -533,7 +533,7 @@ api.domain.com {
 }
 ```
 
-and reload by
+y recargar por
 
 ```bash
 systemctl reload caddy

@@ -7,9 +7,9 @@ excerpt: Wprowadzenie do uczenia maszynowego na przykładzie problemu XOR. W art
 publishDate: 2025-05-19 00:00:00+00:00
 slug: pl/machine-learning-of-xor-from-scratch
 tags:
-  - machine-learning
-  - python
-  - numpy
+- machine-learning
+- python
+- numpy
 title: Uczenie maszynowe XOR od zera
 updateDate: 2025-05-19 00:00:00+00:00
 ---
@@ -408,7 +408,7 @@ def init_params(hidden_std_dev = 1, output_std_dev = 1):
     return hidden_weights, hidden_bias, output_weights, output_bias
 ```
 
-Cały proces uczenia zamykamy w funkcji `train`, która jest teraz zależna od początkowych odchyleń parametrów 
+Cały proces uczenia zamykamy w funkcji `train`, która jest teraz zależna od początkowych odchyleń parametrów
 
 ```python
 def train(hidden_std_dev = 1, output_std_dev = 1):

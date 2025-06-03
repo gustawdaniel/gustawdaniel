@@ -256,19 +256,19 @@ if __name__ == '__main__':
 
 ### Code Breakdown
 
-```
+```python
 load_or_create_vectorstore(pdf_path, embeddings):
 ```
 
 This function checks whether an existing FAISS index exists. If it does, it loads it. Otherwise, it processes the PDF, splits it into smaller chunks, and creates a new FAISS index.
 
-```
+```python
 parse(pdf_path, question):
 ```
 
 This is the entry point where you can pass any PDF path and a question. It loads the document, retrieves the relevant information, and answers the question using the RetrievalQA chain powered by OpenAI.
 
-```
+```python
 main():
 ```
 
