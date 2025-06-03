@@ -6,7 +6,7 @@ import type { Locales } from "astro";
 import { redirects } from "./src/helpers/redirects.ts";
 import pagefind from "astro-pagefind";
 import remarkMath from "remark-math";
-// import rehypeKatex from "rehype-katex";
+import rehypeKatex from "rehype-katex";
 // redirect /author/daniel/
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +26,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkMath],
-    // rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes

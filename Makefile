@@ -3,3 +3,6 @@ node_modules: package.json
 
 up: node_modules
 	pnpm dev
+
+img:
+	cd scripts && caddy run
