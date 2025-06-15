@@ -9,7 +9,7 @@ Pass: 13371337
 
 Notebook with code:
 
-http://192.168.8.173:8888/notebooks/gpt.ipynb
+http://192.168.8.173:8000/jupyter-static/gpt.html
 
 Twitch:
 
