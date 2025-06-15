@@ -9,7 +9,7 @@ Pass: 13371337
 
 Notebook with code:
 
-http://192.168.8.173:8000/jupyter-static/gpt.html
+https://colab.research.google.com/drive/1Y0VIjUJCugy21op6PVeYnYuvpTzubKiV?usp=sharing
 
 Twitch:
 
