@@ -1,0 +1,75 @@
+---
+import allEvents from '../../../assets/events.json'
+
+interface CommunityEvent {
+    time: string
+    title: string
+    link: string
+    image: string
+    text: string
+    tags: string[]
+    location: string
+}
+
+// const events1 = [events[0]]
+const excludedLocations = [
+    'Tbilisi Opera and Ballet Theater',
+    'Warsaw Spire'
+]
+const events = allEvents.filter(e =>
+    e.image && !excludedLocations.includes(e.location)
+);
+---
+
+<main class="container mx-auto px-6 my-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        🌍 Organised Events
+    </h1>
+
+    <p class="text-xl md:text-2xl font-semibold mb-16 mx-10">I organized series of events building amazing community in Tbilisi and Batumi. They was focussed on AI topics from basics topics like usage of existing models to advanced level with reading papers and building GPT trasformer in python.</p>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {events.map((e) => (
+                <a
+                        href={e.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group flex flex-col rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow hover:shadow-xl transition duration-300"
+                >
+                    <!-- Image -->
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img
+                                src={e.image}
+                                alt={e.title}
+                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                        />
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex flex-col flex-1 p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
+                            {e.time} · {e.location}
+                        </time>
+
+                        <h2 class="text-lg font-semibold mb-3 group-hover:text-viridian transition-colors">
+                            {e.title}
+                        </h2>
+
+                        <!--<div-->
+                        <!--        class="prose prose-sm dark:prose-invert line-clamp-3 mb-4"-->
+                        <!--        set:html={e.text}-->
+                        <!--/>-->
+
+                        <div class="mt-auto flex flex-wrap gap-6">
+                            {(e.tags ?? []).map(tag => (
+                                    <span class="inline-flex items-center rounded-full bg-viridian/10 text-xs font-medium text-viridian">
+                                        {tag}
+                                    </span>
+                            ))}
+                        </div>
+                    </div>
+                </a>
+        ))}
+    </div>
+</main>

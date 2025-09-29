@@ -1,0 +1,8 @@
+#{
+#	auto_https disable_redirects
+#}
+
+:8484 {
+	root * /Users/daniel/pro/blog/src/assets/images
+	file_server
+}
