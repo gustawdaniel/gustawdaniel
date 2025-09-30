@@ -26,6 +26,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-src/assets
 src/assets/images
 public/pagefind
