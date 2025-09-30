@@ -1,0 +1,391 @@
+[
+  {
+    "time": "SUN, JUN 22, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Let's build the GPT Tokenizer.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937673/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/c/0/highres_527001184.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Let's build GPT: from scratch, in code, spelled out.</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>eight</strong> event from this series.</p>\n<p class=\"mb-4\">The Tokenizer is a necessary and pervasive component of Large Language Models (LLMs), where it translates between strings and tokens (text chunks). Tokenizers are a completely separate stage of the LLM pipeline: they have their own training sets, training algorithms (Byte Pair Encoding), and after training implement two fundamental functions: encode() from strings to tokens, and decode() back from tokens to strings. In this lecture we build from scratch the Tokenizer used in the GPT series from OpenAI. In the process, we will see that a lot of weird behaviors and problems of LLMs actually trace back to tokenization. We'll go through a number of these issues, discuss why tokenization is at fault, and why someone out there ideally finds a way to delete this stage entirely.</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Warszawa, PL",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "Warsaw Spire"
+  },
+  {
+    "time": "SUN, JUN 15, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Let's build GPT from scratch.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937657/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/b/6/highres_527001174.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Let's build GPT: from scratch, in code, spelled out.</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>seventh</strong> event from this series.</p>\n<p class=\"mb-4\">We build a Generatively Pretrained Transformer (GPT), following the paper \"Attention is All You Need\" and OpenAI's GPT-2 / GPT-3. We talk about connections to ChatGPT, which has taken the world by storm. We watch GitHub Copilot, itself a GPT, help us write a GPT (meta :D!) . I recommend people watch the earlier makemore videos to get comfortable with the autoregressive language modeling framework and basics of tensors and PyTorch nn, which we take for granted in this video.</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "F0RTHSP4CE"
+  },
+  {
+    "time": "SUN, JUN 8, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Building a WaveNet.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937603/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/7/0/highres_527001104.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Building makemore Part 4: Becoming a Backprop Ninja</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>sixth</strong> event from this series.</p>\n<p class=\"mb-4\">We take the 2-layer MLP from previous video and make it deeper with a tree-like structure, arriving at a convolutional neural network architecture similar to the WaveNet (2016) from DeepMind. In the WaveNet paper, the same hierarchical architecture is implemented more efficiently using causal dilated convolutions (not yet covered). Along the way we get a better sense of <a href=\"http://torch.nn\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">torch.nn</a> and what it is and how it works under the hood, and what a typical deep learning development process looks like (a lot of reading of documentation, keeping track of multidimensional tensor shapes, moving between jupyter notebooks and repository code, ...).</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "F0RTHSP4CE"
+  },
+  {
+    "time": "SUN, JUN 1, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Becoming a Backprop Ninja.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937571/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/6/2/highres_527001090.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Building makemore Part 4: Becoming a Backprop Ninja</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>fifth</strong> event from this series.</p>\n<p class=\"mb-4\">We take the 2-layer MLP (with BatchNorm) from the previous video and backpropagate through it manually without using PyTorch autograd's loss.backward(): through the cross entropy loss, 2nd linear layer, tanh, batchnorm, 1st linear layer, and the embedding table. Along the way, we get a strong intuitive understanding about how gradients flow backwards through the compute graph and on the level of efficient Tensors, not just individual scalars like in micrograd. This helps build competence and intuition around how neural nets are optimized and sets you up to more confidently innovate on and debug modern neural networks.</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "F0RTHSP4CE"
+  },
+  {
+    "time": "THU, MAY 29, 2025, 8:00 AM GET",
+    "title": "Let's learn to play golf together!",
+    "link": "https://www.meetup.com/lets-learn-together/events/308046299/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/a/7/4/3/highres_528162819.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>🎯 Let's Learn Golf Together!</strong><br>\nJoin us for a fun and casual morning of golf at <a href=\"https://tbilisihills.com/golf/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Tbilisi Hills Golf</a>! No experience needed — most of us are complete beginners. It’s all about trying something new, having fun, and maybe snapping a few Instagram-worthy pics 😄.</p>\n<p class=\"mb-4\"><strong>📍 Meeting Point:</strong><br>\nIn front of the Tbilisi Opera House</p>\n<p class=\"mb-4\"><strong>🕗 Time:</strong> Thursday, May 29 at 8:00 AM<br>\nWe’ll wait until 8:15 AM, then head out together by taxi. If you're late, you’re still welcome — just come on your own!</p>\n<p class=\"mb-4\"><strong>🏌️‍♀️ Schedule:</strong></p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>8:00 – Meet at Opera</li>\n<li>8:15 – Taxi to Tbilisi Hills</li>\n<li>9:00 – Start playing (driving range, mini golf, etc.)</li>\n<li>11:30 – Finish playing</li>\n<li>12:00 – Back in the city</li>\n</ul>\n<p class=\"mb-4\"><strong>💸 Cost:</strong></p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>25–100 GEL</strong> depending on how many balls you hit (paid at the golf course)</li>\n<li><strong>5–10 GEL</strong> for shared Bolt/taxi</li>\n</ul>\n<p class=\"mb-4\"><strong>📸 Bonus:</strong><br>\nGreat views, chill vibes, and photo ops to flex your golf debut online 😉<br>\n<strong>Open to everyone</strong> — just bring comfy clothes, good vibes, and let’s have some fun!</p>\n<p class=\"mb-4\">🏌️‍♂️ <strong>Website of golf field</strong>: <a href=\"https://tbilisihills.com/golf/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://tbilisihills.com/golf/</a><br>\n📲 <strong>My Telegram</strong>: <a href=\"https://t.me/gustawdaniel\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://t.me/gustawdaniel</a></p>\n<p class=\"mb-4\">⏰ <strong>We will wait from 8:00 to 8:15</strong> next to the entrance to <strong>Opera</strong> 🎭.<br>\n🚌 There is a bus stop called <strong>Opera Theater (ოპერის თეატრი)</strong><br>\n🆔 Stop ID: <strong>817</strong><br>\n📍 <strong>Address</strong>: Shota Rustaveli Ave, Tbilisi<br>\n🗺️ <a href=\"https://maps.app.goo.gl/7oHHikjbT4ps4ThA7\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Google Maps</a></p>\n<p class=\"mb-4\">🚖 Then we will order a taxi to:<br>\n🏌️‍♀️ <strong>TBILISI HILLS GOLF</strong><br>\n📍 1313 Kvemo Teleti<br>\n🗺️ <a href=\"https://maps.app.goo.gl/6ZMabd26b5LAp71e6\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Google Maps</a></p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Golf",
+      "New In Town",
+      "International Friends",
+      "Geeks & Nerds",
+      "Sports Fan"
+    ],
+    "location": "Tbilisi Opera and Ballet Theater"
+  },
+  {
+    "time": "SUN, MAY 25, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Activations & Gradients, BatchNorm.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937535/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/2/a/highres_527001034.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Building makemore Part 3: Activations &amp; Gradients, BatchNorm</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>forth</strong> event from this series.</p>\n<p class=\"mb-4\">We dive into some of the internals of MLPs with multiple layers and scrutinize the statistics of the forward pass activations, backward pass gradients, and some of the pitfalls when they are improperly scaled. We also look at the typical diagnostic tools and visualizations you'd want to use to understand the health of your deep network. We learn why training deep neural nets can be fragile and introduce the first modern innovation that made doing so much easier: Batch Normalization. Residual connections and the Adam optimizer remain notable todos for later video.</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "F0RTHSP4CE"
+  },
+  {
+    "time": "SUN, MAY 18, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - multilayer perceptron.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937521/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/1/d/e/highres_527000958.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Building makemore Part 2: MLP</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>third</strong> event from this series.</p>\n<p class=\"mb-4\">We implement a multilayer perceptron (MLP) character-level language model. In this video we also introduce many basics of machine learning (e.g. model training, learning rate tuning, hyperparameters, evaluation, train/dev/test splits, under/overfitting, etc.).</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "F0RTHSP4CE"
+  },
+  {
+    "time": "SUN, MAY 11, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - language modeling.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937492/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/1/c/e/highres_527000942.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>The spelled-out intro to language modeling: building makemore</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>second</strong> event from this series.</p>\n<p class=\"mb-4\">We implement a bigram character-level language model, which we will further complexify in followup videos into a modern Transformer language model, like GPT. In this video, the focus is on (1) introducing torch.Tensor and its subtleties and use in efficiently evaluating neural networks and (2) the overall framework of language modeling that includes model training, sampling, and the evaluation of a loss (e.g. the negative log likelihood for classification).</p>\n<p class=\"mb-4\">If you was absent on previous you can watch all previous lessons.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in T'bilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "Pullman Tbilisi Axis Towers"
+  },
+  {
+    "time": "SUN, MAY 4, 2025, 1:00 PM GET",
+    "title": "Neural Networks: Zero to Hero - Backpropagation.",
+    "link": "https://www.meetup.com/lets-learn-together/events/306937260/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/5/0/2/0/highres_527000512.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>The spelled-out intro to neural networks and backpropagation: building micrograd</strong></p>\n<p class=\"mb-4\">We following a course created by Andrej Karpathy on building neural networks, from scratch, in code.</p>\n<p class=\"mb-4\">We start with the basics of backpropagation and build up to modern deep neural networks, like GPT. In my opinion language models are an excellent place to learn deep learning, even if your intention is to eventually go to other areas like computer vision because most of what you learn will be immediately transferable. This is why we dive into and focus on languade models.</p>\n<p class=\"mb-4\">Prerequisites: solid programming (Python), intro-level math (e.g. derivative, gaussian).</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">This is <strong>first</strong> event from this series.</p>\n<p class=\"mb-4\">This is the most step-by-step spelled-out explanation of backpropagation and training of neural networks. It only assumes basic knowledge of Python and a vague recollection of calculus from high school.</p>\n<p class=\"mb-4\">Full curse is presented on page:<br>\n<a href=\"https://karpathy.ai/zero-to-hero.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://karpathy.ai/zero-to-hero.html</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">✅ We will follow course program, discuss code, explain fragments that are unclear and learn together.<br>\n✅ After course there will be time to eat dinner making new connections in AI worlds and sharing what you think.</p>\n<p class=\"mb-4\">Basically you can just view video at your home, but learning in group you can grasp some ideas faster asking questions and learn deeper explaining something that you understand to others.</p></div></div>",
+    "tags": [
+      "Events in T'bilisi, GE",
+      "Artificial Intelligence",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "Pullman Tbilisi Axis Towers"
+  },
+  {
+    "time": "SUN, APR 27, 2025, 7:00 PM GET",
+    "title": "Reinforcement Learning in DeepSeek-R1",
+    "link": "https://www.meetup.com/lets-learn-together/events/306931415/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/4/2/e/2/highres_526997122.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>🚀 DeepSeek R1: Reinforcement Learning &amp; AI Optimization Meetup</strong><br>\nJoin us for an exciting discussion on <strong>DeepSeek R1</strong>, a cutting-edge reinforcement learning model that enhances reasoning and decision-making. We’ll explore advanced optimization techniques like <strong>Proximal Policy Optimization (PPO)</strong> and <strong>Group Relative Policy Optimization (GRPO)</strong> and how they shape the future of AI.</p>\n<p class=\"mb-4\">We will analyze:<br>\n<a href=\"https://arxiv.org/pdf/2501.12948\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://arxiv.org/pdf/2501.12948</a> and<br>\n<a href=\"https://www.youtube.com/watch?v=H20Hd6Xb7Qo\" target=\"_blank\" class=\"!text-viridian\" rel=\"ugc\">https://www.youtube.com/watch?v=H20Hd6Xb7Qo</a></p>\n<p class=\"mb-4\">This event is focused on deep understanding difference of R1 and GPT architecture <a href=\"https://arxiv.org/pdf/2305.10435.\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://arxiv.org/pdf/2305.10435.</a> Not contain practical workshop.</p>\n<p class=\"mb-4\">### <strong>What to expect?</strong></p>\n<p class=\"mb-4\">✅ Insights into <strong>reinforcement learning</strong><br>\n✅ Deep dive into <strong>PPO and GRPO</strong> optimization strategies<br>\n✅ Networking with AI enthusiasts, researchers, and developers<br>\n✅ A welcoming space for discussions and knowledge-sharing</p>\n<p class=\"mb-4\">### <strong>Event Details:</strong></p>\n<p class=\"mb-4\">📅 <strong>Date:</strong> April 27, 2025<br>\n⏰ <strong>Time:</strong> 1:00 AM (Duration: 2 hours)<br>\n📍 <strong>Location:</strong> LendSpace, 4 Sherif Khimshiashvili St, Batumi, Georgia<br>\n💬 <strong>Language:</strong> English<br>\n🎟 <strong>Entry:</strong> Free<br>\nWhether you're a beginner or an expert, come join us to explore the latest AI advancements and connect with like-minded individuals.<br>\n👉 <strong>Reserve your spot and be part of the conversation!</strong></p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "Science",
+      "Geeks & Nerds",
+      "Professional Networking",
+      "Open Source",
+      "Researchers"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, APR 20, 2025, 1:00 PM GET",
+    "title": "Structurization, Retrival Augmented Generation and AI Tools with Lang Chain",
+    "link": "https://www.meetup.com/lets-learn-together/events/306930900/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/4/1/c/9/highres_526996841.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">LangChain is ecosystem that introduced unified interface for multimodal conversational models. It provides also ecosystem for models efficiency of llsm deployed on production apps.</p>\n<p class=\"mb-4\">We will learn basics of LangChain by 3 examples.<br>\n- response structuring - on input we will put pdf invoice, and data model. We expect that out program will be able to get different PDF invoices and extract from them client, date, invoice number and total value for payment. This can be useful in digitization of data that are received in form like images of PDF.<br>\n- rag - in input we will put book and detailed question about details of one chapter, we will compare results from RAG that we created and Chat GPT. This can be used with any type of text, like documentation, or offer of our company.<br>\n- tools - as input we will give database and questions about data in human language. We expect from model to introspect db structure, build queries dynamically execute them and present summary of results.</p>\n<p class=\"mb-4\"><a href=\"https://python.langchain.com/docs/integrations/tools/sql_database/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://python.langchain.com/docs/integrations/tools/sql_database/</a></p>\n<p class=\"mb-4\">What do you need:<br>\n- basic knowledge of python<br>\n- laptop</p>\n<p class=\"mb-4\">What you will learn:<br>\n- how to use langchain<br>\n- what are these capabilities</p>\n<p class=\"mb-4\">You don't have to be experienced python user, enough to know how to install packages and run python hello world. There is assumption that it is your first contact with langchain.</p>\n<p class=\"mb-4\">Event is free, but to use these tools you will probably have to spend about 5 USD for your own API KEY from any LLM provider. During even we can provide you our keys.</p>\n<p class=\"mb-4\">To prepare you can read more about apis that will be presented:<br>\n<a href=\"https://python.langchain.com/docs/how_to/document_loader_pdf/#other-pdf-loaders\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://python.langchain.com/docs/how_to/document_loader_pdf/#other-pdf-loaders</a><br>\n<a href=\"https://python.langchain.com/api_reference/upstage/index.html#langchain-upstage-tools\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://python.langchain.com/api_reference/upstage/index.html#langchain-upstage-tools</a></p>\n<p class=\"mb-4\">📅 <strong>Date &amp; Time:</strong> Thu, Apr 20, 2025 01:00 PM (2 hours)<br>\n📍 <strong>Location:</strong> LendSpace · 4 Sherif Khimshiashvili St, Batumi 6000, Georgien · Batumi</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "Science",
+      "Python",
+      "Geeks & Nerds",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, APR 13, 2025, 1:00 PM GET",
+    "title": "Optimized Workforce Learning for General Multi-Agent Assistance",
+    "link": "https://www.meetup.com/lets-learn-together/events/306913589/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/9/e/8/highres_526982536.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">🔍 <strong>Exploring OWL &amp; CAMEL-AI for Multi-Agent Collaboration</strong></p>\n<p class=\"mb-4\">Join us for a <strong>free, 2-hour collaborative research workshop</strong> where we dive into <strong>OWL (Optimized Workforce Learning)</strong>, a cutting-edge framework for multi-agent collaboration built on <strong>CAMEL-AI</strong>.</p>\n<p class=\"mb-4\">Check links:<br>\n- https://github.com/camel-ai/owl?tab=readme-ov-file#starting-the-web-ui<br>\n- https://github.com/camel-ai/camel</p>\n<p class=\"mb-4\">📌 <strong>What to Expect:</strong><br>\n1️⃣ <strong>Introduction &amp; Documentation Review</strong> – Understanding OWL &amp; CAMEL-AI capabilities.<br>\n2️⃣ <strong>Hands-On Session</strong> – Working on tasks such as:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>Building features for existing OWL code</li>\n<li>Data visualization, especially for networks</li>\n<li>Bringing your own tasks for exploration</li>\n</ul>\n<p class=\"mb-4\">💻 <strong>Requirements for Practical Participation:</strong></p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>A laptop with Python installed (plus `uv` / `venv` / `conda`)</li>\n<li>A budget of ~$5 for an OpenAI API key (or another LLM provider) for hands-on usage<br>\n<em>(If you don’t have an API key or a laptop, you can still join and observe the live demos!)</em></li>\n</ul>\n<p class=\"mb-4\">📅 <strong>Date &amp; Time:</strong> 13 April 2025 at 1 PM<br>\n📍 <strong>Location:</strong> LendSpace Batumi<br>\nLet’s collaborate and push the boundaries of <strong>multi-agent task automation</strong> together! 🚀</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "AI Algorithms",
+      "Science",
+      "Python",
+      "Geeks & Nerds",
+      "Open Source"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, APR 6, 2025, 1:00 PM GET",
+    "title": "Model Context Protocol (MCP) – A New Way to Structure AI Thinking",
+    "link": "https://www.meetup.com/lets-learn-together/events/306625921/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/d/c/a/f/highres_526676495.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">Most AI models generate responses based on raw input, but what if they could <strong>understand context more like humans do</strong>? The <strong>Model Context Protocol (MCP)</strong> aims to bring structure to AI’s reasoning by defining how models interpret, store, and retrieve contextual knowledge.<br>\nThis workshop is all about <strong>breaking down the MCP concept</strong>, exploring how it works, and discussing how it could shape the future of AI interactions.</p>\n<p class=\"mb-4\"><a href=\"https://modelcontextprotocol.io/introduction\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://modelcontextprotocol.io/introduction</a></p>\n<p class=\"mb-4\">### <strong>What we’ll do:</strong></p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>Understand the core idea of MCP</strong> – What problems does it solve?</li>\n<li><strong>Compare it to current approaches</strong> – How does it differ from traditional context management?</li>\n<li><strong>Speculate on real-world applications</strong> – Can it improve LLMs, AI agents, or something entirely new?</li>\n<li><strong>Try to implement a simple version of MCP</strong> – If we have time and enough caffeine!</li>\n</ul>\n<p class=\"mb-4\">### <strong>No slides, just exploration</strong></p>\n<p class=\"mb-4\">This isn’t a lecture—it’s a <strong>collaborative deep dive</strong>. We might hit dead ends, uncover new ideas, or leave with more questions than answers. That’s part of the fun!<br>\n📅 <strong>Sunday, April 6, 2025</strong><br>\n🕖 <strong>13:00 PM – 15:00 PM</strong><br>\n📍 <strong>LendSpace, 4 Sherif Khimshiashvili St, Batumi 6000, Georgia</strong><br>\nJoin us if you’re curious, persistent, and ready to dive into AI! 🚀</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "Hacking",
+      "Geeks & Nerds",
+      "Open Source",
+      "Creative Coding",
+      "Learn to Code"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, MAR 30, 2025, 1:00 PM GET",
+    "title": "Let's learn voice cloning with Spark TTS",
+    "link": "https://www.meetup.com/lets-learn-together/events/306660648/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/9/5/e/5/highres_526718373.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">🚀 <strong>Spark TTS Meetup</strong> 🎤</p>\n<p class=\"mb-4\">Join us as we dive into the fascinating world of <strong>Spark TTS</strong>! 🔥<br>\nWe’ll explore the technology behind it, read and discuss key resources:<br>\n📖 <a href=\"https://github.com/SparkAudio/Spark-TTS\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">GitHub: Spark TTS</a><br>\n📚 <a href=\"https://arxiv.org/pdf/2503.01710\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Research Paper</a></p>\n<p class=\"mb-4\">In the <strong>hands-on session</strong>, we'll experiment with <strong>cloning voices</strong> 🤖 and writing a script to make the voice say anything you desire 🎶.</p>\n<p class=\"mb-4\">💥 <strong>Event is free!</strong></p>\n<p class=\"mb-4\">You don’t need a high-end GPU for the voice cloning part (unlike video rendering) 🎮. So, feel free to join even if your setup isn’t super powerful! 💻</p>\n<p class=\"mb-4\">This isn’t a traditional lecture—there will be no slides or scripts! Instead, we’re creating a <strong>collaborative space</strong> to <strong>discuss</strong> and <strong>learn</strong> from each other 🤝.</p>\n<p class=\"mb-4\">Come and be part of the fun! 🎉</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "AI Algorithms",
+      "Media",
+      "Startup Businesses",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, MAR 23, 2025, 1:00 PM GET",
+    "title": "Manus – Exploring the Future of General AI Agents",
+    "link": "https://www.meetup.com/lets-learn-together/events/306625702/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/d/a/a/b/highres_526675979.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">This workshop is an open exploration of <strong>Manus</strong>, a general AI agent designed to interact, learn, and adapt beyond traditional AI models. We won’t just read about it—we’ll test its capabilities, discuss its strengths and limitations, and see how it compares to other AI systems.</p>\n<p class=\"mb-4\">### <strong>What to expect?</strong></p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>A <strong>hands-on deep dive</strong> into how Manus processes information and makes decisions.</li>\n<li>A discussion on <strong>how it differs from other AI agents</strong> and what makes it unique.</li>\n<li>Trying to <strong>set up and run Manus on our own machines</strong>—so bring your best hardware!</li>\n<li>An informal, friendly space where curiosity drives the session.</li>\n</ul>\n<p class=\"mb-4\">### <strong>No guarantees, just learning</strong></p>\n<p class=\"mb-4\">As with any experimental workshop, things might not go smoothly. Possible hurdles include:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>Hardware struggles</strong> (incompatible GPU, not enough RAM).</li>\n<li><strong>Dependency chaos</strong> (Python issues, unexpected bugs).</li>\n<li><strong>The unknown</strong>—because AI is evolving, and we’re here to explore, not just follow a script.</li>\n</ul>\n<p class=\"mb-4\">If you’re comfortable with Python and enjoy figuring things out <strong>as a group</strong>, this is for you. If everything breaks, at least we’ll learn <strong>why</strong>—and have fun in the process.<br>\n📅 <strong>Date &amp; Time:</strong> Thu, Mar 23, 2025 01:00 PM (2 hours)<br>\n📍 <strong>Location:</strong> LendSpace · 4 Sherif Khimshiashvili St, Batumi 6000, Georgien · Batumi<br>\nJoin us if you’re curious, persistent, and ready to dive into AI! 🚀</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "AI Algorithms",
+      "Open Source",
+      "International Friends",
+      "Internet Startups",
+      "Technology"
+    ],
+    "location": "LendSpace · Batumi"
+  },
+  {
+    "time": "SAT, MAR 15, 2025, 12:00 PM GET",
+    "title": "Lets Learn Wan 2.1 - powerfull AI model to generate Video",
+    "link": "https://www.meetup.com/lets-learn-together/events/306664855/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/a/4/4/7/highres_526722055.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">## Details</p>\n<p class=\"mb-4\">This is workshop on witch we will read about Wan 2.1 model, compare it with CogVideoX that was discussed on similar event few month ago <a href=\"https://www.meetup.com/lets-learn-together/events/303580645\" target=\"_blank\" class=\"!text-viridian\">https://www.meetup.com/lets-learn-together/events/303580645</a></p>\n<p class=\"mb-4\">Our goals are:<br>\n- to get ability to generate videos on our local computers, so bring as powerful machine as you can.<br>\n- better understand what was crucial improvement in this technology in comparison to previous approach<br>\n- to make new friends with passion to learn new things</p>\n<p class=\"mb-4\">Meeting is not scripted. There is risk of failure because of:<br>\n- gpu will not be compatible<br>\n- we will not have enough RAM<br>\n- python version will have open bug for some dependency</p>\n<p class=\"mb-4\">So it is possible that some of use will not be able to run model correctly and this is just part of journey.</p>\n<p class=\"mb-4\">Useful links:<br>\nPinokio <a href=\"https://pinokio.computer/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://pinokio.computer/</a><br>\nWan 2.1 <a href=\"https://wanxai.com/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://wanxai.com/</a><br>\nWan on Github <a href=\"https://github.com/Wan-Video/Wan2.1\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/Wan-Video/Wan2.1</a><br>\nWan on Comfy UI <a href=\"https://stable-diffusion-art.com/wan-2-1/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://stable-diffusion-art.com/wan-2-1/</a></p>\n<p class=\"mb-4\">Event is planned for people that know how to install python</p>\n<p class=\"mb-4\">The smallest model T2V-1.3B requires only 8.19 GB VRAM, making it compatible with almost all GPUs.</p></div></div>",
+    "tags": [
+      "Events in Batumi, GE",
+      "AI Algorithms",
+      "Open Source",
+      "Digital Video",
+      "Geeks & Nerds",
+      "Internet Startups"
+    ],
+    "location": "LendSpace"
+  },
+  {
+    "time": "SUN, NOV 10, 2024, 12:00 PM GET",
+    "title": "Let’s learn computer vision",
+    "link": "https://www.meetup.com/lets-learn-together/events/304130308/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/d/9/e/3/highres_524215779.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\"><strong>Build a Hand-Controlled Painting App with Real-Time Camera Stream Analysis</strong><br>\nIn this hands-on workshop, we’ll be building an exciting app that recognizes hand movements via a live camera stream and uses them to draw on a digital canvas! Imagine the classic “Paint” program from Windows, but instead of a mouse, you’ll control the painting with your hands moving in mid-air—captured live by your camera.</p>\n<p class=\"mb-4\">### What We’ll Do:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>Capture video stream from your camera</li>\n<li>Detect hand positions in real-time</li>\n<li>Transmit hand coordinates to the front-end using <strong>Server-Sent Events (SSE)</strong></li>\n<li>Create an interactive <strong>HTML canvas</strong> for drawing</li>\n<li>Use hand movements to control the drawing on the canvas, replacing traditional mouse input</li>\n</ul>\n<p class=\"mb-4\">### Tech We’ll Use:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>Server-Sent Events (SSE):</strong><br>\nLearn how to send live data from the server to the browser.<br>\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">SSE in the browser</a> |<br>\n<a href=\"https://medium.com/@nandagopal05/server-sent-events-with-python-fastapi-f1960e0c8e4b\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">SSE on the server with FastAPI</a></li>\n<li><strong>HTML Canvas (2D Context):</strong><br>\nBuild a drawing interface using the browser’s 2D canvas.<br>\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Canvas API Docs</a></li>\n<li><strong>Python Generators:</strong><br>\nEfficiently handle data flow in real time using generators.<br>\n<a href=\"https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Generators in Python</a></li>\n<li><strong>OpenCV Video Capture:</strong><br>\nCapture video from your webcam using this powerful library.<br>\n<a href=\"https://opencv.org/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">OpenCV Official Site</a></li>\n<li><strong>MediaPipe Hands:</strong><br>\nTrack and identify hand positions with precision using Google’s MediaPipe.<br>\n<a href=\"https://mediapipe.readthedocs.io/en/latest/solutions/hands.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">MediaPipe Hands Documentation</a></li>\n</ul>\n<p class=\"mb-4\">### Requirements:</p>\n<p class=\"mb-4\">Basic knowledge of <strong>JavaScript</strong> and <strong>Python</strong> is recommended. We'll be writing code from scratch to create a fully functional demo. You should be comfortable with:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>Installing Python and npm packages</li>\n<li>Editing code in an IDE</li>\n</ul>\n<p class=\"mb-4\">If you're new to some of these technologies, don't worry! You'll be able to follow along, and code will be shared in real-time using <a href=\"https://hackmd.io\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">HackMD</a>.</p>\n<p class=\"mb-4\">After we’ve built the app, we’ll dive into discussions about <strong>MediaPipe</strong> and compare it with other computer vision frameworks like <strong>OpenCV</strong> and <strong>YOLO</strong>.</p>\n<p class=\"mb-4\">### Event Schedule:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>20 min:</strong> Video stream capture setup</li>\n<li><strong>20 min:</strong> Hand position detection</li>\n<li><strong>20 min:</strong> Sending hand positions to the browser</li>\n<li><strong>30 min:</strong> Building a classic “Paint” app with mouse control</li>\n<li><strong>30 min:</strong> Switching from mouse to hand-controlled drawing</li>\n<li><strong>15 min:</strong> Switching between drawing modes</li>\n</ul>\n<p class=\"mb-4\">### Useful Resources:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><a href=\"https://www.computervision.zone/courses/advance-computer-vision-with-python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Free 6-hour Advanced Computer Vision Course</a></li>\n<li><a href=\"https://research.google/blog/on-device-real-time-hand-tracking-with-mediapipe/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">How MediaPipe Hand Tracking Works</a></li>\n<li>Python refresher: <a href=\"https://learnxinyminutes.com/docs/python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Learn Python in minutes</a></li>\n<li>JavaScript refresher: <a href=\"https://learnxinyminutes.com/docs/javascript/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Learn JavaScript in minutes</a></li>\n</ul>\n<p class=\"mb-4\">***</p>\n<p class=\"mb-4\">Join us for a fun and interactive workshop where you’ll learn about cutting-edge hand-tracking technology and apply it to build a creative, real-time app. Whether you're a seasoned developer or just curious about computer vision, this workshop is sure to inspire!</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "AI Algorithms",
+      "JavaScript",
+      "Python",
+      "Geeks & Nerds",
+      "Open Source"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "SUN, NOV 3, 2024, 12:00 PM GET",
+    "title": "Lets learn how optimized AI can be with mojo or rust",
+    "link": "https://www.meetup.com/lets-learn-together/events/303978909/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/a/9/0/7/highres_524023271.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">When we develop AI we usually using python. It's perfect language for experiments and research.</p>\n<p class=\"mb-4\">But in production environment or with really computation heavy problems it's worth to look at more optimized solutions:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><strong>Mojo</strong> is a programming language designed for AI and high-performance computing.</li>\n<li><strong>Burn</strong> is a library for AI development in <strong>Rust</strong>.</li>\n</ul>\n<p class=\"mb-4\">On this event we are going to explore these technologies and check which use-cases we can find for them.</p>\n<p class=\"mb-4\">Promising report about mojo:<br>\n<a href=\"https://engiware.com/benchmark/llama2-ports-extensive-benchmarks-mac-m1-max.html\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://engiware.com/benchmark/llama2-ports-extensive-benchmarks-mac-m1-max.html</a></p>\n<p class=\"mb-4\">Burn:<br>\n- page https://burn.dev/</p>\n<p class=\"mb-4\">Mojo:<br>\n- page https://www.modular.com/mojo<br>\n- resources https://github.com/mojicians/awesome-mojo</p>\n<p class=\"mb-4\">Burn is interesting if you using rust or need flexibility with backend, it allow to use LibTorch for cuda and optimization and WebGPU for web deployments by wasm.</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">Event is for free. You do not have to know anything about these frameworks. We will read its docs, benchmarks, do research and try basic examples.</p>\n<p class=\"mb-4\">Goal of this event is to investigate if we have use-cases for them, when these technologies should be used and are worth to more time invested to learn them.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "Python",
+      "Rust",
+      "Computer Programming",
+      "Open Source",
+      "Technology"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "THU, OCT 31, 2024, 7:00 PM GET",
+    "title": "Digital Nomads Meetup Tbilisi",
+    "link": "https://www.meetup.com/lets-learn-together/events/304140968/?eventOrigin=group_events_list"
+  },
+  {
+    "time": "SUN, OCT 27, 2024, 12:00 PM GET",
+    "title": "Lets teach AI to drive a car",
+    "link": "https://www.meetup.com/lets-learn-together/events/303977800/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/a/0/5/3/highres_524021043.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">Our starting point are repositories:<br>\n- Feed Forward https://github.com/gniziemazity/self-driving-car/<br>\n- DQN https://github.com/tranHieuDev23/Self-Driving-Car<br>\n- NEAT https://github.com/marcpinet/neat-cars</p>\n<p class=\"mb-4\">We are going to:<br>\n- analyze existing code<br>\n- reproduce results on our laptops<br>\n- discuss how can we improve these implementations<br>\n- compare which algorithm is most effective</p>\n<p class=\"mb-4\">Event is for free. Everyone who know how to write code is invited. You do not have to be an expert and all mentioned algorithms will be explained for beginners.</p>\n<p class=\"mb-4\">If you know other programming languages, but not using python every day, take a quick look at this concise guide: <a href=\"https://learnxinyminutes.com/docs/python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Learn Python in X Minutes</a></p>\n<p class=\"mb-4\">If you're newer to coding, here's how you can get ready:</p>\n<ol class=\"pl-5 list-decimal mb-4\">\n<li><strong>Create a GitHub account</strong> if you don’t have one yet.</li>\n<li>Learn a few basic <strong>bash commands</strong> here: <a href=\"https://builtin.com/data-science/bash-commands\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">A Beginner’s Guide to Bash</a></li>\n<li>Familiarize yourself with <strong>Python basics</strong>: <a href=\"https://www.learnpython.org/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Interactive Python Tutorial</a></li>\n</ol>\n<p class=\"mb-4\">Goals:<br>\n- meet new friends<br>\n- gain new skills<br>\n- experiment with AI algorithms</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "SUN, OCT 20, 2024, 12:00 PM GET",
+    "title": "Let’s teach AI to play Flappy Bird",
+    "link": "https://www.meetup.com/lets-learn-together/events/303976969/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/9/c/f/b/highres_524020187.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">Ever wondered how AI can learn to play games like Flappy Bird? Join us for a hands-on event where we’ll explore two exciting approaches—<strong>NEAT (NeuroEvolution of Augmenting Topologies)</strong> and <strong>DQN (Deep Q-Network)</strong>—to teach AI to master this classic game.</p>\n<p class=\"mb-4\">### What We’ll Do:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>Analyze existing Flappy Bird AI implementations using both NEAT and DQN.</li>\n<li>Run these algorithms on our machines to see how they perform.</li>\n<li>Compare the results and discuss how each method approaches the problem.</li>\n<li>Brainstorm potential improvements, from network architectures to training strategies.</li>\n<li>Build <strong>connections with other attendees</strong> through collaboration, discussion, and shared learning.</li>\n<li>Most importantly, <strong>have fun</strong> coding, debugging, and experimenting together!</li>\n</ul>\n<p class=\"mb-4\">This event isn’t about lectures or slides—<strong>it’s all about coding</strong>. Whether we’re troubleshooting issues, sharing insights, or just having fun seeing our AIs crash into pipes, it’s all part of the experience.</p>\n<p class=\"mb-4\">### Who Should Join?</p>\n<p class=\"mb-4\">The event is for free and is open to <strong>anyone who can write code</strong>, even if you're not an AI expert. If you're familiar with programming but don’t use Python every day, you’re still in the right place.<br>\nIf you know other programming languages, take a quick look at Python with this concise guide:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><a href=\"https://learnxinyminutes.com/docs/python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Learn Python in X Minutes</a> (for developers familiar with other languages)</li>\n</ul>\n<p class=\"mb-4\">If you're newer to coding, here's how you can get ready:</p>\n<ol class=\"pl-5 list-decimal mb-4\">\n<li><strong>Create a GitHub account</strong> if you don’t have one yet.</li>\n<li>Learn a few basic <strong>bash commands</strong> here:</li>\n</ol>\n<p class=\"mb-4\"><a href=\"https://builtin.com/data-science/bash-commands\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">A Beginner’s Guide to Bash</a><br>\n3. Familiarize yourself with <strong>Python basics</strong>:</p>\n<p class=\"mb-4\"><a href=\"https://www.learnpython.org/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Interactive Python Tutorial</a></p>\n<p class=\"mb-4\">### Resources We’ll Explore:</p>\n<p class=\"mb-4\">We’ll use and analyze various existing Flappy Bird AI implementations, including:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li><a href=\"https://github.com/techwithtim/NEAT-Flappy-Bird\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">NEAT Flappy Bird by Tech with Tim</a></li>\n<li><a href=\"https://github.com/johnnycode8/dqn_pytorch\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">DQN PyTorch Flappy Bird by johnnycode8</a></li>\n<li><a href=\"https://flappybird-ai.netlify.app/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Flappy Bird AI Demo</a></li>\n<li><a href=\"https://nathanbaileyw.medium.com/using-a-deep-neural-network-to-play-flappy-bird-via-reinforcement-learning-cea639053768\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">Flappy Bird AI on Medium</a></li>\n</ul>\n<p class=\"mb-4\">### Our Goals:</p>\n<ul class=\"pl-5 list-disc mb-4\">\n<li>Compare NEAT and DQN in the context of a simple game like Flappy Bird.</li>\n<li>Collaborate, share insights, and <strong>make meaningful connections with fellow coders</strong>.</li>\n<li>Discuss the strengths, weaknesses, and potential improvements of each approach.</li>\n<li>Engage in practical, hands-on learning that’s fun and educational.</li>\n</ul>\n<p class=\"mb-4\">***</p>\n<p class=\"mb-4\"><strong>Ready to dive in?</strong> Grab your laptop, bring your curiosity, and let’s teach AI to fly (and crash) through Flappy Bird together!</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "AI Algorithms",
+      "Python",
+      "Game Programming",
+      "Geeks & Nerds",
+      "Open Source"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "THU, OCT 17, 2024, 7:00 PM GET",
+    "title": "Digital Nomads Meetup Tbilisi",
+    "link": "https://www.meetup.com/lets-learn-together/events/304006647/?eventOrigin=group_events_list"
+  },
+  {
+    "time": "SUN, OCT 13, 2024, 12:00 PM GET",
+    "title": "Let's learn AI LLM models",
+    "link": "https://www.meetup.com/lets-learn-together/events/303829583/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/2/6/c/5/highres_523869925.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">On this event we will learn: [ first part ]<br>\n- how to setup <a href=\"https://www.llama.com/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">llama</a> locally, how much GPU ram do you need to run these models<br>\n- how to write python script to communicate with chat gpt and llama (they share the same interface)<br>\n- how to build api that tells jokes in selected topic and language</p>\n<p class=\"mb-4\">[ second part ]<br>\nFinally we will do research in 2 topics:<br>\n- fine tuning<br>\n- llm benchmarks</p>\n<p class=\"mb-4\">You will need laptop, but if your laptop have not installed required software or graphic card with cuda support, we will use Github Codespaces <a href=\"http://github.dev\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">github.dev</a> (free linux IDE in browser) and servers rented from cloud providers.</p>\n<p class=\"mb-4\">So if it is your first contact with coding prepare Github account and at learn at least few most basic bash commands and basics of python syntax.</p>\n<p class=\"mb-4\">For beginners:<br>\n<a href=\"https://builtin.com/data-science/bash-commands\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://builtin.com/data-science/bash-commands</a></p>\n<p class=\"mb-4\">If you do not know what is python:<br>\n<a href=\"https://codingforkids.io/en/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://codingforkids.io/en/</a><br>\n<a href=\"https://www.learnpython.org/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://www.learnpython.org/</a></p>\n<p class=\"mb-4\">If you know other languages but not python:<br>\n<a href=\"https://learnxinyminutes.com/docs/python/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://learnxinyminutes.com/docs/python/</a></p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">Event is free.</p>\n<p class=\"mb-4\">---</p>\n<p class=\"mb-4\">Links to fine-tuning tutorials<br>\n<a href=\"https://platform.openai.com/docs/guides/fine-tuning\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://platform.openai.com/docs/guides/fine-tuning</a><br>\n<a href=\"https://www.datacamp.com/tutorial/fine-tuning-gpt-3-using-the-open-ai-api-and-python\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://www.datacamp.com/tutorial/fine-tuning-gpt-3-using-the-open-ai-api-and-python</a><br>\n<a href=\"https://medium.com/@csakash03/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-cf7bb367e790\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://medium.com/@csakash03/fine-tuning-llama-2-llm-on-google-colab-a-step-by-step-guide-cf7bb367e790</a></p>\n<p class=\"mb-4\">Datasets<br>\n<a href=\"https://github.com/Zjh-819/LLMDataHub\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/Zjh-819/LLMDataHub</a><br>\n<a href=\"https://github.com/eddydn/DictionaryDatabase/tree/master\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/eddydn/DictionaryDatabase/tree/master</a></p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "AI Algorithms",
+      "Python",
+      "International Friends",
+      "Geeks & Nerds",
+      "Open Source"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "SUN, OCT 6, 2024, 12:00 PM GET",
+    "title": "Let's learn AI videos",
+    "link": "https://www.meetup.com/lets-learn-together/events/303580645/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/8/6/e/f/highres_523774543.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">We will discover text-to-video tools. After short research I propose to dive into `cogvideo`.</p>\n<p class=\"mb-4\">What we will to:</p>\n<p class=\"mb-4\">1. Read paper:<br>\n<a href=\"https://paperswithcode.com/paper/cogvideox-text-to-video-diffusion-models-with\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://paperswithcode.com/paper/cogvideox-text-to-video-diffusion-models-with</a></p>\n<p class=\"mb-4\">2. Check repository<br>\n<a href=\"https://github.com/thudm/cogvideo\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/thudm/cogvideo</a></p>\n<p class=\"mb-4\">3. Reproduced demo from page locally:<br>\n<a href=\"https://huggingface.co/spaces/THUDM/CogVideoX-5B-Space\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://huggingface.co/spaces/THUDM/CogVideoX-5B-Space</a></p>\n<p class=\"mb-4\">There is colab that we will study in practical part:<br>\n<a href=\"https://colab.research.google.com/drive/1pCe5s0bC_xuXbBlpvIH1z0kfdTLQPzCS?usp=sharing#scrollTo=3bBSgGvkz6y4\" target=\"_blank\" class=\"!text-viridian\" rel=\"ugc\">https://colab.research.google.com/drive/1pCe5s0bC_xuXbBlpvIH1z0kfdTLQPzCS?usp=sharing#scrollTo=3bBSgGvkz6y4</a></p>\n<p class=\"mb-4\">Taking participation in this event you:<br>\n- make new friends<br>\n- acquire skill of video generation by AI</p>\n<p class=\"mb-4\">Requirements:<br>\n- laptop with installed python, graphic card drivers<br>\n- preferred Linux / Mac, but we will help you with other systems too<br>\n- basic knowledge of python</p>\n<p class=\"mb-4\">So goal of this meeting is to acquire knowledge how cog video works from theoretical perspective and learn how to run it locally to generate videos from text.</p>\n<p class=\"mb-4\">`2024/9/19`: Cog Video have open-sourced the CogVideoX series image-to-video model <strong>CogVideoX-5B-I2V</strong>. This model can take an image as a background input and generate a video combined with prompt words, offering greater controllability. With this, the CogVideoX series models now support three tasks: text-to-video generation, video continuation, and image-to-video generation.</p>\n<p class=\"mb-4\">So it is hot 🔥🔥 and fresh 🧊🧊.</p>\n<p class=\"mb-4\">If you didn't had any experience with AI, don't worry. We will start from paper and will try to understand how it works.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "International Friends",
+      "Python",
+      "Geeks & Nerds",
+      "Open Source",
+      "Technology"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "SUN, SEP 29, 2024, 12:00 PM GET",
+    "title": "Let't learn ai images",
+    "link": "https://www.meetup.com/lets-learn-together/events/303501953/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/3/c/d/1/highres_523575569.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">We will explore current state of open source solutions to generate images locally with programmatic interface.</p>\n<p class=\"mb-4\"><a href=\"https://github.com/mahseema/awesome-ai-tools#image\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/mahseema/awesome-ai-tools#image</a><br>\n<a href=\"https://github.com/xaramore/awesome-ai-image\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/xaramore/awesome-ai-image</a></p>\n<p class=\"mb-4\">Potentially test:<br>\n<a href=\"https://localai.io/basics/try/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://localai.io/basics/try/</a><br>\n<a href=\"https://platform.openai.com/docs/api-reference/images/create\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://platform.openai.com/docs/api-reference/images/create</a></p>\n<p class=\"mb-4\">Or check instruction from:<br>\n<a href=\"https://www.dignifai.net/\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://www.dignifai.net/</a></p>\n<p class=\"mb-4\">Our goals:<br>\n- meet new friends<br>\n- have fun collaborating<br>\n- gain new skills in AI Images generation topic<br>\n- build cli script that convert sentence to image 100% locally for free on our laptops</p>\n<p class=\"mb-4\">We don't have any presentations or lecture. There is risk to fail doing these tasks, discover problems that was not described in documentation, but it is just part of experience.</p>\n<p class=\"mb-4\">Python is preferred, but we can use many languages in the same time to write scripts.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "AI Algorithms",
+      "Learning",
+      "International Friends",
+      "Social Networking",
+      "Open Source"
+    ],
+    "location": "Stamba Hotel"
+  },
+  {
+    "time": "SUN, SEP 22, 2024, 10:00 AM GET",
+    "title": "Let't learn ai voices",
+    "link": "https://www.meetup.com/lets-learn-together/events/303441702/?eventOrigin=group_events_list",
+    "image": "https://secure.meetupstatic.com/photos/event/2/d/2/5/highres_523511557.webp?w=750",
+    "text": "<div id=\"event-details\" class=\"px-6 sm:px-4 xl:px-0 md:max-w-screen mt-5 w-full \"><div class=\"flex items-center justify-between\"><h2 class=\"text-xl font-semibold\">Details</h2></div><div class=\"break-words\"><p class=\"mb-4\">We will explore current state of open source solution to generate and recognize voice. Examples of interesting repositories:</p>\n<p class=\"mb-4\"><a href=\"https://github.com/openai/whisper\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/openai/whisper</a><br>\n<a href=\"https://github.com/fishaudio/fish-speech\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/fishaudio/fish-speech</a><br>\n<a href=\"https://github.com/ufal/whisper_streaming\" target=\"_blank\" class=\"!text-viridian\" rel=\"nofollow ugc\">https://github.com/ufal/whisper_streaming</a></p>\n<p class=\"mb-4\">Our goal is to write simple scripts allowing to use these tools and meet new friends interested in this topic.</p>\n<p class=\"mb-4\">There is no prepared script or presentations. We can potentially fail doing these tasks, discover problems that was not described in documentation, but it is just part of experience.</p>\n<p class=\"mb-4\">Programming language does not matter, we can solve this problem in many languages in the same time.</p></div></div>",
+    "tags": [
+      "Events in Tbilisi, GE",
+      "AI Algorithms",
+      "Geeks & Nerds",
+      "Make New Friends",
+      "Computer Programming",
+      "Open Source"
+    ],
+    "location": "Stamba Hotel"
+  }
+]
