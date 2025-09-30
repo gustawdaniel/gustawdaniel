@@ -62,7 +62,7 @@ const events = allEvents.filter(e =>
                         <!--/>-->
 
                         <div class="mt-auto flex flex-wrap gap-6">
-                            {(e.tags ?? []).map(tag => (
+                            {(e.tags ?? []).map((tag: string) => (
                                     <span class="inline-flex items-center rounded-full bg-viridian/10 text-xs font-medium text-viridian">
                                         {tag}
                                     </span>

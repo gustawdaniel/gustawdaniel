@@ -3,6 +3,6 @@
 #}
 
 :8484 {
-	root * /Users/daniel/pro/blog/src/assets/images
+	root * ../src/assets/images
 	file_server
 }
