@@ -6,3 +6,6 @@ up: node_modules
 
 img:
 	cd scripts && caddy run
+
+note:
+	./scripts/new_note.sh "$(title)"
