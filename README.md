@@ -1,5 +1,8 @@
 # Daniel Gustaw - Blog
 
+[PRECISE CONTEXT](https://github.com/gustawdaniel/precise-context)
+
+
 Real dates of drafts
 
 ```
