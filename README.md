@@ -1,10 +1,16 @@
 # Hi, I'm Gustaw Daniel 👋
 
+<p align="center">
+  <a href="https://github.com/gustawdaniel">
+    <img src="https://github-readme-stats.vercel.app/api?username=gustawdaniel&show_icons=true&theme=radical" alt="Gustaw's GitHub stats" />
+  </a>
+</p>
+
 I'm a passionate **Software Engineer** specializing in back-end development, high-performance computing, and full-stack solutions. I thrive on solving complex technical challenges, optimizing algorithms, and building robust, scalable systems.
 
 ## 🚀 Competencies & Tech Stack
 
-- **Languages:** Go, Rust, Python, TypeScript / JavaScript, Java
+- **Languages:** Rust, Python, TypeScript / JavaScript, Go, Mojo
 - **Backend & APIs:** Node.js, Fastify, tRPC, REST, GraphQL
 - **Data & AI:** Relational & NoSQL Databases, LangChain, AI-powered automation (LLM integrations)
 - **DevOps & Infrastructure:** Docker, Linux (Arch/Bunsenlabs), CI/CD, Cloudflare, DigitalOcean, Caddy
@@ -12,11 +18,21 @@ I'm a passionate **Software Engineer** specializing in back-end development, hig
 
 ## 💻 Highlighted Work & Projects
 
-- **[compact-dict](https://github.com/gustawdaniel/compact-dict)**: An experimental, highly customizable, open-addressing dictionary written in Rust, focusing on SIMD vectorization and advanced collision resolution strategies.
-- **[Content Marketing Automation]**: An AI-powered content orchestration system featuring queue-based multi-language generation (EN/ES/PT/PL) and Sanity CMS integration, optimized with SQLite-based LLM response caching.
-- **[meteor-launchpad](https://github.com/gustawdaniel-acaisoft/meteor-launchpad)**: A highly popular base Docker image for Meteor applications.
-- **[multiparty & community-faker]**: Open-source contributions for Node.js multipart parsing and contextual data generation.
-- **Performance Optimization**: Deep analysis of synchronization performance, UI rendering complexities, and transaction processing mechanisms inside complex web applications.
+<p align="center">
+  <a href="https://github.com/gustawdaniel/lexidrift">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=lexidrift&theme=radical" alt="Lexidrift" />
+  </a>
+  <a href="https://github.com/gustawdaniel/gpt-cli">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=gpt-cli&theme=radical" alt="GPT-CLI" />
+  </a>
+
+  <a href="https://github.com/gustawdaniel/compact-dict">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=compact-dict&theme=radical" alt="Compact-dict" />
+  </a>
+  <a href="https://github.com/gustawdaniel/vault-track">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=vault-track&theme=radical" alt="Vault-track" />
+  </a>
+</p>
 
 ## 📝 Writing & Knowledge Sharing
 
