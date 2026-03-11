@@ -22,13 +22,18 @@ I'm a passionate **Software Engineer** specializing in back-end development, hig
   <a href="https://github.com/gustawdaniel/lexidrift">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=lexidrift&theme=radical" alt="Lexidrift" />
   </a>
+</p>
+<p align="center">
   <a href="https://github.com/gustawdaniel/gpt-cli">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=gpt-cli&theme=radical" alt="GPT-CLI" />
   </a>
-
+</p>
+<p align="center">
   <a href="https://github.com/gustawdaniel/compact-dict">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=compact-dict&theme=radical" alt="Compact-dict" />
   </a>
+</p>
+<p align="center">
   <a href="https://github.com/gustawdaniel/vault-track">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=gustawdaniel&repo=vault-track&theme=radical" alt="Vault-track" />
   </a>
