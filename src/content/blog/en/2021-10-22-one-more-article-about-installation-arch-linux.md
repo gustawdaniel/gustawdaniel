@@ -301,7 +301,7 @@ the third column contains the hostname previously selected.
 We install `networkmanager`.
 
 ```
-pacman -S networkmanager kea
+pacman -S networkmanager dhcpcd
 ```
 
 We enable the `NetworkManager` service
