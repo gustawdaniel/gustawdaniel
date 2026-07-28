@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: svelte-snake-deployed-on-deno
-coverImage: https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/
+coverImage: /src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif
 description: Svelte Snake is a simple game written in Svelte. It's deployed on Deno, a secure runtime for JavaScript and TypeScript.
 excerpt: Svelte Snake is a simple game written in Svelte. It's deployed on Deno, a secure runtime for JavaScript and TypeScript.
 publishDate: 2024-11-15 00:00:00+00:00
@@ -73,7 +73,7 @@ in `src/routes/+page.svelte` set code
 </style>
 ```
 
-![](https://ucarecdn.com/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c/-/preview/726x97/)
+![](/src/assets/images/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c.avif)
 
 we can see that snake is moving to the right.
 
@@ -125,7 +125,7 @@ Now we can render map. We will create 20x20 map.
 </style>
 ```
 
-![](https://ucarecdn.com/23cda6e4-c4e0-443d-93b5-79743e768219/-/preview/681x428/)
+![](/src/assets/images/23cda6e4-c4e0-443d-93b5-79743e768219.avif)
 
 ### Snake movement
 
@@ -554,4 +554,4 @@ https://github.com/gustawdaniel/snake_js
 
 I added few changes in css to make game more playable, that are not enough interesting to attach them here but you can check them in [commit](https://github.com/gustawdaniel/snake_js/commit/6d8c681ece83a43a1f505cd89579c4e939386251)
 
-![](https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/)
+![](/src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif)

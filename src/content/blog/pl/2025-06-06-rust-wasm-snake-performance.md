@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: rust-wasm-snake-performance
-coverImage: https://ucarecdn.com/99588e8d-d808-4c67-93cd-a2ebd12c3b94/-/crop/1024x512/0,256/
+coverImage: /src/assets/images/99588e8d-d808-4c67-93cd-a2ebd12c3b94.avif
 description: Zmierzymy wydajność Rust w grze w węża na WASM. Sprawdzamy granice wydajności i porównujemy ją z wersją JS.
 excerpt: Zmierzymy wydajność Rust w grze w węża na WASM. Sprawdzamy granice wydajności i porównujemy ją z wersją JS.
 publishDate: 2025-06-06 00:00:00+00:00
@@ -157,7 +157,7 @@ footer #topology {
 
 zamierzamy narysować coś takiego:
 
-![](https://ucarecdn.com/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e/-/preview/840x862/)
+![](/src/assets/images/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e.avif)
 
 ale najpierw musimy stworzyć węża w wasm i połączyć jego stan z javaskriptem.
 

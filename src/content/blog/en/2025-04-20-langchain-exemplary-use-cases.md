@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: langchain-exemplary-use-cases
-coverImage: https://ucarecdn.com/f618a5e8-e72d-4c62-920f-3ee29b98f8c9/-/preview/640x360/
+coverImage: /src/assets/images/f618a5e8-e72d-4c62-920f-3ee29b98f8c9.avif
 description: Extracting structured data from PDF invoices and building a flexible document search system with LangChain and FAISS.
 excerpt: Extracting structured data from PDF invoices and building a flexible document search system with LangChain and FAISS.
 publishDate: 2025-04-20 00:00:00+00:00

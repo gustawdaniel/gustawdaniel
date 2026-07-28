@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: svelte-snake-deployed-on-deno
-coverImage: https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/
+coverImage: /src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif
 description: Svelte Snake es un juego simple escrito en Svelte. Está desplegado en Deno, un entorno de ejecución seguro para JavaScript y TypeScript.
 excerpt: Svelte Snake es un juego simple escrito en Svelte. Está desplegado en Deno, un entorno de ejecución seguro para JavaScript y TypeScript.
 publishDate: 2024-11-15 00:00:00+00:00
@@ -65,7 +65,7 @@ en `src/routes/+page.svelte` establece el código
 </style>
 ```
 
-![](https://ucarecdn.com/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c/-/preview/726x97/)
+![](/src/assets/images/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c.avif)
 
 podemos ver que la serpiente se está moviendo hacia la derecha.
 
@@ -117,7 +117,7 @@ Ahora podemos renderizar el mapa. Crearemos un mapa de 20x20.
 </style>
 ```
 
-![](https://ucarecdn.com/23cda6e4-c4e0-443d-93b5-79743e768219/-/preview/681x428/)
+![](/src/assets/images/23cda6e4-c4e0-443d-93b5-79743e768219.avif)
 
 ### Movimiento de la serpiente
 
@@ -546,4 +546,4 @@ https://github.com/gustawdaniel/snake_js
 
 Agregué algunos cambios encss para hacer el juego más jugable, que no son lo suficientemente interesantes como para adjuntarlos aquí, pero puedes revisarlos en [commit](https://github.com/gustawdaniel/snake_js/commit/6d8c681ece83a43a1f505cd89579c4e939386251)
 
-![](https://ucarecdn.com/a29bb2f8-5795-487b-a9c3-d80c124970f8/-/preview/926x891/)
+![](/src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif)

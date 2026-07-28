@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: fastify-prisma-rest-backend
-coverImage: https://ucarecdn.com/9f3ddfd7-f948-4087-a77f-12cc87372c70/-/preview/1000x1000/
+coverImage: /src/assets/images/9f3ddfd7-f948-4087-a77f-12cc87372c70.avif
 description: Typescript template for Fastify REST API with Prisma and JWT authentication.
 excerpt: Typescript template for Fastify REST API with Prisma and JWT authentication.
 publishDate: 2025-02-19 00:00:00+00:00

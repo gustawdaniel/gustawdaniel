@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: langchain-exemplary-use-cases
-coverImage: https://ucarecdn.com/f618a5e8-e72d-4c62-920f-3ee29b98f8c9/-/preview/640x360/
+coverImage: /src/assets/images/f618a5e8-e72d-4c62-920f-3ee29b98f8c9.avif
 description: Extrayendo datos estructurados de facturas en PDF y construyendo un sistema de búsqueda de documentos flexible con LangChain y FAISS.
 excerpt: Extrayendo datos estructurados de facturas en PDF y construyendo un sistema de búsqueda de documentos flexible con LangChain y FAISS.
 publishDate: 2025-04-20 00:00:00+00:00

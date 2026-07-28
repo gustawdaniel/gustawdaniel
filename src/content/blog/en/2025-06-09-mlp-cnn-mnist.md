@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: mlp-cnn-mnist
-coverImage: https://ucarecdn.com/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb/-/crop/1024x512/0,0/
+coverImage: /src/assets/images/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb.avif
 description: We build and compare four neural network architectures in PyTorch, visualize performance, explore complexity vs. accuracy, and show why CNNs excel at image classification.
 excerpt: We build and compare four neural network architectures in PyTorch, visualize performance, explore complexity vs. accuracy, and show why CNNs excel at image classification.
 publishDate: 2025-06-09 00:00:00+00:00
@@ -79,7 +79,7 @@ plt.savefig("mnist_digits.svg")
 plt.show()
 ```
 
-![](https://ucarecdn.com/f919e89b-28e9-47bd-916a-5e16389bc3d0/)
+![](/src/assets/images/f919e89b-28e9-47bd-916a-5e16389bc3d0.svg)
 
 ## Training and Evaluation
 
@@ -199,7 +199,7 @@ In the next section, we’ll define and analyze the four architectures: `MLP`, `
 The simplest architecture we consider is the classic Multi-Layer Perceptron (MLP). It treats each 28×28 image as a flat
 vector of 784 pixels, ignoring spatial structure but still able to learn useful features through fully connected layers.
 
-![](https://ucarecdn.com/cd180d21-2acb-4c37-93b8-7ca827a6a1bf/)
+![](/src/assets/images/cd180d21-2acb-4c37-93b8-7ca827a6a1bf.svg)
 
 ```python
 import torch.nn as nn
@@ -251,7 +251,7 @@ images. This model is lightweight but far more powerful than the MLP for image t
 
 The figure below illustrates the TinyCNN architecture:
 
-![](https://ucarecdn.com/31fd2ef1-f51d-421c-88d7-21845946c683/)
+![](/src/assets/images/31fd2ef1-f51d-421c-88d7-21845946c683.svg)
 
 ```python
 import torch.nn as nn
@@ -313,7 +313,7 @@ Estimated Total Size (MB): 2.63
 
 Sometimes `cnn` are presented graphically as the following pipeline:
 
-![](https://ucarecdn.com/49c9ba4e-3a99-441c-8255-ecde041531a4/-/preview/865x173/)
+![](/src/assets/images/49c9ba4e-3a99-441c-8255-ecde041531a4.avif)
 
 what is most interesting, that we are beating results of `mlp` with just `4266` parameters instead of `25450`.
 
@@ -330,7 +330,7 @@ Let's check how our network would improve if we would maintain similar amount of
 
 Now that we've seen what a minimal convolutional model can do, let’s scale things up a bit.
 
-![](https://ucarecdn.com/f4949a96-b88c-44bd-a584-596deb7a5967/)
+![](/src/assets/images/f4949a96-b88c-44bd-a584-596deb7a5967.svg)
 
 The **CNN** model below is designed to maintain a balanced trade-off between parameter count and performance. It expands
 the feature extraction capabilities of the `TinyCNN` by using more filters and a hidden linear layer before the final
@@ -383,7 +383,7 @@ In table below there are all layers, output shapes, and parameters without batch
 | Linear (32 → 10)   | 10           | 330        |
 | **Total**          | —            | **26,698** |
 
-![](https://ucarecdn.com/1130eea0-13da-44cb-a7b1-86f44789054f/-/preview/1000x170/)
+![](/src/assets/images/1130eea0-13da-44cb-a7b1-86f44789054f.avif)
 
 With 26,698 parameters, this `CNN` have similar size to the `MLP` (25,450) yet significantly more powerful.
 
@@ -408,7 +408,7 @@ Let’s find out in the next section.
 
 So far, we've looked at models that balance performance and simplicity. But what if we remove the constraints and go all-in on performance?
 
-![](https://ucarecdn.com/416f3481-45ee-477e-b8bb-61f37902a46c/)
+![](/src/assets/images/416f3481-45ee-477e-b8bb-61f37902a46c.svg)
 
 The `StrongCNN` is a deeper, more expressive architecture that brings in multiple convolutional layers, higher channel counts, and regularization techniques like `Dropout` to prevent overfitting. It’s inspired by best practices from larger vision models but still compact enough to train quickly on `MNIST`.
 
@@ -486,7 +486,7 @@ Estimated Total Size (MB): 40.68
 ======================================================================
 ```
 
-![](https://ucarecdn.com/a825a6e9-69d4-435c-8213-eb27f8e1320c/-/preview/1000x251/)
+![](/src/assets/images/a825a6e9-69d4-435c-8213-eb27f8e1320c.avif)
 
 With nearly **half a million parameters**, this model dwarfs the others in capacity. But it pays off.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: machine-learning-of-xor-from-scratch
-coverImage: https://ucarecdn.com/19bf54c3-7109-4836-9dce-dbbfca11d7ed/-/preview/640x640/
+coverImage: /src/assets/images/19bf54c3-7109-4836-9dce-dbbfca11d7ed.avif
 description: Wprowadzenie do uczenia maszynowego na przykładzie problemu XOR. W artykule przedstawiamy, jak stworzyć model od podstaw, używając Pythona i NumPy.
 excerpt: Wprowadzenie do uczenia maszynowego na przykładzie problemu XOR. W artykule przedstawiamy, jak stworzyć model od podstaw, używając Pythona i NumPy.
 publishDate: 2025-05-19 00:00:00+00:00
@@ -36,11 +36,11 @@ Można ją pokazać na tabelce logicznej:
 
 albo na wykresie:
 
-![](https://ucarecdn.com/572a9d0c-4d85-4891-8d2a-c12c5467c0ba/)
+![](/src/assets/images/572a9d0c-4d85-4891-8d2a-c12c5467c0ba.svg)
 
 Dzięki temu 2 przedstawieniu widać, że można zbudować XOR z 2 klasyfikatorów liniowych.
 
-![](https://ucarecdn.com/0037d1c8-79ad-412b-a557-d8992dd2f656/xor_linear_bernoulli_planes.svg)
+![](/src/assets/images/0037d1c8-79ad-412b-a557-d8992dd2f656.svg)
 
 Taki klasyfikator można interpretować jako przekształcenie, które bierze przestrzeń argumentów (u nas kwadrat
 `[0,1] x [0,1]`) następnie przekształca go afinicznie (obraca, skaluje, przesuwa, odbija, ścina) a na końcu tworzy linię
@@ -125,7 +125,7 @@ $$
 
 Jest to rozkład Bernoulliego: funkcjo o sidołowym kształcie o grzbiecie na prostej $y = \hat{y}$.
 
-![](https://ucarecdn.com/80858d14-9c6b-4a86-865e-b8f0f414ab72/)
+![](/src/assets/images/80858d14-9c6b-4a86-865e-b8f0f414ab72.svg)
 
 Możemy go nazwać miarą zgodności, ponieważ maksymalne wartości przyjmuje, kiedy nasz model przewiduje wartości $\hat{y}$
 możliwie bliskie $y$.
@@ -206,7 +206,7 @@ expected_output = np.array([[0], [1], [1], [0]])
 Ustaliliśmy, że model będzie wymagał dwóch neuronów w warstwie ukrytej (dwie czarne linie na drugim wykresie) i jednego
 na końcu, żeby dać jeden wynik.
 
-![](https://ucarecdn.com/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e/)
+![](/src/assets/images/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e.svg)
 
 Mamy więc następujące parametry:
 
@@ -389,11 +389,11 @@ Możemy więc wyciągnąć wniosek, że ewolucja wag dla bardzo małych początk
 
 Możemy to zaobserwować na wykresie, na którym początkowe wagi skoncentrowane wokół zera praktycznie nie zmieniają się przez 2000 pierwszych cykli uczenia. Dopiero wtedy następuje szybka ewolucja wag i po kolejnych 2000 cykli ustabilizowanie w stabilnym zbieganiu do optimum.
 
-![](https://ucarecdn.com/c502d3f7-0134-4208-91b9-4e30ad8fa349/)
+![](/src/assets/images/c502d3f7-0134-4208-91b9-4e30ad8fa349.svg)
 
 Z drugiej strony zbyt wysokie wagi początkowe prowadzą do tego, że początkowa zmienność wag jest wysoka, ale często może następować w nieodpowiednim kierunku. Widzimy to na wykresie, w którym wagi nie zbiegają do optymalnych wartości jednostajnie (szczególnie początkowo).
 
-![](https://ucarecdn.com/aaee8705-9eba-4196-9455-16b8f11f34cc/)
+![](/src/assets/images/aaee8705-9eba-4196-9455-16b8f11f34cc.svg)
 
 Zmierzmy więc, jak dokładnie szybkość uczenia zależy od początkowego odchylenia standardowego wag.
 
@@ -518,7 +518,7 @@ print(f"Time: {end - start:.2f} sec")
 
 są różne strategie zrównoleglania, ale rozpinając zmiany wątków na sekwencjach wielu symulacji sieci, możemy uzyskać lepszą wydajność niż gdybyśmy każdą symulację przetwarzali w osobnym wątku. Jest tak dlatego, że tworzenie i zakańczanie wątku, tak jak połączenia z bazą zajmuje czas.
 
-![](https://ucarecdn.com/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0/)
+![](/src/assets/images/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0.svg)
 
 Widzimy, że odchylenie wartości pomiarów jest na tyle duże, że wymaga podniesienia ilości pomiarów. Możemy w kolejnych krokach aplikować pomiary proporcjonalnie do relatywnego błędu pomiarowego. Żeby to zrobić, możemy pobrać dane z naszej kolekcji.
 
@@ -552,7 +552,7 @@ errors = summary["std"].to_numpy() / np.sqrt(count)
 
 Po wykonaniu 4 milionów symulacji efekt wygląda tak:
 
-![](https://ucarecdn.com/4ff08abf-2e9d-4b77-a49d-ebe9144b2018/)
+![](/src/assets/images/4ff08abf-2e9d-4b77-a49d-ebe9144b2018.svg)
 
 Czarna linia to `1/sqrt(2)` czyli przewidywanie wynikające z modelu Xaviera (Glorota). Zielona to minimum.
 

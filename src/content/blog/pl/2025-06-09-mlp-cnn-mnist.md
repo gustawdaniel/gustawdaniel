@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: mlp-cnn-mnist
-coverImage: https://ucarecdn.com/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb/-/crop/1024x512/0,0/
+coverImage: /src/assets/images/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb.avif
 description: Budujemy i porównujemy cztery architektury sieci neuronowych w PyTorch, wizualizujemy wydajność, badamy złożoność w porównaniu do dokładności i pokazujemy, dlaczego CNN-y są najlepsze w klasyfikacji obrazów.
 excerpt: Budujemy i porównujemy cztery architektury sieci neuronowych w PyTorch, wizualizujemy wydajność, badamy złożoność w porównaniu do dokładności i pokazujemy, dlaczego CNN-y są najlepsze w klasyfikacji obrazów.
 publishDate: 2025-06-09 00:00:00+00:00
@@ -71,7 +71,7 @@ plt.savefig("mnist_digits.svg")
 plt.show()
 ```
 
-![](https://ucarecdn.com/f919e89b-28e9-47bd-916a-5e16389bc3d0/)
+![](/src/assets/images/f919e89b-28e9-47bd-916a-5e16389bc3d0.svg)
 
 ## Trening i Ocena
 
@@ -181,7 +181,7 @@ W następnej sekcji zdefiniujemy i przeanalizujemy cztery architektury: `MLP`, `
 
 Najprostsza architektura, którą rozważamy, to klasyczny Perceptron wielowarstwowy (MLP). Traktuje każdy obraz 28×28 jako płaski wektor 784 pikseli, ignorując strukturę przestrzenną, ale wciąż zdolny do uczenia się użytecznych cech poprzez warstwy w pełni połączone.
 
-![](https://ucarecdn.com/cd180d21-2acb-4c37-93b8-7ca827a6a1bf/)
+![](/src/assets/images/cd180d21-2acb-4c37-93b8-7ca827a6a1bf.svg)
 
 ```python
 import torch.nn as nn
@@ -232,7 +232,7 @@ Następnie przedstawiamy prostą architekturę TinyCNN, która wykorzystuje wars
 
 Poniższy rysunek ilustruje architekturę TinyCNN:
 
-![](https://ucarecdn.com/31fd2ef1-f51d-421c-88d7-21845946c683/)
+![](/src/assets/images/31fd2ef1-f51d-421c-88d7-21845946c683.svg)
 
 ```python
 import torch.nn as nn
@@ -293,7 +293,7 @@ Estimated Total Size (MB): 2.63
 
 Czasami `cnn` są przedstawiane graficznie jako następujący proces:
 
-![](https://ucarecdn.com/49c9ba4e-3a99-441c-8255-ecde041531a4/-/preview/865x173/)
+![](/src/assets/images/49c9ba4e-3a99-441c-8255-ecde041531a4.avif)
 
 Najciekawsze jest to, że uzyskujemy lepsze wyniki niż `mlp` mając tylko `4266` parametrów zamiast `25450`.
 
@@ -310,7 +310,7 @@ Sprawdźmy, jak nasza sieć poprawiłaby się, gdybyśmy utrzymali podobną licz
 
 Teraz, gdy zobaczyliśmy, co może zrobić minimalny model konwolucyjny, zwiększmy nieco skalę.
 
-![](https://ucarecdn.com/f4949a96-b88c-44bd-a584-596deb7a5967/)
+![](/src/assets/images/f4949a96-b88c-44bd-a584-596deb7a5967.svg)
 
 Model **CNN** poniżej został zaprojektowany w celu utrzymania zrównoważonego kompromisu między liczbą parametrów a wydajnością. Rozszerza możliwości ekstrakcji cech `TinyCNN`, wykorzystując więcej filtrów i ukrytą warstwę liniową przed ostatecznym wyjściem.
 
@@ -360,7 +360,7 @@ W poniższej tabeli znajdują się wszystkie warstwy, kształty wyjścia i param
 | Linear (32 → 10)   | 10              | 330        |
 | **Razem**          | —               | **26,698** |
 
-![](https://ucarecdn.com/1130eea0-13da-44cb-a7b1-86f44789054f/-/preview/1000x170/)
+![](/src/assets/images/1130eea0-13da-44cb-a7b1-86f44789054f.avif)
 
 Z 26,698 parametrami, ten `CNN` ma rozmiar porównywalny z `MLP` (25,450), ale jest znacznie potężniejszy.
 
@@ -385,7 +385,7 @@ Dowiedzmy się w następnej sekcji.
 
 Jak dotąd przyjrzeliśmy się modelom, które balansują wydajność i prostotę. Ale co jeśli usuniemy ograniczenia i postawimy wszystko na wydajność?
 
-![](https://ucarecdn.com/416f3481-45ee-477e-b8bb-61f37902a46c/)
+![](/src/assets/images/416f3481-45ee-477e-b8bb-61f37902a46c.svg)
 
 `StrongCNN` to głębsza, bardziej ekspresyjna architektura, która wprowadza wiele warstw konwolucyjnych, wyższą liczbę kanałów i techniki regularizacji, takie jak `Dropout`, aby zapobiec przeuczeniu. Jest inspirowana najlepszymi praktykami z większych modeli wizji, ale wciąż na tyle kompaktowa, aby szybko trenować na `MNIST`.
 
@@ -463,7 +463,7 @@ Estimated Total Size (MB): 40.68
 ======================================================================
 ```
 
-![](https://ucarecdn.com/a825a6e9-69d4-435c-8213-eb27f8e1320c/-/preview/1000x251/)
+![](/src/assets/images/a825a6e9-69d4-435c-8213-eb27f8e1320c.avif)
 
 Z niemal **pół miliona parametrów**, ten model przyćmiewa inne pod względem pojemności. Ale się opłaca.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: machine-learning-of-xor-from-scratch
-coverImage: https://ucarecdn.com/19bf54c3-7109-4836-9dce-dbbfca11d7ed/-/preview/640x640/
+coverImage: /src/assets/images/19bf54c3-7109-4836-9dce-dbbfca11d7ed.avif
 description: Introduction to machine learning using the XOR problem as an example. In this article, we present how to create a model from scratch using Python and NumPy.
 excerpt: Introduction to machine learning using the XOR problem as an example. In this article, we present how to create a model from scratch using Python and NumPy.
 publishDate: 2025-05-19 00:00:00+00:00
@@ -33,11 +33,11 @@ It can be shown in a truth table:
 
 or in a graph:
 
-![](https://ucarecdn.com/572a9d0c-4d85-4891-8d2a-c12c5467c0ba/)
+![](/src/assets/images/572a9d0c-4d85-4891-8d2a-c12c5467c0ba.svg)
 
 This second representation shows that XOR can be built from 2 linear classifiers.
 
-![](https://ucarecdn.com/0037d1c8-79ad-412b-a557-d8992dd2f656/xor_linear_bernoulli_planes.svg)
+![](/src/assets/images/0037d1c8-79ad-412b-a557-d8992dd2f656.svg)
 
 Such a classifier can be interpreted as a transformation that takes the argument space (in our case, the square `[0,1] x [0,1]`), then transforms it affinely (rotates, scales, shifts, reflects, shears), and finally creates a decision boundary between classes `{0, 1}`. This means that for the `XOR` gate, 2 such classifiers are needed, because we have 2 black decision boundaries in the graph.
 
@@ -111,7 +111,7 @@ $$
 
 This is a Bernoulli distribution: a function with a bell-shaped curve peaking at the line $y = \hat{y}$.
 
-![](https://ucarecdn.com/80858d14-9c6b-4a86-865e-b8f0f414ab72/)
+![](/src/assets/images/80858d14-9c6b-4a86-865e-b8f0f414ab72.svg)
 
 We can call it a measure of compatibility because it takes maximum values when our model predicts values $\hat{y}$ as close to $y$ as possible.
 
@@ -182,7 +182,7 @@ expected_output = np.array([[0], [1], [1], [0]])
 
 We established that the model will require two neurons in the hidden layer (two black lines on the second chart) and one at the end to give one output.
 
-![](https://ucarecdn.com/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e/)
+![](/src/assets/images/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e.svg)
 
 So we have the following parameters:
 
@@ -359,11 +359,11 @@ We can therefore conclude that the evolution of weights for very small initial s
 
 We can observe this on a graph, where the initial weights concentrated around zero practically do not change for the first 2000 learning cycles. Only then does a rapid evolution of weights occur, and after another 2000 cycles, they settle into a stable convergence towards the optimum.
 
-![](https://ucarecdn.com/c502d3f7-0134-4208-91b9-4e30ad8fa349/)
+![](/src/assets/images/c502d3f7-0134-4208-91b9-4e30ad8fa349.svg)
 
 On the other hand, too high initial weights lead to a situation where the initial variability of weights is high, but can often proceed in the wrong direction. We can see this on a graph, where weights do not converge to optimal values uniformly (especially initially).
 
-![](https://ucarecdn.com/aaee8705-9eba-4196-9455-16b8f11f34cc/)
+![](/src/assets/images/aaee8705-9eba-4196-9455-16b8f11f34cc.svg)
 
 Let's measure how the learning rate depends on the initial standard deviation of the weights.
 
@@ -486,7 +486,7 @@ print(f"Time: {end - start:.2f} sec")
 
 There are different parallelization strategies, but by spreading thread changes across sequences of multiple network simulations, we can achieve better performance than if we processed each simulation in a separate thread. This is because creating and terminating a thread, just like database connections, takes time.
 
-![](https://ucarecdn.com/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0/)
+![](/src/assets/images/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0.svg)
 
 We see that the deviation of measurement values is large enough that it requires increasing the number of measurements. We can apply measurements proportionally to the relative measurement error in subsequent steps. To do this, we can retrieve data from our collection.
 
@@ -520,7 +520,7 @@ errors = summary["std"].to_numpy() / np.sqrt(count)
 
 After performing 4 million simulations, the effect looks like this:
 
-![](https://ucarecdn.com/4ff08abf-2e9d-4b77-a49d-ebe9144b2018/)
+![](/src/assets/images/4ff08abf-2e9d-4b77-a49d-ebe9144b2018.svg)
 
 The black line is `1/sqrt(2)` which is the prediction derived from Xavier's (Glorota) model. The green line is the minimum.
 

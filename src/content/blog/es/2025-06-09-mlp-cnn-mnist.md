@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: mlp-cnn-mnist
-coverImage: https://ucarecdn.com/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb/-/crop/1024x512/0,0/
+coverImage: /src/assets/images/4e2e19a5-ad94-44f4-bc3f-5e53bc395ccb.avif
 description: Construimos y comparamos cuatro arquitecturas de redes neuronales en PyTorch, visualizamos el rendimiento, exploramos la complejidad frente a la precisión y mostramos por qué las CNN sobresalen en la clasificación de imágenes.
 excerpt: Construimos y comparamos cuatro arquitecturas de redes neuronales en PyTorch, visualizamos el rendimiento, exploramos la complejidad frente a la precisión y mostramos por qué las CNN sobresalen en la clasificación de imágenes.
 publishDate: 2025-06-09 00:00:00+00:00
@@ -71,7 +71,7 @@ plt.savefig("mnist_digits.svg")
 plt.show()
 ```
 
-![](https://ucarecdn.com/f919e89b-28e9-47bd-916a-5e16389bc3d0/)
+![](/src/assets/images/f919e89b-28e9-47bd-916a-5e16389bc3d0.svg)
 
 ## Entrenamiento y Evaluación
 
@@ -178,7 +178,7 @@ En la siguiente sección, definiremos y analizaremos las cuatro arquitecturas: `
 
 La arquitectura más simple que consideramos es el clásico Perceptrón Multicapa (MLP). Trata cada imagen de 28×28 como un vector plano de 784 píxeles, ignorando la estructura espacial pero aún capaz de aprender características útiles a través de capas completamente conectadas.
 
-![](https://ucarecdn.com/cd180d21-2acb-4c37-93b8-7ca827a6a1bf/)
+![](/src/assets/images/cd180d21-2acb-4c37-93b8-7ca827a6a1bf.svg)
 
 ```python
 import torch.nn as nn
@@ -226,7 +226,7 @@ A continuación, presentamos una simple arquitectura TinyCNN que aprovecha las c
 
 La figura a continuación ilustra la arquitectura TinyCNN:
 
-![](https://ucarecdn.com/31fd2ef1-f51d-421c-88d7-21845946c683/)
+![](/src/assets/images/31fd2ef1-f51d-421c-88d7-21845946c683.svg)
 
 ```python
 import torch.nn as nn
@@ -287,7 +287,7 @@ Estimated Total Size (MB): 2.63
 
 A veces, `cnn` se presentan gráficamente como el siguiente flujo de trabajo:
 
-![](https://ucarecdn.com/49c9ba4e-3a99-441c-8255-ecde041531a4/-/preview/865x173/)
+![](/src/assets/images/49c9ba4e-3a99-441c-8255-ecde041531a4.avif)
 
 Lo que es más interesante es que estamos superando los resultados de `mlp` con solo `4266` parámetros en lugar de `25450`.
 
@@ -304,7 +304,7 @@ Verifiquemos cómo mejoraría nuestra red si mantuviéramos una cantidad similar
 
 Ahora que hemos visto lo que un modelo convolucional mínimo puede hacer, escalemos un poco las cosas.
 
-![](https://ucarecdn.com/f4949a96-b88c-44bd-a584-596deb7a5967/)
+![](/src/assets/images/f4949a96-b88c-44bd-a584-596deb7a5967.svg)
 
 El modelo **CNN** a continuación está diseñado para mantener un equilibrio adecuado entre la cantidad de parámetros y el rendimiento. Expande las capacidades de extracción de características del `TinyCNN` utilizando más filtros y una capa lineal oculta antes de la salida final.
 
@@ -354,7 +354,7 @@ En la tabla a continuación se encuentran todas las capas, formas de salida y pa
 | Linear (32 → 10)   | 10               | 330        |
 | **Total**          | —                | **26,698** |
 
-![](https://ucarecdn.com/1130eea0-13da-44cb-a7b1-86f44789054f/-/preview/1000x170/)
+![](/src/assets/images/1130eea0-13da-44cb-a7b1-86f44789054f.avif)
 
 Con 26,698 parámetros, este `CNN` tiene un tamaño similar al de la `MLP` (25,450) pero significativamente más potente.
 
@@ -379,7 +379,7 @@ Veamos en la siguiente sección.
 
 Hasta ahora, hemos examinado modelos que equilibran rendimiento y simplicidad. Pero, ¿qué pasaría si eliminamos las restricciones y nos enfocamos completamente en el rendimiento?
 
-![](https://ucarecdn.com/416f3481-45ee-477e-b8bb-61f37902a46c/)
+![](/src/assets/images/416f3481-45ee-477e-b8bb-61f37902a46c.svg)
 
 El `StrongCNN` es una arquitectura más profunda y expresiva que incorpora múltiples capas convolucionales, mayor recuento de canales y técnicas de regularización como `Dropout` para prevenir el sobreajuste. Se inspira en las mejores prácticas de modelos de visión más grandes, pero aún es lo suficientemente compacto como para entrenarse rápidamente en `MNIST`.
 
@@ -457,7 +457,7 @@ Estimated Total Size (MB): 40.68
 ======================================================================
 ```
 
-![](https://ucarecdn.com/a825a6e9-69d4-435c-8213-eb27f8e1320c/-/preview/1000x251/)
+![](/src/assets/images/a825a6e9-69d4-435c-8213-eb27f8e1320c.avif)
 
 Con casi **medio millón de parámetros**, este modelo eclipsa a los demás en capacidad. Pero vale la pena.
 

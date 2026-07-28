@@ -53,6 +53,6 @@ influx query 'from(bucket:"tts")
 
 Connect to InfluxDB queries with grafana you can build dashboards like this:
 
-![](https://ucarecdn.com/3ee6091f-fd09-4809-8777-50fceaf02ec3/-/preview/1000x598/)
+![](/src/assets/images/3ee6091f-fd09-4809-8777-50fceaf02ec3.avif)
 
 But both official InfluxDB and Grafana consoles are not such friendly as the CLI when you're debugging queries.

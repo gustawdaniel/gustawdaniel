@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: activation-functions-in-machine-learning
-coverImage: https://ucarecdn.com/43dafac9-01f5-4ff2-a101-20d0a8670bd5/-/preview/1000x1000/
+coverImage: /src/assets/images/43dafac9-01f5-4ff2-a101-20d0a8670bd5.avif
 description: Badamy różne funkcje aktywacji, ich cechy oraz ich wpływ na wydajność modeli uczenia maszynowego.
 excerpt: Badamy różne funkcje aktywacji, ich cechy oraz ich wpływ na wydajność modeli uczenia maszynowego.
 publishDate: 2025-06-04 00:00:00+00:00
@@ -222,7 +222,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](https://ucarecdn.com/bdb93744-8788-47e9-849a-60f7cf9c5876/)
+![](/src/assets/images/bdb93744-8788-47e9-849a-60f7cf9c5876.svg)
 
 ## Porównajmy funkcje aktywacji
 
@@ -292,7 +292,7 @@ plt.savefig("activations_grid.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](https://ucarecdn.com/7f95f3cb-21a2-4e5e-ac6f-b49f8244c37c/)
+![](/src/assets/images/7f95f3cb-21a2-4e5e-ac6f-b49f8244c37c.svg)
 
 ## Pojedyncze szkolenie to za mało
 
@@ -339,15 +339,15 @@ plt.show()
 
 Chociaż możemy dostrzec ogromną przewagę `LeakyReLU` przy pierwszym uruchomieniu:
 
-![](https://ucarecdn.com/2324479e-dfae-4119-81aa-cd3cc953c06e/)
+![](/src/assets/images/2324479e-dfae-4119-81aa-cd3cc953c06e.svg)
 
 Wywołując ten sam kod po raz drugi, widzimy, że wyniki są różne:
 
-![](https://ucarecdn.com/34e55503-493b-42c6-8169-8014dd862d96/)
+![](/src/assets/images/34e55503-493b-42c6-8169-8014dd862d96.svg)
 
 Szczególnie, że wydajność `GELU` jest znacznie lepsza. Oznacza to, że aby naprawdę porównać te funkcje, musimy przeprowadzić te symulacje wiele razy, ale przed tym chciałbym pokazać, co może się stać, gdy będziemy trenować trochę dłużej.
 
-![](https://ucarecdn.com/e598dd94-5c94-4f90-8fe8-771e44eb7d0d/)
+![](/src/assets/images/e598dd94-5c94-4f90-8fe8-771e44eb7d0d.svg)
 
 Tam możesz zobaczyć, że początkowo wolniejszy `Tanh` był bardziej stabilny w długim okresie czasu, ale `LeakyReLU` całkowicie zawiodło. Prezentuję te wykresy, ale musisz być świadomy, że to tylko pojedyncze wyniki uczenia się i aby wyciągnąć jakiekolwiek wartościowe wnioski, musimy przeprowadzić je wiele razy.
 
@@ -500,7 +500,7 @@ plt.savefig("activation_1000_calls.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](https://ucarecdn.com/e7cc2e75-6190-4f9c-812c-0453ab06c249/)
+![](/src/assets/images/e7cc2e75-6190-4f9c-812c-0453ab06c249.svg)
 
 Możemy sprawdzić stratę za ostatnią epokę dla każdej funkcji aktywacji:
 
@@ -610,7 +610,7 @@ plt.savefig("activation_1000_calls_sec.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](https://ucarecdn.com/2eec12f2-c40d-4f8b-a0f7-dffcb575454e/)
+![](/src/assets/images/2eec12f2-c40d-4f8b-a0f7-dffcb575454e.svg)
 
 ## Wnioski
 
