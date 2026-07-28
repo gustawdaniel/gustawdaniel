@@ -131,12 +131,17 @@ async function getNotes(): Promise<SitemapItem[]> {
     const notes: CollectionEntry<"note">[] = await getCollection('note');
 
     return notes.map((note) => {
-        const lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" ${path.resolve()}/src/content/note/${note.id}`).toString();
+        let lastModified = new Date().toISOString();
+        try {
+            lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" "${path.resolve()}/src/content/note/${note.id}"`).toString();
+        } catch (e) {}
+
+        const lang = note.slug.split('/')[0];
 
         return {
-            loc: `${siteUrl}/notes/${note.slug.substring(11)}/`,
+            loc: `${siteUrl}/notes/${note.slug}/`,
             lastMod: lastModified,
-            alternateLinks: [{hreflang: 'en', href: `${siteUrl}/notes/${note.slug.substring(11)}/`}],
+            alternateLinks: [{hreflang: lang, href: `${siteUrl}/notes/${note.slug}/`}],
         }
     })
 }

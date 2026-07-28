@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
-coverImage: http://localhost:8484/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
 description: W tym artykule zobaczymy, jak zaimplementować mnożenie kwaternionów w Rust i NodeJS. Dowiesz się o parsowaniu i algebrze.
 excerpt: W tym artykule zobaczymy, jak zaimplementować mnożenie kwaternionów w Rust i NodeJS. Dowiesz się o parsowaniu i algebrze.
 publishDate: 2023-01-20 02:19:57+00:00
@@ -86,7 +86,7 @@ Możemy podzielić nasz problem na trzy kroki:
 * mnożenie Quaternionów
 * formatowanie Quaterniona z powrotem do ciągu znaków
 
-![](http://localhost:8484/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
 
 Te operacje na wysokim poziomie można zaimplementować w NodeJS
 
@@ -131,7 +131,7 @@ powinno być traktowane jako tablica kwaternionów - oddzielonych nawiasami. W d
 * tworzenie kwaternionów z tablic współczynników
 * wyodrębnianie liczby z współczynnika
 
-![](http://localhost:8484/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
 
 W NodeJS możemy zacząć od dwóch testów. Pierwszy dla prostych przypadków:
 
@@ -347,7 +347,7 @@ lub w `rust`:
 
 Mnożenie dwóch kwaternionów jest podobne do mnożenia wielomianów. Najpierw mnożymy ze sobą dowolne pary składników. Następnie możemy grupować je według rodzaju składnika i na końcu dodać współczynniki. Różnica polega na tym, że w mnożeniu wielomianów zawsze dodajemy potęgi, podczas gdy w kwaternionach używamy niekomutatywnej algebry dzielenia przedstawionej w tabeli:
 
-![](http://localhost:8484/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
 
 Więc zasadniczo możemy podzielić nasz problem na:
 
@@ -590,7 +590,7 @@ ale ogólnie rzecz biorąc, pomysł jest taki sam.
 
 Teraz mamy program, który może odczytać dane wejściowe, przekształcić je w tablicę kwaternionów i pomnożyć je.
 
-![](http://localhost:8484/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
 
 Ostatnim brakującym elementem jest sformatowanie wyniku jako łańcucha.
 

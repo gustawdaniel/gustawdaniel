@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
-coverImage: http://localhost:8484/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
 description: With Pulumi you can define your it infrastructure in your file described by your favourite programming language. This article shows how to do it.
 excerpt: With Pulumi you can define your it infrastructure in your file described by your favourite programming language. This article shows how to do it.
 publishDate: 2022-11-27 12:52:11+00:00
@@ -18,13 +18,13 @@ updateDate: 2022-11-27 12:53:23+00:00
 
 Initially (70 years ago) computers was programmed by manual change of cables connections. There was no personal desktop so programs was written on production. No deployment - no problem.
 
-![](http://localhost:8484/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
 
 first digital computer programmers
 
 About decade later IBM introduced punched cards so deployment or installation was performed by insert of card with program to a reader.
 
-![](http://localhost:8484/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
 
 Next breakthrough - internet and ftp (1971) protocols changed everything. To move programs to other machines you stopped needing physical driver other than cables connecting with network.
 
@@ -42,7 +42,7 @@ These changes was important for cloud providers and IaaS branch, but developers 
 
 Next huge revolution was Docker written in Go in 2013, and using namespaces available from linux kernel 2.6.24 2008. His popularity exploded in 2017. Main problem of time before docker was configuration of server to use our application. When runtime environment was configured on server, then two different applications with different version or configuration of runtime couldn't be installed on the same host. If they was packed as virtual machines, then all operating system layer was duplicated. Docker solved these problems.
 
-![](http://localhost:8484/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
 
 But it is not the end. When people learned how to use Docker and created CI/CD flows to automate deployment and testing processes they realised that server managements can be done also on code layer.
 
@@ -78,7 +78,7 @@ We will not focus on any line of this code. If you are interested in this and kn
 
 Now we will focus on competitor of Terraform. Lets discuss pulumi.
 
-![](http://localhost:8484/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
 
 # Pulumi
 
@@ -228,7 +228,7 @@ doctl auth init
 
 You will need token that can be generated on in `API` tab in Digital Ocean Panel
 
-![](http://localhost:8484/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
 
 The same token should be used to connect pulumi with your digital ocean:
 
@@ -252,7 +252,7 @@ ssh-keygen -t ed25519 -C "gustaw.daniel@gmail.com" -f ~/.ssh/id_ed25519
 
 add public keys to security settings in digital ocean:
 
-![](http://localhost:8484/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
 
 After adding you can again ask about keys because you will need these numbers returned by command:
 
@@ -394,7 +394,7 @@ I hope this article will help you start with pulumi on Digital Ocean and follow 
 
 > Better spend 10 hours failing to automate, than do task manually.
 
-![](http://localhost:8484/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
 
 Lets sum up advantages of IaC approach.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analysis-of-apache-logs-with-goaccess
-coverImage: http://localhost:8484/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
 description: In this post, I show a tool that allows you to extract interesting information from files automatically generated during server operation.
 excerpt: In this post, I show a tool that allows you to extract interesting information from files automatically generated during server operation.
 publishDate: 2021-05-07 20:26:00+00:00

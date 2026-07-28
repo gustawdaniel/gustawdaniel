@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-asci-art-rust-nodejs-strings-arrays-loops
-coverImage: http://localhost:8484/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
 description: Resolver este rompecabezas enseña cómo gestionar cadenas y aritmética de arreglos. Sabrás cómo dividir una cadena en partes separadas y concatenarlas en una nueva. Puedes usar índices de arreglos.
 excerpt: Resolver este rompecabezas enseña cómo gestionar cadenas y aritmética de arreglos. Sabrás cómo dividir una cadena en partes separadas y concatenarlas en una nueva. Puedes usar índices de arreglos.
 publishDate: 2023-01-17 18:31:50+00:00
@@ -31,7 +31,7 @@ Se puede resolver utilizando los siguientes conceptos.
 
 En estaciones y aeropuertos, a menudo ves este tipo de pantalla:
 
-![](http://localhost:8484/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
 
 ¿Alguna vez te has preguntado cómo podría ser posible simular esta pantalla en un viejo terminal? ¡Lo tenemos: con arte ASCII!
 

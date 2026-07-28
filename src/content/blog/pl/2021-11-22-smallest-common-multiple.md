@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: smallest-common-multiple
-coverImage: http://localhost:8484/2584a854-c1e8-458d-8add-5e70e49ef101.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2584a854-c1e8-458d-8add-5e70e49ef101.avif
 description: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
 excerpt: Rozwiązanie zadania "Archery" z działu "Teoria Liczb" serwisu "Hacker Earth". Zadanie polega na wyznaczeniu najmniejszej wspólnej wielokrotności ciągu liczb.
 publishDate: 2021-11-22T14:38:00.000Z
@@ -45,7 +45,7 @@ Ograniczenia
 1 <= k_i <= 48
 ```
 
-![](http://localhost:8484/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
 
 Wyjaśnienie
 
@@ -67,11 +67,11 @@ Kluczowe wzory to:
 
 * Fundamentalne twierdzenie arytmetyki - każdą dodatnią całkowitą liczbę przedstawimy jako unikalny iloczyn jej czynników pierwszych z odpowiednimi potęgami
 
-![](http://localhost:8484/20687346-ea6f-43fc-8b22-7a7573819554.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/20687346-ea6f-43fc-8b22-7a7573819554.avif)
 
 * Najmniejszą wspólną wielokrotność (lcm) pary liczb wyliczymy używając tego rozkładu
 
-![](http://localhost:8484/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
 
 Istnieją sposoby liczenia `lcm` bez rozkładu na czynniki, np przez związek z największym wspólnym dzielnikiem (gcd) i algorytm euklidesa, tu jednak posłużymy się rozkładem na czynniki.
 
@@ -87,7 +87,7 @@ Widzimy, że pierwszym wyzwaniem jest rozłożenie liczby na czynniki.
 
 W tym zagadnieniu bardzo pomocny jest graficzny schemat algorytmu
 
-![](http://localhost:8484/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
 
 [Prime Factor: Algorithm](https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/Algorithm-PrimeFactor.html?txtInput&#x3D;10&txtResult&#x3D;4+is+a+Composite+number.%0D%0A%0D%0APrime+factorization%3A+%0D%0A4+%3D+2%5E2%0D%0A%0D%0AThere+are+3+divisors.+%0D%0ADivisors+of+4+are+1%2C2%2C4%0D%0A)
 

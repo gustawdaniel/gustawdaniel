@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: http://localhost:8484/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
 description: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
 excerpt: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
 publishDate: 2021-07-08 13:51:40+00:00
@@ -69,7 +69,7 @@ echo '</ul>';
 
 Utworzona strona internetowa wygląda następująco
 
-![](http://localhost:8484/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
 Jest w pełni funkcjonalny, pozwala na dodawanie komentarzy, zapisywanie ich w formacie json i wyświetlanie listy komentarzy. Jeśli użytkownicy chcą dodać tekst, a nie włamać się, może to być koniec naszej przygody. Ale powinniśmy założyć, że przynajmniej jeden użytkownik strony internetowej chce się włamać. :)
 
@@ -85,7 +85,7 @@ Dodany kod wykonywalny jest interpretowany przez przeglądarkę, a nie serwer, w
 
 Skrypt może być przechowywany na serwerze lub zawarty w linku. W naszym przypadku chcemy zapisać skrypt do pliku json, wpisując komentarze. Interesuje nas zmiana treści strony internetowej na "Hacked by Daniel". W każdym przypadku przedstawionej poniżej metody ataku strona będzie wyglądać następująco:
 
-![](http://localhost:8484/f24230e5-22d7-472d-b782-03adbba46806.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
 ### Skrypt
 
@@ -128,7 +128,7 @@ Aby bronić się przed tym atakiem, musimy filtrować komentarze naszych użytko
 
 Po zastosowaniu tego poprawionego tekstu, tekst napisany w formularzu zostanie wyświetlony w listach komentarzy dosłownie jako równy tekst wpisany przez użytkownika i nie będzie interpretowany jako tag HTML.
 
-![](http://localhost:8484/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Podsumowanie
 

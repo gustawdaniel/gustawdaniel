@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: trpc-super-fast-development-cycle-for-fullstack-typescript-apps
-coverImage: http://localhost:8484/7fc824e8-9e03-4665-9108-d9e1439bb971.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7fc824e8-9e03-4665-9108-d9e1439bb971.avif
 description: We building tRPC client and server with query, mutation, authentication and subscriptions. Authentication for websocket can be tricky and it is in this case so there are presented three approaches to solve this problem.
 excerpt: We building tRPC client and server with query, mutation, authentication and subscriptions. Authentication for websocket can be tricky and it is in this case so there are presented three approaches to solve this problem.
 publishDate: 2023-03-09 09:17:29+00:00
@@ -196,7 +196,7 @@ In client we can use it in following way:
 
 and we will see a beautiful unauthorized error like this
 
-![](http://localhost:8484/096a9d57-0df1-4356-b9c9-85d8d39a5712.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/096a9d57-0df1-4356-b9c9-85d8d39a5712.avif)
 
 To be authorized we can add headers in client definition
 
@@ -281,7 +281,7 @@ process.on('SIGTERM', () => {
 
 I checked in `insomia` that I can connect
 
-![](http://localhost:8484/2db8b228-51fe-42cb-bc1c-0630fec958cd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2db8b228-51fe-42cb-bc1c-0630fec958cd.avif)
 
 In payload I used object with shape described in `jsonrpc` spec
 
@@ -307,7 +307,7 @@ ReferenceError: WebSocket is not defined
 
 because `createWSClient` assume that operate in browser, but we are using node client in this example.
 
-![](http://localhost:8484/3daf5f04-8832-43fc-aebc-9d73b5edec9c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3daf5f04-8832-43fc-aebc-9d73b5edec9c.avif)
 
 To fix it we have to install `ws` and assign it to `global` scope but if your client live in browser you can skip this step.
 
@@ -356,7 +356,7 @@ await client.secret.mutate();
 
 to make it working.
 
-![](http://localhost:8484/890537bc-dfee-4334-a30e-a42dd593b854.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/890537bc-dfee-4334-a30e-a42dd593b854.avif)
 
 ## Lacking docs - websocket authentication in tRPC
 
@@ -403,13 +403,13 @@ In `trpc` code this third argument is skipped
 
 [trpc/wsLink.ts at main · trpc/trpc](https://github.com/trpc/trpc/blob/main/packages/client/src/links/wsLink.ts#L130-L134)
 
-![](http://localhost:8484/7d4e75e8-2862-41cd-863a-2c598ef97cce.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7d4e75e8-2862-41cd-863a-2c598ef97cce.avif)
 
 You cannot also use `Sec-WebSocket-Key` because `ws` override it by random hash.
 
 [ws/websocket.js at master · websockets/ws](https://opengraph.githubassets.com/45c5a7f253c0db2b0bc8e3b601909e0a559e4afec84d93eb8c4362b6c8d91cde/websockets/ws)](https://github.com/websockets/ws/blob/master/lib/websocket.js#L717-L723)
 
-![](http://localhost:8484/a40d66b4-2d1e-413a-a4f2-0b4323f2d5a2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a40d66b4-2d1e-413a-a4f2-0b4323f2d5a2.avif)
 
 and loosing `trpc` loose this information.
 
@@ -419,7 +419,7 @@ There are three approaches to solve this problem.
 * build Map between connection ids and these tokens on server ( has flaws but works )
 * passing token to any subscription in payload ( less elegant but more scalable )
 
-![](http://localhost:8484/677b22ea-a0dc-447a-9c1e-ee5532981fc3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/677b22ea-a0dc-447a-9c1e-ee5532981fc3.avif)
 
 ### Scenario 1: We know auth token before client is created
 
@@ -530,7 +530,7 @@ async function main() {
 
 we should see that all requests works correctly and we have access to token on websocket context too.
 
-![](http://localhost:8484/7df97c33-f713-4cbf-b28a-a77824ad76ad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7df97c33-f713-4cbf-b28a-a77824ad76ad.avif)
 
 But in real use case you starting app as unauthenticated user, that will authenticate by http and then open websocket connections to operate over them.
 
@@ -648,7 +648,7 @@ async function main() {
 
 and in console i see
 
-![](http://localhost:8484/92e2cfd7-6c15-4e2c-8067-4dae29b82213.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/92e2cfd7-6c15-4e2c-8067-4dae29b82213.avif)
 
 #### Scenario 3: Passing token in subscription input
 
@@ -699,6 +699,6 @@ You should be aware that `trpc` do not implement `lazy` option for websocket cli
 
 This technology is super hot, but still in phase of development and this article can be outdated soon.
 
-![](http://localhost:8484/8a800bce-1eff-40a1-8ee9-f6d4fd570fd8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8a800bce-1eff-40a1-8ee9-f6d4fd570fd8.avif)
 
 If you are one of `trpc` maintainers, you can use concepts presented here in official docs or suggest me better approach to websocket auth in comments section.

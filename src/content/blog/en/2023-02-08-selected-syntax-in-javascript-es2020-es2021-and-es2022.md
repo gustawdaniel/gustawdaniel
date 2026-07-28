@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: selected-syntax-in-javascript-es2020-es2021-and-es2022
-coverImage: http://localhost:8484/dc12881c-1152-4886-bd6b-32ec7961740c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc12881c-1152-4886-bd6b-32ec7961740c.avif
 description: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled, BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment, Top level await
 excerpt: Nullish coalescing, Optional chaining, Proxies, Private fields, allSettled, BigInt, Dynamic Import, replaceAll, Numeric Separators, matchAll, Logical Assignment, Top level await
 publishDate: 2023-02-08 16:39:54+00:00
@@ -32,7 +32,7 @@ It is possible that some of them are known for you, but I hope that some of them
 * ES2022 - Array.prototype.at
 * ES2022 - Top level await
 
-![](http://localhost:8484/98e9fea6-990b-4122-bf8d-534cd0124cf5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/98e9fea6-990b-4122-bf8d-534cd0124cf5.avif)
 
 ## Nullish coalescing operator ?? \[ more strict || \]
 
@@ -59,7 +59,7 @@ In the first example, if `userName` is `null` or `undefined`, the value of `name
 
 So, in short, the nullish coalescing operator is a more strict and specific way to handle default values in JavaScript, compared to the logical OR operator.
 
-![](http://localhost:8484/0cd67446-74e2-4230-ad86-43ac76a47b6c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd67446-74e2-4230-ad86-43ac76a47b6c.avif)
 
 ## Optional chaining .? \[ less strict props access \]
 
@@ -157,7 +157,7 @@ var handler = {
 
 Proxies deserve for distinct article, but I hope you feel to be inspired to learn them deeper.
 
-![](http://localhost:8484/d5ed1e3f-839f-45b5-8042-0aa0d73a2daa.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d5ed1e3f-839f-45b5-8042-0aa0d73a2daa.avif)
 
 ## Private fields \[ privacy without WeakMap and closures \]
 
@@ -222,7 +222,7 @@ The `Promise.allSettled()` method is useful when you want to wait for multiple p
 
 [Promise.allSettled() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
 
-![](http://localhost:8484/9ec41cb4-0b3c-4f77-9906-74048d4e67ed.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9ec41cb4-0b3c-4f77-9906-74048d4e67ed.avif)
 
 ## BigInt \[ for Math and huge Id from databases \]
 
@@ -260,7 +260,7 @@ BigInt provides a way to represent and manipulate large integers in JavaScript w
 
 [BigInt - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
-![](http://localhost:8484/e6c62d94-225d-4f29-be1e-04a75c8c51c3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e6c62d94-225d-4f29-be1e-04a75c8c51c3.avif)
 
 ## Dynamic Import
 
@@ -379,7 +379,7 @@ const z = 0xff_ff_ff;
 
 In all cases, the numeric separators are ignored during evaluation, and the values are stored and used just like any other number in JavaScript.
 
-![](http://localhost:8484/080468b3-91ec-407d-b20e-5159e7e12f4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/080468b3-91ec-407d-b20e-5159e7e12f4c.avif)
 
 ## matchAll \[ access to matches for //g regex \]
 
@@ -395,7 +395,7 @@ const matches = originalString.matchAll(regex);
 
 now `matches` is object `RegExpStringIterator`.
 
-![](http://localhost:8484/dc16049c-f1b7-4a89-8699-eddc3e83d19f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc16049c-f1b7-4a89-8699-eddc3e83d19f.avif)
 
 we can get acess to single match by `next`
 
@@ -405,7 +405,7 @@ m = matches.next()
 
 then `m` will be object with bolean `done` and `value` that contains details about match.
 
-![](http://localhost:8484/5427fdde-d4fb-43d6-b8ac-b6d7f6e367f0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5427fdde-d4fb-43d6-b8ac-b6d7f6e367f0.avif)
 
 second option to get matches is iteration
 
@@ -419,7 +419,7 @@ for (const match of matches) {
 
 or
 
-![](http://localhost:8484/5ff51c58-9603-4286-a4e0-eb02af715ced.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ff51c58-9603-4286-a4e0-eb02af715ced.avif)
 
 In comparison, using `match` with a regular expression would look like this:
 
@@ -492,7 +492,7 @@ console.log(x); // 2
 
 In the first case, x is assigned the value of 1, because null ?? 1 is 1. In the second case, x is assigned the value of 2, because 2 ?? 1 is 2. The ?? operator is similar to the || operator, but it only evaluates the right-side expression if the left-side expression is null or undefined.
 
-![](http://localhost:8484/7fa48648-26df-4d5a-8137-72a13b00933a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7fa48648-26df-4d5a-8137-72a13b00933a.avif)
 
 ## Promise.any() \[ for racings \]
 
@@ -518,7 +518,7 @@ In this example, the `Promise.any()` method takes an array of promises as its ar
 
 The use of `Promise.any()` can simplify your code and improve performance in cases where you want to wait for multiple promises to complete, but you only need to handle the result of the first one that succeeds.
 
-![](http://localhost:8484/d7ba2fa1-1be9-4d7e-a741-956c2fd0c415.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d7ba2fa1-1be9-4d7e-a741-956c2fd0c415.avif)
 
 ## Array.prototype.at()
 

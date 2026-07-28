@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
-coverImage: http://localhost:8484/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
 description: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
 excerpt: In this article, we will see how to implement the multiplication of quaternions in Rust and NodeJS. You will learn about parsing and algebra.
 publishDate: 2023-01-20 02:19:57+00:00
@@ -86,7 +86,7 @@ We can divide our problem into three steps:
 * multiplication of Quaternions
 * formatting Quaternion back to string
 
-![](http://localhost:8484/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
 
 These high-level operations can be implemented in NodeJS
 
@@ -131,7 +131,7 @@ should be treated as an array of quaternions - separated by brackets. In any bra
 * creating Quaternions from arrays of coefficients
 * extracting number from coefficient
 
-![](http://localhost:8484/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
 
 In NodeJS we can start with two tests. First for simple cases:
 
@@ -347,7 +347,7 @@ or in `rust`:
 
 Multiplication of two quaternions is similar to multiplication of polynomials. Firstly, we multiply any pairs of components with each other. Then we can group them by component type and finally add coefficients. The difference is that in polynomial multiplication we are always adding powers, but in Quaternions we are using noncommutative division algebra presented in the table:
 
-![](http://localhost:8484/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
 
 So basically we can divide our problem into:
 
@@ -590,7 +590,7 @@ but generally the idea is the same.
 
 Now we have a program that can read input, convert it to an array of Quaternions, and multiply them.
 
-![](http://localhost:8484/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
 
 Last lacking element is formatting result as string.
 

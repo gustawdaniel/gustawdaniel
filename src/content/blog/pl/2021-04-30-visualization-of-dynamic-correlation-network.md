@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: visualization-of-dynamic-correlation-network
-coverImage: http://localhost:8484/2b2a7b61-d441-4c24-b8f3-f05eebf30c10.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2b2a7b61-d441-4c24-b8f3-f05eebf30c10.avif
 description: Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentów finansowych mierzonej korelacją.
 excerpt: Pythonowy skrypt do wizualizacji dynamiki powiązania instrumentów finansowych mierzonej korelacją.
 publishDate: 2021-04-29 20:05:00+00:00

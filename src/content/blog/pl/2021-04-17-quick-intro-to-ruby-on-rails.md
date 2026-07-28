@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: quick-intro-to-ruby-on-rails
-coverImage: http://localhost:8484/d85ff050-96df-4cb7-9058-f9097653e3ad.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d85ff050-96df-4cb7-9058-f9097653e3ad.avif
 description: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe, mailera oraz komunikację przez web sockets.
 excerpt: Wprowadzenie do Ruby on Rails prezentujące CRUD, relacje bazodanowe, mailera oraz komunikację przez web sockets.
 publishDate: 2021-04-17 11:28:00+00:00
@@ -49,7 +49,7 @@ rails generate scaffold post title:string body:text
 
 Ta komenda powoduje wygenerowanie się sporej ilości plików:
 
-![](http://localhost:8484/0cd60295-e8e0-49fb-aa4b-a6a818262938.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a818262938.avif)
 
 Jednym z nich jest migracja na bazie danych, która zapisana w `db/migrate/20210418121400_create_posts.rb` wygląda tak:
 
@@ -94,11 +94,11 @@ http://127.0.0.1:3000/posts
 
 Po wytworzeniu posta ręcznie dostajemy:
 
-![](http://localhost:8484/b2c81fc5-5bed-4658-8d8e-12938d74d038.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b2c81fc5-5bed-4658-8d8e-12938d74d038.avif)
 
 Co jeszcze przyjemniejsze mamy też od razu "api" pod adresem `/posts.json`
 
-![](http://localhost:8484/80897738-a337-4640-a228-58517e8aff43.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80897738-a337-4640-a228-58517e8aff43.avif)
 
 Niestety próba utworzenia posta przez API
 
@@ -134,7 +134,7 @@ http POST localhost:3000/posts.json body=ok
 
 zapiszą swoje posty bez walidacji ich poprawności.
 
-![](http://localhost:8484/8873c9da-4396-48b3-8d70-6108e8528fd7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8873c9da-4396-48b3-8d70-6108e8528fd7.avif)
 
 Aby wymusić obecność parametru `title` w poście, w pliku `app/models/post.rb` dodajemy flagę `validates_presence_of`
 
@@ -146,11 +146,11 @@ end
 
 Dzięki niej niemożliwe będzie dodawanie postów bez tytułu zarówno na stronie
 
-![](http://localhost:8484/0062c4cc-438a-4837-b025-9a3bde260681.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0062c4cc-438a-4837-b025-9a3bde260681.avif)
 
 jak i przez API
 
-![](http://localhost:8484/93aace27-457b-43d7-88f8-8189bda7a84a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/93aace27-457b-43d7-88f8-8189bda7a84a.avif)
 
 ## Debugowanie - Rails Console
 
@@ -210,7 +210,7 @@ lub czytając dokumentację
 
 Tym czasem wrócimy do plików wygenerowanych dzięki opcji `resource`.
 
-![](http://localhost:8484/6043c7ba-5a2b-46fe-866e-5b0474cc6c5e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6043c7ba-5a2b-46fe-866e-5b0474cc6c5e.avif)
 
 Ponownie powstała tutaj migracja tym razem o zawartości:
 
@@ -258,7 +258,7 @@ Wyświetlenie routingu jest możliwe dzięki poleceniu:
 rails routes
 ```
 
-![](http://localhost:8484/818913a8-7bcb-47ad-953a-10efe7d9c6b4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/818913a8-7bcb-47ad-953a-10efe7d9c6b4.avif)
 
 Co do kierunku relacji, to w tym momencie komentarze należą do postów co opisano w pliku `app/models/comment.rb`
 
@@ -315,7 +315,7 @@ Załączymy je w widoku pojedynczego postu dołączając do pliku `app/views/pos
 
 Teraz nasz widok postu będzie wyglądała następująco
 
-![](http://localhost:8484/ecf12b37-935a-4fdd-ba56-9ab97f52a860.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecf12b37-935a-4fdd-ba56-9ab97f52a860.avif)
 
 Mimo, że wygląda jak gotowy do działania, to funkcja dodawania komentarzy wciąż nie jest dostępna. Przygotowaliśmy jedynie widok, ale brakuje logiki, która obsłużyła by zapisywanie komentarzy do bazy i łączenie ich z postami.
 
@@ -347,7 +347,7 @@ Przyjrzyjmy mu się uważnie. Zaczyna się od opcji `before_action`, która usta
 
 Następnie następuje przekierowanie do strony z postami. Na stronie działa to bardzo dobrze.
 
-![](http://localhost:8484/77228d3e-7d38-4c1b-981a-05c9d74ab699.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/77228d3e-7d38-4c1b-981a-05c9d74ab699.avif)
 
 Ale jeśli chcemy tworzyć posty z poziomu API. to za każdym razem będąc przekierowani do postu zobaczymy go bez komentarzy. Jeśli zastąpimy
 
@@ -371,7 +371,7 @@ w kontrolerze przez instrukcje analogiczne jak dla posta
 
 dostaniemy błąd
 
-![](http://localhost:8484/4d751696-3dfd-4684-b847-f0b28de86bbe.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d751696-3dfd-4684-b847-f0b28de86bbe.avif)
 
 Jest tak dlatego, że teraz komentarze wymagają aby nadać im strukturę przy układaniu ich w plik JSON. Jest to rozwiązane dzięki fantastycznej bibliotece `jbuilder`.
 
@@ -386,7 +386,7 @@ json.comments @post.comments, :id, :body, :created_at
 
 skonfigurujemy serwer, aby po utworzeniu komentarza odpowiadał widokiem posta z listą wszystkich odpowiadających mu komentarzy. Jest to widok odpowiadający temu co widzimy w wersji HTML, choć nie zgodny z zasadami REST.
 
-![](http://localhost:8484/61a3d18f-8260-437b-9b0f-50dbe420e406.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61a3d18f-8260-437b-9b0f-50dbe420e406.avif)
 
 Jeśli chcieli byśmy wyświetlić ten konkretny komentarz i możemy użyć składni
 
@@ -409,7 +409,7 @@ Jeśli chcieli byśmy wyświetlić ten konkretny komentarz i możemy użyć skł
 
 w kontrolerze. Wtedy w widoku odpowiedzi zobaczymy komentarz wraz z postem.
 
-![](http://localhost:8484/a43ef393-0a06-4fa2-94fc-2da3fd73f5e2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a43ef393-0a06-4fa2-94fc-2da3fd73f5e2.avif)
 
 Więcej o formatowaniu można przeczytać tutaj:
 
@@ -469,7 +469,7 @@ http://localhost:3000/rails/mailers/comments\_mailer/submitted
 
 Możemy zobaczyć podgląd tego e-maila
 
-![](http://localhost:8484/dd89e83f-d2c2-4833-a43b-b5a0ea528d96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd89e83f-d2c2-4833-a43b-b5a0ea528d96.avif)
 
 Nie możemy jednak oczekiwać, że ten e-mail będzie od razu wysyłany. Aby dołączyć jego wysyłanie musimy dodać linię
 
@@ -514,7 +514,7 @@ end
 
 Flaga "deliver\_later" pozwala na załączenie wysyłki e-maila do wewnętrznej pętli Ruby on Rails, która wyśle go najszybciej jak to możliwe nie blokując jednocześnie wykonania reszty kodu. Utworzenie komentarza nadal nie wyśle e-maila na prawdziwą pocztę, ale w konsoli zobaczymy, że taka akcja była by podjęta gdyby wysyłka faktycznie była do końca skonfigurowana.
 
-![](http://localhost:8484/0f6a89a7-7d40-4b93-a98e-eca529b2fbec.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0f6a89a7-7d40-4b93-a98e-eca529b2fbec.avif)
 
 Nie będziemy iść w tą stronę, ale jeśli chcesz dokończyć konfigurację to poczytaj o `smtp_settings` i `delivery_method` w dokumentacji:
 
@@ -530,7 +530,7 @@ Aby używać komunikacji w czasie rzeczywistym, potrzebujemy kanału. Wygeneruje
 rails generate channel comments
 ```
 
-![](http://localhost:8484/8781f3f8-0891-49b7-83ab-be6216f97342.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8781f3f8-0891-49b7-83ab-be6216f97342.avif)
 
 W pliku `app/channels/comments_channel.rb` o zawartości:
 

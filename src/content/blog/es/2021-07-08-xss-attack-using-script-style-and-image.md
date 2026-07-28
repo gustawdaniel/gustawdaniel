@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: http://localhost:8484/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
 description: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Puedes ver cómo reemplazar el contenido de la página con el tuyo incluso sin javascript.
 excerpt: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Puedes ver cómo reemplazar el contenido de la página con el tuyo incluso sin javascript.
 publishDate: 2021-07-08 13:51:40+00:00
@@ -69,7 +69,7 @@ echo '</ul>';
 
 El sitio web creado se ve como el siguiente
 
-![](http://localhost:8484/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
 Es completamente funcional, permite agregar un comentario, guardarlo en json y mostrar una lista de comentarios. Si los usuarios quieren agregar texto, no hackear, podría ser el final de nuestra aventura. Pero debemos asumir que al menos un usuario de un sitio web quiere hackearlo. :)
 
@@ -85,7 +85,7 @@ El código ejecutable agregado es interpretado por el navegador, no por el servi
 
 El script puede ser almacenado en un servidor o incluido en el enlace. En nuestro caso, queremos guardar el script en un archivo json escribiendo comentarios. Nos interesa cambiar el contenido del sitio web a "Hackeado por Daniel". En cualquier caso del método de ataque presentado a continuación, el sitio web se verá así:
 
-![](http://localhost:8484/f24230e5-22d7-472d-b782-03adbba46806.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
 ### Script
 
@@ -128,7 +128,7 @@ Para defenderse de este ataque necesitamos filtrar los comentarios de nuestros u
 
 Después de aplicar este texto fijo, el texto escrito en el formulario se mostrará en las listas de comentarios exactamente igual al texto escrito por el usuario, y no se interpretará como etiqueta HTML.
 
-![](http://localhost:8484/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Resumen
 

@@ -50,4 +50,4 @@ Call playbook
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory.ini add_pub_key.yml --private-key=~/.ssh/old_key
 ```
 
-![](http://localhost:8484/50191eec-f1d9-45be-9fce-e1f07a774963.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/50191eec-f1d9-45be-9fce-e1f07a774963.avif)

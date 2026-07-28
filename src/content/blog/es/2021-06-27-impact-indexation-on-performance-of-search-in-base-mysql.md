@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: impact-indexation-on-performance-of-search-in-base-mysql
-coverImage: http://localhost:8484/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 description: El uso de índices acelera las búsquedas y aumenta el tamaño de la tabla, mientras que ralentiza las modificaciones. El artículo muestra cómo perfilar consultas y medir el impacto de los índices en el rendimiento de búsqueda.
 excerpt: El uso de índices acelera las búsquedas y aumenta el tamaño de la tabla, mientras que ralentiza las modificaciones. El artículo muestra cómo perfilar consultas y medir el impacto de los índices en el rendimiento de búsqueda.
 publishDate: 2021-06-27 17:40:00+00:00
@@ -269,7 +269,7 @@ SELECT SQL_TEXT,TIMER_WAIT FROM performance_schema.events_statements_history_lon
 
 deberíamos ver la duración de la consulta expresada en picosegundos
 
-![](http://localhost:8484/12605ada-a72e-49a9-a9fe-7bb0d3c392b0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/12605ada-a72e-49a9-a9fe-7bb0d3c392b0.avif)
 
 Si el tema de la configuración del mecanismo de perfilado ha despertado su interés, puede profundizar su conocimiento directamente en la documentación:
 
@@ -463,7 +463,7 @@ different number of rows.",
 Export["plotId.png", %];
 ```
 
-![](http://localhost:8484/845a64eb-b6e9-449c-8c56-9bb9ccd72edc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/845a64eb-b6e9-449c-8c56-9bb9ccd72edc.avif)
 
 Vemos que tanto para `InnoDB` como para `MEMORY`, la velocidad de selección por identificador no depende del número de registros en la base de datos para nuestro rango. Ciertamente, esta no es una dependencia que se pueda discernir del ruido presente aquí. Es evidente que para la tabla en memoria, las selecciones se realizan más rápido y su tiempo de ejecución es más regular. La situación es completamente diferente para los atributos no indexados.
 
@@ -480,7 +480,7 @@ engines for different number of rows.",
 Export["plotVal.png", %];
 ```
 
-![](http://localhost:8484/f35404ce-0d52-4e75-9ee3-2844dcfe21e8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f35404ce-0d52-4e75-9ee3-2844dcfe21e8.avif)
 
 El tiempo para seleccionar un atributo no indexado aumenta linealmente con el tamaño de la base de datos. Aquí también, la tabla almacenada en memoria opera más rápido.
 
@@ -507,7 +507,7 @@ Histogram[{Flatten[timeIdInnoDB],
 Export["histogram.png", %];
 ```
 
-![](http://localhost:8484/45e6712c-528f-4841-82df-1e26739e11ac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/45e6712c-528f-4841-82df-1e26739e11ac.avif)
 
 ### Modelo
 
@@ -564,7 +564,7 @@ model c HeavisideTheta[x-a](x-a)*Exp[-b(x-a)]",
 Export["model.png", %]
 ```
 
-![](http://localhost:8484/9c843764-e061-4469-b638-772a2bfee396.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9c843764-e061-4469-b638-772a2bfee396.avif)
 
 Esto es solo el comienzo de mi viaje con bases de datos y todavía tengo solo un conocimiento superficial de este tema. Por esta razón, las entradas relacionadas con bases de datos deben ser tratadas más como notas de estudiante que como consejos de experto. Sin embargo, espero que el tiempo dedicado a la lectura se haya traducido en una mejor comprensión de los aspectos cuantitativos relacionados con el rendimiento de la indexación.
 

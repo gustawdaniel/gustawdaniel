@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: retry-policy
-coverImage: http://localhost:8484/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
 description: Learn how to make random, unreproducible errors no longer a threat to your program.
 excerpt: Learn how to make random, unreproducible errors no longer a threat to your program.
 publishDate: 2022-06-10T16:14:57.000Z
@@ -13,7 +13,7 @@ updateDate: 2022-06-10T16:14:57.000Z
 
 Sometimes, for a variety of reasons, computer programs can return strange errors that are extremely difficult to reproduce, and fixing them is not possible. However, if correct program operation can be achieved after a finite number of restarts, this may constitute an optimal way to solve the problem.
 
-![](http://localhost:8484/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
 
 This matters, especially in complex systems where multiple potential sources of errors accumulate, and retrying the invocation of faulty functions reduces the likelihood of an error by squaring it.
 
@@ -132,17 +132,17 @@ If we want it to be certain, we can change `maxTry` from `6` to `Infinity`, but 
 
 Sometimes, the cause of the error may be a lack of access to some resource precisely because we are querying it too often. In that case, it's worth waiting longer with each subsequent attempt. However, we often encounter errors that cannot simply be fixed with the "turn it off and try again" method. In their case, too high a value of `maxTry` increases the total time the program spends on futile actions.
 
-![](http://localhost:8484/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
 
 In the face of difficulties in measuring the chances of errors and categorizing them, in many cases instead of calculating `retry policy` parameters, they are set intuitively.
 
 It is very reasonable to vary the retry policy depending on the type of error:
 
-![](http://localhost:8484/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
 
 Unfortunately, the `ts-retry` package does not support either `exponential backoff` or different handling of, for example, error codes, which help in deciding what to do with this error. Fortunately, more advanced packages have been developed for years. Among them, the most interesting seems to be `ts-retry-promise`, which, despite its low popularity, offers a good compromise between ease of use and customization options.
 
-![](http://localhost:8484/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
 
 You can read more about optimal `retry` strategies in Prof. Douglas Thain's article - Exponential Backoff in Distributed Systems from 2009.
 
@@ -220,4 +220,4 @@ Then you need to inform the end user, following these rules:
 * you cannot admit in the error message that the code is not working... you know why
 * just mix cynicism and honesty with humor and show them this:
 
-![](http://localhost:8484/be0b858a-5648-408d-aa10-fc750a896244.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/be0b858a-5648-408d-aa10-fc750a896244.avif)

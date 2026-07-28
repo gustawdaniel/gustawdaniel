@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: medical-register-scraping
-coverImage: http://localhost:8484/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
 description: Data administrators hate it. See how by entering two commands in the console he downloaded the register of all pharmacies in Poland.
 excerpt: Data administrators hate it. See how by entering two commands in the console he downloaded the register of all pharmacies in Poland.
 publishDate: 2021-02-17 23:25:12+00:00
@@ -24,17 +24,17 @@ https://rejestrymedyczne.ezdrowie.gov.pl/main
 
 It contains several data registers related to medicine.
 
-![](http://localhost:8484/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
 
 Let's assume we want to download all data about pharmacies from this page. We click on the pharmacy register and see:
 
-![](http://localhost:8484/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
 
 Interestingly, pagination does not change the URL here, only reloads the page and displays the next view in the table.
 
 After switching to the "Network" tab in the browser console, we can see that a request is being sent in the background.
 
-![](http://localhost:8484/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
 
 It turns out that without any token, key, or cookie, you can download data that is loaded into the table directly from the API using a command.
 
@@ -42,7 +42,7 @@ It turns out that without any token, key, or cookie, you can download data that 
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC
 ```
 
-![](http://localhost:8484/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
 
 No problem to download **two** pharmacies:
 
@@ -50,7 +50,7 @@ No problem to download **two** pharmacies:
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC | jq '.[][] | {nr: .registrationNumber, name: .owners[0].name}'
 ```
 
-![](http://localhost:8484/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
 
 There is no problem downloading **ten thousand** pharmacies.
 
@@ -58,7 +58,7 @@ There is no problem downloading **ten thousand** pharmacies.
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=10000\&sortField\=originId\&sortDirection\=ASC | jq '.[][].owners[0].name' | wc
 ```
 
-![](http://localhost:8484/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
 
 To download 15 thousand pharmacies, the command is
 

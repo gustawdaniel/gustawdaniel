@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-download-contact-data-of-20k-lawyers-in-an-hour
-coverImage: http://localhost:8484/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
 description: Descubre la técnica de raspado paralelo que puede acelerar significativamente la recuperación de datos.
 excerpt: Descubre la técnica de raspado paralelo que puede acelerar significativamente la recuperación de datos.
 publishDate: 2021-02-17 20:59:14+00:00
@@ -43,11 +43,11 @@ contiene un botón de búsqueda verde. Después de hacer clic en él, llegamos a
 
 que contiene una tabla clásica
 
-![](http://localhost:8484/8353fdf9-84d5-424c-953e-97fde105a990.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8353fdf9-84d5-424c-953e-97fde105a990.avif)
 
 Desplazarse hasta el final y hacer clic en "último"
 
-![](http://localhost:8484/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec.avif)
 
 seremos redirigidos a la página con paginación clásica
 
@@ -61,19 +61,19 @@ Cada una de las categorías tiene una página de perfil ligeramente diferente:
 
 Un abogado en ejercicio tiene el perfil más completo
 
-![](http://localhost:8484/8393459d-2aa3-45b6-a92d-791a0ffeee65.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8393459d-2aa3-45b6-a92d-791a0ffeee65.avif)
 
 Algunos tienen un teléfono móvil para esto
 
-![](http://localhost:8484/06083bb5-6576-4b2f-af5b-26a28c09442c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/06083bb5-6576-4b2f-af5b-26a28c09442c.avif)
 
 Los datos sobre exabogados son limitados
 
-![](http://localhost:8484/6da64a0f-0436-4991-93d4-8b1dd546fa26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6da64a0f-0436-4991-93d4-8b1dd546fa26.avif)
 
 Aún más sobre aquellos que no practican la profesión
 
-![](http://localhost:8484/ecc0716d-4318-4ab7-a809-8e3d8cb8090f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecc0716d-4318-4ab7-a809-8e3d8cb8090f.avif)
 
 La estrategia para recuperar estos datos es simple. Primero, pasaremos por la tabla construyendo una lista base con los datos básicos. Entre ellos, habrá enlaces a perfiles. Los recuperaremos todos y a partir de ellos obtendremos una extensión de esta lista base con los datos más valiosos, como información de contacto.
 
@@ -87,7 +87,7 @@ mkdir -p raw && for i in {1..272}; do wget "https://rejestradwokatow.pl/adwokat/
 
 ## Procesamiento de Tablas
 
-![](http://localhost:8484/79c8599c-c0b1-424b-bf53-9ff925e91320.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79c8599c-c0b1-424b-bf53-9ff925e91320.avif)
 
 Inicializamos el proyecto con el comando
 
@@ -216,7 +216,7 @@ toma medio minuto
 
 y genera un archivo que pesa `5.1M`
 
-![](http://localhost:8484/499c6f85-e441-4a5a-93a4-e320543c0837.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/499c6f85-e441-4a5a-93a4-e320543c0837.avif)
 
 El repositorio con el código se puede encontrar aquí:
 
@@ -289,7 +289,7 @@ main().then(() => console.log("ok")).catch(console.error);
 
 Aquí hay ejemplos de llamadas, una con y otra sin guardado de archivos.
 
-![](http://localhost:8484/99942770-6f9d-4fc2-ac6b-d4e50cc24090.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99942770-6f9d-4fc2-ac6b-d4e50cc24090.avif)
 
 ## Solicitudes concurrentes
 
@@ -345,7 +345,7 @@ const main = async () => {
 
 A continuación, vemos un fragmento de la invocación de dicho programa reescrito:
 
-![](http://localhost:8484/0cd60295-e8e0-49fb-aa4b-a6a81826293a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a81826293a.avif)
 
 El código se puede verificar en el commit:
 
@@ -487,7 +487,7 @@ La ejecución de este archivo muestra columnas con
 * el tiempo entre lotes subsecuentes
 * el tiempo total desde que se inició la aplicación
 
-![](http://localhost:8484/eceb4ffe-efff-4f71-ab81-ed67c75f4d26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eceb4ffe-efff-4f71-ab81-ed67c75f4d26.avif)
 
 Procesar cada cien archivos tarda aproximadamente 340 ms. Esto significa aproximadamente 300 por segundo, por lo que debería tardar alrededor de un minuto y medio en total. En realidad:
 
@@ -541,7 +541,7 @@ Devolverá la distribución por ocupaciones realizadas y enlaces de ejemplo:
 
 Con la interfaz de Compass, podemos explorar muchos más agrupamientos de este tipo en modo gráfico.
 
-![](http://localhost:8484/76a04f8e-5417-4186-8cc2-f7d296cca8e8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/76a04f8e-5417-4186-8cc2-f7d296cca8e8.avif)
 
 Si queremos subir estos datos a Mongo Atlas, podemos usar el comando
 
@@ -557,7 +557,7 @@ mongodb+srv://user:pass@cluseter_number.mongodb.net/db_name
 
 En Mongo Charts, podemos unir rápidamente varios gráficos, por ejemplo, la distribución de los estados de los abogados mencionada anteriormente.
 
-![](http://localhost:8484/b7187cc9-3753-48fe-b8f2-3cc448ddb52c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b7187cc9-3753-48fe-b8f2-3cc448ddb52c.avif)
 
 El gráfico interactivo disponible para incrustar como un `iframe` se puede ver a continuación.
 
@@ -585,13 +585,13 @@ Después de agregar un campo calculado con fecha y año:
 
 Podemos definir un gráfico
 
-![](http://localhost:8484/62950ca0-eca6-4ab8-bd33-36e4fd197fe0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62950ca0-eca6-4ab8-bd33-36e4fd197fe0.avif)
 
 Del mismo modo, preparamos un gráfico con el número promedio de especializaciones
 
 Usando la configuración
 
-![](http://localhost:8484/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
 
 podemos mostrar la frecuencia de las especializaciones seleccionadas
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: last-occurrence-linear-search-easy
-coverImage: http://localhost:8484/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
 description: Znajdź i wydrukuj indeks ostatniego wystąpienia elementu w tablicy.
 excerpt: Znajdź i wydrukuj indeks ostatniego wystąpienia elementu w tablicy.
 publishDate: 2022-11-16 17:22:37+00:00

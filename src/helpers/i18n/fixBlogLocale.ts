@@ -10,20 +10,18 @@ export function fixBlogLocale(
 
     console.log(path, locale, translatedSlugs, canonical)
 
-    if (canonical.startsWith('/posts')) {
+    if (canonical.startsWith('/posts') || canonical.startsWith('/notes')) {
+        const prefix = canonical.startsWith('/posts') ? '/posts' : '/notes';
         if(Array.isArray(translatedSlugs)) {
             const targetSlug = translatedSlugs.find(slug => slug.startsWith(locale + '/'));
             if(targetSlug) {
-                return `/posts/${targetSlug}`
+                return `${prefix}/${targetSlug}`
             } else {
-                return `/` + (locale === defaultLocale ? '' : (locale))
+                return (locale === defaultLocale ? prefix : `/${locale}${prefix}`)
             }
         } else if(path.startsWith('/' + locale + '/')) {
             return path.replace('/' + locale, '');
         }
-    } else if (canonical.startsWith('/notes') && locale !== defaultLocale) {
-        return `/${locale}/notes`;
-
     }
     return path;
 }

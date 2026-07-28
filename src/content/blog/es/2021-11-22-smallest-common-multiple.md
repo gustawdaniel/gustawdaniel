@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: smallest-common-multiple
-coverImage: http://localhost:8484/2584a854-c1e8-458d-8add-5e70e49ef101.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2584a854-c1e8-458d-8add-5e70e49ef101.avif
 description: Solución al problema "Arquería" de la sección "Teoría de Números" de "Hacker Earth". La tarea es determinar el mínimo común múltiplo de una secuencia de números.
 excerpt: Solución al problema "Arquería" de la sección "Teoría de Números" de "Hacker Earth". La tarea es determinar el mínimo común múltiplo de una secuencia de números.
 publishDate: 2021-11-22T14:38:00.000Z
@@ -43,7 +43,7 @@ Restricciones
 1 <= k_i <= 48
 ```
 
-![](http://localhost:8484/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
 
 Explicación
 
@@ -65,17 +65,17 @@ Las fórmulas clave son:
 
 * Teorema fundamental de la aritmética - cada número entero positivo puede expresarse como un producto único de sus factores primos con potencias apropiadas.
 
-![](http://localhost:8484/20687346-ea6f-43fc-8b22-7a7573819554.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/20687346-ea6f-43fc-8b22-7a7573819554.avif)
 
 * El mínimo común múltiplo (mcm) de un par de números se calculará utilizando esta factorización.
 
-![](http://localhost:8484/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
 
 #### Algoritmo para encontrar el Mínimo Común Múltiplo
 
 #### Factorización de un Número en Factores Primos
 
-![](http://localhost:8484/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
 
 Este algoritmo se llama "División de prueba" y es el menos eficiente pero el más sencillo de entender de los algoritmos de factorización. Otros se enumeran aquí:
 

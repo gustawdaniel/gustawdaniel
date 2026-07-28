@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: communication-between-vue-components-in-meteor
-coverImage: http://localhost:8484/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
 description: Istnieje kilka metod przesyłania danych między niezwiązanymi komponentami vue. Niektóre z nich są uniwersalne, inne typowe dla vue, a jeszcze inne dla Meteor. Porównujemy je wszystkie.
 excerpt: Istnieje kilka metod przesyłania danych między niezwiązanymi komponentami vue. Niektóre z nich są uniwersalne, inne typowe dla vue, a jeszcze inne dla Meteor. Porównujemy je wszystkie.
 publishDate: 2021-04-20 21:12:22+00:00
@@ -104,7 +104,7 @@ W następujących sekcjach możemy zobaczyć wyniki w tabeli z zastosowanym spec
 
 W najprostszych przypadkach, gdy nie chcemy operować na przesłanych danych, możemy użyć staromodnej bezpośredniej modyfikacji DOM. Nasłuchujemy na zmiany w pierwszym komponencie, a następnie wybieramy i bezpośrednio modyfikujemy `innerHTML` elementów w innym.
 
-![meteor-vue-1-input.gif](http://localhost:8484/e0f5478a-b6ee-4b6c-90f0-5531c6397f96.avif)
+![meteor-vue-1-input.gif](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0f5478a-b6ee-4b6c-90f0-5531c6397f96.avif)
 
 Aby uzyskać ten wynik, możemy napisać następujący kod w pierwszym komponencie:
 
@@ -469,7 +469,7 @@ Zalety:
 
 Przedstawiliśmy kilka metod komunikacji między komponentami. Niektóre z nich są uniwersalne, dwie ostatnie metody są typowe dla integracji `vue-meteor`. Nie ma najlepszej lub gorszej metody. Stworzysz najlepszy kod, jeśli będziesz znał i rozumiał wszystkie metody i wybierzesz odpowiednią w zależności od swoich potrzeb.
 
-![vue-meteor-2-summary](http://localhost:8484/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
+![vue-meteor-2-summary](https://preciselab.fra1.digitaloceanspaces.com/blog/img/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
 
 Wszystkie metody przedstawione w tym artykule z komponentami wejściowymi i wyjściowymi.
 

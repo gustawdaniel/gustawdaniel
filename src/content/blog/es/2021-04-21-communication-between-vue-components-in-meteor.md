@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: communication-between-vue-components-in-meteor
-coverImage: http://localhost:8484/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/355876fb-80ec-4ae0-862e-9382ebf1a833.avif
 description: Hay pocos métodos para enviar datos entre componentes de Vue no relacionados. Algunos de estos son universales, otros típicos de Vue y otros para Meteor. Compararemos todos ellos.
 excerpt: Hay pocos métodos para enviar datos entre componentes de Vue no relacionados. Algunos de estos son universales, otros típicos de Vue y otros para Meteor. Compararemos todos ellos.
 publishDate: 2021-04-20 21:12:22+00:00
@@ -104,7 +104,7 @@ En las siguientes secciones podemos ver resultados en una tabla con spectre.css 
 
 En los casos más simples, cuando no queremos operar sobre los datos enviados, podemos usar la modificación directa del DOM a la antigua. Escucha los cambios en el primer componente, luego selecciona y modifica directamente el `innerHTML` de los elementos en el otro.
 
-![meteor-vue-1-input.gif](http://localhost:8484/e0f5478a-b6ee-4b6c-90f0-5531c6397f96.avif)
+![meteor-vue-1-input.gif](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0f5478a-b6ee-4b6c-90f0-5531c6397f96.avif)
 
 Para obtener este resultado, podemos escribir el siguiente código en el primer componente.
 
@@ -469,7 +469,7 @@ Ventajas:
 
 Hemos presentado algunos métodos de comunicación entre componentes. Algunos de ellos son universales, los dos últimos métodos son típicos de la integración `vue-meteor`. No hay uno mejor o peor. Crearás el mejor código si conoces y entiendes todo y seleccionas el adecuado dependiendo de tus necesidades.
 
-![vue-meteor-2-summary](http://localhost:8484/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
+![vue-meteor-2-summary](https://preciselab.fra1.digitaloceanspaces.com/blog/img/996e2a24-44f2-4b1f-8fbe-3ef42357032d.avif)
 
 Todos los métodos presentados en este artículo con componentes de entrada y salida.
 

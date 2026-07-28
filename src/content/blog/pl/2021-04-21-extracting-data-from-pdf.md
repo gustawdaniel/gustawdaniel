@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: extracting-data-from-pdf
-coverImage: http://localhost:8484/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
 description: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF.
 excerpt: W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF.
 publishDate: 2021-04-21 18:45:26+00:00
@@ -16,7 +16,7 @@ Dane są wszystkim co jest lub może być przetwarzane umysłowo lub komputerowo
 
 W tym wpisie pokarzemy jak pisząc naprawdę znikome ilości kodu można wygodnie wydobyć dane z plików PDF. Dla przykładu posłużymy się biletami kolejowymi ponieważ nie zawierają żadnych danych objętych tajemnicą, ale równie dobrze mogły to by być faktury, umowy czy pliki CV.
 
-![](http://localhost:8484/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
 
 **Zdobycie danych**
 
@@ -28,7 +28,7 @@ bilet pkp has:attachment -in:chats from:bilet.eic@intercity.pl to:me
 
 Oto widok jaki widzę po filtrowaniu:
 
-![](http://localhost:8484/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
 
 Teraz wystarczyło pobrać pliki aby móc poddać je obróbce.
 
@@ -38,7 +38,7 @@ Wszystkie załączniki zapisałem na dysku twardym w katalogu ocr. Tak jak w ka�
 
 Zaczniemy od ustalenia początkowej zawartości katalogu. Jest wypełniony pikamy PDF.
 
-![](http://localhost:8484/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
 
 Dzięki narzędziu `pdftotext` z pakietu `poppler-utils` możemy wydobyć z plików PDF interesujące nas informacje w postaci czystego tekstu. Następującym poleceniem możemy zainstalować to narzędzie:
 
@@ -62,7 +62,7 @@ Polecenie to składa się z dwóch części. W pierwszej listuję wszystkie plik
 
 Łatwo sprawdzimy czy faktycznie istnieją dzięki poleceniu `ls`
 
-![](http://localhost:8484/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
 
 **Strukturyzacja danych**
 
@@ -74,7 +74,7 @@ ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\
 
 Ta linia zwróciła `786.11` czyli koszt wszystkich biletów.
 
-![](http://localhost:8484/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
 
 Wejdziemy teraz głębiej i zobaczmy co się za tym kryje. Wyświetlimy jeden z plików tekstowych poleceniem `cat eic_67584344.txt`:
 
@@ -201,7 +201,7 @@ Polecenie to można wytłumaczyć następująco:
 
 Problem jaki mamy to polski `,` zamiast ogólnie stosowanej na świecie `.`. Ten problem bardzo łatwo eliminujemy poleceniem `tr` które zamienia swój pierwszy argument na drugi.
 
-![](http://localhost:8484/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
 
 Nie będziemy oczywiście powtarzać tych poleceń dla każdego pliku osobno. Zamiast tego ponownie wykorzystamy znany już `xargs`
 
@@ -225,7 +225,7 @@ Zostało już tylko sumowanie, ale suma kolumn z pliku tekstowego to bułka z ma
 
 Za pomocą `paste` z opcją `-s` wykonamy transpozycję do jednej linii. Opcją `d` ustawimy separator. Będzie nim oczywiście znak dodawania `+`. Wynik wygląda miej więcej tak:
 
-![](http://localhost:8484/f286948c-7e71-4731-9b99-17f037f74813.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f286948c-7e71-4731-9b99-17f037f74813.avif)
 
 Ostatnia cegiełka `bc` kończy zadanie, ale to było prezentowane na samym początku:
 
@@ -254,7 +254,7 @@ Kolejna komenda, dodaje numery kolumn `cat -n` i rysuje wykres
 ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\n";}' | tr , . | cat -n | chart line
 ```
 
-![](http://localhost:8484/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
 
 Podsumowując. Nie napracowaliśmy się tutaj za bardzo ale właśnie to było celem. Pokazanie jak jedną linią kodu można posumować ceny lub wyrysować wykres z danych, które pozornie są niedostępne, bo ich format nie jest tak oczywisty jak w przypadku uporządkowanych danych zapisanych w bazie o dobrze określonej strukturze.
 

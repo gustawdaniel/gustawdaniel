@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: structuring-historical-currency-rates-nbp
-coverImage: http://localhost:8484/df272521-e61f-4143-bcb4-a664b6cc1384.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/df272521-e61f-4143-bcb4-a664b6cc1384.avif
 description: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu case study z dziedziny finansów.
 excerpt: Naucz się jak napisać kod normalizujący i strukturyzujący dane w oparciu case study z dziedziny finansów.
 publishDate: 2021-02-04 06:02:21+00:00
@@ -28,7 +28,7 @@ Od razu zaznaczę, że historyczne kursy walut są świetnie prezentowane na str
 
 Za przykład weźmy kurs franka szwajcarskiego:
 
-![](http://localhost:8484/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avifchf1pricehistory.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avifchf1pricehistory.png)
 
 https://stooq.com/q/?s=chfpln&c=mx&t=l&a=ln&b=0
 
@@ -38,7 +38,7 @@ Aby pobrać te dane, wystarczy przejść na stronę:
 
 i kliknąć przycisk poniżej tabeli
 
-![](http://localhost:8484/95e88003-79bf-46d0-b300-d7661d4adcee.avifchf2download.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/95e88003-79bf-46d0-b300-d7661d4adcee.avifchf2download.png)
 
 https://stooq.com/q/d/l/?s=chfpln&i=d
 
@@ -58,7 +58,7 @@ Dane z kursami pobierzemy ze strony
 
 > [https://www.nbp.pl/home.aspx?f=/kursy/arch\_a.html](https://www.nbp.pl/home.aspx?f=/kursy/arch_a.html)
 
-![](http://localhost:8484/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png)
 
 Dane są podzielone na osobne arkusze `xls`.
 
@@ -66,7 +66,7 @@ Dane są podzielone na osobne arkusze `xls`.
 
 Zaczniemy od pobrania tych danych. Z kodu `HTML` odczytujemy selektor.
 
-![](http://localhost:8484/6aea3892-5617-4b54-909f-c202c1ae20f5.avifchf4selector.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aea3892-5617-4b54-909f-c202c1ae20f5.avifchf4selector.png)
 
 W konsoli przeglądarki wpisujemy:
 
@@ -211,7 +211,7 @@ console.dir(main(), {depth: Infinity, maxArrayLength: Infinity})
 
 Okazuje się, że pierwszy plik nie zawiera kodów walut.
 
-![](http://localhost:8484/db384089-4942-4f2c-9c7e-61960ff9385c.avifchf5codes.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/db384089-4942-4f2c-9c7e-61960ff9385c.avifchf5codes.png)
 
 Więc zmuszeni jesteśmy do zbudowania słownika, który mapuje nazwy krajów na kody walutowe.
 
@@ -425,7 +425,7 @@ Aby uczynić czytanie bardziej wygodne wyświetliłem chwilowo tablicę `arr` u�
 console.table(arr.map(l => l.filter((e,i) => i < 5 || Math.abs(i - 30) < 4)));
 ```
 
-![](http://localhost:8484/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avifchf6table.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avifchf6table.png)
 
 Co widzimy?
 
@@ -490,7 +490,7 @@ const ROWS_FILTER = (e: string, i: number) => i <= Infinity
 
 Wykonanie zakończy się błędem
 
-![](http://localhost:8484/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avifchf7err.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avifchf7err.png)
 
 Dzięki liniom z pozwalającym na debug:
 
@@ -506,7 +506,7 @@ console.dir(settings, {depth: Infinity});
 
 widzimy, że problemem są zupełnie puste linie.
 
-![](http://localhost:8484/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avifchf24empty.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avifchf24empty.png)
 
 Przyczyną błędu jest sztywne trzymanie się konkretnego wiersza jako miejsca gdzie trzymamy dzielniki czy nazwy walut, a tymczasem powinniśmy skasować puste linie przez wykryciem nagłówków.
 
@@ -533,15 +533,15 @@ const arr = fs
 
 Tym razem znowu nie działa. Powodem jest bardzo nietypowa linia w jednym z plików.
 
-![](http://localhost:8484/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avifchf8correction.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avifchf8correction.png)
 
 Korekta Kursu z 1987? Jak to? Faktycznie w `xls` mamy coś takiego:
 
-![](http://localhost:8484/093d1361-1532-4040-aa60-cd50cc9705de.avifchf9xls.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/093d1361-1532-4040-aa60-cd50cc9705de.avifchf9xls.png)
 
 Jednak dotyczy ona waluty `ECU` więc najrozsądniej jest pominąć tą linię zaostrzając kryteria rozpoznawania dat.
 
-![](http://localhost:8484/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avifchf10diff.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avifchf10diff.png)
 
 Cały kod z tego etapu znajduje się pod linkiem:
 
@@ -564,7 +564,7 @@ Jednak jego wykonanie wciąż powoduje błędy
 Po głębszym sprawdzeniu okazuje się, że problem stanowi linia, która była 
 prawie pusta, ale nie całkowicie pusta:
 
-![](http://localhost:8484/a1a5c29e-0331-469d-ba92-28bca784abbd.avifchf11empty.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a1a5c29e-0331-469d-ba92-28bca784abbd.avifchf11empty.png)
 
 Ktoś umieścił w niej `Nr` na zupełnie nie znaczącej kolumnie. Wracamy więc do kodu i usuniemy tą linię kolejnym filtrem: `DROP_JUNK_LINES`, umieszczonym przed `DROP_EMPTY_LINES`.
 
@@ -628,7 +628,7 @@ console.table(arr.map(e => e.filter((e,i) => i < 10)));
 
 żeby zobaczyć zupełnie nową organizację nagłówka oraz zmianę kolumny z datą
 
-![](http://localhost:8484/70234f95-8834-4879-8290-b1b873c01f15.avifchf12fix.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70234f95-8834-4879-8290-b1b873c01f15.avifchf12fix.png)
 
 Tym razem zarówno waluta, jak i dzielnik umieszczone są w tej samej linii. Więc obsłużymy przypadek `else` po linii
 
@@ -698,11 +698,11 @@ Poprawki można zobaczyć w commicie:
 
 Czy to wszystkie problemy? Absolutnie nie. W roku 2008 zastosowano jeszcze inną konwencję.
 
-![](http://localhost:8484/43871410-d47e-4076-95ab-61d8795fef17.avifchf132008.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43871410-d47e-4076-95ab-61d8795fef17.avifchf132008.png)
 
 Polega ona na nie umieszczeniu nigdzie "Szwajcaria", ani nigdzie "1CHF", zatem obie metody rozpoznające zawodzą. Co powinniśmy zrobić? Możemy rozpisać algorytm rozpoznawania nagłówków następująco:
 
-![](http://localhost:8484/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avifchf14schema.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avifchf14schema.png)
 
 Kolorem pomarańczowym zaznaczyliśmy brakujące elementy.
 
@@ -754,7 +754,7 @@ Zatem w rozkładzie ustawień na kody nie możemy już optymistycznie zakładać
 
 Zmiany w funkcjach wykonujących wcześniej przetwarzanie nagłówków wyglądają tak
 
-![](http://localhost:8484/e43bf31c-938d-446b-bba7-a2692d73e6ca.avifchf15diff.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e43bf31c-938d-446b-bba7-a2692d73e6ca.avifchf15diff.png)
 
 W ten sposób natomiast wygląda ich aktualny kod
 
@@ -898,7 +898,7 @@ parcel index.html
 
 zobaczymy komunikat o zbudowaniu oraz link do strony
 
-![](http://localhost:8484/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avifchf16server.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avifchf16server.png)
 
 Po otworzeniu linku i konsoli deweloperskiej a następnie dodaniu do `index.ts` linii `***console***.log("test")` zobaczymy automatyczne przeładowanie się strony i wpisanie "test" do konsoli.
 
@@ -957,7 +957,7 @@ chart.render().then(console.log).catch(console.error);
 
 Można powiedzieć - super prostego:
 
-![](http://localhost:8484/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avifchf17bar.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avifchf17bar.png)
 
 Jednak ta prostota ma cel. Pozwala nie zaśmiecać artykułu testowymi danymi, tylko kiedy już mamy strukturę danych do wykresu możemy wykonać transformację naszej struktury wydobytej z plików `xls`.
 
@@ -1118,15 +1118,15 @@ chart.render().then(console.log).catch(console.error)
 
 Wykres wygląda świetnie. Idealnie oddaje realia walutowego dzikiego zachodu z początku lat 90. Widzimy jak w 1991 inflacja wywindowała cenę franka o rzędy wielkości, oraz drastyczny spadek na początku 1995 spowodowany wejściem w życie ustawy o denominacji z 7 lipca 1994.
 
-![](http://localhost:8484/79297982-53d5-4631-80ce-233139e5e437.avifchf18graph.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79297982-53d5-4631-80ce-233139e5e437.avifchf18graph.png)
 
 Nie wykrytym wcześniej problemem okazuje się tutaj błędne skalowanie z roku 1995.
 
-![](http://localhost:8484/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avifchf19chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avifchf19chart.png)
 
 Faktycznie mamy zmianę mnożnika w trakcie roku 1995
 
-![](http://localhost:8484/49771fae-248f-44fe-a307-bc25574964da.avifchf20chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/49771fae-248f-44fe-a307-bc25574964da.avifchf20chart.png)
 
 Ten problem możemy naprawić dodając linie przestawiające dzielnik jeśli jego zmiana nastąpi między wartościami, a nie w nagłówku:
 
@@ -1161,7 +1161,7 @@ settings[key].values.push({[date]: parseFloat(localArr[settings[key].col]) / set
 
 Ponowne wygenerowanie danych pozwala zobaczyć wykres
 
-![](http://localhost:8484/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avifchf21chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avifchf21chart.png)
 
 Aby wykonać deployment użyjemy serwisu Netlify.
 
@@ -1183,11 +1183,11 @@ I dodajemy w `package.json` komendę budującą
 
 Po wybraniu w panelu Netlify katalogu `dist` oraz komendy `npm run build` możemy cieszyć się skonfigurowanym deploymentem CI.
 
-![](http://localhost:8484/47831aa4-8526-44ad-b452-a874f467ec88.avifchf22netlify.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47831aa4-8526-44ad-b452-a874f467ec88.avifchf22netlify.png)
 
 Na koniec kurs CHF od końcówki lat 90 do czasów współczesnych
 
-![](http://localhost:8484/bedc08c4-895e-4579-b482-5c9d2cc39126.avifchf23chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bedc08c4-895e-4579-b482-5c9d2cc39126.avifchf23chart.png)
 
 Tu dobrze widać, że rosnące osoby biorące kredyty w CHF w roku 2004 mogły przez 5 lat cieszyć się spadkiem siły nabywczej swojego zadłużenia, kolejne 4 lata wartość franka wracała do pierwotnego poziomu, lecz wówczas kredyt mógł być już spłacony. Osoby biorące go w latach 2006-2007 popełniały błąd zakładając, że ten trend będzie się utrzymywał przez dziesięciolecia.
 

@@ -48,44 +48,21 @@ https://cloud.umami.is/settings/websites/5e908f7d-97e7-4cdd-abf5-a47de1aa1e2c
 https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Agustawdaniel.com&breakdown=page
 
 
-## Images
+## Images & Synchronization
 
-Images: https://cloud.digitalocean.com/spaces/preciselab?path=blog%2Fimg%2F&i=d27b97
+All images are stored locally in `src/assets/images/` and automatically resolved by Astro's asset pipeline with Sharp (generating AVIF/WebP in multiple sizes locally without build-time HTTP latency).
 
-```bash
-s3cmd put --acl-public src/assets/images/* s3://preciselab/blog/img/
-```
-
-On deploy replace all
-
-http://localhost:8484
-
-by
-
-http://fra1.digitaloceanspaces.com/preciselab/blog/img
-
-Replace all img links
+To synchronize images with DigitalOcean Spaces (`s3://preciselab/blog/img/`):
 
 ```bash
-find src -type f -exec sed -i 's|http://localhost:8484|http://preciselab.fra1.digitaloceanspaces.com/blog/img|g' {} +
-```
+# Pull new/updated images from DigitalOcean Spaces to src/assets/images/
+make img-pull
 
-## Get images from Digital Ocean
+# Push local images to DigitalOcean Spaces with public ACL
+make img-push
 
-```bash
-mkdir -p src/assets
-mkdir -p src/assets/images
-s3cmd get --recursive s3://preciselab/blog/img/ src/assets/images/
-```
-
-## Caddy
-
-caddy file that shows images from src/assets/images on localhost:8484
-
-```caddyfile
-localhost:8484 {
-    root /home/daniel/pro/blog/src/assets/images
-}
+# Two-way sync (pull & push)
+make img-sync
 ```
 
 ## Planned fixes

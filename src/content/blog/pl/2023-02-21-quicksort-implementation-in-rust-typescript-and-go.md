@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: quicksort-implementation-in-rust-typescript-and-go
-coverImage: http://localhost:8484/7b891521-d7d2-4d7b-8cf7-ec59c58053a1.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7b891521-d7d2-4d7b-8cf7-ec59c58053a1.avif
 description: Opanuj QuickSort dzięki naszemu szczegółowemu przewodnikowi oraz przykładom implementacji w trzech popularnych językach programowania, aby szybko i efektywnie sortować duże zbiory danych.
 excerpt: Opanuj QuickSort dzięki naszemu szczegółowemu przewodnikowi oraz przykładom implementacji w trzech popularnych językach programowania, aby szybko i efektywnie sortować duże zbiory danych.
 publishDate: 2023-02-21 03:51:40+00:00
@@ -18,7 +18,7 @@ updateDate: 2023-02-21 03:51:40+00:00
 
 QuickSort to popularny algorytm sortowania, który wykorzystuje podejście dziel i zwyciężaj do sortowania tablicy elementów. Działa poprzez podział tablicy na dwie mniejsze podtablice wokół elementu pivot, który jest wybierany z tablicy. Elementy w lewej podtablicy są wszystkie mniejsze od pivota, a elementy w prawej podtablicy są wszystkie większe od pivota. Element pivot jest następnie umieszczany na swojej ostatecznej pozycji, z wszystkimi elementami po jego lewej stronie mniejszymi od niego, a wszystkimi elementami po jego prawej stronie większymi od niego. Proces ten jest powtarzany rekurencyjnie dla lewej i prawej podtablicy, aż cała tablica zostanie posortowana.
 
-![](http://localhost:8484/fcc59c1f-f8d7-4c3b-984e-3de868ca8bbb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fcc59c1f-f8d7-4c3b-984e-3de868ca8bbb.avif)
 
 Oto podstawowe kroki algorytmu QuickSort:
 
@@ -31,7 +31,7 @@ Aby podzielić tablicę, QuickSort używa podejścia z dwoma wskaźnikami, gdzie
 
 Najgorsza złożoność czasowa QuickSort wynosi O(n^2), ale w praktyce działa znacznie lepiej niż to, ponieważ ma średnią złożoność czasową O(n log n). Wydajność QuickSort można dodatkowo poprawić, inteligentniej wybierając element pivot, na przykład wybierając medianę pierwszego, środkowego i ostatniego elementu tablicy.
 
-![](http://localhost:8484/c381ea01-ba9d-4db9-badf-780c743b4a96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c381ea01-ba9d-4db9-badf-780c743b4a96.avif)
 
 Chociaż w nazwie jest `Quick`, nie jest to najszybszy algorytm, ale `O( n log n)` jest znacznie lepsze od `O( n^2 )` dla popularnego prostego sortowania bąbelkowego.
 
@@ -185,6 +185,6 @@ fn median_of_three<T: Ord>(arr: &[T]) -> usize {
 
 Z powodu problemu z wyborem pivota, QuickSort może być spowolniony przez szczególnie złośliwy wybór danych wejściowych, co czyni go podatnym na niektóre ataki bezpieczeństwa, takie jak kolizje w tabelach haszujących, jego liczne zalety sprawiają, że jest popularnym wyborem do sortowania dużych zestawów danych. Przy odpowiednim wyborze elementu pivota, QuickSort może osiągnąć średnią złożoność czasową O(n log n), co jest szybsze niż w przypadku większości innych popularnych algorytmów sortowania. Jeśli pracujesz z dużymi zestawami danych i musisz je szybko posortować, QuickSort jest doskonałym wyborem.
 
-![](http://localhost:8484/ae7460e7-c6c8-442a-b8fb-482051731856.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ae7460e7-c6c8-442a-b8fb-482051731856.avif)
 
 Wiem, co myślisz. Że ta zabawa z optymalizacją sortowania jest tylko dla naukowców, a w praktyce korzystamy z wbudowanych w naszych językach metod sortowania, ale czasami, aby zbudować coś niesamowitego, warto mieć głębszą wiedzę i intuicję, co warto optymalizować, a co nie.

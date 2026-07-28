@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import { defaultLocale, locales } from "./src/locales.ts";
 import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
-import type { Locales } from "astro";
 import { redirects } from "./src/helpers/redirects.ts";
 import pagefind from "astro-pagefind";
 import remarkMath from "remark-math";
@@ -17,7 +16,7 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale,
-    locales: locales as unknown as Locales
+    locales: [...locales]
   },
   integrations: [
     tailwind({ applyBaseStyles: false }),

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-the-most-popular-accounts-on-twitter
-coverImage: http://localhost:8484/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
 description: Thanks to observing Twitter posts, we can track various trends. In this entry, I will show how to download data about accounts on this service and select those that have the highest influence ratio.
 excerpt: Thanks to observing Twitter posts, we can track various trends. In this entry, I will show how to download data about accounts on this service and select those that have the highest influence ratio.
 publishDate: 2021-06-21 16:24:01+00:00
@@ -30,7 +30,7 @@ Before starting the scraping, it is always necessary to choose an appropriate da
 
 We have a request for the already rendered page:
 
-![](http://localhost:8484/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
 
 so rendering must take place on the backend. We will confirm this by checking the page source.
 
@@ -40,7 +40,7 @@ view-source:https://www.trackalytics.com/the-most-followed-twitter-profiles/page
 
 Indeed, we see data ready for scraping:
 
-![](http://localhost:8484/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
 
 We will write a script that fetches it and processes it using the `cheerio` library.
 
@@ -118,7 +118,7 @@ We have here to implement an interface for accounts resulting from the structure
 
 Looking at the displayed data:
 
-![](http://localhost:8484/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
 
 You can create the following interface describing a Twitter account.
 
@@ -201,7 +201,7 @@ return {
 }})
 ```
 
-![](http://localhost:8484/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
 
 In `node js` we don't have a `document` object and to perform selectors on the DOM tree we need to build it from text as the browser does. However, instead of using the natively built-in mechanism, we will use one of the popular libraries. The most well-known are:
 
@@ -282,7 +282,7 @@ time DEBUG=app ts-node index.ts
 
 Below we see what it looks like in the environment of the `bmon` program for monitoring network interfaces and `htop` for checking `ram` memory and processor usage.
 
-![](http://localhost:8484/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
 
 To save this file in the mongo database, we can use the command:
 

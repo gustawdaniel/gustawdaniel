@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analysis-frequency-names-of-altcoins-in-english-language
-coverImage: http://localhost:8484/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
 description: The aim of the article is to show how to filter out from all cryptocurrency names those that do not appear in natural language.
 excerpt: The aim of the article is to show how to filter out from all cryptocurrency names those that do not appear in natural language.
 publishDate: 2021-06-30 10:22:00+00:00
@@ -356,7 +356,7 @@ After typing the phrase "english corpus" we quickly land on the page
 
 This is a scam. It contains information that it is free and all you need to do is register an account.
 
-![](http://localhost:8484/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
 
 but it has limitations that allow us to scan only 50 words per day. I wasted time trying to automate data extraction from this service.
 
@@ -630,11 +630,11 @@ ts-node src/preparePhrases.ts
 
 We can see that for very obscure coins, the ratio is very low despite the popular words.
 
-![](http://localhost:8484/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
 
 we can expect many tweets with words like `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` or `kind` where the author did not mean cryptocurrencies. On the other hand, there is no objective cutoff criterion.
 
-![](http://localhost:8484/693ef6c8-ca55-4450-9373-407542eb3313.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/693ef6c8-ca55-4450-9373-407542eb3313.avif)
 
 If I set it to 100, 2328/16395 = 14% of phrases would be cut. At a value of `5`, we have a cutoff of 1560/16395 = 9.5%.
 

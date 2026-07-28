@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-the-most-popular-accounts-on-twitter
-coverImage: http://localhost:8484/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
 description: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
 excerpt: Dzięki obserwacji wpisów z twittera możemy śledzić różne trendy. W tym wpisie pokażę jak pobrać dane o kontach w tym serwisie i wybrać te, które mają największy współczynnik wpływu.
 publishDate: 2021-06-21 16:24:01+00:00
@@ -30,7 +30,7 @@ Przed rozpoczęciem scrapingu należy zawsze wybrać odpowiedni wektor pozyskiwa
 
 Mamy request o wyrenderowaną już stronę:
 
-![](http://localhost:8484/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
 
 więc rendering musi odbywać się na backendzie. Potwierdzimy to sprawdzając źródło strony.
 
@@ -40,7 +40,7 @@ view-source:https://www.trackalytics.com/the-most-followed-twitter-profiles/page
 
 Faktycznie widzimy tu dane gotowe do scrapingu:
 
-![](http://localhost:8484/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
 
 Napiszemy więc skrypt, który pobierze ja i przetworzy za pomocą biblioteki `cheerio`.
 
@@ -118,7 +118,7 @@ Mamy tu za zaimplementowania interfejs kont wynikający ze struktury pobieranych
 
 Patrząc na wyświetlane dane:
 
-![](http://localhost:8484/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
 
 Można stworzyć następujący interfejs opisujący konto Twittera
 
@@ -205,7 +205,7 @@ return {
 }})
 ```
 
-![](http://localhost:8484/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
 
 W `node js` nie mamy obiektu `document` i aby wykonywać selektory na drzewie dom musimy je zbudować z tekstu tak jak robi to przeglądarka. Z tym, że zamiast natywnie wbudowanego mechanizmu wykorzystamy do tego jedną z popularnych bibliotek. Najbardziej znane są:
 
@@ -286,7 +286,7 @@ time DEBUG=app ts-node index.ts
 
 Poniżej widzimy jak wygląda ono w otoczeniu programów `bmon` do monitorowania interfejsów sieciowych oraz `htop` do sprawdzania pamięci `ram` oraz zużycia procesora.
 
-![](http://localhost:8484/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
 
 Do zapisania tego pliku w bazie danych mongo możemy użyć polecenia:
 

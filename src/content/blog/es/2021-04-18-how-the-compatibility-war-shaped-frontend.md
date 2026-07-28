@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-the-compatibility-war-shaped-frontend
-coverImage: http://localhost:8484/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
 description: Describimos cómo la desactualización y el mantenimiento de la compatibilidad hacia atrás han influido en la dirección del desarrollo de la tecnología web.
 excerpt: Describimos cómo la desactualización y el mantenimiento de la compatibilidad hacia atrás han influido en la dirección del desarrollo de la tecnología web.
 publishDate: 2021-04-22 18:51:16+00:00
@@ -21,7 +21,7 @@ Las versiones incompatibles de software o hardware han obstaculizado nuestras vi
 
 Como emprendedor, es posible que hayas enfrentado el desafío de migrar tu sistema de TI, o como programador, es posible que hayas luchado con errores provocados por la actualización de un paquete.
 
-![](http://localhost:8484/89e36eaa-b1df-4048-b690-7942494408ad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/89e36eaa-b1df-4048-b690-7942494408ad.avif)
 
 Este artículo tiene como objetivo demostrar cómo la compatibilidad hacia atrás ha influido en la dirección de desarrollo de las tecnologías web.
 
@@ -35,7 +35,7 @@ Un ejemplo es la historia del desarrollo del frontend web, que describiré breve
 
 A menudo, se tenía que escribir código separado para cada navegador para realizar la misma tarea. ¡Algunos navegadores cambiaban su interfaz de programación varias veces incluso de versión a versión! Al escribir código, en lugar de preguntar por el ancho de la ventana, un programador primero verificaba con qué navegador estaba tratando y solo entonces ejecutaba los comandos apropiados de una larga lista de condiciones basadas en el navegador detectado.
 
-![](http://localhost:8484/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
 
 En estas condiciones, surgió jQuery en 2005. Sirvió como una capa intermedia entre los desarrolladores web y los navegadores. Rápidamente ganó popularidad porque, aunque sobrecargaba a los navegadores, permitía a los desarrolladores escribir mucho menos código, asumiendo la responsabilidad de soportar navegadores antiguos. A medida que ganó popularidad, introdujo soluciones innovadoras, como ciertos selectores para buscar elementos en una página, que luego se convirtieron en permanentes en los estándares. Se crearon innumerables plugins para jQuery, y para 2012, se convirtió en una tecnología que todos los desarrolladores aprendían si querían crear sitios web.
 
@@ -45,7 +45,7 @@ La popularidad de jQuery comenzó a disminuir solo cuando quedó claro que los c
 
 Sin embargo, este no es el final de la historia. Puede que te estés preguntando qué ocurrió con las tecnologías web después de que jQuery se volviera gradualmente menos necesario.
 
-![](http://localhost:8484/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
 
 En 2013, el marco Angular Js, creado 4 años antes por Google, comenzó a ganar atención. Al mismo tiempo, Facebook anunció la creación de React. Ambas herramientas implementaron un paradigma declarativo para construir interfaces utilizando componentes sin estado. En resumen, el programador definía las condiciones que especificaban cómo debería funcionar el frontend, mientras que los componentes asumían la responsabilidad de la capa visual, permitiendo que el programador se centrara más en la lógica empresarial. En términos simples: ambos hicieron que escribir código fuera aún más rápido que con jQuery.
 

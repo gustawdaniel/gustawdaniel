@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: trpc-super-fast-development-cycle-for-fullstack-typescript-apps
-coverImage: http://localhost:8484/7fc824e8-9e03-4665-9108-d9e1439bb971.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7fc824e8-9e03-4665-9108-d9e1439bb971.avif
 description: Budujemy klienta i serwer tRPC z zapytaniami, mutacjami, uwierzytelnianiem i subskrypcjami. Uwierzytelnianie dla websocketów może być skomplikowane i w tym przypadku także, dlatego przedstawione są trzy podejścia do rozwiązania tego problemu.
 excerpt: Budujemy klienta i serwer tRPC z zapytaniami, mutacjami, uwierzytelnianiem i subskrypcjami. Uwierzytelnianie dla websocketów może być skomplikowane i w tym przypadku także, dlatego przedstawione są trzy podejścia do rozwiązania tego problemu.
 publishDate: 2023-03-09 09:17:29+00:00
@@ -196,7 +196,7 @@ W kliencie możemy to użyć w następujący sposób:
 
 i zobaczymy piękny błąd nieautoryzowany, jak ten
 
-![](http://localhost:8484/096a9d57-0df1-4356-b9c9-85d8d39a5712.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/096a9d57-0df1-4356-b9c9-85d8d39a5712.avif)
 
 Aby uzyskać autoryzację, możemy dodać nagłówki w definicji klienta.
 
@@ -281,7 +281,7 @@ process.on('SIGTERM', () => {
 
 Sprawdziłem w `insomnia`, że mogę się połączyć.
 
-![](http://localhost:8484/2db8b228-51fe-42cb-bc1c-0630fec958cd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2db8b228-51fe-42cb-bc1c-0630fec958cd.avif)
 
 W ładunku użyłem obiektu o kształcie opisanym w specyfikacji `jsonrpc`
 
@@ -307,7 +307,7 @@ ReferenceError: WebSocket is not defined
 
 ponieważ `createWSClient` zakłada, że działa w przeglądarce, ale w tym przykładzie używamy klienta node.
 
-![](http://localhost:8484/3daf5f04-8832-43fc-aebc-9d73b5edec9c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3daf5f04-8832-43fc-aebc-9d73b5edec9c.avif)
 
 Aby to naprawić, musimy zainstalować `ws` i przypisać go do zakresu `global`, ale jeśli twój klient działa w przeglądarce, możesz pominąć ten krok.
 
@@ -356,7 +356,7 @@ await client.secret.mutate();
 
 aby to działało.
 
-![](http://localhost:8484/890537bc-dfee-4334-a30e-a42dd593b854.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/890537bc-dfee-4334-a30e-a42dd593b854.avif)
 
 ## Brak dokumentacji - uwierzytelnianie websocket w tRPC
 
@@ -403,13 +403,13 @@ W kodzie `trpc` ten trzeci argument jest pomijany
 
 [trpc/wsLink.ts at main · trpc/trpc](https://github.com/trpc/trpc/blob/main/packages/client/src/links/wsLink.ts#L130-L134)
 
-![](http://localhost:8484/7d4e75e8-2862-41cd-863a-2c598ef97cce.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7d4e75e8-2862-41cd-863a-2c598ef97cce.avif)
 
 Nie możesz także używać `Sec-WebSocket-Key`, ponieważ `ws` nadpisuje go losowym hashem.
 
 [ws/websocket.js at master · websockets/ws](https://opengraph.githubassets.com/45c5a7f253c0db2b0bc8e3b601909e0a559e4afec84d93eb8c4362b6c8d91cde/websockets/ws)](https://github.com/websockets/ws/blob/master/lib/websocket.js#L717-L723)
 
-![](http://localhost:8484/a40d66b4-2d1e-413a-a4f2-0b4323f2d5a2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a40d66b4-2d1e-413a-a4f2-0b4323f2d5a2.avif)
 
 i utrata `trpc` traci te informacje.
 
@@ -419,7 +419,7 @@ Istnieją trzy podejścia do rozwiązania tego problemu.
 * zbudować mapę między identyfikatorami połączeń a tymi tokenami na serwerze (ma wady, ale działa)
 * przekazanie tokena do dowolnej subskrypcji w ładunku (mniej eleganckie, ale bardziej skalowalne)
 
-![](http://localhost:8484/677b22ea-a0dc-447a-9c1e-ee5532981fc3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/677b22ea-a0dc-447a-9c1e-ee5532981fc3.avif)
 
 ### Scenariusz 1: Znamy token autoryzacji przed utworzeniem klienta
 
@@ -530,7 +530,7 @@ async function main() {
 
 powinniśmy zobaczyć, że wszystkie żądania działają poprawnie i mamy dostęp do tokena w kontekście websocketu również.
 
-![](http://localhost:8484/7df97c33-f713-4cbf-b28a-a77824ad76ad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7df97c33-f713-4cbf-b28a-a77824ad76ad.avif)
 
 Ale w rzeczywistym przypadku użycia zaczynasz aplikację jako niezautoryzowany użytkownik, która będzie się uwierzytelniać za pomocą http, a następnie otworzy połączenia websocketowe, aby na nich działać.
 
@@ -648,7 +648,7 @@ async function main() {
 
 a w konsoli widzę
 
-![](http://localhost:8484/92e2cfd7-6c15-4e2c-8067-4dae29b82213.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/92e2cfd7-6c15-4e2c-8067-4dae29b82213.avif)
 
 #### Scenariusz 3: Przekazywanie tokena w danych wejściowych subskrypcji
 
@@ -699,6 +699,6 @@ Powinieneś być świadomy, że `trpc` nie implementuje opcji `lazy` dla klienta
 
 Ta technologia jest bardzo na czasie, ale wciąż jest w fazie rozwoju i ten artykuł może wkrótce stać się nieaktualny.
 
-![](http://localhost:8484/8a800bce-1eff-40a1-8ee9-f6d4fd570fd8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8a800bce-1eff-40a1-8ee9-f6d4fd570fd8.avif)
 
 Jeśli jesteś jednym z maintainerów `trpc`, możesz użyć koncepcji przedstawionych tutaj w oficjalnej dokumentacji lub zasugerować mi lepsze podejście do autoryzacji websocket w sekcji komentarzy.

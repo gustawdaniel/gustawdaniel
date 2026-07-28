@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
-coverImage: http://localhost:8484/08a5e268-fcf7-4af8-ba14-376a20394223.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/08a5e268-fcf7-4af8-ba14-376a20394223.avif
 description: Nowa instalacja Google Identity dla Nuxt 3 z weryfikacją poświadczeń w fastify.
 excerpt: Nowa instalacja Google Identity dla Nuxt 3 z weryfikacją poświadczeń w fastify.
 publishDate: 2023-02-16 13:20:19+00:00
@@ -26,13 +26,13 @@ Druga po prostu nie mogła działać, wyświetlając błąd, który sugerował, 
 
 Sprawdziłem oficjalna dokumentację Google i zobaczyłem to:
 
-![](http://localhost:8484/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
 
 [Integracja logowania Google do twojej aplikacji internetowej | Uwierzytelnianie | Google Developers](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/sign-in/web/sign-in)
 
 Wygląda strasznie, ale na szczęście szybko zintegrowałem przycisk logowania Google bez użycia zewnętrznych bibliotek. W tym artykule pokażę, jak zaimplementować nową tożsamość Google w Nuxt 3.
 
-![](http://localhost:8484/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
 
 ## Tożsamość Google - jak się różni
 
@@ -40,7 +40,7 @@ Ponieważ obraz jest wart więcej niż tysiąc słów, nowy przycisk logowania z
 
 [Przycisk Zaloguj się za pomocą Google UX | Uwierzytelnianie | Google Developers](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
-![](http://localhost:8484/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
 
 ## Przycisk Zaloguj się HTML
 
@@ -70,7 +70,7 @@ lub przygotuj swój własny w konfiguratorze
 
 [Generuj kod HTML | Uwierzytelnianie | Google Developers](https://developers.google.com/identity/gsi/web/tools/configurator)
 
-![](http://localhost:8484/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
 
 Są trzy elementy, które musimy połączyć:
 
@@ -169,11 +169,11 @@ useHead({
 
 Teraz powinieneś zobaczyć przycisk logowania. Powinieneś móc kliknąć go, zalogować się i zobaczyć dane uwierzytelniające w konsoli. Zakładając, że prawidłowo skonfigurowałeś klienta OAuth 2.0.
 
-![](http://localhost:8484/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
 
 I dodano localhost do Autoryzowanych pochodzeń JavaScript
 
-![](http://localhost:8484/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
 
 Po zalogowaniu się w konsoli zobaczysz tablicę z pojedynczym obiektem, tak jak to:
 
@@ -209,7 +209,7 @@ Token uwierzytelniający to `JWT` z ładunkiem.
 
 Aby to zweryfikować, powinieneś wysłać to do backendu.
 
-![](http://localhost:8484/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
 
 ## Weryfikacja backendu dla poświadczeń Google
 
@@ -303,9 +303,9 @@ if(process.client) {
 
 zapomnieliśmy o `cors`
 
-![](http://localhost:8484/a131da56-cca9-4264-844b-dd6592ce593d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a131da56-cca9-4264-844b-dd6592ce593d.avif)
 
-![](http://localhost:8484/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
 
 więc szybka poprawka
 
@@ -325,7 +325,7 @@ import cors from '@fastify/cors'
 
 i możemy zobaczyć w konsoli wszystkie szczegóły użytkownika
 
-![](http://localhost:8484/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
 
 Nie chcemy wywoływać `await client.verifyIdToken(` przy żadnym żądaniu, więc musimy wymienić token JWT Google na nasz własny, dlatego warto utworzyć użytkownika w swojej bazie danych i wygenerować dla niego token JWT, ale opisałem to w wcześniej wspomnianym artykule:
 

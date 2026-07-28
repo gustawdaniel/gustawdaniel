@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: http://localhost:8484/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
 description: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
 excerpt: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
 publishDate: 2021-07-08 13:51:40+00:00
@@ -69,7 +69,7 @@ echo '</ul>';
 
 The created website looks like the following
 
-![](http://localhost:8484/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
 It is fully functional, allows you to add a comment, save it in json, and display a list of comments. If users want to add text, not hack it could be the end of our adventure. But we should assume that at least one user of a website wants to hack it. :)
 
@@ -85,7 +85,7 @@ Appended executable code is interpreted by browser, not server so we cannot conq
 
 The script can be stored on a server or included in the link. In our case, we want to save the script to json file by typing comments. We are interested in change the content of the website to "Hacked by Daniel". In any case of presented below attack method website will look like this:
 
-![](http://localhost:8484/f24230e5-22d7-472d-b782-03adbba46806.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
 ### Script
 
@@ -128,7 +128,7 @@ To defend against this attack we need to filter the comments of our users and st
 
 After applying this fixed text written in the form will be displayed in comments lists literally equal text typed by the user, and will be not interpreted as Html tag.
 
-![](http://localhost:8484/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Summary
 

@@ -1,9 +1,9 @@
-import type {RoutePriorityOverride, ValidRedirectStatus} from "astro";
+import type {ValidRedirectStatus} from "astro";
 
 export const redirects: Record<string, string | {
     status: ValidRedirectStatus
     destination: string
-    priority?: RoutePriorityOverride
+    priority?: number
 }> = {
     '/prawo-zipfa-w-nodejs/': '/posts/pl/prawo-zipfa-w-nodejs/',
     '/retry-policy/': '/posts/pl/retry-policy/',

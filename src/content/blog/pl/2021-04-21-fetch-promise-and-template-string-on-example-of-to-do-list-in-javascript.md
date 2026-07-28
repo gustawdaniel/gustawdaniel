@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-javascript
-coverImage: http://localhost:8484/014d0920-5eca-46f4-b476-960e0fa98596.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/014d0920-5eca-46f4-b476-960e0fa98596.avif
 description: Ten prosty projekt jest doskonałym wprowadzeniem do programowania w JavaScript. Nacisk kładzie się na elementy ES6 i frontend.
 excerpt: Ten prosty projekt jest doskonałym wprowadzeniem do programowania w JavaScript. Nacisk kładzie się na elementy ES6 i frontend.
 publishDate: 2021-04-20 21:46:37+00:00
@@ -27,7 +27,7 @@ JavaScript 49.5% CSS 40.3% HTML 10.2%
 
 Po zakończeniu projekt będzie wyglądał następująco:
 
-![js-es6-1](http://localhost:8484/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
+![js-es6-1](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
 Lista rzeczy do zrobienia napisana w czystym JavaScript, która będzie zaprezentowana w tym artykule.
 
@@ -69,7 +69,7 @@ node node_modules/json-server/lib/bin.js --watch db.json
 
 Jeśli wszystko działa, powinniśmy zobaczyć coś takiego
 
-![js-es6-2](http://localhost:8484/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
+![js-es6-2](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
 
 Serwer z aplikacją (po prawej) i z REST API połączonym z plikiem db.json (po lewej)
 

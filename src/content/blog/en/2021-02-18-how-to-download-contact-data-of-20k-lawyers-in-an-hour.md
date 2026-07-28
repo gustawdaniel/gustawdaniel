@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-download-contact-data-of-20k-lawyers-in-an-hour
-coverImage: http://localhost:8484/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3a18d7e4-4a5d-4920-8f41-aea5b4aa14b6.avif
 description: Discover the parallel scraping technique that can significantly speed up data retrieval.
 excerpt: Discover the parallel scraping technique that can significantly speed up data retrieval.
 publishDate: 2021-02-17 20:59:14+00:00
@@ -43,11 +43,11 @@ contains a green search button. After clicking it, we go to the page
 
 containing a classic table
 
-![](http://localhost:8484/8353fdf9-84d5-424c-953e-97fde105a990.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8353fdf9-84d5-424c-953e-97fde105a990.avif)
 
 Scrolling to the bottom and clicking "last"
 
-![](http://localhost:8484/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3cce61da-ebb6-4b3b-a02c-f2c6b03a2eec.avif)
 
 we will be redirected to the page with classic pagination
 
@@ -65,19 +65,19 @@ Each of the categories has a slightly different profile page:
 
 A practicing lawyer has the most complete profile
 
-![](http://localhost:8484/8393459d-2aa3-45b6-a92d-791a0ffeee65.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8393459d-2aa3-45b6-a92d-791a0ffeee65.avif)
 
 Some have a mobile phone for this
 
-![](http://localhost:8484/06083bb5-6576-4b2f-af5b-26a28c09442c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/06083bb5-6576-4b2f-af5b-26a28c09442c.avif)
 
 Data on former lawyers is limited
 
-![](http://localhost:8484/6da64a0f-0436-4991-93d4-8b1dd546fa26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6da64a0f-0436-4991-93d4-8b1dd546fa26.avif)
 
 Even more about those not practicing the profession
 
-![](http://localhost:8484/ecc0716d-4318-4ab7-a809-8e3d8cb8090f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecc0716d-4318-4ab7-a809-8e3d8cb8090f.avif)
 
 The strategy for fetching this data is simple. First, we will go through the table building a base list with the basic data. Among them, there will be links to profiles. We will fetch them all and from them we will obtain an extension of this base list with the most valuable data, such as contact information.
 
@@ -91,7 +91,7 @@ mkdir -p raw && for i in {1..272}; do wget "https://rejestradwokatow.pl/adwokat/
 
 ## Processing Tables
 
-![](http://localhost:8484/79c8599c-c0b1-424b-bf53-9ff925e91320.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79c8599c-c0b1-424b-bf53-9ff925e91320.avif)
 
 We initialize the project with the command
 
@@ -220,7 +220,7 @@ takes half a minute
 
 and generates a file weighing `5.1M`
 
-![](http://localhost:8484/499c6f85-e441-4a5a-93a4-e320543c0837.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/499c6f85-e441-4a5a-93a4-e320543c0837.avif)
 
 The repository with the code can be found here:
 
@@ -293,7 +293,7 @@ main().then(() => console.log("ok")).catch(console.error);
 
 Here are example calls, one with and the other without file saving.
 
-![](http://localhost:8484/99942770-6f9d-4fc2-ac6b-d4e50cc24090.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99942770-6f9d-4fc2-ac6b-d4e50cc24090.avif)
 
 It is clear that they do not differ from each other in a noticeable way and the average time to record one lawyer is about 150 ms. This gives a total of `27190*0.15` = `4078` seconds. However, this is more than `3600`. Over an hour!
 
@@ -359,7 +359,7 @@ const main = async () => {
 
 Below we see a fragment from the invocation of such a rewritten program:
 
-![](http://localhost:8484/0cd60295-e8e0-49fb-aa4b-a6a81826293a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a81826293a.avif)
 
 Code can be checked in the commit:
 
@@ -501,7 +501,7 @@ The execution of this file shows columns with
 * the time between subsequent batches
 * the total time since the application was started
 
-![](http://localhost:8484/eceb4ffe-efff-4f71-ab81-ed67c75f4d26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eceb4ffe-efff-4f71-ab81-ed67c75f4d26.avif)
 
 Processing every hundred files takes about 340 ms. This means roughly 300 per second, so it should take about one and a half minutes in total. Actually:
 
@@ -555,7 +555,7 @@ It will return the distribution by occupations performed and example links:
 
 With the Compass interface, we can browse many more such groupings in graphical mode.
 
-![](http://localhost:8484/76a04f8e-5417-4186-8cc2-f7d296cca8e8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/76a04f8e-5417-4186-8cc2-f7d296cca8e8.avif)
 
 If we want to upload this data to Mongo Atlas, we can use the command
 
@@ -571,7 +571,7 @@ mongodb+srv://user:pass@cluseter_number.mongodb.net/db_name
 
 In Mongo Charts, we can quickly click together several charts, for example, the previously mentioned distribution of lawyer statuses.
 
-![](http://localhost:8484/b7187cc9-3753-48fe-b8f2-3cc448ddb52c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b7187cc9-3753-48fe-b8f2-3cc448ddb52c.avif)
 
 The interactive chart available for embedding as an `iframe` can be seen below.
 
@@ -599,13 +599,13 @@ After adding a calculated field with date and year:
 
 We can define a chart
 
-![](http://localhost:8484/62950ca0-eca6-4ab8-bd33-36e4fd197fe0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62950ca0-eca6-4ab8-bd33-36e4fd197fe0.avif)
 
 Similarly, we prepare a chart with the average number of specializations
 
 Using the configuration
 
-![](http://localhost:8484/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/69740c15-e6e6-4e0b-8003-57abb2dc894c.avif)
 
 we can show the frequency of selected specializations
 

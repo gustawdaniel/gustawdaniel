@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-create-a-free-email-account-with-custom-domain
-coverImage: http://localhost:8484/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
 description: In this article, you will learn how to create a free email with a custom domain. I've shown how to configure Yandex with your DNS.
 excerpt: In this article, you will learn how to create a free email with a custom domain. I've shown how to configure Yandex with your DNS.
 publishDate: 2021-06-15 07:24:41+00:00
@@ -20,7 +20,7 @@ After both Google and Microsoft restricted custom email creation to paid plans, 
 
 First, go to [https://mail.yandex.com/](https://mail.yandex.com/) and create a new Yandex account to serve as your organization-wide admin account.
 
-![](http://localhost:8484/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
 
 You can choose to verify your account with a phone number or a security question.
 
@@ -30,7 +30,7 @@ Log in to your new account at [https://mail.yandex.com/](https://mail.yandex.com
 
 Choose the DNS option and add a TXT record in your domain provider's DNS settings to verify your domain.
 
-![](http://localhost:8484/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
 
 It should look similar to this example.
 
@@ -40,7 +40,7 @@ To create a new email account, go to [https://connect.yandex.com/portal/admin/us
 
 Then click **Все сотрудники** (All employees), and add a new user by selecting "Add" and choosing "Add a person." You can also set up mailing lists by "Creating a department" and adding people to it.
 
-![](http://localhost:8484/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
 
 Congratulations! You’ve just set up a custom email for free!
 

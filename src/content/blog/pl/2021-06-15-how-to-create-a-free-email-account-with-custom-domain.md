@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-create-a-free-email-account-with-custom-domain
-coverImage: http://localhost:8484/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
 description: W tym artykule dowiesz się, jak stworzyć darmowy e-mail z własną domeną. Pokazałem, jak skonfigurować Yandex z Twoim DNS.
 excerpt: W tym artykule dowiesz się, jak stworzyć darmowy e-mail z własną domeną. Pokazałem, jak skonfigurować Yandex z Twoim DNS.
 publishDate: 2021-06-15 07:24:41+00:00
@@ -20,7 +20,7 @@ Po tym, jak zarówno Google, jak i Microsoft ograniczyli tworzenie niestandardow
 
 Najpierw przejdź do [https://mail.yandex.com/](https://mail.yandex.com/) i utwórz nowe konto Yandex, które będzie pełnić rolę konta administratora w Twojej organizacji.
 
-![](http://localhost:8484/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
 
 Możesz wybrać weryfikację swojego konta za pomocą numeru telefonu lub pytania zabezpieczającego.
 
@@ -30,7 +30,7 @@ Zaloguj się na swoje nowe konto pod adresem [https://mail.yandex.com/](https://
 
 Wybierz opcję DNS i dodaj rekord TXT w ustawieniach DNS swojego dostawcy domen, aby zweryfikować swoją domenę.
 
-![](http://localhost:8484/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
 
 ## Tworzenie kont użytkowników i niestandardowych prefiksów e-mail
 
@@ -38,7 +38,7 @@ Aby utworzyć nowe konto e-mail, przejdź do [https://connect.yandex.com/portal/
 
 Następnie kliknij **Все сотрудники** (Wszyscy pracownicy) i dodaj nowego użytkownika, wybierając "Dodaj" i "Dodaj osobę". Możesz również ustawić listy mailingowe, "Tworząc dział" i dodając do niego osoby.
 
-![](http://localhost:8484/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
 
 Gratulacje! Właśnie skonfigurowałeś własny adres e-mail za darmo!
 

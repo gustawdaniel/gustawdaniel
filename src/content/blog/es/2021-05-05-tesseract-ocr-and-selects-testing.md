@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: tesseract-ocr-and-selects-testing
-coverImage: http://localhost:8484/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
 description: Leeremos el contenido de la tabla de la base de datos de la foto y escribiremos algunas pruebas para las consultas de la base de datos en Behat.
 excerpt: Leeremos el contenido de la tabla de la base de datos de la foto y escribiremos algunas pruebas para las consultas de la base de datos en Behat.
 publishDate: 2021-05-04 20:18:00+00:00

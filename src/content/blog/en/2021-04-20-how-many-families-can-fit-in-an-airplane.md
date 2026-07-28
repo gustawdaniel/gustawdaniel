@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-many-families-can-fit-in-an-airplane
-coverImage: http://localhost:8484/e241188a-23c6-41d5-a640-95085128893c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e241188a-23c6-41d5-a640-95085128893c.avif
 description: We compare two solutions to the problem of counting free sets of adjacent seats. You will learn how to use Profiling and how much difference the use of pop and shift makes on arrays in js.
 excerpt: We compare two solutions to the problem of counting free sets of adjacent seats. You will learn how to use Profiling and how much difference the use of pop and shift makes on arrays in js.
 publishDate: 2021-04-20 18:41:10+00:00
@@ -18,7 +18,7 @@ We will discuss two solutions to the problem that was used during a certain recr
 
 In the airplane, there are seats arranged in three sets containing 3, 4, and 3 adjacent seats, respectively. We assume that the rows are counted from 1 and the columns are indexed using the letters of the alphabet as in an EXCEL table (from A to K). The diagram of the airplane is shown in the image below. We assume that all seats have the same layout as those marked in blue.
 
-![](http://localhost:8484/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
 
 We assume that the airplane has a length of `N` rows with seats. We also know the current occupancy of the seats, which is recorded in the form of a string `S` as space-separated coordinates of the row and column number, e.g.:
 
@@ -295,27 +295,27 @@ For profiling, we can use the `--porf` flag, which will create a log file of abo
 
 Reviewing it is not easy if you don’t know what to look for. This file looks something like this:
 
-![](http://localhost:8484/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
 
 Fortunately, Webstorm has interesting profiling tools that do the same thing as this flag underneath, but they apply a graphical overlay and graphs that allow you to navigate the logs and quickly get to the source of the problem. To configure profiling, we check `Coding assistance for Node.js` in the settings.
 
-![](http://localhost:8484/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
 
 Next, we create a profile that will launch our script with the appropriate parameters.
 
-![](http://localhost:8484/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
 
 and in the `V8 Profiling` tab, we select the profiling option.
 
-![](http://localhost:8484/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
 
 After selecting the green triangle, profiling starts.
 
-![](http://localhost:8484/69644d36-ba44-4026-b579-442715c7f781.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/69644d36-ba44-4026-b579-442715c7f781.avif)
 
 we will see the logs sorted by percentage share over execution time.
 
-![](http://localhost:8484/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
 
 This view allows you to extract the most time-consuming functions relative to the total execution time. You can read more about profiling in the WebStorm documentation.
 
@@ -441,7 +441,7 @@ Testing arrays of size 130000
 
 In the browser, these operations take half as long, but the difference between `pop` and `shift` is still huge, and every 50-100 elements added to the array adds a millisecond to the execution time of `shift`.
 
-![](http://localhost:8484/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
 
 By modifying this code for testing a second time, we can obtain a version that works well in the browser and allows for generating data to draw a chart:
 
@@ -500,7 +500,7 @@ const data = {
 };
 ```
 
-![](http://localhost:8484/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
 
 ## Re-evaluation of solutions
 
@@ -552,4 +552,4 @@ for (let N = 250000; N < 1000000; N += 250000) {
 
 The results present time in milliseconds. These are the times of Daniel, Marcin, and the ratios of Marcin's time to Daniel's. The columns show the number of occupied seats, and the rows show the number of rows in the plane.
 
-![](http://localhost:8484/0497009b-a592-4043-8759-fc5d86f31cf6.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0497009b-a592-4043-8759-fc5d86f31cf6.avif)

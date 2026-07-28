@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: one-more-article-about-installation-arch-linux
-coverImage: http://localhost:8484/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
 description: Installing Arch Linux teaches me something new every time about disks, networks, and operating systems. I recommend it to you if you want a system tailored to your needs.
 excerpt: Installing Arch Linux teaches me something new every time about disks, networks, and operating systems. I recommend it to you if you want a system tailored to your needs.
 publishDate: 2021-10-22T01:24:19.000Z
@@ -30,7 +30,7 @@ Next, we will discuss:
 
 The core of the installation is depicted in the graphic below, but some commands may differ for us.
 
-![](http://localhost:8484/b49cea1e-c602-46e3-a908-0b3470ec06a0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b49cea1e-c602-46e3-a908-0b3470ec06a0.avif)
 
 ## Preparing a Bootable USB Drive
 
@@ -40,7 +40,7 @@ We can download the Arch ISO image from torrents:
 
 However, since CDs are no longer used, the default action is to write it to USB. To do this, we insert the USB drive into the computer and check what name it received using one of the commands `dmesg | grep Attached`, `df -h`, or `lsblk`.
 
-![](http://localhost:8484/d4303721-d034-4dc5-9b98-2aa9ae5553b2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d4303721-d034-4dc5-9b98-2aa9ae5553b2.avif)
 
 In our case, it is `sde`. We unmount the USB stick with the command:
 
@@ -58,7 +58,7 @@ After inserting the pendrive into the target machine and starting it, you usuall
 
 If successful, we should see:
 
-![](http://localhost:8484/049176bc-bcf4-4774-9275-0edd0d980b37.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/049176bc-bcf4-4774-9275-0edd0d980b37.avif)
 
 After confirming with `ENTER`, we will be taken to the installer console
 
@@ -68,11 +68,11 @@ Establishing an internet connection is our first task.
 
 We will start with a list of available devices, type `iwctl`, and then `device list`.
 
-![](http://localhost:8484/553974c5-3944-43e7-9e25-0034204bae17.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/553974c5-3944-43e7-9e25-0034204bae17.avif)
 
 The list of networks is available by entering `station wlan0 get-networks`
 
-![](http://localhost:8484/c6e726d4-85d0-4e02-ba9c-a0d281641f5b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c6e726d4-85d0-4e02-ba9c-a0d281641f5b.avif)
 
 We connect to the selected network using the command `station wlan0 connect TP-Link_CEC8` and enter the password.
 
@@ -141,7 +141,7 @@ On older computers, we will use BIOS. With the program `cfdisk` or `fdisk`, we c
 * bootable partition sda1 with type 83 Linux
 * non-bootable partition sda2 with type 82 Linux Swap
 
-![](http://localhost:8484/88eda6fa-37ae-43a2-b5ce-9ea43ef00fcd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/88eda6fa-37ae-43a2-b5ce-9ea43ef00fcd.avif)
 
 We format the created partition
 
@@ -728,15 +728,15 @@ yay -S barrier
 
 On the client device, we set the server ID:
 
-![](http://localhost:8484/7e58151b-96fb-4217-b7f7-49a5552900a8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7e58151b-96fb-4217-b7f7-49a5552900a8.avif)
 
 And on the server:
 
-![](http://localhost:8484/254f446b-c536-4626-ad8e-9461988b6c96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/254f446b-c536-4626-ad8e-9461988b6c96.avif)
 
 We indicate where the client will be positioned relative to our computer.
 
-![](http://localhost:8484/270694f4-09f0-4dfd-af1c-6d7332690f0a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/270694f4-09f0-4dfd-af1c-6d7332690f0a.avif)
 
 In case of connection setup issues, turning both computers off and on always helped.
 
@@ -817,7 +817,7 @@ For checking CPU usage and temperature, used RAM, network transfer - that is, ov
 yay -S bashtop
 ```
 
-![](http://localhost:8484/87e08fbb-de98-4348-9169-9543d9a8aab4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/87e08fbb-de98-4348-9169-9543d9a8aab4.avif)
 
 ### Display Manager
 
@@ -828,7 +828,7 @@ yay -S ly
 sudo systemctl enable ly.service
 ```
 
-![](http://localhost:8484/9be76f2f-1843-4219-990f-9d5c1b422fd1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9be76f2f-1843-4219-990f-9d5c1b422fd1.avif)
 
 ### Tmux and Tmuxinator
 
@@ -841,7 +841,7 @@ gem install tmuxinator
 
 His configuration:
 
-![](http://localhost:8484/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e.avif)
 
 ### Bitwarden
 
@@ -861,7 +861,7 @@ for_window [instance="bitwarden"] border pixel 3
 for_window [instance="bitwarden"] resize set 800 600
 ```
 
-![](http://localhost:8484/4d133afa-efe5-4cf9-acaa-72970b4f0ac5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d133afa-efe5-4cf9-acaa-72970b4f0ac5.avif)
 
 ## Our Arch Linux with i3 is ready
 
@@ -869,4 +869,4 @@ We might still lack an `IDE` for effective work if we are programmers or `obs` i
 
 If you think some programs are missing from the list, or you see places where something could be simplified, let us know in the comments.
 
-![](http://localhost:8484/f28189da-1303-474d-a73f-0eaa5eae884b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f28189da-1303-474d-a73f-0eaa5eae884b.avif)

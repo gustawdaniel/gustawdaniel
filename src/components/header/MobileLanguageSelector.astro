@@ -16,7 +16,7 @@ const currentPath = stripLang(currentPathWithLang)
 let entry: undefined | { data: { canonicalName: string } } = undefined
 
 function getPostId(path: string): string {
-    path = path.replace('/posts/', '');
+    path = path.replace('/posts/', '').replace('/notes/', '');
     return path.replace(/\/$/, '');
 }
 
@@ -25,6 +25,11 @@ if (currentPath.includes('posts/')) {
     entry = await getEntry('blog', getPostId(currentPath));
     translatedPosts = await getCollection('blog',
         (post) => entry && post.data.canonicalName === entry.data.canonicalName
+    );
+} else if (currentPath.includes('notes/')) {
+    const noteId = getPostId(currentPath).replace(/^(en|pl|es)\//, '');
+    translatedPosts = await getCollection('note',
+        (note) => note.slug.endsWith(noteId)
     );
 }
 ---

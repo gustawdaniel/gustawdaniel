@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: tesseract-ocr-and-selects-testing
-coverImage: http://localhost:8484/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
 description: Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy w behacie kilka testów na zapytania bazodanowe.
 excerpt: Odczytamy ze zdjęcia treść tabeli bazodanowej i napiszemy w behacie kilka testów na zapytania bazodanowe.
 publishDate: 2021-05-04 20:18:00+00:00
