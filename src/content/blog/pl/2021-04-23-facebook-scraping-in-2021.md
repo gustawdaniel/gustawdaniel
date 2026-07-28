@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: facebook-scraping-in-2021
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
+coverImage: /src/assets/images/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
 description: Artykuł ma na celu zapoznanie czytelnika z metodą na scaping portalu Facebooka po wprowadzeniu aktualizacji layoutu.
 excerpt: Artykuł ma na celu zapoznanie czytelnika z metodą na scaping portalu Facebooka po wprowadzeniu aktualizacji layoutu.
 publishDate: 2021-04-23 19:49:00+00:00
@@ -486,7 +486,7 @@ dostaniemy gotowy do użycia kod strukturyzujący listę osób z grupy Facebooka
 
 Długość nowego selektora to 513 znaków w porównaniu z 639 dla selektora wejściowego, ale działa on świetnie. Dla grupy, którą analizowaliśmy mającej 4576 osób procedura automatycznego scrollingu w dół zajęła 90 minut.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
+![](/src/assets/images/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
 
 JSON z danymi ważył 2.1 MB. Po konwersji do formatu CSV komendą:
 
@@ -515,7 +515,7 @@ du -ha .cache
 
 Te awatary same ważą 2.19 KiB i mają rozmiar 60x60 px. Łatwo można sprawdzić jaki był rozmiaru udział różnych typów danych w scrapingu:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
+![](/src/assets/images/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
 
 Należy zaznaczyć, że ze względu na realny rozmiar drzewa dom, w Facebooku, można szacować, że przeglądarka musiała wybudować kilkaset MB, żebyśmy mogli pobrać te dane. Przez cały czas scrolowania (90 minut) przeglądarka zużywała 100% rdzenia o taktowaniu 2GHz.
 

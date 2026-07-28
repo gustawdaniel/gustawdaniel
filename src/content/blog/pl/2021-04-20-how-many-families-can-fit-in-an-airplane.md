@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-many-families-can-fit-in-an-airplane
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e241188a-23c6-41d5-a640-95085128893c.avif
+coverImage: /src/assets/images/e241188a-23c6-41d5-a640-95085128893c.avif
 description: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
 excerpt: Porównujemy dwa rozwiązania zadania polegającego na zliczaniu wolnych zestawów przyległych miejsc. Dowiesz się jak używać Profilowania i jak wielką różnicę robi użycie pop oraz shift na tablicach w js.
 publishDate: 2021-04-20 18:41:10+00:00
@@ -18,7 +18,7 @@ Omówimy dwa rozwiązania zadania, które stosowane było podczas pewnej rekruta
 
 W samolocie rozmieszczone są miejsca. Tworzą one trzy zestawy zawierające kolejno 3, 4 i 3 siedzenia sąsiadujące ze sobą. Zakładamy, że wiersze liczone są od 1 a kolumny indeksowane za pomocą liter alfabetu jak w tabeli EXCEL (od A do K). Schemat samolotu przedstawia poniższy rysunek. Zakładamy, że wszystkie miejsca mają taki sam układ jak te oznaczone na niebiesko.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
+![](/src/assets/images/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
 
 Zakładamy, że samolot ma długość `N` rzędów z miejscami. Znamy też aktualne zapełnienie miejsc, które zapisane jest w postaci ciągu znakowego `S` jako oddzielone spacją współrzędne numeru wiersza i kolumny, np:
 
@@ -299,27 +299,27 @@ Do profilowania możemy użyć flagi `--porf`, spowoduje ona powstanie pliku z l
 
 Jego przeglądanie nie jest łatwe jeśli nie wie się czego szukać. Ten plik wygląda mniej więcej tak:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
+![](/src/assets/images/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
 
 Na szczęście Webstorm ma ciekawe narzędzia do profilowania, które pod spodem robią to samo co ta flaga, ale nakładają graficzną nakładkę i wykresy, które pozwalają na odnalezienie się w logach i szybkie dotarcie do źródła problemu. Aby skonfigurować profilowanie zaznaczamy w ustawieniach `Coding assistance for Node.js`
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
+![](/src/assets/images/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
 
 Następnie tworzymy profil, który wystartuje nasz skrypt z odpowiednimi parametrami
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
+![](/src/assets/images/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
 
 a w zakładce `V8 Profiling` zaznaczamy opcję profilowania.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
+![](/src/assets/images/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
 
 Po wybraniu zielonego trójkąta startującego profilowanie
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/69644d36-ba44-4026-b579-442715c7f781.avif)
+![](/src/assets/images/69644d36-ba44-4026-b579-442715c7f781.avif)
 
 zobaczymy logi uporządkowane względem procentowego udziału w czasie wykonywania.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
+![](/src/assets/images/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
 
 Ten widok pozwala wyłowić najcięższe funkcje względem całkowitego czasu wykonywania. Więcej o profilowaniu możesz poczytać w dokumentacji WebStorms.
 
@@ -445,7 +445,7 @@ Testing arrays of size 130000
 
 W przeglądarce te operacje trwają dwa razy krócej ale i tak różnica między `pop` a `shift` jest ogromna i każde 50-100 elementów tablic dodaje milisekundę do czasu wykonywania `shift`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
+![](/src/assets/images/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
 
 Przerabiając ten kod do testowania po raz drugi możemy uzyskać wersję, która będzie dobrze działać w przeglądarce i pozwoli na wygenerowanie danych do narysowania wykresu:
 
@@ -506,7 +506,7 @@ const data = {
 };
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
+![](/src/assets/images/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
 
 ## Ponowne porównanie rozwiązań
 
@@ -558,4 +558,4 @@ for (let N = 250000; N < 1000000; N += 250000) {
 
 Wyniki prezentują czas w milisekundach. Są to kolejno czasy Daniela, Marcina i stosunki czasów Marcina do Daniela. Kolumny pokazują ilość zajętych miejsc, a wiersze ilość rzędów w samolocie.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0497009b-a592-4043-8759-fc5d86f31cf6.avif)
+![](/src/assets/images/0497009b-a592-4043-8759-fc5d86f31cf6.avif)

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d8bce439-7a26-4a7d-aef8-4308277995db.avif
+coverImage: /src/assets/images/d8bce439-7a26-4a7d-aef8-4308277995db.avif
 description: Learn how to create and kill child processes in Node JS, dynamically manage their quantity, and conduct bidirectional communication with them.
 excerpt: Learn how to create and kill child processes in Node JS, dynamically manage their quantity, and conduct bidirectional communication with them.
 publishDate: 2021-07-17 13:53:19+00:00
@@ -17,7 +17,7 @@ In this post, we will learn how to create and terminate `subprocesses` in Node J
 
 If the program performs heavy computations but is not parallelized, the state of your processor may look like this:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3b1ed569-b0e0-490f-81a6-df3454db4788.avif)
+![](/src/assets/images/3b1ed569-b0e0-490f-81a6-df3454db4788.avif)
 
 Therefore, it is worth delving into this topic regardless of the language you are writing in.
 
@@ -81,7 +81,7 @@ The sign written in `key` is an object with the following keys
 
 In the presented code, we handle the closure of the process with the combination `ctrl+c` and printing to the console the character selected on the keyboard. Typing subsequent characters will show them in the terminal each time.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8.avif)
+![](/src/assets/images/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8.avif)
 
 The next step is to replace printing characters with creating or killing processes that load the processor.
 
@@ -101,7 +101,7 @@ const forks = [];
 
 If we forgot about them when closing the program, they would become `zombie` processes - that is, ones that still live and consume computer resources without supervision.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b76d2cab-977e-458c-bf42-027fe76d3234.avif)
+![](/src/assets/images/b76d2cab-977e-458c-bf42-027fe76d3234.avif)
 
 To remove them, before closing our script, we write the code:
 
@@ -157,15 +157,15 @@ meaning that the code is written only to simulate load.
 
 Upon starting the program and selecting a few load options, we see how processes are created and terminated. Thanks to `htop`, we can observe how CPU usage changes during this time.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a089f093-d5f3-443b-ab10-728a38ca6a6b.avif)
+![](/src/assets/images/a089f093-d5f3-443b-ab10-728a38ca6a6b.avif)
 
 An even nicer interface for monitoring the processor is provided by `bashtop`, as it also displays historical usage. In the screenshot below, we can see how by modifying the number of processes in our program, I was able to simulate various levels of CPU load with tasks.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47bf0bb1-95cc-46b4-9d29-237b504b6a29.avif)
+![](/src/assets/images/47bf0bb1-95cc-46b4-9d29-237b504b6a29.avif)
 
 And what the core usage looked like when I selected the option to create 16 processes.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/05911406-d43c-4316-b265-9202b0042ea1.avif)
+![](/src/assets/images/05911406-d43c-4316-b265-9202b0042ea1.avif)
 
 We can use this program to simulate load. In the `bomb.js` file, we can replace random number generation with sending http requests or consuming other resources, such as RAM or disk.
 
@@ -211,11 +211,11 @@ In a brute-force attack, the key is the character set on which we will base the 
 
 We compare two solutions to the problem of counting free adjacent seat sets. You will learn how to use Profiling and how significant a difference it makes to use pop and shift on arrays in js.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e4679649-0445-42f4-9890-f45307625bd6.avif)
+![](/src/assets/images/e4679649-0445-42f4-9890-f45307625bd6.avif)
 
 Instead of unloading the queue, we will read values from it using a variable index that will move along it. The flowchart of the program we will write is as follows:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/50ac21aa-497e-4dca-8292-d672a9cd5198.avif)
+![](/src/assets/images/50ac21aa-497e-4dca-8292-d672a9cd5198.avif)
 
 Its code is:
 
@@ -283,7 +283,7 @@ Next, we launch our program and see how it sequentially checks the passwords fro
 time node force-single.js
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/72cbd407-9321-4ca7-b7e9-b57a8911bad8.avif)
+![](/src/assets/images/72cbd407-9321-4ca7-b7e9-b57a8911bad8.avif)
 
 In the columns we have the index, the sequence being checked, the time since the program was started in milliseconds, information about whether the password matches the hash, and the current length of the queue.
 
@@ -311,15 +311,15 @@ What does it mean that only 2.3% of the computational power is allocated to oper
 
 Since checking password and hash compatibility is a CPU-intensive operation, we expect a significant increase in the performance of this task if we use multiple cores simultaneously. For this reason, we will rewrite our program so that the main process handles the queue and assigns the checking task to subprocesses instead of performing password checks itself.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cffe8d53-af1d-41cc-afd9-9559222f20c6.avif)
+![](/src/assets/images/cffe8d53-af1d-41cc-afd9-9559222f20c6.avif)
 
 The diagram of our program is divided into the main process and subprocesses. In the main process, a list of child processes, a queue, and listeners for messages from subprocesses are created. In the end, each subprocess is assigned a task from the queue to execute. After completion, subprocesses report back to the main thread with the response, which increments the index and assigns new tasks to them. This continues until the correct password is found.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f6ce1ed-a710-42bb-890e-1def30a24127.avif)
+![](/src/assets/images/9f6ce1ed-a710-42bb-890e-1def30a24127.avif)
 
 It is worth noting that independent children will execute tasks at different speeds, which will affect the order of response reporting. An example output of the program is:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ba051803-3c65-464d-8441-1368270ef48e.avif)
+![](/src/assets/images/ba051803-3c65-464d-8441-1368270ef48e.avif)
 
 The code is divided into two files:
 
@@ -464,23 +464,23 @@ According to the General Law of Scaling, we expect performance to increase up to
 
 If you haven't heard of the universal law of scaling, let me quickly introduce you to the topic. It suggests that in an ideal world, if systems were linearly scalable, it would mean that adding `n` times more resources would increase the performance or throughput of the system by `n` times. This situation can be illustrated by the picture:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b551739b-a90e-4e7d-b275-9cbf067b2c02.avif)
+![](/src/assets/images/b551739b-a90e-4e7d-b275-9cbf067b2c02.avif)
 
 However, such situations are not found in the real world. There is always some inefficiency associated with allocating data to nodes (servers or threads) and gathering them. The delays related to allocating and receiving data are called serialization, and sometimes you may encounter the term `contention`:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3f245c79-a00f-42ed-9050-209d5a69e8d9.avif)
+![](/src/assets/images/3f245c79-a00f-42ed-9050-209d5a69e8d9.avif)
 
 Taking this phenomenon into account leads to Amdahl's model. However, it turns out that it is insufficient for most IT systems because it completely ignores the second main factor limiting scaling - communication between processes - `crosstalk`. This can be graphically represented as follows:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a3003513-1d18-4386-85cf-e6d83bdc3581.avif)
+![](/src/assets/images/a3003513-1d18-4386-85cf-e6d83bdc3581.avif)
 
 While serialization has a cost proportional to the number of nodes, communication is proportional to the square of their number - just like the number of diagonals of a polygon to the number of angles.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0a680f83-94b6-4398-aeda-28b4186f3e8b.avif)
+![](/src/assets/images/0a680f83-94b6-4398-aeda-28b4186f3e8b.avif)
 
 In the graph, we see curves comparing the impact of the number of nodes on performance in the system according to these three models.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0.avif)
+![](/src/assets/images/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0.avif)
 
 A good (50-page) study on this topic can be found at the link:
 
@@ -524,7 +524,7 @@ Show[ListPlot[{#[[1]], #[[2]]/firstMean} & /@ loadEff],
   PlotLabel -> "Gain of efficiency relative to single process"]
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ae266323-acb4-4792-a077-286260383b11.avif)
+![](/src/assets/images/ae266323-acb4-4792-a077-286260383b11.avif)
 
 It is worth showing a very nice formula for the theoretical maximum.
 
@@ -533,7 +533,7 @@ Solve[D[\[Lambda] n/(1 + \[Sigma] (n - 1) + \[Kappa] n (n - 1)),
    n] == 0, n]
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5eeff6fb-5759-4d91-b8bf-7a9684533bf7.avif)
+![](/src/assets/images/5eeff6fb-5759-4d91-b8bf-7a9684533bf7.avif)
 
 Calculated numerically
 

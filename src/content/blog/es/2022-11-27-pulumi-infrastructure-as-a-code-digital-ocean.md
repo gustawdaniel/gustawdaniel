@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
+coverImage: /src/assets/images/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
 description: Con Pulumi, puedes definir tu infraestructura de TI en un archivo descrito por tu lenguaje de programación favorito. Este artículo muestra cómo hacerlo.
 excerpt: Con Pulumi, puedes definir tu infraestructura de TI en un archivo descrito por tu lenguaje de programación favorito. Este artículo muestra cómo hacerlo.
 publishDate: 2022-11-27 12:52:11+00:00
@@ -18,13 +18,13 @@ updateDate: 2022-11-27 12:53:23+00:00
 
 Inicialmente (hace 70 años), las computadoras se programaban mediante el cambio manual de conexiones de cables. No había escritorio personal, por lo que los programas se escribían en producción. Sin despliegue, sin problema.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
+![](/src/assets/images/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
 
 primeros programadores de computadora digital
 
 Aproximadamente una década después, IBM introdujo tarjetas perforadas, por lo que el despliegue o la instalación se realizaba insertando una tarjeta con el programa en un lector.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
+![](/src/assets/images/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
 
 El siguiente gran avance - internet y protocolos ftp (1971) cambiaron todo. Para mover programas a otras máquinas ya no necesitabas un controlador físico, más allá de los cables que conectaban con la red.
 
@@ -42,7 +42,7 @@ Estos cambios fueron importantes para los proveedores de nube y la rama IaaS, pe
 
 La siguiente gran revolución fue Docker, escrito en Go en 2013, y utilizando namespaces disponibles desde el kernel de linux 2.6.24 de 2008. Su popularidad explotó en 2017. El principal problema antes de Docker era la configuración del servidor para usar nuestra aplicación. Cuando el entorno de ejecución estaba configurado en el servidor, entonces dos aplicaciones diferentes con versiones o configuraciones diferentes de runtime no podían instalarse en el mismo host. Si estaban empaquetadas como máquinas virtuales, entonces toda la capa del sistema operativo se duplicaba. Docker resolvió estos problemas.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
+![](/src/assets/images/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
 
 Pero no es el fin. Cuando la gente aprendió a usar Docker y creó flujos de CI/CD para automatizar los procesos de despliegue y pruebas, se dieron cuenta de que la gestión del servidor también se podía hacer a nivel de código.
 
@@ -78,7 +78,7 @@ No nos enfocaremos en ninguna línea de este código. Si estás interesado en es
 
 Ahora nos enfocaremos en el competidor de Terraform. Vamos a discutir Pulumi.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
+![](/src/assets/images/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
 
 # Pulumi
 
@@ -228,7 +228,7 @@ doctl auth init
 
 Necesitarás un token que se puede generar en la pestaña `API` en el panel de Digital Ocean
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
+![](/src/assets/images/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
 
 El mismo token debe ser utilizado para conectar pulumi con tu digital ocean:
 
@@ -252,7 +252,7 @@ ssh-keygen -t ed25519 -C "gustaw.daniel@gmail.com" -f ~/.ssh/id_ed25519
 
 agregar claves públicas a la configuración de seguridad en digital ocean:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
+![](/src/assets/images/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
 
 Después de agregar, puedes preguntar nuevamente sobre las claves porque necesitarás estos números devueltos por el comando:
 
@@ -394,7 +394,7 @@ Espero que este artículo te ayude a comenzar con pulumi en Digital Ocean y segu
 
 > Es mejor gastar 10 horas fallando en automatizar, que hacer la tarea manualmente.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
+![](/src/assets/images/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
 
 Vamos a resumir las ventajas del enfoque IaC.
 

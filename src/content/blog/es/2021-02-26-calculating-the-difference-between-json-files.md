@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
+coverImage: /src/assets/images/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
 description: Aprende a encontrar traducciones faltantes en archivos JSON con diccionarios.
 excerpt: Aprende a encontrar traducciones faltantes en archivos JSON con diccionarios.
 publishDate: 2021-02-26
@@ -86,13 +86,13 @@ Ahora, veamos cómo funciona el programa en la práctica con archivos de traducc
 
 Al principio, ordené ambos archivos manualmente utilizando el servicio: codeshack.io/json-sorter
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
+![](/src/assets/images/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
 
 https://codeshack.io/json-sorter/
 
 A continuación, utilicé `diffchecker` para encontrar las diferencias entre ellos:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
+![](/src/assets/images/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
 
 https://www.diffchecker.com/yffDMWff
 
@@ -104,7 +104,7 @@ node ../DevTools/json-diff.js src/locales/en_old.json src/locales/en.json > src/
 
 El archivo, mostrado y formateado por jq, se ve así:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd621642-427b-4560-9f26-b08150f04e97.avif)
+![](/src/assets/images/dd621642-427b-4560-9f26-b08150f04e97.avif)
 
 Podemos ver que incluye todas las claves faltantes.
 

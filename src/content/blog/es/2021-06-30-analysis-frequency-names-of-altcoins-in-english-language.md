@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analysis-frequency-names-of-altcoins-in-english-language
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
+coverImage: /src/assets/images/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
 description: El objetivo del artículo es mostrar cómo filtrar de todos los nombres de criptomonedas aquellos que no aparecen en el lenguaje natural.
 excerpt: El objetivo del artículo es mostrar cómo filtrar de todos los nombres de criptomonedas aquellos que no aparecen en el lenguaje natural.
 publishDate: 2021-06-30 10:22:00+00:00
@@ -352,7 +352,7 @@ Después de escribir la frase "corpus en inglés" rápidamente aterrizamos en la
 
 Esto es una estafa. Contiene información que es gratuita y todo lo que necesitas hacer es registrarte para obtener una cuenta.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
+![](/src/assets/images/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
 
 pero tiene limitaciones que nos permiten escanear solo 50 palabras por día. Perdí tiempo tratando de automatizar la extracción de datos de este servicio.
 
@@ -626,11 +626,11 @@ ts-node src/preparePhrases.ts
 
 Podemos ver que para monedas muy oscuras, la proporción es muy baja a pesar de las palabras populares.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
+![](/src/assets/images/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
 
 podemos esperar muchos tweets con palabras como `tú`, `gigante`, `espectro`, `pop`, `cil`, `voto`, `obtener`, `real` o `tipo` donde el autor no se refería a criptomonedas. Por otro lado, no hay un criterio de corte objetivo.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/693ef6c8-ca55-4450-9373-407542eb3313.avif)
+![](/src/assets/images/693ef6c8-ca55-4450-9373-407542eb3313.avif)
 
 Si lo configuro en 100, 2328/16395 = 14% de las frases serían eliminadas. Con un valor de `5`, tenemos un corte de 1560/16395 = 9.5%.
 

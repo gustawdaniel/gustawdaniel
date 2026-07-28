@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-derivative-time-part-1-recursion-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4fa140be-b4cd-472c-9a33-31181e493f79.avif
+coverImage: /src/assets/images/4fa140be-b4cd-472c-9a33-31181e493f79.avif
 description: Solution of CodinGame exercise. Simple recursion example with typescript. Formula representation inspired by lisp.
 excerpt: Solution of CodinGame exercise. Simple recursion example with typescript. Formula representation inspired by lisp.
 publishDate: 2023-01-21 20:31:28+00:00

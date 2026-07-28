@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-derivative-time-part-1-recursion-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4fa140be-b4cd-472c-9a33-31181e493f79.avif
+coverImage: /src/assets/images/4fa140be-b4cd-472c-9a33-31181e493f79.avif
 description: Rozwiązanie ćwiczenia CodinGame. Prosty przykład rekurencji z typescriptem. Reprezentacja formuły inspirowana lispem.
 excerpt: Rozwiązanie ćwiczenia CodinGame. Prosty przykład rekurencji z typescriptem. Reprezentacja formuły inspirowana lispem.
 publishDate: 2023-01-21 20:31:28+00:00

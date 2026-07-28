@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
+coverImage: /src/assets/images/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
 description: In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. You can use this to define functions with returned type dependent from arguments values.
 excerpt: In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. You can use this to define functions with returned type dependent from arguments values.
 publishDate: 2022-12-14 21:02:01+00:00
@@ -52,7 +52,7 @@ export function volume(cube: HyperCube, asString: boolean = false): string | num
 
 Unfortunately now using `volume` function we do not know if we will get `string` or `number`. We do not want to use `.toString` or `parseInt` any time.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9be19831-d3c3-453b-abce-b2c40444a931.avif)
+![](/src/assets/images/9be19831-d3c3-453b-abce-b2c40444a931.avif)
 
 Fortunately, there is a concept called overload signatures. It allows selecting a returned type in dependence from parameters values.
 

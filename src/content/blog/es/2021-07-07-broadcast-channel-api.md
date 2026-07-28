@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
+coverImage: /src/assets/images/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
 description: Esta publicación muestra cómo usar la API de Canal de Difusión para enviar datos entre pestañas o ventanas del navegador sin usar un servidor y sockets.
 excerpt: Esta publicación muestra cómo usar la API de Canal de Difusión para enviar datos entre pestañas o ventanas del navegador sin usar un servidor y sockets.
 publishDate: 2021-07-07 11:08:19+00:00
@@ -103,21 +103,21 @@ Por cierto, utilizamos una API diferente aquí - rendimiento:
 
 Para las dos pestañas, podemos ver que cada pestaña tiene su propio identificador único y mensajes enviados desde la pestaña opuesta.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
+![](/src/assets/images/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
 
 Nada nos impide habilitar cuatro tarjetas a la vez. Entonces los mensajes de las tres restantes se entrelazarán entre sí.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
+![](/src/assets/images/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
 
 Podemos volver a dos pestañas y refrescar la de la derecha varias veces. Como resultado de esta acción, la de la izquierda recibirá varias nuevas notificaciones, mientras que en la de la derecha, no se verá nada excepto su propia presentación, ya que la tarjeta de la izquierda ya ha terminado de enviar mensajes. El resultado específico de refrescar la tarjeta de la derecha se muestra en la captura de pantalla:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b0784926-0177-48cb-9841-b51e8bc24203.avif)
+![](/src/assets/images/b0784926-0177-48cb-9841-b51e8bc24203.avif)
 
 Aquí vemos que los mensajes provienen de diferentes ID porque la tarjeta a la derecha cambia de ID con cada actualización.
 
 El siguiente experimento es comprobar si el Canal de Difusión funciona entre diferentes navegadores:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
+![](/src/assets/images/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
 
 Resulta que no. Tiene sentido porque si funcionara entre navegadores, tendría que haber comunicación entre los procesos que mantienen los navegadores.
 
@@ -131,7 +131,7 @@ Podemos leer más sobre el Origen en el diccionario de desarrolladores de Mozill
 
 Verificaremos si funcionará correctamente para diferentes computadoras también. Para ello, necesitamos cambiar la configuración del paquete, porque actualmente expone nuestro servicio en localhost.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
+![](/src/assets/images/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
 
 Podemos verificar nuestra dirección IP actual con el comando.
 
@@ -139,7 +139,7 @@ Podemos verificar nuestra dirección IP actual con el comando.
 ip route
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
+![](/src/assets/images/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
 
 De la documentación, podemos leer que simplemente agregar la bandera `--host` es suficiente.
 
@@ -149,7 +149,7 @@ De la documentación, podemos leer que simplemente agregar la bandera `--host` e
 parce index.html --host 192.168.2.162
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
+![](/src/assets/images/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
 
 Resultó que la comunicación no se transmite entre diferentes computadoras.
 

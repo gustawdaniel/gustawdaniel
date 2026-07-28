@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: data-logging-with-mysql-ajax-and-behat
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8a528c93-b962-4ba4-b410-944fd27661e1.avif
+coverImage: /src/assets/images/8a528c93-b962-4ba4-b410-944fd27661e1.avif
 description: We will write a simple web application - a calculator. Using it as an example, we will show how to configure selenium with behat and perform automated tests on it.
 excerpt: We will write a simple web application - a calculator. Using it as an example, we will show how to configure selenium with behat and perform automated tests on it.
 publishDate: 2021-04-26 20:03:00+00:00
@@ -28,7 +28,7 @@ PHP 43.2% Perl 19.8% HTML 19.6% Cucumber 7.4% JavaScript 6.5% CSS 3.5%
 
 After writing, the project will look like this:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a818262939.avif)
+![](/src/assets/images/0cd60295-e8e0-49fb-aa4b-a6a818262939.avif)
 
 ## Installation
 

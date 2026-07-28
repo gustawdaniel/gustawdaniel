@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: aur-package-publication
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
+coverImage: /src/assets/images/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
 description: Aprende a publicar actualizaciones de paquetes en el repositorio de usuarios de Arch Linux.
 excerpt: Aprende a publicar actualizaciones de paquetes en el repositorio de usuarios de Arch Linux.
 publishDate: 2022-01-29T20:34:39.000Z
@@ -13,7 +13,7 @@ updateDate: 2022-01-29T20:34:39.000Z
 
 ### Crear una cuenta en AUR
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/08559ea5-1a3c-40c5-96f0-d5e3b34148cf.avif)
+![](/src/assets/images/08559ea5-1a3c-40c5-96f0-d5e3b34148cf.avif)
 
 ### Descargue el paquete que desea actualizar
 
@@ -68,7 +68,7 @@ Mientras tanto, en el enlace con lanzamientos en Github, tenemos la versión 1.4
 
 [Releases · InfinityWallet/Releases](https://github.com/InfinityWallet/Releases/releases)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
+![](/src/assets/images/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
 
 La versión para Debian se puede encontrar en
 
@@ -108,7 +108,7 @@ Podemos verificar si la instalación es exitosa escribiendo
 makepkg -si
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/edfefedf-af85-409b-9e6d-ff33fbeefd07.avif)
+![](/src/assets/images/edfefedf-af85-409b-9e6d-ff33fbeefd07.avif)
 
 ### Enviando cambios al repositorio
 

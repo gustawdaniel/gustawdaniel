@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: maximum-inequality-linear-search-rust-and-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e9e4456-ce05-4bd0-b136-7bbd4c952edd.avif
+coverImage: /src/assets/images/3e9e4456-ce05-4bd0-b136-7bbd4c952edd.avif
 description: Prosta zadanie hackeartch rozwiązane w node js i rust. Możesz porównać te dwa języki na przykładzie tego problemu. Zalecam rozwiązanie go samodzielnie przed przeczytaniem rozwiązań.
 excerpt: Prosta zadanie hackeartch rozwiązane w node js i rust. Możesz porównać te dwa języki na przykładzie tego problemu. Zalecam rozwiązanie go samodzielnie przed przeczytaniem rozwiązań.
 publishDate: 2022-11-28 16:54:21+00:00

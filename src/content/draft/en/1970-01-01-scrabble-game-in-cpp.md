@@ -11,11 +11,11 @@ canonicalName: scrabble-game-in-cpp
 
 As many games `scrabble` is played on the board.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1bbb26b9-c68c-4d39-8161-f03582cff199.avif)
+![](/src/assets/images/1bbb26b9-c68c-4d39-8161-f03582cff199.avif)
 
 In our case we want to play in terminal so it will looks like this:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d734d549-e356-47f9-960d-bfb7b5bc50a4.avif)
+![](/src/assets/images/d734d549-e356-47f9-960d-bfb7b5bc50a4.avif)
 
 To draw it we need only 33 lines of `c++` code. In `main.cpp` we defining `Game` and `Map` structures. Using `mvprintw` function from `ncurses` we can print all coordinates around map.
 
@@ -167,7 +167,7 @@ User can use arrows to select position of initial letter. But if he changing dir
 
 It would be confusing if user would not be able to see feedback. So in this step I added right panel with basic info about current position and direction.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f8a96d73-7b56-4f79-bee0-bc1b4c49ef58.avif)
+![](/src/assets/images/f8a96d73-7b56-4f79-bee0-bc1b4c49ef58.avif)
 
 Because `Map` uses `Player` and `Player` uses `Map` I splited declarations from definitions of some methods in `Player`.
 
@@ -455,7 +455,7 @@ details in commit:
 
 Now you can write words on board, but they do not use sets generated for users.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c61247a0-c91f-4451-b6e4-785f27ca8844.avif)
+![](/src/assets/images/c61247a0-c91f-4451-b6e4-785f27ca8844.avif)
 
 It is time to join these elements. So now we want to:
 

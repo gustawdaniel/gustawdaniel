@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
+coverImage: /src/assets/images/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
 description: En TypeScript, podemos especificar una función que se puede llamar de diferentes maneras escribiendo firmas de sobrecarga. Puedes usar esto para definir funciones con un tipo de retorno que depende de los valores de los argumentos.
 excerpt: En TypeScript, podemos especificar una función que se puede llamar de diferentes maneras escribiendo firmas de sobrecarga. Puedes usar esto para definir funciones con un tipo de retorno que depende de los valores de los argumentos.
 publishDate: 2022-12-14 21:02:01+00:00
@@ -52,7 +52,7 @@ export function volume(cube: HyperCube, asString: boolean = false): string | num
 
 Desafortunadamente, ahora al usar la función `volume` no sabemos si obtendremos un `string` o un `number`. No queremos usar `.toString` o `parseInt` en ningún momento.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9be19831-d3c3-453b-abce-b2c40444a931.avif)
+![](/src/assets/images/9be19831-d3c3-453b-abce-b2c40444a931.avif)
 
 Afortunadamente, existe un concepto llamado firmas de sobrecarga. Permite seleccionar un tipo de retorno en dependencia de los valores de los parámetros.
 

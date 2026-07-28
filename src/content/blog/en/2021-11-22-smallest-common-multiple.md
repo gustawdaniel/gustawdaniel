@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: smallest-common-multiple
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2584a854-c1e8-458d-8add-5e70e49ef101.avif
+coverImage: /src/assets/images/2584a854-c1e8-458d-8add-5e70e49ef101.avif
 description: Solution to the "Archery" problem from the "Number Theory" section of "Hacker Earth". The task is to determine the least common multiple of a sequence of numbers.
 excerpt: Solution to the "Archery" problem from the "Number Theory" section of "Hacker Earth". The task is to determine the least common multiple of a sequence of numbers.
 publishDate: 2021-11-22T14:38:00.000Z
@@ -43,7 +43,7 @@ Constraints
 1 <= k_i <= 48
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
+![](/src/assets/images/8125dd8c-e9dc-4dd9-ab8c-cdbaaf274cc1.avif)
 
 Explanation
 
@@ -65,11 +65,11 @@ Key formulas are:
 
 * Fundamental theorem of arithmetic - every positive integer can be expressed as a unique product of its prime factors with appropriate powers
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/20687346-ea6f-43fc-8b22-7a7573819554.avif)
+![](/src/assets/images/20687346-ea6f-43fc-8b22-7a7573819554.avif)
 
 * The least common multiple (lcm) of a pair of numbers will be calculated using this factorization.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
+![](/src/assets/images/29216930-efaf-40f6-81e6-49f186d6a8fc.avif)
 
 There are ways to calculate `lcm` without prime factorization, for example through the relationship with the greatest common divisor (gcd) and the Euclidean algorithm, but we will use prime factorization here.
 
@@ -85,7 +85,7 @@ We see that the first challenge is to factor the number.
 
 In this topic, a graphical representation of the algorithm is very helpful.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
+![](/src/assets/images/102c0a22-4b94-4642-97b0-6e96f9d9bd47.avif)
 
 This algorithm is called "Trial division" and is the least efficient but the simplest to understand factorization algorithm. Other ones are listed here:
 

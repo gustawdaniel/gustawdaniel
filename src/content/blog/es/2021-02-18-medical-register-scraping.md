@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: medical-register-scraping
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
+coverImage: /src/assets/images/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
 description: A los administradores de datos no les gusta. Vea cómo, ingresando dos comandos en la consola, descargó el registro de todas las farmacias en Polonia.
 excerpt: A los administradores de datos no les gusta. Vea cómo, ingresando dos comandos en la consola, descargó el registro de todas las farmacias en Polonia.
 publishDate: 2021-02-17 23:25:12+00:00
@@ -24,17 +24,17 @@ https://rejestrymedyczne.ezdrowie.gov.pl/main
 
 Contiene varios registros de datos relacionados con la medicina.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
+![](/src/assets/images/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
 
 Supongamos que queremos descargar todos los datos sobre farmacias de esta página. Hacemos clic en el registro de farmacias y vemos:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
+![](/src/assets/images/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
 
 Curiosamente, la paginación no cambia la URL aquí, solo recarga la página y muestra la siguiente vista en la tabla.
 
 Después de cambiar a la pestaña "Red" en la consola del navegador, podemos ver que se está enviando una solicitud en segundo plano.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
+![](/src/assets/images/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
 
 Resulta que sin ningún token, clave o cookie, puedes descargar datos que se cargan en la tabla directamente desde la API utilizando un comando.
 
@@ -42,7 +42,7 @@ Resulta que sin ningún token, clave o cookie, puedes descargar datos que se car
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
+![](/src/assets/images/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
 
 No hay problema en descargar **dos** farmacias:
 
@@ -50,7 +50,7 @@ No hay problema en descargar **dos** farmacias:
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC | jq '.[][] | {nr: .registrationNumber, name: .owners[0].name}'
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
+![](/src/assets/images/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
 
 No hay problema en descargar **diez mil** farmacias.
 
@@ -58,7 +58,7 @@ No hay problema en descargar **diez mil** farmacias.
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=10000\&sortField\=originId\&sortDirection\=ASC | jq '.[][].owners[0].name' | wc
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
+![](/src/assets/images/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
 
 Para descargar 15 mil farmacias, el comando es
 

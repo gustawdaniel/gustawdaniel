@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-install-mongodb-6-on-fedora-37
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/acfa5bf6-4988-403e-8cc9-cbcca1a77015.avif
+coverImage: /src/assets/images/acfa5bf6-4988-403e-8cc9-cbcca1a77015.avif
 description: Mongodb 6 installation on Fedora Linux 37. Article shows lacking fragment of official docs and two steps after installation that are presented in extremely simple way in comparison to other sources.
 excerpt: Mongodb 6 installation on Fedora Linux 37. Article shows lacking fragment of official docs and two steps after installation that are presented in extremely simple way in comparison to other sources.
 publishDate: 2023-03-02 05:53:26+00:00
@@ -43,7 +43,7 @@ Now you can install by
 sudo dnf install -y mongodb-org
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/248dfc2f-9001-42a9-ab1c-56499b862376.avif)
+![](/src/assets/images/248dfc2f-9001-42a9-ab1c-56499b862376.avif)
 
 so there are two assumptions that are correct:
 
@@ -58,7 +58,7 @@ sudo systemctl start mongod
 
 And you can connect with mongodb by `mongosh`
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cd36581b-5767-4983-8381-b05d8ef53202.avif)
+![](/src/assets/images/cd36581b-5767-4983-8381-b05d8ef53202.avif)
 
 Mongosh is better than `mongo` command because of colors and autocompletion, so use `mongosh` instead of `mongo`.
 
@@ -80,7 +80,7 @@ and install it
 sudo dnf install -y mongodb-compass-1.35.0.x86_64.rpm
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d539655f-fa59-41a2-b203-e219fc72a510.avif)
+![](/src/assets/images/d539655f-fa59-41a2-b203-e219fc72a510.avif)
 
 ## Enable Mongo Replica Set locally
 
@@ -121,10 +121,10 @@ then you can confirm changes by
 rs.status()
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/89eeb74d-98d4-43f3-90c5-ddf888fb0534.avif)
+![](/src/assets/images/89eeb74d-98d4-43f3-90c5-ddf888fb0534.avif)
 
 If you experiencing more complications there is great article with advanced config
 
 [How To Configure a MongoDB Replica Set on Ubuntu 20.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-a-mongodb-replica-set-on-ubuntu-20-04)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd7f7dee-6cd4-4048-bc05-f83127be372f.avif)
+![](/src/assets/images/dd7f7dee-6cd4-4048-bc05-f83127be372f.avif)

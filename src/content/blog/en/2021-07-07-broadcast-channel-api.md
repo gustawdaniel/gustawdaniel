@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
+coverImage: /src/assets/images/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
 description: This post shows how to use the Broadcast Channel API to send data between browser tabs or windows without using a server and sockets.
 excerpt: This post shows how to use the Broadcast Channel API to send data between browser tabs or windows without using a server and sockets.
 publishDate: 2021-07-07 11:08:19+00:00
@@ -103,21 +103,21 @@ By the way, we used a different API here - performance:
 
 For the two tabs, we can see that each tab has its own unique identifier and messages sent from the opposite tab.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
+![](/src/assets/images/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
 
 Nothing prevents us from enabling four cards at once. Then the messages from the three remaining ones will interweave with each other.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
+![](/src/assets/images/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
 
 We can return to two tabs and refresh the one on the right several times. As a result of this action, the one on the left will receive several new notifications, while on the right one, nothing will be visible except for its own presentation since the left card has already finished sending messages. The specific result of refreshing the right card is shown in the screenshot:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b0784926-0177-48cb-9841-b51e8bc24203.avif)
+![](/src/assets/images/b0784926-0177-48cb-9841-b51e8bc24203.avif)
 
 We see here that the messages come from different IDs because the card on the right changes ID with each refresh.
 
 The next experiment is to check if the Broad Cast Channel works between different browsers:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
+![](/src/assets/images/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
 
 It turned out that no. It makes sense because if it were to work between browsers, there would have to be communication between the processes maintaining the browsers.
 
@@ -131,7 +131,7 @@ We can read more about the Origin itself in the Mozilla Developers dictionary
 
 We will check if it will work correctly for different computers as well. To do this, we need to change the parcel settings, because it currently exposes our service on localhost.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
+![](/src/assets/images/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
 
 We can check our current IP address with the command.
 
@@ -139,7 +139,7 @@ We can check our current IP address with the command.
 ip route
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
+![](/src/assets/images/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
 
 From the documentation, we can read that simply adding the `--host` flag is enough.
 
@@ -149,7 +149,7 @@ From the documentation, we can read that simply adding the `--host` flag is enou
 parce index.html --host 192.168.2.162
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
+![](/src/assets/images/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
 
 It turned out that communication is not transmitted between different computers.
 

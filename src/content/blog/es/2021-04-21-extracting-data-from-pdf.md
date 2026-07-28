@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: extracting-data-from-pdf
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
+coverImage: /src/assets/images/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
 description: En este artículo, mostraremos cómo extraer datos de archivos PDF de manera conveniente escribiendo muy poca cantidad de código.
 excerpt: En este artículo, mostraremos cómo extraer datos de archivos PDF de manera conveniente escribiendo muy poca cantidad de código.
 publishDate: 2021-04-21 18:45:26+00:00
@@ -16,7 +16,7 @@ Los datos son todo lo que se puede procesar mentalmente o a través de una compu
 
 En esta publicación, mostraremos cómo, escribiendo cantidades realmente mínimas de código, puedes extraer datos de archivos PDF de manera conveniente. Por ejemplo, utilizaremos boletos de tren, ya que no contienen ningún dato confidencial, pero también podrían ser facturas, contratos o archivos de CV.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
+![](/src/assets/images/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
 
 **Adquisición de datos**
 
@@ -26,7 +26,7 @@ bilet pkp has:attachment -in:chats from:bilet.eic@intercity.pl to:me
 
 Aquí está la vista que veo después de filtrar:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
+![](/src/assets/images/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
 
 Ahora solo era necesario descargar los archivos para poder procesarlos.
 
@@ -36,7 +36,7 @@ Guardé todos los archivos adjuntos en el disco duro en el directorio ocr. Como 
 
 Comenzaremos por determinar el contenido inicial del directorio. Está lleno de archivos PDF.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
+![](/src/assets/images/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
 
 Gracias a la herramienta `pdftotext` del paquete `poppler-utils`, podemos extraer información de interés de archivos PDF en forma de texto plano. Podemos instalar esta herramienta con el siguiente comando:
 
@@ -60,7 +60,7 @@ El comando consta de dos partes. En la primera parte, enumero todos los archivos
 
 Podemos verificar fácilmente si realmente existen usando el comando `ls`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
+![](/src/assets/images/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
 
 **Estructuración de Datos**
 
@@ -70,7 +70,7 @@ ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\
 
 Esta línea devolvió `786.11`, que es el costo de todos los boletos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
+![](/src/assets/images/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
 
 Ahora profundicemos y veamos qué hay detrás. Mostraremos uno de los archivos de texto con el comando `cat eic_67584344.txt`:
 
@@ -197,7 +197,7 @@ Este comando se puede explicar de la siguiente manera:
 
 El problema que tenemos es la `,` polaca en lugar del `.` utilizado globalmente. Este problema se puede eliminar fácilmente con el comando `tr` que reemplaza su primer argumento por el segundo.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
+![](/src/assets/images/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
 
 Por supuesto, no repetiremos estos comandos para cada archivo individualmente. En su lugar, reutilizaremos el ya conocido `xargs`.
 
@@ -221,7 +221,7 @@ Solo queda la suma, pero sumar columnas de un archivo de texto es fácil en la c
 
 Usando `paste` con la opción `-s`, transpondremos a una línea. Con la opción `d`, estableceremos el separador. Por supuesto, será el signo de adición `+`. El resultado se ve algo así:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f286948c-7e71-4731-9b99-17f037f74813.avif)
+![](/src/assets/images/f286948c-7e71-4731-9b99-17f037f74813.avif)
 
 La pieza final `bc` completa la tarea, pero se presentó al principio:
 
@@ -248,7 +248,7 @@ Otro comando, añade números de columna `cat -n` y dibuja un gráfico
 ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\n";}' | tr , . | cat -n | chart line
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
+![](/src/assets/images/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
 
 En resumen. No trabajamos demasiado aquí, pero ese era el objetivo. Mostrar cómo una línea de código puede resumir precios o dibujar un gráfico a partir de datos que parecen no estar disponibles porque su formato no es tan obvio como en el caso de datos organizados almacenados en una estructura de base de datos bien definida.
 

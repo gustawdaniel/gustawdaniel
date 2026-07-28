@@ -183,7 +183,7 @@ Para tych parametrów pozwala na wskazanie zakresów w których wzrost rezerwy w
 
 Dlatego w tym przypadku lepiej wyeksportować dane z mongo do csv na przykład przez mongo compass.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5c870232-6004-49b2-8ad6-13c3e0490186.avif)
+![](/src/assets/images/5c870232-6004-49b2-8ad6-13c3e0490186.avif)
 
 Te pliki nie są posortowane, ponieważ `cryptoquant` zwraca je w kolejności odwrotnej niż upływ czasu. Sortujemy je poleceniami:
 
@@ -208,7 +208,7 @@ Dzięki wykonaniu `head` oraz `tail` na posortowanym pliku widzimy zakres naszej
 * Start - blok 173949 - 2012-04-02
 * Koniec - blok 690974 - 2021-07-14
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/75fba08d-97f9-44b8-96a1-9d84e9b1d5fc.avif)
+![](/src/assets/images/75fba08d-97f9-44b8-96a1-9d84e9b1d5fc.avif)
 
 Aby pobrać zawartość plików do nootebooka w `Mathematica` wpisujemy:
 
@@ -241,7 +241,7 @@ Ten moduł pozwoli nam zobaczyć jak ewoluowała zmienność rezerwy na przestrz
 
 Na histogramie nie jest to wyraźnie widoczne. Można nawet odnieść mylne wrażenie, że w początkowym okresie istnienia Bitcoina koncentracja względnej zmienności rezerwy woków jedynki (czyli jej stała wartość) była dominująca. Jest to mylne wrażenie, bo jednocześnie z wysoką koncentracją współwystępowały znacznie częstsze niż obecnie wartości skrajne.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1b933b6f-f764-4e56-9ec9-84d32480d7a5.svg)
+![](/src/assets/images/1b933b6f-f764-4e56-9ec9-84d32480d7a5.svg)
 
 Jeśli podzielimy cały rozważany okres na 100 części i policzymy wariancję względnej zmiany rezerwy co jeden blok z tego okresu to okaże się, że początkowo ta wariancja miała nie tylko wyższe wartości ale i wyższy rozrzut. To znaczy, zdarzały się takie okresy, kiedy z rezerwą działo się bardzo niewiele.
 
@@ -291,7 +291,7 @@ Show[
   "Wariancja względnej zmienności rezerwy BTC w kolejnych okresach czasu\nz dopasowaniem 7.18*10^-6*e^-0.051 x) (przy poziomie ufności 0.7)\nx to numer przedziału czasowego od 1 do 100 z okresu 2012-04-02 - 2021-07-14", ImageSize -> Full]
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c7b9a59e-fa22-4c19-99c8-d7f4e183299a.svg)
+![](/src/assets/images/c7b9a59e-fa22-4c19-99c8-d7f4e183299a.svg)
 
 Z wykresu widzimy, że zmienność rezerwy systematycznie spada i można założyć, że jest to spadek wykładniczy analogiczny do znanego nam z codzienności stygnięcia herbaty.
 

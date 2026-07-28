@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
+coverImage: /src/assets/images/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
 description: W tym miejscu przedstawiono regresje liniowe i logarytmiczne. Modele zostały dopasowane w języku rust. Artykuł pokazuje, że czasami warto poprawić model teoretyczny przed rozpoczęciem implementacji.
 excerpt: W tym miejscu przedstawiono regresje liniowe i logarytmiczne. Modele zostały dopasowane w języku rust. Artykuł pokazuje, że czasami warto poprawić model teoretyczny przed rozpoczęciem implementacji.
 publishDate: 2023-01-22 23:09:20+00:00
@@ -21,7 +21,7 @@ Będziemy omawiać ćwiczenie:
 
 Celem jest znalezienie najlepiej dopasowanego modelu do danego zestawu danych. Na przykład dla danych:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
+![](/src/assets/images/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
 
 powinniśmy wydrukować `O(log n)`. Możemy wybrać modele z listy:
 
@@ -202,7 +202,7 @@ $$
 
 widocznie teraz nie ma szans na operacje na zbyt dużych liczbach, więc możemy rozpocząć implementację tych równań.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
+![](/src/assets/images/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
 
 ## Odczyt serii danych z standardowego wejścia
 
@@ -414,4 +414,4 @@ Tradycyjnie możesz sprawdzić cały kod z testami na moim githubie
 
 [GitHub - gustawdaniel/codingame-computational-complexity](https://github.com/gustawdaniel/codingame-computational-complexity)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)
+![](/src/assets/images/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)

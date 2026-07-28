@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: retry-policy
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
+coverImage: /src/assets/images/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
 description: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.
 excerpt: Dowiedz się, jak sprawić, że losowe, niemożliwe do odtworzenia błędy nie będą już groźne dla Twojego programu.
 publishDate: 2022-06-10T16:14:57.000Z
@@ -13,7 +13,7 @@ updateDate: 2022-06-10T16:14:57.000Z
 
 Czasami z szeregu różnych przyczyn programy komputerowe potrafią zwracać dziwne błędy, których odtworzenie jest niezwykle trudne, a naprawienie nie możliwe. Jeśli jednak poprawne działanie programu udaje się uzyskać w skończonej ilości ponownych jego uruchomień, może to stanowić optymalny sposób rozwiązania tego problemu.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
+![](/src/assets/images/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
 
 Ma to znaczenie, szczególnie w złożonych systemach, gdzie wiele potencjalnych źródeł błędów akumuluje się, a ponowna próba wywołania wadliwych funkcji pozwala obniżyć prawdopodobieństwo błędu podnosząc je do kwadratu.
 
@@ -132,17 +132,17 @@ Jeśli chcemy, aby było to pewne, można zmienić `maxTry` z `6` na `Infinity`,
 
 Czasami przyczyną błędu może być brak dostępu do jakiegoś zasobu właśnie dlatego, że odpytujemy o niego zbyt często. Wtedy warto przy każdej kolejnej próbie czekać coraz dłużej. Często jednak trafimy na błędy, których nie można po prostu naprawić metodą "wyłącz i spróbuj jeszcze raz". W ich przypadku zbyt duża wartość `maxTry` podnosi nam łączny czas poświęcony przez program na bezcelowe działania.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
+![](/src/assets/images/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
 
 Wobec trudności z pomiarem szans na błędy i ich kategoryzacją w wielu przypadkach zamiast wyliczać parametry `retry policy` ustala się je intuicyjnie.
 
 Bardzo rozsądne jest zróżnicowanie polityki retry w zależności od rodzaju błędu:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
+![](/src/assets/images/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
 
 Niestety paczka `ts-retry` nie obsługuje ani `exponential backoff` ani różnego traktowania np kodów błędów, które pomagają w decydowaniu co zrobić z tym błędem. Na szczęście od lat powstają bardziej rozbudowane paczki. Wśród nich najciekawsza wydaje się `ts-retry-promise`, która mimo niskiej popularności daje dobry kompromis między prostotą użycia a możliwością customizacji.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
+![](/src/assets/images/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
 
 Więcej o optymalnych strategiach `retry` możesz przeczytać w artykule Prof. Douglas Thain - Exponential Backoff in Distributed Systems z 2009.
 
@@ -220,4 +220,4 @@ Wtedy trzeba poinformować użytkownika końcowego, stosując się do następuj�
 * nie można w komunikacie błędu przyznać się, że kod nie działa... wiadomo dlaczego
 * pozostaje wymieszać cynizm i szczerość z humorem i wyświetlić mu to:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/be0b858a-5648-408d-aa10-fc750a896244.avif)
+![](/src/assets/images/be0b858a-5648-408d-aa10-fc750a896244.avif)

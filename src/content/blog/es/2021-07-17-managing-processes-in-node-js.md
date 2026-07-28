@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: managing-processes-in-node-js
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d8bce439-7a26-4a7d-aef8-4308277995db.avif
+coverImage: /src/assets/images/d8bce439-7a26-4a7d-aef8-4308277995db.avif
 description: Aprende a crear y eliminar procesos hijos en Node JS, gestionar dinámicamente su cantidad y realizar comunicación bidireccional con ellos.
 excerpt: Aprende a crear y eliminar procesos hijos en Node JS, gestionar dinámicamente su cantidad y realizar comunicación bidireccional con ellos.
 publishDate: 2021-07-17 13:53:19+00:00
@@ -17,7 +17,7 @@ En esta publicación, aprenderemos cómo crear y terminar `subprocesos` en Node 
 
 Si el programa realiza cálculos pesados pero no está paralelizado, el estado de su procesador puede parecerse a esto:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3b1ed569-b0e0-490f-81a6-df3454db4788.avif)
+![](/src/assets/images/3b1ed569-b0e0-490f-81a6-df3454db4788.avif)
 
 Por lo tanto, vale la pena profundizar en este tema, independientemente del lenguaje en el que estés escribiendo.
 
@@ -81,7 +81,7 @@ El signo escrito en `key` es un objeto con las siguientes claves
 
 En el código presentado, manejamos el cierre del proceso con la combinación `ctrl+c` y la impresión en la consola del carácter seleccionado en el teclado. Escribiendo caracteres subsecuentes se mostrarán en la terminal cada vez.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8.avif)
+![](/src/assets/images/ed2de3c0-579d-4be5-b2ae-57c87cc4e1d8.avif)
 
 El siguiente paso es reemplazar la impresión de caracteres por la creación o eliminación de procesos que carguen el procesador.
 
@@ -101,7 +101,7 @@ const forks = [];
 
 Si nos olvidamos de ellos al cerrar el programa, se convertirían en procesos `zombie` - es decir, aquellos que aún viven y consumen recursos del ordenador sin supervisión.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b76d2cab-977e-458c-bf42-027fe76d3234.avif)
+![](/src/assets/images/b76d2cab-977e-458c-bf42-027fe76d3234.avif)
 
 Para eliminarlos, antes de cerrar nuestro script, escribimos el código:
 
@@ -157,15 +157,15 @@ significando que el código está escrito solo para simular carga.
 
 Al iniciar el programa y seleccionar algunas opciones de carga, vemos cómo se crean y terminan procesos. Gracias a `htop`, podemos observar cómo cambia el uso de la CPU durante este tiempo.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a089f093-d5f3-443b-ab10-728a38ca6a6b.avif)
+![](/src/assets/images/a089f093-d5f3-443b-ab10-728a38ca6a6b.avif)
 
 Una interfaz aún más agradable para monitorear el procesador es proporcionada por `bashtop`, ya que también muestra el uso histórico. En la captura de pantalla a continuación, podemos ver cómo al modificar la cantidad de procesos en nuestro programa, pude simular varios niveles de carga de CPU con tareas.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47bf0bb1-95cc-46b4-9d29-237b504b6a29.avif)
+![](/src/assets/images/47bf0bb1-95cc-46b4-9d29-237b504b6a29.avif)
 
 Y cómo se veía el uso del núcleo cuando seleccioné la opción de crear 16 procesos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/05911406-d43c-4316-b265-9202b0042ea1.avif)
+![](/src/assets/images/05911406-d43c-4316-b265-9202b0042ea1.avif)
 
 Podemos usar este programa para simular carga. En el archivo `bomb.js`, podemos reemplazar la generación de números aleatorios con el envío de solicitudes http o el consumo de otros recursos, como RAM o disco.
 
@@ -211,11 +211,11 @@ En un ataque de fuerza bruta, la clave es el conjunto de caracteres sobre el que
 
 Comparamos dos soluciones al problema de contar conjuntos de asientos adyacentes libres. Aprenderás a usar el Profiling y cuán significativa es la diferencia al usar pop y shift en arrays en js.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e4679649-0445-42f4-9890-f45307625bd6.avif)
+![](/src/assets/images/e4679649-0445-42f4-9890-f45307625bd6.avif)
 
 En lugar de descargar la cola, leeremos valores de ella utilizando un índice variable que se moverá a lo largo de ella. El diagrama de flujo del programa que escribiremos es el siguiente:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/50ac21aa-497e-4dca-8292-d672a9cd5198.avif)
+![](/src/assets/images/50ac21aa-497e-4dca-8292-d672a9cd5198.avif)
 
 Su código es:
 
@@ -283,7 +283,7 @@ A continuación, lanzamos nuestro programa y vemos cómo verifica secuencialment
 time node force-single.js
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/72cbd407-9321-4ca7-b7e9-b57a8911bad8.avif)
+![](/src/assets/images/72cbd407-9321-4ca7-b7e9-b57a8911bad8.avif)
 
 En las columnas tenemos el índice, la secuencia que se está comprobando, el tiempo desde que se inició el programa en milisegundos, información sobre si la contraseña coincide con el hash y la longitud actual de la cola.
 
@@ -311,15 +311,15 @@ node force-single.js  0.17s user 0.03s system 103% cpu 0.188 total
 
 Dado que comprobar la compatibilidad de contraseñas y hashes es una operación intensiva en CPU, esperamos un aumento significativo en el rendimiento de esta tarea si utilizamos múltiples núcleos simultáneamente. Por esta razón, reescribiremos nuestro programa para que el proceso principal maneje la cola y asigne la tarea de verificación a subprocesos en lugar de realizar las comprobaciones de contraseñas por sí mismo.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cffe8d53-af1d-41cc-afd9-9559222f20c6.avif)
+![](/src/assets/images/cffe8d53-af1d-41cc-afd9-9559222f20c6.avif)
 
 El diagrama de nuestro programa está dividido en el proceso principal y los subprocesos. En el proceso principal, se crea una lista de procesos hijo, una cola y oyentes para mensajes de los subprocesos. Al final, cada subproceso recibe una tarea de la cola para ejecutar. Tras completar, los subprocesos informan de vuelta al hilo principal con la respuesta, que incrementa el índice y les asigna nuevas tareas. Esto continúa hasta que se encuentra la contraseña correcta.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f6ce1ed-a710-42bb-890e-1def30a24127.avif)
+![](/src/assets/images/9f6ce1ed-a710-42bb-890e-1def30a24127.avif)
 
 Vale la pena señalar que los hijos independientes ejecutarán tareas a diferentes velocidades, lo que afectará el orden de los informes de respuesta. Un ejemplo de salida del programa es:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ba051803-3c65-464d-8441-1368270ef48e.avif)
+![](/src/assets/images/ba051803-3c65-464d-8441-1368270ef48e.avif)
 
 El código está dividido en dos archivos:
 
@@ -464,23 +464,23 @@ Según la Ley General de Escalabilidad, esperamos que el rendimiento aumente has
 
 Si no has oído hablar de la ley universal de escalabilidad, déjame presentarte rápidamente el tema. Sugiere que en un mundo ideal, si los sistemas fueran escalables de manera lineal, significaría que añadir `n` veces más recursos aumentaría el rendimiento o el rendimiento del sistema en `n` veces. Esta situación se puede ilustrar con la imagen:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b551739b-a90e-4e7d-b275-9cbf067b2c02.avif)
+![](/src/assets/images/b551739b-a90e-4e7d-b275-9cbf067b2c02.avif)
 
 Sin embargo, tales situaciones no se encuentran en el mundo real. Siempre hay alguna ineficiencia asociada con la asignación de datos a nodos (servidores o hilos) y su recolección. Los retrasos relacionados con la asignación y recepción de datos se llaman serialización, y a veces puedes encontrar el término `contención`:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3f245c79-a00f-42ed-9050-209d5a69e8d9.avif)
+![](/src/assets/images/3f245c79-a00f-42ed-9050-209d5a69e8d9.avif)
 
 Tomar en cuenta este fenómeno lleva al modelo de Amdahl. Sin embargo, resulta que es insuficiente para la mayoría de los sistemas de TI porque ignora completamente el segundo factor principal que limita la escalabilidad: la comunicación entre procesos - `crosstalk`. Esto se puede representar gráficamente de la siguiente manera:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a3003513-1d18-4386-85cf-e6d83bdc3581.avif)
+![](/src/assets/images/a3003513-1d18-4386-85cf-e6d83bdc3581.avif)
 
 Mientras que la serialización tiene un costo proporcional al número de nodos, la comunicación es proporcional al cuadrado de su número, al igual que el número de diagonales de un polígono con respecto al número de ángulos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0a680f83-94b6-4398-aeda-28b4186f3e8b.avif)
+![](/src/assets/images/0a680f83-94b6-4398-aeda-28b4186f3e8b.avif)
 
 En el gráfico, vemos curvas que comparan el impacto del número de nodos en el rendimiento del sistema según estos tres modelos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0.avif)
+![](/src/assets/images/6ddf6ca7-c25e-473a-bceb-d4d4a19506d0.avif)
 
 Un buen estudio (de 50 páginas) sobre este tema se puede encontrar en el siguiente enlace:
 
@@ -524,7 +524,7 @@ Show[ListPlot[{#[[1]], #[[2]]/firstMean} & /@ loadEff],
   PlotLabel -> "Gain of efficiency relative to single process"]
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ae266323-acb4-4792-a077-286260383b11.avif)
+![](/src/assets/images/ae266323-acb4-4792-a077-286260383b11.avif)
 
 Vale la pena mostrar una fórmula muy interesante para el máximo teórico.
 
@@ -533,7 +533,7 @@ Solve[D[\[Lambda] n/(1 + \[Sigma] (n - 1) + \[Kappa] n (n - 1)),
    n] == 0, n]
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5eeff6fb-5759-4d91-b8bf-7a9684533bf7.avif)
+![](/src/assets/images/5eeff6fb-5759-4d91-b8bf-7a9684533bf7.avif)
 
 Calculado numéricamente
 

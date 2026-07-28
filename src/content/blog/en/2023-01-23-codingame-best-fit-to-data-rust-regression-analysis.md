@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
+coverImage: /src/assets/images/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
 description: Linear and logarithmic regressions were derived here. Models were fitted in rust language. This article shows that sometimes it's worth improving the theoretical model before starting implementation.
 excerpt: Linear and logarithmic regressions were derived here. Models were fitted in rust language. This article shows that sometimes it's worth improving the theoretical model before starting implementation.
 publishDate: 2023-01-22 23:09:20+00:00
@@ -21,7 +21,7 @@ We will discuss exercise:
 
 Goal is find best fitting model for given dataset. For example for data:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
+![](/src/assets/images/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
 
 we should print `O(log n)`. We can select models from list:
 
@@ -202,7 +202,7 @@ $$
 
 we can see that now there is no chance to operate on too big numbers so we can start implementation of these equations.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
+![](/src/assets/images/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
 
 ## Reading series of data from standard input
 
@@ -414,4 +414,4 @@ Traditionally you can check full code with test on my github
 
 [GitHub - gustawdaniel/codingame-computational-complexity](https://github.com/gustawdaniel/codingame-computational-complexity)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)
+![](/src/assets/images/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)

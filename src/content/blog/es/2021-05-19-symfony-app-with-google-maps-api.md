@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: symfony-app-with-google-maps-api
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
+coverImage: /src/assets/images/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
 description: Una aplicación simple que integra el paquete de usuario fos con Google Maps. El servicio permite iniciar sesión, registrarse y guardar su lista de ubicaciones validadas por la API de Google.
 excerpt: Una aplicación simple que integra el paquete de usuario fos con Google Maps. El servicio permite iniciar sesión, registrarse y guardar su lista de ubicaciones validadas por la API de Google.
 publishDate: 2021-05-18 20:50:00+00:00

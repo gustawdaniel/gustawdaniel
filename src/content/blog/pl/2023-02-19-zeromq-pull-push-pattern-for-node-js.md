@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zeromq-pull-push-pattern-for-node-js
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4.avif
+coverImage: /src/assets/images/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4.avif
 description: Artykuł podkreśla elastyczność ZeroMQ w zakresie przesyłania wiadomości w Node.js, zwracając uwagę na wzór pull-push, idealny dla rozproszonych systemów o dużej wydajności.
 excerpt: Artykuł podkreśla elastyczność ZeroMQ w zakresie przesyłania wiadomości w Node.js, zwracając uwagę na wzór pull-push, idealny dla rozproszonych systemów o dużej wydajności.
 publishDate: 2023-02-19 09:42:31+00:00
@@ -97,6 +97,6 @@ main().catch(console.error)
 
 Zobaczę prawie natychmiast `push 1..10`, a następnie co `2` sekundy nowe linie z `Received Job`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a0d0f0c3-36aa-4836-acfc-d8986441cc0b.avif)
+![](/src/assets/images/a0d0f0c3-36aa-4836-acfc-d8986441cc0b.avif)
 
 Oczywiście można używać wielu instancji skryptów, które są pracownikami i wykonują te zadania w niezależnych procesach. W tym przypadku chciałem uprościć wychodzące żądania http, więc postanowiłem przetwarzać je w pojedynczym `pull` i wstrzykiwać te żądania z różnych miejsc kodu za pomocą `push`. Można więc zauważyć, że istnieje ogromna różnorodność zastosowań, zwłaszcza biorąc pod uwagę, że zaprezentowałem tylko jeden wzorzec z 4 dostępnych w ZeroMQ.

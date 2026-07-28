@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: facebook-scraping-in-2021
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
+coverImage: /src/assets/images/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
 description: El artículo tiene como objetivo familiarizar al lector con el método para extraer datos del portal de Facebook después de la actualización del diseño.
 excerpt: El artículo tiene como objetivo familiarizar al lector con el método para extraer datos del portal de Facebook después de la actualización del diseño.
 publishDate: 2021-04-23 19:49:00+00:00
@@ -480,7 +480,7 @@ tendremos código listo para usar para estructurar una lista de personas de un g
 
 La longitud del nuevo selector es de 513 caracteres en comparación con 639 para el selector de entrada, pero funciona muy bien. Para el grupo que analizamos, compuesto por 4576 personas, el procedimiento de desplazamiento automático hacia abajo tomó 90 minutos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
+![](/src/assets/images/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
 
 Los datos JSON pesaban 2.1 MB. Después de la conversión a formato CSV con el comando:
 
@@ -509,7 +509,7 @@ du -ha .cache
 
 Estos avatares pesan 2.19 KiB y tienen un tamaño de 60x60 px. Es fácil verificar la distribución del tamaño de diferentes tipos de datos en el scraping:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
+![](/src/assets/images/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
 
 ### Recomendación para Desarrolladores de Facebook
 

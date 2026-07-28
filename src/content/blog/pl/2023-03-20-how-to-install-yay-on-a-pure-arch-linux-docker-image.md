@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-install-yay-on-a-pure-arch-linux-docker-image
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1.avif
+coverImage: /src/assets/images/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1.avif
 description: Instalacja yay wymaga kilku kroków, takich jak tworzenie użytkownika, instalacja base-devel i git, zmiana w /etc/sudoers, klonowanie repozytorium yay i uruchomienie makepkg na nim. Ten post opisuje ten proces krok po kroku.
 excerpt: Instalacja yay wymaga kilku kroków, takich jak tworzenie użytkownika, instalacja base-devel i git, zmiana w /etc/sudoers, klonowanie repozytorium yay i uruchomienie makepkg na nim. Ten post opisuje ten proces krok po kroku.
 publishDate: 2023-03-20 06:03:00+00:00
@@ -17,7 +17,7 @@ updateDate: 2023-03-20 06:03:00+00:00
 
 W tym artykule przeprowadzimy Cię przez proces instalacji pomocnika AUR `yay` na czystym obrazie Dockera Arch Linux. Yay to popularne, przyjazne dla użytkownika narzędzie do zarządzania pakietami z Arch User Repository (AUR). Instalacja `yay` na obrazie Dockera Arch Linux może pomóc w uproszczeniu zarządzania pakietami i utrzymaniu aplikacji w kontenerach na bieżąco.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6e96a98f-6c66-4687-9621-b29431e820b5.avif)
+![](/src/assets/images/6e96a98f-6c66-4687-9621-b29431e820b5.avif)
 
 ## Przygotowanie obrazu Docker Arch Linux
 
@@ -99,7 +99,7 @@ i zainstaluj pierwszą paczkę. Na przykład
 yay -S gpt-cli
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43be4bb9-02a5-4b86-b987-72fcd9f4c485.avif)
+![](/src/assets/images/43be4bb9-02a5-4b86-b987-72fcd9f4c485.avif)
 
 Pozwala to na rekomendowanie ci poleceń linuxowych za pomocą API `openai` z modelem `gpt-3.5-turbo`. Możesz to przetestować, wpisując:
 
@@ -113,7 +113,7 @@ zobaczysz informacje, że skrypt przedstawiony poniżej został skopiowany do tw
 perl -e 'sub f{ $_[0] < 2 ? $_[0] : f($_[0]-1) + f($_[0]-2) }; foreach(0..9){ print f($_), "\n"; }'
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8743f013-5a07-42fc-bde9-43ec61fad1d2.avif)
+![](/src/assets/images/8743f013-5a07-42fc-bde9-43ec61fad1d2.avif)
 
 Możesz przeczytać pełną dokumentację `gpt-cli` na githubie.
 

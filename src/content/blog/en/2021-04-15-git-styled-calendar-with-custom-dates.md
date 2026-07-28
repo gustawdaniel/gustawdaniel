@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
+coverImage: /src/assets/images/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
 description: git styled calendar created from list of dates saved as csv file
 excerpt: git styled calendar created from list of dates saved as csv file
 publishDate: 2021-04-20 19:28:40+00:00
@@ -16,7 +16,7 @@ Let us assume that you have a set of dates. You want to display these dates in a
 
 For example like this:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
+![](/src/assets/images/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
 
 So I have great info. It is one line of code, maybe two...
 
@@ -81,4 +81,4 @@ I hope you like this article. For me, it is a great example of how a small amoun
 
 Screenshot from my console
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/24696782-aeaa-4c8d-985c-9fc092980381.avif)
+![](/src/assets/images/24696782-aeaa-4c8d-985c-9fc092980381.avif)

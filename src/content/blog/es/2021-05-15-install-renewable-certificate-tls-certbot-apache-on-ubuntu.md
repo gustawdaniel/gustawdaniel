@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: install-renewable-certificate-tls-certbot-apache-on-ubuntu
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
+coverImage: /src/assets/images/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
 description: Hay muchos métodos para obtener un certificado que permita cifrar el tráfico HTTP. Uno de ellos es instalar Certbot y usarlo junto con el servidor Apache.
 excerpt: Hay muchos métodos para obtener un certificado que permita cifrar el tráfico HTTP. Uno de ellos es instalar Certbot y usarlo junto con el servidor Apache.
 publishDate: 2021-05-14 20:38:00+00:00

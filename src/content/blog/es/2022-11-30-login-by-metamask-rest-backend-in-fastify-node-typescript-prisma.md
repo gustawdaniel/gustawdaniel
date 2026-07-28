@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-by-metamask-rest-backend-in-fastify-node-typescript-prisma
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4063ad62-79ab-432e-94a1-7ec1bbd852b8.avif
+coverImage: /src/assets/images/4063ad62-79ab-432e-94a1-7ec1bbd852b8.avif
 description: Estamos construyendo desde cero una API REST en Fastify utilizando MongoDB conectado por Prisma como base de datos, Jest como marco de pruebas y Ether.js para verificar firmas firmadas por Metamask.
 excerpt: Estamos construyendo desde cero una API REST en Fastify utilizando MongoDB conectado por Prisma como base de datos, Jest como marco de pruebas y Ether.js para verificar firmas firmadas por Metamask.
 publishDate: 2022-11-30 17:23:41+00:00
@@ -66,7 +66,7 @@ npm run dev
 
 Mostrará "ok" y esperará cambios para reaccionar a ellos en tiempo real.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7125cc3e-5539-4850-b765-01a1c2dea692.avif)
+![](/src/assets/images/7125cc3e-5539-4850-b765-01a1c2dea692.avif)
 
 ## Agregar Fastify con el primer endpoint
 
@@ -74,7 +74,7 @@ Fastify es un marco similar a express pero con dos ventajas
 
 * es aproximadamente un 20% más rápido en el procesamiento de solicitudes
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b8d54d3e-88fc-494a-b406-0c117bb9b4ed.avif)
+![](/src/assets/images/b8d54d3e-88fc-494a-b406-0c117bb9b4ed.avif)
 
 * es más rápido en desarrollo gracias a simplificaciones útiles en su API
 
@@ -163,17 +163,17 @@ inicia devuelve respuesta
 }
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7ffbbcf3-ef0d-4431-a300-3eec3eb41ccf.avif)
+![](/src/assets/images/7ffbbcf3-ef0d-4431-a300-3eec3eb41ccf.avif)
 
 ## Pruebas en Jest con esbuild
 
 Si eres programador, más tiempo que un día, eres consciente de lo fácil que es romper tu programa de trabajo al cambiar algo en el código fuente en lugares aleatorios. Afortunadamente, podemos escribir pruebas que demuestren que el código está funcionando como esperamos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b23e01cd-3fbb-473b-8213-5c9c95e64cc1.avif)
+![](/src/assets/images/b23e01cd-3fbb-473b-8213-5c9c95e64cc1.avif)
 
 En node js, una de las mejores bibliotecas de pruebas es `jest`. Pero para conectarla con TypeScript necesitamos un complemento que transformará archivos `ts`. Es terrible que el más popular `ts-jest` se use 2000 veces más que el aproximadamente 26 veces más rápido `jest-ebuild`. Pero utilicemos la tecnología del futuro: esbuild.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42715107-7b7c-4e7a-8388-8d19edb97451.avif)
+![](/src/assets/images/42715107-7b7c-4e7a-8388-8d19edb97451.avif)
 
 Nuestro `jest.config.ts` contendrá
 
@@ -240,7 +240,7 @@ Time:        0.222 s, estimated 1 s
 Ran all test suites.
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/06115b39-25fc-4a11-93d5-3396d5c05929.avif)
+![](/src/assets/images/06115b39-25fc-4a11-93d5-3396d5c05929.avif)
 
 Hemos configurado el servidor fastify con un entorno de desarrollo de recarga en vivo y pruebas súper rápidas configuradas en jest. Creamos el primer endpoint que devuelve el nombre y la versión del servidor en el endpoint raíz. Es hora de describir el flujo de autenticación e implementar las rutas necesarias.
 
@@ -248,7 +248,7 @@ Hemos configurado el servidor fastify con un entorno de desarrollo de recarga en
 
 La idea general es la siguiente. El usuario tiene una clave privada conectada con su dirección de cartera. Podemos guardar esta dirección en la base de datos como su ID único y generar un nonce para él. El nonce es una frase aleatoria simple generada para verificar si el usuario puede firmarla correctamente usando su propia dirección. Si el nonce se filtra, no es nada aterrador, porque nadie podrá firmarlo con la dirección correcta si no posee la clave privada. A continuación, presentamos el diagrama:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f6921ccd-2b57-4935-9aa8-18cf7e8296eb.avif)
+![](/src/assets/images/f6921ccd-2b57-4935-9aa8-18cf7e8296eb.avif)
 
 Así que necesitamos una colección de usuarios solo con `address` y `nonce` y 4 endpoints
 
@@ -300,7 +300,7 @@ y en `.env` podemos seleccionar la dirección de nuestra base de datos mongo
 DATABASE_URL=mongodb://localhost:27017/web3_bdl
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4116df67-d537-41fe-b933-aff45f28ac77.avif)
+![](/src/assets/images/4116df67-d537-41fe-b933-aff45f28ac77.avif)
 
 ### Mongo en Modo de Conjunto de Réplicas
 
@@ -379,7 +379,7 @@ export {
 
 Ahora podemos importar prisma desde este lugar y obtener acceso a la base de datos adecuada dependiendo de `NODE_ENV`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e2b309fd-236d-4a82-9995-c6f5e8db7f22.avif)
+![](/src/assets/images/e2b309fd-236d-4a82-9995-c6f5e8db7f22.avif)
 
 ### Pasando env a process
 
@@ -539,7 +539,7 @@ describe('searching user by address', () => {
 
 Aquí cubrimos todos los escenarios posibles.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/316a676f-2eb0-499f-a8f4-82f9fa59c5f2.avif)
+![](/src/assets/images/316a676f-2eb0-499f-a8f4-82f9fa59c5f2.avif)
 
 ## Registrar usuario usando dirección de billetera
 
@@ -626,7 +626,7 @@ describe('user can register account', () => {
 })
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fe98e588-0f2d-471c-a42f-cf1d1ea328d1.avif)
+![](/src/assets/images/fe98e588-0f2d-471c-a42f-cf1d1ea328d1.avif)
 
 ## Iniciar sesión como usuario mediante un mensaje firmado
 
@@ -830,7 +830,7 @@ import {Response} from "light-my-request";
     })
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d1fd89b1-4884-4fe7-9df5-c95a456f3cbe.avif)
+![](/src/assets/images/d1fd89b1-4884-4fe7-9df5-c95a456f3cbe.avif)
 
 ## Obtener datos de usuario del token JWT
 
@@ -919,19 +919,19 @@ y en `src/route/user.ts` agrega un controlador con el nombre `root`.
 
 Ahora intentemos usarlo. Primero, regístrate con una dirección desde mi navegador.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c0280d22-ead4-4f84-a5aa-1d410013046e.avif)
+![](/src/assets/images/c0280d22-ead4-4f84-a5aa-1d410013046e.avif)
 
 Luego firma `nonce` en el navegador
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1ebb796e-3494-45c1-93f3-6b70eee435f1.avif)
+![](/src/assets/images/1ebb796e-3494-45c1-93f3-6b70eee435f1.avif)
 
 Iniciar sesión usando firma para obtener un token JWT
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4f94593d-a657-44e9-a132-2fd13837b3c3.avif)
+![](/src/assets/images/4f94593d-a657-44e9-a132-2fd13837b3c3.avif)
 
 Y finalmente obtener datos del usuario utilizando la ruta privada `/me`
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d60b400a-02e8-4c61-b5f2-05c52600d584.avif)
+![](/src/assets/images/d60b400a-02e8-4c61-b5f2-05c52600d584.avif)
 
 Podemos cubrirlo con una prueba en `jest` en el archivo `test/account.test.ts`
 
@@ -1054,7 +1054,7 @@ describe('cors', () => {
 
 Para encontrar problemas en nuestro código más fácilmente, podemos usar colores para imprimir errores:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/985fb501-4012-4c4b-8f5a-bfd3423a939e.avif)
+![](/src/assets/images/985fb501-4012-4c4b-8f5a-bfd3423a939e.avif)
 
 Instalemos la biblioteca `cli-color`:
 
@@ -1092,7 +1092,7 @@ import {red, yellow} from 'cli-color'
 
 ahora nuestros errores serán fáciles de encontrar y analizar en la consola.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b87442c3-adf2-4911-aada-5074b407bd8d.avif)
+![](/src/assets/images/b87442c3-adf2-4911-aada-5074b407bd8d.avif)
 
 ### Flujos de trabajo de Github
 

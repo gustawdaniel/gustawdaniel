@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-install-yay-on-a-pure-arch-linux-docker-image
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1.avif
+coverImage: /src/assets/images/dfb43cd8-1f8f-4a2d-96f9-a9221028eca1.avif
 description: La instalación de yay requiere algunos pasos como la creación de usuario, la instalación de base-devel y git, cambios en /etc/sudousers, clonar el repositorio de yay y hacer makepkg en él. Esta publicación cubre este proceso paso a paso.
 excerpt: La instalación de yay requiere algunos pasos como la creación de usuario, la instalación de base-devel y git, cambios en /etc/sudousers, clonar el repositorio de yay y hacer makepkg en él. Esta publicación cubre este proceso paso a paso.
 publishDate: 2023-03-20 06:03:00+00:00
@@ -17,7 +17,7 @@ updateDate: 2023-03-20 06:03:00+00:00
 
 En este artículo, te guiaremos a través del proceso de instalación del helper AUR `yay` en una imagen Docker de Arch Linux pura. Yay es una herramienta popular y fácil de usar para gestionar paquetes del Arch User Repository (AUR). Instalar `yay` en una imagen Docker de Arch Linux puede ayudarte a optimizar la gestión de paquetes y mantener tus aplicaciones en contenedores actualizadas.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6e96a98f-6c66-4687-9621-b29431e820b5.avif)
+![](/src/assets/images/6e96a98f-6c66-4687-9621-b29431e820b5.avif)
 
 ## Preparando la imagen de Docker de Arch Linux
 
@@ -99,7 +99,7 @@ y installa el primer paquete. Por ejemplo
 yay -S gpt-cli
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43be4bb9-02a5-4b86-b987-72fcd9f4c485.avif)
+![](/src/assets/images/43be4bb9-02a5-4b86-b987-72fcd9f4c485.avif)
 
 Permite recomendarte comandos de linux utilizando la API `openai` con el modelo `gpt-3.5-turbo`. Puedes probarlo escribiendo:
 
@@ -113,7 +113,7 @@ verás que la información que se presenta en el script a continuación fue copi
 perl -e 'sub f{ $_[0] < 2 ? $_[0] : f($_[0]-1) + f($_[0]-2) }; foreach(0..9){ print f($_), "\n"; }'
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8743f013-5a07-42fc-bde9-43ec61fad1d2.avif)
+![](/src/assets/images/8743f013-5a07-42fc-bde9-43ec61fad1d2.avif)
 
 Puedes leer la documentación completa de `gpt-cli` en github.
 

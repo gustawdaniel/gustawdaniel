@@ -119,4 +119,4 @@ npm run start
 
 pod adresem `localhost:4000` zobaczymy
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/396e2f4c-eb40-44da-b9e4-99da0a027b0e.avif)
+![](/src/assets/images/396e2f4c-eb40-44da-b9e4-99da0a027b0e.avif)

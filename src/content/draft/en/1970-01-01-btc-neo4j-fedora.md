@@ -27,7 +27,7 @@ bitcoin-core-server
 
 You will see something like this
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c8665561-71c4-4336-9923-22980843b17b.avif)
+![](/src/assets/images/c8665561-71c4-4336-9923-22980843b17b.avif)
 
 You should expect about half of TB of data. So you can measure it by
 
@@ -73,7 +73,7 @@ sudo dnf install neo4j
 
 It installed both db server and shell to `cypher` that is general language for graph data
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1b2da78e-7d6e-4bdb-bdae-7cc98e5c4678.avif)
+![](/src/assets/images/1b2da78e-7d6e-4bdb-bdae-7cc98e5c4678.avif)
 
 Finally i started neo4j db
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zipfs-law-in-nodejs
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
+coverImage: /src/assets/images/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
 description: Learn how to read large files in Node.js, count word occurrences using the Map object, and handle memory limits.
 excerpt: Learn how to read large files in Node.js, count word occurrences using the Map object, and handle memory limits.
 publishDate: 2022-06-11T22:50:51.000Z
@@ -15,7 +15,7 @@ Zipf's law states that if words in a given language are sorted by their frequenc
 
 In other words, there is a linear relationship with a negative coefficient between the logarithms of frequency and rank, as seen in the graph in logarithmic-logarithmic scale.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
+![](/src/assets/images/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
 
 or through a simple transformation:
 
@@ -202,7 +202,7 @@ An alternative to this approach is `console.time`.
 
 After starting, everything initially went well, until the fatal error `heap out of memory`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
+![](/src/assets/images/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
 
 Importantly, the computer did not freeze and had spare free memory. This happened because the default limit set at 2GB was exceeded. We can check this limit with the command:
 
@@ -281,11 +281,11 @@ gnuplot -e "set ylabel 'Count'; set xlabel 'Rank'; set logscale xy; plot 'log.tx
 
 The `-e` flag allows you to specify a command and `-p` does not turn off the plot after it is drawn.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
+![](/src/assets/images/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
 
 We see that the chart matches the one we saw on Wikipedia.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
+![](/src/assets/images/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
 
 ## Interpretation of Results
 

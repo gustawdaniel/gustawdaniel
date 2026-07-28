@@ -34,7 +34,7 @@ davinci resolve alternatives
 
 to google and seen this:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b622a29c-7cb1-4748-b628-abbe7ab0fdee.avif)
+![](/src/assets/images/b622a29c-7cb1-4748-b628-abbe7ab0fdee.avif)
 
 from my previous research I remembered that for many people these programs can satisfy criteria, but i wanted:
 

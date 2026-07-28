@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-data-in-perl-language
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
+coverImage: /src/assets/images/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 description: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania trzech rejestrów danych jego kod jest wyjątkowo krótki.
 excerpt: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania trzech rejestrów danych jego kod jest wyjątkowo krótki.
 publishDate: 2021-05-11 20:37:00+00:00

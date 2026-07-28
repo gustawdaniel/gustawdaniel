@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: one-more-article-about-installation-arch-linux
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
+coverImage: /src/assets/images/665af0e9-93eb-47ce-b4d5-1d60c8d644ae.avif
 description: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
 excerpt: Instalacja Arch Linux za każdym razem uczy mnie czegoś nowego na temat dysków, sieci, systemów operacyjnych. Polecam Ci ją jeśli chcesz mieć system skrojony pod Twoje wymagania.
 publishDate: 2021-10-22T01:24:19.000Z
@@ -30,7 +30,7 @@ Kolejno omówimy:
 
 Rdzeń instalacji przedstawia poniższa grafika, ale niektóre komendy będą się u nas różnić.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b49cea1e-c602-46e3-a908-0b3470ec06a0.avif)
+![](/src/assets/images/b49cea1e-c602-46e3-a908-0b3470ec06a0.avif)
 
 ## Przygotowanie bootowalnego pendrive
 
@@ -40,7 +40,7 @@ Obraz ISO Archa możemy pobrać z torrentów:
 
 Jednak ponieważ płyty CD nie są już używane, domyślnym działaniem jest wgranie go na USB. Żeby to zrobić wkładamy pendrive do komputera i sprawdzamy jaką nazwę dostał jednym z poleceń `dmesg | grep Attached`, `df -h` lub `lsblk`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d4303721-d034-4dc5-9b98-2aa9ae5553b2.avif)
+![](/src/assets/images/d4303721-d034-4dc5-9b98-2aa9ae5553b2.avif)
 
 W naszym przypadku jest to `sde`. Odmontowujemy pendrive komendą:
 
@@ -58,7 +58,7 @@ Po włożeniu pendrive do docelowej maszyny i uruchomieniu zwykle należy użyć
 
 Jeśli się uda, powinniśmy zobaczyć:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/049176bc-bcf4-4774-9275-0edd0d980b37.avif)
+![](/src/assets/images/049176bc-bcf4-4774-9275-0edd0d980b37.avif)
 
 Po zatwierdzeniu przez `ENTER` trafimy do konsoli instalatora
 
@@ -68,11 +68,11 @@ Nawiązanie połączenia z internetem jest naszym pierwszym zadaniem.
 
 Zaczniemy od listy dostępnych urządzeń, wpisujemy `iwctl` a następnie `device list`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/553974c5-3944-43e7-9e25-0034204bae17.avif)
+![](/src/assets/images/553974c5-3944-43e7-9e25-0034204bae17.avif)
 
 Lista sieci dostępna jest po wpisaniu `station wlan0 get-networks`
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c6e726d4-85d0-4e02-ba9c-a0d281641f5b.avif)
+![](/src/assets/images/c6e726d4-85d0-4e02-ba9c-a0d281641f5b.avif)
 
 Podłączamy się do wybranej sieci poleceniem `station wlan0 connect TP-Link_CEC8` i podajemy hasło.
 
@@ -143,7 +143,7 @@ Na starszych komputerach użyjemy biosa. Programem `cfdisk` lub `fdisk` mozemy u
 * bootowalna patrycje sda1 z typem 83 Linux
 * nie bootowalna partycje sda2 z typem 82 Linux Swap
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/88eda6fa-37ae-43a2-b5ce-9ea43ef00fcd.avif)
+![](/src/assets/images/88eda6fa-37ae-43a2-b5ce-9ea43ef00fcd.avif)
 
 Fortsmtujemy utworzona partycje
 
@@ -734,15 +734,15 @@ yay -S barrier
 
 Na urządzeniu klienckim ustawiamy id serwera:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7e58151b-96fb-4217-b7f7-49a5552900a8.avif)
+![](/src/assets/images/7e58151b-96fb-4217-b7f7-49a5552900a8.avif)
 
 A na serwerze:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/254f446b-c536-4626-ad8e-9461988b6c96.avif)
+![](/src/assets/images/254f446b-c536-4626-ad8e-9461988b6c96.avif)
 
 Wskazujemy gdzie względem naszego komputera ustawi się klient
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/270694f4-09f0-4dfd-af1c-6d7332690f0a.avif)
+![](/src/assets/images/270694f4-09f0-4dfd-af1c-6d7332690f0a.avif)
 
 W przypadku problemów z zestawieniem połączenia zawsze pomagało wyłączenie i włączeniu obu komputerów.
 
@@ -823,7 +823,7 @@ Do sprawdzania użycia i temperatury procesora, zajętej pamięci operacyjnej, t
 yay -S bashtop
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/87e08fbb-de98-4348-9169-9543d9a8aab4.avif)
+![](/src/assets/images/87e08fbb-de98-4348-9169-9543d9a8aab4.avif)
 
 ### Display Manager
 
@@ -834,7 +834,7 @@ yay -S ly
 sudo systemctl enable ly.service
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9be76f2f-1843-4219-990f-9d5c1b422fd1.avif)
+![](/src/assets/images/9be76f2f-1843-4219-990f-9d5c1b422fd1.avif)
 
 ### Tmux i Tmuxinator
 
@@ -849,7 +849,7 @@ Jego konfiguracja:
 
 [my-arch-i3-config/.tmux.conf at main · gustawdaniel/my-arch-i3-config](https://github.com/gustawdaniel/my-arch-i3-config/blob/main/.tmux.conf)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e.avif)
+![](/src/assets/images/8f6de7c2-8c6f-458c-8c65-43ff23ca8d7e.avif)
 
 ### Bitwarden
 
@@ -869,7 +869,7 @@ for_window [instance="bitwarden"] border pixel 3
 for_window [instance="bitwarden"] resize set 800 600
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d133afa-efe5-4cf9-acaa-72970b4f0ac5.avif)
+![](/src/assets/images/4d133afa-efe5-4cf9-acaa-72970b4f0ac5.avif)
 
 ## Nasz Arch Linux z i3 jest gotowy
 
@@ -877,4 +877,4 @@ Wciąż do efektywnej pracy może brakować nam `IDE` jeśli jesteśmy programis
 
 Jeśli twoim zdaniem w zestawieniu zabrakło jakichś programów, albo widzisz miejsca gdzie mógł być coś uprościć daj znać w komentarzu.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f28189da-1303-474d-a73f-0eaa5eae884b.avif)
+![](/src/assets/images/f28189da-1303-474d-a73f-0eaa5eae884b.avif)

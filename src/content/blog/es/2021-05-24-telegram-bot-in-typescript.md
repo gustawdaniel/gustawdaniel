@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: telegram-bot-in-typescript
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2dcee1e9-a7f9-48db-a443-eb083a918a4d.avif
+coverImage: /src/assets/images/2dcee1e9-a7f9-48db-a443-eb083a918a4d.avif
 description: Aprende a crear un bot en Telegram, agregar escucha de comandos y configurar el envío de notificaciones.
 excerpt: Aprende a crear un bot en Telegram, agregar escucha de comandos y configurar el envío de notificaciones.
 publishDate: 2021-05-24 11:06:00+00:00
@@ -49,7 +49,7 @@ Para poder usar la API, necesitaremos un token. La forma más sencilla de obtene
 
 Toda la conversación consiste en proporcionar el comando para crear un bot, su `nombre`, `nombre de usuario`, y recibir el token.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd1fe3ce-4c46-4c4d-94d7-c8db9d7b877a.avif)
+![](/src/assets/images/dd1fe3ce-4c46-4c4d-94d7-c8db9d7b877a.avif)
 
 ## Agregar un token al proyecto
 
@@ -101,7 +101,7 @@ bot.start();
 
 A continuación, agrega el bot al chat y escríbele. El resultado será el siguiente:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/db5aa8de-98ce-4cd0-8bec-4a8422a82351.avif)
+![](/src/assets/images/db5aa8de-98ce-4cd0-8bec-4a8422a82351.avif)
 
 El identificador de chat es una pieza clave de información si queremos enviarle notificaciones. El ID de chat y el Token son piezas clave de información que indican qué bot está escribiendo y dónde. En nuestro caso, el bot fue configurado para enviar diferentes datos a diferentes grupos, así que tuvimos que repetir este comando para varios grupos y anotarlos en el archivo `.env`. Agregamos la línea al archivo `.env`
 
@@ -122,7 +122,7 @@ setInterval(() => {
 }, 1000)
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bd59f2a8-88cb-4006-8fb0-51a99a78c6da.avif)
+![](/src/assets/images/bd59f2a8-88cb-4006-8fb0-51a99a78c6da.avif)
 
 Era un código muy simple y un bot muy simple. Con tales bots, puedes hacer cosas prácticas. Por ejemplo:
 

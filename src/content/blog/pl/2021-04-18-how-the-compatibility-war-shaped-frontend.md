@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-the-compatibility-war-shaped-frontend
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
+coverImage: /src/assets/images/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
 description: Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną wpływało na kierunek rozwoju technologii webowych.
 excerpt: Opisujemy jak porzucanie i dbanie o kompatybilność wsteczną wpływało na kierunek rozwoju technologii webowych.
 publishDate: 2021-04-22 18:51:16+00:00
@@ -21,7 +21,7 @@ Problem niekompatybilnych wersji oprogramowania czy sprzętu prawdopodobnie nie 
 
 Być może jako przedsiębiorca mierzyłeś się już z problemem migrowania swojego systemu informatycznego, albo jako programista walczyłeś z błędami powodowanymi aktualizacją jakiejś paczki.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/89e36eaa-b1df-4048-b690-7942494408ad.avif)
+![](/src/assets/images/89e36eaa-b1df-4048-b690-7942494408ad.avif)
 
 Ten artykuł ma na celu pokazanie jak kompatybilność wsteczna wpływała na kierunek rozwoju technologii webowych.
 
@@ -35,7 +35,7 @@ Za przykład niech posłuży nam historia rozwoju frontendu webowego, którą w 
 
 Często dla każdej przeglądarki trzeba było pisać osobny kod do wykonania tego samego zadania. Niektóre zmieniały interfejs programistyczny nawet z wersji na wersję kilka razy! Pisząc kod programista zamiast zapytać o szerokość okna, sprawdzał na początku o to z jaką przeglądarką ma do czynienia, później dopiero w długiej liście warunków wykonywał odpowiednie komendy stosownie do przeglądarki jaką wykrył
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
+![](/src/assets/images/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
 
 W tych warunkach w 2005 pojawiła się biblioteka jQuery. Stanowiła ona warstwę pośredniczącą między programistami webowymi a przeglądarkami. Błyskawicznie zaczęła zdobywać popularność, bo choć obciążała przeglądarki, to dzięki niej programista pisał znacznie mnie kodu, a dodatkowo to ona przejmowała odpowiedzialność za obsługę starych przeglądarek. Wraz ze zdobywanie popularności wprowadzała nowatorskie rozwiązania jak niektóre selektory do wyszukiwania elementów na stronie, które dopiero później znalazły się na stałe w standardach. Do jQuery napisano niezliczoną liczbę wtyczek i w 2012 stała się technologią, którą poznawał każdy programista jeśli chciał pisać strony internetowe.
 
@@ -45,7 +45,7 @@ Popularność jQuery zaczęła przygasać, dopiero kiedy stało się jasne, że 
 
 Jednak to nie koniec historii. Być może interesuje was, co się stało z technologiami webowymi po tym, jak jQuery przestawało powoli być już potrzebne.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
+![](/src/assets/images/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
 
 W 2013 roku zaczęło być głośno o frameworku Angular Js stworzonym 4 lata wcześniej przez Google. W tym samym momencie Facebook ogłosił powstanie Reacta. Oba narzędzia wdrażały deklaratywny paradygmat budowania interfejsów za pomocą bezstanowych komponentów. Krótko mówiąc, programista definiował warunki mówiące jak frontend ma działać, a komponenty przejmowały odpowiedzialność za warstwę wizualną pozostawiając więcej uwagi programisty do pracy nad logiką biznesową. W uproszczeniu: każde z sprawiało, że kod pisało się jeszcze szybciej niż w jQuery.
 

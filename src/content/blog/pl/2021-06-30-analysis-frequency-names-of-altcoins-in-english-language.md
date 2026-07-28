@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analysis-frequency-names-of-altcoins-in-english-language
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
+coverImage: /src/assets/images/13fd8113-13b0-4f44-a262-90a5e01d4714.avif
 description: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw kryptowalut, te nie występujące w języku naturalnym.
 excerpt: Celem artykułu jest pokazanie jak odfiltrować spośród wszystkich nazw kryptowalut, te nie występujące w języku naturalnym.
 publishDate: 2021-06-30 10:22:00+00:00
@@ -368,7 +368,7 @@ Po wpisaniu frazy "english corpus" bardzo szybko trafiamy na stronę
 
 Jest to scam. Zawiera informację, że jest darmowa i wystarczy zarejestrować konto
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
+![](/src/assets/images/63f7d022-1bb8-4a7f-a7a7-bc7a4d554017.avif)
 
 ale posiada ograniczenia przez które możemy skanować dziennie jedynie 50 słów. Straciłem czas próbując automatyzować pobieranie danych z tego serwisu.
 
@@ -648,11 +648,11 @@ ts-node src/preparePhrases.ts
 
 Możemy zobaczyć, że dla bardzo mało znanych coinów, ale za to popularnych słów nasz współczynnik jest bardzo niski.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
+![](/src/assets/images/f5d3c63c-9dbb-4c1d-b79d-e02f96823e5f.avif)
 
 możemy się spodziewać wielu tweetów ze słowami takimi jak `you`, `giant`, `spectrum`, `pop`, `cyl`, `vote`, `get`, `real` czy `kind` w których autor nie miał na myśli kryptowalut. Z drugiej strony nie istnieje obiektywne kryterium odcięcia.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/693ef6c8-ca55-4450-9373-407542eb3313.avif)
+![](/src/assets/images/693ef6c8-ca55-4450-9373-407542eb3313.avif)
 
 Gdybym ustawił je na 100, wycięte zostało by 2328/16395 = 14% fraz. Przy wartości `5` mamy odcięcie 1560/16395 = 9.5%.
 

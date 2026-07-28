@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/08a5e268-fcf7-4af8-ba14-376a20394223.avif
+coverImage: /src/assets/images/08a5e268-fcf7-4af8-ba14-376a20394223.avif
 description: Nueva instalación de Google Identity para Nuxt 3 con verificación de credenciales en fastify.
 excerpt: Nueva instalación de Google Identity para Nuxt 3 con verificación de credenciales en fastify.
 publishDate: 2023-02-16 13:20:19+00:00
@@ -26,13 +26,13 @@ La segunda simplemente no pudo funcionar, dando un error que sugería que algo e
 
 Revisé la documentación oficial de Google y vi esto:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
+![](/src/assets/images/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
 
 [Integración de Google Sign-In en tu aplicación web | Autenticación | Desarrolladores de Google](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/sign-in/web/sign-in)
 
 Se ve terrible, pero afortunadamente integré el botón de inicio de sesión de Google bastante rápido sin bibliotecas externas. En este artículo, mostraré cómo implementar la nueva Identidad de Google con Nuxt 3.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
+![](/src/assets/images/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
 
 ## Identidad de Google - cómo es diferente
 
@@ -40,7 +40,7 @@ Dado que una imagen vale más que mil palabras, el nuevo botón de inicio de ses
 
 [Botón de inicio de sesión con Google UX | Autenticación | Desarrolladores de Google](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
+![](/src/assets/images/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
 
 ## Botón de Iniciar Sesión HTML
 
@@ -70,7 +70,7 @@ o prepara tu propio en el configurador
 
 [Generar código HTML | Autenticación | Desarrolladores de Google](https://developers.google.com/identity/gsi/web/tools/configurator)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
+![](/src/assets/images/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
 
 Hay tres elementos que debemos conectar:
 
@@ -169,11 +169,11 @@ useHead({
 
 Ahora deberías ver el botón de inicio de sesión. Deberías poder hacer clic en él, iniciar sesión y ver las credenciales en la consola. Suponiendo que configuraste correctamente el Cliente OAuth 2.0.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
+![](/src/assets/images/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
 
 Y agregué localhost a los orígenes de JavaScript autorizados
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
+![](/src/assets/images/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
 
 Después de iniciar sesión en la consola, verás un array con un solo objeto así:
 
@@ -209,7 +209,7 @@ El token de credencial es `JWT` con carga útil
 
 Para verificarlo, debes enviarlo al backend.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
+![](/src/assets/images/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
 
 ## Verificación de backend para credenciales de Google
 
@@ -303,9 +303,9 @@ if(process.client) {
 
 olvidamos sobre `cors`
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a131da56-cca9-4264-844b-dd6592ce593d.avif)
+![](/src/assets/images/a131da56-cca9-4264-844b-dd6592ce593d.avif)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
+![](/src/assets/images/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
 
 así que solución rápida
 
@@ -325,7 +325,7 @@ import cors from '@fastify/cors'
 
 y podemos ver en la consola todos los detalles del usuario
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
+![](/src/assets/images/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
 
 No queremos llamar a `await client.verifyIdToken(` en ninguna solicitud, por lo que tenemos que intercambiar el JWT de Google por el nuestro. Así que vale la pena crear un usuario en tu base de datos y generar un token JWT para él, pero lo describí en el artículo mencionado anteriormente:
 

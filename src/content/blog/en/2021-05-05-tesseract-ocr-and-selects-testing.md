@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: tesseract-ocr-and-selects-testing
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
+coverImage: /src/assets/images/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
 description: We will read the content of the database table from the photo and write a few tests for database queries in Behat.
 excerpt: We will read the content of the database table from the photo and write a few tests for database queries in Behat.
 publishDate: 2021-05-04 20:18:00+00:00

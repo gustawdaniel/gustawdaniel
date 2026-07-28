@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: symfony-app-with-google-maps-api
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
+coverImage: /src/assets/images/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
 description: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych przez api od google.
 excerpt: Prosta apka integrująca fos user bundle z google maps. Serwis pozwala na logowanie, rejestrację oraz zapisywanie swojej listy lokalizacji walidowanych przez api od google.
 publishDate: 2021-05-18 20:50:00+00:00

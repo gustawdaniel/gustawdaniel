@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: last-occurrence-linear-search-easy
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
+coverImage: /src/assets/images/f0cf18ae-5174-47c0-81af-cb479a0c36b3.avif
 description: Encuentra e imprime el índice de la última ocurrencia del elemento en el array.
 excerpt: Encuentra e imprime el índice de la última ocurrencia del elemento en el array.
 publishDate: 2022-11-16 17:22:37+00:00
