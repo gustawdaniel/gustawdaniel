@@ -28,7 +28,7 @@ Quiero enfatizar que los tipos de cambio históricos están excelentemente prese
 
 Tomemos como ejemplo el tipo de cambio del franco suizo:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avifchf1pricehistory.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avif)
 
 Para descargar estos datos, simplemente ve a la página:
 
@@ -36,7 +36,7 @@ Para descargar estos datos, simplemente ve a la página:
 
 y haz clic en el botón debajo de la tabla.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/95e88003-79bf-46d0-b300-d7661d4adcee.avifchf2download.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/95e88003-79bf-46d0-b300-d7661d4adcee.avif)
 
 En este artículo, no estoy resolviendo un *problema real*, sino presentando posibles *métodos de estructuración de datos **a través del ejemplo de*** un conjunto específico de archivos con convenciones inconsistentes e impredecibles.
 
@@ -54,7 +54,7 @@ Descargaremos los datos con tasas de cambio de la página
 
 > [https://www.nbp.pl/home.aspx?f=/kursy/arch\_a.html](https://www.nbp.pl/home.aspx?f=/kursy/arch_a.html)
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avif)
 
 Los datos están divididos en hojas `xls` separadas.
 
@@ -62,7 +62,7 @@ Los datos están divididos en hojas `xls` separadas.
 
 Comenzaremos recuperando estos datos. Leemos el selector del código `HTML`.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aea3892-5617-4b54-909f-c202c1ae20f5.avifchf4selector.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aea3892-5617-4b54-909f-c202c1ae20f5.avif)
 
 En la consola del navegador, escribimos:
 
@@ -207,7 +207,7 @@ console.dir(main(), {depth: Infinity, maxArrayLength: Infinity})
 
 Resulta que el primer archivo no contiene códigos de moneda.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/db384089-4942-4f2c-9c7e-61960ff9385c.avifchf5codes.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/db384089-4942-4f2c-9c7e-61960ff9385c.avif)
 
 Así que nos vemos obligados a construir un diccionario que mapea los nombres de los países a los códigos de moneda.
 
@@ -413,7 +413,7 @@ Para facilitar la lectura, mostré temporalmente la tabla `arr` usando `console.
 console.table(arr.map(l => l.filter((e,i) => i < 5 || Math.abs(i - 30) < 4)));
 ```
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avifchf6table.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avif)
 
 ¿Qué vemos?
 
@@ -478,7 +478,7 @@ const ROWS_FILTER = (e: string, i: number) => i <= Infinity
 
 La ejecución terminará con un error
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avifchf7err.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avif)
 
 Gracias a las líneas que permiten la depuración:
 
@@ -494,7 +494,7 @@ console.dir(settings, {depth: Infinity});
 
 vemos que el problema son las líneas completamente vacías.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avifchf24empty.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avif)
 
 La causa del error es la rígida adherencia a una fila específica como un lugar donde mantenemos delimitadores o nombres de moneda, mientras que deberíamos estar eliminando líneas vacías antes de detectar encabezados.
 
@@ -521,15 +521,15 @@ const arr = fs
 
 Esta vez no funciona de nuevo. La razón es una línea muy inusual en uno de los archivos.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avifchf8correction.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avif)
 
 ¿Corrección de curso desde 1987? ¿Cómo es eso? En realidad, en `xls` tenemos algo así:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/093d1361-1532-4040-aa60-cd50cc9705de.avifchf9xls.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/093d1361-1532-4040-aa60-cd50cc9705de.avif)
 
 Sin embargo, se trata de la moneda `ECU`, por lo que es más razonable omitir esta línea ajustando los criterios de reconocimiento de fechas.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avifchf10diff.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avif)
 
 El código completo de esta etapa se puede encontrar en el enlace:
 
@@ -551,7 +551,7 @@ Sin embargo, su ejecución aún causa errores.
 
 Tras una inspección más profunda, resulta que el problema radica en una línea que estaba casi vacía, pero no completamente vacía:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a1a5c29e-0331-469d-ba92-28bca784abbd.avifchf11empty.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a1a5c29e-0331-469d-ba92-28bca784abbd.avif)
 
 Alguien colocó `Nr` en una columna completamente insignificante. Por lo tanto, volvemos al código y eliminaremos esta línea con el siguiente filtro: `DROP_JUNK_LINES`, colocado antes de `DROP_EMPTY_LINES`.
 
@@ -615,7 +615,7 @@ console.table(arr.map(e => e.filter((e,i) => i < 10)));
 
 ver una organización completamente nueva del encabezado y el cambio de la columna de fecha
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70234f95-8834-4879-8290-b1b873c01f15.avifchf12fix.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70234f95-8834-4879-8290-b1b873c01f15.avif)
 
 Esta vez tanto la moneda como el divisor se colocan en la misma línea. Así que manejaremos el caso `else` después de la línea.
 
@@ -685,11 +685,11 @@ Las correcciones se pueden ver en el commit:
 
 ¿Son esos todos los problemas? Absolutamente no. En 2008, se utilizó otra convención.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43871410-d47e-4076-95ab-61d8795fef17.avifchf132008.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43871410-d47e-4076-95ab-61d8795fef17.avif)
 
 Se trata de no colocar "Suiza" en ningún lugar, ni "1CHF" en ningún lugar, por lo tanto, ambos métodos de reconocimiento fallan. ¿Qué deberíamos hacer? Podemos esbozar el algoritmo de reconocimiento de encabezados de la siguiente manera:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avifchf14schema.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avif)
 
 Marcamos los elementos faltantes en naranja.
 
@@ -741,7 +741,7 @@ Por lo tanto, en la configuración de ajustes para códigos, ya no podemos asumi
 
 Los cambios en las funciones que realizan el procesamiento del encabezado anteriormente se ven así
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e43bf31c-938d-446b-bba7-a2692d73e6ca.avifchf15diff.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e43bf31c-938d-446b-bba7-a2692d73e6ca.avif)
 
 Así es como se ve su código actual, sin embargo.
 
@@ -883,7 +883,7 @@ parcel index.html
 
 veremos un mensaje de construcción y un enlace a la página
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avifchf16server.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avif)
 
 Después de abrir el enlace y la consola de desarrollador, y luego agregar la línea `***console***.log("test")` a `index.ts`, veremos que la página se recarga automáticamente y "test" se registra en la consola.
 
@@ -942,7 +942,7 @@ chart.render().then(console.log).catch(console.error);
 
 Podrías decir - super simple:
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avifchf17bar.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avif)
 
 Sin embargo, esta simplicidad tiene un propósito. Permite no llenar el artículo con datos de prueba, solo cuando tengamos la estructura de datos para el gráfico podemos realizar la transformación de nuestra estructura extraída de archivos `xls`.
 
@@ -1103,15 +1103,15 @@ chart.render().then(console.log).catch(console.error)
 
 El gráfico se ve genial. Captura perfectamente las realidades del salvaje oeste de las divisas de principios de los 90. Vemos cómo en 1991 la inflación disparó el precio del franco por órdenes de magnitud, y la drástica caída a principios de 1995 causada por la implementación de la ley de denominación del 7 de julio de 1994.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79297982-53d5-4631-80ce-233139e5e437.avifchf18graph.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79297982-53d5-4631-80ce-233139e5e437.avif)
 
 Un problema no detectado resulta ser el escalado incorrecto de 1995.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avifchf19chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avif)
 
 De hecho, tenemos un cambio en el multiplicador durante el año 1995.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/49771fae-248f-44fe-a307-bc25574964da.avifchf20chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/49771fae-248f-44fe-a307-bc25574964da.avif)
 
 Podemos solucionar este problema agregando líneas que muevan el divisor si su cambio ocurre entre valores, no en el encabezado:
 
@@ -1146,7 +1146,7 @@ settings[key].values.push({[date]: parseFloat(localArr[settings[key].col]) / set
 
 La regeneración de datos te permite ver el gráfico.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avifchf21chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avif)
 
 Para realizar la implementación, utilizaremos el servicio de Netlify.
 
@@ -1168,11 +1168,11 @@ Y agregamos un comando de construcción en `package.json`
 
 Después de seleccionar el directorio `dist` en el panel de Netlify y ejecutar el comando `npm run build`, podemos disfrutar de un despliegue CI configurado.
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47831aa4-8526-44ad-b452-a874f467ec88.avifchf22netlify.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47831aa4-8526-44ad-b452-a874f467ec88.avif)
 
 Al final del curso CHF desde finales de los 90 hasta tiempos modernos
 
-![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bedc08c4-895e-4579-b482-5c9d2cc39126.avifchf23chart.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bedc08c4-895e-4579-b482-5c9d2cc39126.avif)
 
 # Conclusiones
 
