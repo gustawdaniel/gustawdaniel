@@ -11,5 +11,5 @@ export function getImageAsset(urlOrFilename: string): ImageMetadata | string {
     if (key in images) {
         return images[key].default;
     }
-    return urlOrFilename;
+    return `https://preciselab.fra1.digitaloceanspaces.com/blog/img/${filename}`;
 }

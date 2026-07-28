@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import { defaultLocale, locales } from "./src/locales.ts";
 import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
@@ -12,6 +12,7 @@ export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
   image: {
+    service: passthroughImageService(),
     domains: ['ucarecdn.com', 'preciselab.fra1.digitaloceanspaces.com']
   },
   i18n: {
