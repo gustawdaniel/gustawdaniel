@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: pulumi-infrastructure-as-a-code-digital-ocean
-coverImage: /src/assets/images/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f370e14e-6fd0-48ef-b689-02d89d85bfb7.avif
 description: Za pomocą Pulumi możesz zdefiniować swoją infrastrukturę IT w pliku opisanym za pomocą twojego ulubionego języka programowania. Ten artykuł pokazuje, jak to zrobić.
 excerpt: Za pomocą Pulumi możesz zdefiniować swoją infrastrukturę IT w pliku opisanym za pomocą twojego ulubionego języka programowania. Ten artykuł pokazuje, jak to zrobić.
 publishDate: 2022-11-27 12:52:11+00:00
@@ -18,13 +18,13 @@ updateDate: 2022-11-27 12:53:23+00:00
 
 Początkowo (70 lat temu) komputery były programowane poprzez ręczną zmianę połączeń kablowych. Nie było osobistego komputera stacjonarnego, więc programy były pisane na produkcji. Brak wdrożenia - brak problemu.
 
-![](/src/assets/images/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bddc2654-5995-464a-b996-2dd693d9ae4e.avif)
 
 pierwsi programiści komputerów cyfrowych
 
 Około dekadę później IBM wprowadził karty dziurkowane, więc wdrożenie lub instalacja odbywała się poprzez wsunięcie karty z programem do czytnika.
 
-![](/src/assets/images/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6a3f24e6-d7bc-4356-8b14-46ecbbccf45f.avif)
 
 Kolejny przełom - internet i protokoły ftp (1971) zmieniły wszystko. Aby przenieść programy na inne maszyny, przestano potrzebować fizycznego nośnika oprócz kabli łączących z siecią.
 
@@ -42,7 +42,7 @@ Te zmiany były ważne dla dostawców chmury i branży IaaS, ale deweloperzy byl
 
 Kolejną ogromną rewolucją był Docker, napisany w Go w 2013 roku, i wykorzystujący przestrzenie nazw dostępne od jądra Linux 2.6.24 z 2008 roku. Jego popularność eksplodowała w 2017 roku. Głównym problemem czasów przed Dockerem była konfiguracja serwera do używania naszej aplikacji. Kiedy środowisko uruchomieniowe było skonfigurowane na serwerze, wtedy dwie różne aplikacje z różnymi wersjami lub konfiguracją uruchomieniową nie mogły być zainstalowane na tym samym hoście. Jeśli były pakowane jako maszyny wirtualne, cała warstwa systemu operacyjnego była duplikowana. Docker rozwiązał te problemy.
 
-![](/src/assets/images/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f422d08-4002-44ac-b29c-a8b841c07dc2.avif)
 
 Ale to nie koniec. Gdy ludzie nauczyli się korzystać z Dockera i stworzyli przepływy CI/CD do automatyzacji procesów wdrażania i testowania, zdali sobie sprawę, że zarządzanie serwerami można również realizować na poziomie kodu.
 
@@ -78,7 +78,7 @@ Nie będziemy się skupiać na tej części kodu. Jeśli jesteś tym zainteresow
 
 Teraz skupimy się na konkurencie Terraform. Porozmawiajmy o pulumi.
 
-![](/src/assets/images/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2c69f8e4-e541-4d09-bc72-c55d3118ae44.avif)
 
 # Pulumi
 
@@ -228,7 +228,7 @@ doctl auth init
 
 Będziesz potrzebować tokena, który można wygenerować w zakładce `API` w panelu Digital Ocean
 
-![](/src/assets/images/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b01bcdbe-b267-4ff1-9738-da6dfcae157e.avif)
 
 Ten sam token powinien być użyty do połączenia pulumi z Twoim Digital Ocean:
 
@@ -252,7 +252,7 @@ ssh-keygen -t ed25519 -C "gustaw.daniel@gmail.com" -f ~/.ssh/id_ed25519
 
 dodaj klucze publiczne do ustawień zabezpieczeń w Digital Ocean:
 
-![](/src/assets/images/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4afd761e-f1ce-4e61-b4df-8e822587e997.avif)
 
 Po dodaniu możesz ponownie zapytać o klucze, ponieważ będziesz potrzebować tych numerów zwróconych przez polecenie:
 
@@ -394,7 +394,7 @@ Mam nadzieję, że ten artykuł pomoże Ci zacząć z pulumi na Digital Ocean i 
 
 > Lepiej spędzić 10 godzin na nieudanym automatyzowaniu, niż robić zadanie ręcznie.
 
-![](/src/assets/images/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/de358710-bd2f-40ee-a21e-ccb7758edec6.avif)
 
 Podsumujmy zalety podejścia IaC.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: rust-implementation-of-rfc-7396-json-merge-patch
-coverImage: /src/assets/images/7ce53036-1711-40b9-90bf-0369f97b2f84.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7ce53036-1711-40b9-90bf-0369f97b2f84.avif
 description: La velocidad y fiabilidad de Rust lo hacen ideal para implementar JSON Merge Patch, como se define en la RFC 7396. Esta especificación permite actualizaciones parciales eficientes y seguras de documentos JSON.
 excerpt: La velocidad y fiabilidad de Rust lo hacen ideal para implementar JSON Merge Patch, como se define en la RFC 7396. Esta especificación permite actualizaciones parciales eficientes y seguras de documentos JSON.
 publishDate: 2023-03-28 11:43:54+00:00

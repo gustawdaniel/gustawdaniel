@@ -331,7 +331,7 @@ And now we are going to
 
 If machine is able to understand it then we can assume that our movies are correct.
 
-![](/src/assets/images/20327e1a-2079-4d81-9b2f-dfd16bc4fa36.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/20327e1a-2079-4d81-9b2f-dfd16bc4fa36.avif)
 
 Unfortunately voice2json do not support all our languages
 
@@ -360,13 +360,13 @@ There are supported
 
 Using `voice2json` we can use only 12 languages.
 
-![](/src/assets/images/89d5d3c8-eacb-413f-a1b8-d1c00dd17793.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/89d5d3c8-eacb-413f-a1b8-d1c00dd17793.avif)
 
 Other tool is whisper also from openai
 
 [GitHub - openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision](https://github.com/openai/whisper)
 
-![](/src/assets/images/a9bcccba-cb93-4d61-8739-45c59e1a456e.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a9bcccba-cb93-4d61-8739-45c59e1a456e.svg)
 
 we can't install it today because open issue
 
@@ -423,7 +423,7 @@ curl --request POST \
 
 It is hard to say if result is readable. But I am rather considering it as low quality.
 
-![](/src/assets/images/edf29629-a893-4bc5-968c-11a80efd96ab.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/edf29629-a893-4bc5-968c-11a80efd96ab.avif)
 
 To make it better I should add subtitles. I tried this service
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zeromq-pull-push-pattern-for-node-js
-coverImage: /src/assets/images/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/70bb6ab5-16d9-4e33-a150-7dfe3fdbb9e4.avif
 description: The article emphasizes ZeroMQ's flexibility for messaging in Node.js, highlighting the pull-push pattern ideal for high-volume distributed systems.
 excerpt: The article emphasizes ZeroMQ's flexibility for messaging in Node.js, highlighting the pull-push pattern ideal for high-volume distributed systems.
 publishDate: 2023-02-19 09:42:31+00:00
@@ -97,6 +97,6 @@ main().catch(console.error)
 
 I will see almost instant `push 1..10` and then any `2` seconds new lines with `Received Job`.
 
-![](/src/assets/images/a0d0f0c3-36aa-4836-acfc-d8986441cc0b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a0d0f0c3-36aa-4836-acfc-d8986441cc0b.avif)
 
 Of course you can use many instances of scripts that are workers and do these jobs in independent processes. In this case I wanted streamline outgoing http requests so I decided to process them in single `pull` and inject these requests from different places of code by `push`. So you can see that there is huge variety of applications especially, taking into account that I presented only one pattern from 4 available in ZeroMQ.

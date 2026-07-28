@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: svelte-snake-deployed-on-deno
-coverImage: /src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif
 description: Svelte Snake to prosta gra napisana w Svelte. Jest wdrożona na Deno, bezpiecznym środowisku uruchomieniowym dla JavaScript i TypeScript.
 excerpt: Svelte Snake to prosta gra napisana w Svelte. Jest wdrożona na Deno, bezpiecznym środowisku uruchomieniowym dla JavaScript i TypeScript.
 publishDate: 2024-11-15 00:00:00+00:00
@@ -73,7 +73,7 @@ w `src/routes/+page.svelte` ustaw kod
 </style>
 ```
 
-![](/src/assets/images/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/10c7c557-f5a4-4a3d-b8dc-970ffd78f46c.avif)
 
 widzimy, że wąż porusza się w prawo.
 
@@ -125,7 +125,7 @@ Teraz możemy wyrenderować mapę. Stworzymy mapę 20x20.
 </style>
 ```
 
-![](/src/assets/images/23cda6e4-c4e0-443d-93b5-79743e768219.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/23cda6e4-c4e0-443d-93b5-79743e768219.avif)
 
 ### Ruch węża
 
@@ -554,4 +554,4 @@ https://github.com/gustawdaniel/snake_js
 
 Dodałem kilka zmian w css, aby gra była bardziej grywalna, które nie są wystarczająco interesujące, aby dołączyć je tutaj, ale możesz je sprawdzić w [commit](https://github.com/gustawdaniel/snake_js/commit/6d8c681ece83a43a1f505cd89579c4e939386251)
 
-![](/src/assets/images/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a29bb2f8-5795-487b-a9c3-d80c124970f8.avif)

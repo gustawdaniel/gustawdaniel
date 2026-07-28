@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-javascript
-coverImage: /src/assets/images/014d0920-5eca-46f4-b476-960e0fa98596.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/014d0920-5eca-46f4-b476-960e0fa98596.avif
 description: This simple project is great as an introduction to JavaScript programming. The emphasis is on ES6 elements and the frontend.
 excerpt: This simple project is great as an introduction to JavaScript programming. The emphasis is on ES6 elements and the frontend.
 publishDate: 2021-04-20 21:46:37+00:00
@@ -27,7 +27,7 @@ JavaScript 49.5% CSS 40.3% HTML 10.2%
 
 After finishing project will looks following:
 
-![js-es6-1](/src/assets/images/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
+![js-es6-1](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2f16cf65-198d-462d-9fe2-2a9e496aabbd.avif)
 
 To Do List typed in pure JavaScript that will be presented in this article.
 
@@ -69,7 +69,7 @@ node node_modules/json-server/lib/bin.js --watch db.json
 
 If everything works we should see something like this
 
-![js-es6-2](/src/assets/images/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
+![js-es6-2](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4193b63c-cfa6-4828-a4a1-ae620dd8de2f.avif)
 
 Server with application (on the right) and with REST API connected with db.json file (on the left)
 

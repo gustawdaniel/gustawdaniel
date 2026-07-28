@@ -56,20 +56,11 @@ const coverSrc = getImageAsset(frontmatter.coverImage);
 
         </header>
 
-        {typeof coverSrc === 'string' ? (
-            <img src={coverSrc}
-                 alt={frontmatter.title}
-                 class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
-                 loading="lazy"
-            />
-        ) : (
-            <Picture src={coverSrc}
-                     widths={[480, 768, 1024, 1440, 1920]}
-                     formats={['avif']}
-                     alt={frontmatter.title}
-                     class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
-            ></Picture>
-        )}
+        <img src={coverSrc}
+             alt={frontmatter.title}
+             class:list={['my-16 aspect-[16/9] w-full max-w-screen-xl m-auto rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[2/1]']}
+             loading="lazy"
+        />
 
         <!--<img src={frontmatter.coverImage}-->
         <!--     alt={frontmatter.title}-->

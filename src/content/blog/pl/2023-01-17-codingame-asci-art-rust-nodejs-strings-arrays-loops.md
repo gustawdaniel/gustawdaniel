@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-asci-art-rust-nodejs-strings-arrays-loops
-coverImage: /src/assets/images/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
 description: Rozwiązywanie tej zagadki uczy, jak zarządzać ciągami znaków i arytmetyką tablic. Dowiesz się, jak podzielić ciąg na oddzielne części i połączyć je w nowy. Możesz używać indeksów tablic.
 excerpt: Rozwiązywanie tej zagadki uczy, jak zarządzać ciągami znaków i arytmetyką tablic. Dowiesz się, jak podzielić ciąg na oddzielne części i połączyć je w nowy. Możesz używać indeksów tablic.
 publishDate: 2023-01-17 18:31:50+00:00
@@ -31,7 +31,7 @@ Można to rozwiązać, korzystając z następujących koncepcji.
 
 Na dworcach i lotniskach często można zobaczyć ten typ ekranu:
 
-![](/src/assets/images/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
 
 Czy kiedykolwiek zadawałeś sobie pytanie, jak można symulować ten wyświetlacz na dobrym, starym terminalu? Mamy: za pomocą sztuki ASCII!
 

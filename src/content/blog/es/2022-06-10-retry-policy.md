@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: retry-policy
-coverImage: /src/assets/images/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/06db71a6-c569-4d4c-8497-9872e525bcb9.avif
 description: Aprende a hacer que los errores aleatorios y no reproducibles ya no sean una amenaza para tu programa.
 excerpt: Aprende a hacer que los errores aleatorios y no reproducibles ya no sean una amenaza para tu programa.
 publishDate: 2022-06-10T16:14:57.000Z
@@ -13,7 +13,7 @@ updateDate: 2022-06-10T16:14:57.000Z
 
 A veces, por diversas razones, los programas informáticos pueden devolver errores extraños que son extremadamente difíciles de reproducir, y su solución no es posible. Sin embargo, si se puede lograr el funcionamiento correcto del programa después de un número finito de reinicios, esto puede constituir una forma óptima de resolver el problema.
 
-![](/src/assets/images/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80ac4d04-5e5c-40dd-8e24-a8acc023dac4.avif)
 
 Esto es importante, especialmente en sistemas complejos donde múltiples fuentes potenciales de errores se acumulan, y volver a intentar la invocación de funciones defectuosas reduce la probabilidad de un error al cuadrarla.
 
@@ -132,17 +132,17 @@ Si queremos que sea cierto, podemos cambiar `maxTry` de `6` a `Infinito`, pero h
 
 A veces, la causa del error puede ser la falta de acceso a algún recurso precisamente porque lo estamos consultando con demasiada frecuencia. En ese caso, vale la pena esperar más tiempo con cada intento subsiguiente. Sin embargo, a menudo encontramos errores que no se pueden simplemente arreglar con el método de "apagarlo y volver a intentarlo". En su caso, un valor demasiado alto de `maxTry` aumenta el tiempo total que el programa dedica a acciones infructuosas.
 
-![](/src/assets/images/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61babd67-eb90-458a-928f-7b929bf00f8c.avif)
 
 Frente a las dificultades para medir las posibilidades de errores y categorizarlos, en muchos casos, en lugar de calcular los parámetros de la `política de reintentos`, se establecen de forma intuitiva.
 
 Es muy razonable variar la política de reintentos dependiendo del tipo de error:
 
-![](/src/assets/images/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9fc3b562-2ac9-4e30-918c-80fa74af3f60.avif)
 
 Desafortunadamente, el paquete `ts-retry` no soporta ni `reintento exponencial` ni un manejo diferente de, por ejemplo, códigos de error, lo que ayuda a decidir qué hacer con este error. Afortunadamente, se han desarrollado paquetes más avanzados durante años. Entre ellos, el más interesante parece ser `ts-retry-promise`, que, a pesar de su baja popularidad, ofrece un buen compromiso entre facilidad de uso y opciones de personalización.
 
-![](/src/assets/images/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90c12071-2e59-4b09-b000-c8fe52afe717.avif)
 
 Puedes leer más sobre estrategias de `retry` óptimas en el artículo del Prof. Douglas Thain - Retroceso Exponencial en Sistemas Distribuidos de 2009.
 
@@ -220,4 +220,4 @@ Entonces necesitas informar al usuario final, siguiendo estas reglas:
 * no puedes admitir en el mensaje de error que el código no está funcionando... ya sabes por qué
 * simplemente mezcla cinismo y honestidad con humor y muéstrales esto:
 
-![](/src/assets/images/be0b858a-5648-408d-aa10-fc750a896244.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/be0b858a-5648-408d-aa10-fc750a896244.avif)

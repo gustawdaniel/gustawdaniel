@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: calculating-the-difference-between-json-files
-coverImage: /src/assets/images/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7f52c42e-103b-4ef9-b689-d08807ad2f7f.avif
 description: Learn how to find missing translations in JSON files with dictionaries.
 excerpt: Learn how to find missing translations in JSON files with dictionaries.
 publishDate: 2021-02-26
@@ -90,13 +90,13 @@ Now, let’s see how the program works in practice with translation files. The f
 
 At first, I sorted both files manually using the service: codeshack.io/json-sorter
 
-![](/src/assets/images/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5459cca6-ed9e-4f75-8933-90306a6307fc.avif)
 
 https://codeshack.io/json-sorter/
 
 Next, I used `diffchecker` to find the differences between them:
 
-![](/src/assets/images/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6028a6b5-ca6a-4baa-b16d-fb66a7199df3.avif)
 
 https://www.diffchecker.com/yffDMWff
 
@@ -108,7 +108,7 @@ node ../DevTools/json-diff.js src/locales/en_old.json src/locales/en.json > src/
 
 The file, displayed and formatted by jq, looks like this:
 
-![](/src/assets/images/dd621642-427b-4560-9f26-b08150f04e97.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd621642-427b-4560-9f26-b08150f04e97.avif)
 
 We can see that it includes all the missing keys.
 

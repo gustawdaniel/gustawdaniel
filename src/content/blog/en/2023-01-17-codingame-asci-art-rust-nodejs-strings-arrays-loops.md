@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-asci-art-rust-nodejs-strings-arrays-loops
-coverImage: /src/assets/images/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/6e4fd27a-860f-44c6-8b0a-1c473296724b.avif
 description: Solving this puzzle teaches how to manage strings and array arithmetics. You'll know how to split a string into separate parts and concatenate them into a new one. You can use indexes of arrays
 excerpt: Solving this puzzle teaches how to manage strings and array arithmetics. You'll know how to split a string into separate parts and concatenate them into a new one. You can use indexes of arrays
 publishDate: 2023-01-17 18:31:50+00:00
@@ -31,7 +31,7 @@ It can be solved using the following concepts.
 
 In stations and airports you often see this type of screen:
 
-![](/src/assets/images/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bde46da2-a48c-4b4f-858d-af642e708b0f.avif)
 
 Have you ever asked yourself how it might be possible to simulate this display on a good old terminal? We have: with ASCII art!
 

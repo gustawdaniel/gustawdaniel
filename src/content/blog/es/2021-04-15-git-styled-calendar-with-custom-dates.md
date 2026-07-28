@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
-coverImage: /src/assets/images/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
 description: calendario estilo git creado a partir de una lista de fechas guardadas como archivo csv
 excerpt: calendario estilo git creado a partir de una lista de fechas guardadas como archivo csv
 publishDate: 2021-04-20 19:28:40+00:00
@@ -16,7 +16,7 @@ Supongamos que tienes un conjunto de fechas. Quieres mostrar estas fechas de una
 
 Por ejemplo, así:
 
-![](/src/assets/images/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
 
 Así que tengo una gran información. Es una línea de código, tal vez dos...
 
@@ -81,4 +81,4 @@ Espero que te guste este artículo. Para mí, es un gran ejemplo de cuán poca c
 
 Captura de pantalla de mi consola
 
-![](/src/assets/images/24696782-aeaa-4c8d-985c-9fc092980381.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/24696782-aeaa-4c8d-985c-9fc092980381.avif)

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: machine-learning-of-xor-from-scratch
-coverImage: /src/assets/images/19bf54c3-7109-4836-9dce-dbbfca11d7ed.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/19bf54c3-7109-4836-9dce-dbbfca11d7ed.avif
 description: Introducción al aprendizaje automático mediante el ejemplo del problema XOR. En este artículo mostramos cómo crear un modelo desde cero, utilizando Python y NumPy.
 excerpt: Introducción al aprendizaje automático mediante el ejemplo del problema XOR. En este artículo mostramos cómo crear un modelo desde cero, utilizando Python y NumPy.
 publishDate: 2025-05-19 00:00:00+00:00
@@ -33,11 +33,11 @@ Se puede mostrar en una tabla lógica:
 
 o en un gráfico:
 
-![](/src/assets/images/572a9d0c-4d85-4891-8d2a-c12c5467c0ba.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/572a9d0c-4d85-4891-8d2a-c12c5467c0ba.svg)
 
 Con esta segunda representación, se puede ver que se puede construir XOR con 2 clasificadores lineales.
 
-![](/src/assets/images/0037d1c8-79ad-412b-a557-d8992dd2f656.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0037d1c8-79ad-412b-a557-d8992dd2f656.svg)
 
 Un clasificador así se puede interpretar como una transformación que toma el espacio de argumentos (en nuestro caso el cuadrado `[0,1] x [0,1]`), luego lo transforma afínmente (gira, escala, desplaza, refleja, corta) y al final crea una línea límite entre las clases `{0, 1}`. Eso significa que para la compuerta `XOR` se necesitan 2 de tales clasificadores, porque en el gráfico tenemos 2 líneas límite negras.
 
@@ -111,7 +111,7 @@ $$
 
 Es la distribución de Bernoulli: una función con forma de campana con un pico en la línea $y = \hat{y}$.
 
-![](/src/assets/images/80858d14-9c6b-4a86-865e-b8f0f414ab72.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80858d14-9c6b-4a86-865e-b8f0f414ab72.svg)
 
 Podemos llamarlo medida de concordancia, porque alcanza su valor máximo cuando nuestro modelo predice valores $\hat{y}$ lo más cercanos posible a $y$.
 
@@ -182,7 +182,7 @@ expected_output = np.array([[0], [1], [1], [0]])
 
 Hemos establecido que el modelo requerirá dos neuronas en la capa oculta (dos líneas negras en el segundo gráfico) y una al final, para dar un resultado.
 
-![](/src/assets/images/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d9ea38bb-f8fd-4f9e-99fc-f3ff1941228e.svg)
 
 Por lo tanto, tenemos los siguientes parámetros:
 
@@ -360,11 +360,11 @@ Por lo tanto, podemos concluir que la evolución de los pesos para desviaciones 
 
 Podemos observar esto en el gráfico, donde los pesos iniciales concentrados alrededor de cero prácticamente no cambian durante los primeros 2000 ciclos de aprendizaje. Solo entonces ocurre una rápida evolución de los pesos y tras otros 2000 ciclos se estabilizan en una convergencia estable hacia el óptimo.
 
-![](/src/assets/images/c502d3f7-0134-4208-91b9-4e30ad8fa349.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c502d3f7-0134-4208-91b9-4e30ad8fa349.svg)
 
 Por otro lado, pesos iniciales demasiado altos conducen a que la variabilidad inicial de los pesos sea alta, pero a menudo puede dirigirse en una dirección incorrecta. Lo vemos en el gráfico, donde los pesos no convergen a valores óptimos de manera uniforme (particularmente al principio).
 
-![](/src/assets/images/aaee8705-9eba-4196-9455-16b8f11f34cc.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/aaee8705-9eba-4196-9455-16b8f11f34cc.svg)
 
 Entonces, midamos cuán exactamente la velocidad de aprendizaje depende de la desviación estándar inicial de los pesos.
 
@@ -487,7 +487,7 @@ print(f"Time: {end - start:.2f} sec")
 
 hay diferentes estrategias de paralelización, pero al extender los cambios de hilos en secuencias de múltiples simulaciones de red, podemos lograr un mejor rendimiento que si procesáramos cada simulación en un hilo separado. Esto se debe a que crear y finalizar un hilo, al igual que las conexiones a la base de datos, lleva tiempo.
 
-![](/src/assets/images/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd2bebbf-6cbe-41a2-a54b-9e01565a34e0.svg)
 
 Vemos que la desviación de los valores de mediciones es lo suficientemente grande como para requerir un aumento en la cantidad de mediciones. En los pasos siguientes, podemos aplicar las mediciones proporcionalmente al error relativo de medición. Para hacer esto, podemos obtener datos de nuestra colección.
 
@@ -521,7 +521,7 @@ errors = summary["std"].to_numpy() / np.sqrt(count)
 
 Después de realizar 4 millones de simulaciones, el efecto se ve así:
 
-![](/src/assets/images/4ff08abf-2e9d-4b77-a49d-ebe9144b2018.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4ff08abf-2e9d-4b77-a49d-ebe9144b2018.svg)
 
 La línea negra es `1/sqrt(2)`, es decir, la predicción resultante del modelo de Xavier (Glorota). La verde es el mínimo.
 

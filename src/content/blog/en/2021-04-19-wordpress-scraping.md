@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: wordpress-scraping
-coverImage: /src/assets/images/8a96e11b-a834-413b-a886-3b5eb059ba3e.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8a96e11b-a834-413b-a886-3b5eb059ba3e.avif
 description: It is not often that the execution of a service takes longer than its pricing, but with scraping, this can happen. See how easy it can be to retrieve data, especially from WordPress.
 excerpt: It is not often that the execution of a service takes longer than its pricing, but with scraping, this can happen. See how easy it can be to retrieve data, especially from WordPress.
 publishDate: 2021-04-19 12:14:43+00:00
@@ -23,7 +23,7 @@ The inquiry was about the database of court judgments from the site
 
 [https://nawigator.bankowebezprawie.pl/pozwy-indywidualne/](https://nawigator.bankowebezprawie.pl/pozwy-indywidualne/)
 
-![](/src/assets/images/7a238f0e-5274-43d1-abb9-24f9cbf45bad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7a238f0e-5274-43d1-abb9-24f9cbf45bad.avif)
 
 Thanks to the Wappalyzer plugin, we can read that it is WordPress - an ancient technology that is usually friendly to scraping, as its choice indicates a lack of funds for any anti-scraping actions.
 
@@ -33,17 +33,17 @@ The table reloads in real-time. Pagination does not change the URLs. This is a t
 
 On the page of this plugin, we will find the same table, just with slightly modified styles:
 
-![](/src/assets/images/8c945eb6-3854-4054-a3b2-b3282411e363.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8c945eb6-3854-4054-a3b2-b3282411e363.avif)
 
 These are sufficient clues to suggest that the data for the table is loaded from a single endpoint. A quick analysis of network traffic does not show anything interesting, but showing the page source does:
 
-![](/src/assets/images/43d4180b-e8ae-4b4d-b8a6-1b5962d3e929.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43d4180b-e8ae-4b4d-b8a6-1b5962d3e929.avif)
 
 The rest of the service was just about selecting those few thousand lines of text and saving them in a `json` file. Potentially for the convenience of the end user, conversion to `csv` or `xlsx`, for example on the page
 
 [JSON to CSV - CSVJSON](https://csvjson.com/json2csv)
 
-![](/src/assets/images/2ae82148-8458-4caa-bb30-2376d9db19d8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2ae82148-8458-4caa-bb30-2376d9db19d8.avif)
 
 Links to downloaded data:
 
@@ -61,4 +61,4 @@ If you want to benefit from their work, I encourage you to support them on their
 
 [https://www.bankowebezprawie.pl/darowizna/](https://www.bankowebezprawie.pl/darowizna/)
 
-![](/src/assets/images/81b9771e-640d-4a50-997c-1018220a7158.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/81b9771e-640d-4a50-997c-1018220a7158.avif)

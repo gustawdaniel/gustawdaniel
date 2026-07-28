@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-data-in-perl-language
-coverImage: /src/assets/images/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 description: The article presents a simple scraper written in Perl 5. Despite handling three data records, its code is remarkably short.
 excerpt: The article presents a simple scraper written in Perl 5. Despite handling three data records, its code is remarkably short.
 publishDate: 2021-05-11 20:37:00+00:00

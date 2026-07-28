@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: tutorial-for-esm-commonjs-package-creators
-coverImage: /src/assets/images/1f726cb6-0ad6-4680-8f5f-dc939d66358c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/1f726cb6-0ad6-4680-8f5f-dc939d66358c.avif
 description: W społeczności JS trwa intensywna debata na temat porzucenia CommonJS lub korzystania z podwójnych pakietów. Zgromadziłem kluczowe linki i napisałem poradnik dotyczący publikacji podwójnych pakietów.
 excerpt: W społeczności JS trwa intensywna debata na temat porzucenia CommonJS lub korzystania z podwójnych pakietów. Zgromadziłem kluczowe linki i napisałem poradnik dotyczący publikacji podwójnych pakietów.
 publishDate: 2023-03-26 01:12:20+00:00
@@ -56,7 +56,7 @@ Nie mogę znaleźć oficjalnych źródeł, ale używając GPT-4 możemy oszacowa
 
 Więc ponieważ jesteśmy w "okresie przejściowym", uważam, że lepiej jest wziąć odpowiedzialność i zapewnić podwójną wersję dla istniejących pakietów.
 
-![](/src/assets/images/180dbb8c-8a50-41be-bbf8-97d85f598abd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/180dbb8c-8a50-41be-bbf8-97d85f598abd.avif)
 
 Jeśli tworzysz nowy pakiet, myślę, że możesz wybrać `ESM` i nie martwić się o `CommonJS`, ale jeśli twoje pakiety były publikowane wcześniej, ten poradnik jest dla ciebie.
 
@@ -70,7 +70,7 @@ Upraszczając, jeśli użytkownik napisze `const pkgInstance = require('pkg')`, 
 
 Przygotowałem diagram, który pomoże ci zdecydować, które podejście najlepiej do ciebie pasuje:
 
-![](/src/assets/images/e0bcb50f-53f2-4165-9c31-77c0e7e32b38.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0bcb50f-53f2-4165-9c31-77c0e7e32b38.avif)
 
 Jeśli musisz stworzyć `ES wrapper`, to odwołaj się bezpośrednio do dokumentacji. W dalszej części założę, że masz bezstanowy pakiet i zastosujesz podejście `Izolowanie stanu`.
 
@@ -259,11 +259,11 @@ Załóżmy teraz, że musimy użyć pakietu `humanize-string`. Wybrałem ten, po
 
 Jeśli dodamy ten pakiet w wersji `2.1.0` do naszego projektu, to `cjs` może być zbudowany poprawnie, ale dla `esm` występuje błąd:
 
-![](/src/assets/images/f426f8ba-43ed-44af-ab1e-b5af1e0596f3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f426f8ba-43ed-44af-ab1e-b5af1e0596f3.avif)
 
 pakiet `xregexp`, który jest zależnością `decamelize`, miał domyślne eksporty w wersji 4, więc niemożliwe było łatwe przekształcenie go na `esm`
 
-![](/src/assets/images/908ea621-1aa8-4a48-a892-f58288b5151f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/908ea621-1aa8-4a48-a892-f58288b5151f.avif)
 
 możemy przeczytać o tym problemie tutaj:
 
@@ -271,7 +271,7 @@ możemy przeczytać o tym problemie tutaj:
 
 Z drugiej strony, gdy zainstalujemy `humanize-string` w wersji `3.0.0`, wtedy budowanie działa, ale testy są zepsute:
 
-![](/src/assets/images/56ccdabe-48d6-4ae1-8b78-a7831f34ea96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/56ccdabe-48d6-4ae1-8b78-a7831f34ea96.avif)
 
 na szczęście w tym przypadku znalazłem rozwiązanie nadpisując wersję `decamelize`:
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: git-styled-calendar-with-custom-dates
-coverImage: /src/assets/images/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f33d20f-8d16-4a99-82b4-180bd4877124.avif
 description: kalendarz w stylu git utworzony z listy dat zapisanych w pliku csv
 excerpt: kalendarz w stylu git utworzony z listy dat zapisanych w pliku csv
 publishDate: 2021-04-20 19:28:40+00:00
@@ -16,7 +16,7 @@ Załóżmy, że masz zbiór dat. Chcesz wyświetlić te daty w czytelny sposób.
 
 Na przykład tak:
 
-![](/src/assets/images/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/121db3d7-7ea4-4dd3-a4bc-9f7195206354.avif)
 
 Mam więc świetne informacje. To jedna linia kodu, może dwie...
 
@@ -81,4 +81,4 @@ Mam nadzieję, że podoba Ci się ten artykuł. Dla mnie to doskonały przykład
 
 Zrzut ekranu z mojej konsoli
 
-![](/src/assets/images/24696782-aeaa-4c8d-985c-9fc092980381.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/24696782-aeaa-4c8d-985c-9fc092980381.avif)

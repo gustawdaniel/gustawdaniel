@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: tutorial-for-esm-commonjs-package-creators
-coverImage: /src/assets/images/1f726cb6-0ad6-4680-8f5f-dc939d66358c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/1f726cb6-0ad6-4680-8f5f-dc939d66358c.avif
 description: There is intense debate in the JS community on dropping CommonJS or using dual packages. I've curated key links and written a tutorial for dual package publishing.
 excerpt: There is intense debate in the JS community on dropping CommonJS or using dual packages. I've curated key links and written a tutorial for dual package publishing.
 publishDate: 2023-03-26 01:12:20+00:00
@@ -56,7 +56,7 @@ I can't find official sources but using GPT-4 we can estimate that in april 2023
 
 So because we are in "transition period" I think it is better to take responsibility and provide dual version for existing packages.
 
-![](/src/assets/images/180dbb8c-8a50-41be-bbf8-97d85f598abd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/180dbb8c-8a50-41be-bbf8-97d85f598abd.avif)
 
 If you creating new package I think you can select `ESM` and do not worry about `CommonJS` but if your packages was published earlier, this tutorial is for you.
 
@@ -70,7 +70,7 @@ Simplifying if user will write `const pkgInstance = require('pkg')` and in other
 
 I prepared diagram that help you do decide which approach best fit to you:
 
-![](/src/assets/images/e0bcb50f-53f2-4165-9c31-77c0e7e32b38.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0bcb50f-53f2-4165-9c31-77c0e7e32b38.avif)
 
 If you need to create `ES wrapper` then refer directly to docs. In further chapter I will assume that you have stateless package and will apply `Isolate state` approach.
 
@@ -259,11 +259,11 @@ Let's assume now that we need to use package `humanize-string`. I selected this 
 
 If we will add this package in version `2.1.0` to our project then `cjs` can be builded properly but for `esm` there is error:
 
-![](/src/assets/images/f426f8ba-43ed-44af-ab1e-b5af1e0596f3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f426f8ba-43ed-44af-ab1e-b5af1e0596f3.avif)
 
 package `xregexp` that is dependency of `decamelize` had default export in version 4 so it was impossible to easy convert it to `esm`
 
-![](/src/assets/images/908ea621-1aa8-4a48-a892-f58288b5151f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/908ea621-1aa8-4a48-a892-f58288b5151f.avif)
 
 we can read about this problem here:
 
@@ -271,7 +271,7 @@ we can read about this problem here:
 
 On the other hand when we will install `humanize-string` in `3.0.0` then building works but tests are broken:
 
-![](/src/assets/images/56ccdabe-48d6-4ae1-8b78-a7831f34ea96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/56ccdabe-48d6-4ae1-8b78-a7831f34ea96.avif)
 
 fortunately in this case i found solution overriding `decamelize` version:
 

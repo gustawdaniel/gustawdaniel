@@ -11,7 +11,7 @@ Skrót CI/CD - ciągła integracja i ciągłe dostarczanie oznaczają, że zamia
 
 W artykule opiszę korzyści z implementacji tego podejścia oraz konfigurację, której używam w swojej organizacji. Mam nadzieję, że będzie mogła ona posłużyć komuś jako wzór. Być może dzięki waszym komentarzom będę w stanie ją ulepszyć.
 
-![](/src/assets/images/68814d2a-60aa-4e46-8fce-4fa55fdac395.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/68814d2a-60aa-4e46-8fce-4fa55fdac395.avif)
 
 ## Wartość biznesowa CI/CD
 
@@ -121,7 +121,7 @@ Klucz publiczny wgrywamy na serwer dołączając jego zawartość do `~/.ssh/aut
 
 Klucz prywatny musimy umieścić w zmiennych środowiskowych gitlaba. Nie możemy tego zrobić bezpośrednio, ponieważ wielo-liniowe zmienne nie mogą być maskowane.
 
-![](/src/assets/images/d9cd5743-abe7-44c9-97b5-335a5b6176c0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d9cd5743-abe7-44c9-97b5-335a5b6176c0.avif)
 
 Dzięki poleceniu
 
@@ -149,21 +149,21 @@ Drugim kluczem jest `DOCKER_TOKEN`. Metoda jego uzyskania zależy od repozytoriu
 
 Dla Digital Ocean po wybraniu "Container Registry" wybieramy "Actions" i pobieramy token o uprawnieniach "Read and Write".
 
-![](/src/assets/images/184c43df-c784-4598-a349-cecb8f8cf622.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/184c43df-c784-4598-a349-cecb8f8cf622.avif)
 
 ### Dodanie zmiennych do Gitlaba
 
 W gitlabie wybieramy grupę lub projekt dla których chcemy ustawić zmienne, przechodzimy do "Settings", "CI/CD", rozwijamy "Variables"
 
-![](/src/assets/images/9b2de431-c018-42cf-8078-e8d97e9b4186.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9b2de431-c018-42cf-8078-e8d97e9b4186.avif)
 
 Zakodowany klucz widoczny dzięki poleceniu `cat ~/.ssh/ci | base64 -w0` nazwiemy `SSH_PRIVATE_KEY_BASE64`. Ważne, żebyśmy dodając tą zmienną ustawili protected i mask.
 
-![](/src/assets/images/b18aebd3-23e9-4caf-96ae-40cf9784dd2a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b18aebd3-23e9-4caf-96ae-40cf9784dd2a.avif)
 
 Poprawnie ustawiając te zmienne zobaczymy tabelę:
 
-![](/src/assets/images/453f79d5-7412-46e1-9851-c90483eecc83.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/453f79d5-7412-46e1-9851-c90483eecc83.avif)
 
 Niektóre repozytoria dockera mogą rozróżniać `DOCKER_USER` i `DOCKER_PASSWORD`. Wykorzystanie `DOCKER_TOKEN` jest typowe dla konwencji z Digital Ocean.
 
@@ -171,7 +171,7 @@ Niektóre repozytoria dockera mogą rozróżniać `DOCKER_USER` i `DOCKER_PASSWO
 
 W gitlabie mamy możliwość oznaczenia zmiennych jako "protected" lub "masked". Opcja "protected" pozwala na udostępnienie zmiennych jedynie w gałęziach lub tagach, które też oznaczone są jako protected. Pozwala to na przypisanie im uprawnień, określenie, kto może dołączać kod do tych gałęzi, czy wymaga on akceptacji przez właściciela kodu.
 
-![](/src/assets/images/5ba85090-a33d-4c81-8dd0-ed0e5d9e4639.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ba85090-a33d-4c81-8dd0-ed0e5d9e4639.avif)
 
 Więcej na temat chronionych gałęzi możecie przeczytaj tutaj:
 

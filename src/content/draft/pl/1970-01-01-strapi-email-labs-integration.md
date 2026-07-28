@@ -9,11 +9,11 @@ canonicalName: strapi-email-labs-integration
 
 [Strapi](https://strapi.io/) to wgodny CMS pozwalający wyklikać model danych i wygenerować na jego podstawie rest api oraz graphql.
 
-![](/src/assets/images/bd346aa0-be28-426a-aa3e-04a4e91914f0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bd346aa0-be28-426a-aa3e-04a4e91914f0.avif)
 
 [Emaillabs](https://emaillabs.io/) to polski serwis obsługujący wysyłkę e-maili.
 
-![](/src/assets/images/e75a7406-4771-4950-b527-bdc298ce6e68.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e75a7406-4771-4950-b527-bdc298ce6e68.avif)
 
 ## Wprowadzenie do strapi
 
@@ -77,7 +77,7 @@ module.exports = ({ env }) => ({
 
 Częstym błędem jest podanie tej samej domeny adresu nadawcy i odbiorcy. Nie można tak robić, bo wysyłka między tymi samymi domenami przez zewnętrznego dostawcę jakim jest Emaillabs może zostać zablokowana. Za adres testowy należy wybrać adres z innej domeny.
 
-![](/src/assets/images/926a4a8c-51f8-4280-8efe-21190294bab7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/926a4a8c-51f8-4280-8efe-21190294bab7.avif)
 
 Sam kod naszego providera umieszczamy w pliku `providers/strapi-provider-email-emaillabs/index.js`
 
@@ -171,15 +171,15 @@ Pełen interfejs pokazanej tu metody znajdziemy w dokumentacji strapi:
 
 Do `.env` dodajemy smtp i klucze api, `EMAILLABS_SMTP` znajdziemy na głównej stronie
 
-![](/src/assets/images/799dbb6f-19df-41a6-a04b-d8b80b43dae2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/799dbb6f-19df-41a6-a04b-d8b80b43dae2.avif)
 
 klucze api w zakładce "Administrator -> Api"
 
-![](/src/assets/images/6b273a58-4de6-44ae-973f-57fc51c8875f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6b273a58-4de6-44ae-973f-57fc51c8875f.avif)
 
 Należy też pamiętać o autoryzacji nadawcy, żeby nasze e-maile dochodziły. Będzie to wymagało dodania odpowiednich rekordów w DNS, ale wykracza to poza zakres tego wpisu.
 
-![](/src/assets/images/fa5b0eae-a93a-4b35-ba1d-cfc343859b0a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa5b0eae-a93a-4b35-ba1d-cfc343859b0a.avif)
 
 Ponownie wysyłając zapytanie o konfigurację e-maila, które wysłaliśmy na początku
 
@@ -203,6 +203,6 @@ powinniśmy zobaczyć
 
 Przetestujmy to i przejdziemy do tematu załączników.
 
-![](/src/assets/images/c0a1f344-ad80-4f11-b853-5644983f0304.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c0a1f344-ad80-4f11-b853-5644983f0304.avif)
 
-![](/src/assets/images/9f743993-73c0-4099-824b-3d2b54c54007.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9f743993-73c0-4099-824b-3d2b54c54007.avif)

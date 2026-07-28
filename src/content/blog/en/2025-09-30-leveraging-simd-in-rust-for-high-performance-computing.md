@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: leveraging-simd-in-rust-for-high-performance-computing
-coverImage: /src/assets/images/5f4ca3b8-65e2-4f59-be70-1d1cdf4cb492.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5f4ca3b8-65e2-4f59-be70-1d1cdf4cb492.avif
 description: Learn how to use SIMD in Rust to accelerate computations using both safe abstractions and low-level intrinsics for high-performance applications.
 excerpt: Learn how to use SIMD in Rust for high-performance computing with safe abstractions and low-level intrinsics.
 publishDate: 2025-09-30 00:00:00+00:00
@@ -379,7 +379,7 @@ cargo bench
 
 we will see
 
-![](/src/assets/images/50875cee-df58-40c5-b40e-0c491a0d4a24.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/50875cee-df58-40c5-b40e-0c491a0d4a24.avif)
 
 When I saw this result for the first time, I was highly disappointed.
 
@@ -685,7 +685,7 @@ plt.show()
 
 to see graph
 
-![](/src/assets/images/c88624a3-d974-4843-b9fc-539bbb95b2b3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c88624a3-d974-4843-b9fc-539bbb95b2b3.avif)
 
 On `x` axis we have `complexity` parameter, on left `y` axis time in `ms`, and on right `y` axis ratio of times for SIMD to Fallback.
 
@@ -706,7 +706,7 @@ $a_f$ and $a_s$ are coefficients describing cpu performance (lower is better), a
 
 Then our theoretical ratio would look like:
 
-![](/src/assets/images/598fac41-84b6-44b1-b17a-aaf6fdd65fdd.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/598fac41-84b6-44b1-b17a-aaf6fdd65fdd.svg)
 
 In `SIMD` we process 8 lines so naive intuition can suggest that $a_f / a_s = 8$, but in reality, it is not true due to SIMD overhead
 

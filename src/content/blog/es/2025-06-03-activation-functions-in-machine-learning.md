@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: activation-functions-in-machine-learning
-coverImage: /src/assets/images/43dafac9-01f5-4ff2-a101-20d0a8670bd5.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/43dafac9-01f5-4ff2-a101-20d0a8670bd5.avif
 description: Estudiamos varias funciones de activación, sus características y su impacto en el rendimiento de los modelos de aprendizaje automático.
 excerpt: Estudiamos varias funciones de activación, sus características y su impacto en el rendimiento de los modelos de aprendizaje automático.
 publishDate: 2025-06-04 00:00:00+00:00
@@ -221,7 +221,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](/src/assets/images/bdb93744-8788-47e9-849a-60f7cf9c5876.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bdb93744-8788-47e9-849a-60f7cf9c5876.svg)
 
 ## Comparemos funciones de activación
 
@@ -291,7 +291,7 @@ plt.savefig("activations_grid.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](/src/assets/images/7f95f3cb-21a2-4e5e-ac6f-b49f8244c37c.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7f95f3cb-21a2-4e5e-ac6f-b49f8244c37c.svg)
 
 ## Un solo entrenamiento no es suficiente
 
@@ -338,15 +338,15 @@ plt.show()
 
 Aunque podemos ver una gran ventaja de `LeakyReLU` en la primera ejecución:
 
-![](/src/assets/images/2324479e-dfae-4119-81aa-cd3cc953c06e.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2324479e-dfae-4119-81aa-cd3cc953c06e.svg)
 
 Al llamar al mismo código por segunda vez, podemos ver que los resultados son diferentes:
 
-![](/src/assets/images/34e55503-493b-42c6-8169-8014dd862d96.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/34e55503-493b-42c6-8169-8014dd862d96.svg)
 
 Especialmente que el rendimiento de `GELU` es mucho mejor. Esto significa que para realmente comparar estas funciones necesitamos ejecutar estas simulaciones muchas veces, pero antes de eso, me gustaría mostrarles qué puede suceder cuando entrenamos un poco más de tiempo.
 
-![](/src/assets/images/e598dd94-5c94-4f90-8fe8-771e44eb7d0d.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e598dd94-5c94-4f90-8fe8-771e44eb7d0d.svg)
 
 Ahí puedes ver que inicialmente el más lento `Tanh` fue más estable en una ejecución a largo plazo, pero `LeakyReLU` falló completamente. Presento estos gráficos, pero debes ser consciente de que estos son solo resultados de un solo aprendizaje y para construir conclusiones valiosas tenemos que ejecutarlos muchas veces.
 
@@ -499,7 +499,7 @@ plt.savefig("activation_1000_calls.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](/src/assets/images/e7cc2e75-6190-4f9c-812c-0453ab06c249.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e7cc2e75-6190-4f9c-812c-0453ab06c249.svg)
 
 Podemos verificar la pérdida para la última época para cada función de activación:
 
@@ -609,7 +609,7 @@ plt.savefig("activation_1000_calls_sec.svg", format="svg", dpi=300)
 plt.show()
 ```
 
-![](/src/assets/images/2eec12f2-c40d-4f8b-a0f7-dffcb575454e.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2eec12f2-c40d-4f8b-a0f7-dffcb575454e.svg)
 
 ## Conclusiones
 

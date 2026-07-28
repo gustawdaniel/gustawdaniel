@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-component-in-nuxt-rest-strapi
-coverImage: /src/assets/images/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
 description: Simple example of login page in nuxt3 written as base to copy and paste in many similar projects.
 excerpt: Simple example of login page in nuxt3 written as base to copy and paste in many similar projects.
 publishDate: 2022-11-29 19:22:30+00:00
@@ -16,7 +16,7 @@ updateDate: 2022-11-29 19:22:30+00:00
 
 How many times in your live did you implemented login view? I did it too much times. Finally to no search code to copy in my projects I decided to paste here easy instruction how to build simple login component in nuxt.
 
-![](/src/assets/images/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
 
 This setup using strapi as backend, but I will works with any rest API after body and url modifications. In next part we will create nuxt3 project, build login page and pass info about user by cookie to profile component.
 
@@ -148,7 +148,7 @@ In template we adding super minimalistic frontend with login form and `pre` tags
 </template>
 ```
 
-![](/src/assets/images/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
 
 ### Passing user token between components
 
@@ -190,7 +190,7 @@ function login() {
 
 this change allow to execute login many times with she same payload.
 
-![](/src/assets/images/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
 
 It is especially important to avoid bugs, because we now added also `logout` function
 
@@ -270,4 +270,4 @@ That's it. We built super simple front with login and profile pages. There is no
 I skipped part with strapi setup. But thanks to these simplifications it is useful as base to speedup setting up new 
 nuxt3 projects. I hope it will be useful for you and help to avoid situations like on image below:
 
-![](/src/assets/images/dc2ca83a-d254-4988-af9e-451a4487403f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc2ca83a-d254-4988-af9e-451a4487403f.avif)

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zipfs-law-in-nodejs
-coverImage: /src/assets/images/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
 description: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.
 excerpt: Naucz się jak odczytywać duże pliki w Node.js, zliczać wystąpienia słów używając obiektu Map oraz radzić sobie z limitami pamięci.
 publishDate: 2022-06-11T22:50:51.000Z
@@ -15,7 +15,7 @@ Prawo Zipfa mówi, że jeśli posortuje się słowa w danym języku względem cz
 
 Innymi słowy występuje liniowa zależność o ujemnym współczynniku między logartymami częstotliwości i rangi, co widać na wykresie w skali logarytmiczno-logarytmicznej.
 
-![](/src/assets/images/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
 
 lub dzięki prostemu przekształceniu:
 
@@ -202,7 +202,7 @@ Alternatywą dla tego podejścia jest `console.time`.
 
 Po uruchomieniu początkowo wszystko szło dobrze, aż do fatalnego błędu `heap out of memory`.
 
-![](/src/assets/images/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
 
 Co istotne, komputer nie zawiesił się i miał zapas wolnej pamięci. Stało się tak dlatego, że domyślny limit ustawiony na 2GB został przekroczony. Możemy sprawdzić ten limit poleceniem:
 
@@ -281,11 +281,11 @@ gnuplot -e "set ylabel 'Count'; set xlabel 'Rank'; set logscale xy; plot 'log.tx
 
 Flaga `-e` pozwala podać komendę a `-p` nie wyłącza wykresu po jego narysowaniu.
 
-![](/src/assets/images/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
 
 Widzimy, że wykres pokrywa się z tym, który widzieliśmy na Wikipedii.
 
-![](/src/assets/images/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
 
 ## Interpretacja wyników
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-create-a-free-email-account-with-custom-domain
-coverImage: /src/assets/images/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5152692c-b9ae-4f97-9f52-4d36fabe8670.avif
 description: En este artículo, aprenderás cómo crear un correo electrónico gratuito con un dominio personalizado. He mostrado cómo configurar Yandex con tu DNS.
 excerpt: En este artículo, aprenderás cómo crear un correo electrónico gratuito con un dominio personalizado. He mostrado cómo configurar Yandex con tu DNS.
 publishDate: 2021-06-15 07:24:41+00:00
@@ -20,7 +20,7 @@ Después de que tanto Google como Microsoft restringieron la creación de correo
 
 Primero, visita [https://mail.yandex.com/](https://mail.yandex.com/) y crea una nueva cuenta de Yandex que sirva como tu cuenta de administración a nivel organizacional.
 
-![](/src/assets/images/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea76807c-665f-4dcf-936d-dd79cf9c0c26.avif)
 
 Puedes elegir verificar tu cuenta con un número de teléfono o una pregunta de seguridad.
 
@@ -30,7 +30,7 @@ Inicia sesión en tu nueva cuenta en [https://mail.yandex.com/](https://mail.yan
 
 Elige la opción DNS y agrega un registro TXT en la configuración DNS de tu proveedor de dominio para verificar tu dominio.
 
-![](/src/assets/images/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecaba573-f41c-40a9-a41b-d5881287d213.avif)
 
 ## AdCreando Cuentas de Usuario y Prefijos de Correo Electrónico Personalizados
 
@@ -38,7 +38,7 @@ Para crear una nueva cuenta de correo electrónico, dirígete a [https://connect
 
 Luego haz clic en **Все сотрудники** (Todos los empleados) y agrega un nuevo usuario seleccionando "Agregar" y eligiendo "Agregar una persona". También puedes configurar listas de correo "Creando un departamento" y agregando personas a él.
 
-![](/src/assets/images/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f37e8ee3-9030-4be4-8de2-391e9f0c799b.avif)
 
 ¡Felicidades! ¡Acabas de configurar un correo electrónico personalizado de forma gratuita!
 

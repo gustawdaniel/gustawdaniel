@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-component-in-nuxt-rest-strapi
-coverImage: /src/assets/images/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
 description: Ejemplo simple de página de inicio de sesión en nuxt3 escrita como base para copiar y pegar en muchos proyectos similares.
 excerpt: Ejemplo simple de página de inicio de sesión en nuxt3 escrita como base para copiar y pegar en muchos proyectos similares.
 publishDate: 2022-11-29 19:22:30+00:00
@@ -16,7 +16,7 @@ updateDate: 2022-11-29 19:22:30+00:00
 
 ¿Cuántas veces en tu vida has implementado una vista de inicio de sesión? Yo lo he hecho demasiadas veces. Finalmente, para no buscar código para copiar en mis proyectos, decidí pegar aquí instrucciones simples sobre cómo construir un componente de inicio de sesión en nuxt.
 
-![](/src/assets/images/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
 
 Esta configuración utiliza strapi como backend, pero funcionará con cualquier API REST después de modificar el cuerpo y la URL. En la próxima parte crearemos un proyecto nuxt3, construiremos la página de inicio de sesión y pasaremos información sobre el usuario mediante una cookie al componente de perfil.
 
@@ -148,7 +148,7 @@ En la plantilla estamos añadiendo un frontend super minimalista con un formular
 </template>
 ```
 
-![](/src/assets/images/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
 
 ### Pasando el token de usuario entre componentes
 
@@ -190,7 +190,7 @@ function login() {
 
 este cambio permite ejecutar el inicio de sesión muchas veces con la misma carga útil.
 
-![](/src/assets/images/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
 
 Es especialmente importante para evitar errores, porque ahora también hemos añadido la función `logout`.
 
@@ -268,4 +268,4 @@ nuestro template simbólico puede tener forma
 
 Eso es todo. Construimos una interfaz super simple con páginas de inicio de sesión y perfil. No hay estilo, no hay registro e incluso omití la parte de configuración de Strapi. Pero gracias a estas simplificaciones, es útil como base para acelerar la configuración de nuevos proyectos de Nuxt3. Espero que te sea útil y ayude a evitar situaciones como la de la imagen a continuación:
 
-![](/src/assets/images/dc2ca83a-d254-4988-af9e-451a4487403f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc2ca83a-d254-4988-af9e-451a4487403f.avif)

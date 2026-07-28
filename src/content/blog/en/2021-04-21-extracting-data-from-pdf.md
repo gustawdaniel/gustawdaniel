@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: extracting-data-from-pdf
-coverImage: /src/assets/images/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a99f6a5c-e91a-44b1-a1c9-e52bdefa6c45.avif
 description: In this post, we will show how to conveniently extract data from PDF files by writing really minimal amounts of code.
 excerpt: In this post, we will show how to conveniently extract data from PDF files by writing really minimal amounts of code.
 publishDate: 2021-04-21 18:45:26+00:00
@@ -16,7 +16,7 @@ Data is everything that is or can be processed mentally or computer-wise. In com
 
 In this post, we will show how by writing really minimal amounts of code, you can conveniently extract data from PDF files. For example, we will use train tickets since they do not contain any confidential data, but it could just as well be invoices, contracts, or CV files.
 
-![](/src/assets/images/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/97f6f2a3-ee40-4587-9856-b4e0acae8f3d.avif)
 
 **Data Acquisition**
 
@@ -26,7 +26,7 @@ bilet pkp has:attachment -in:chats from:bilet.eic@intercity.pl to:me
 
 Here is the view I see after filtering:
 
-![](/src/assets/images/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/197afc96-cebe-47bb-9bc8-7728243c3c48.avif)
 
 Now it was enough to download the files to be able to process them.
 
@@ -36,7 +36,7 @@ I saved all the attachments on the hard drive in the ocr directory. As in every 
 
 We will start by determining the initial content of the directory. It is filled with PDF files.
 
-![](/src/assets/images/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cf76fa1a-ff0b-4b1c-be71-57d00a51eddb.avif)
 
 Thanks to the `pdftotext` tool from the `poppler-utils` package, we can extract information of interest from PDF files in the form of plain text. We can install this tool with the following command:
 
@@ -60,7 +60,7 @@ The command consists of two parts. In the first part, I list all files starting 
 
 We can easily check if they actually exist using the `ls` command.
 
-![](/src/assets/images/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e37bea4-5125-4ec4-99eb-f0216fcf4add.avif)
 
 **Data Structuring**
 
@@ -72,7 +72,7 @@ ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\
 
 This line returned `786.11`, which is the cost of all tickets.
 
-![](/src/assets/images/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e65863c8-b467-4dd1-ba24-5ff7657017c4.avif)
 
 Let's dive deeper now and see what's behind it. We will display one of the text files with the command `cat eic_67584344.txt`:
 
@@ -199,7 +199,7 @@ This command can be explained as follows:
 
 The problem we have is the Polish `,` instead of the globally used `.`. This problem can be easily eliminated by the `tr` command which replaces its first argument with the second.
 
-![](/src/assets/images/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d12a72a6-1834-461a-81e9-3b7b89753873.avif)
 
 Of course, we will not repeat these commands for each file individually. Instead, we will reuse the already known `xargs`.
 
@@ -223,7 +223,7 @@ Only summation is left, but summing columns from a text file is a piece of cake 
 
 Using `paste` with the `-s` option, we will transpose to one line. With the `d` option, we will set the separator. It will of course be the addition sign `+`. The result looks something like this:
 
-![](/src/assets/images/f286948c-7e71-4731-9b99-17f037f74813.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f286948c-7e71-4731-9b99-17f037f74813.avif)
 
 The final piece `bc` completes the task, but it was presented at the very beginning:
 
@@ -252,7 +252,7 @@ Another command, adds column numbers `cat -n` and draws a graph
 ls eic_*.txt | xargs -i cat "{}" | perl -ne 'if(/SUMA PLN: (.*) zł/){print "$1\n";}' | tr , . | cat -n | chart line
 ```
 
-![](/src/assets/images/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2b9c9215-df7b-4b23-a5d0-ef72ccf84fad.avif)
 
 In summary. We didn't work too hard here, but that was the goal. Showing how one line of code can summarize prices or draw a chart from data that seems unavailable because its format is not as obvious as in the case of organized data stored in a well-defined database structure.
 

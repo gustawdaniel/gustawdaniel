@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: benford-distribution-for-fibonacci-sequence-in-java-rust-node-js
-coverImage: /src/assets/images/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
 description: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią i jak ich wydajność zależy od długości ciągu.
 excerpt: Programy napisane w Java, Rust i Node JS ścigają się w sprawdzeniu rozkładu pierwszych cyfr ciągu Fibonacciego. Zobacz w czym są podobne, a w czym się różnią i jak ich wydajność zależy od długości ciągu.
 publishDate: 2021-07-21 15:57:21+00:00
@@ -16,7 +16,7 @@ updateDate: 2021-07-22 10:10:14+00:00
 
 Był rok 1992. W miasteczku Wayne (Arizona USA) zapadał wyrok na Jamesa Nelsona - głównego księgowego i zarządzającego Arizona State Treasurer. Jego fałszywe czeki, dzięki którym zdefraudował prawie 2 miliony dolarów zostały wykryte ponieważ rozkład częstości pierwszych cyfr w wyłudzonych kwotach odbiegał od rozkładu Benforta.
 
-![](/src/assets/images/c1a7958b-17cd-410d-b4cb-403bb76cac96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c1a7958b-17cd-410d-b4cb-403bb76cac96.avif)
 
 Na pierwszych pozycjach zmyślonych przez księgowego wartości zbyt często znajdowały się 7, 8 i 9 - typowe wartości postrzegane przez nas jako "bardziej" losowe niż 1, 2 lub 3.
 
@@ -37,11 +37,11 @@ Rozkład Benforda jest rozkładem prawdopodobieństwa występowania określonych
 * zbiór wartości powinien rozciągać się na wiele rzędów wielkości
 * prawdopodobieństwo powinno być niezmiennicze względem skali oraz bazy
 
-![](/src/assets/images/1d0416b4-db35-4e92-a7fc-3abceedd15ac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1d0416b4-db35-4e92-a7fc-3abceedd15ac.avif)
 
 Przykład rozkładu wielkości gdzie pierwsza cyfra spełnia w przybliżeniu prawo Benforda. Wykładniczy spadek rozkładu widzimy po zagęszczaniu się osi wartości.
 
-![](/src/assets/images/8dbf58e1-31d9-45e6-b6a7-2178aa19a87e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8dbf58e1-31d9-45e6-b6a7-2178aa19a87e.avif)
 
 Rozkład wielkości obejmujący jedne rząd wielkości. Zwykle pierwsze cyfry nie spełniają rozkładu Benforda, jeśli początkowy rozkład nie jest wystarczająco szeroki.
 
@@ -59,7 +59,7 @@ Ponieważ w tym artykule rozkład Benforda jest jedynie pretekstem do porównani
 
 Wzór na prawdopodobieństwo wystąpienia cyfry `d` na pierwszej pozycji to:
 
-![](/src/assets/images/87e83494-bb63-4c20-a359-5392bda46134.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/87e83494-bb63-4c20-a359-5392bda46134.avif)
 
 Przykłady, które pokażę pochodzą z serwisu `[deltami.edu.pl](http://www.deltami.edu.pl/temat/matematyka/zastosowania/2016/03/21/Fenomen_rozkladu_Benforda/)`
 
@@ -67,25 +67,25 @@ Przykłady, które pokażę pochodzą z serwisu `[deltami.edu.pl](http://www.del
 
 Ze zbioru liczb naturalnych z zakresu od 1 do 9999 losujemy liczbę p, wykorzystując generator liczb losowych o rozkładzie równomiernym. Następnie z zakresu liczb naturalnych od 1 do p losujemy, również wykorzystując rozkład równomierny, liczbę r.
 
-![](/src/assets/images/98c32399-f9e6-47ea-b571-c47e956c0ae0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/98c32399-f9e6-47ea-b571-c47e956c0ae0.avif)
 
 * Masa atomowa pierwiastków z układu okresowego
 
 Zobaczmy na układ okresowy pierwiastków chemicznych, a dokładniej, jeden z parametrów każdego pierwiastka - masą atomową.
 
-![](/src/assets/images/5ee78f6d-c0ce-42d9-ace8-da38dd6087fb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ee78f6d-c0ce-42d9-ace8-da38dd6087fb.avif)
 
 * Powierzchnia państw świata w km²
 
 Ostatni przykład jest powiązany z geografią - przyjrzyjmy się powierzchni wszystkich państw świata w km2.
 
-![](/src/assets/images/72722365-4efd-4357-b0d2-40420d2480cb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/72722365-4efd-4357-b0d2-40420d2480cb.avif)
 
 * Prawo Benforda
 
 Dyskretny rozkład Benforda dla układu dziesiętnego zwany również prawem pierwszych (znaczących) cyfr.
 
-![](/src/assets/images/65baa70d-2665-4c67-bd0f-9cf9f36198a9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/65baa70d-2665-4c67-bd0f-9cf9f36198a9.avif)
 
 Jak widzimy, wszystkie te zbiory liczb mają tą samą własność - niezmienniczość względem skali, bazy i rozciągnięcie na kilka rzędów wielkości.
 
@@ -93,11 +93,11 @@ Jak widzimy, wszystkie te zbiory liczb mają tą samą własność - niezmiennic
 
 Ciąg Fibonacciego jest ciągiem liczb naturalnych o rekurencyjnej definicji:
 
-![](/src/assets/images/4d2011f5-ed80-4f02-a5b2-fe27c37e26cf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d2011f5-ed80-4f02-a5b2-fe27c37e26cf.avif)
 
 gdzie
 
-![](/src/assets/images/cd6431d2-5e38-4471-b87d-ad3102177679.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cd6431d2-5e38-4471-b87d-ad3102177679.avif)
 
 Jego własności opisane są w Math World.
 
@@ -111,7 +111,7 @@ Jego początkowe wartości to:
 
 Jest to ciąg, którego występowanie możemy często obserwować w przyrodzie: w wirach wodnych, w kształcie tornad, w układzie kwiatów, rozgałęzieniach roślin, podziale ciała owadów. Jego powszechność zachwyca badaczy tego zjawiska. Podobnie jak powszechność funkcji wykładniczej czy kwadratowej wynika ona z prostoty wzoru i bycia dobrym przybliżeniem dla znacznie bardziej złożonych układów obserwowanych w rzeczywistości.
 
-![](/src/assets/images/f51dc67a-f506-447c-b141-cc74bd7c3f4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f51dc67a-f506-447c-b141-cc74bd7c3f4c.avif)
 
 Stosunki kolejnych wartości ciągu dążą do złotej proporcji. Dowód wynika wprost z definicji.
 
@@ -123,7 +123,7 @@ Podobnie jak liczby pierwsze, tak i ciąg Fibonacciego powinien spełniać rozk�
 
 ## Java
 
-![](/src/assets/images/de07baa3-4ca2-4e9d-87fa-394f7e757a5c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/de07baa3-4ca2-4e9d-87fa-394f7e757a5c.avif)
 
 Aby zrobić to w Javie wymagany jest import modułu `java.math.BigInteger`.
 
@@ -184,7 +184,7 @@ Na końcu wyświetlamy tablicę porównującą wyniki z przewidywaniami teoretyc
 
 Kod wykonujemy wpisując `java Benford.java` i dostajemy wynik potwierdzający naszą teorię:
 
-![](/src/assets/images/d408d398-519c-46a9-a081-4e309adb9767.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d408d398-519c-46a9-a081-4e309adb9767.avif)
 
 ## Rust
 
@@ -217,7 +217,7 @@ fn main() {
 
 To bardzo miłe, że Rust wita nas w tak przyjemny sposób ułatwiając rozpoczęcie pracy z tym językiem.
 
-![](/src/assets/images/8c306ef2-043e-4995-9896-ee25f46f3f45.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8c306ef2-043e-4995-9896-ee25f46f3f45.avif)
 
 Aby skompilować program wykonujemy poleceniem
 
@@ -355,7 +355,7 @@ const generate_fibonacci = (n) => {
 
 W dalszej części okaże się jak kolosalne różnice w wydajności i poprawności programu robi ten jeden znaczek `n`. Przy pisaniu oprogramowania ważne jest aby rozumieć na jakich zakresach wartości pracuje program i poprawnie obsługiwać ich krańce.
 
-![](/src/assets/images/1ff3b625-6b92-4b17-bc7c-53676c7f9b23.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1ff3b625-6b92-4b17-bc7c-53676c7f9b23.avif)
 
 > Pod tym względem `node` wymaga od programisty szczególnej odpowiedzialności, bo próbując ratować program przez rzuceniem błędu idzie na kompromisy, które jak się okaże czasami są genialne, ale bywają bardzo zwodnicze.
 
@@ -424,17 +424,17 @@ cargo build --release
 
 Na przykład dla `n=1000` każdy program wyświetla to samo, ale różne są czasy obliczeń.
 
-![](/src/assets/images/5aa2a8ee-87c7-4f60-95d5-d70a4da9c9b7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5aa2a8ee-87c7-4f60-95d5-d70a4da9c9b7.avif)
 
 Rust miażdży konkurencję. Node js niezależnie od tego czy operujemy zaczynaliśmy od `1` czy od `1n` pokazuje te same wyniki i bardzo zbliżony nawet niezły czas. Java mimo znacznego zużycia `cpu` włącza się tak długo, że w tym teście wypada najgorzej.
 
 Dla `n=10000` wynik Javy rośnie jedynie 10 razy, mimo, że Rust wykonuje obliczenia o dwa rzędy wielkości dłużej, a node 24 razy dłużej.
 
-![](/src/assets/images/81925e03-09e3-49d0-a7c4-2d902da7e63f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/81925e03-09e3-49d0-a7c4-2d902da7e63f.avif)
 
 Niech nie będzie mylącym dla Was, że `n` zwiększyło się "tylko" 10 razy. Wartości przetwarzane przez program mają geometryczne tępo wzrostu osiągając szybko gigantyczne wartości. Na przykład dla `n=10000` wartość ciągu to:
 
-![](/src/assets/images/f0b9f7f5-50af-448e-9a85-7f206bb8eaa2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f0b9f7f5-50af-448e-9a85-7f206bb8eaa2.avif)
 
 Różnica we wzroście wydajności wynika z tego, że Java ma najcięższy proces uruchamiania się. Node mimo, że całkiem lekki nadal wymaga załadowania całego interpretera przez co Rust mając najszybszy start pokazał o ile faktycznie wzrosła złożoność obliczeniowa.
 
@@ -452,7 +452,7 @@ Gdybym zatrzymał się na zestawieniu pary wyników dla trzech programów nie by
 
 Pokaże jeszcze punkt pomiarowy `50.000`.
 
-![](/src/assets/images/855ea912-ebd2-4c71-b67b-200176981079.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/855ea912-ebd2-4c71-b67b-200176981079.avif)
 
 Jednak omawianie każdego z osobna nie jest tak wartościowe, jak zrobienie całej serii pomiarów i nałożenie ich na wspólny wykres.
 
@@ -621,7 +621,7 @@ Module[{steps = 100, minY = 1, maxY = 50000, pow = 3},
 
 spowoduje powstanie serii o następującej dystrybucji
 
-![](/src/assets/images/86665921-d254-40b6-937e-bc9bc677d397.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/86665921-d254-40b6-937e-bc9bc677d397.avif)
 
 Zapisujemy ją do pliku `n_values` poleceniem
 
@@ -679,7 +679,7 @@ ListLogPlot[
  LabelStyle -> Directive[FontSize -> 16]]
 ```
 
-![](/src/assets/images/8aafa240-d291-4fd8-beb4-9149876eb2db.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8aafa240-d291-4fd8-beb4-9149876eb2db.avif)
 
 Podsumowanie:
 

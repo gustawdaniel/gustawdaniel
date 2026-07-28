@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-component-in-nuxt-rest-strapi
-coverImage: /src/assets/images/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e5269211-5b98-4476-abdf-2196dfc06c7d.avif
 description: Prosty przykład strony logowania w nuxt3, napisany jako baza do kopiowania i wklejania w wielu podobnych projektach.
 excerpt: Prosty przykład strony logowania w nuxt3, napisany jako baza do kopiowania i wklejania w wielu podobnych projektach.
 publishDate: 2022-11-29 19:22:30+00:00
@@ -16,7 +16,7 @@ updateDate: 2022-11-29 19:22:30+00:00
 
 Ile razy w swoim życiu zaimplementowałeś widok logowania? Zrobiłem to zbyt wiele razy. W końcu, aby nie szukać kodu do skopiowania do moich projektów, postanowiłem wkleić tutaj proste instrukcje, jak zbudować prosty komponent logowania w nuxt.
 
-![](/src/assets/images/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aa24b83-38f2-470e-a682-95fa9766363d.avif)
 
 Ta konfiguracja używa strapi jako backendu, ale będę pracować z każdym API rest po modyfikacjach w ciele i URL. W następnej części stworzymy projekt nuxt3, zbudujemy stronę logowania i przekażemy informacje o użytkowniku przez pliki cookie do komponentu profilu.
 
@@ -148,7 +148,7 @@ W szablonie dodajemy super minimalistyczny frontend z formularzem logowania i ta
 </template>
 ```
 
-![](/src/assets/images/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3e5849f5-3225-4a9d-a5f3-5dc3fb8781a5.avif)
 
 ### Przekazywanie tokena użytkownika między komponentami
 
@@ -190,7 +190,7 @@ function login() {
 
 ta zmiana pozwala na wielokrotne wykonanie logowania z tym samym ładunkiem.
 
-![](/src/assets/images/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70488004-a8c7-468a-974b-0f6cc66ee09e.avif)
 
 Jest to szczególnie ważne, aby uniknąć błędów, ponieważ teraz dodaliśmy także funkcję `logout`
 
@@ -268,4 +268,4 @@ nasz symboliczny szablon może mieć formę
 
 To już wszystko. Zbudowaliśmy super prosty interfejs z stronami logowania i profilu. Nie ma stylizacji, nie ma rejestracji, a nawet pominąłem część z konfiguracją strapi. Dzięki tym uproszczeniom jest to przydatna baza, aby przyspieszyć ustawianie nowych projektów nuxt3. Mam nadzieję, że będzie to dla Ciebie przydatne i pomoże uniknąć sytuacji jak na obrazku poniżej:
 
-![](/src/assets/images/dc2ca83a-d254-4988-af9e-451a4487403f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc2ca83a-d254-4988-af9e-451a4487403f.avif)

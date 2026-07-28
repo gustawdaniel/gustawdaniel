@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: zipfs-law-in-nodejs
-coverImage: /src/assets/images/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/9ce72a45-8820-4738-8ccb-71dae040e3ee.avif
 description: Aprende cómo leer archivos grandes en Node.js, contar ocurrencias de palabras utilizando el objeto Map y manejar límites de memoria.
 excerpt: Aprende cómo leer archivos grandes en Node.js, contar ocurrencias de palabras utilizando el objeto Map y manejar límites de memoria.
 publishDate: 2022-06-11T22:50:51.000Z
@@ -15,7 +15,7 @@ La ley de Zipf establece que si las palabras en un idioma dado se ordenan por su
 
 En otras palabras, hay una relación lineal con un coeficiente negativo entre los logaritmos de frecuencia y rango, como se ve en el gráfico en escala logarítmica-logarítmica.
 
-![](/src/assets/images/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6239ac87-abab-42ec-8187-c0cc1048c36f.avif)
 
 ## Preparando datos para el análisis
 
@@ -182,7 +182,7 @@ Una alternativa a este enfoque es `console.time`.
 
 Después de comenzar, todo inicialmente fue bien, hasta el error fatal `heap out of memory`.
 
-![](/src/assets/images/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/75262dcb-25cd-46a0-9a22-2e580b0d4652.avif)
 
 Es importante que la computadora no se congeló y tenía memoria libre disponible. Esto ocurrió porque se superó el límite predeterminado establecido en 2GB. Podemos verificar este límite con el comando:
 
@@ -261,10 +261,10 @@ gnuplot -e "set ylabel 'Count'; set xlabel 'Rank'; set logscale xy; plot 'log.tx
 
 La bandera `-e` te permite especificar un comando y `-p` no apaga el gráfico después de que se dibuja.
 
-![](/src/assets/images/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ad6a0225-ab79-4797-9ef6-285c623bd87a.avif)
 
 Vemos que el gráfico coincide con el que vimos en Wikipedia.
 
-![](/src/assets/images/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bc9c8b7d-7019-4011-97a1-d2ac6549cdca.avif)
 
 ## Interpretación de Resultados

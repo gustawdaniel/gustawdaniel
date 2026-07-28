@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: web-push-notifications
-coverImage: /src/assets/images/e31317ea-2c64-41fd-8e2e-44224eab989a.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e31317ea-2c64-41fd-8e2e-44224eab989a.avif
 description: Web push notification written in raw JavaScript without any libraries.
 excerpt: Web push notification written in raw JavaScript without any libraries.
 publishDate: 2025-01-07 00:00:00+00:00

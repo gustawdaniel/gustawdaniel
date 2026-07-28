@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-from-money-pl-in-30-lines-of-code
-coverImage: /src/assets/images/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
 description: See a simple case study of downloading and processing data from a paginated table.
 excerpt: See a simple case study of downloading and processing data from a paginated table.
 publishDate: 2021-02-17 15:10:17+00:00
@@ -24,11 +24,11 @@ As if nothing happened, I go online and want to download `LIBORCHF3M` and `WIBOR
 
 [Archive of quotes for LIBOR Swiss franc 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
-![](/src/assets/images/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
 
 I click download and I even receive the file, but after selecting the full period and choosing the correct data I see:
 
-![](/src/assets/images/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
 
 > Number of rows limited to 50
 
@@ -49,7 +49,7 @@ Main goals:
 
 It turns out that when we display the table, the data can be read from it and it will be paginated.
 
-![](/src/assets/images/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
 
 Links have the shape:
 
@@ -65,7 +65,7 @@ https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBOR
 
 Rendered on the backend, which we see by checking the page source:
 
-![](/src/assets/images/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
 
 Potential plan 1:
 
@@ -116,15 +116,15 @@ HTTP request sent, awaiting response... 403 Forbidden
 
 Could it be that this page was crawled so often with `wget` that the admins blocked requests for the default user agent of wget?
 
-![](/src/assets/images/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
 
 I wouldn't be surprised, considering the fact that Wget does not hide its identity at all. Httpie is not better.
 
-![](/src/assets/images/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
 
 but it is less known, which is why it works
 
-![](/src/assets/images/f636546c-641b-4405-853f-faa0c337217d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f636546c-641b-4405-853f-faa0c337217d.avif)
 
 For `LIBORCHF3M`
 
@@ -140,7 +140,7 @@ mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/de
 
 In the `raw` directory, we already have all the files required for processing.
 
-![](/src/assets/images/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
 
 # Describing the target structure
 
@@ -198,7 +198,7 @@ const getFiles = (): { type: string, content: string }[] => fs
 
 Now we will process a single table:
 
-![](/src/assets/images/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
 
 Defining Interfaces
 
@@ -236,7 +236,7 @@ console.dir(main())
 
 The execution returns data that we still need to reduce to just a pair of keys - `LIBORCHF3M` and `WIBOR3M`
 
-![](/src/assets/images/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
 
 Reduction requires merging objects on keys, so we will add a function to it.
 
@@ -293,11 +293,11 @@ fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 
 Number of lines of real code: 30
 
-![](/src/assets/images/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
 
 Execution time: 1min 15sec
 
-![](/src/assets/images/9c30542e-2868-494f-b185-951200f3aece.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9c30542e-2868-494f-b185-951200f3aece.avif)
 
 The size of the downloaded HTML files is 43MB. The weight of the extracted data is 244KB in JSON format. If we wanted to keep them in CSV, the saving would only be 2 quotes per line. With about 13 thousand lines, that gives 26KB of unnecessary characters when converting to CSV, which is 10%. This is very little.
 

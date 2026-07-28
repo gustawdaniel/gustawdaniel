@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-quaternion-multiplication-rust-nodejs-parsing-algebra
-coverImage: /src/assets/images/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d49f26ae-0d28-40ec-a9ec-a242c016b45d.avif
 description: En este artículo, veremos cómo implementar la multiplicación de cuaterniones en Rust y NodeJS. Aprenderás sobre el análisis y el álgebra.
 excerpt: En este artículo, veremos cómo implementar la multiplicación de cuaterniones en Rust y NodeJS. Aprenderás sobre el análisis y el álgebra.
 publishDate: 2023-01-20 02:19:57+00:00
@@ -86,7 +86,7 @@ Podemos dividir nuestro problema en tres pasos:
 * multiplicación de Quaterniones
 * formateo de Quaternion de vuelta a cadena
 
-![](/src/assets/images/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8467207d-4e35-4dd6-ac96-8b874028e6ef.avif)
 
 Estas operaciones de alto nivel se pueden implementar en NodeJS.
 
@@ -131,7 +131,7 @@ debe ser tratado como un arreglo de cuaterniones - separados por corchetes. En c
 * creación de cuaterniones a partir de arreglos de coeficientes
 * extracción de números de coeficientes
 
-![](/src/assets/images/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd766517-6a3f-4c23-b9df-dbf68b0c0c80.avif)
 
 En NodeJS podemos comenzar con dos pruebas. Primero para casos simples:
 
@@ -347,7 +347,7 @@ o en `rust`:
 
 La multiplicación de dos cuaterniones es similar a la multiplicación de polinomios. Primero, multiplicamos cualquier par de componentes entre sí. Luego podemos agruparlas por tipo de componente y, finalmente, sumar los coeficientes. La diferencia es que en la multiplicación de polinomios siempre estamos sumando potencias, pero en los cuaterniones estamos utilizando álgebra de división no conmutativa presentada en la tabla:
 
-![](/src/assets/images/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c7947573-0696-486e-8bd7-ffbfc5b8c85c.avif)
 
 Así que básicamente podemos dividir nuestro problema en:
 
@@ -590,7 +590,7 @@ pero generalmente la idea es la misma.
 
 Ahora tenemos un programa que puede leer la entrada, convertirla a un arreglo de cuaterniones y multiplicarlos.
 
-![](/src/assets/images/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0dd8108f-02cd-4dfd-84c6-63517935dd45.avif)
 
 El último elemento que falta es formatear el resultado como cadena.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: quicksort-implementation-in-rust-typescript-and-go
-coverImage: /src/assets/images/7b891521-d7d2-4d7b-8cf7-ec59c58053a1.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7b891521-d7d2-4d7b-8cf7-ec59c58053a1.avif
 description: Domina QuickSort con nuestra guía en profundidad y ejemplos de implementación en tres lenguajes de programación populares, y ordena grandes conjuntos de datos de manera rápida y eficiente.
 excerpt: Domina QuickSort con nuestra guía en profundidad y ejemplos de implementación en tres lenguajes de programación populares, y ordena grandes conjuntos de datos de manera rápida y eficiente.
 publishDate: 2023-02-21 03:51:40+00:00
@@ -18,7 +18,7 @@ updateDate: 2023-02-21 03:51:40+00:00
 
 QuickSort es un algoritmo de ordenamiento popular que sigue el enfoque de divide y vencerás para ordenar un conjunto de elementos. Funciona dividiendo el arreglo en dos sub-arreglos más pequeños alrededor de un elemento pivote, que se selecciona del arreglo. Los elementos en el sub-arreglo izquierdo son todos menores que el pivote, y los elementos en el sub-arreglo derecho son todos mayores que el pivote. Luego, el elemento pivote se coloca en su posición final, con todos los elementos a su izquierda siendo menores que él, y todos los elementos a su derecha siendo mayores que él. Este proceso se repite recursivamente en los sub-arreglos izquierdo y derecho hasta que todo el arreglo esté ordenado.
 
-![](/src/assets/images/fcc59c1f-f8d7-4c3b-984e-3de868ca8bbb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fcc59c1f-f8d7-4c3b-984e-3de868ca8bbb.avif)
 
 Aquí están los pasos básicos del algoritmo QuickSort:
 
@@ -31,7 +31,7 @@ Para particionar el array, QuickSort utiliza un enfoque de dos punteros, donde s
 
 La complejidad temporal en el peor de los casos de QuickSort es O(n^2), pero en la práctica, se desempeña mucho mejor que esto porque tiene una complejidad temporal en el caso promedio de O(n log n). El rendimiento de QuickSort se puede mejorar aún más seleccionando el elemento pivote de manera más inteligente, por ejemplo, eligiendo la mediana del primer, del medio y del último elemento del array.
 
-![](/src/assets/images/c381ea01-ba9d-4db9-badf-780c743b4a96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c381ea01-ba9d-4db9-badf-780c743b4a96.avif)
 
 Aunque en nombre hay `Quick`, no es el algoritmo más rápido, pero `O( n log n)` es mucho mejor que `O( n^2 )` para el popular y simple ordenamiento burbuja.
 
@@ -185,6 +185,6 @@ fn median_of_three<T: Ord>(arr: &[T]) -> usize {
 
 Debido a este problema con la selección de pivote, QuickSort puede desacelerarse debido a una selección especialmente maliciosa de datos de entrada, por lo que es susceptible a algunos ataques de seguridad, como las colisiones de tablas hash. Sin embargo, sus muchas ventajas lo convierten en una opción popular para ordenar grandes conjuntos de datos. Con la elección correcta del elemento pivote, QuickSort puede alcanzar una complejidad de tiempo en caso promedio de O(n log n), que es más rápido que la mayoría de otros algoritmos de ordenamiento populares. Si estás trabajando con grandes conjuntos de datos y necesitas ordenarlos rápidamente, QuickSort es una excelente opción.
 
-![](/src/assets/images/ae7460e7-c6c8-442a-b8fb-482051731856.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ae7460e7-c6c8-442a-b8fb-482051731856.avif)
 
 Sé lo que piensas. Que esta diversión con la optimización de ordenamiento es solo para científicos, y que en la práctica estamos utilizando algoritmos de ordenamiento integrados en nuestros lenguajes, pero a veces, para construir algo asombroso, vale la pena tener un conocimiento y una intuición más profundos sobre qué vale la pena optimizar y qué no.

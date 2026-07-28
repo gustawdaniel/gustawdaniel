@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: quick-intro-to-ruby-on-rails
-coverImage: /src/assets/images/d85ff050-96df-4cb7-9058-f9097653e3ad.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/d85ff050-96df-4cb7-9058-f9097653e3ad.avif
 description: Introducción a Ruby on Rails presentando CRUD, relaciones de base de datos, correo y comunicación por sockets web.
 excerpt: Introducción a Ruby on Rails presentando CRUD, relaciones de base de datos, correo y comunicación por sockets web.
 publishDate: 2021-04-17 11:28:00+00:00
@@ -49,7 +49,7 @@ rails generate scaffold post title:string body:text
 
 Este comando genera una gran cantidad de archivos:
 
-![](/src/assets/images/0cd60295-e8e0-49fb-aa4b-a6a818262938.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a818262938.avif)
 
 Uno de ellos es la migración de la base de datos, que está escrita en `db/migrate/20210418121400_create_posts.rb` y se ve así:
 
@@ -94,11 +94,11 @@ http://127.0.0.1:3000/posts
 
 Después de crear manualmente una publicación, obtenemos:
 
-![](/src/assets/images/b2c81fc5-5bed-4658-8d8e-12938d74d038.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b2c81fc5-5bed-4658-8d8e-12938d74d038.avif)
 
 Lo que es aún más agradable es que también tenemos una "api" disponible en `/posts.json`
 
-![](/src/assets/images/80897738-a337-4640-a228-58517e8aff43.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/80897738-a337-4640-a228-58517e8aff43.avif)
 
 Desafortunadamente, el intento de crear una publicación a través de la API.
 
@@ -134,7 +134,7 @@ http POST localhost:3000/posts.json body=ok
 
 publicarán sus entradas sin validar su corrección.
 
-![](/src/assets/images/8873c9da-4396-48b3-8d70-6108e8528fd7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8873c9da-4396-48b3-8d70-6108e8528fd7.avif)
 
 Para hacer cumplir la presencia del parámetro `title` en el post, en el archivo `app/models/post.rb` añadimos la bandera `validates_presence_of`.
 
@@ -146,11 +146,11 @@ end
 
 Gracias a ello, será imposible añadir publicaciones sin un título tanto en la página
 
-![](/src/assets/images/0062c4cc-438a-4837-b025-9a3bde260681.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0062c4cc-438a-4837-b025-9a3bde260681.avif)
 
 cómo y a través de API
 
-![](/src/assets/images/93aace27-457b-43d7-88f8-8189bda7a84a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/93aace27-457b-43d7-88f8-8189bda7a84a.avif)
 
 ## Depuración - Consola de Rails
 
@@ -210,7 +210,7 @@ o leyendo la documentación
 
 Mientras tanto, volveremos a los archivos generados por la opción `resource`.
 
-![](/src/assets/images/6043c7ba-5a2b-46fe-866e-5b0474cc6c5e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6043c7ba-5a2b-46fe-866e-5b0474cc6c5e.avif)
 
 Se ha creado una migración aquí nuevamente, esta vez conteniendo:
 
@@ -258,7 +258,7 @@ La visualización del enrutamiento es posible gracias al comando:
 rails routes
 ```
 
-![](/src/assets/images/818913a8-7bcb-47ad-953a-10efe7d9c6b4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/818913a8-7bcb-47ad-953a-10efe7d9c6b4.avif)
 
 En cuanto a la dirección de la relación, en este momento los comentarios pertenecen a las publicaciones como se describe en el archivo `app/models/comment.rb`
 
@@ -315,7 +315,7 @@ Los adjuntaremos en la vista de publicación única agregando el código al arch
 
 Ahora nuestra vista del post se verá de la siguiente manera.
 
-![](/src/assets/images/ecf12b37-935a-4fdd-ba56-9ab97f52a860.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ecf12b37-935a-4fdd-ba56-9ab97f52a860.avif)
 
 Aunque parece listo para usar, la función de añadir comentarios aún no está disponible. Solo preparamos la vista, pero falta la lógica para guardar comentarios en la base de datos y vincularlos a las publicaciones.
 
@@ -347,7 +347,7 @@ Echemos un vistazo más de cerca. Comienza con la opción `before_action`, que e
 
 A continuación, hay una redirección a la página de publicaciones. Funciona muy bien en la página.
 
-![](/src/assets/images/77228d3e-7d38-4c1b-981a-05c9d74ab699.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/77228d3e-7d38-4c1b-981a-05c9d74ab699.avif)
 
 Pero si queremos crear publicaciones desde el nivel de API, cada vez que se nos redirige a la publicación, la veremos sin comentarios. Si reemplazamos
 
@@ -371,7 +371,7 @@ en el controlador usando instrucciones análogas a las del post
 
 tendremos un error
 
-![](/src/assets/images/4d751696-3dfd-4684-b847-f0b28de86bbe.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d751696-3dfd-4684-b847-f0b28de86bbe.avif)
 
 Es así porque ahora los comentarios requieren estructuración al organizarlos en un archivo JSON. Esto se resuelve gracias a la fantástica biblioteca `jbuilder`.
 
@@ -386,7 +386,7 @@ json.comments @post.comments, :id, :body, :created_at
 
 configuraremos el servidor para que responda con la vista de la publicación que contiene una lista de todos los comentarios correspondientes una vez que se crea un comentario. Esta es una vista que corresponde a lo que vemos en la versión HTML, aunque no se ajusta a los principios REST.
 
-![](/src/assets/images/61a3d18f-8260-437b-9b0f-50dbe420e406.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61a3d18f-8260-437b-9b0f-50dbe420e406.avif)
 
 Si quisiéramos mostrar este comentario específico, podemos usar la sintaxis
 
@@ -409,7 +409,7 @@ Si quisiéramos mostrar este comentario específico, podemos usar la sintaxis
 
 en el controlador. Luego, en la vista de respuesta, veremos el comentario junto con la publicación.
 
-![](/src/assets/images/a43ef393-0a06-4fa2-94fc-2da3fd73f5e2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a43ef393-0a06-4fa2-94fc-2da3fd73f5e2.avif)
 
 Más información sobre el formato se puede leer aquí:
 
@@ -469,7 +469,7 @@ http://localhost:3000/rails/mailers/comments\_mailer/submitted
 
 Podemos ver una vista previa de este correo electrónico
 
-![](/src/assets/images/dd89e83f-d2c2-4833-a43b-b5a0ea528d96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd89e83f-d2c2-4833-a43b-b5a0ea528d96.avif)
 
 Sin embargo, no podemos esperar que este correo electrónico se envíe de inmediato. Para incluir su envío, necesitamos agregar una línea.
 
@@ -514,7 +514,7 @@ end
 
 El flag "deliver_later" te permite adjuntar el envío de un correo electrónico al ciclo interno de Ruby on Rails, que lo enviará lo antes posible sin bloquear la ejecución del resto del código. Crear un comentario aún no enviará el correo electrónico al correo real, pero en la consola, veremos que tal acción se habría tomado si el envío estuviera completamente configurado.
 
-![](/src/assets/images/0f6a89a7-7d40-4b93-a98e-eca529b2fbec.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0f6a89a7-7d40-4b93-a98e-eca529b2fbec.avif)
 
 No iremos por ese camino, pero si deseas completar la configuración, lee sobre `smtp_settings` y `delivery_method` en la documentación:
 
@@ -530,7 +530,7 @@ Para usar la comunicación en tiempo real, necesitamos un canal. Lo generaremos 
 rails generate channel comments
 ```
 
-![](/src/assets/images/8781f3f8-0891-49b7-83ab-be6216f97342.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8781f3f8-0891-49b7-83ab-be6216f97342.avif)
 
 En el archivo `app/channels/comments_channel.rb` que contiene:
 

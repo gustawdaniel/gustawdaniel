@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: rust-wasm-snake-performance
-coverImage: /src/assets/images/99588e8d-d808-4c67-93cd-a2ebd12c3b94.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/99588e8d-d808-4c67-93cd-a2ebd12c3b94.avif
 description: Lets measure performance of Rust in WASM snake game. We checking limits of performance and compare it with JS version.
 excerpt: Lets measure performance of Rust in WASM snake game. We checking limits of performance and compare it with JS version.
 publishDate: 2025-06-06 00:00:00+00:00
@@ -157,7 +157,7 @@ footer #topology {
 
 we are going to draw something like this:
 
-![](/src/assets/images/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e.avif)
 
 but firstly we have to create snake in wasm and connect its state to javascript.
 

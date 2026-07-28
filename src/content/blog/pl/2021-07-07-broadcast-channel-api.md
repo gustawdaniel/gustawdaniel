@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: broadcast-channel-api
-coverImage: /src/assets/images/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8b3fb584-7d88-42e4-b053-b66de5ddfd09.avif
 description: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
 excerpt: Wpis pokazuje jak używać Broadcast Channel API do przesyłania danych między kartami lub oknami przeglądarki bez wykorzystania serwera i socketów.
 publishDate: 2021-07-07 11:08:19+00:00
@@ -103,21 +103,21 @@ Przy okazji użyliśmy tu innego API - performance:
 
 Dla dwóch kart w możemy zobaczyć, że w każdej karcie widać jej odrębny identyfikator i wiadomości wysłane z przeciwnej karty.
 
-![](/src/assets/images/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/460465c8-3065-49e4-9856-b06dbd448dcd.avif)
 
 Nic nie stoi na przeszkodzie, żebyśmy włączyli cztery karty na raz. Wtedy wiadomości od trzech pozostałych w każdej z nich będą się wzajemnie przeplatać.
 
-![](/src/assets/images/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7d5446fd-3412-4adb-aaa2-ee9f4493f039.avif)
 
 Możemy wrócić do dwóch kart i odświeżyć kilka razy tą z prawej strony. W wyniku takiego działania ta po lewej dostanie kilkukrotnie nowe powiadomienia, a na tej prawej nie będzie widać nic poza jej własnym przedstawieniem się ponieważ lewa karta zakończyła już nadawanie wiadomości. Konkretny wynik odświeżania prawej karty przedstawia screenshot:
 
-![](/src/assets/images/b0784926-0177-48cb-9841-b51e8bc24203.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b0784926-0177-48cb-9841-b51e8bc24203.avif)
 
 Widzimy tu, że wiadomości pochodzą od różnych ID, bo karta po prawej zmienia ID przy każdym odświeżeniu.
 
 Kolejny eksperyment to sprawdzenie czy Broad Cast Channel działa między różnymi przeglądarkami:
 
-![](/src/assets/images/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a391acb2-05de-4311-ab57-d5cb2b76007f.avif)
 
 Okazało się, że nie. Ma to sens, bo jeśli miało by działać między przeglądarkami, to musiała by istnieć komunikacja między procesami utrzymującymi przeglądarki.
 
@@ -131,7 +131,7 @@ Więcej o samym Origin możemy przeczytać w słowniku Mozilla Developers
 
 Sprawdzimy czy dla różnych komputerów też będzie działał poprawnie. W tym celu musimy zmienić ustawienia parcela, bo obecnie wystawia on nasz serwis na localhost
 
-![](/src/assets/images/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f181a0be-8a4c-460e-8b88-af06434063a3.avif)
 
 Nasz obecny adres IP możemy sprawdzić poleceniem
 
@@ -139,7 +139,7 @@ Nasz obecny adres IP możemy sprawdzić poleceniem
 ip route
 ```
 
-![](/src/assets/images/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc7b0ef-fae0-45df-9f23-179df34c5106.avif)
 
 Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 
@@ -149,7 +149,7 @@ Z dokumentacji możemy wyczytać, że wystarczy dodanie flagi `--host`
 parce index.html --host 192.168.2.162
 ```
 
-![](/src/assets/images/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ea9494ab-6361-42e8-a9c8-88e8e2a3646d.avif)
 
 Okazało się, że komunikacja nie jest przesyłana między różnymi komputerami.
 

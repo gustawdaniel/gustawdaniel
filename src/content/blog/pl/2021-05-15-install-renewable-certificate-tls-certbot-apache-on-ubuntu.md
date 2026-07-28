@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: install-renewable-certificate-tls-certbot-apache-on-ubuntu
-coverImage: /src/assets/images/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
 description: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem apache.
 excerpt: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem apache.
 publishDate: 2021-05-14 20:38:00+00:00

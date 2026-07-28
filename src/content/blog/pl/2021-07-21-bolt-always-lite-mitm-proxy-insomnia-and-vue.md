@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: bolt-always-lite-mitm-proxy-insomnia-and-vue
-coverImage: /src/assets/images/cd38117c-276f-4c95-9ea8-3eb55e806e87.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/cd38117c-276f-4c95-9ea8-3eb55e806e87.avif
 description: atak typu man-in-the-middle umożliwiający zamówienie bolt lite za pomocą aplikacji
 excerpt: atak typu man-in-the-middle umożliwiający zamówienie bolt lite za pomocą aplikacji
 publishDate: 2021-07-21 13:53:53+00:00
@@ -58,7 +58,7 @@ Po przechwyceniu wszystkich niezbędnych zapytań przeszedłem do Insomnia, aby 
 
 API Bolt, choć niepubliczne, ma nadal bardzo opisowe kody błędów, takie jak:
 
-![](/src/assets/images/f1448226-f620-4b89-846f-5b11ac381211.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f1448226-f620-4b89-846f-5b11ac381211.avif)
 
 Natkniesz się na takie błędy dość często - najważniejsze jest, aby ich słuchać!
 
@@ -66,17 +66,17 @@ Z tego powodu wiedziałem, że musimy cofnąć się o krok i najpierw poszukać 
 
 ### **Wyszukiwanie opcji taksówek**
 
-![](/src/assets/images/91e0520b-03f7-4f91-923e-59a732c25770.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/91e0520b-03f7-4f91-923e-59a732c25770.avif)
 
 Wysłanie takiego payloadu zwraca nam listę możliwych taryf i dostępnych kategorii bolt:
 
-![](/src/assets/images/4782afcb-fec5-43b5-817b-41ea04ddccac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4782afcb-fec5-43b5-817b-41ea04ddccac.avif)
 
 Intrygujące jest to, że otrzymujemy również parametr "surge\_multiplier", który nie jest widoczny w aplikacji. Fajnie!
 
 ## **Przepływ zapytań**
 
-![](/src/assets/images/93e25608-e518-4c95-94d1-45ba8cfecba9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/93e25608-e518-4c95-94d1-45ba8cfecba9.avif)
 
 ## **Stałe zapytania o dane**
 
@@ -117,12 +117,12 @@ Jedynym problemem jest to, że nadal musisz zdobyć klucz API. Niestety, nie zna
 Może moglibyśmy zdobyć ten token za pomocą aplikacji webowej bolta?
 Jest aplikacja webowa bolta, ale niestety, nie działa ona wcale:
 
-![](/src/assets/images/5727bb63-8155-4a8c-a3ea-76b298e091ce.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5727bb63-8155-4a8c-a3ea-76b298e091ce.avif)
 
 Smutne powiadomienie, które otrzymasz, gdy przesuniesz wskaźnik odbioru na m.bolt.eu.
 
 A jeśli przyjrzysz się żądaniom HTTP, które są wysyłane tam i z powrotem:
 
-![](/src/assets/images/a79b67c9-8fe9-45d9-8e98-4166d0281d01.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a79b67c9-8fe9-45d9-8e98-4166d0281d01.avif)
 
 To właściwie wszystko! Dziękujemy za przeczytanie, przyjaciele!

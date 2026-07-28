@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: compile-php-7-interpreter-in-bunsenlabs
-coverImage: /src/assets/images/7befcf74-cca9-4f73-b2fb-92961cbcefbd.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7befcf74-cca9-4f73-b2fb-92961cbcefbd.avif
 description: Kompilacja to proces, który czasami wymaga instalacji paczek lub linkowania zależności. W tym przypadku zadanie polegało na dostarczeniu php7, na system na który nie miał go w dostępnych repozytoriach.
 excerpt: Kompilacja to proces, który czasami wymaga instalacji paczek lub linkowania zależności. W tym przypadku zadanie polegało na dostarczeniu php7, na system na który nie miał go w dostępnych repozytoriach.
 publishDate: 2021-05-07 20:30:00+00:00

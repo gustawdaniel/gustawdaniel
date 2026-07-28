@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-to-configure-ssl-in-local-development
-coverImage: /src/assets/images/54493527-eac3-463a-a991-b0d4ced05f23.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/54493527-eac3-463a-a991-b0d4ced05f23.avif
 description: Configurar una conexión https en el dominio localhost puede ser un desafío si lo haces por primera vez. Esta publicación es un tutorial muy detallado con todos los comandos y capturas de pantalla.
 excerpt: Configurar una conexión https en el dominio localhost puede ser un desafío si lo haces por primera vez. Esta publicación es un tutorial muy detallado con todos los comandos y capturas de pantalla.
 publishDate: 2021-11-15T16:47:42.000Z
@@ -96,7 +96,7 @@ php -S 0.0.0.0:8000 index.php
 
 Esta vez funciona correctamente.
 
-![](/src/assets/images/d280540b-5da1-4b91-87e3-c85834524e59.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d280540b-5da1-4b91-87e3-c85834524e59.avif)
 
 ## Instalación de Nginx
 
@@ -120,7 +120,7 @@ No usaría ese segundo comando en una computadora local, ya que bloquea innecesa
 
 Después de instalar `nginx`, nos recibió su página de bienvenida en el puerto `80`.
 
-![](/src/assets/images/edc5f538-f5d8-4da4-b860-1e724fff2f49.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/edc5f538-f5d8-4da4-b860-1e724fff2f49.avif)
 
 ### Nginx en Mac OS
 
@@ -392,21 +392,21 @@ chrome://settings/certificates
 
 Veremos:
 
-![](/src/assets/images/6c552745-d6d7-452f-a6a8-c82b77ee9398.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6c552745-d6d7-452f-a6a8-c82b77ee9398.avif)
 
 Después de hacer clic en importar y seleccionar el archivo `myCA.pem`, indicamos qué operaciones de esta organización queremos confiar:
 
-![](/src/assets/images/e185608f-e06f-465d-98bc-e75a4927ef7e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e185608f-e06f-465d-98bc-e75a4927ef7e.avif)
 
 #### Confianza de la autoridad de certificación en Firefox
 
 En Firefox, ve a `about:preferences#privacy` y en la pestaña "Certificados", haz clic en "Ver Certificados". Luego seleccionamos importar y el archivo `myCA.pem`.
 
-![](/src/assets/images/cdd83c80-7b45-4b9d-a265-ceeb578f1ebf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cdd83c80-7b45-4b9d-a265-ceeb578f1ebf.avif)
 
 marcar inmediatamente a la organización certificadora como confiable
 
-![](/src/assets/images/dd644237-d42b-4a95-8b0b-1d956846ab83.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd644237-d42b-4a95-8b0b-1d956846ab83.avif)
 
 En contraste con Chrome, estos ajustes son independientes del sistema operativo.
 
@@ -414,15 +414,15 @@ En contraste con Chrome, estos ajustes son independientes del sistema operativo.
 
 En computadoras con `Mac OS`, no podemos cambiar la configuración directamente en Chrome. En su lugar, abrimos Finder. Buscamos el archivo `myCA.pem` y hacemos doble clic en él.
 
-![](/src/assets/images/9991f51f-8d61-4770-81e8-8f154afa0a68.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9991f51f-8d61-4770-81e8-8f154afa0a68.avif)
 
 después de confirmar con la contraseña, deberíamos ver nuestra organización en la pestaña "Certificados" en el programa "Llaveros"
 
-![](/src/assets/images/5b588af5-97db-419c-ab7e-8f481ee6a521.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5b588af5-97db-419c-ab7e-8f481ee6a521.avif)
 
 Ahora necesitamos marcar este certificado como confiable seleccionando la opción "Siempre Confiar".
 
-![](/src/assets/images/5aba5b59-a2de-432c-b7a7-15812fc0ea64.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5aba5b59-a2de-432c-b7a7-15812fc0ea64.avif)
 
 #### Configuración de Nginx como Proxy
 
@@ -473,11 +473,11 @@ podemos disfrutar de la vista de un candado junto a la dirección del sitio loca
 
 * en Chrome
 
-![](/src/assets/images/36f90ff2-6819-4123-a28a-fb0283c960fc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/36f90ff2-6819-4123-a28a-fb0283c960fc.avif)
 
 * y en Firefox
 
-![](/src/assets/images/5ea4ee9a-1437-4038-90f3-a30f91344a6e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ea4ee9a-1437-4038-90f3-a30f91344a6e.avif)
 
 Sin embargo, no veremos el resultado correcto en la consola:
 
@@ -499,13 +499,13 @@ o en `Mac OS`
 http --verify /usr/local/etc/nginx/ssl/myCA.pem https://local.dev
 ```
 
-![](/src/assets/images/cc8230e1-7e35-4f2e-a9c9-9cd0c9d7c0b3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cc8230e1-7e35-4f2e-a9c9-9cd0c9d7c0b3.avif)
 
 ### Aplicaciones del Certificado SSL Local
 
 Mostramos cómo configurar una conexión https en una máquina local, lo cual es particularmente útil en el desarrollo de aplicaciones web. Típicamente, puedes desarrollar tus proyectos localmente utilizando `http`.
 
-![](/src/assets/images/a6538c2f-4169-43c1-85bb-ab1883ab4b05.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a6538c2f-4169-43c1-85bb-ab1883ab4b05.avif)
 
 A veces `https` es requerido por mecanismos como:
 
@@ -547,15 +547,15 @@ Y tenemos el siguiente efecto:
 
 1. El candado funciona en la página `https://localhost` en Chrome.
 
-![](/src/assets/images/975e97f2-7903-46e8-b69b-0fa9209c7699.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/975e97f2-7903-46e8-b69b-0fa9209c7699.avif)
 
 2\. `https://localhost` no funciona en Firefox
 
-![](/src/assets/images/e0abd4de-a853-465b-bda9-30ccae9ef5d4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0abd4de-a853-465b-bda9-30ccae9ef5d4.avif)
 
 3. Tampoco funciona desde la línea de comandos (httpie)
 
-![](/src/assets/images/da304157-3ba2-45fa-8d0e-61352c24a8c5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/da304157-3ba2-45fa-8d0e-61352c24a8c5.avif)
 
 4. Por otro lado, curl funciona `curl [https://localhost](https://localhost)`.
 

@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: medical-register-scraping
-coverImage: /src/assets/images/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e6f09d94-68fb-472e-9972-9ffe2c6a025f.avif
 description: Administratorzy danych go nienawidzą. Zobacz jak wpisując dwa polecenia w konsolę pobrał rejestr wszystkich aptek w Polsce.
 excerpt: Administratorzy danych go nienawidzą. Zobacz jak wpisując dwa polecenia w konsolę pobrał rejestr wszystkich aptek w Polsce.
 publishDate: 2021-02-17 23:25:12+00:00
@@ -24,7 +24,7 @@ https://rejestrymedyczne.ezdrowie.gov.pl/main
 
 Zawiera ona kilka rejestrów danych powiązanych z medycyną
 
-![](/src/assets/images/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c17df1c5-6321-4840-bdbe-f47b6296c374.avif)
 
 Załóżmy, że chcemy pobrać wszystkie dane o aptekach z tej strony. Klikamy na rejestr aptek i widzimy:
 
@@ -32,13 +32,13 @@ Załóżmy, że chcemy pobrać wszystkie dane o aptekach z tej strony. Klikamy n
 https://rejestrymedyczne.ezdrowie.gov.pl/ra/search/public
 ```
 
-![](/src/assets/images/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/faf5fc8b-7bd7-40e5-9b3e-0d6b1669bd37.avif)
 
 Co ciekawe paginacja nie powoduje tu zmiany adresu url tylko przeładowanie strony i wyświetlenie kolejnego widoku w tabeli.
 
 Po przejściu do zakładki "Network" w konsoli przeglądarki widzimy, że w tle wysyłany jest request
 
-![](/src/assets/images/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cb21eefb-14a1-4d54-a5ba-8df7f8e7a16c.avif)
 
 Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane, które ładowane są do tabeli bezpośrednio z api poleceniem
 
@@ -46,7 +46,7 @@ Okazuje się, że bez żadnego tokena, klucza czy ciasteczka można pobrać dane
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC
 ```
 
-![](/src/assets/images/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ace8898e-9b72-44d5-a5bf-f2e543ea67a0.avif)
 
 Nie ma problemu, żeby pobrać **dwie** apteki:
 
@@ -54,7 +54,7 @@ Nie ma problemu, żeby pobrać **dwie** apteki:
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=2\&sortField\=originId\&sortDirection\=ASC | jq '.[][] | {nr: .registrationNumber, name: .owners[0].name}'
 ```
 
-![](/src/assets/images/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1eac6eca-3409-4c59-b678-367f6607d33f.avif)
 
 Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 
@@ -62,7 +62,7 @@ Nie ma problemu, żeby pobrać **dziesięć tysięcy** aptek.
 http -b https://rejestrymedyczne.ezdrowie.gov.pl/api/pharmacies/search\?page\=1\&size\=10000\&sortField\=originId\&sortDirection\=ASC | jq '.[][].owners[0].name' | wc
 ```
 
-![](/src/assets/images/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/51765dc2-2e85-47a2-916e-7f505842c0dc.avif)
 
 Z paginacji strony widzimy, że rejestr zawiera `23006` apteki. Zatem jeśli możemy pobrać 10k na raz potrzebujemy 3 requestów. Niestety wpisanie `size=23006` rzuca błąd, ale warto sprawdzić `size=15000`. Dwa requesty to zawsze lepiej niż trzy.
 

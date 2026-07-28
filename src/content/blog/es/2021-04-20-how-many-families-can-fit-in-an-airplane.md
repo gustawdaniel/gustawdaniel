@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-many-families-can-fit-in-an-airplane
-coverImage: /src/assets/images/e241188a-23c6-41d5-a640-95085128893c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e241188a-23c6-41d5-a640-95085128893c.avif
 description: Comparamos dos soluciones al problema de contar conjuntos libres de asientos adyacentes. Aprenderás cómo usar el perfilado y cuánta diferencia hace el uso de pop y shift en matrices en js.
 excerpt: Comparamos dos soluciones al problema de contar conjuntos libres de asientos adyacentes. Aprenderás cómo usar el perfilado y cuánta diferencia hace el uso de pop y shift en matrices en js.
 publishDate: 2021-04-20 18:41:10+00:00
@@ -18,7 +18,7 @@ Discutiremos dos soluciones al problema que se utilizó durante un cierto reclut
 
 En el avión, hay asientos dispuestos en tres conjuntos que contienen 3, 4 y 3 asientos adyacentes, respectivamente. Asumimos que las filas se cuentan desde 1 y las columnas se indexan utilizando las letras del alfabeto como en una tabla de EXCEL (de la A a la K). El diagrama del avión se muestra en la imagen a continuación. Asumimos que todos los asientos tienen el mismo diseño que aquellos marcados en azul.
 
-![](/src/assets/images/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d7351e7c-8a1e-48d4-a56a-1e276afb1ca9.avif)
 
 Asumimos que el avión tiene una longitud de `N` filas con asientos. También sabemos la ocupación actual de los asientos, que se registra en forma de una cadena `S` como coordenadas separadas por espacios del número de fila y columna, p. ej.:
 
@@ -293,27 +293,27 @@ Para la creación de perfiles, podemos usar la bandera `--porf`, que creará un 
 
 Revisarlo no es fácil si no sabes qué buscar. Este archivo se ve algo así:
 
-![](/src/assets/images/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d3709132-8973-4019-b6a5-bbe082a7142e.avif)
 
 Afortunadamente, Webstorm tiene herramientas de perfilado interesantes que hacen lo mismo que esta bandera de abajo, pero aplican una superposición gráfica y gráficos que te permiten navegar por los registros y llegar rápidamente a la fuente del problema. Para configurar el perfilado, verificamos `Asistencia de codificación para Node.js` en la configuración.
 
-![](/src/assets/images/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2dbfbc25-faf3-4b30-96c4-10804664593c.avif)
 
 A continuación, creamos un perfil que ejecutará nuestro script con los parámetros apropiados.
 
-![](/src/assets/images/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43a371ac-f72d-4e4f-824f-48d82b77915b.avif)
 
 y en la pestaña `V8 Profiling`, seleccionamos la opción de perfilado.
 
-![](/src/assets/images/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c4e1fd8-521b-4d46-9765-62032b9b7527.avif)
 
 Después de seleccionar el triángulo verde, comienza el perfilado.
 
-![](/src/assets/images/69644d36-ba44-4026-b579-442715c7f781.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/69644d36-ba44-4026-b579-442715c7f781.avif)
 
 veremos los registros ordenados por porcentaje de participación sobre el tiempo de ejecución.
 
-![](/src/assets/images/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b08006c7-6808-4c90-82e6-dca997d39d54.avif)
 
 Esta vista te permite extraer las funciones más que consumen tiempo en relación con el tiempo total de ejecución. Puedes leer más sobre la creación de perfiles en la documentación de WebStorm.
 
@@ -439,7 +439,7 @@ Testing arrays of size 130000
 
 En el navegador, estas operaciones tardan la mitad de tiempo, pero la diferencia entre `pop` y `shift` sigue siendo enorme, y cada 50-100 elementos añadidos al arreglo añaden un milisegundo al tiempo de ejecución de `shift`.
 
-![](/src/assets/images/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fd115ab8-9eea-4e2f-8cf4-d99d46f3080a.avif)
 
 Al modificar este código para probar una segunda vez, podemos obtener una versión que funcione bien en el navegador y permita generar datos para dibujar un gráfico:
 
@@ -498,7 +498,7 @@ const data = {
 };
 ```
 
-![](/src/assets/images/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/619da3bc-ba97-4390-b8cd-65344f86db03.avif)
 
 ## Reevaluación de soluciones
 
@@ -550,4 +550,4 @@ for (let N = 250000; N < 1000000; N += 250000) {
 
 Los resultados presentan el tiempo en milisegundos. Estos son los tiempos de Daniel, Marcin, y las proporciones del tiempo de Marcin respecto al de Daniel. Las columnas muestran el número de asientos ocupados, y las filas muestran el número de filas en el avión.
 
-![](/src/assets/images/0497009b-a592-4043-8759-fc5d86f31cf6.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0497009b-a592-4043-8759-fc5d86f31cf6.avif)

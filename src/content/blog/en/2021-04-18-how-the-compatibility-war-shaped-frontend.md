@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: how-the-compatibility-war-shaped-frontend
-coverImage: /src/assets/images/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/e0ab5fe0-f28a-48c9-b055-ed3c3eb8a5cd.avif
 description: We describe how deprecation and maintaining backward compatibility have influenced the direction of web technology development.
 excerpt: We describe how deprecation and maintaining backward compatibility have influenced the direction of web technology development.
 publishDate: 2021-04-22 18:51:16+00:00
@@ -21,7 +21,7 @@ Incompatible versions of software or hardware have likely hindered us in our dai
 
 As an entrepreneur, you may have faced the challenge of migrating your IT system, or as a programmer, you may have struggled with errors caused by updating a package.
 
-![](/src/assets/images/89e36eaa-b1df-4048-b690-7942494408ad.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/89e36eaa-b1df-4048-b690-7942494408ad.avif)
 
 This article aims to demonstrate how backward compatibility has influenced the development direction of web technologies.
 
@@ -35,7 +35,7 @@ An example is the history of web frontend development, which I will briefly outl
 
 Often, separate code had to be written for each browser to perform the same task. Some browsers changed their programming interface several times even from version to version! When writing code, instead of asking for the window's width, a programmer first checked which browser they were dealing with, and only then did they execute the appropriate commands from a long list of conditions based on the detected browser.
 
-![](/src/assets/images/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a05d33ed-5348-4ac0-959b-0df33e5f8823.avif)
 
 Under these conditions, jQuery emerged in 2005. It served as an intermediary layer between web developers and browsers. It quickly gained popularity because, although it burdened browsers, it allowed developers to write much less code, while taking on the responsibility for supporting old browsers. As it gained popularity, it introduced innovative solutions such as certain selectors for searching elements on a page, which later became permanent in standards. Countless plugins were created for jQuery, and by 2012, it became a technology that every developer learned if they wanted to create websites.
 
@@ -45,7 +45,7 @@ The popularity of jQuery began to wane only when it became clear that browser cr
 
 However, this is not the end of the story. You may be wondering what happened to web technologies after jQuery gradually became less necessary.
 
-![](/src/assets/images/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1c67ab75-ecb0-4267-b032-40e168750fe5.avif)
 
 In 2013, the Angular Js framework, created 4 years earlier by Google, began to gain attention. At the same time, Facebook announced the creation of React. Both tools implemented a declarative paradigm for building interfaces using stateless components. In short, the programmer defined the conditions specifying how the frontend should work, while the components took responsibility for the visual layer, allowing the programmer to focus more on business logic. Simply put: both made writing code even faster than with jQuery.
 

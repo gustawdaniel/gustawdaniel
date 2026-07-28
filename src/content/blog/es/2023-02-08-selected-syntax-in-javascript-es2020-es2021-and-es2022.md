@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: selected-syntax-in-javascript-es2020-es2021-and-es2022
-coverImage: /src/assets/images/dc12881c-1152-4886-bd6b-32ec7961740c.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc12881c-1152-4886-bd6b-32ec7961740c.avif
 description: Coalescencia nula, Encadenamiento opcional, Proxies, Campos privados, allSettled, BigInt, Importación dinámica, replaceAll, Separadores numéricos, matchAll, Asignación lógica, Espera de nivel superior
 excerpt: Coalescencia nula, Encadenamiento opcional, Proxies, Campos privados, allSettled, BigInt, Importación dinámica, replaceAll, Separadores numéricos, matchAll, Asignación lógica, Espera de nivel superior
 publishDate: 2023-02-08 16:39:54+00:00
@@ -32,7 +32,7 @@ Es posible que algunos de ellos te sean conocidos, pero espero que algunos de el
 * ES2022 - Array.prototype.at
 * ES2022 - Espera en el nivel superior
 
-![](/src/assets/images/98e9fea6-990b-4122-bf8d-534cd0124cf5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/98e9fea6-990b-4122-bf8d-534cd0124cf5.avif)
 
 ## Operador de coalescencia nula ?? \[ más estricto || \]
 
@@ -59,7 +59,7 @@ En el primer ejemplo, si `userName` es `null` o `undefined`, el valor de `name` 
 
 Por lo tanto, en resumen, el operador de fusión nula es una forma más estricta y específica de manejar valores predeterminados en JavaScript, en comparación con el operador lógico OR.
 
-![](/src/assets/images/0cd67446-74e2-4230-ad86-43ac76a47b6c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd67446-74e2-4230-ad86-43ac76a47b6c.avif)
 
 ## Encadenamiento opcional .? \[ acceso a props menos estricto \]
 
@@ -157,7 +157,7 @@ var handler = {
 
 Los proxies merecen un artículo distinto, pero espero que te sientas inspirado para aprender más sobre ellos.
 
-![](/src/assets/images/d5ed1e3f-839f-45b5-8042-0aa0d73a2daa.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d5ed1e3f-839f-45b5-8042-0aa0d73a2daa.avif)
 
 ## Campos privados \[ privacidad sin WeakMap y cierres \]
 
@@ -222,7 +222,7 @@ El método `Promise.allSettled()` es útil cuando deseas esperar a que varias pr
 
 [Promise.allSettled() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
 
-![](/src/assets/images/9ec41cb4-0b3c-4f77-9906-74048d4e67ed.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9ec41cb4-0b3c-4f77-9906-74048d4e67ed.avif)
 
 ## BigInt \[ para Matemáticas y grandes Id de bases de datos \]
 
@@ -260,7 +260,7 @@ BigInt proporciona una forma de representar y manipular enteros grandes en JavaS
 
 [BigInt - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt)
 
-![](/src/assets/images/e6c62d94-225d-4f29-be1e-04a75c8c51c3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e6c62d94-225d-4f29-be1e-04a75c8c51c3.avif)
 
 ## Importación Dinámica
 
@@ -379,7 +379,7 @@ const z = 0xff_ff_ff;
 
 En todos los casos, los separadores numéricos se ignoran durante la evaluación, y los valores se almacenan y se utilizan igual que cualquier otro número en JavaScript.
 
-![](/src/assets/images/080468b3-91ec-407d-b20e-5159e7e12f4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/080468b3-91ec-407d-b20e-5159e7e12f4c.avif)
 
 ## matchAll \[ acceso a coincidencias para regex //g \]
 
@@ -395,7 +395,7 @@ const matches = originalString.matchAll(regex);
 
 ahora `matches` es un objeto `RegExpStringIterator`.
 
-![](/src/assets/images/dc16049c-f1b7-4a89-8699-eddc3e83d19f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc16049c-f1b7-4a89-8699-eddc3e83d19f.avif)
 
 podemos acceder a un solo partido usando `next`
 
@@ -405,7 +405,7 @@ m = matches.next()
 
 entonces `m` será un objeto con un booleano `done` y `value` que contiene detalles sobre la coincidencia.
 
-![](/src/assets/images/5427fdde-d4fb-43d6-b8ac-b6d7f6e367f0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5427fdde-d4fb-43d6-b8ac-b6d7f6e367f0.avif)
 
 la segunda opción para obtener coincidencias es la iteración
 
@@ -419,7 +419,7 @@ for (const match of matches) {
 
 o
 
-![](/src/assets/images/5ff51c58-9603-4286-a4e0-eb02af715ced.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ff51c58-9603-4286-a4e0-eb02af715ced.avif)
 
 En comparación, usar `match` con una expresión regular se vería así:
 
@@ -492,7 +492,7 @@ console.log(x); // 2
 
 En el primer caso, x se le asigna el valor de 1, porque null ?? 1 es 1. En el segundo caso, x se le asigna el valor de 2, porque 2 ?? 1 es 2. El operador ?? es similar al operador ||, pero solo evalúa la expresión del lado derecho si la expresión del lado izquierdo es null o undefined.
 
-![](/src/assets/images/7fa48648-26df-4d5a-8137-72a13b00933a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7fa48648-26df-4d5a-8137-72a13b00933a.avif)
 
 ## Promise.any() \[ para carreras \]
 
@@ -518,7 +518,7 @@ En este ejemplo, el método `Promise.any()` toma un array de promesas como su ar
 
 El uso de `Promise.any()` puede simplificar tu código y mejorar el rendimiento en casos donde deseas esperar a que se completen múltiples promesas, pero solo necesitas manejar el resultado de la primera que tenga éxito.
 
-![](/src/assets/images/d7ba2fa1-1be9-4d7e-a741-956c2fd0c415.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d7ba2fa1-1be9-4d7e-a741-956c2fd0c415.avif)
 
 ## Array.prototype.at()
 

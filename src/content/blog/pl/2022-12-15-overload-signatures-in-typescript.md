@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: overload-signatures-in-typescript
-coverImage: /src/assets/images/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4c92b683-70df-4d32-85da-c78094fc0cfc.avif
 description: W TypeScript możemy określić funkcję, która może być wywoływana na różne sposoby, pisząc sygnatury przeciążenia. Można to wykorzystać do definiowania funkcji, których typ zwracany zależy od wartości argumentów.
 excerpt: W TypeScript możemy określić funkcję, która może być wywoływana na różne sposoby, pisząc sygnatury przeciążenia. Można to wykorzystać do definiowania funkcji, których typ zwracany zależy od wartości argumentów.
 publishDate: 2022-12-14 21:02:01+00:00
@@ -52,7 +52,7 @@ export function volume(cube: HyperCube, asString: boolean = false): string | num
 
 Niestety, obecnie korzystając z funkcji `volume`, nie wiemy, czy otrzymamy `string` czy `number`. Nie chcemy korzystać z `.toString` ani `parseInt` w żadnym przypadku.
 
-![](/src/assets/images/9be19831-d3c3-453b-abce-b2c40444a931.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9be19831-d3c3-453b-abce-b2c40444a931.avif)
 
 Na szczęście istnieje koncepcja zwana sygnaturami przeciążenia. Umożliwia ona wybór typu zwracanego w zależności od wartości parametrów.
 

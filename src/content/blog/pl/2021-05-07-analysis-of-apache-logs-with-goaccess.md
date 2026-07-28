@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: analysis-of-apache-logs-with-goaccess
-coverImage: /src/assets/images/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
 description: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje z plików generowanych automatycznie podczas pracy serwera.
 excerpt: W tym wpisie pokazuję narzędzie pozwalające wydobywać ciekawe informacje z plików generowanych automatycznie podczas pracy serwera.
 publishDate: 2021-05-07 20:26:00+00:00

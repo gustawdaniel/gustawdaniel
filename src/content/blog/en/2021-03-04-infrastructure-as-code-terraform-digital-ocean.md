@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: infrastructure-as-code-terraform-digital-ocean
-coverImage: /src/assets/images/27abc6de-a862-4788-8803-a28567286529.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/27abc6de-a862-4788-8803-a28567286529.avif
 description: "In this post, I show how to set up servers using the terraform command line."
 excerpt: "In this post, I show how to set up servers using the terraform command line."
 publishDate: 2021-03-04 18:19:11+00:00
@@ -16,7 +16,7 @@ In scraping, an important factor is the scale to which we can expand the rate of
 
 Now I will show how to set up servers from the command line using `terraform`. The provider will be Digital Ocean, as it has very favorable (8-10 times lower) network transfer prices compared to its biggest competitor.
 
-![](/src/assets/images/72ece5c5-d1f6-4ebe-8859-9a24cd3b0792.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/72ece5c5-d1f6-4ebe-8859-9a24cd3b0792.avif)
 
 # Installation of Terraform
 
@@ -28,7 +28,7 @@ yay -S terraform
 
 To connect to Digital Ocean we need a token. If we do not have it, we will find the "Generate New Token" button in the API tab in the panel.
 
-![](/src/assets/images/7b60cea7-c6e4-45e7-bdac-d6d058495700.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7b60cea7-c6e4-45e7-bdac-d6d058495700.avif)
 
 It's worth saving the token in `~/.zshrc` or `~/.bashrc`
 
@@ -95,7 +95,7 @@ resource "digitalocean_droplet" "web" {
 
 These are the keys that we will find in the "Settings -> Security" tab in the Digital Ocean panel.
 
-![](/src/assets/images/13c7dbc8-5b4f-4843-88e2-1e942b199997.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/13c7dbc8-5b4f-4843-88e2-1e942b199997.avif)
 
 Execution
 
@@ -105,7 +105,7 @@ Execution
 
 It will check if our configuration is okay and allow us to see how the architecture will change after deployment. In this case, it will be the addition of one server - exactly as we wrote in the configuration.
 
-![](/src/assets/images/bfa6cdb3-6771-4e57-a5e8-a4d2038b709d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bfa6cdb3-6771-4e57-a5e8-a4d2038b709d.avif)
 
 We will implement by entering
 
@@ -125,7 +125,7 @@ To see what we have set up, we execute the command:
 
 It returns data about resources managed by `terraform`
 
-![](/src/assets/images/327be4b6-5983-4721-865e-d1f701442660.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/327be4b6-5983-4721-865e-d1f701442660.avif)
 
 The most interesting for us is `ip`. In this case `164.90.174.250`.
 
@@ -137,7 +137,7 @@ ssh -o "StrictHostKeyChecking no" root@164.90.174.250
 
 As you can see, it works because the command logged us into the server `web-1` as `root`.
 
-![](/src/assets/images/31769e58-e37d-457e-a28f-09e42b3718aa.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/31769e58-e37d-457e-a28f-09e42b3718aa.avif)
 
 After returning to `localhost` with the command
 

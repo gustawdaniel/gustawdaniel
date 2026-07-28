@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: codingame-best-fit-to-data-rust-regression-analysis
-coverImage: /src/assets/images/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/5b6dbf3a-bdb7-428d-9017-948141dc0725.avif
 description: Se derivaron regresiones lineales y logarítmicas aquí. Los modelos se ajustaron en el lenguaje rust. Este artículo muestra que a veces vale la pena mejorar el modelo teórico antes de comenzar la implementación.
 excerpt: Se derivaron regresiones lineales y logarítmicas aquí. Los modelos se ajustaron en el lenguaje rust. Este artículo muestra que a veces vale la pena mejorar el modelo teórico antes de comenzar la implementación.
 publishDate: 2023-01-22 23:09:20+00:00
@@ -21,7 +21,7 @@ Discutiremos ejercicio:
 
 El objetivo es encontrar el modelo que mejor se ajuste al conjunto de datos dado. Por ejemplo, para los datos:
 
-![](/src/assets/images/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a0d8ebee-eb4d-49f1-b261-5260c0f20dc1.avif)
 
 deberíamos imprimir `O(log n)`. Podemos seleccionar modelos de la lista:
 
@@ -196,7 +196,7 @@ $$
 
 Podemos ver que ahora no hay posibilidad de operar con números demasiado grandes, así que podemos comenzar la implementación de estas ecuaciones.
 
-![](/src/assets/images/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/761d2c63-871b-4b55-b075-ad6b225d52bc.avif)
 
 ## Lectura de series de datos desde la entrada estándar
 
@@ -408,4 +408,4 @@ Tradicionalmente, puedes revisar el código completo con pruebas en mi github
 
 [GitHub - gustawdaniel/codingame-computational-complexity](https://github.com/gustawdaniel/codingame-computational-complexity)
 
-![](/src/assets/images/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c23aba85-16ce-4f94-9ff6-8734a5dcb988.avif)

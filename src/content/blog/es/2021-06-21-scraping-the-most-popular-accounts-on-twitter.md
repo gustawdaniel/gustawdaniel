@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-the-most-popular-accounts-on-twitter
-coverImage: /src/assets/images/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/928713fa-9c4a-43d6-8936-f2762f14d35f.avif
 description: Gracias a la observación de publicaciones en Twitter, podemos rastrear diversas tendencias. En esta entrada, mostraré cómo descargar datos sobre cuentas en este servicio y seleccionar aquellas que tienen el mayor ratio de influencia.
 excerpt: Gracias a la observación de publicaciones en Twitter, podemos rastrear diversas tendencias. En esta entrada, mostraré cómo descargar datos sobre cuentas en este servicio y seleccionar aquellas que tienen el mayor ratio de influencia.
 publishDate: 2021-06-21 16:24:01+00:00
@@ -30,7 +30,7 @@ Antes de comenzar la recolección de datos, siempre es necesario elegir un vecto
 
 Tenemos una solicitud para la página ya renderizada:
 
-![](/src/assets/images/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d6f34ea7-4697-432f-9637-055a8e1fae8f.avif)
 
 por lo que el renderizado debe tener lugar en el backend. Confirmaremos esto revisando el código fuente de la página.
 
@@ -40,7 +40,7 @@ view-source:https://www.trackalytics.com/the-most-followed-twitter-profiles/page
 
 De hecho, vemos datos listos para ser extraídos:
 
-![](/src/assets/images/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ebca2c49-e69c-4962-ac42-fda0fab108ef.avif)
 
 Escribiremos un script que lo obtenga y lo procese utilizando la biblioteca `cheerio`.
 
@@ -118,7 +118,7 @@ Tenemos aquí que implementar una interfaz para las cuentas resultantes de la es
 
 Al observar los datos mostrados:
 
-![](/src/assets/images/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ac9cf5b4-0b47-4b21-9d6d-52db34010d12.avif)
 
 Puedes crear la siguiente interfaz que describe una cuenta de Twitter.
 
@@ -201,7 +201,7 @@ return {
 }})
 ```
 
-![](/src/assets/images/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cdfec776-07ad-40de-8ed3-1caa9e79c100.avif)
 
 En `node js` no tenemos un objeto `document` y para realizar selectores en el árbol DOM necesitamos construirlo a partir de texto como lo hace el navegador. Sin embargo, en lugar de utilizar el mecanismo nativo incorporado, usaremos una de las bibliotecas populares. Las más conocidas son:
 
@@ -282,7 +282,7 @@ time DEBUG=app ts-node index.ts
 
 A continuación vemos cómo se ve en el entorno del programa `bmon` para monitorear interfaces de red y `htop` para verificar el uso de memoria `ram` y del procesador.
 
-![](/src/assets/images/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cc657994-e0d6-4ec3-ba19-2256dba98c2d.avif)
 
 Para guardar este archivo en la base de datos mongo, podemos usar el comando:
 

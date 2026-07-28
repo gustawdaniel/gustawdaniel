@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: benford-distribution-for-fibonacci-sequence-in-java-rust-node-js
-coverImage: /src/assets/images/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/148d29c9-465f-472c-ac6b-7ce78ebe3bd1.avif
 description: Los programas escritos en Java, Rust y Node JS compiten en comprobar la distribución de los primeros dígitos de la secuencia de Fibonacci. Vea cómo son similares, en qué se diferencian y cómo su rendimiento depende de la longitud de la secuencia.
 excerpt: Los programas escritos en Java, Rust y Node JS compiten en comprobar la distribución de los primeros dígitos de la secuencia de Fibonacci. Vea cómo son similares, en qué se diferencian y cómo su rendimiento depende de la longitud de la secuencia.
 publishDate: 2021-07-21 15:57:21+00:00
@@ -16,7 +16,7 @@ updateDate: 2021-07-22 10:10:14+00:00
 
 Era 1992. En la ciudad de Wayne (Arizona, EE. UU.), se llegó a un veredicto para James Nelson - el contador jefe y gerente del Tesorero del Estado de Arizona. Sus cheques falsos, a través de los cuales desvió casi 2 millones de dólares, fueron detectados porque la distribución de los primeros dígitos en los montos defraudados se desvió de la distribución de Benford.
 
-![](/src/assets/images/c1a7958b-17cd-410d-b4cb-403bb76cac96.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c1a7958b-17cd-410d-b4cb-403bb76cac96.avif)
 
 En las primeras posiciones imaginadas por el contador, los valores 7, 8 y 9 estaban presentes con demasiada frecuencia - valores típicos percibidos por nosotros como "más" aleatorios que 1, 2 o 3.
 
@@ -37,11 +37,11 @@ La Distribución de Benford es una distribución de probabilidad de la ocurrenci
 * el conjunto de valores debe abarcar muchos órdenes de magnitud
 * la probabilidad debe ser invariante con respecto a la escala y la base
 
-![](/src/assets/images/1d0416b4-db35-4e92-a7fc-3abceedd15ac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1d0416b4-db35-4e92-a7fc-3abceedd15ac.avif)
 
 Un ejemplo de una distribución de tamaños donde el primer dígito sigue aproximadamente la ley de Benford. La decayencia exponencial de la distribución es evidente a medida que el eje de valores se densifica.
 
-![](/src/assets/images/8dbf58e1-31d9-45e6-b6a7-2178aa19a87e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8dbf58e1-31d9-45e6-b6a7-2178aa19a87e.avif)
 
 Distribución de tamaños abarcando un orden de magnitud. Por lo general, los primeros dígitos no siguen la distribución de Benford si la distribución inicial no es lo suficientemente amplia.
 
@@ -59,31 +59,31 @@ Dado que en este artículo, la distribución de Benford es meramente un pretexto
 
 La fórmula para la probabilidad de que el dígito `d` ocurra en la primera posición es:
 
-![](/src/assets/images/87e83494-bb63-4c20-a359-5392bda46134.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/87e83494-bb63-4c20-a359-5392bda46134.avif)
 
 * Distribución uniforme de distribución uniforme
 
 Del conjunto de números naturales que van del 1 al 9999, sacamos al azar un número p, utilizando un generador de números aleatorios con una distribución uniforme. A continuación, del rango de números naturales del 1 al p, sacamos al azar un número r, también utilizando la distribución uniforme.
 
-![](/src/assets/images/98c32399-f9e6-47ea-b571-c47e956c0ae0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/98c32399-f9e6-47ea-b571-c47e956c0ae0.avif)
 
 * Masa atómica de los elementos de la tabla periódica
 
 Echemos un vistazo a la tabla periódica de elementos químicos, más específicamente, a uno de los parámetros de cada elemento: masa atómica.
 
-![](/src/assets/images/5ee78f6d-c0ce-42d9-ace8-da38dd6087fb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5ee78f6d-c0ce-42d9-ace8-da38dd6087fb.avif)
 
 * Superficie de los países del mundo en km²
 
 El último ejemplo está relacionado con la geografía: echemos un vistazo a la superficie de todos los países del mundo en km².
 
-![](/src/assets/images/72722365-4efd-4357-b0d2-40420d2480cb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/72722365-4efd-4357-b0d2-40420d2480cb.avif)
 
 * La Ley de Benford
 
 La distribución discreta de Benford para el sistema decimal también conocida como la ley de los primeros (significativos) dígitos.
 
-![](/src/assets/images/65baa70d-2665-4c67-bd0f-9cf9f36198a9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/65baa70d-2665-4c67-bd0f-9cf9f36198a9.avif)
 
 Como vemos, todos estos conjuntos de números tienen la misma propiedad: invariancia con respecto a la escala, base y extensión por varios órdenes de magnitud.
 
@@ -91,11 +91,11 @@ Como vemos, todos estos conjuntos de números tienen la misma propiedad: invaria
 
 La secuencia de Fibonacci es una secuencia de números naturales con una definición recursiva:
 
-![](/src/assets/images/4d2011f5-ed80-4f02-a5b2-fe27c37e26cf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4d2011f5-ed80-4f02-a5b2-fe27c37e26cf.avif)
 
 dónde
 
-![](/src/assets/images/cd6431d2-5e38-4471-b87d-ad3102177679.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cd6431d2-5e38-4471-b87d-ad3102177679.avif)
 
 Sus valores iniciales son:
 
@@ -105,13 +105,13 @@ Sus valores iniciales son:
 
 Esta es una secuencia que podemos observar a menudo en la naturaleza: en vórtices de agua, en la forma de los tornados, en la disposición de las flores, en el ramificación de las plantas y en la división de los cuerpos de insectos. Su prevalencia fascina a los investigadores de este fenómeno. Al igual que la prevalencia de funciones exponenciales o cuadráticas, resulta de la simplicidad de la fórmula y de ser una buena aproximación para sistemas mucho más complejos observados en la realidad.
 
-![](/src/assets/images/f51dc67a-f506-447c-b141-cc74bd7c3f4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f51dc67a-f506-447c-b141-cc74bd7c3f4c.avif)
 
 Las razones de los valores sucesivos de la secuencia convergen al número áureo. La prueba sigue directamente de la definición.
 
 ## Java
 
-![](/src/assets/images/de07baa3-4ca2-4e9d-87fa-394f7e757a5c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/de07baa3-4ca2-4e9d-87fa-394f7e757a5c.avif)
 
 Para hacer esto en Java, se requiere la importación del módulo `java.math.BigInteger`.
 
@@ -172,7 +172,7 @@ Al final, mostramos una tabla que compara los resultados con las predicciones te
 
 Ejecutamos el código escribiendo `java Benford.java` y obtenemos un resultado que confirma nuestra teoría:
 
-![](/src/assets/images/d408d398-519c-46a9-a081-4e309adb9767.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d408d398-519c-46a9-a081-4e309adb9767.avif)
 
 ## Rust
 
@@ -203,7 +203,7 @@ fn main() {
 
 Es muy agradable que Rust nos reciba de una manera tan agradable, facilitando el inicio de trabajo con este lenguaje.
 
-![](/src/assets/images/8c306ef2-043e-4995-9896-ee25f46f3f45.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8c306ef2-043e-4995-9896-ee25f46f3f45.avif)
 
 Para compilar el programa, ejecutamos el comando.
 
@@ -341,7 +341,7 @@ const generate_fibonacci = (n) => {
 
 En la parte siguiente, se hará evidente cómo las diferencias colosales en rendimiento y corrección del programa son provocadas por este único símbolo `n`. Al escribir software, es importante entender en qué rangos de valores opera el programa y manejar correctamente sus límites.
 
-![](/src/assets/images/1ff3b625-6b92-4b17-bc7c-53676c7f9b23.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1ff3b625-6b92-4b17-bc7c-53676c7f9b23.avif)
 
 > En este sentido, `node` requiere una responsabilidad particular del programador, ya que intentar salvar el programa lanzando un error lleva a compromisos que a veces pueden ser brillantes, pero también pueden ser muy engañosos.
 
@@ -408,17 +408,17 @@ cargo build --release
 
 Por ejemplo, para `n=1000`, cada programa muestra el mismo resultado, pero los tiempos de computación varían.
 
-![](/src/assets/images/5aa2a8ee-87c7-4f60-95d5-d70a4da9c9b7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5aa2a8ee-87c7-4f60-95d5-d70a4da9c9b7.avif)
 
 Rust aplasta a la competencia. Node.js muestra los mismos resultados y muy similares, incluso un buen tiempo, independientemente de si comenzamos desde `1` o `1n`. Java, a pesar de un uso significativo de `cpu`, tarda tanto en iniciarse que realiza el peor desempeño en esta prueba.
 
 Para `n=10000`, el resultado de Java solo aumenta por 10 veces, a pesar de que Rust realiza cálculos dos órdenes de magnitud más largos, y Node 24 veces más largos.
 
-![](/src/assets/images/81925e03-09e3-49d0-a7c4-2d902da7e63f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/81925e03-09e3-49d0-a7c4-2d902da7e63f.avif)
 
 No te dejes engañar por el hecho de que `n` ha aumentado "solo" 10 veces. Los valores procesados por el programa crecen a un ritmo geométrico, alcanzando rápidamente valores gigantescos. Por ejemplo, para `n=10000`, el valor de la secuencia es:
 
-![](/src/assets/images/f0b9f7f5-50af-448e-9a85-7f206bb8eaa2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f0b9f7f5-50af-448e-9a85-7f206bb8eaa2.avif)
 
 La diferencia en el aumento de rendimiento proviene del hecho de que Java tiene el proceso de inicio más pesado. Node, aunque bastante ligero, aún requiere cargar todo el intérprete, razón por la cual Rust, al tener el inicio más rápido, demostró cuánto ha aumentado realmente la complejidad computacional.
 
@@ -436,7 +436,7 @@ Si me detuviera en la comparación del par de resultados para tres programas, no
 
 También mostraré el punto de medición `50,000`.
 
-![](/src/assets/images/855ea912-ebd2-4c71-b67b-200176981079.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/855ea912-ebd2-4c71-b67b-200176981079.avif)
 
 Sin embargo, discutir cada uno individualmente no es tan valioso como realizar toda una serie de mediciones y superponerlas en un gráfico común.
 
@@ -601,7 +601,7 @@ Module[{steps = 100, minY = 1, maxY = 50000, pow = 3},
 
 resultará en una serie con la siguiente distribución
 
-![](/src/assets/images/86665921-d254-40b6-937e-bc9bc677d397.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/86665921-d254-40b6-937e-bc9bc677d397.avif)
 
 Lo guardamos en el archivo `n_values` con el comando
 
@@ -659,7 +659,7 @@ ListLogPlot[
  LabelStyle -> Directive[FontSize -> 16]]
 ```
 
-![](/src/assets/images/8aafa240-d291-4fd8-beb4-9149876eb2db.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8aafa240-d291-4fd8-beb4-9149876eb2db.avif)
 
 Resumen:
 

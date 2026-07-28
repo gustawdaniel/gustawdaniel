@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: bolt-always-lite-mitm-proxy-insomnia-and-vue
-coverImage: /src/assets/images/cd38117c-276f-4c95-9ea8-3eb55e806e87.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/cd38117c-276f-4c95-9ea8-3eb55e806e87.avif
 description: hack que permite ordenar bolt lite utilizando un ataque "hombre en el medio" en la aplicación
 excerpt: hack que permite ordenar bolt lite utilizando un ataque "hombre en el medio" en la aplicación
 publishDate: 2021-07-21 13:53:53+00:00
@@ -58,7 +58,7 @@ Después de capturar todas las solicitudes necesarias, procedí a Insomnia para 
 
 La API de Bolt, aunque no es pública, tiene códigos de error muy descriptivos como:
 
-![](/src/assets/images/f1448226-f620-4b89-846f-5b11ac381211.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f1448226-f620-4b89-846f-5b11ac381211.avif)
 
 Te encontrarás con tales errores a menudo - ¡lo más importante es escucharlos!
 
@@ -66,17 +66,17 @@ Por eso sabía que necesitábamos dar un paso atrás y buscar primero opciones d
 
 ### **Buscando opciones de taxi**
 
-![](/src/assets/images/91e0520b-03f7-4f91-923e-59a732c25770.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/91e0520b-03f7-4f91-923e-59a732c25770.avif)
 
 Enviar una carga así nos devuelve la lista de tarifas posibles y categorías de Bolt disponibles:
 
-![](/src/assets/images/4782afcb-fec5-43b5-817b-41ea04ddccac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4782afcb-fec5-43b5-817b-41ea04ddccac.avif)
 
 Lo intrigante es que también obtenemos el parámetro "surge\_multiplier", que no es visible en la aplicación. ¡Genial!
 
 ## **Flujo de solicitudes**
 
-![](/src/assets/images/93e25608-e518-4c95-94d1-45ba8cfecba9.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/93e25608-e518-4c95-94d1-45ba8cfecba9.avif)
 
 ## **Consultas de solicitud constantes**
 
@@ -117,12 +117,12 @@ El único problema es que aún necesitas obtener tu clave API. Lamentablemente, 
 ¿Quizás podríamos obtener este token con la aplicación web de bolt?  
 Hay una aplicación móvil web de bolt, pero lamentablemente, realmente no funciona en ninguna parte:
 
-![](/src/assets/images/5727bb63-8155-4a8c-a3ea-76b298e091ce.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5727bb63-8155-4a8c-a3ea-76b298e091ce.avif)
 
 Una triste alerta que recibirás cada vez que muevas el pin de recogida en m.bolt.eu.
 
 Y si miras las solicitudes HTTP que se envían de ida y vuelta:
 
-![](/src/assets/images/a79b67c9-8fe9-45d9-8e98-4166d0281d01.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a79b67c9-8fe9-45d9-8e98-4166d0281d01.avif)
 
 ¡Eso es casi todo! ¡Gracias por leer, amigos!

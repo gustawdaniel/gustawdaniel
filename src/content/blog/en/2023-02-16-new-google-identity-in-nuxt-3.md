@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: new-google-identity-in-nuxt-3
-coverImage: /src/assets/images/08a5e268-fcf7-4af8-ba14-376a20394223.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/08a5e268-fcf7-4af8-ba14-376a20394223.avif
 description: New Google Identity installation for Nuxt 3 with credentials verification in fastify.
 excerpt: New Google Identity installation for Nuxt 3 with credentials verification in fastify.
 publishDate: 2023-02-16 13:20:19+00:00
@@ -26,13 +26,13 @@ Second simply could not work giving error that was suggesting that something is 
 
 I checked official Google Docs and see this:
 
-![](/src/assets/images/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dc0afc0e-9d09-400f-98f2-f68c6026058b.avif)
 
 [Integrating Google Sign-In into your web app | Authentication | Google Developers](https://www.gstatic.com/devrel-devsite/prod/vd277a93d7226f1fcf53372e6780919bb823bca6ca1c3adbaa8a14ef6554ad67d/developers/images/opengraph/teal.png)](https://developers.google.com/identity/sign-in/web/sign-in)
 
 Looks terrible, but hepilly I integrated google sign in button quite fast without external libs. In this article I will show how to implement new Google Identity with Nuxt 3.
 
-![](/src/assets/images/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9704407b-d5fc-4e05-84c3-95547050aa0c.avif)
 
 ## Google Identity - how it is different
 
@@ -40,7 +40,7 @@ Because image is worth more than thousand of words, new login button contains av
 
 [Sign in with Google button UX | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/guides/personalized-button)
 
-![](/src/assets/images/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7e73b9a3-da99-4b05-92af-1d98c1196fdf.avif)
 
 ## Sign In button HTML
 
@@ -70,7 +70,7 @@ or prepare your own in configurator
 
 [Generate HTML code | Authentication | Google Developers](https://developers.google.com/identity/gsi/web/tools/configurator)
 
-![](/src/assets/images/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d4b19d15-18c7-4e7a-8fc5-63cb8f6c828a.avif)
 
 There are three elements that we have to connect:
 
@@ -169,11 +169,11 @@ useHead({
 
 Now you should see login button. You should be able to click on it, login and see credentials in console. Assuming that you correctly configured OAuth 2.0 Client
 
-![](/src/assets/images/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1fa9c03c-8be1-48fe-b53a-ccff8d83e079.avif)
 
 And added localhost to Authorized JavaScript origins
 
-![](/src/assets/images/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/5da80aad-7e3a-4158-9fd7-25e34653b891.avif)
 
 After login in console you will see array with single object like this
 
@@ -209,7 +209,7 @@ Credentail token is `JWT` with payload
 
 To verify it you should send it to backend.
 
-![](/src/assets/images/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dd66e012-cd3b-4e6d-b07f-c332f74da32b.avif)
 
 ## Backend verification for Google credential
 
@@ -303,9 +303,9 @@ if(process.client) {
 
 we forgot about `cors`
 
-![](/src/assets/images/a131da56-cca9-4264-844b-dd6592ce593d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a131da56-cca9-4264-844b-dd6592ce593d.avif)
 
-![](/src/assets/images/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bcdedd8e-0e4c-43de-be3e-2b03686d2b4c.avif)
 
 so quick fix
 
@@ -325,7 +325,7 @@ import cors from '@fastify/cors'
 
 and we can see in console all user's details
 
-![](/src/assets/images/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/90ad6daa-3859-4482-979f-f01507bc1de7.avif)
 
 We do not want to call `await client.verifyIdToken(` on any request so we have to exchange google JWT for our own, so it is worth to create user in your database and generate jwt token for him, but I described this in mentione before article:
 

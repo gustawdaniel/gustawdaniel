@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: structuring-historical-currency-rates-nbp
-coverImage: /src/assets/images/df272521-e61f-4143-bcb4-a664b6cc1384.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/df272521-e61f-4143-bcb4-a664b6cc1384.avif
 description: Learn how to write code that normalizes and structures data based on a case study in the field of finance.
 excerpt: Learn how to write code that normalizes and structures data based on a case study in the field of finance.
 publishDate: 2021-02-04 06:02:21+00:00
@@ -28,7 +28,7 @@ I want to emphasize that historical exchange rates are excellently presented on 
 
 Let's take the Swiss franc exchange rate as an example:
 
-![](/src/assets/images/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avif)
 
 To download this data, simply go to the page:
 
@@ -36,7 +36,7 @@ To download this data, simply go to the page:
 
 and click the button below the table.
 
-![](/src/assets/images/95e88003-79bf-46d0-b300-d7661d4adcee.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/95e88003-79bf-46d0-b300-d7661d4adcee.avif)
 
 In this article, I am not solving a *real problem*, but rather presenting possible *data structuring methods **through the example of*** a specific set of files with inconsistent and unpredictable conventions.
 
@@ -54,7 +54,7 @@ We will download the data with exchange rates from the page
 
 > [https://www.nbp.pl/home.aspx?f=/kursy/arch\_a.html](https://www.nbp.pl/home.aspx?f=/kursy/arch_a.html)
 
-![](/src/assets/images/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avif)
 
 Data is divided into separate `xls` sheets.
 
@@ -62,7 +62,7 @@ Data is divided into separate `xls` sheets.
 
 We will start by retrieving this data. We read the selector from the `HTML` code.
 
-![](/src/assets/images/6aea3892-5617-4b54-909f-c202c1ae20f5.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aea3892-5617-4b54-909f-c202c1ae20f5.avif)
 
 In the browser console, we type:
 
@@ -207,7 +207,7 @@ console.dir(main(), {depth: Infinity, maxArrayLength: Infinity})
 
 It turns out that the first file does not contain currency codes.
 
-![](/src/assets/images/db384089-4942-4f2c-9c7e-61960ff9385c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/db384089-4942-4f2c-9c7e-61960ff9385c.avif)
 
 So we are forced to build a dictionary that maps country names to currency codes.
 
@@ -413,7 +413,7 @@ To make reading more convenient, I temporarily displayed the `arr` table using `
 console.table(arr.map(l => l.filter((e,i) => i < 5 || Math.abs(i - 30) < 4)));
 ```
 
-![](/src/assets/images/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avif)
 
 What do we see?
 
@@ -478,7 +478,7 @@ const ROWS_FILTER = (e: string, i: number) => i <= Infinity
 
 Execution will end with an error
 
-![](/src/assets/images/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avif)
 
 Thanks to the lines allowing for debugging:
 
@@ -494,7 +494,7 @@ console.dir(settings, {depth: Infinity});
 
 we see that the problem is completely empty lines.
 
-![](/src/assets/images/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avif)
 
 The cause of the error is the rigid adherence to a specific row as a place where we keep delimiters or currency names, whereas we should be removing empty lines before detecting headers.
 
@@ -521,15 +521,15 @@ const arr = fs
 
 This time it doesn't work again. The reason is a very unusual line in one of the files.
 
-![](/src/assets/images/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avif)
 
 Course Correction from 1987? How is that? Actually, in `xls` we have something like this:
 
-![](/src/assets/images/093d1361-1532-4040-aa60-cd50cc9705de.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/093d1361-1532-4040-aa60-cd50cc9705de.avif)
 
 However, it concerns the currency `ECU`, so it is most reasonable to omit this line by tightening the date recognition criteria.
 
-![](/src/assets/images/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avif)
 
 The entire code from this stage can be found at the link:
 
@@ -551,7 +551,7 @@ However, its execution still causes errors.
 
 Upon deeper inspection, it turns out that the problem lies with a line that was almost empty, but not completely empty:
 
-![](/src/assets/images/a1a5c29e-0331-469d-ba92-28bca784abbd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a1a5c29e-0331-469d-ba92-28bca784abbd.avif)
 
 Someone placed `Nr` in a completely insignificant column. We therefore return to the code and will remove this line with the next filter: `DROP_JUNK_LINES`, placed before `DROP_EMPTY_LINES`.
 
@@ -615,7 +615,7 @@ console.table(arr.map(e => e.filter((e,i) => i < 10)));
 
 to see a completely new header organization and the change of the date column
 
-![](/src/assets/images/70234f95-8834-4879-8290-b1b873c01f15.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/70234f95-8834-4879-8290-b1b873c01f15.avif)
 
 This time both the currency and the divisor are placed on the same line. So we will handle the `else` case after the line.
 
@@ -685,11 +685,11 @@ Fixes can be seen in the commit:
 
 Is that all the problems? Absolutely not. In 2008, another convention was used.
 
-![](/src/assets/images/43871410-d47e-4076-95ab-61d8795fef17.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/43871410-d47e-4076-95ab-61d8795fef17.avif)
 
 It consists of not placing "Switzerland" anywhere, nor "1CHF" anywhere, therefore both recognition methods fail. What should we do? We can outline the header recognition algorithm as follows:
 
-![](/src/assets/images/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avif)
 
 We marked the missing elements in orange.
 
@@ -741,7 +741,7 @@ Therefore, in the configuration settings for codes, we can no longer optimistica
 
 Changes in functions performing the header processing earlier look like this
 
-![](/src/assets/images/e43bf31c-938d-446b-bba7-a2692d73e6ca.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e43bf31c-938d-446b-bba7-a2692d73e6ca.avif)
 
 This is how their current code looks, however.
 
@@ -885,7 +885,7 @@ parcel index.html
 
 we will see a build message and a link to the page
 
-![](/src/assets/images/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avif)
 
 After opening the link and the developer console, and then adding the line `***console***.log("test")` to `index.ts`, we will see the page automatically reload and "test" logged to the console.
 
@@ -944,7 +944,7 @@ chart.render().then(console.log).catch(console.error);
 
 You could say - super simple:
 
-![](/src/assets/images/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avif)
 
 However, this simplicity has a purpose. It allows not to clutter the article with test data, only when we have the data structure for the chart can we perform the transformation of our structure extracted from `xls` files.
 
@@ -1105,15 +1105,15 @@ chart.render().then(console.log).catch(console.error)
 
 The chart looks great. It perfectly captures the realities of the currency wild west from the early 90s. We see how in 1991 inflation skyrocketed the price of the franc by orders of magnitude, and the drastic drop at the beginning of 1995 caused by the implementation of the denomination act from July 7, 1994.
 
-![](/src/assets/images/79297982-53d5-4631-80ce-233139e5e437.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/79297982-53d5-4631-80ce-233139e5e437.avif)
 
 An undetected problem turns out to be the incorrect scaling from 1995.
 
-![](/src/assets/images/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avif)
 
 Indeed, we have a change in the multiplier during the year 1995
 
-![](/src/assets/images/49771fae-248f-44fe-a307-bc25574964da.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/49771fae-248f-44fe-a307-bc25574964da.avif)
 
 We can fix this problem by adding lines that shift the divider if its change occurs between values, not in the header:
 
@@ -1148,7 +1148,7 @@ settings[key].values.push({[date]: parseFloat(localArr[settings[key].col]) / set
 
 Regenerating data allows you to see the chart
 
-![](/src/assets/images/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avif)
 
 To perform the deployment, we will use the Netlify service.
 
@@ -1170,11 +1170,11 @@ And we add a build command in `package.json`
 
 After selecting the `dist` directory in the Netlify panel and running the command `npm run build`, we can enjoy a configured CI deployment.
 
-![](/src/assets/images/47831aa4-8526-44ad-b452-a874f467ec88.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/47831aa4-8526-44ad-b452-a874f467ec88.avif)
 
 At the end of the course CHF from the late 90s to modern times
 
-![](/src/assets/images/bedc08c4-895e-4579-b482-5c9d2cc39126.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/bedc08c4-895e-4579-b482-5c9d2cc39126.avif)
 
 # Conclusions
 

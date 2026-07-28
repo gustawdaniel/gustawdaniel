@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: aur-package-publication
-coverImage: /src/assets/images/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f3b21d8a-2483-40fe-8603-d39fb987ebf8.avif
 description: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
 excerpt: Naucz się jak publikować aktualizację pakietów w repozytorium użytkowników Arch Linux.
 publishDate: 2022-01-29T20:34:39.000Z
@@ -21,7 +21,7 @@ Po założeniu konta na stronie
 
 przejdź do zakładki "moje konto" i uzupełnij "Klucz publiczny SSH"
 
-![](/src/assets/images/08559ea5-1a3c-40c5-96f0-d5e3b34148cf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/08559ea5-1a3c-40c5-96f0-d5e3b34148cf.avif)
 
 ### Pobierz paczkę, którą chcesz zaktualizować
 
@@ -76,7 +76,7 @@ Tym czasem pod linkiem z wydaniami z Githuba mamy wersję 1.4.0
 
 [Releases · InfinityWallet/Releases](https://github.com/InfinityWallet/Releases/releases)
 
-![](/src/assets/images/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/03aa2c9c-5c02-48c1-b89a-5b6dc474378b.avif)
 
 A wersję dla Debiana znajdziemy pod adresem
 
@@ -116,7 +116,7 @@ Możemy sprawdzić czy instalacja przebiega pomyślnie wpisując
 makepkg -si
 ```
 
-![](/src/assets/images/edfefedf-af85-409b-9e6d-ff33fbeefd07.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/edfefedf-af85-409b-9e6d-ff33fbeefd07.avif)
 
 ### Wysyłamy zmiany do repozytorium
 

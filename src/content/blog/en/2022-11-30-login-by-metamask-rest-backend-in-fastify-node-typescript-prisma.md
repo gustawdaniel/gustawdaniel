@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: login-by-metamask-rest-backend-in-fastify-node-typescript-prisma
-coverImage: /src/assets/images/4063ad62-79ab-432e-94a1-7ec1bbd852b8.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/4063ad62-79ab-432e-94a1-7ec1bbd852b8.avif
 description: We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
 excerpt: We building from scratch rest api in fastify using mongodb connected by prisma as database, jest as test framework and etherjs to verify signatures signed by metamask.
 publishDate: 2022-11-30 17:23:41+00:00
@@ -66,7 +66,7 @@ npm run dev
 
 It will show "ok" and will wait for changes to react on them in real time.
 
-![](/src/assets/images/7125cc3e-5539-4850-b765-01a1c2dea692.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7125cc3e-5539-4850-b765-01a1c2dea692.avif)
 
 ## Add Fastify with first endpoint
 
@@ -74,7 +74,7 @@ Fastify is framework similar to express but with two advantages
 
 * it is about 20% faster in requests processing
 
-![](/src/assets/images/b8d54d3e-88fc-494a-b406-0c117bb9b4ed.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b8d54d3e-88fc-494a-b406-0c117bb9b4ed.avif)
 
 * it is faster in developemnt thanks to useful simplifications in his API
 
@@ -163,17 +163,17 @@ starts return response
 }
 ```
 
-![](/src/assets/images/7ffbbcf3-ef0d-4431-a300-3eec3eb41ccf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/7ffbbcf3-ef0d-4431-a300-3eec3eb41ccf.avif)
 
 ## Tests in Jest with esbuild
 
 If you are programmer more time, than one day you are aware how easy is break up your working program changing something in source code in random places. Fortunately we can write test that prove that code is working as we expecting.
 
-![](/src/assets/images/b23e01cd-3fbb-473b-8213-5c9c95e64cc1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b23e01cd-3fbb-473b-8213-5c9c95e64cc1.avif)
 
 In node js word one of best testing frameworks is `jest`. But to connect it with typescript we need plugin that will transform `ts` files. It is terrible that most popular `ts-jest` is 2000 times more frequently used that about 26 times faster `jest-ebuild`. But lets use technology from the future - esbuild.
 
-![](/src/assets/images/42715107-7b7c-4e7a-8388-8d19edb97451.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42715107-7b7c-4e7a-8388-8d19edb97451.avif)
 
 Our `jest.config.ts` will contain
 
@@ -240,7 +240,7 @@ Time:        0.222 s, estimated 1 s
 Ran all test suites.
 ```
 
-![](/src/assets/images/06115b39-25fc-4a11-93d5-3396d5c05929.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/06115b39-25fc-4a11-93d5-3396d5c05929.avif)
 
 We have configured fastify server with live reload development environment and super fast tests configured in jest. We created first endpoint that returns name and version of server on root endpoint. It is time to describe auth flow and implement required routes.
 
@@ -248,7 +248,7 @@ We have configured fastify server with live reload development environment and s
 
 Generally idea is the following. User has private key connected with his wallet address. We can save this address to database as his unique id and generate nonce for him. Nonce is simple random phrase generated to check if user can correctly sing it using his own address. If nonce will leak, it is nothing scarry, because nobody will be able to sign it with correct address is he does not possess private key. Below we presenting diagram:
 
-![](/src/assets/images/f6921ccd-2b57-4935-9aa8-18cf7e8296eb.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f6921ccd-2b57-4935-9aa8-18cf7e8296eb.avif)
 
 So we need users collection only with `address` and `nonce` and 4 endpoints
 
@@ -300,7 +300,7 @@ and in `.env` we can select address to our mongo database
 DATABASE_URL=mongodb://localhost:27017/web3_bdl
 ```
 
-![](/src/assets/images/4116df67-d537-41fe-b933-aff45f28ac77.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4116df67-d537-41fe-b933-aff45f28ac77.avif)
 
 ### Mongo in Replica Set Mode
 
@@ -379,7 +379,7 @@ export {
 
 Now we can import prisma from this place and get access to proper database in dependence from `NODE_ENV`.
 
-![](/src/assets/images/e2b309fd-236d-4a82-9995-c6f5e8db7f22.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/e2b309fd-236d-4a82-9995-c6f5e8db7f22.avif)
 
 ### Passing env to process
 
@@ -539,7 +539,7 @@ describe('searching user by address', () => {
 
 Here we covered all possible scenarios.
 
-![](/src/assets/images/316a676f-2eb0-499f-a8f4-82f9fa59c5f2.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/316a676f-2eb0-499f-a8f4-82f9fa59c5f2.avif)
 
 ## Register user using wallet address
 
@@ -626,7 +626,7 @@ describe('user can register account', () => {
 })
 ```
 
-![](/src/assets/images/fe98e588-0f2d-471c-a42f-cf1d1ea328d1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/fe98e588-0f2d-471c-a42f-cf1d1ea328d1.avif)
 
 ## Login user by signed message
 
@@ -830,7 +830,7 @@ import {Response} from "light-my-request";
     })
 ```
 
-![](/src/assets/images/d1fd89b1-4884-4fe7-9df5-c95a456f3cbe.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d1fd89b1-4884-4fe7-9df5-c95a456f3cbe.avif)
 
 ## Getting user data from JWT token
 
@@ -919,19 +919,19 @@ and in `src/route/user.ts` add controller with name `root`.
 
 Now lets try to use it. First register account with address from my browser
 
-![](/src/assets/images/c0280d22-ead4-4f84-a5aa-1d410013046e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c0280d22-ead4-4f84-a5aa-1d410013046e.avif)
 
 Then sign `nonce` in browser
 
-![](/src/assets/images/1ebb796e-3494-45c1-93f3-6b70eee435f1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/1ebb796e-3494-45c1-93f3-6b70eee435f1.avif)
 
 Login using signature to get jwt token
 
-![](/src/assets/images/4f94593d-a657-44e9-a132-2fd13837b3c3.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/4f94593d-a657-44e9-a132-2fd13837b3c3.avif)
 
 And finally get user data using private route `/me`
 
-![](/src/assets/images/d60b400a-02e8-4c61-b5f2-05c52600d584.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d60b400a-02e8-4c61-b5f2-05c52600d584.avif)
 
 We can cover it by test in `jest` in file `test/account.test.ts`
 
@@ -1054,7 +1054,7 @@ describe('cors', () => {
 
 To find problems in our code easier we can use colors to print errors:
 
-![](/src/assets/images/985fb501-4012-4c4b-8f5a-bfd3423a939e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/985fb501-4012-4c4b-8f5a-bfd3423a939e.avif)
 
 Lets install `cli-color` library:
 
@@ -1092,7 +1092,7 @@ import {red, yellow} from 'cli-color'
 
 now our errors will be easy to find and analyze in console.
 
-![](/src/assets/images/b87442c3-adf2-4911-aada-5074b407bd8d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/b87442c3-adf2-4911-aada-5074b407bd8d.avif)
 
 ### Github workflows
 

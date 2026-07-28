@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: impact-indexation-on-performance-of-search-in-base-mysql
-coverImage: /src/assets/images/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 description: Using indexes speeds up searches and increases table size while slowing down modifications. The article shows how to profile queries and measure the impact of indexes on search performance.
 excerpt: Using indexes speeds up searches and increases table size while slowing down modifications. The article shows how to profile queries and measure the impact of indexes on search performance.
 publishDate: 2021-06-27 17:40:00+00:00
@@ -269,7 +269,7 @@ SELECT SQL_TEXT,TIMER_WAIT FROM performance_schema.events_statements_history_lon
 
 we should see the duration of the query expressed in picoseconds
 
-![](/src/assets/images/12605ada-a72e-49a9-a9fe-7bb0d3c392b0.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/12605ada-a72e-49a9-a9fe-7bb0d3c392b0.avif)
 
 If the topic of profiling mechanism configuration has piqued your interest, you can deepen your knowledge directly in the documentation:
 
@@ -463,7 +463,7 @@ different number of rows.",
 Export["plotId.png", %];
 ```
 
-![](/src/assets/images/845a64eb-b6e9-449c-8c56-9bb9ccd72edc.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/845a64eb-b6e9-449c-8c56-9bb9ccd72edc.avif)
 
 We see that for both `InnoDB` and `MEMORY`, the speed of selecting by identifier does not depend on the number of records in the database for our range. This is certainly not a dependency that could be discerned from the noise present here. It is evident that for the in-memory table, selects are performed faster and their execution time is more regular. The situation is completely different for non-indexed attributes.
 
@@ -480,7 +480,7 @@ engines for different number of rows.",
 Export["plotVal.png", %];
 ```
 
-![](/src/assets/images/f35404ce-0d52-4e75-9ee3-2844dcfe21e8.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f35404ce-0d52-4e75-9ee3-2844dcfe21e8.avif)
 
 The time to select a non-indexed attribute increases linearly with the size of the database. Here, too, the table stored in memory operates faster.
 
@@ -507,7 +507,7 @@ Histogram[{Flatten[timeIdInnoDB],
 Export["histogram.png", %];
 ```
 
-![](/src/assets/images/45e6712c-528f-4841-82df-1e26739e11ac.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/45e6712c-528f-4841-82df-1e26739e11ac.avif)
 
 ### Model
 
@@ -564,7 +564,7 @@ model c HeavisideTheta[x-a](x-a)*Exp[-b(x-a)]",
 Export["model.png", %]
 ```
 
-![](/src/assets/images/9c843764-e061-4469-b638-772a2bfee396.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9c843764-e061-4469-b638-772a2bfee396.avif)
 
 This is just the beginning of my journey with databases and I still only have a superficial knowledge of this topic. For this reason, entries related to databases should be treated more as a student's notes than expert advice. Nevertheless, I hope that the time spent reading has translated into a better understanding of the quantitative aspects related to indexing performance.
 

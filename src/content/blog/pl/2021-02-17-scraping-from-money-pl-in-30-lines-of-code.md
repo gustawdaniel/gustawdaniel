@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: scraping-from-money-pl-in-30-lines-of-code
-coverImage: /src/assets/images/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f92c69bd-529d-4ea3-9094-69da20ca9232.avif
 description: Zobacz proste case study pobrania i przetworzenia danych z paginowanej tabeli.
 excerpt: Zobacz proste case study pobrania i przetworzenia danych z paginowanej tabeli.
 publishDate: 2021-02-17 15:10:17+00:00
@@ -24,11 +24,11 @@ Jak gdyby nigdy nic wchodzę do internetu i chcę pobrać sobie `LIBORCHF3M` i `
 
 [Archiwum notowań dla LIBOR frank szwajcarski 3M (LIBORCHF3M)](https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBORCHF3M,strona,1.html)
 
-![](/src/assets/images/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/3d264f28-b578-4109-a4e7-939d74de1e3f.avif)
 
 Klikam pobierz i nawet dostaję plik, ale po zaznaczeniu pełnego okresu, wybraniu poprawnych danych widzę:
 
-![](/src/assets/images/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/da1f58ed-b8f1-431c-a159-8caf6f8d1356.avif)
 
 > Liczba wierszy ograniczona do 50
 
@@ -49,7 +49,7 @@ Główne cele:
 
 Okazuje się, że jak wyświetlimy tabelę to dane można z niej odczytać i będzie ona paginowana.
 
-![](/src/assets/images/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f21ad04b-f819-4688-9304-ca972265f3cf.avif)
 
 Linki mają kształt:
 
@@ -65,7 +65,7 @@ https://www.money.pl/pieniadze/depozyty/walutowearch/1921-02-05,2021-02-05,LIBOR
 
 Renderowane są po stronie backendu co widzimy sprawdzając źródło strony:
 
-![](/src/assets/images/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/d2d08c47-c9b0-4aca-bd95-24bc095de2e1.avif)
 
 Potencjalnie plan 1:
 
@@ -116,15 +116,15 @@ HTTP request sent, awaiting response... 403 Forbidden
 
 Czyżby ta strona była tak często czesana `wgetem`, że admini zablokowali żądania dla domyślnego user agent wgeta?
 
-![](/src/assets/images/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a01f54f5-5d4c-47d2-b9b8-220e924bed30.avif)
 
 Nie zdziwił bym się, biorąc po uwagę fakt, że Wget wcale się nie kryje ze swoją tożsamością. Httpie nie jest lepszy
 
-![](/src/assets/images/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/2d2cbb6c-17d2-451f-95ab-a67271405e5f.avif)
 
 ale jest mniej znany, dlatego działa
 
-![](/src/assets/images/f636546c-641b-4405-853f-faa0c337217d.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f636546c-641b-4405-853f-faa0c337217d.avif)
 
 Do pobrania plików jak obiecałem wystarczy po 1 linii dla każdego rodzaju:
 
@@ -142,7 +142,7 @@ mkdir -p raw && for i in {1..178}; do http -b "https://www.money.pl/pieniadze/de
 
 W katalogu `raw` mamy już wszystkie pliki wymagane do przetworzenia
 
-![](/src/assets/images/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6a907b6c-e625-46a2-be35-270e2fdc5229.avif)
 
 # Opisanie docelowej struktury
 
@@ -200,7 +200,7 @@ const getFiles = (): { type: string, content: string }[] => fs
 
 Teraz je przetworzymy pojedynczą tabelę:
 
-![](/src/assets/images/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/ad5cde4e-061f-48f4-b58c-9a9dd680399e.avif)
 
 Ta linia wykonana w kosoli przeglądarki jest sercem całego programu. Należy ją przenieść do `node js`. Abyśmy bez problemu wykonali dynamiczną destrukturyzację potrzebujemy zmienić `target` w `tsconfig.json` na wyższy niż `es5` na przykład `ES2020`.
 
@@ -240,7 +240,7 @@ console.dir(main())
 
 Wykonanie zwraca dane, które musimy jeszcze zredukować do tylko pary kluczy - `LIBORCHF3M` oraz `WIBOR3M`
 
-![](/src/assets/images/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/67386ff8-1f34-41e8-b420-8de3aba109bd.avif)
 
 Redukcja wymaga mergowania objektów na kluczach, dlatego dopiszemy do niej funkcję
 
@@ -297,11 +297,11 @@ fs.writeFileSync(process.cwd() + '/out/rates.json', JSON.stringify(main()))
 
 Ilość linii prawdziwego kodu: 30
 
-![](/src/assets/images/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/903a0aff-c5e9-444b-b7eb-ce8eb9910c17.avif)
 
 Czas wykonania: 1min 15sec
 
-![](/src/assets/images/9c30542e-2868-494f-b185-951200f3aece.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/9c30542e-2868-494f-b185-951200f3aece.avif)
 
 Waga pobranych plików html 43MB. Waga wydobytych danych 244KB w formacie json. Gdybyśmy chcieli je trzymać w CSV, oszczędność wyniosła by jedynie 2 cudzysłowy na linię. Przy około 13 tys linii daje to 26KB zbędnych znaków przy konwersji do CSV czyli 10%. Jest to bardzo mało.
 

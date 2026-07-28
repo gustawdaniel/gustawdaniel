@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: rust-wasm-snake-performance
-coverImage: /src/assets/images/99588e8d-d808-4c67-93cd-a2ebd12c3b94.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/99588e8d-d808-4c67-93cd-a2ebd12c3b94.avif
 description: Vamos a medir el rendimiento de Rust en el juego de serpiente WASM. Estamos comprobando los límites del rendimiento y comparándolo con la versión de JS.
 excerpt: Vamos a medir el rendimiento de Rust en el juego de serpiente WASM. Estamos comprobando los límites del rendimiento y comparándolo con la versión de JS.
 publishDate: 2025-06-06 00:00:00+00:00
@@ -157,7 +157,7 @@ footer #topology {
 
 vamos a dibujar algo como esto:
 
-![](/src/assets/images/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e.avif)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/c2ca1ee0-2f3a-4122-a790-1a389c1ae27e.avif)
 
 pero primero tenemos que crear una serpiente en wasm y conectar su estado a javascript.
 

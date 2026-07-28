@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: facebook-scraping-in-2021
-coverImage: /src/assets/images/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/034f0b84-4b65-4157-8de6-cc9f01220f4f.avif
 description: The article aims to familiarize the reader with the method for scraping the Facebook portal after the layout update.
 excerpt: The article aims to familiarize the reader with the method for scraping the Facebook portal after the layout update.
 publishDate: 2021-04-23 19:49:00+00:00
@@ -480,7 +480,7 @@ we will get ready-to-use code for structuring a list of people from a Facebook g
 
 The length of the new selector is 513 characters compared to 639 for the input selector, but it works great. For the group we analyzed consisting of 4576 people, the automatic scrolling down procedure took 90 minutes.
 
-![](/src/assets/images/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/6b3b63c5-36d4-44af-868a-5519ca5466cb.svg)
 
 The JSON data weighed 2.1 MB. After conversion to CSV format with the command:
 
@@ -509,7 +509,7 @@ du -ha .cache
 
 These avatars weigh 2.19 KiB and are 60x60 px in size. It’s easy to check the size distribution of different data types in scraping:
 
-![](/src/assets/images/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/86469a55-2b9d-4340-a523-4a1517759cfe.svg)
 
 ### Recommendation for Facebook Developers
 
