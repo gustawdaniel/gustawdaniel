@@ -20,6 +20,7 @@ const note = defineCollection({
     schema: z.object({
         title: z.string(),
         publishDate: z.date(),
+        tags: z.array(z.string()).optional(),
     })
 });
 

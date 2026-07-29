@@ -38,4 +38,35 @@ const description = `Dev note: ${frontmatter.title}`;
         </aside>
 
     </article>
+
+    <script>
+        // Un-proxy remote and SVG images from Astro's /_image endpoint
+        document.querySelectorAll('article section.prose img').forEach(img => {
+            const src = img.getAttribute('src');
+            if (src && src.includes('/_image?href=')) {
+                const match = src.match(/href=([^&]+)/);
+                if (match && match[1]) {
+                    const rawUrl = decodeURIComponent(match[1]);
+                    img.setAttribute('src', rawUrl);
+                    img.removeAttribute('srcset');
+                    img.removeAttribute('width');
+                    img.removeAttribute('height');
+                    img.removeAttribute('data-image-component');
+                }
+            }
+        });
+
+        // Add anchor links to headings
+        document.querySelectorAll('article section.prose h2[id], article section.prose h3[id]').forEach(heading => {
+            if (heading.querySelector('.anchor-link')) return;
+            const link = document.createElement('a');
+            link.className = 'anchor-link inline-block ml-2 text-indigo-500 opacity-0 group-hover:opacity-100 hover:text-indigo-600 transition-opacity no-underline text-base font-normal align-middle';
+            link.href = `#${heading.id}`;
+            link.ariaLabel = 'Link to section';
+            link.title = 'Copy link to section';
+            link.innerHTML = '🔗';
+            heading.classList.add('group');
+            heading.appendChild(link);
+        });
+    </script>
 </BaseLayout>

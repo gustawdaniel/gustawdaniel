@@ -1,0 +1,16 @@
+diff --git a/dist/content/runtime.js b/dist/content/runtime.js
+index aa784e834d6202032b1bfbfc17d1e9e52a8a094e..a2e908e01e02e7ae8ad290cbeed6d812f9648dcd 100644
+--- a/dist/content/runtime.js
++++ b/dist/content/runtime.js
+@@ -337,8 +337,9 @@ async function updateImageReferencesInBody(html, fileName) {
+         image = await getImage({ ...decodedImagePath, src: imported });
+       }
+       imageObjects.set(imagePath, image);
+-    } catch {
+-      throw new Error(`Failed to parse image reference: ${imagePath}`);
++    } catch (err) {
++      console.warn(`[astro] Skipping unparseable image reference in ${fileName}: ${imagePath}`, err?.message || err);
++      continue;
+     }
+   }
+   return html.replaceAll(CONTENT_LAYER_IMAGE_REGEX, (full, imagePath) => {

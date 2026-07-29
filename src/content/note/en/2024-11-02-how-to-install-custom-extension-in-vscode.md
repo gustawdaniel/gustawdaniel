@@ -21,16 +21,15 @@ Download the extension
 git clone git@github.com:juanmnl/vs-1984.git
 ```
 
-if you do not have private key, check [how to generate ssh key to github repo](/note/how-to-generate-ssh-key-to-github-repo)
+if you do not have private key, check [how to generate ssh key to github repo](/notes/en/2024-11-02-how-to-generate-ssh-key-to-github-repo)
 
+then install dependencies and build
 
-install `vsce` packages
-
+```bash
+pnpm i && pnpm build
 ```
-npm install -g @vscode/vsce
-```
 
-if you do not have npm installed, check [how to install Node.js and pnpm](/note/how-to-install-nodejs-and-pnpm)
+if you do not have npm installed, check [how to install Node.js and pnpm](/notes/en/2024-11-02-how-to-install-nodejs-and-pnpm)
 
 Go to the extension directory
 

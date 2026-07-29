@@ -9,31 +9,31 @@ const env = process.env.NODE_ENV
 // env = prod
 ---
 
-<footer class="bg-white dark:bg-slate-900">
-    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-            <div class="pb-6">
+<footer class="bg-slate-50/90 dark:bg-slate-950/80 border-t border-gray-200/90 dark:border-slate-800 mt-16 sm:mt-24">
+    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-16 lg:px-8">
+        <nav class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-center" aria-label="Footer">
+            <div>
                 <a href={getRelativeLocaleUrl(currentLocale, '/')}
-                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.blog')}</a>
+                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">{useTranslations(currentLocale)('nav.blog')}</a>
             </div>
-            <div class="pb-6">
+            <div>
                 <a href={getRelativeLocaleUrl(currentLocale, '/notes')}
-                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.notes')}</a>
+                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">{useTranslations(currentLocale)('nav.notes')}</a>
             </div>
-            <div class="pb-6">
-                <a href={getRelativeLocaleUrl(currentLocale, '/projects')} class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.projects')}</a>
+            <div>
+                <a href={getRelativeLocaleUrl(currentLocale, '/projects')} class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">{useTranslations(currentLocale)('nav.projects')}</a>
             </div>
-            <div class="pb-6">
+            <div>
                 <a href={getRelativeLocaleUrl(currentLocale, '/contact')}
-                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.contact')}</a>
+                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">{useTranslations(currentLocale)('nav.contact')}</a>
             </div>
-            <div class="pb-6">
+            <div>
                 <a href="/sitemap.xml"
-                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">Sitemap</a>
+                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Sitemap</a>
             </div>
-            <div class="pb-6">
+            <div>
                 <a href="https://updown.io/p/fp5su"
-                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">Status</a>
+                   class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">Status</a>
             </div>
         </nav>
         <div class="mt-10 flex

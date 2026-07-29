@@ -13,9 +13,9 @@ html {
 }
 
 html.dark {
-    --pagefind-ui-primary: #eeeeee;
-    --pagefind-ui-text: #eeeeee;
-    --pagefind-ui-background: #152028;
-    --pagefind-ui-border: #152028;
-    --pagefind-ui-tag: #152028;
+    --pagefind-ui-primary: #818cf8;
+    --pagefind-ui-text: #f3f4f6;
+    --pagefind-ui-background: #1e293b;
+    --pagefind-ui-border: #334155;
+    --pagefind-ui-tag: #334155;
 }

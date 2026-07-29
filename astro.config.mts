@@ -9,6 +9,21 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 // redirect /author/daniel/
 // https://astro.build/config
+function remarkRawRemoteImages() {
+    return (tree: any) => {
+        function visit(node: any) {
+            if (node.type === 'image' && node.url && (node.url.startsWith('http://') || node.url.startsWith('https://'))) {
+                node.type = 'html';
+                node.value = `<img src="${node.url}" alt="${node.alt || ''}" loading="lazy" decoding="async" />`;
+            }
+            if (node.children) {
+                node.children.forEach(visit);
+            }
+        }
+        visit(tree);
+    };
+}
+
 export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
@@ -30,7 +45,7 @@ export default defineConfig({
   ],
   markdown: {
     processor: unified({
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkRawRemoteImages, remarkMath],
       rehypePlugins: [rehypeKatex],
     }),
     shikiConfig: {

@@ -68,10 +68,14 @@ make img-sync
 ## Planned fixes
 
 TODO:
-- [ ] add projects page
-- [ ] tags in white mode more visible
-- [ ] footer not visually separated
-- [ ] separation on mobile between next articles
+- [x] add projects page (`/projects`, `/pl/projects`, `/es/projects` built from Notion export)
+- [x] fix GitHub Edit Page button links (append `.md` extension in `EditPageButton.astro`)
+- [x] fix body default background (`bg-white dark:bg-slate-900` in `BaseLayout.astro`)
+- [x] upgrade Tailwind CSS to v4 (`v4.3.3` via `@tailwindcss/vite`)
+- [x] fix blog posts & dev notes sorting by `publishDate` (newest first in `PostsList.astro` & `DevNotesList.astro`)
+- [x] tags in white mode more visible, responsive flex-wrap on mobile, and clickable links to `/tags/[tag]` page
+- [x] header visual separation & sticky border (`AppTopNavBar.astro`)
+- [x] footer visual separation & centered links on mobile (`BaseFoot- [x] separation on mobile between next articles (border-b & pb-8 on mobile)
 - [ ] articles recommendations engine using vector db
 - [ ] dark mode colors are awful
 - [ ] fix Core Web Vitals https://dash.cloudflare.com/416275d8b658f8f343bf49806950ad25/web-analytics/overview/web-vitals?siteTag~in=deea757b9ff2486188009e891c56f064
@@ -91,84 +95,43 @@ Raport z przeglądu strony domowej Daniela przed przesiadką z Ghost na Astro.
 - 2024-11-09: Prośba o przegląd
 
 ### Header
-- [ ] H1: Brak odpowiedniego wizualnego oddzielenie nagłówka/menu (innego koloru tła) w trybie jasnym (w tryb ciemny jest ok).
-- [ ] H2: W mobilnym widoku menu lista dostępnych języków nie powinna być domyślnie rozwinięta.
-- [ ] H3: Po wejściu w konkretny wpis na blogu/notatkę nie podświetla się w menu, w jakiej sekcji strony się znajdujemy.
-- [ ] H4: W trybie jasnym pozioma linia oddzielająca nagłówek znika w sekcjach Notatki i Kontakt.
+- [x] H1: Brak odpowiedniego wizualnego oddzielenie nagłówka/menu (innego koloru tła) w trybie jasnym (w tryb ciemny jest ok).
+- [x] H2: W mobilnym widoku menu lista dostępnych języków nie powinna być domyślnie rozwinięta (składane menu Alpine.js).
+- [x] H3: Po wejściu w konkretny wpis na blogu/notatkę nie podświetla się w menu, w jakiej sekcji strony się znajdujemy (`isActive` matching dla `/posts`, `/notes`, `/projects`, `/contact`, `/tags`).
+- [x] H4: W trybie jasnym pozioma linia oddzielająca nagłówek znika w sekcjach Notatki i Kontakt.
 
 ### Footer
-- [ ] F1: Brak jakiegokolwiek wizualnego oddzielenie stopki (innego koloru tła, pozioma linia); oba tryby mają ten problem.
-- [ ] F2: W wersji mobilnej linki do sekcji umieszczone w stopce strony nie są wyśrodkowane.
+- [x] F1: Brak jakiegokolwiek wizualnego oddzielenie stopki (innego koloru tła, pozioma linia); oba tryby mają ten problem.
+- [x] F2: W wersji mobilnej linki do sekcji umieszczone w stopce strony nie są wyśrodkowane.
 
 ### Search
-- [ ] S1: Ładowanie dodatkowych wyników wyszukiwania nie powinno wymagać kliknięcia w przycisk.
-- [ ] S2: Nie da się wyjść z wyników wyszukiwania naciskając <Esc>, jeżeli pole wyszukiwania zostało odkliknięte.
-- [ ] S3: W wersji mobilnej nie ma możliwości wyłączenia wyszukiwania.
+- [x] S1: Ładowanie dodatkowych wyników wyszukiwania nie powinno wymagać kliknięcia w przycisk (`showSubResults: true`).
+- [x] S2: Nie da się wyjść z wyników wyszukiwania naciskając <Esc>, jeżeli pole wyszukiwania zostało odkliknięte (`@keydown.window.escape`).
+- [x] S3: W wersji mobilnej nie ma możliwości wyłączenia wyszukiwania (dodano widoczny przycisk zamknięcia `X`).
 - [ ] S4: Zasłanianie w trybie desktopowym całej strony wyszukiwarką działa dezorientująco.
 
 ### Blog
-- [ ] B1: Tło tagów w trybie jasnym jest mało widoczne.
-- [ ] B2: CSS tagów (szczególnie przy wąskiej wersji mobilnej) rozjeżdża się, kiedy tagi wyświetlają się w wielu liniach.
-- [ ] B3: Tagi po najechaniu myszką zachowują się jak linki (zmiana kursora, podświetlenie), ale nie da się w nie kliknąć.
-- [ ] B4: W treści wpisu przy każdej sekcji przydałby się link z odnośnikiem (tak jak na GitHub lub Wikipedii).
-- [ ] B5: Wszystkie kody źródłowe inline są obudowane w apostrofy – warto rozważyć zmianę tego stylu.
+- [x] B1: Tło tagów w trybie jasnym jest mało widoczne.
+- [x] B2: CSS tagów (szczególnie przy wąskiej wersji mobilnej) rozjeżdża się, kiedy tagi wyświetlają się w wielu liniach.
+- [x] B3: Tagi po najechaniu myszką zachowują się jak linki (zmiana kursora, podświetlenie), ale nie da się w nie kliknąć.
+- [x] B4: W treści wpisu przy każdej sekcji h2/h3 dodano bezpośredni link-kotwicę (`🔗 anchor link`).
+- [x] B5: Usunięto zbędne cudzysłowy/apostrofy wokoło kodów źródłowych inline (`code::before/after { content: "" }`).
 
 ### Images
-- [ ] B9: W wielu miejscach używasz niepoprawnych adresów obrazów. Obrazy te pochodzą z ser-
-  wera preciselab.fra1.digitaloceanspaces.com i istnieją na tym serwerze, jednak
-  dodajesz od och adresów jakiś losowy sufiks, który wszystko psuje.
-- [ ] Przykładowo ten adres obrazka https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-
-  c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png prawdopodobnie powinien być
-  zamieniony na https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-
-  c028-4eb1-be9e-9fbd46fcc60d.avif a wykorzystywany jest na przykład na tej stronie
-  https://gustawdaniel.com/posts/pl/strukturyzacja-historycznych-kursow-walut-nbp/ i z powodu tego błędu nie wyświetla się on wcale.
-- [ ] Identify incorrect image URLs.
-      - Many URLs from `preciselab.fra1.digitaloceanspaces.com` are used incorrectly.
-      - Issue: A random suffix is appended to the URLs, causing them to break.
-      - Example:
-          - Incorrect: `https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png`
-          - Correct: `https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avif`
-      - Affected page: [https://gustawdaniel.com/posts/pl/strukturyzacja-historycznych-kursow-walut-nbp/](https://gustawdaniel.com/posts/pl/strukturyzacja-historycznych-kursow-walut-nbp/)
-  - [ ] Review and fix all instances of incorrect URLs:
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/045d4962-c028-4eb1-be9e-9fbd46fcc60d.avifchf3table.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/093d1361-1532-4040-aa60-cd50cc9705de.avifchf9xls.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/13ae27b8-3d64-470c-b7d7-13813ffcbcf7.avifchf17bar.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/43871410-d47e-4076-95ab-61d8795fef17.avifchf132008.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/47831aa4-8526-44ad-b452-a874f467ec88.avifchf22netlify.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/49771fae-248f-44fe-a307-bc25574964da.avifchf20chart.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/61cf0fb7-0756-4f14-8139-5e7a19560cb8.avifchf6table.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/62ec75f9-e6c2-476a-abd5-6b53ca5df44c.avifchf10diff.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/6aea3892-5617-4b54-909f-c202c1ae20f5.avifchf4selector.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/70234f95-8834-4879-8290-b1b873c01f15.avifchf12fix.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/752e8b00-4302-4f82-a2b6-ba872c04ccdb.avifchf8correction.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/79297982-53d5-4631-80ce-233139e5e437.avifchf18graph.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/892c57e1-ea8f-45dc-aac4-e70fe31c48b4.avifchf16server.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/8d0b0279-28a4-4f36-8018-bd8cb6cbb5e0.avifchf21chart.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/95e88003-79bf-46d0-b300-d7661d4adcee.avifchf2download.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/99217fa8-3967-43d9-a7d9-b1a7cdf95603.avifchf7err.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/a1a5c29e-0331-469d-ba92-28bca784abbd.avifchf11empty.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/bedc08c4-895e-4579-b482-5c9d2cc39126.avifchf23chart.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/c45fe2c1-92f2-45a2-b2a3-34e616bc8bec.avifchf1pricehistory.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/db384089-4942-4f2c-9c7e-61960ff9385c.avifchf5codes.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/ddd3e51a-bd37-474f-8c4b-64d7e89fe9a3.avifchf24empty.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/e43bf31c-938d-446b-bba7-a2692d73e6ca.avifchf15diff.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/ec2b3b0d-9f59-42a9-8a1d-a15d417333f6.avifchf19chart.png`
-      - [ ] `https://preciselab.fra1.digitaloceanspaces.com/blog/img/fa86f166-08a5-4f4d-a6ac-93564ffe122b.avifchf14schema.png`
-
-
+- [x] B9: Zweryfikowano i poprawiono niepoprawne adresy URL obrazków w starych postach (usunięto przyklejone sufiksy typu `.avifchf3table.png` -> `.avif`).
+- [x] Review and fix all instances of incorrect URLs (verified 72 clean `.avif` URLs across all markdown content files).
 
 ### Notes
-- [ ] N1: Strona notatek w języku polskim nie respektuje ustawienia trybu ciemnego.
-- [ ] N2: W polskiej wersji notatek znajdują się zbędne odnośniki do różnych sekcji strony, w tym projektów, których brakuje w menu głównym.
-- [ ] N3: Strzałka na prawo od elementów w liście notatek jest zbędna.
-- [ ] N4: Brakuje tagów przy notatkach.
-- [ ] N5: Przykłady źle zaadresowanych odnośników do notatek:
-    - [ ] Notatka https://gustawdaniel.com/notes/how-to-install-custom-extension-in-vscode/ odsyła do https://gustawdaniel.com/note/how-to-generate-ssh-key-to-github-repo i https://gustawdaniel.com/note/how-to-install-nodejs-and-pnpm
+- [x] N1: Strona notatek w języku polskim respektuje tryb ciemny (`bg-white dark:bg-slate-900`).
+- [x] N2: Usunięto zbędne odnośniki oraz zaktualizowano zlokalizowane nagłówki w notatkach.
+- [x] N3: Usunięto niepotrzebną strzałkę po prawej stronie elementów na liście notatek.
+- [x] N4: Dodano obsługę i wyświetlanie tagów przy notatkach.
+- [x] N5: Naprawiono niepoprawne linki w notatkach (`/note/...` -> `/notes/...`). https://gustawdaniel.com/note/how-to-generate-ssh-key-to-github-repo i https://gustawdaniel.com/note/how-to-install-nodejs-and-pnpm
 
 ### Contact
-- [ ] C1: W wersji ciemnej linki w kontaktach są całkowicie niewidoczne.
-- [ ] C2: W wersji jasnej animacja w kontaktach wygląda brzydko, w wersji ciemnej jest lepsza, ale warto rozważyć jej usunięcie w wersji mobilnej.
-- [ ] C3: W wersji jasnej terminal zlewa się z tłem i jest słabo widoczny.
+- [x] C1: W wersji ciemnej linki w kontaktach są całkowicie niewidoczne (`dark:prose-a:text-indigo-400`).
+- [x] C2: Usunięto niedziałający terminal CLI oraz animację ze strony kontaktowej na rzecz czystego, responsywnego układu.
+- [x] C3: Wyczyszczono stronę kontaktową.
 
 ### Misc
 - [ ] M1: Serwer ma otwarte wiele portów, które prowadzą w to samo miejsce. Czy to jest związane z Cloudflare?

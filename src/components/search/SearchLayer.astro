@@ -1,24 +1,34 @@
 ---
-import Search from "astro-pagefind/components/Search";
+import Search from "astro-pagefind/components/Search.astro";
 ---
 
 <div
         @click="const input = $refs.search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false"
+        @keydown.window.escape="if(searchOpen) { searchOpen = false; }"
         class="fixed inset-0 z-50"
         x-show="searchOpen" x-cloak
         id="search-dialog" role="dialog" tabindex="-1" aria-modal="true"
         data-headlessui-state="open"
 >
-    <div class="fixed inset-0 bg-white/50 dark:bg-black/50 backdrop-blur-2xl"></div>
+    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
     <div class="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:px-8 lg:py-[5vh]"
          x-ref="search"
          @click="if($event.target && $event.target instanceof HTMLElement && $event.target.classList.contains('pagefind-ui__result-link')) { const input = search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false } $event.stopPropagation()"
-         @keydown="$event.key === 'Escape' ? searchOpen = false : null"
     >
+        <div class="relative max-w-4xl mx-auto">
+            <button
+                type="button"
+                @click="searchOpen = false"
+                class="absolute -top-2 -right-2 sm:top-2 sm:right-2 p-2.5 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors z-50 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                aria-label="Close search"
+                title="Close (Esc)"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
 
-        <Search id="search" className="pagefind-ui" uiOptions={{showImages: true, showSubResults: true, autofocus: true}}/>
-        <!--<div-->
-        <!--    id="search"-->
-        <!--/>-->
+            <Search id="search" className="pagefind-ui" uiOptions={{showImages: true, showSubResults: true, autofocus: true}}/>
+        </div>
     </div>
 </div>

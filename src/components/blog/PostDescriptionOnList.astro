@@ -7,30 +7,30 @@ import PostTagBadge from "./PostTagBadge.astro";
 interface Props {
     data: InferEntrySchema<"blog">;
     body: string;
-    type?: 'large'
+    type?: 'large';
+    postUrl?: string;
 }
 
-const {data, body, type} = Astro.props;
+const {data, body, type, postUrl} = Astro.props;
 ---
 
-<div class:list={['max-w-xl', type === 'large' ? 'flex flex-col justify-center' : '']}>
-    <div class:list={['flex items-center gap-x-4 text-xs mt-8', type === 'large' ? 'xl:mt-0' : '']}>
-
-        <!--href="#"-->
-{data.tags.filter((_,i) => i<3).map(tag =>
-        <PostTagBadge  tag={tag} />
-)}
-
+<div class:list={['max-w-xl w-full', type === 'large' ? 'flex flex-col justify-center' : '']}>
+    <div class:list={['flex flex-wrap items-center gap-2 text-xs mt-4 sm:mt-6', type === 'large' ? 'xl:mt-0' : '']}>
+        {data.tags.filter((_,i) => i<3).map(tag =>
+            <PostTagBadge tag={tag} />
+        )}
     </div>
-    <div class="group relative">
-        <h3 class:list={['mt-3 font-semibold leading-6 text-gray-900 group-hover:text-gray-600 dark:text-gray-100 dark:group-hover:text-gray-300 text-xl', type === 'large' ? 'xl:text-2xl' : '']}>
-            <span>
-                <!--href="#"-->
-                <span class="absolute inset-0"></span>
-                {data.title}
-            </span>
+    <div class="group">
+        <h3 class:list={['mt-3 font-semibold leading-6 text-gray-900 group-hover:text-indigo-600 dark:text-gray-100 dark:group-hover:text-indigo-400 text-xl transition-colors', type === 'large' ? 'xl:text-2xl' : '']}>
+            {postUrl ? (
+                <a href={postUrl}>
+                    {data.title}
+                </a>
+            ) : (
+                <span>{data.title}</span>
+            )}
         </h3>
-        <p class:list={['mt-5 line-clamp-3 leading-6 text-gray-600 dark:text-gray-300 text-sm', type === 'large' ? 'xl:text-base' : '']}>
+        <p class:list={['mt-3 line-clamp-3 leading-6 text-gray-600 dark:text-gray-300 text-sm', type === 'large' ? 'xl:text-base' : '']}>
             {data.description}
         </p>
     </div>

@@ -10,4 +10,22 @@
     margin-right: auto;
     display: block;
   }
+
+  .prose code::before,
+  .prose code::after {
+    content: "" !important;
+  }
+
+  .prose :not(pre) > code {
+    background-color: rgba(148, 163, 184, 0.18);
+    color: #334155;
+    padding: 0.15rem 0.35rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+  }
+
+  .dark .prose :not(pre) > code {
+    background-color: rgba(51, 65, 85, 0.5);
+    color: #e2e8f0;
+  }
 }

@@ -1,0 +1,35 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostsList from "../../components/PostsList.astro";
+
+export async function getStaticPaths() {
+    const allPosts: CollectionEntry<"blog">[] = await getCollection("blog", post => post.id.startsWith("en"));
+    const allTags = Array.from(new Set(allPosts.flatMap(post => post.data.tags || [])));
+
+    return allTags.map(tag => ({
+        params: { tag: tag.toLowerCase() },
+        props: { tag, originalTag: tag },
+    }));
+}
+
+const { tag, originalTag } = Astro.props;
+---
+
+<BaseLayout pageTitle={`Posts tagged with "${originalTag}"`}>
+    <main class="container mt-8 m-auto px-4">
+        <div class="max-w-4xl mx-auto mb-8 text-center sm:text-left">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">
+                Posts tagged: <span class="text-indigo-600 dark:text-indigo-400">#{originalTag}</span>
+            </h1>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">
+                Browse all articles tagged with #{originalTag}.
+            </p>
+        </div>
+
+        <PostsList
+            featured={false}
+            reducer={(posts) => posts.filter(p => p.data.tags?.map(t => t.toLowerCase()).includes(tag.toLowerCase()))}
+        />
+    </main>
+</BaseLayout>
