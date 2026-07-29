@@ -2,83 +2,84 @@
 author: Daniel Gustaw
 canonicalName: data-logging-with-mysql-ajax-and-behat
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8a528c93-b962-4ba4-b410-944fd27661e1.avif
-description: Escribiremos una aplicación web simple - una calculadora. Usándola como ejemplo, mostraremos cómo configurar selenium con behat y realizar pruebas automatizadas en ella.
-excerpt: Escribiremos una aplicación web simple - una calculadora. Usándola como ejemplo, mostraremos cómo configurar selenium con behat y realizar pruebas automatizadas en ella.
-publishDate: 2021-04-26 20:03:00+00:00
-slug: es/registro-de-datos-en-mysql-ajax-y-behat
+description: We will write a simple web application - a calculator. Using it as an example, we will show how to configure selenium with behat and perform automated tests on it.
+excerpt: We will write a simple web application - a calculator. Using it as an example, we will show how to configure selenium with behat and perform automated tests on it.
+publishDate: 2016-11-29 20:03:00+00:00
+slug: en/logging-data-in-mysql-ajax-and-behat
 tags:
 - ajax
 - mysql
 - selenium
-title: Registro de datos en MySql, Ajax y Behat
+- behat
+title: Data logging in MySql, Ajax, and Behat
 updateDate: 2021-06-21 16:39:24+00:00
 ---
 
-## Descripción del Proyecto
+## Project Description
 
-Este es un proyecto que escribí mientras aprendía a usar una base de datos en PHP. Hace unos días, lo actualicé, añadí pruebas y decidí compartirlo.
+This is a project that I wrote while learning to use a database in PHP. A few days ago, I refreshed it, added tests, and decided to share it.
 
-En este artículo, aprenderás a **centralizar la configuración del proyecto**, **registrar eventos en el sitio en la base de datos** y **probar el sitio** utilizando selenium.
+In this article, you will learn how to **centralize project configuration**, **log events on the site to the database**, and **test the site** using selenium.
 
-El código fuente consiste en:
+The source code consists of:
 
 ```
 PHP 43.2% Perl 19.8% HTML 19.6% Cucumber 7.4% JavaScript 6.5% CSS 3.5%
 ```
 
-Después de escribir, el proyecto se verá así:
+After writing, the project will look like this:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/0cd60295-e8e0-49fb-aa4b-a6a818262939.avif)
 
-## Instalación
+## Installation
 
-**¡Nota! Antes de ejecutar install.pl, asegúrate de que no tengas una base de datos llamada calc y chrome en sources.list. Los scripts de instalación en perl y bash no son largos; familiarízate con ellos antes de ejecutarlos.**
+**Note! Before you run install.pl, make sure you do not have a database named calc and chrome in sources.list. Installation scripts in perl and bash are not long; familiarize yourself with them before running.**
 
-Recomiendo realizar la instalación del proyecto en una máquina virtual, p.ej.: `Lubuntu`.
+I recommend conducting the project installation on a virtual machine, e.g.: `Lubuntu`.
 
-Para instalar el proyecto, necesitas descargar el repositorio (en una ubicación donde no haya un directorio `calc`)
+To install the project, you need to download the repository (in a location where there is no `calc` directory)
 
 ```
 git clone https://github.com/gustawdaniel/calc
 ```
 
-Ve al directorio `calc` e instala el software requerido. Antes de la instalación, revisa el archivo `install.sh` y comenta la adición del repositorio de chrome si ya lo tienes instalado.
+Go to the `calc` directory and install the required software. Before installation, review the `install.sh` file and comment out the addition of the chrome repository if you already have it installed.
 
 ```
 cd calc && bash install.sh
 ```
 
-Verifica los parámetros de conexión de tu base de datos para `mysql`. Si presionaste `enter` durante la instalación y no tenías instalado previamente el paquete `mysql-server`, puedes dejar los valores predeterminados. De lo contrario, ingresa los valores correctos en el archivo `config/parameters.yml` y elimínalo del repositorio.
+Check your database connection parameters for `mysql`. If you pressed `enter` during installation and didn't have the `mysql-server` package installed previously, you can leave the defaults. Otherwise, enter the correct values in the `config/parameters.yml` file and remove it from the repository.
 
 ```
 git rm --cached config/parameters.yml
 ```
 
-Para instalar la base de datos y iniciar el servidor php, ingrese el comando
+To install the database and start the php server, enter the command
 
 ```
 perl install.pl
 ```
 
-En la nueva terminal (`ctrl+n`), inicia el servidor de selenium.
+In the new terminal (`ctrl+n`), start the selenium server.
 
 ```
 selenium-standalone start
 ```
 
-En el siguiente, puedes habilitar pruebas:
+In the next one, you can enable tests:
 
 ```
 vendor/bin/behat
 ```
 
-También puedes usar normalmente el sitio que está expuesto en el puerto 9000.
+You can also normally use the site that is exposed on port 9000.
 
 ```
 firefox localhost:9000
 ```
 
-Si tienes los parámetros de conexión predeterminados a la base de datos, para ver el contenido de la base de datos escribe
+If you have the default connection parameters to the database, to see the contents of the database type
 
 ```
 sudo mysql -u root
@@ -87,9 +88,9 @@ select * from log;
 
 ```
 
-## Estructura de Base de Datos
+## Database Structure
 
-Normalmente empiezo un proyecto con la base de datos. Coloco su instalación en el archivo `sql/main.sql`.
+I usually start a project with the database. I placed its installation in the file `sql/main.sql`.
 
 ```sql
 DROP   DATABASE IF     EXISTS database_name;
@@ -111,7 +112,7 @@ CREATE TABLE log
 
 ```
 
-## Configuración
+## Configuration
 
 ```yml
 config:
@@ -123,14 +124,14 @@ config:
 
 ```
 
-Nos referiremos a ellos en el instalador escrito en Perl y en la clase responsable de guardar en la base de datos en PHP.
+We will refer to them in the installer written in Perl and in the class responsible for saving to the database in PHP.
 
-### Configuración en Perl
+### Configuration in Perl
 
-Escribiremos dos scripts - para crear y restablecer la base de datos. Usaremos la biblioteca `YAML::Tiny` para leer el archivo `parameters.yml`. El siguiente script:
+We will write two scripts - for creating and resetting the database. We will use the `YAML::Tiny` library to read the `parameters.yml` file. The following script:
 
-Lee el archivo con parámetros en la variable `$yaml`.
-Guarda todos los parámetros en las variables correspondientes.
+Reads the file with parameters into the `$yaml` variable.
+Saves all parameters into the corresponding variables.
 
 > install.pl
 
@@ -155,7 +156,7 @@ use warnings;
 
 ```
 
-Crea variables con configuraciones de directorio. (Las instrucciones para crear la base de datos se encuentran en el archivo `main.sql`.)
+Creates variables with directory settings. (The instructions for creating the database are located in the `main.sql` file.)
 
 ```perl
 #
@@ -169,7 +170,7 @@ Crea variables con configuraciones de directorio. (Las instrucciones para crear 
 
 ```
 
-Abre un archivo con código `sql` y guarda el contenido en la variable `$content`.
+Opens a file with `sql` code and saves the content to the variable `$content`.
 
 ```perl
 #
@@ -193,7 +194,7 @@ Abre un archivo con código `sql` y guarda el contenido en la variable `$content
 
 ```
 
-Reemplaza cada ocurrencia de la cadena `database_name` con el nombre del archivo `parameters.yml` y lo guarda.
+Replaces every occurrence of the string `database_name` with the name from the `parameters.yml` file and saves it.
 
 ```perl
 #       Replace database name by name from config
@@ -208,7 +209,7 @@ Reemplaza cada ocurrencia de la cadena `database_name` con el nombre del archivo
 
 ```
 
-Otorga al usuario predeterminado el derecho a abrir la base de datos como root, crea la base de datos y inicia el servidor `php`.
+Grants the default user the right to open the database as root, creates the database, and starts the `php` server.
 
 ```perl
 #       Execute file
@@ -221,9 +222,9 @@ Otorga al usuario predeterminado el derecho a abrir la base de datos como root, 
 
 ```
 
-### Configuración en PHP
+### Configuration in PHP
 
-Para manejar el archivo de configuración en `php`, utilizaremos la biblioteca `"mustangostang/spyc": "^0.6.1"`. Solo se usará al conectar a la base de datos - en el archivo `php/DataBase.php`.
+To handle the configuration file in `php`, we will use the library `"mustangostang/spyc": "^0.6.1"`. It will only be used when connecting to the database - in the file `php/DataBase.php`.
 
 > php/DataBase.php
 
@@ -247,13 +248,13 @@ class DataBase
 
 ```
 
-En la variable `$config`, se almacena un array con parámetros para conectarse a la base de datos. El principio de funcionamiento es el mismo que en el script anterior.
+In the variable `$config`, an array with parameters for connecting to the database is stored. The principle of operation is the same as in the previous script.
 
-## Registro de Datos en la Base de Datos
+## Data Logging in the Database
 
-En la sección sobre la estructura de la base de datos, mostramos qué registros contiene la única tabla que tenemos - `log`. Estos son `id`, `time`, `a`, `b`, `button` y `useragent`. `a` y `b` corresponden a los números ingresados por el usuario. `button` es la acción elegida, ya sea `sum` para la suma o `diff` para la diferencia. `useragent` contiene datos sobre el navegador.
+In the section regarding the database structure, we showed what records are contained in the only table we have - `log`. These are `id`, `time`, `a`, `b`, `button`, and `useragent`. `a` and `b` correspond to the numbers entered by the user. `button` is the action chosen, either `sum` for the sum or `diff` for the difference. `useragent` contains data regarding the browser.
 
-Ahora mapearemos el registro de la base de datos en `php` como un objeto. Para ello, creamos una clase `Log` en el archivo `php/Log.php`
+We will now map the database record in `php` as an object. To do this, we create a class `Log` in the file `php/Log.php`
 
 > php/Log.php
 
@@ -286,9 +287,9 @@ class Log
 
 ```
 
-Contiene todos los campos de la tabla, excepto el identificador y la marca de tiempo, que se asignan durante la escritura en la base de datos. Marqué todos los getters y setters de las propiedades de la clase con tres puntos. En la mayoría de los IDE, pueden generarse automáticamente, por ejemplo, en `PhpStorm` seleccionando `código->Generar...`. El método `getC` permite calcular el valor de suma o diferencia en el lado del servidor, que se utiliza más tarde en la interfaz `API`.
+It contains all fields from the table except for the identifier and timestamp, which are assigned during the write to the database. I marked all getters and setters for the class properties with three dots. In most IDEs, they can be generated automatically, e.g., in `PhpStorm` by selecting `code->Generate...`. The `getC` method allows for calculating the sum or difference value on the server side, which is later used in the `API` interface.
 
-Ahora podemos presentar en su totalidad la mencionada clase `DataBase`, que se utilizó para guardar los datos recibidos de la página en la base de datos.
+Now we can present in full the aforementioned `DataBase` class, which was used to save data received from the page to the database.
 
 > php/DataBase.php
 
@@ -366,9 +367,9 @@ class DataBase
 
 ```
 
-Esta clase no tiene propiedades, pero tiene un método - `save`. Este método toma un objeto `Log` y registra todas las propiedades de este objeto en la base de datos, agregando la hora también. La parte más interesante de esta clase - la obtención de la configuración se discutió anteriormente. El resto es solo una escritura regular en la base de datos.
+This class does not have properties, but it has one method - `save`. This method takes a `Log` object and logs all properties of this object to the database, adding the time as well. The most interesting part of this class - fetching the configuration was discussed earlier. The rest is just a regular database write.
 
-Estas fueron clases, ahora es el momento del script de entrada del back-end de nuestra aplicación. Se encuentra en el archivo `web/api.php` y es responsable de interceptar correctamente la solicitud, obtener parámetros, pasarlos a la base de datos y devolver una respuesta que contenga el resultado de la operación.
+These were classes, now it’s time for the back-end input script of our application. It is located in the file `web/api.php` and is responsible for correctly intercepting the request, fetching parameters, passing them to the database, and returning a response containing the result of the operation.
 
 ```php
 <?php
@@ -408,16 +409,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"
 
 ```
 
-### Pruebas de Api con httpie
+### Testing Api with httpie
 
-Podemos probar nuestra `api` usando `httpie`. Comando
+We can test our `api` using `httpie`. Command
 
 ```
 http -fv 127.0.0.1:9000/api.php/action a=1 b=2 action="sum"
 
 ```
 
-debería producir la siguiente salida:
+should produce the following output:
 
 ```http
 POST /api.php/action HTTP/1.1
@@ -448,9 +449,9 @@ X-Powered-By: PHP/7.0.8-0ubuntu0.16.04.3
 
 ## AJAX
 
-Cuando tenemos una base de datos lista y scripts para manejarla, no hay nada que nos impida completar el proyecto escribiendo el front end. Asumimos que la instalación fue exitosa y `bower` instaló los paquetes necesarios - es decir, `"bootstrap": "v4.0.0-alpha.5"` en el directorio `web`. Dado que `jQuery` es una dependencia para `Bootstrap`, podemos usarlo al crear scripts.
+When we have a ready database and scripts to handle it, there is nothing preventing us from completing the project by writing the front end. We assume that the installation was successful and `bower` installed the necessary packages - that is `"bootstrap": "v4.0.0-alpha.5"` in the `web` directory. Since `jQuery` is a dependency for `Bootstrap`, we can use it when creating scripts.
 
-Nuestro front end consiste en tres archivos: `web/index.html`, `web/css/style.css` y `web/js/site.js`. Aquí están:
+Our front end consists of three files: `web/index.html`, `web/css/style.css`, and `web/js/site.js`. Here they are:
 
 > web/index.html
 
@@ -519,9 +520,9 @@ Nuestro front end consiste en tres archivos: `web/index.html`, `web/css/style.cs
 
 ```
 
-Archivo HTML estándar. Lo que es interesante es el uso de la clase `card` de `bootstrap 4` y el cambio de textos de los botones de nombres completos a los símbolos `+` y `-` en anchos de pantalla pequeños.
+Standard HTML file. What is interesting about it is the use of the `card` class from `bootstrap 4` and the change of button texts from full names to the symbols `+` and `-` at small screen widths.
 
-Aún más simples son los estilos de nuestro sitio web.
+Even simpler are the styles of our website.
 
 > web/css/style.css
 
@@ -536,9 +537,9 @@ section {
 
 ```
 
-Esto se debe a Bootstrap, que realmente puede replicar mucho como yo esperaría. Lo único que necesitamos es margen vertical y fuente.
+This is thanks to Bootstrap, which can really replicate a lot as I would expect. The only thing we need is vertical margin and font.
 
-La parte más interesante es JavaScript:
+The most interesting part is JavaScript:
 
 > web/js/site.js
 
@@ -571,17 +572,17 @@ La parte más interesante es JavaScript:
 
 ```
 
-## Behat y Selenium
+## Behat and Selenium
 
-**Behat** es una herramienta para escribir pruebas de comportamiento automatizadas. Es la forma más natural para que los humanos prueben basándose en escenarios que pueden ocurrir al usar la aplicación. **Selenium** es un servidor que permite simular un navegador, equipado con una API de programación. Al combinar estas dos herramientas, ganamos la capacidad de escribir algo como un bot que visita nuestro sitio y realiza acciones específicas. Es el uso de esta herramienta que viste en el video al principio de la entrada.
+**Behat** is a tool for writing automated behavioral tests. It is the most natural way for humans to test based on scenarios that may occur while using the application. **Selenium** is a server that allows simulating a browser, equipped with a programming API. By combining these two tools, we gain the ability to write something like a bot that visits our site and performs specific actions. It is the use of this tool that you saw in the video at the beginning of the entry.
 
-Gracias al comando `vendor/bin/behat --init`, behat genera un archivo por defecto `features/bootstrap/FeatureContext.php`. Ampliaramos esta clase añadiendo `MinkContext`. Esta es una colección de traducciones entre el lenguaje natural `Gherkin` y las acciones realizadas por los controladores del navegador como `selenium`.
+Thanks to the command `vendor/bin/behat --init`, behat generates a default file `features/bootstrap/FeatureContext.php`. We will extend this class by adding `MinkContext`. This is a collection of translations between the natural language `Gherkin` and actions performed by browser drivers such as `selenium`.
 
-Mencioné que `Gherkin` es un lenguaje natural. En la [documentación oficial](https://github.com/cucumber/cucumber/wiki/Gherkin), se presenta de la siguiente manera:
+I mentioned that `Gherkin` is a natural language. In the [official documentation](https://github.com/cucumber/cucumber/wiki/Gherkin), it is presented as follows:
 
-> Gherkin es el lenguaje que Cucumber entiende. Es un Lenguaje Específico de Dominio, Legible por Negocios, que te permite describir el comportamiento del software sin detallar cómo se implementa ese comportamiento.
+> Gherkin is the language that Cucumber understands. It is a Business Readable, Domain Specific Language that lets you describe software’s behaviour without detailing how that behaviour is implemented.
 
-Además de esta extensión, añadiremos algunas funciones que faltan en `MinkContext`.
+Besides this extension, we will add a few functions that are missing in `MinkContext`
 
 ```php
 <?php
@@ -654,9 +655,9 @@ class FeatureContext extends MinkContext implements Context
 
 ```
 
-Estas funciones están configurando los valores del campo cuando no está en el formulario, comprobando la validez del resultado y esperando: normal, y permitiendo no esperar más tiempo si todas las solicitudes han sido ejecutadas.
+These functions are setting field values when it is not in the form, checking result validity, and waiting: normal, and allowing not to wait longer if all requests have been executed.
 
-Con el contexto preparado, podemos echar un vistazo al contenido del archivo que describe las pruebas
+With the context prepared, we can take a look at the contents of the file describing the tests
 
 > features/calculation.feature
 
@@ -691,9 +692,9 @@ Feature: Executing calculations on the website
 
 ```
 
-Contiene un escenario que consiste en 6 pasos repetidos en 10 configuraciones. Estos pasos son cálculos típicos realizados en la página - establecer, `a`, `b`, seleccionar un botón, esperar el resultado y verificar su corrección.
+It contains a scenario consisting of 6 steps repeated in 10 configurations. These steps are typical calculations performed on the page - setting, `a`, `b`, selecting a button, waiting for the result, and checking its correctness.
 
-Para que todo funcione correctamente, aún falta un archivo de configuración `behat`. Es `behat.yml`.
+For everything to work correctly, a configuration file `behat` is still missing. It is `behat.yml`.
 
 > behat.yml
 
@@ -711,4 +712,4 @@ default:
 
 ```
 
-Eso es todo. Si has seguido el código hasta este punto, conoces este proyecto al dedillo. Espero que hayas aprendido algo, y si ves áreas donde podría mejorar algo, no dudes en hacérmelo saber. Agradecería todos los comentarios constructivos.
+That's all. If you've followed the code up to this point, you know this project inside out. I hope you've learned something, and if you see areas where I could improve something, feel free to let me know. I would appreciate all constructive feedback.

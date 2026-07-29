@@ -5,7 +5,6 @@ This file contains development notes, tasks, and setup instructions preserved fr
 ## Real dates of drafts
 
 ```
-2016-11-29-logowanie-danych-w-mysql-ajax-i-behat.md
 2016-11-30-wizualizacja-dynamicznej-sieci-korelacyjnej.md
 2016-12-02-tesseract-ocr-i-testowanie-selektów.md
 2016-12-08-testowanie-szybkości-selektów.md

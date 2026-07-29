@@ -14,6 +14,7 @@ export const ui = {
         'contact.text': 'Find contacts channels in cli.',
         'search.title': 'Search posts and notes',
         'search.close': 'Close (Esc)',
+        'edit.github': 'Edit on GitHub',
     },
     pl: {
         'lang.en': 'English',
@@ -30,6 +31,7 @@ export const ui = {
         'contact.text': 'Znajdź kanały kontaktowe w cli.',
         'search.title': 'Wyszukiwarka wpisów i notatek',
         'search.close': 'Zamknij (Esc)',
+        'edit.github': 'Edytuj na GitHubie',
     },
     es: {
         'lang.en': 'English',
@@ -46,5 +48,6 @@ export const ui = {
         'contact.text': 'Mis canales de contacto están en la CLI.',
         'search.title': 'Buscar publicaciones y notas',
         'search.close': 'Cerrar (Esc)',
+        'edit.github': 'Editar en GitHub',
     },
 } as const;
