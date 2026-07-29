@@ -37,12 +37,7 @@ export default defineConfig({
       // theme: 'dracula',
       // Alternatively, provide multiple themes
       // See note below for using dual light/dark themes
-      themes: {
-        light: 'tokyo-night',
-        // light: 'snazzy-light',
-        // 'github-light',
-        dark: 'dracula'
-      },
+      theme: 'dracula',
       // Disable the default colors
       // https://shiki.style/guide/dual-themes#without-default-color
       // (Added in v4.12.0)
