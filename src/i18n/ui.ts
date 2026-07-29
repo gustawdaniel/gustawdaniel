@@ -12,6 +12,8 @@ export const ui = {
 
         'contact.header': 'Let\'s hack together',
         'contact.text': 'Find contacts channels in cli.',
+        'search.title': 'Search posts and notes',
+        'search.close': 'Close (Esc)',
     },
     pl: {
         'lang.en': 'English',
@@ -26,6 +28,8 @@ export const ui = {
 
         'contact.header': 'Kodujmy razem?',
         'contact.text': 'Znajdź kanały kontaktowe w cli.',
+        'search.title': 'Wyszukiwarka wpisów i notatek',
+        'search.close': 'Zamknij (Esc)',
     },
     es: {
         'lang.en': 'English',
@@ -40,5 +44,7 @@ export const ui = {
 
         'contact.header': 'Hagámoslo juntos',
         'contact.text': 'Mis canales de contacto están en la CLI.',
+        'search.title': 'Buscar publicaciones y notas',
+        'search.close': 'Cerrar (Esc)',
     },
 } as const;

@@ -1,34 +1,53 @@
 ---
 import Search from "astro-pagefind/components/Search.astro";
+import { useTranslations } from "../../i18n/utils";
+
+const locale = Astro.currentLocale ?? 'en';
+const t = useTranslations(locale);
 ---
 
 <div
         @click="const input = $refs.search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false"
         @keydown.window.escape="if(searchOpen) { searchOpen = false; }"
-        class="fixed inset-0 z-50"
+        class="fixed inset-0 z-50 overflow-y-auto px-4 py-6 sm:px-6 sm:py-10"
         x-show="searchOpen" x-cloak
         id="search-dialog" role="dialog" tabindex="-1" aria-modal="true"
         data-headlessui-state="open"
 >
-    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
-    <div class="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:px-8 lg:py-[5vh]"
+    <!-- Dark Backdrop with blur -->
+    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity"></div>
+
+    <!-- Centered Card Container -->
+    <div class="relative w-full max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 transition-all z-50 p-6 sm:p-8"
          x-ref="search"
          @click="if($event.target && $event.target instanceof HTMLElement && $event.target.classList.contains('pagefind-ui__result-link')) { const input = search.querySelector('input'); if(input) { input.value = ''; } searchOpen = false } $event.stopPropagation()"
     >
-        <div class="relative max-w-4xl mx-auto">
-            <button
-                type="button"
-                @click="searchOpen = false"
-                class="absolute -top-2 -right-2 sm:top-2 sm:right-2 p-2.5 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors z-50 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                aria-label="Close search"
-                title="Close (Esc)"
-            >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        <!-- Modal Control Bar -->
+        <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
-            </button>
-
-            <Search id="search" className="pagefind-ui" uiOptions={{showImages: true, showSubResults: true, autofocus: true}}/>
+                <span>{t('search.title')}</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="hidden sm:inline-block px-2 py-0.5 text-[11px] font-mono font-medium tracking-wide text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 rounded border border-slate-200 dark:border-slate-700">ESC</span>
+                <button
+                    type="button"
+                    @click="searchOpen = false"
+                    class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    aria-label={t('search.close')}
+                    title={t('search.close')}
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
+
+        <!-- Native Pagefind Search Component -->
+        <Search id="search" className="pagefind-ui" uiOptions={{showImages: true, showSubResults: true, autofocus: true}}/>
     </div>
 </div>
+

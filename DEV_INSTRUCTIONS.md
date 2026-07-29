@@ -108,7 +108,7 @@ Raport z przeglądu strony domowej Daniela przed przesiadką z Ghost na Astro.
 - [x] S1: Ładowanie dodatkowych wyników wyszukiwania nie powinno wymagać kliknięcia w przycisk (`showSubResults: true`).
 - [x] S2: Nie da się wyjść z wyników wyszukiwania naciskając <Esc>, jeżeli pole wyszukiwania zostało odkliknięte (`@keydown.window.escape`).
 - [x] S3: W wersji mobilnej nie ma możliwości wyłączenia wyszukiwania (dodano widoczny przycisk zamknięcia `X`).
-- [ ] S4: Zasłanianie w trybie desktopowym całej strony wyszukiwarką działa dezorientująco.
+- [x] S4: Przekształcono widok wyszukiwarki na desktopie na elegancki, symetryczny modal typu Command Palette (`max-w-3xl`, zaokrąglona karta z cieniem, zdefiniowane ograniczenie wysokości i scrollbar).
 
 ### Blog
 - [x] B1: Tło tagów w trybie jasnym jest mało widoczne.
