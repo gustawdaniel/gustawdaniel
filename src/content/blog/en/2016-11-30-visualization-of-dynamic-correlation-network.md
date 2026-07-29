@@ -2,67 +2,67 @@
 author: Daniel Gustaw
 canonicalName: visualization-of-dynamic-correlation-network
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/2b2a7b61-d441-4c24-b8f3-f05eebf30c10.avif
-description: Script de Python para visualizar la dinámica de la relación entre instrumentos financieros medidos por correlación.
-excerpt: Script de Python para visualizar la dinámica de la relación entre instrumentos financieros medidos por correlación.
-publishDate: 2021-04-29 20:05:00+00:00
-slug: es/visualizacion-de-la-red-de-correlacion-dinamica
+description: Python script for visualizing the dynamics of the relationship between financial instruments measured by correlation.
+excerpt: Python script for visualizing the dynamics of the relationship between financial instruments measured by correlation.
+publishDate: 2016-11-30 20:05:00+00:00
+slug: en/visualization-of-dynamic-correlation-network
 tags:
-- python
-- stock
-- visualisation
-title: Visualización de una red de correlación dinámica.
+  - python
+  - stock
+  - visualisation
+title: Visualization of a dynamic correlation network.
 updateDate: 2021-04-29 23:11:09+00:00
 ---
 
-## Descripción del Proyecto
+## Project Description
 
-Python es un lenguaje en el que se puede escribir sin conocerlo. Aunque no conozco Python, escribí un script para operar el servidor ubigraph: un software que permite visualizar gráficos.
+Python is a language in which one can write without knowing it. Although I don't know Python, I wrote a script to operate the ubigraph server - software that allows visualizing graphs.
 
-El proyecto fue creado en septiembre de 2015, antes de que `ubigraph` [dejara de ser soportado :(](https://twitter.com/SadieSv/status/716044022129659904). A pesar de que el sitio web del proyecto no está disponible, el software escrito basado en el servidor `ubigraph` todavía funciona y el propio archivo del servidor se ha incluido en el repositorio.
+The project was created in September 2015, before `ubigraph` [stopped being supported :(](https://twitter.com/SadieSv/status/716044022129659904). Despite the fact that the project website is not available, the software written based on the `ubigraph` server still works and the server file itself has been included in the repository.
 
-Al leer este artículo, te familiarizarás con la herramienta para leer **archivos json en bash**, aprenderás a **definir clases y operar sobre arreglos en python**, y verás cómo el paquete **numpy** simplifica los cálculos.
+By reading this article, you will familiarize yourself with the tool for reading **json files in bash**, learn how to **define classes and operate on arrays in python**, and see how much the **numpy** package simplifies calculations.
 
-La composición del código fuente es:
+The source code composition is:
 
 ```
 Python 90.1% Shell 9.9%
 ```
 
-Después de escribir, el proyecto se verá así:
+After writing, the project will look like this:
 
-### Instalación
+### Installation
 
-Para instalar el proyecto, necesitas descargar el repositorio
+To install the project, you need to download the repository
 
 ```
 git clone https://github.com/gustawdaniel/dynamic_network_correaltion.git
 ```
 
-Ve al directorio `dynamic_network_correlation` e instala el proyecto utilizando el script `install.sh`.
+Go to the `dynamic_network_correlation` directory and install the project using the `install.sh` script.
 
 ```
 cd dynamic_network_correaltion && bash install.sh
 ```
 
-Deberías ver una nueva ventana negra titulada `Ubigraph`. En una nueva terminal (`ctrl+n`), ejecuta el script `visualise.py`.
+You should see a new black window titled `Ubigraph`. In a new terminal (`ctrl+n`), run the script `visualise.py`.
 
 ```
 python visualise.py
 ```
 
-Seleccione las siguientes opciones en secuencia:
+Select the following options in sequence:
 
 ```
 test ENTER ENTER ENTER ENTER ENTER
 ```
 
-En la ventana de `Ubigraph`, deberías ver una visualización de la red de correlación dinámica.
+In the `Ubigraph` window, you should see a visualization of the dynamic correlation network.
 
-## Configuración
+## Configuration
 
-Este capítulo discute todos los pasos de instalación excepto la instalación de dependencias.
+This chapter discusses all the installation steps except for installing dependencies.
 
-Comenzaremos descargando datos de la casa de corretaje [bossa](https://bossa.pl). En su [archivo público](https://bossa.pl/pub/), hay archivos con cotizaciones en formato `mst` (una variante de `csv`) empaquetados en archivos `zip`. Todas las direcciones de los archivos que nos interesan comienzan con `http://bossa.pl/pub/`, pero tienen diferentes extensiones. Los he guardado en un archivo de configuración.
+We will start by downloading data from the brokerage house [bossa](https://bossa.pl). In their [public archive](https://bossa.pl/pub/), there are files with quotes in `mst` format (a variant of `csv`) packed in `zip` archives. All the addresses of the files we are interested in start with `http://bossa.pl/pub/`, but have different extensions. I have saved them in a configuration file.
 
 > config/wget\_data\_config.json
 
@@ -72,34 +72,44 @@ Comenzaremos descargando datos de la casa de corretaje [bossa](https://bossa.pl)
   "data": [
     {
       "uri2": "metastock/mstock/mstall.zip"
-    },{
+    },
+    {
       "uri2": "ciagle/mstock/mstcgl.zip"
-    },{
+    },
+    {
       "uri2": "futures/mstock/mstfut.zip"
-    },{
+    },
+    {
       "uri2": "newconnect/mstock/mstncn.zip"
-    },{
+    },
+    {
       "uri2": "jednolity/f2/mstock/mstf2.zip"
-    },{
+    },
+    {
       "uri2": "ciagle/mstock/mstobl.zip"
-    },{
+    },
+    {
       "uri2": "indzagr/mstock/mstzgr.zip"
-    },{
+    },
+    {
       "uri2": "waluty/mstock/mstnbp.zip"
-    },{
+    },
+    {
       "uri2": "fundinwest/mstock/mstfun.zip"
-    },{
+    },
+    {
       "uri2": "ofe/mstock/mstofe.zip"
-    },{
+    },
+    {
       "uri2": "forex/mstock/mstfx.zip"
     }
   ]
 }
 ```
 
-### Descargando archivos (json en bash)
+### Downloading archives (json in bash)
 
-Nuestro objetivo es descargar todos los archivos con direcciones que consisten en `"url1"."url2"`. El programa `jq` será responsable de esto, permitiéndonos extraer valores de un archivo `json` para claves dadas. Echemos un vistazo a la primera parte del script para descargar cotizaciones:
+Our goal is to download all files with addresses consisting of `"url1"."url2"`. The program `jq` will be responsible for this, allowing us to extract values from a `json` file for given keys. Let's take a look at the first part of the script for downloading quotes:
 
 > wget\_data.sh
 
@@ -124,9 +134,9 @@ LINES=$(grep \"uri2\": $CONF | wc -l);
 URI1=$(getFromConf '.uri1');
 ```
 
-Las variables `CONF` y `RAW` son simplemente rutas estáticas al archivo de configuración y al directorio donde se guardarán los datos. La variable `LINES` recupera el número de ocurrencias de la cadena `"uri2":` en el archivo `json`, que corresponde al número de enlaces que queremos obtener.
+The variables `CONF` and `RAW` are merely static paths to the configuration file and the directory where the data is to be saved. The variable `LINES` retrieves the number of occurrences of the string `"uri2":` in the `json` file, which corresponds to the number of links we want to fetch.
 
-La función `getFromConf` recupera la clave especificada en el primer parámetro del archivo de configuración cuando la llamamos. Su primera aplicación es visible al definir la variable `URI1`. Un punto precede al nombre de la clave, y todo está entre comillas simples. Eso es suficiente. La siguiente parte del script es un bucle sobre las líneas que hemos contado.
+The function `getFromConf` retrieves the key specified in the first parameter from the configuration file when we call it. Its first application is visible when defining the variable `URI1`. A dot precedes the key name, and the whole is in single quotes. That's enough. The next part of the script is a loop over the lines we have counted.
 
 ```bash
 #
@@ -144,7 +154,7 @@ do
 done
 ```
 
-### Desempaquetando Archivos
+### Unpacking Archives
 
 ```bash
 #!/usr/bin/env bash
@@ -168,11 +178,11 @@ done
 
 ```
 
-La opción `-q` en el comando `unzip` te permite silenciarlo.
+Option `-q` in the `unzip` command allows you to silence it.
 
-### Preparando el Directorio de Pruebas
+### Preparing the Test Directory
 
-Si miramos el archivo `install.sh`, además de instalar dependencias y preparar datos, también está la preparación de pruebas.
+If we look at the file `install.sh`, apart from installing dependencies and preparing data, there is also the preparation of tests.
 
 > install.sh
 
@@ -184,15 +194,15 @@ cp build/mstcgl/[A-D][A-D][A-D]* test/
 
 ```
 
-Este comando se utiliza para seleccionar cotizaciones de varias empresas de ejemplo y guardarlas en el directorio `test`. Esto simplifica el procedimiento para iniciar el programa. En su interfaz, solo necesitas especificar el nombre del directorio `test` para que recupere todos los archivos de allí. Si deseas ver gráficos de otras empresas, se recomienda este método de proceder:
+This command is used to select quotes for several example companies and save them in the `test` directory. This simplifies the procedure for starting the program. In its interface, you only need to specify the directory name `test` for it to retrieve all files from there. If you want to see charts for other companies, this method of proceeding is recommended:
 
-1. Crear un directorio
-2. Copiar los archivos `mst` seleccionados en él
-3. Al iniciar la visualización, proporciona el nombre de este directorio y presiona `ENTER` dos veces.
+1. Create a directory
+2. Copy the selected `mst` files into it
+3. When starting the visualization, provide the name of this directory and press `ENTER` twice.
 
-## Script ejecutando la visualización
+## Script executing visualization
 
-Ahora discutiremos todas las partes del script responsables de visualizar la red de correlación. Comenzaremos con las importaciones y el establecimiento de una conexión con el servidor.
+Now we will discuss all parts of the script responsible for visualizing the correlation network. We will start with imports and establishing a connection to the server.
 
 > visualise.py
 
@@ -215,11 +225,11 @@ G.clear()  # clear image before start
 
 ```
 
-Los paquetes cargados nos permiten operar en archivos, tiempo, realizar cálculos, conectarnos al servidor `ubigraph` y pausar el programa por una duración específica. Después de cargar los paquetes, se establece una conexión con el servidor y se limpia su ventana.
+Loaded packages allow us to operate on files, time, perform calculations, connect to the `ubigraph` server, and pause the program for a specific duration. After loading the packages, a connection to the server is established, and its window is cleared.
 
-### Clases
+### Classes
 
-La siguiente parte del script es la clase con la configuración.
+The next part of the script is the class with the configuration.
 
 ```py
 ##################################################################
@@ -248,11 +258,11 @@ config = Config()
 
 ```
 
-No tiene métodos y las variables almacenadas en él son públicas. Sirve solo como un contenedor para estos valores para evitar la saturación del espacio de nombres global. Las variables `op`, `hi`, `lo`, `cl` son pesos con los que se utilizan los precios de apertura, más altos, más bajos y de cierre para un instrumento dado en un día específico para calcular la correlación. Establecerlos en `0.25` significa calcular un promedio simple. Si quisiéramos que la correlación se calculara solo para los precios de cierre, deberíamos establecer todos excepto `cl` en `0`, y `cl` en `1`.
+It has no methods, and the variables stored in it are public. It serves only as a container for these values to avoid cluttering the global namespace. The variables `op`, `hi`, `lo`, `cl` are weights with which the opening, highest, lowest, and closing prices for a given instrument on a specific day are used in calculating the correlation. Setting them to `0.25` means calculating a simple average. If we wanted the correlation to be calculated only for closing prices, we should set all except `cl` to `0`, and `cl` to `1`.
 
-La variable `free_mem` servirá más tarde como un marcador para liberar memoria. `sleep` es el tiempo de espera entre iteraciones sucesivas dado en segundos. Las iteraciones significan retroceder un día en la historia. La variable `memory` contiene el rango de días que deben tenerse en cuenta para calcular la correlación; estos son siempre días anteriores al día para el cual estamos calculando la correlación. La última variable - `boundary` - es el valor umbral para la correlación por encima del cual se agregan o eliminan conexiones. Si la correlación es mayor que el valor de esta variable, las conexiones aparecerán durante la visualización; si es menor, desaparecerán.
+The variable `free_mem` will later serve as a marker when freeing memory. `sleep` is the waiting time between successive iterations given in seconds. Iterations mean moving one day back in history. The variable `memory` holds the range of days that should be taken into account for calculating the correlation; these are always days before the day for which we are calculating the correlation. The last variable - `boundary` - is the threshold value for the correlation above which connections are added or removed. If the correlation is higher than this variable's value, connections will appear during visualization; if lower, they will disappear.
 
-Esta clase era meramente un equivalente de una estructura en `Pascal`. Ahora es el momento de una clase más "orientada a objetos".
+This class was merely an equivalent of a structure in `Pascal`. Now it's time for a more "object-oriented" class.
 
 ```py
 ##################################################################
@@ -294,7 +304,7 @@ class Company:
 
 ```
 
-### Interfaz y Preparación de Datos
+### Interface and Data Preparation
 
 ```py
         ##################################################################
@@ -328,9 +338,9 @@ else:
 
 ```
 
-La interfaz está algo mezclada con la lógica, y estoy seguro de que podría escribirse de una manera más ordenada, pero como mencioné, no sé Python, así que si tienes algún comentario o idea sobre cómo esto podría escribirse mejor, por favor compártelo en los comentarios.
+The interface is somewhat mixed with logic, and I'm sure it could be written more neatly, but as I mentioned - I don't know Python, so if you have any comments or ideas on how this could be written better, please share them in the comments.
 
-En general, el objetivo de este fragmento de código era proporcionar al usuario la capacidad de seleccionar un directorio o una lista de archivos individuales; sin embargo, esta última opción resultó ser impráctica, ya que era más conveniente preparar un directorio y ingresar su nombre que ingresar los nombres manualmente. En este momento, esta es la única forma recomendada de ingresar archivos en el programa.
+In general, the goal of this piece of code was to provide the user with the ability to select a directory or a list of individual files; however, the latter option turned out to be impractical, as it was more convenient to prepare a directory and enter its name than to enter the names manually. At this point, this is the only recommended way to input files into the program.
 
 ```py
 ##################################################################
@@ -350,9 +360,9 @@ print "Processing files"
 
 ```
 
-Cuando el usuario especifica qué archivos deben ser cargados, su contenido se carga utilizando la función `open` y su método `readlines`. Para cada ruta de archivo, se crea una instancia de `Company` y se añade a la matriz de empresas (o, más generalmente, instrumentos financieros).
+When the user specifies which files are to be loaded, their contents are loaded using the `open` function and its `readlines` method. For each file path, an instance of `Company` is created and added to the array of companies (or more generally, financial instruments).
 
-Si miramos la estructura del archivo `mst`, es la siguiente:
+If we look at the structure of the `mst` file, it is as follows:
 
 ```csv
 <TICKER>,<DTYYYYMMDD>,<OPEN>,<HIGH>,<LOW>,<CLOSE>,<VOL>
@@ -363,7 +373,7 @@ Si miramos la estructura del archivo `mst`, es la siguiente:
 
 ```
 
-Dado que no necesitamos los encabezados para los cálculos, los eliminaremos de cada array que contenga la línea `file_content`.
+Since we do not need the headers for calculations, we will cut them off from each array containing the line `file_content`.
 
 ```py
 print "Cutting headers"
@@ -373,9 +383,9 @@ for file_content in files_content:  # removing headers
 
 ```
 
-Sin embargo, todavía hay un gran exceso de datos. Sobre todo, los nombres de las empresas son repetitivos, las fechas están en un formato difícil de procesar, los volúmenes no son necesarios en absoluto, y en lugar de los precios de apertura, máximo, mínimo y cierre, necesitamos un precio a partir del cual se calculará la correlación.
+However, there is still a large excess of data. Above all, the company names are repetitive, dates are in a difficult-to-process format, volumes are not needed at all, and instead of open, high, low, and close prices, we need one price from which the correlation will be calculated.
 
-Para deshacernos de estos datos, creamos dos tablas: con fechas y precios.
+To get rid of this data, we create two tables - with dates and prices.
 
 ```py
 date = []
@@ -388,7 +398,7 @@ epoch = datetime.datetime.utcfromtimestamp(0)
 
 ```
 
-Las variables `max_date` y `min_date` nos permitirán seleccionar los límites del rango de fechas en el que podemos visualizar. Mencionaré de inmediato las limitaciones. La visualización no puede terminar antes del 1 de enero de 1970, porque ese día es el inicio de la cuenta regresiva del tiempo en segundos en los sistemas Unix. Y no puede empezar hace más de `min_date` días. No es una solución elegante, pero desde un punto de vista práctico, eso son más de 200 mil años, así que aunque no sea bonito, funciona bien.
+The variables `max_date` and `min_date` will allow us to select the limits of the date range in which we can visualize. I will immediately mention the limitations. The visualization cannot end before January 1, 1970, because that day is the beginning of the countdown of time in seconds in Unix systems. And it cannot start more than `min_date` days ago. It is not an elegant solution, but from a practical point of view, that’s over 200 thousand years, so even though it’s not pretty, it works well.
 
 ```py
 ##################################################################
@@ -426,9 +436,9 @@ if config.free_mem:
 
 ```
 
-Este fragmento de código es responsable de extraer un solo precio en lugar de cuatro y convertir la fecha a una fecha en días desde el 1 de enero de 1970. Los arreglos con estos valores únicos se guardan en variables temporales `price` y `date`, y luego en el arreglo de la clase `Company`. Al mismo tiempo, se anotan las fechas inicial y final para cada empresa, y se guarda el rango de fechas más amplio posible en `min_date` y `max_date`. Por defecto, al final de esta operación, limpiamos la memoria de la variable `files_content`.
+This piece of code is responsible for extracting a single price instead of four and converting the date to a date in days since January 1, 1970. The arrays with these only values are saved to temporary variables `price` and `date`, and later to the array of the `Company` class. At the same time, the initial and final dates for each company are noted, and the widest possible date range is saved in `min_date` and `max_date`. By default, at the end of this operation, we clear the memory from the variable `files_content`.
 
-Ha llegado el momento del último fragmento de interacción con el usuario. Ya han especificado los archivos de entrada. El programa ha examinado y procesado su contenido. Ahora es el momento de que el usuario decida qué período histórico desea observar.
+The time has come for the last piece of interaction with the user. They have already specified the input files. The program has examined and processed their content. It is now time for the user to decide which historical period they want to observe.
 
 ```py
 ##################################################################
@@ -465,7 +475,13 @@ else:
 
 ```
 
-### Cálculo de la interpolación y correlación de precios
+After explaining to the user the units in which dates are provided, the script calculates the sum and the product of all time intervals corresponding to the listing times of the entered companies. By default, the simulation occurs for a period in which all companies are listed simultaneously, but the user has the option to independently decide on that period. The last variable we ask the user about is the time range in which the correlation will be calculated.
+
+There are still parameters such as the threshold correlation value between the appearance and disappearance of connections, waiting time between subsequent steps. To prevent the interface from being too tedious (and since by default we press enter 5 times), I left these values as default. The script code is explicit, so an interested person can easily change them.
+
+### Calculating interpolation and price correlation
+
+Now let's move on to the calculations.
 
 ```py
 ##################################################################
@@ -490,9 +506,9 @@ for company in companies:
 
 ```
 
-Otro problema a superar es la falta de continuidad en las cotizaciones. Hay días en los que la bolsa está cerrada. Para abordar esto en la clase `Company`, además del array `prices`, también hay un array llamado `prices_everyday`. Este almacena los precios interpolados de todos los precios y todas las fechas. Si una empresa no está cotizada, se registra `0` en el array `prices_everyday`. De esta manera, manejamos las longitudes desiguales de los períodos de negociación en los datos de entrada. Después de esta operación, los arrays con datos y precios ya no son necesarios. Podemos eliminarlos sin problemas. Si por alguna razón no queremos hacer esto, podemos establecer el parámetro `free_mem` en `0`. Sin embargo, por defecto, limpiamos la memoria de estos datos.
+Another problem to overcome is the lack of continuity in the quotes. There are days when the stock exchange is closed. To deal with this in the `Company` class, in addition to the `prices` array, there is also an array called `prices_everyday`. It stores the interpolated prices from all prices and all dates. If a company is not listed, `0` is recorded in the `prices_everyday` array. In this way, we handle the unequal lengths of the trading periods in the input data. After this operation, the arrays with data and prices are no longer needed. We can safely delete them. If for some reason we do not want to do this, we can set the `free_mem` parameter to `0`. However, by default, we clean the memory from this data.
 
-Teniendo los datos en una forma conveniente para los cálculos, podemos calcular correlaciones. Al igual que con la interpolación, el paquete **numpy** nos ayudará.
+Having data in a form convenient for calculations, we can calculate correlations. Just like with interpolation, the **numpy** package will help us.
 
 ```py
 ##################################################################
@@ -514,15 +530,15 @@ for date in range(0, max_user - min_user):
 
 ```
 
-Vale la pena señalar que el arreglo `company.prices_everyday` comienza en el momento `min_user - memory`, es decir, `memory` días antes de que ocurra la simulación. Por esta razón, el bucle para calcular correlaciones comienza en `0` y termina en `max_user-min_user`, es decir, `memory` índices antes del final del arreglo `company.prices_everyday`. En cada iteración del bucle, calculamos correlaciones desde el índice actual hasta el índice que está `memory` por delante.
+It's worth noting that the array `company.prices_everyday` starts at the time `min_user - memory`, meaning `memory` days earlier than the simulation takes place. For this reason, the loop for calculating correlations starts at `0` and ends at `max_user-min_user`, i.e., `memory` indexes before the end of the array `company.prices_everyday`. For each loop iteration, we calculate correlations from the current index to the index that is `memory` ahead of it.
 
-Dentro del argumento de la función que calcula la correlación, iteramos sobre todas las compañías. Debe decirse que la sintaxis de `python` es muy concisa aquí, mientras sigue siendo bastante legible.
+Inside the argument of the function calculating the correlation, we iterate over all companies. It must be said that the `python` syntax is very concise here, while still being quite readable.
 
-El producto de este paso es una matriz de correlación en capas, a la que nos referiremos a lo largo del programa.
+The product of this step is a layered correlation matrix, which we will refer to throughout the program.
 
-### Manejo del Servidor Unigraph
+### Unigraph Server Handling
 
-En este punto, los cálculos llegan esencialmente a su fin, y los siguientes fragmentos de código estarán relacionados con el manejo de `unigraph`.
+At this point, the calculations essentially come to an end, and the following code snippets will be related to handling `unigraph`.
 
 ```py
 ##################################################################
@@ -535,7 +551,7 @@ e = [[0 for x in range(Company.vertex_id)] for y in range(Company.vertex_id)]  #
 
 ```
 
-Al principio, inicializamos una matriz de conexión vacía que representa la presencia o ausencia de correlación entre las cotizaciones de los instrumentos financieros.
+At the beginning, we initialize an empty connection matrix representing the presence or absence of correlation between the quotes of financial instruments.
 
 ```py
 ##################################################################
@@ -550,7 +566,7 @@ for ind in range(0, Company.vertex_id):
 
 ```
 
-Creamos vértices para las empresas listadas desde el principio y les asignamos los nombres de las empresas como descripciones.
+We create vertices for companies listed from the beginning and assign them the company names as descriptions.
 
 ```py
 ##################################################################
@@ -564,7 +580,7 @@ for ind1 in range(0, Company.vertex_id):
 
 ```
 
-Iteramos sobre la matriz de adyacencia triangular de conexiones entre empresas, añadiendo conexiones si las correlaciones iniciales superan el valor de umbral establecido en la configuración. Y al final, realizamos una simulación:
+We iterate over the triangular adjacency matrix of connections between companies, adding connections if the initial correlations exceed the threshold value set in the configuration. And at the end, we conduct a simulation:
 
 ```py
 ##################################################################
@@ -597,14 +613,14 @@ for x in range(1, len(correlations)):
 
 ```
 
-## Resumen
+## Summary
 
-Eso es todo. La guinda del pastel resultó ser unas pocas líneas de código denso en comparación con las cientos de líneas que lucharon por entender las intenciones del usuario y extraer una estructura conveniente para realizar cálculos a partir de los datos de entrada.
+That's all. The cherry on top turned out to be a few lines of dense code compared to the hundreds of lines that struggled to understand the user's intentions and extract a structure convenient for performing calculations from the input data.
 
-Desafortunadamente, este es un problema grave que enfrenta toda la industria del análisis de datos. En muchos casos, los datos de entrada son tan inconvenientes que transformarlos en el formato deseado cuesta más esfuerzo que realizar realmente el análisis.
+Unfortunately, this is a serious problem facing the entire data analysis industry. In many cases, the input data is so inconvenient that transforming it into the desired format costs more effort than actually performing the analysis.
 
-Sin embargo, la situación está mejorando. Las `APIs` cada vez son más comunes y la creciente popularidad del formato `json`, que está reemplazando lentamente a `xml` y `csv`, son pasos en la dirección correcta y facilitan el trabajo con datos.
+However, the situation is improving. Increasingly common `APIs` and the growing popularity of the `json` format, which is slowly replacing `xml` and `csv`, are steps in the right direction and make working with data easier.
 
 ![popularność json, xml, csv](https://i.imgur.com/OyhoigO.png)
 
-Como siempre, te animo a comentar, expresar dudas y hacer preguntas.
+As always, I encourage you to comment, express doubts, and ask questions.
