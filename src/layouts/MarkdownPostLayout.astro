@@ -25,7 +25,6 @@ const postsReducer = (collection: CollectionEntry<"blog">[]): CollectionEntry<"b
         .filter((_, i) => i < 3);
 }
 
-import {Picture} from 'astro:assets';
 import {getImageAsset} from '../helpers/getImageAsset';
 
 const coverSrc = getImageAsset(frontmatter.coverImage);

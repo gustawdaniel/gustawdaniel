@@ -1,6 +1,5 @@
 ---
 import type {InferEntrySchema} from "astro:content";
-import {Picture} from 'astro:assets';
 
 import {prettyDate} from "../../helpers/prettyDate";
 import {readingTime} from "../../helpers/readingTime";
@@ -15,21 +14,19 @@ const locale = Astro.currentLocale ?? 'en';
 ---
 
 <div class="relative mt-8 flex items-center gap-x-4">
-    <Picture src="https://preciselab.fra1.digitaloceanspaces.com/blog/img/411d6d7d-6a1e-4096-9a88-fc16a9978f2e.avif"
-             widths={[256]}
-             formats={['avif']}
-             alt={data.author}
-             width="512"
-             height="512"
-             class="h-10 w-10 rounded-full bg-gray-100 object-cover"
-    ></Picture>
+    <img src="https://preciselab.fra1.digitaloceanspaces.com/blog/img/411d6d7d-6a1e-4096-9a88-fc16a9978f2e.avif"
+         alt={data.author}
+         width="512"
+         height="512"
+         class="h-10 w-10 rounded-full bg-gray-100 object-cover"
+         loading="lazy"
+    />
 
     <div class="text-sm leading-6">
         <p class="font-semibold
         text-gray-900 dark:text-gray-100
          my-0">
             <span>
-                <!--href="#"-->
                 <span class="absolute inset-0"></span>
                 {data.author}
             </span>
