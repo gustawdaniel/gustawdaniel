@@ -4,7 +4,7 @@ canonicalName: compile-php-7-interpreter-in-bunsenlabs
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7befcf74-cca9-4f73-b2fb-92961cbcefbd.avif
 description: La compilación es un proceso que a veces requiere instalar paquetes o vincular dependencias. En este caso, la tarea era entregar php7 a un sistema que no lo tenía en los repositorios disponibles.
 excerpt: La compilación es un proceso que a veces requiere instalar paquetes o vincular dependencias. En este caso, la tarea era entregar php7 a un sistema que no lo tenía en los repositorios disponibles.
-publishDate: 2021-05-07 20:30:00+00:00
+publishDate: 2016-12-24 20:30:00+00:00
 slug: es/compilando-el-interprete-php-7-en-bunsenlabs
 tags:
 - php
