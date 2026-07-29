@@ -6,7 +6,7 @@ publishDate: 2026-07-28
 Aby przekonwertować najnowsze nagranie wideo z OBS do formatu kompatybilnego z WhatsApp, użyj poniższego polecenia `ffmpeg`:
 
 ```bash
-ffmpeg -i "$(ls -t ~/obs/*.mkv | head -n 1)" \
+ffmpeg -i "$(/usr/sbin/ls -t ~/obs/*.mkv | head -n 1)" \
   -c:v libx264 -pix_fmt yuv420p -profile:v main -level 4.0 \
   -c:a aac -b:a 128k \
   -movflags +faststart \
