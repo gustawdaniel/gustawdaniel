@@ -15,7 +15,7 @@ import {fixBlogLocale} from "../helpers/i18n/fixBlogLocale";
 
 const allBlogPosts: CollectionEntry<"blog">[] = await getCollection(
     'blog',
-    (post) => post.slug.startsWith(locale)
+    (post) => post.id.startsWith(locale)
 );
 
 import PostCoverOnList from "./blog/PostCoverOnList.astro";
@@ -37,7 +37,7 @@ const postsToDisplay = reducer ? reducer(allBlogPosts) : allBlogPosts;
             {postsToDisplay.length && featured && <FirstPostCardOnList article={postsToDisplay.at(-1)!} />}
             {postsToDisplay.reverse().filter((_,i:number) => i>(Number(Boolean(featured)) - 1)).map(p =>
                     <a  href={
-                        fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(p.slug)), locale)
+                        fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(p.id)), locale)
                     }>
 
                         <article class="flex flex-col items-start justify-between">
@@ -45,7 +45,7 @@ const postsToDisplay = reducer ? reducer(allBlogPosts) : allBlogPosts;
 
                             <PostCoverOnList data={p.data} />
 
-                            <PostDescriptionOnList data={p.data} body={p.body} />
+                            <PostDescriptionOnList data={p.data} body={p.body || ''} />
 
                         </article>
 

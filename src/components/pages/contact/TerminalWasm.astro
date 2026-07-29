@@ -3,12 +3,12 @@ import '../../../../public/contact/terminal/style.css';
 ---
 
 <div id="wasm-terminal-wrapper" class="h-[55vh] bg-black p-2 invert dark:invert-0">
-  <div id="terminal" class="overflow-auto"><div><span>Loading...<span><div></div>
+  <div id="terminal" class="overflow-auto"><div><span>Loading...</span></div></div>
   <div id="hidey-hole" hidden><span id='cursor'>_</span></div>
 </div>
 
 <script is:inline src="/contact/terminal/term.js"></script>
-<script type="module">
+<script is:inline type="module">
   import init, { begin } from '/contact/terminal/its_a_unix_system.js';
   await init();
   begin()

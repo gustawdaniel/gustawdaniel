@@ -17,16 +17,16 @@ export async function GET(context: AstroConfig) {
         // Array of `<item>`s in output xml
         // See "Generating items" section for examples using content collections and glob imports
         items: blog
-            .filter(({slug}: CollectionEntry<"blog">): boolean => slug.startsWith('en/'))
+            .filter(({id}: CollectionEntry<"blog">): boolean => id.startsWith('en/'))
             .map((post: CollectionEntry<"blog">) => ({
                 title: post.data.title,
                 pubDate: post.data.publishDate,
                 description: post.data.description,
                 // customData: post.data.customData,
-                content: post.body,
-                // Compute RSS link from post `slug`
-                // This example assumes all posts are rendered as `/blog/[slug]` routes
-                link: `/posts/${post.slug}/`,
+                content: post.body || '',
+                // Compute RSS link from post `id`
+                // This example assumes all posts are rendered as `/blog/[id]` routes
+                link: `/posts/${post.id}/`,
             })),
         // (optional) inject custom xml
         customData: `<language>en-us</language>`,

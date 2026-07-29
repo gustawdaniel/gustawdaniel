@@ -15,13 +15,13 @@ const locale = Astro.currentLocale ?? 'en';
 ---
 
 <a href={
-    fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(article.slug)), locale)
+    fixBlogLocale(getRelativeLocaleUrl(locale, 'posts/' + locale + stripLang(article.id)), locale)
 } class="col-span-1 sm:col-span-2 lg:col-span-3">
     <article class="grid grid-cols-1 sm:gap-x-8 lg:grid-cols-3">
         <div class="col-span-2">
             <PostCoverOnList data={article?.data} type="large"/>
         </div>
 
-        <PostDescriptionOnList data={article?.data} body={article?.body} type="large"/>
+        <PostDescriptionOnList data={article?.data} body={article?.body || ''} type="large"/>
     </article>
 </a>

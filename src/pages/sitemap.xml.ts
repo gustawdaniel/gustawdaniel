@@ -108,18 +108,21 @@ async function getPosts(): Promise<SitemapItem[]> {
     const posts: CollectionEntry<"blog">[] = await getCollection('blog');
 
     return posts.map((post) => {
-        const lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" ${path.resolve()}/src/content/blog/${post.id}`).toString();
-        // const lastMod = (post.data.publishDate).toISOString();
-        const translatedPosts = posts.filter(p => p.data.canonicalName === post.data.canonicalName)
+        let lastModified = post.data.publishDate.toISOString();
+        try {
+            const relPath = post.filePath ? post.filePath : `src/content/blog/${post.id}.md`;
+            lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" "${path.resolve()}/${relPath}"`).toString().trim() || lastModified;
+        } catch (e) {}
 
-        const images = getImageLinks(post.body);
+        const translatedPosts = posts.filter(p => p.data.canonicalName === post.data.canonicalName);
+        const images = getImageLinks(post.body || '');
 
         return {
-            loc: `${siteUrl}/posts/${post.slug}/`,
+            loc: `${siteUrl}/posts/${post.id}/`,
             lastMod: lastModified,
             alternateLinks: translatedPosts.map((p): AlternateLink => {
-                const locale = p.slug.split('/')[0];
-                return {hreflang: locale, href: `${siteUrl}/posts/${p.slug}/`};
+                const locale = p.id.split('/')[0];
+                return {hreflang: locale, href: `${siteUrl}/posts/${p.id}/`};
             }),
             imagesLinks: images.map(image => ({loc: encodeURI(image)}))
         }
@@ -131,17 +134,18 @@ async function getNotes(): Promise<SitemapItem[]> {
     const notes: CollectionEntry<"note">[] = await getCollection('note');
 
     return notes.map((note) => {
-        let lastModified = new Date().toISOString();
+        let lastModified = note.data.publishDate.toISOString();
         try {
-            lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" "${path.resolve()}/src/content/note/${note.id}"`).toString();
+            const relPath = note.filePath ? note.filePath : `src/content/note/${note.id}.md`;
+            lastModified = execSync(`git --no-pager log -1 --pretty="format:%cI" "${path.resolve()}/${relPath}"`).toString().trim() || lastModified;
         } catch (e) {}
 
-        const lang = note.slug.split('/')[0];
+        const lang = note.id.split('/')[0];
 
         return {
-            loc: `${siteUrl}/notes/${note.slug}/`,
+            loc: `${siteUrl}/notes/${note.id}/`,
             lastMod: lastModified,
-            alternateLinks: [{hreflang: lang, href: `${siteUrl}/notes/${note.slug}/`}],
+            alternateLinks: [{hreflang: lang, href: `${siteUrl}/notes/${note.id}/`}],
         }
     })
 }

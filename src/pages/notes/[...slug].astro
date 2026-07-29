@@ -1,19 +1,20 @@
 ---
-import {getCollection, type CollectionEntry} from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import MarkdownDevNoteLayout from "../../layouts/MarkdownDevNoteLayout.astro";
 
 export async function getStaticPaths() {
     const noteEntries: CollectionEntry<"note">[] = await getCollection('note');
 
     return noteEntries.map(entry => ({
-        params: {slug: entry.slug}, props: {entry},
+        params: { slug: entry.id },
+        props: { entry },
     }));
 }
 
-const {entry} = Astro.props;
-const {Content} = await entry.render();
+const { entry } = Astro.props;
+const { Content } = await render(entry);
 ---
 
-<MarkdownDevNoteLayout id={entry.id} frontmatter={entry.data} body={entry.body}>
+<MarkdownDevNoteLayout id={entry.id} frontmatter={entry.data} body={entry.body || ''}>
     <Content/>
 </MarkdownDevNoteLayout>

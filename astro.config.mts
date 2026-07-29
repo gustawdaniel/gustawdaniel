@@ -1,4 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import { defaultLocale, locales } from "./src/locales.ts";
 import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
@@ -11,6 +12,7 @@ import rehypeKatex from "rehype-katex";
 export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
+  compressHTML: true,
   image: {
     service: passthroughImageService(),
     domains: ['ucarecdn.com', 'preciselab.fra1.digitaloceanspaces.com']
@@ -25,8 +27,10 @@ export default defineConfig({
     pagefind(),
   ],
   markdown: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    }),
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes

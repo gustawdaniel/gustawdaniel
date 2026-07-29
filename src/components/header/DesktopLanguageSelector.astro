@@ -15,7 +15,7 @@ import {getCollection, getEntry} from 'astro:content';
 import LightDarkSwitch from "./LightDarkSwitch.astro";
 
 let entry: undefined | { data: { canonicalName: string } } = undefined
-let translatedPosts: { slug: string }[] = []
+let translatedPosts: { id: string }[] = []
 
 function getPostId(path: string): string {
     path = path.replace('/posts/', '').replace('/notes/', '');
@@ -30,7 +30,7 @@ if (currentPath.includes('posts/')) {
 } else if (currentPath.includes('notes/')) {
     const noteId = getPostId(currentPath).replace(/^(en|pl|es)\//, '');
     translatedPosts = await getCollection('note',
-        (note) => note.slug.endsWith(noteId)
+        (note) => note.id.endsWith(noteId)
     );
 }
 ---
@@ -97,7 +97,7 @@ lg:flex lg:items-center">
                             currentPath
                         ),
                         locale,
-                        translatedPosts.map(p => p.slug)
+                        translatedPosts.map(p => p.id)
                     )
                 } class="flex items-center px-4 py-2 text-sm
                 text-gray-500 hover:bg-gray-50 hover:text-gray-900

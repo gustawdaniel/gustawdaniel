@@ -7,7 +7,7 @@ const currentLocale = Astro.currentLocale as 'en' | 'pl' | 'es';
 import {locales} from '../../locales';
 import {getRelativeLocaleUrl} from 'astro:i18n';
 
-let translatedPosts: { slug: string }[] = []
+let translatedPosts: { id: string }[] = []
 
 import {fixBlogLocale} from "../../helpers/i18n/fixBlogLocale";
 import LightDarkSwitch from "./LightDarkSwitch.astro";
@@ -29,7 +29,7 @@ if (currentPath.includes('posts/')) {
 } else if (currentPath.includes('notes/')) {
     const noteId = getPostId(currentPath).replace(/^(en|pl|es)\//, '');
     translatedPosts = await getCollection('note',
-        (note) => note.slug.endsWith(noteId)
+        (note) => note.id.endsWith(noteId)
     );
 }
 ---
@@ -74,7 +74,7 @@ if (currentPath.includes('posts/')) {
                                 currentPath
                             ),
                             locale,
-                            translatedPosts.map(p => p.slug)
+                            translatedPosts.map(p => p.id)
                         )
                     } class="rounded-md px-3 py-2 text-base font-medium
                     text-gray-500 hover:bg-gray-50 hover:text-gray-900
