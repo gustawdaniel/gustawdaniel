@@ -159,8 +159,6 @@ export async function GET() {
     const posts: SitemapItem[] = await getPosts();
     const notes: SitemapItem[] = await getNotes();
 
-    console.log('pages', pages);
-
     const data: { pages: SitemapItem[] } = {pages: [...pages, ...posts, ...notes]};
     const output:string = nunjucks.renderString(template, data);
 
