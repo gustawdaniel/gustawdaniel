@@ -1,7 +1,7 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
 import { defaultLocale, locales } from "./src/locales.ts";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 import alpinejs from "@astrojs/alpinejs";
 import { redirects } from "./src/helpers/redirects.ts";
 import pagefind from "astro-pagefind";
@@ -13,6 +13,9 @@ export default defineConfig({
   site: 'https://gustawdaniel.com',
   redirects,
   compressHTML: true,
+  vite: {
+    plugins: [tailwindcss()]
+  },
   image: {
     service: passthroughImageService(),
     domains: ['ucarecdn.com', 'preciselab.fra1.digitaloceanspaces.com']
@@ -22,7 +25,6 @@ export default defineConfig({
     locales: [...locales]
   },
   integrations: [
-    tailwind({ applyBaseStyles: false }),
     alpinejs(),
     pagefind(),
   ],

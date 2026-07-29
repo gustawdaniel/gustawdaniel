@@ -20,9 +20,9 @@ const env = process.env.NODE_ENV
                 <a href={getRelativeLocaleUrl(currentLocale, '/notes')}
                    class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.notes')}</a>
             </div>
-            <!--<div class="pb-6">-->
-            <!--    <a href={getRelativeLocaleUrl(currentLocale, '/projects')} class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{ useTranslations(currentLocale)('nav.projects')}</a>-->
-            <!--</div>-->
+            <div class="pb-6">
+                <a href={getRelativeLocaleUrl(currentLocale, '/projects')} class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.projects')}</a>
+            </div>
             <div class="pb-6">
                 <a href={getRelativeLocaleUrl(currentLocale, '/contact')}
                    class="text-sm leading-6 text-gray-600 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-200">{useTranslations(currentLocale)('nav.contact')}</a>

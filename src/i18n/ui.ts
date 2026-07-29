@@ -7,6 +7,7 @@ export const ui = {
 
         'nav.blog': 'Blog',
         'nav.notes': 'Dev Notes',
+        'nav.projects': 'Projects',
         'nav.contact': 'Contact',
 
         'contact.header': 'Let\'s hack together',
@@ -20,6 +21,7 @@ export const ui = {
 
         'nav.blog': 'Blog',
         'nav.notes': 'Notatki',
+        'nav.projects': 'Projekty',
         'nav.contact': 'Kontakt',
 
         'contact.header': 'Kodujmy razem?',
@@ -33,6 +35,7 @@ export const ui = {
 
         'nav.blog': 'Blog',
         'nav.notes': 'Notas',
+        'nav.projects': 'Proyectos',
         'nav.contact': 'Contacto',
 
         'contact.header': 'Hagámoslo juntos',
