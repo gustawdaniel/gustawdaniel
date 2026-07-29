@@ -8,7 +8,11 @@ interface Props {
 }
 
 const {data, type} = Astro.props;
-const coverSrc = getImageAsset(data.coverImage);
+const fullSrc = getImageAsset(data.coverImage);
+const filename = fullSrc.split('/').pop();
+const coverSrc = fullSrc.includes('/blog/img/') && filename && !filename.startsWith('thumb_')
+    ? fullSrc.replace(`/blog/img/${filename}`, `/blog/img/thumb_${filename}`)
+    : fullSrc;
 ---
 
 <div class="relative w-full">
