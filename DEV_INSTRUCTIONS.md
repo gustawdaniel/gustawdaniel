@@ -5,8 +5,6 @@ This file contains development notes, tasks, and setup instructions preserved fr
 ## Real dates of drafts
 
 ```
-2016-12-08-testowanie-szybkości-selektów.md
-2016-12-11-analiza-logów-apache-z-goaccess.md
 2016-12-24-kompilacja-interpretera-php-7-w-bunsenlabs.md
 2017-01-17-aplikacja-z-fosuserbundle-i-api-google-maps.md
 2017-02-13-analiza-wydajności-pustych-pętli-w-16-językach.md

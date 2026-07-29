@@ -4,7 +4,7 @@ canonicalName: impact-indexation-on-performance-of-search-in-base-mysql
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 description: El uso de índices acelera las búsquedas y aumenta el tamaño de la tabla, mientras que ralentiza las modificaciones. El artículo muestra cómo perfilar consultas y medir el impacto de los índices en el rendimiento de búsqueda.
 excerpt: El uso de índices acelera las búsquedas y aumenta el tamaño de la tabla, mientras que ralentiza las modificaciones. El artículo muestra cómo perfilar consultas y medir el impacto de los índices en el rendimiento de búsqueda.
-publishDate: 2021-06-27 17:40:00+00:00
+publishDate: 2016-12-08 17:40:00+00:00
 slug: es/prueba-seleccion-velocidad
 tags:
 - mathematica

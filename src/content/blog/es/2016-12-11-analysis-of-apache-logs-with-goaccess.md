@@ -4,7 +4,7 @@ canonicalName: analysis-of-apache-logs-with-goaccess
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f88a3ede-db3f-4b7c-aa56-62ee4b914bd8.avif
 description: En esta publicación, muestro una herramienta que permite extraer información interesante de archivos generados automáticamente durante el funcionamiento del servidor.
 excerpt: En esta publicación, muestro una herramienta que permite extraer información interesante de archivos generados automáticamente durante el funcionamiento del servidor.
-publishDate: 2021-05-07 20:26:00+00:00
+publishDate: 2016-12-11 20:26:00+00:00
 slug: es/analisis-de-registros-apache-con-goaccess
 tags:
 - spa

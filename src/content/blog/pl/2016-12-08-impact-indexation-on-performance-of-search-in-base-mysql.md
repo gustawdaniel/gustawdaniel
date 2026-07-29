@@ -4,7 +4,7 @@ canonicalName: impact-indexation-on-performance-of-search-in-base-mysql
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/8bdad4d4-f0bb-4b99-9ffd-46f484807c2a.avif
 description: Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkość tabel spowalniając modyfikacje. Artykuł pokazuje jak profilować zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania.
 excerpt: Stosowanie indeksów przyśpiesza wyszukiwanie i podnosi wielkość tabel spowalniając modyfikacje. Artykuł pokazuje jak profilować zapytania i mierzyć wpływ indeksów na wydajność wyszukiwania.
-publishDate: 2021-06-27 17:40:00+00:00
+publishDate: 2016-12-08 17:40:00+00:00
 slug: pl/testowanie-szybkosci-selektow
 tags:
 - mathematica
