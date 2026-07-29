@@ -4,12 +4,13 @@ canonicalName: tesseract-ocr-and-selects-testing
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a72114fa-b210-47be-bdd6-1b2fd232b6fd.avif
 description: Leeremos el contenido de la tabla de la base de datos de la foto y escribiremos algunas pruebas para las consultas de la base de datos en Behat.
 excerpt: Leeremos el contenido de la tabla de la base de datos de la foto y escribiremos algunas pruebas para las consultas de la base de datos en Behat.
-publishDate: 2021-05-04 20:18:00+00:00
+publishDate: 2016-12-02 20:18:00+00:00
 slug: es/tesseract-ocr-y-selectores-de-pruebas
 tags:
 - mysql
 - behat
 - perl
+- ocr
 title: Tesseract-OCR y pruebas de selección.
 updateDate: 2021-06-21 16:53:20+00:00
 ---
