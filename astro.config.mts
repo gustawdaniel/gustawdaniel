@@ -1,5 +1,4 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
-import { unified } from '@astrojs/markdown-remark';
 import { defaultLocale, locales } from "./src/locales.ts";
 import tailwindcss from '@tailwindcss/vite';
 import alpinejs from "@astrojs/alpinejs";
@@ -44,10 +43,8 @@ export default defineConfig({
     pagefind(),
   ],
   markdown: {
-    processor: unified({
-      remarkPlugins: [remarkRawRemoteImages, remarkMath],
-      rehypePlugins: [rehypeKatex],
-    }),
+    remarkPlugins: [remarkRawRemoteImages, remarkMath],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
       // https://shiki.style/themes

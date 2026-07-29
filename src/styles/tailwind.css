@@ -4,6 +4,13 @@
 
 @variant dark (.dark &);
 
+@theme {
+  --color-slate-900: #070825;
+  --color-slate-800: #0d0f31;
+  --color-slate-700: #181A1F;
+  --color-slate-600: #2c394c;
+}
+
 @layer utilities {
   .prose img {
     margin-left: auto;
@@ -25,7 +32,42 @@
   }
 
   .dark .prose :not(pre) > code {
-    background-color: rgba(51, 65, 85, 0.5);
-    color: #e2e8f0;
+    background-color: #070825;
+    color: #59E1E3;
+    border: 1px solid rgba(255, 22, 176, 0.4);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+  }
+
+  .dark .prose {
+    --tw-prose-body: #f1f1f1;
+    --tw-prose-headings: #96A1FF;
+    --tw-prose-lead: #96A1FF;
+    --tw-prose-links: #46BDFF;
+    --tw-prose-bold: #fcfcfc;
+    --tw-prose-counters: #FF16B0;
+    --tw-prose-bullets: #FF16B0;
+    --tw-prose-hr: #181A1F;
+    --tw-prose-quotes: #fcfcfc;
+    --tw-prose-quote-borders: #FF16B0;
+    --tw-prose-captions: #525863;
+    --tw-prose-code: #59E1E3;
+    --tw-prose-pre-code: #f1f1f1;
+    --tw-prose-pre-bg: #0d0f31;
+    --tw-prose-th-borders: #181A1F;
+    --tw-prose-td-borders: #181A1F;
+  }
+
+  .dark .prose a {
+    color: #46BDFF;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(70, 189, 255, 0.5);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .dark .prose a:hover {
+    color: #6BE4E6;
+    border-bottom-color: #6BE4E6;
   }
 }

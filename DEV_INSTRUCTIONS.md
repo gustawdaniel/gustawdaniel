@@ -77,7 +77,7 @@ TODO:
 - [x] header visual separation & sticky border (`AppTopNavBar.astro`)
 - [x] footer visual separation & centered links on mobile (`BaseFoot- [x] separation on mobile between next articles (border-b & pb-8 on mobile)
 - [ ] articles recommendations engine using vector db
-- [ ] dark mode colors are awful
+- [x] dark mode color scheme adjusted using VS 1984 Synthwave palette (#070825 / #0D0F31 / #46BDFF / #FF16B0 / #B3F361)
 - [ ] fix Core Web Vitals https://dash.cloudflare.com/416275d8b658f8f343bf49806950ad25/web-analytics/overview/web-vitals?siteTag~in=deea757b9ff2486188009e891c56f064
 
 Daniel Homepage Review Report (v2)

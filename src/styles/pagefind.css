@@ -13,11 +13,11 @@ html {
 }
 
 html.dark {
-    --pagefind-ui-primary: #818cf8;
-    --pagefind-ui-text: #f8fafc;
-    --pagefind-ui-background: #1e293b;
-    --pagefind-ui-border: #334155;
-    --pagefind-ui-tag: #334155;
+    --pagefind-ui-primary: #FF16B0;
+    --pagefind-ui-text: #F1F1F1;
+    --pagefind-ui-background: #0D0F31;
+    --pagefind-ui-border: rgba(255, 22, 176, 0.4);
+    --pagefind-ui-tag: #1B1D4C;
 }
 
 .pf-searchbox,

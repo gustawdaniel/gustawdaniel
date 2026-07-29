@@ -8,8 +8,6 @@ export function fixBlogLocale(
 ): string {
     const canonical = getCanonicalPath(path)
 
-    console.log(path, locale, translatedSlugs, canonical)
-
     if (canonical.startsWith('/posts') || canonical.startsWith('/notes')) {
         const prefix = canonical.startsWith('/posts') ? '/posts' : '/notes';
         if(Array.isArray(translatedSlugs)) {

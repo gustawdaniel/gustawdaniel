@@ -25,7 +25,7 @@ const active = isActive();
 <a href={getRelativeLocaleUrl(locale, path)}
    class:list={['inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors',
        {
-           'bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400 font-semibold': active,
-           'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-slate-800 dark:hover:text-white': !active
+           'bg-indigo-50 text-indigo-600 dark:bg-[#1B1D4C] dark:text-[#46BDFF] dark:border dark:border-[#FF16B0]/40 font-semibold': active,
+           'text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-[#A2A8D3] dark:hover:bg-[#1B1D4C] dark:hover:text-[#F1F1F1]': !active
        }]}
    {...(active ? { 'aria-current': 'page' } : {})}>{name}</a>
