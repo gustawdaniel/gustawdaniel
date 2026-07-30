@@ -18,6 +18,25 @@
     display: block;
   }
 
+  .prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose .table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose .table-wrapper table {
+    display: table;
+    width: 100%;
+  }
+
   .prose code::before,
   .prose code::after {
     content: "" !important;

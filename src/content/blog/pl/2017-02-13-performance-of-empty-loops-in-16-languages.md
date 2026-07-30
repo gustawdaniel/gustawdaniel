@@ -19,15 +19,15 @@ updateDate: 2021-04-20T20:33:48.000Z
 
 ## Opis projektu
 
-Nie wiem, jakie są wasze wymarzone prezenty gwiazdkowe, ale moim jest kawałek ciekawego kodu. I właśnie taki prezent dostałem około półtora miesiąca temu.
+Nie wiem, jakie są Wasze wymarzone prezenty gwiazdkowe, ale moim jest kawałek ciekawego kodu. I właśnie taki prezent otrzymałem około półtora miesiąca temu.
 
-Mój przyjaciel wysłał mi w e-mailu [Kod źródłowy programu](https://www.dropbox.com/s/s9dy1jabkzxzls6/loopspeed.zip?dl=1), który mierzył czasy wykonywania pustych pętli w czterech różnych językach programowania. Dopisałem testy dla kilkunastu innych języków, lekko zautomatyzowałem testowanie i przeanalizowałem wyniki.
+Mój przyjaciel wysłał mi e-mailem [kod źródłowy programu](https://www.dropbox.com/s/s9dy1jabkzxzls6/loopspeed.zip?dl=1), który mierzył czas wykonywania pustych pętli w czterech językach programowania. Dopisałem testy dla kilkunastu kolejnych języków, zautomatyzowałem proces testowania i przeanalizowałem uzyskane wyniki.
 
-W tym wpisie pokażę jak wyglądają i jak szybko działają programy wykonujące puste pętle językach:
+W tym wpisie pokażę, jak wyglądają i z jaką szybkością działają programy wykonujące puste pętle w 16 językach:
 
 - Matlab,
 - Bash,
-- SQL (mariadb),
+- SQL (MariaDB),
 - Mathematica,
 - C#,
 - JavaScript,
@@ -35,42 +35,42 @@ W tym wpisie pokażę jak wyglądają i jak szybko działają programy wykonują
 - Ruby,
 - Perl,
 - R,
-- Php,
+- PHP,
 - Fortran 95,
 - C++,
 - C,
-- Pascal
+- Pascal,
 - Java.
 
-Do logowania danych wykorzystamy plik tekstowy oraz silnik bazodanowy `SQLite`. Analizę danych przeprowadzimy w języku Python.
+Do rejestrowania danych wykorzystamy plik tekstowy oraz silnik bazy danych `SQLite`. Analizę danych przeprowadzimy w języku Python.
 
 ## Instalacja
 
-Nasz projekt będziemy odpalać na `Arch Linux` bez dockera i maszyny wirtualnej. Zaczniemy od instalacji bazy danych `mariadb`.
+Projekt będziemy uruchamiać w środowisku `Arch Linux` (bez użycia Dockera czy maszyny wirtualnej). Rozpoczniemy od instalacji bazy danych `mariadb`.
 
 ```bash
 paru -S mariadb
 ```
 
-W przeciwieństwie do niektórych dystrybucji (np. Ubuntu), Arch nie odpala i nie konfiguruje bazy automatycznie po instalacji. Musisz jednorazowo utworzyć strukturę katalogów przed pierwszym uruchomieniem:
+W przeciwieństwie do niektórych dystrybucji (np. Ubuntu), Arch nie uruchamia i nie konfiguruje bazy automatycznie po instalacji. Przed pierwszym uruchomieniem należy jednorazowo utworzyć strukturę katalogów:
 
 ```bash
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 ```
 
-Startujesz usługę i ustawiasz jej automatyczny start przy bootowaniu systemu:
+Uruchamiamy usługę i włączamy jej automatyczny start podczas rozruchu systemu:
 
 ```bash
 sudo systemctl enable --now mariadb
 ```
 
-Po połączeniu z bazą za pomocą sudo (co daje nam uprawnienia roota):
+Po połączeniu z bazą za pomocą `sudo` (z uprawnieniami administratora):
 
 ```bash
 sudo mariadb
 ```
 
-Możemy utworzyć bazę danych, do której będziemy zapisywać nasze czasy. Wprawdzie domyślnie zakładamy, że baza jest pusta, ale może się zdarzyć, że komuś się ona przyda. Tworzymy więc bazę, dajemy uprawnienia dla lokalnego użytkownika `''`:
+Tworzymy bazę danych, w której będziemy zapisywać zmierzone czasy, oraz przyznajemy uprawnienia dla lokalnego użytkownika `''`:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS inc;
@@ -78,13 +78,13 @@ GRANT ALL PRIVILEGES ON inc.* TO ''@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-Możemy teraz przetestować instalację komendą:
+Instalację możemy przetestować poleceniem:
 
 ```bash
 mariadb inc -e "SELECT 'OK' as 'state'"
 ```
 
-Jeśli zobaczysz
+Jeśli w konsoli pojawi się poniższy wynik, wszystko zostało skonfigurowane poprawnie:
 
 ```sql
 +-------+
@@ -94,9 +94,7 @@ Jeśli zobaczysz
 +-------+
 ```
 
-To znaczy, że wszystko jest w porządku.
-
-Instalację projektu na czystym Ubuntu 16.04.1 LTS wymaga wpisania kilku komend:
+W celu przygotowania środowiska do pracy, należy wykonać polecenia:
 
 ```bash
 git clone --depth=1 git@github.com:gustawdaniel/loopspeed.git && cd loopspeed
@@ -105,11 +103,9 @@ cpan install DBI DBD::SQLite Text::CSV_XS
 perl util/parameters_load.pl
 ```
 
-Jest to pierwszy wpis z repozytorium na `gitlabie` a nie `githubie`. Nie jest to przypadek, lecz zasługa świetnego narzędzia do ciągłej integracji - `gitlab-ci`, które omówię na samym końcu.
+Przyjrzyjmy się teraz skryptom: instalacyjnemu oraz ładującemu parametry.
 
-Teraz przyjrzymy się skryptom: instalacyjnemu i ładującemu parametry.
-
-Skrypt instalacyjny `install.sh` wykonuje aktualizację listy dostępnych paczek i instalację wymaganych kompilatorów i interpreterów języków:
+Skrypt instalacyjny `install.sh` aktualizuje listę pakietów oraz instaluje wymagane kompilatory i interpretery języków:
 
 ```bash
 #!/usr/bin/env bash
@@ -121,7 +117,7 @@ paru -S --needed --noconfirm \
   perl-text-csv perl-dbi perl-dbd-sqlite
 ```
 
-Paczki które instalujemy to:
+Instalowane pakiety to m.in.:
 
 | Arch Linux (`paru`) | Uwagi                                                  |
 | ------------------- | ------------------------------------------------------ |
@@ -130,11 +126,11 @@ Paczki które instalujemy to:
 | `jdk-openjdk`       | Domyślne środowisko Java                               |
 | `fpc`               | Free Pascal Compiler                                   |
 | `mono`              | Środowisko i kompilator C#                             |
-| `nodejs`            | Na Archu node to zawsze po prostu `nodejs`             |
+| `nodejs`            | Środowisko uruchomieniowe JavaScript (Node.js)         |
 | `mariadb-clients`   | Klient CLI do MySQL / MariaDB                          |
 | `perl-text-csv`     | Konwencja nazw modułów Perla (`perl-*`)                |
 
-Następnie tworzy bazę do przechowywania wyników pomiarów oraz wyliczonych na ich podstawie parametrów:
+Zadaniem skryptu jest również utworzenie bazy danych do przechowywania wyników pomiarów oraz wyliczonych na ich podstawie parametrów:
 
 ```bash
 sqlite3 log/log.db \
@@ -156,21 +152,21 @@ sqlite3 log/log.db \
 );"
 ```
 
-I na koniec instalator pobiera bibliotekę do testowania kodu pisanego w `bashu` - `shunit2`.
+Na koniec instalator pobiera bibliotekę do testowania skryptów napisanych w Bashu – `shunit2`:
 
 ```bash
 curl -L "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/shunit2/shunit2-2.1.6.tgz" | tar zx
 ```
 
-Przed drugim skryptem instalujemy biblioteki perla
+Przed uruchomieniem drugiego skryptu instalujemy wymagane moduły Perla:
 
 ```bash
 cpan install DBI DBD::SQLite
 ```
 
-Dzięki temu możemy wykonać skrypt
+Dzięki temu możemy wykonać skrypt:
 
-> util/parameters\_load.pl
+> util/parameters_load.pl
 
 ```perl
 #!/usr/bin/perl -w
@@ -211,13 +207,13 @@ $sth->finish;
 $dbh->commit;
 ```
 
-Jego zadaniem jest przeniesienie zawartości pliku tekstowego `config/parameters.csv` do tabeli `result` bazy danych `log/log.db`. Przenoszone dane dotyczą szacowanych czasów wykonywania pętli i zostały wyliczone z wyników przeprowadzonych wcześniej pomiarów.
+Jego zadaniem jest przeniesienie zawartości pliku tekstowego `config/parameters.csv` do tabeli `result` w bazie danych `log/log.db`. Przenoszone dane dotyczą szacowanych czasów wykonywania pętli i zostały wyznaczone na podstawie wcześniejszych pomiarów.
 
-Dwa z języków, które testowałem - `Matlab` i `Mathematica` - wymagają zainstalowanego licencjonowanego oprogramowania. Co prawda, studenci mają zwykle te licencje dzięki uczelniom, ale ze względu na to, że jest licencjonowane, testy dla tych języków są domyślnie wyłączone.
+Dwa spośród testowanych języków – `Matlab` oraz `Mathematica` – wymagają licencjonowanego oprogramowania commercial. Z tego względu testy dla nich są domyślnie wyłączone.
 
-## Framework
+## Architektura projektu (Framework)
 
-Nasz program do testowania pustych pętli ma następującą strukturę katalogów:
+Program do testowania pustych pętli posiada następującą strukturę katalogów:
 
 ```
 ├── config
@@ -259,39 +255,39 @@ Nasz program do testowania pustych pętli ma następującą strukturę katalogó
 └── .gitlab-ci.yml
 ```
 
-Katalog `config` zawiera pliki pomocnicze z ustawieniami. Pierwszym z nich jest lista parametrów dla których będziemy wykonywać serie testowe `config/list.txt` - zwykły plik tekstowy z liczbami całkowitymi w kolejnych liniach. Drugim oszacowane wartości parametrów określających szybkość wykonywania pustych pętli `config/parameteres.csv`.
+Katalog `config` zawiera pliki konfiguracji. Pierwszym jest `config/list.txt` – lista parametrów (liczb całkowitych), dla których wykonywane są serie testowe. Drugim jest `config/parameters.csv`, zawierający oszacowane wartości parametrów szybkości wykonywania pętli.
 
-W `inc` znajduje się 16 plików odpowiadających za testowanie pętli oraz jeden do definiowania procedury w `MySQL`, która dopiero, kiedy zostanie wywołana wywołana będzie wykonywać pętle.
+W katalogu `inc` znajduje się 16 plików odpowiedzialnych za testowanie poszczególnych języków oraz plik definiujący procedurę w `MariaDB`, która wykonuje pętlę po jej wywołaniu.
 
-W `util` umieściłem narzędzia pomocnicze, które pozwalały mi na przerzucanie danych z pliku tekstowego do bazy `SQLite`, oraz mierzenie różnic między wynikami dwóch metod pomiaru czasu trwania programu. Jest tam też skrypt do dopasowywania modelu i tworzenia pliku `config/parameters.csv`, oraz skrypt do ładowania tych parametrów do bazy danych `sqlite`. Wykorzystanie plików tekstowych do logowania wyników pomiarów jest z jednej strony związane z rozwijaniem tego softu. Pliki tekstowe były stosowane zanim przeszedłem na silnik bazodanowy. Z drugiej strony nie chciałem zaśmiecać bazy danymi pomiarowymi, których nie byłem pewien, więc jeśli istniało ryzyko, że program, który testuję będzie działał źle - na przykład kiedy spodziewałem się, że wyjdę poza zakres danego typu liczbowego - wyłączałem logowanie do bazy i posługiwałem się tylko plikiem. Jeśli wszystko było ok, mogłem bez problemu załączyć nowe wyniki do uzyskanych wcześniej.
+W `util` umieściłem skrypty pomocnicze do przesyłania danych z plików tekstowych do bazy `SQLite` oraz do porównywania precyzji dwóch metod pomiaru czasu. Znajdują się tam również skrypty wyznaczające parametry modelu i ładujące je do bazy SQLite. Wykorzystanie plików tekstowych obok bazy danych wynika z historii rozwoju projektu oraz pozwala unikać wprowadzania do bazy niepewnych wyników podczas testowania wartości skrajnych.
 
-Katalog `log` służy do przechowywania plików tekstowych oraz bazy danych `SQLite`. Plik `result.log` zawiera kopię danych, które trafiają do bazy danych, `results_timing_methods.log` przechowuje wyniki pomiarów czasu. Podczas testowania w tym katalogu pojawiają się na czas testów inne pliki z logami.
+Katalog `log` przechowuje pliki logów oraz bazę `SQLite`. Plik `results.log` zawiera kopię danych trafiających do bazy, natomiast `results_timing_methods.log` zapisuje wyniki pomiarów porównawczych.
 
-Poza tym projekt zawiera:
+Pozostałe kluczowe pliki w projekcie:
 
-- `install.sh` - skrypt instalacyjny (omówiłem go w poprzednim paragrafie),
-- `inc.bash` - bazowy skrypt do robienia pomiarów czasu trwania pustych pętli,
-- `util/generate_parameters.py` - skrypt w języku Python do dopasowania modeli i wyznaczenia parametrów,
-- `util/generate_plots.py` - skrypt w języku Python do generowania wykresów wyników pomiarów,
-- `test.sh` - skrypt do testowania działania `inc.bash` oraz innych elementów projektu.
+- `install.sh` – skrypt instalacyjny,
+- `inc.bash` – główny skrypt uruchamiający pomiary czasów pustych pętli,
+- `util/generate_parameters.py` – skrypt w Pythonie dopasowujący modele i wyznaczający parametry,
+- `util/generate_plots.py` – skrypt w Pythonie generujący wykresy wyników,
+- `test.sh` – zestaw testów automatycznych.
 
-Dzięki takiej strukturze jesteśmy w stanie bez problemu dodawać nowe języki programowania. Trzymanie w bazie numeru rewizji pozwala nam również sprawdzać, jak różne instrukcje spełniające teoretycznie tą samą funkcjonalność (np: `for` vs `while`) różnią się od siebie wydajnością.
+Dzięki takiej strukturze dodawanie obsługi nowych języków jest proste. Przechowywanie identyfikatora rewizji Git pozwala ponadto porównywać wydajność różnych konstrukcji językowych (np. `for` vs `while`).
 
-## Dataflow
+## Przepływ danych (Dataflow)
 
-Przepływ danych w programie posiada wbudowane sprzężenie zwrotne. Z jednej strony `inc.bash` testuje pętle za pomocą parametrów wyliczonych z modelu za pomocą `util/generate_parameters.py`, z drugiej strony, żeby móc dopasować model do danych, musieliśmy je najpierw dostać właśnie uruchamiając `inc.bash`.
+Przepływ danych w aplikacji opiera się na sprzężeniu zwrotnym: `inc.bash` testuje pętle na podstawie parametrów wyliczonych przez `util/generate_parameters.py`, natomiast sam model wymaga wcześniejszego zgromadzenia danych empirycznych za pomocą `inc.bash`.
 
-Patrząc na wykres przepływu danych łatwo znajdziemy zamknięte koło, które mam na myśli.
+![Diagram przepływu danych - Loopspeed](/img/loopspeed/dataflow_pl.png)
 
-[![Loopspeed.png](https://s9.postimg.org/fbg1yihnz/Loopspeed.png)](https://postimg.org/image/mrfbkb5d7/)
+Mamy tu do czynienia z klasycznym problemem "co było pierwsze: jajko czy kura?". Odpowiedzią okazuje się podejście ewolucyjne. Początkowo każdy ze skryptów `inc.i` uruchamiany był ręcznie – najpierw dla pojedynczej pętli, potem dla tysiąca, miliona i miliarda iteracji. Jeśli wykonanie trwało zbyt długo (powyżej kilku sekund), zmniejszałem liczbę iteracji; gdy było zbyt krótkie – zwiększałem. Celem było ręczne znalezienie liczby iteracji odpowiadającej czasowi wykonania rzędu 4–5 sekund. 
 
-Jest to klasyczny problem, co było pierwsze, jajko czy kura? Pierwszy był model teoretyczny, który określił co warto mierzyć czy dane doświadczalne, dzięki którym możemy go zgadnąć? Tak jak w biologicznym odpowiedniku, tak tutaj odpowiedzią jest ewolucja. Początkowo każdy z programów `inc.i`, (gdzie `i` jest numerem testowanego języka programowania) był włączany ręcznie. Z jedną pętlą. Później z tysiącem, milionem, miliardem. Kiedy widziałem, że wykonuje się dłużej niż kilka sekund obniżałem liczbę pętli, kiedy krócej niż sekundę podnosiłem ją. Dążyłem do tego, żeby ręcznie znaleźć liczbę pętli odpowiadającą miej więcej 4-5 sekund wykonywania programu. Tak uzyskiwałem pierwsze wartości parametrów, które jeszcze wtedy były wpisywane ręcznie do kodu programu `inc.bash`. Dzięki temu uwspólniłem skalę dla wszystkich z wyjątkiem języka `Matlab`, którego inicjalizacja trwała 5 sekund z kawałkiem. Dla `Matlaba` robiłem oddzielną serię pomiarową zanim go wyczułem. Dane z tego typu testów trafiały do pliku `results.log`, ale o tym czy przenosić je do `log.db` decydowałem na podstawie zdrowego rozsądku, w jednym przypadku zdarzyło się, że dla jednego z języków czasy rosły wraz z liczbą pętli `$size` do pewnego momentu, a zaczęły trzymać się stałego poziomu. Okazało się, że zakresy zmiennych nie wystarczają do pomieszczenia liczby iteracji i jest ona po prostu rzutowana na mniejszą wartość. Były przypadki (`python` oraz `r`) gdzie brakowało pamięci RAM, bo pętla `for` zamiast inkrementować skalarny wskaźnik była skonstruowana tak, że ładowała do pamięci operacyjnej całą tablicę, po której później przebiegała. Ogólnie rzecz biorąc, nie dało by się zupełnie zautomatyzować testów na tym etapie. W niektórych językach trzeba było zmieniać typy, na przykład w `Pascalu` zwykły `Int` nie wystarczył i trzeba było stosować `QWord`, analogicznie w `C#` typ `Int32` był zmieniany na `UInt64`. Podsumowując: początkowo model istniał tylko w mojej głowie. Na początku nie było `analysis.nb` ani `list.txt`, `inc.bash` zawierał zakodowane na sztywno przybliżone szybkości pętli i nie miał tylu opcji, z którymi można było go włączać.
+Uzyskane w ten sposób wartości trafiły do kodu `inc.bash` jako pierwsze stałe. Pozwoliło to uwspólnić skalę dla większości języków, poza Matlabem, którego sam rozruch trwał ponad 5 sekund. Dane pomiarowe trafiały początkowo do pliku `results.log`. Podczas testów ujawniły się też różne ograniczenia systemowe i językowe: w niektórych językach przepełniał się zakres zmiennych liczbowych (co wymagało przejścia np. z `Int32` na `UInt64` w C# lub na `QWord` w Pascalu), w innych (`Python`, `R`) pętla `for in` potrafiła alokować całą tablicę w pamięci RAM, powodując brak pamięci. Z tego powodu na wstępnym etapie pełna automatyzacja nie była możliwa.
 
-Kiedy `results.log` rozrósł się, a ja zrozumiałem, że testowanie w stronę krótszych czasów jest nieopłacalne bo generuje za dużo błędu pomiarowego, a w stronę dłuższych czasów nieopłacalne, bo nie wnosi żadnych nowych efektów, wtedy powstał program `text_to_sqlite.pl` do konwertowania pliku tekstowego do postaci wierszy w bazie danych. Zrezygnowałem z zapisywania zmiennej `$speed` - szybkości pętli, jako, że dzięki silnikowi bazodanowemu jej wyliczanie było prostsze, uznałem natomiast, że jeśli wprowadzam zmiany w programach `inc.i`, to w danych może pojawić się bałagan. Żeby móc wykrywać, z jakiej wersji programu pochodzą dane zapisy dodałem zmienną `$git` z numerem rewizji. Wtedy powstał notebook `analysis.nb` i z jego pomocą wyliczyłem parametry do `bash.inc` z większą dokładnością. Zaplanowałem też serię pomiarową `list.txt` która wykładniczo rozrzedzała się dla rosnących czasów pomiarów. Na koniec obliczanie parametrów przeniosłem do skryptu `util/generate_parameters.wl`, dopisałem `util/parameters_load.pl` do ich konwersji do bazy `sqlite` i podłączyłem te dane do `inc.bash`. Dzięki modelowi mogłem wyliczyć ile czasu będzie trwał jaki pomiar. W ten sposób obieg danych zamknął się. Model zaczął wyznaczać optymalne punkty pomiarowe, a uzyskiwane dane zaczęły płynąć w coraz bardziej zautomatyzowany i zracjonalizowany sposób.
+Gdy plik `results.log` znacząco urósł, a ja dostrzegłem, że testy dla zbyt krótkich czasów generują duży błąd pomiarowy, natomiast dla zbyt długich – nie dają nowych informacji, napisałem skrypt `text_to_sqlite.pl` do konwersji wyników do bazy SQLite. Aby zapobiec mieszaniu danych pochodzących z różnych wersji skryptów, dodałem kolumnę `$git` z identyfikatorem commitu. Następnie wyliczyłem dokładniejsze parametry modelu, utworzyłem wykładniczo rozrzedzoną serię testową `list.txt` i zautomatyzowałem wyznaczanie parametrów w skrypcie Python. W ten sposób obieg danych został zamknięty: model zaczął wyznaczać optymalne punkty pomiarowe, a dane płynęły w sposób w pełni zautomatyzowany.
 
-### Jądro programu
+### Jądro programu (`inc.bash`)
 
-Kiedy wiemy już co jak działa i do czego służy obejrzymy kod programu `inc.bash`. Program zaczyna się od funkcji odpowiedzialnej za wyświetlanie okna pomocy.
+Przyjrzyjmy się budowie głównego skryptu testującego `inc.bash`. Zaczyna się on od funkcji wyświetlającej pomoc:
 
 > inc.bash
 
@@ -315,7 +311,9 @@ EOF
 }
 ```
 
-Widzimy, że posiada on kilka flag, z których możemy korzystać. Pierwszą znich jest `-a` służąca do wykonywania testów z wykorzystaniem oprogramowania komercyjnego: `matlab` i `mathematica`. Domyślnie jest to wyłączone, żeby program był dostępny bez konieczności ich instalowania. Następnie mamy do wyboru `-t` i `-l` odpowiadających za sposób wyznaczania ilości pętli. W opcji `-t` użytkownik wyznacza czas w sekundach jaki ma zająć wykonywanie każdego z badanych programów `inc/inc.i`, na podstawie tego czasu i parametrów wyznaczonych wcześniej przez `util/generate_parameters.wl` określane są liczby pętli dla każdego z nich. Opcja `-l` pozwala na pomiar dokładnej ilości pętli jakie chcemy wykonać. Na koniec określamy liczbowo ilość oczekiwanych sekund lub wykonywanych pętli albo za pomocą flagi `-f` ładujemy plik z serią pomiarową. Następnie program stosuje bardzo ciekawy mechanizm czyszczenia po sobie niezależnie od sposobu w jaki ma zostać zamknięty.
+Skrypt udostępnia kilka opcji. Flaga `-a` włącza testy komercyjnych środowisk (`Matlab` i `Mathematica`), domyślnie wyłączone. Flagi `-t` oraz `-l` określają sposób wyznaczania obciążenia: w trybie `-t` podajemy oczekiwany czas w sekundach, a skrypt wylicza odpowiednią liczbę pętli dla każdego języka z wyznaczonego modelu; tryb `-l` pozwala podać dokładną liczbę iteracji. Opcja `-f` umożliwia wczytanie pliku z serią pomiarową.
+
+Następnie skrypt definiuje procedurę sprzątania zasobów:
 
 ```bash
 function onExit {
@@ -327,9 +325,9 @@ function onExit {
 }
 ```
 
-Zastosowano tutaj ciekawą składnię z flagami `-z` i `-d`. Dokumentacja [basha](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html) wyjaśnia, że lokalizacja wskazywana przez zmienną `$TMP` ma zostać usunięta jeśli zmienna `$TMP` coś w ogóle zawiera i jeśli wskazuje na katalog. Kolejna linia to usunięcie pliku pochodzącego z kompilacji `javy`, który nie trafił do `$TMP` tylko dlatego, że nie potrafiłem go tam wrzucić.
+Wykorzystano tu flagi `-z` oraz `-d`: katalog wskazywany przez `$TMP` zostanie usunięty, o ile zmienna nie jest pusta i wskazuje na istniejący katalog. Czyszczony jest także plik binarny Javy. Funkcja `onExit` jest wywoływana automatycznie przy wyjściu ze skryptu.
 
-Funkcja `onExit` wykona się przy zamykaniu programu, co będzie zaznaczone później. Teraz przyjrzymy się funkcji `test` - kompletującej wszystkie dane, wykonującej testy i wysyłającej dane do bazy oraz pliku. Jest to centralny punkt całego systemu, odpowiada ona za uwspólnienie interfejsu wszystkich programów.
+Centralnym punktem całego środowiska jest funkcja `test`, odpowiedzialna za wykonanie pomiaru i rejestrację wyników:
 
 ```bash
 function test {
@@ -338,13 +336,13 @@ function test {
 	comm="${@:3}"
 ```
 
-Przyjmuje ona na wejściu trzy lub więcej parametrów. Pierwszy to nazwa: zwykle `inc.<rozszerzenie języka>` np: `inc.c` lub `inc.js`. Nie jest ona w żaden sposób powiązana ani z lokalizacją pliku źródłowego, ani wykonywalnego. W zasadzie mogła by być dowolna. Przyjąłem jednak konwencję, że nazywa się tak jak plik źródłowy. Drugi parametr to liczba pętli jaka ma zostać wykonana `$size`. Kolejne parametry, niezależnie od ich ilości wrzucane są do zmiennej `$comm` - jest to komenda do włączenia programu, ale bez liczby pętli.
+Przyjmuje ona co najmniej trzy parametry: identyfikator testu (`$name`, np. `inc.c`), liczbę iteracji (`$size`) oraz polecenie uruchamiające (`$comm`).
 
 ```bash
     [ $size -le 0 ] && return;
 ```
 
-Po zabezpieczeniu się, że liczba pętli nie może być ujemna funkcja `test` może wykonywać pomiar czasu.
+Po zweryfikowaniu, że liczba iteracji jest dodatnia, następuje wywołanie pomiaru czasu:
 
 ```bash
     time=`bash util/timing.sh $comm $size`
@@ -353,14 +351,14 @@ Po zabezpieczeniu się, że liczba pętli nie może być ujemna funkcja `test` m
 	    | awk -F ',' '{printf "| %-12s | %15s | %12.6f s | %19.2f |\n", $1, $2, $3, $2/$3;}'
 ```
 
-Widzimy, że wykorzystuje do tego program `util/timing.sh` podając mu komendę do wykonania wraz z liczbą pętli. Wynik działania programu `timing.sh` przekazywany jest do zmiennej `time`. Następnie nazwa, ilość tętli, czas i numer rewizji wysyłane są do pliku `log/results.log` oraz a nazwa, ilość pętli, czas i szybkość wyświetlane na ekranie. Numer rewizji znajduje się w globalnej zmiennej `GIT` i będzie zdefiniowany później. Ten sam zestaw danych, który zapisany było do pliku `log/resutls.log` trafia do bazy danych.
+Pomiar realizowany jest przez skrypt `util/timing.sh`. Uzyskany czas zapisywany jest do pliku `log/results.log`, a sformatowany wynik wypisywany na konsolę. Te same dane trafiają do bazy SQLite:
 
 ```bash
      sqlite3 log/log.db  "insert into log (name,size,time,git) values ('$name',$size,$time,'$GIT');"
 }
 ```
 
-Kolejna funkcja służy głównie uporządkowaniu kodu programu i zostanie wywołana tylko raz bez żadnych parametrów.
+Kompilacja programów wymagających wcześniejszego zbudowania odbywa się w funkcji `compile`:
 
 ```bash
 function compile {
@@ -374,9 +372,9 @@ function compile {
 }
 ```
 
-Wykonuje ona kompilacje języków które tego wymagają. Czas kompilacji nie jest nigdzie mierzony.
+Czas kompilacji nie wchodzi w skład mierzonego czasu wykonania pętli.
 
-Zupełnie inaczej jest z funkcją `calculate` obliczającą ilość pętli która ma się wykonać. Ta funkcja będzie wykonywana przy każdym pojedynczym teście. Jej działanie uzależnione jest od wartości zmiennej globalnej `$timeMode`. Jeśli włączamy program z flagą `-l` to `$timeMode=0` i funkcja zwróci nam swój pierwszy argument oraz wartość liczbową zmiennej globalnej `$POW`. Jedynym argumentem tej funkcji jest nazwa języka - u nas zapisywana jako `inc.<rozszerzeie>`. Zmienna `$POW` odpowiada liczbie którą podajemy do programu niezależnie czy robimy to za jego nazwą, czy jest to jedna z liczb z pliku jaki wrzucamy za flagą `-f`. Jeśli program działa z flagą `-t` to za pomocą programu `awk` wyliczamy liczbę pętli ze wzoru `(pow-b)/a` gdzie `pow` jest czasem w sekundach, natomiast `b` oraz `a` są parametrami dopasowania prostej. Nasze `a` i `b` to w programie elementy tablicy asocjacyjnej, którą będziemy niedługo definiować.
+Liczba iteracji do wykonania wyliczana jest w funkcji `calculate`:
 
 ```bash
 # number of loops for given languages in dependence from $timeMode
@@ -390,7 +388,9 @@ function calculate {
 }
 ```
 
-Tymczasem przyjżymy się funkcji odpowiedzialnej za testowanie całego zbioru programów dla danego parametru `$POW`.
+W trybie `-t` (`$timeMode=1`) funkcja przelicza żądany czas na liczbę pętli według wzoru $(POW - B) / A$, korzystając z dopasowanych parametrów liniowych $A$ i $B$.
+
+Sekwencję testów dla poszczególnych języków uruchamia funkcja `testbundle`:
 
 ```bash
 function testbundle {
@@ -413,9 +413,7 @@ function testbundle {
 }
 ```
 
-Widzimy, że sprawdza ona wartość zmiennej `$allPrograms` powiązanej z flagą `-a`, żeby włączać testy `mathematica` i `matlab` tylko jeśli ustawiono tą flagę. Poza tym wykonuje ona bardzo powtarzalny schemat - dla każdego programu włącza funkcję `test`. Za dwa pierwsze parametry - nazwę i liczbę pętli podstawia wynik funkcji `calculate`, wszystkie pozostałe są zwijane do komendy odpalającej testowany program.
-
-Do wyjaśnienia pozostaje jeszcze - skąd wzięły się tablice asocjacyjne parametrami. Za ich utworzenie odpowiada funkcja `loadParams`.
+Ładowanie parametrów z bazy danych do tablic asocjacyjnych Basha realizuje funkcja `loadParams`:
 
 ```bash
 function loadParams {
@@ -427,46 +425,23 @@ source <(sqlite3 log/log.db "select name, b from result" |
 }
 ```
 
-Stosowana tu składnia z wykorzystaniem `source` jest bardzo niezalecana w przypadku danych pochodzących od użytkowników. Tutaj jednak dane sami generujemy i uznałem, że jest to najłatwiejszy sposób na zdefiniowanie tych tablic. `Source` odpowiada za wykonanie kodu, który dostaje, a dostaje przetworzone do postaci np: `a[inc.bash]=4.231982349e-06` wyniki zapytań do tabeli z parametrami.
-
-Logika skryptu jest dość przewidywalna. Zaczyn się od przejścia do katalogu gdzie zlokalizowany jest skrypt. Następnie ustawiamy coś w rodzaju nasłuchu na zdarzenia `SIGINT`, `SIGTERM` i `EXIT`. Oznacza to, że jeśli będziemy chcieli wyłączyć program zanim skończy działać, to po sobie posprząta.
+W dalszej części skryptu następuje rejestracja sygnałów czyszczenia (`trap`), utworzenie katalogu tymczasowego, pobranie identyfikatora commitu Git, parsowanie opcji przekazanych przez użytkownika (`getopts`), załadowanie parametrów, kompilacja oraz wywołanie pętli testowej:
 
 ```bash
 cd "$(dirname "${BASH_SOURCE[0]}")";
 trap onExit SIGINT SIGTERM EXIT;
-```
 
-Jeśli zastanawiasz się, co tu jest do sprzątania, to kolejna linijka stanowi odpowiedź na Twoje pytanie. Tworzymy w niej katalog tymczasowy do przechowywania skompilowanych wersji programów i wstawiamy jego lokalizację do zmiennej `$TMP`.
-
-```bash
 TMP="$(mktemp -d)";
-```
-
-Do zmiennej globalnej `$GIT` przypisujemy aktualny numer rewizji.
-
-```bash
 GIT=`git rev-parse HEAD`;
-```
 
-Tworzymy tablice asocjacyjne `a` oraz `b`
-
-```bash
 declare -A a
 declare -A b
-```
 
-I ustawiamy domyślne wartości wszystkich falg oraz zmiennych.
-
-```bash
-allPrograms=0; # if all programs should be tested? Default: no, because licence is not free.
+allPrograms=0;
 configFile='config/list.txt';
 timeMode=1;
 fileMode=0;
-```
 
-W pętli `while` przetwarzamy wszystkie danej wprowadzone przez użytkownika.
-
-```bash
 while getopts hatlf opt; do
     case $opt in
         h)
@@ -487,29 +462,16 @@ while getopts hatlf opt; do
             ;;
     esac
 done
-shift "$((OPTIND-1))" # Shift off the options and optional --.
-```
+shift "$((OPTIND-1))"
 
-Po wychwyceniu wszystkich opcji przechwytujemy jeszcze parametr określający liczbę pętli lub sekund. Ładujemy parametry do tablic asocjacyjnych i kompilujemy programy.
-
-```bash
 POW=${1:-4};
 loadParams;
 compile
-```
 
-Wyświetalmy przyjazne elementy interfejsu użytkownika z nagłówkami tabeli.
-
-```bash
 echo '+--------------+-----------------+----------------+---------------------+';
 echo '|     File     |      Size       |      Time      |        Speed        |';
 echo '+--------------+-----------------+----------------+---------------------+';
 
-```
-
-Wykonujemy testowanie odpowiednią liczbę razy.
-
-```bash
 if [[ "$fileMode" -eq "1" ]]; then
    while IFS='' read -r POW || [[ -n "$POW" ]]; do
       testbundle;
@@ -517,43 +479,28 @@ if [[ "$fileMode" -eq "1" ]]; then
 else
   testbundle;
 fi
-```
 
-I kończymy program domknięciem tabeli.
-
-```bash
 echo '+--------------+-----------------+----------------+---------------------+';
 ```
 
-### Skrypty usprawniające przepływ danych
+### Skrypty pomocnicze
 
-Z czasem zwiększania ilości danych i testowania nowych zakresów pojawiła się potrzeba automatyzacji procesu przepływu danych. Służy do tego kilka poniższych skryptów.
+Do przenoszenia wyników tekstowych do bazy danych służy skrypt w Perlu:
 
-Do przerzucania tekstowych wyników pomiarów do bazy danych służy program:
-
-> util/text\_to\_sqlite.pl
+> util/text_to_sqlite.pl
 
 ```perl
 #!/usr/bin/perl -w
 use warnings FATAL => 'all';
 use DBI;
 use strict;
-#https://mailliststock.wordpress.com/2007/03/01/sqlite-examples-with-bash-perl-and-python/
+
 my $db = DBI->connect("dbi:SQLite:log/log.db", "", "",{RaiseError => 1, AutoCommit => 1});
 
-
 my $filename =  $ARGV[0] || 'log/results.log';
-```
 
-Po nagłówkach mamy tutaj zmienną `$db` przechowującą połączenie z bazą i `$filename` pobierającą argument z linii komend z domyślą wartością ustawioną na lokalizację pliku z logami. Takie ustawienie zmiennych dawało elastyczność, a jednocześnie nie wymagało wpisywania parametrów w najbardziej powtarzalnych sytuacjach. Następnie program otwierał plik:
-
-```perl
 open( my $fh => $filename) || die "Cannot open $filename: $!";
-```
 
-i iterując po jego liniach zapisywał odpowiednio przekształcone rekordy do bazy:
-
-```perl
 while(my $line = <$fh>) {
         my @row = split(",",$line);
         $db->do("INSERT INTO log (name,size,time,git) values ('".$row[0]."',$row[1],$row[2],'$row[3]');");
@@ -561,13 +508,13 @@ while(my $line = <$fh>) {
 close($fh);
 ```
 
-## Analiza
+## Analiza statystyczna
 
-Zdarzało nam się na tym blogu analizować dane. Schemat jest prosty. Łączymy się z bazą. Wyciągamy dane do zmiennej, dopasowujemy model, na koniec rysujemy wykresy lub eksportujemy wyniki obliczeń.
+Proces analizy danych polega na połączeniu z bazą SQLite, pobraniu zebranych pomiarów, dopasowaniu modelu nieliniowego oraz wygenerowaniu parametrów i wykresów.
 
-Omówimy teraz skrypt w języku Python, który przekształca wyniki pomiarów na parametry modelu. Do zarządzania zależnościami i uruchamiania skryptu użyjemy narzędzia `uv`.
+Do wyznaczenia parametrów wykorzystujemy poniższy skrypt Python (`util/generate_parameters.py`), uruchamiany przy użyciu narzędzia `uv`:
 
-> util/generate\_parameters.py
+> util/generate_parameters.py
 
 ```python
 #!/usr/bin/env python3
@@ -644,25 +591,17 @@ if __name__ == "__main__":
     main()
 ```
 
-Skrypt zaczyna pracę od połączenia do bazy danych `SQLite` za pomocą standardowego modułu `sqlite3`. Wyciągamy z bazy unikalną listę języków, a następnie dla każdego języka pobieramy pary wartości: liczbę wykonanych pętli `size` ($N$) oraz zmierzony czas `time` ($T$).
+Skrypt pobiera z bazy danych SQLite parę wartości: liczbę pętli $N$ (`size`) oraz zmierzony czas $T$ (`time`). Do dopasowania modelu wykorzystywana jest funkcja `curve_fit` z modułu `scipy.optimize`.
 
-Do dopasowania modelu wykorzystujemy funkcję `curve_fit` z biblioteki `scipy.optimize`.
+Dopasowywana funkcja ma postać: `np.log(np.exp(a) * sizes + b**2)`. Jest to zależność liniowa $T = A \cdot N + B$ przekształcona do skali logarytmicznej: $\log(T) = \log(A \cdot N + B)$. Ponieważ czas pojedynczej pętli $A$ przyjmuje bardzo małe wartości, a narzut uruchomienia $B$ jest zawsze dodatni, zastosowano podstawienia $A = e^a$ oraz $B = b^2$. Dzięki temu parametr $a$ przyjmuje wartości rzędu -18, a optymalizator nie wymaga sztucznych ograniczeń znaku.
 
-Dopasowywany model przyjmuje postać: `np.log(np.exp(a) * sizes + b**2)`. Choć na pierwszy rzut oka tak nie wygląda, jest to prosta $T = A \cdot N + B$ przekształcona do skali logarytmicznej. Spójrzmy na to tak. Do zmiennych $N$ i $T$ dopasowujemy prostą $T = A \cdot N + B$. Po zlogarytmowaniu obu stron otrzymujemy $\log(T) = \log(A \cdot N + B)$. Jednak ponieważ czas wykonywania pojedynczej pętli $A$ jest bardzo mały, a czas startu $B$ zawsze dodatni, wprowadzamy podstawienia $A = e^a$ oraz $B = b^2$.
+Błędy wyznaczane są z przekątnej macierzy kowariancji (`pcov`), a następnie przeliczane według wzorów propagacji błędów ($ea = A \cdot \sigma_a$, $eb = |2b| \cdot \sigma_b$). Wyliczone wartości trafiają do `config/parameters.csv`.
 
-Dzięki temu parametr $a$ przyjmuje wartości o naturalnych rzędach wielkości (np. około -18), a na $b$ nie musimy narzucać sztucznych ograniczeń dotyczących znaku podczas optymalizacji numerycznej.
+## Wyniki pomiarów
 
-Funkcja `curve_fit` zwraca wyznaczone parametry `popt` ($a$ oraz $b$) oraz macierz kowariancji `pcov`. Odchylenia standardowe błędów wyliczamy z przekątnej macierzy kowariancji (`np.sqrt(np.diag(pcov))`), a następnie przeliczamy na błędy parametrów $A$ i $B$ stosując wzory na propagację błędów: $ea = A \cdot \sigma_a$ oraz $eb = |2b| \cdot \sigma_b$.
+Wykresy dla poszczególnych języków generowane są przez skrypt `util/generate_plots.py` z wykorzystaniem biblioteki `matplotlib`:
 
-Wyliczone parametry $A$, $B$, $ea$ oraz $eb$ zapisujemy do pliku `config/parameters.csv`.
-
-## Wyniki
-
-Dla każdego języka omówimy wyniki. Zamiast podawać ilość wykonywanych pętli na sekundę, na wykresach prezentujemy jej logarytm $a$, jako łatwiejszy do porównywania. A zamiast czasu włączania programu odpowiadającemu jednemu wykonaniu pętli jego pierwiastek $b$.
-
-Do prezentacji wyników w postaci wykresów wykorzystujemy poniższy skrypt w języku Python (`util/generate_plots.py`), który przy pomocy `matplotlib` generuje podwójnie logarytmiczne wykresy dla każdego języka.
-
-> util/generate\_plots.py
+> util/generate_plots.py
 
 ```python
 #!/usr/bin/env python3
@@ -733,11 +672,13 @@ if __name__ == "__main__":
     main()
 ```
 
-Skrypt iteruje po wszystkich zbadanych językach programowania, nanosi punkty pomiarowe na siatkę log-log oraz rysuje dopasowane proste modelowe, po czym zapisuje wykresy do plików `.png`.
+Poniżej przedstawiam omówienie wyników dla poszczególnych języków programowania.
 
 ### Bash
 
-Język powłok [bash](https://pl.wikipedia.org/wiki/Bash) powstał w 1987 roku, czyli 4 lata przed powstaniem pierwszego jądra Linuxa. Obecnie jest używany głównie do wykonywania operacji związanych z systemem operacyjnym Linux, mimo, że Linux i Bash mogą istnieć bez siebie. Jest to język interpretowany i z tego względu nie jest zoptymalizowany pod wykonywanie obliczeń. Kod wykonujący puste pętle wygląda tak:
+Powłoka [Bash](https://pl.wikipedia.org/wiki/Bash) (stworzona w 1987 r.) służy przede wszystkim do automatyzacji zadań w systemach Unix/Linux. Jako język interpretowany nie jest optymalizowana pod kątem szybkich obliczeń w pętli.
+
+Kod testowy:
 
 ```bash
 #! /bin/bash
@@ -751,17 +692,15 @@ do
 done
 ```
 
-A oto wyniki pomiarów czasu:
+Wyniki pomiarów:
 
 ![inc_inc.bash.png](/img/loopspeed/inc_inc.bash.png)
 
-W naszym teście wypadł najsłabiej, jeśli chodzi o ilość wykonywanych pętli na jednostkę czasu, ale spośród wszystkich języków interpretowanych jest pierwszy, jeśli chodzi o czas włączania. Nie ustępuje jednak bardzo pod tym względem językom kompilowanym.
+Bash uzyskał najniższą szybkość wykonywania iteracji pętli w całym zestawieniu, charakteryzuje się jednak bardzo niskim czasem uruchamiania, nieustępującym znacząco językom kompilowanym.
 
 ### Matlab
 
-[Matlab](https://pl.wikipedia.org/wiki/MATLAB) jest językiem zaprojektowanym do obliczeń macierzowych. Jego historia sięga 1980 roku. Początkowo napisany w Fortranie miał ułatwić studentom obliczenia macierzowe, trzy lata później przepisany w `c` i systematycznie rozbudowywany o nowe funkcjonalności stał się jednym z najpopularniejszych języków stosowanych przez naukowców szczególnie w zastosowaniach związanych z obliczeniami numerycznymi.
-
-`Matlab` nie ma wygodnego interfejsu konsolowego. Żeby przekazać mu zmienną musieliśmy sklejać kod interpretowany w `Matlabie` za pomocą `basha`.
+[MATLAB](https://pl.wikipedia.org/wiki/MATLAB) jest środowiskiem zaprojektowanym do obliczeń macierzowych i numerycznych. Ponieważ nie posiada natywnego prostego interfejsu CLI do przekazywania argumentów pojedynczej funkcji, skrypt wywołujący został oprawiony w Bashu:
 
 ```bash
 #!/usr/bin/env bash
@@ -777,13 +716,13 @@ echo "$VAR" | matlab -nodesktop -nosplash 1>/dev/null
 
 [![inc_inc.m.sh.png](https://s28.postimg.org/6ujap8x31/inc_inc_m_sh.png)](https://postimg.org/image/dxr64v2ih/)
 
-Jeśli chodzi o szybkość wykonywania jednej pętli to `Matlab` poradził sobie najlepiej w kategorii języków interpretowanych (z wyjątkiem `javy`, która jest takim hybrydowym rozwiązaniem). Opłacił to jednak potwornie długim czasem włączania sięgającym 5 sekund. Jest to znacznie dłuższy czas niż zabierany na którąkolwiek z kompilacji. `Matlab` jest dobry, ale do dużych rzeczy, w przeciwnym wypadku nie opłaca się go włączać, ponieważ przez te 5 sekund `bash` wykonał by milion pętli, a typowe skryptowe języki do 100 milionów.
+Pod względem szybkości pojedynczej iteracji Matlab okazuje się najszybszy wśród języków interpretowanych (wyłączając środowiska JIT, takie jak Java). Płaci za to jednak potężnym narzutem czasowym uruchomienia środowiska (ponad 5 sekund). Jest to idealne narzędzie do dużych obliczeń macierzowych, lecz zupełnie nieopłacalne dla drobnych, jednorazowych zadań.
 
-### MySQL
+### MySQL / MariaDB
 
-Sam [`MySQL`](https://pl.wikipedia.org/wiki/MySQL) jest raczej systemem do zarządzania bazą danych niż językiem. Język to `SQL`, ale ze względu na różnice w implementacjach silników bazodanowych wolałem podkreślić `MySQL`, niż zostawić `SQL`. Tak czy inaczej silniki bazodanowe, jak i język zapytań do baz danych nie były tworzone z myślą o inkrementacji zmiennych i sprawdzaniu warunków. Można by powiedzieć, że procedury i instrukcje sterujące to raczej dodatek, który pomaga ograniczyć ilość zapytań niż główna funkcjonalność baz danych. Należy pamiętać, że taka mikro-optymalizacja na tym poziomie nie ma sensu, ponieważ najbardziej kosztowne czasowo operacje znajdują się w selektach i trzymaniu spójności danych przy update/delete/insert.
+Język [SQL](https://pl.wikipedia.org/wiki/SQL) i silniki relacyjnych baz danych nie były projektowane z myślą o wykonywaniu pustych pętli czy inkrementacji zmiennych w kodzie proceduralnym.
 
-Do `mysql` również nie da się łatwo przekazać parametru z konsoli jako wartości podanej po nazwie programu. Użyliśmy następującego konektora
+Wywołanie procedury z poziomu konsoli:
 
 ```bash
 #!/usr/bin/env bash
@@ -791,7 +730,7 @@ Do `mysql` również nie da się łatwo przekazać parametru z konsoli jako wart
 mariadb inc -e "CALL inc_loop($1)";
 ```
 
-A procedura `inc_loop` definiowana była w ten sposób:
+Kod procedury:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS inc;
@@ -814,13 +753,13 @@ DELIMITER ;
 
 ![inc_inc.sql.sh.png](/img/loopspeed/inc_inc.sql.sh.png)
 
-Z tego względu `MySQL` w tym zestawieniu zajmuje miejsce drugie od końca. Należy jednak przyznać, że prawdziwe wąskie gardło baz danych - czas łączenia uplasował się na umiarkowanie dobrej pozycji pośród języków skryptowych: między perlem a `pythonem`.
+MariaDB zajmuje w klasyfikacji szybkości pętli przedostatnie miejsce. Co ciekawe, czas nawiązywania połączenia z bazą danych plasuje się na całkiem przyzwoitym poziomie na tle innych języków skryptowych.
 
-### Wolfram Language - Mathematica
+### Wolfram Language (Mathematica)
 
-Mathematica jest programem. [Wolfram Language](https://en.wikipedia.org/wiki/Wolfram_Language) językiem w jakim piszemy w tym programie. Język ten sięga historią roku 1988, został zaprojektowany z myślą o algebrze symbolicznej. Obecnie ma bardzo szerokie możliwości związane z wszelkiego rodzaju obliczeniami. Ustępuje `Matlabowi` w temacie wydajności przetwarzania macierzy i numeryki, nadrabia wygodą i bardziej intuicyjną reprezentacją danych.
+[Wolfram Language](https://en.wikipedia.org/wiki/Wolfram_Language) (1988 r.) to język stworzony z myślą o algebrze symbolicznej oraz zaawansowanych obliczeniach naukowych.
 
-W porównaniu z dwoma poprzednikami, kod programu `inc.wl` jest bardzo prosty
+Kod skryptu `inc.wl`:
 
 ```
 num  = ToExpression[$ScriptCommandLine[[2]]];
@@ -830,13 +769,13 @@ Exit[];
 
 [![inc_inc.wl.png](https://s27.postimg.org/519tj8x1f/inc_inc_wl.png)](https://postimg.org/image/75u6kbynz/)
 
-W tym teście Mathematica poradziła sobie słabo lokując się w kategorii szybkości pętli na 4 miejscu od końca, a w kontekście szybkości włączania na 2 od końca.
+W teście pustej pętli Mathematica wypadła słabo, zajmując 4. miejsce od końca pod względem szybkości pętli i 2. od końca pod względem czasu uruchomienia.
 
 ### C#
 
-Język [C#](https://pl.wikipedia.org/wiki/C_Sharp) powstał w 2000 i aktualnie jest wciąż rozwijany. Ma w sobie wiele cech języków `Object Pascal`, `Delphi`, `C++` i `Java`. Do działania wymaga mono, lub innego środowiska uruchomieniowego. Kompiluje się nie do kodu binarnego, ale do kodu pośredniego. Niestety nie udało mi się zoptymalizować jego kompilacji tak jak dla `Pascala`, `C`, `C++` i `Fortrana`. Jeśli znasz się na tym, proszę o komentarz, lub kontakt w tej sprawie.
+Język [C#](https://pl.wikipedia.org/wiki/C_Sharp) (2000 r.) kompiluje się do kodu pośredniego (CIL), uruchamianego w środowisku uruchomieniowym (np. Mono / .NET CLR).
 
-Sam program wygląda rzeczywiście podobnie do swoich pierwowzorów.
+Kod źródłowy:
 
 ```c#
 using System;
@@ -852,13 +791,13 @@ public class Program
 
 ![inc_inc.cs.png](/img/loopspeed/inc_inc.cs.png)
 
-Szybkość włączania jest umiarkowania, a szybkość pojedynczej pętli plasuje język na umiarkowanie słabej pozycji - 6 od końca.
+Czas uruchamiania środowiska Mono jest umiarkowany, natomiast szybkość pętli plasuje C# na 6. pozycji od końca w tym zestawieniu pomiarów.
 
-### JS
+### JavaScript (Node.js)
 
-[JavaScript](https://pl.wikipedia.org/wiki/JavaScript) z pewnością wielu ludziom myli się z Javą. Teraz się to wydaje zabawne, ale mi też się na początku mylił. Nic dziwnego, bo w 1995, kiedy język powstał nazwę wzięto od Javy, żeby JavaScript miał lepszy marketing. Tak naprawdę nie mają ze sobą wiele wspólnego. Obecnie jest to żywy wciąż rozwijany język, który zainspirował i bardzo spopularyzował funkcyjny styl programowania. Za jego sprawą w wielu innych językach pojawiły się tak zwane funkcje lambda, których składnia w ES6 została skrócona, tak, że nazywa się je [strzałkowymi](http://shebang.pl/artykuly/es6-funkcje-strzalkowe/).
+[JavaScript](https://pl.wikipedia.org/wiki/JavaScript) (1995 r.) dzięki nowoczesnym silnikom V8 (JIT) ewoluował z języka skryptowego przeglądarek do pełnoprawnego środowiska ogólnego przeznaczenia.
 
-Kod źródłowy jest całkiem przyjemny i wygląda tak:
+Kod źródłowy:
 
 ```js
 var max = process.argv[2];
@@ -867,11 +806,13 @@ for (var i = 0; i <= max; i++) {}
 
 ![inc_inc.js.png](/img/loopspeed/inc_inc.js.png)
 
-W przeciwieństwie do `C#`, `JavaScript` jest umiarkowanie słaby jeśli chodzi o szybkość włączania, ale z szybkością pętli radzi sobie już lepiej - jak typowy język skryptowy.
+Node.js wykazuje średni narzut przy uruchamianiu, ale w szybkości wykonywania pętli radzi sobie dobrze jak na środowisko dynamiczne.
 
 ### Python
 
-[Python](https://pl.wikipedia.org/wiki/Python) pojawił się w roku 1991. Jest językiem ogólnego przeznaczenia, którego głównymi cechami są: sztywne wcięcia a wiec czytelna i klarowna składnia. Jest też dość zwięzły i stanowi bardzo ważną alternatywę dla `perla`. Jest bardzo popularny w środowisku naukowym.
+[Python](https://pl.wikipedia.org/wiki/Python) (1991 r.) stawia na zwięzłość, czytelność i czystość składni.
+
+Kod testowy:
 
 ```python
 #!/usr/bin/python
@@ -885,40 +826,34 @@ while (count < max):
    count = count + 1
 ```
 
-Od razu zaznaczę, że ten kod da się napisać krócej i wykonać szybciej używając pętli `for in`, ale ma ona zupełnie inną mechanikę działania - tworzy tablicę liczb z podanego zakresu, wrzuca całą tablicę do pamięci i ją przegląda. Więcej o tym piszę na końcu w dziale RAM vs Procesor. Pozbycie się zmiennej max i napisanie
-
-```python
-while (count < int(sys.argv[1])):
-```
-
-wydłużyło by czas wykonywania kilkukrotnie.
+*(Uwaga: Zastosowanie konstrukcji `for i in range(...)` w Pythonie 2/3 bez użycia iteratorów generowało w pamięci RAM pełną tablicę, co doprowadzało do braku pamięci przy dużych wartościach `max` – szczegóły opisano w sekcji z ciekawostkami).*
 
 ![inc_inc.python.png](/img/loopspeed/inc_inc.python.png)
 
-Mimo, że python jest jednym z wolniejszych języków skryptowych, różnice te są na tyle małe, że można uczciwie przyznać, że mieści się dokładnie na środku rankingu. Ilość kodu nie jest przerażająca, a krzywa nauki? Jak dla mnie ciężko mówić o krzywej nauki w przypadku tego języka. Można w nim pisać, nawet go nie umiejąc, po prostu zgadując jak coś powinno być napisane. Jest to bardzo intuicyjny język o rozsądnej wydajności w większości przypadków.
+Python plasuje się w środku stawki. Mimo że nie należy do najszybszych języków, nadrabia to prostotą i bardzo niskim progiem wejścia.
 
 ### Ruby
 
-[Ruby](<https://pl.wikipedia.org/wiki/Ruby_(j%C4%99zyk_programowania)>) jest stosunkowo młody, jak na język. Pierwsze wydanie ujrzało światło dzienne w 1995. Jest to dynamicznie typowany, obiektowy, interpretowany język popularny głównie w stanach. Jego znaczenie wzrosło po wydaniu frameworku Ruby on Rails - przeznaczonego do tworzenia aplikacji internetowych, ale widziałem Ruby w innych zastosowaniach od analizy danych giełdowych po platformę do blogowania - jekylla.
+[Ruby](<https://pl.wikipedia.org/wiki/Ruby_(j%C4%99zyk_programowania)>) (1995 r.) to w pełni obiektowy, dynamicznie typowany język interpretowany.
 
-W tym języku, nie miałem okazji dużo pisać, ale kod wygląda dość przyjemnie
+Kod testowy:
 
 ```ruby
 for i in (1 .. ARGV[0].to_i)
 end
 ```
 
-Zaskakujące, że ta składnia, wcale nie zamula pamięci RAM nawet przy bardzo dużych tablicach ani nie powoduje problemów jakie w `pythonie` powoduje nie utworzenie zmiennej `max`. Składnia jest więc znacznie lepsza.
+Składnia zakreślająca przedział `(1 .. N)` w Ruby okazuje się zoptymalizowana pod kątem zużycia pamięci i nie zapycha RAM-u nawet dla bardzo dużych wartości $N$.
 
 ![inc_inc.rb.png](/img/loopspeed/inc_inc.rb.png)
 
-Natomiast wyniki są średnie. Przy czym ruby raczej włącza się wolniej a działa szybciej na tle innych języków interpretowanych.
+Ruby osiąga umiarkowane wyniki: czas uruchamiania jest nieco dłuższy, ale pętla wykonuje się sprawnie.
 
 ### Perl
 
-[Perl](https://pl.wikipedia.org/wiki/Perl) pochodzi miej więcej z tych czasów co bash (1987). Jest to język o bardzo gęstej składni. Programista w nim traktowany jest raczej jak artysta niż rzemieślnik. Język pozwala na tworzenie zarówno czystego i krótkiego kodu, jak i nieczytelnej plątaniny znaków. W wielu rozwiązaniach został wyparty przez Pythona przez to, że jest trudniejszy w nauce oraz paradoksalnie bardziej elastyczny.
+[Perl](https://pl.wikipedia.org/wiki/Perl) (1987 r.) słynie z elastyczności i zwięzłości składniowej.
 
-Jego kod źródłowy stanowi świetnym przykładem ten sam program, można napisać tak:
+Przykładowy kod:
 
 ```perl
 #!/usr/bin/perl
@@ -926,23 +861,15 @@ Jego kod źródłowy stanowi świetnym przykładem ten sam program, można napis
 for(my $i=0;$i<=$ARGV[0];$i++){}
 ```
 
-a można tak:
-
-```perl
-for(;$_<=$ARGV[0];$_++){}
-```
-
-Działanie będzie identyczne.
-
 ![inc_inc.pl.png](/img/loopspeed/inc_inc.pl.png)
 
-Wyniki nie są niespodzianką. Włączanie się jest najszybsze z języków skryptowych. Czas wykonywania pojedynczej pętli umiarkowany.
+Perl wykazuje najkrótszy czas uruchomienia spośród tradycyjnych języków skryptowych. Szybkość samej pętli plasuje go na średnim poziomie.
 
 ### R
 
-[R](<https://pl.wikipedia.org/wiki/R_(j%C4%99zyk_programowania)>) jest środowiskiem do obliczeń statystycznych. W całym tym zestawieniu sporo jest języków powiązanych z matematyką, bo sam się nią lubię zajmować. R szczególnie często występuje w kontekście bioinformatyki.
+[R](<https://pl.wikipedia.org/wiki/R_(j%C4%99zyk_programowania)>) to środowisko wyspecjalizowane w obliczeniach statystycznych i analizie danych.
 
-Cechy charakterystyczne to: strzałki do przypisywania wartości i podobnie jak w Matlabie ogromna łatwość operowania na macierzach i wektorach.
+Kod testowy:
 
 ```r
 args <- commandArgs(trailingOnly = TRUE)
@@ -955,13 +882,13 @@ while(x < as.numeric(args)) {
 
 ![inc_inc.r.png](/img/loopspeed/inc_inc.r.png)
 
-Podobnie jak Wolfram Language, tak i tan wysoko poziomowy język o specjalizacji sprofilowanej na testowanie hipotez statystycznych i prowadzenie badań poradził sobie słabo w tym teście. Zarówno pod względem szybkości pętli jak i uruchamiania zajął trzecią pozycję od końca.
+Jako język wysokiego poziomu zorientowany na wektoryzację danych, R w pętli skalarnej wypadł słabo, zajmując 3. miejsce od końca pod względem szybkości pętli i czasu startu.
 
-### Php
+### PHP
 
-Język [Php](https://pl.wikipedia.org/wiki/PHP) pojawił się w roku 1995, jako język do generowania stron internetowych. I choć można pisać backend webowy w innych językach, trzeba przyznać, że PHP radzi sobie z tym zadaniem całkiem dobrze. Oczywiście, wielkim serwisom opłaca się kompilowanie backendu, ale w absolutnej większości zastosowań PHP stanowi świetny kompromis między wygodą języka interpretowanego a wydajnością.
+[PHP](https://pl.wikipedia.org/wiki/PHP) (1995 r.) jest powszechnie stosowany w tworzeniu aplikacji internetowych.
 
-Kod php wygląda standardowo i intuicyjne
+Kod testowy:
 
 ```php
 <?php
@@ -973,13 +900,13 @@ for($i=0; $i<$max; $i++);
 
 ![inc_inc.php.png](/img/loopspeed/inc_inc.php.png)
 
-Jego wydajność w tym teście oceniam bardzo pozytywnie. Szybkość włączania była średnia, a w kategorii szybkości wykonania jednej pętli poradził sobie jako jeden z najlepszych języków interpretowanych. Dał się wyprzedzić jedynie Matlabowi.
+PHP uzyskał bardzo dobre wyniki – okazał się jednym z najszybszych języków interpretowanych pod względem czasu pojedynczej pętli, ustępując w tej kategorii jedynie Matlabowi.
 
 ### Fortran 95
 
-[Fortan](https://pl.wikipedia.org/wiki/Fortran) jest językiem z czasów tak wczesnych, że aż ciężko sobie wyobrazić, jak wtedy programowano (1957 rok), ale były to jeszcze czasy kart perforowanych, bo pierwszy komputer z klawiaturą powstał dopiero w 1960. Dzięki bogatemu zestawowi bibliotek do obliczeń macierzowych, bardzo dobrze zoptymalizowanemu kompilatorowi, wielo-platformowości i dobremu wsparciu obliczeń równoległych Fortran jest wciąż szeroko używany w środowisku inżynierskim i naukowym, w szczególności tam, gdzie numeryka jest szczególnie ciężka - w fizyce, symulacjach, modelowaniu ośrodków ciągłych.
+[Fortran](https://pl.wikipedia.org/wiki/Fortran) (1957 r.) jest jednym z najstarszych języków programowania, do dziś powszechnie używanym w fizyce i obliczeniach superkomputerowych dzięki doskonałym optymalizacjom kompilatora.
 
-Ze składni języka widać, że typowanie jest statyczne, rzutowanie wykonywane za pomocą instrukcji `read`, natomiast sama pętla ma już przyjemną składnię. Subiektywnie kojarzy mi się z językiem ruby.
+Kod testowy:
 
 ```fortran
 PROGRAM loop_argument_times
@@ -997,11 +924,13 @@ END PROGRAM
 
 ![inc_inc.f95.png](/img/loopspeed/inc_inc.f95.png)
 
-Wyniki `fortrana` zasługują na wyjątkowe uznanie. W szybkości wykonywania pętli zajął pierwsze miejsce, a szybkości włączania czwarte. Warto wspomnieć, że jego twórcy dołożyli bardzo dużo pracy do optymalizacji kompilatora ponieważ obawiali się, że w przeciwnym wypadku nikt nie będzie go używać i wszyscy będą pisać w asemblerze.
+Fortran 95 odniósł zwycięstwo w kategorii szybkości wykonywania pojedynczej pętli oraz zajął 4. miejsce pod względem najkrótszego czasu uruchomienia.
 
 ### C++
 
-[C++](https://pl.wikipedia.org/wiki/C%2B%2B) pojawił się w 1983 jako rozszerzenie języka `c` o obiektowe mechanizmy abstrakcji danych i silną statyczną kontrolę typów. W latach 90 stał się najbardziej popularnym językiem ogólnego przeznaczenia. Jest to pierwszy język jakiego się uczyłem, w gimnazjum, kiedy po podłączeniu internetu w domu, z przekory chciałem pokazać rodzicom, że gry sieciowe nie zniszczą mi dzieciństwa. Później wiele razy `c++` zaspokajał moją ciekawość dotyczącą symulowania układów fizycznych i do czasu poznania języka `Mathematica` był głównym narzędziem do robienia numeryki.
+[C++](https://pl.wikipedia.org/wiki/C%2B%2B) (1983 r.) łączy wydajność i niskopoziomowy dostęp do pamięci z abstrakcją obiektową.
+
+Kod testowy:
 
 ```cpp
 #include <cstdlib>
@@ -1016,13 +945,13 @@ int main(int argc, char *argv[])
 
 ![inc_inc.cpp.png](/img/loopspeed/inc_inc.cpp.png)
 
-Jak przystało na język kompilowany ogólnego przeznaczenie `c++` staje na podium w obu rankingach. Uruchamia się jako trzeci, wykonuje pętle jako drugi najszybszy język w zestawieniu.
+C++ plasuje się w ścisłej czołówce: 3. miejsce pod względem czasu uruchomienia i 2. miejsce pod względem szybkości wykonywania pętli.
 
 ### C
 
-Historia języka [`C`](<https://pl.wikipedia.org/wiki/C_(j%C4%99zyk_programowania)>) sięga roku 1972, wywodzi się on z języka [`B`](<https://pl.wikipedia.org/wiki/B_(j%C4%99zyk_programowania)>) współtworzonego przez twórcę `C` - Dennisa Ritchiego. `B` natomiast wywodzi się z [`BCPL`](https://pl.wikipedia.org/wiki/BCPL) - zapomnianego już języka, który jednak wywarł ogromny wpływ na to jak dzisiaj kodujemy. To długa i ciekawa historia, ale, żeby dygresja nie poszła zbyt daleko wrócę do `C`. Został zaprojektowany do programowania systemów operacyjnych i zadań dzisiaj uważanych za niskopoziomowe.
+Język [C](<https://pl.wikipedia.org/wiki/C_(j%C4%99zyk_programowania)>) (1972 r.) stanowi fundament współczesnych systemów operacyjnych.
 
-`C++` różni się od `C` głównie obiektowością, więc nie zobaczymy tego na przykładzie kodu źródłowego, gdzie jedyną zmianą jest użyta biblioteka.
+Kod testowy:
 
 ```c
 #include <stdlib.h>
@@ -1039,15 +968,13 @@ int main(int argc, char *argv[])
 
 ![inc_inc.c.png](/img/loopspeed/inc_inc.c.png)
 
-Wyniki testu pokazują, że `C` jest na trzecim miejscu pod względem szybkości pętli ustępując `C++` tylko o 1%, ale zajmuje pierwsze miejsca w klasyfikacji szybkości uruchamiania wyprzedzając `Pascala` o około 1‰.
+C zdobywa 1. miejsce pod względem najkrótszego czasu uruchomienia oraz 3. miejsce pod względem szybkości pętli (zaledwie o 1% za C++ i Fortranem).
 
 ### Pascal
 
-O wilku mowa. To znaczy o [`Pascalu`](<https://pl.wikipedia.org/wiki/Pascal_(j%C4%99zyk_programowania)>) - języku, który powstał w 1970 roku i w przeciwieństwie do `C`, nie udostępniał mechanizmów niskopoziomowych, lecz został zaprojektowany do tworzenia strukturalnych aplikacji.
+[Pascal](<https://pl.wikipedia.org/wiki/Pascal_(j%C4%99zyk_programowania)>) (1970 r.) projektowano z myślą o czytelności i nauce programowania strukturalnego.
 
-Mi osobiście z Pascalem kojarzy się przeciążanie operatorów, bo mimo, że jest to możliwe również w innych językach, pierwszy raz w życiu przeciążałem operator dodawania i mnożenia macieży właśnie w Pascalu.
-
-Sam kod przypomina mi nieco fortrana. Kiedy się go uczyliśmy, profesor który objaśniał jego składnię mówił, że nie będziemy go używać, ale będziemy programować w innych językach tak jak w nim. Na przykładzie tego kodu widać, że `Pascal` wymaga definiowania zmiennych przed rozpoczęciem wykonywania logiki. Przyznaję, faktycznie tak piszę dziś we wszystkich języakch skryptowych, jeśli chcę używać zmiennych globalnych.
+Kod testowy:
 
 ```pascal
 program Project1;
@@ -1068,11 +995,13 @@ end.
 
 ![inc_inc.p.png](/img/loopspeed/inc_inc.p.png)
 
-Pascal zajął piąte miejsce w szybkości wykonywania pętli i drugie w kategorii szbykości startowania programu.
+Pascal zajął 2. miejsce pod względem czasu uruchomienia i 5. miejsce pod względem szybkości pętli.
 
 ### Java
 
-[`Java`](https://pl.wikipedia.org/wiki/Java) jest młodym językiem na tle kilku ostatnio omawianych. Powstała w 1995. Swój sukces zawdzięcza bardzo bardzo dobrej obsłudze błędów i wyjątków oraz niezależności od systemu na jakim uruchamiamy platformę java. Korporacje kochają ją za to, że można w niej pisać bezpieczne, dobrze zabezpieczone aplikacje w rozproszonej strukturze sieciowej bez szczególnego dbania o systemy operacyjne poszczególnych maszyn.
+[Java](https://pl.wikipedia.org/wiki/Java) (1995 r.) kompiluje się do kodu bajtowego uruchamianego na maszynie wirtualnej JVM.
+
+Kod testowy:
 
 ```java
 public class inc {
@@ -1086,36 +1015,17 @@ public class inc {
 
 ![inc_inc.java.png](/img/loopspeed/inc_inc.java.png)
 
-Java zajęła czwarte miejsce pod względem szybkości pętli ustępując liderowi jedynie o 1-2%, ale jej włączanie trwało około 40 razy dłużej niż programów z czołówki rankingu. W kategorii szybkości włączania java była czwarta od końca.
+Java osiągnęła znakomitą szybkość wykonywania pętli (4. miejsce, zaledwie 1–2% za liderem), jednak uruchomienie JVM wiązało się z narzutem czasowym około 40-krotnie większym niż w przypadku C czy Pascala.
 
-### Podsumowanie
+## Podsumowanie zbiorcze
 
-Na koniec załączam wykres porównujący czas trwania pojedynczej pętli w każdym języku wygenerowany w Pythonie za pomocą `util/generate_plots.py`:
-
-```python
-# Summary plot 1: Compare of loop time (speed.png)
-sorted_by_A = sorted(params, key=lambda x: x[2])
-langs_A = [item[0] for item in sorted_by_A]
-log_a_vals = [item[1] for item in sorted_by_A]
-
-fig, ax = plt.subplots(figsize=(12, 6))
-colors = plt.cm.plasma(np.linspace(0, 1, len(langs_A)))
-bars = ax.bar(langs_A, log_a_vals, color=colors)
-ax.set_ylabel('Log[a] (Log of time per loop)', fontsize=12)
-ax.set_title('Comparison of Single Loop Execution Time (Lower is better)', fontsize=14)
-plt.xticks(rotation=45, ha='right', fontsize=10)
-ax.grid(True, axis='y', linestyle='--', alpha=0.5)
-plt.tight_layout()
-plt.savefig("speed.png", dpi=150)
-```
+Poniższy wykres (wygenerowany w Pythonie) porównuje czas wykonania pojedynczej pętli dla wszystkich 16 języków (skala logarytmiczna – im niższa wartość, tym szybciej):
 
 ![speed.png](/img/loopspeed/speed.png)
 
-Wykres ma skalę logarytmiczną, im niższa wartość tym lepiej.
+Szczegółowe parametry zebrane w tabeli:
 
-Jeśli jesteś ciekaw dokładnych wyników poniżej prezentuję tabelę.
-
-| language   | one loop time \[s\] | loop time error \[s\] | launch time \[s\] | launch time error \[s\] | launch to loop ratio \[s\] |
+| Język      | Czas 1 pętli \[s\]  | Błąd czasu pętli \[s\] | Czas startu \[s\] | Błąd czasu startu \[s\] | Stosunek start/pętla       |
 | ---------- | ------------------- | --------------------- | ----------------- | ----------------------- | -------------------------- |
 | inc.f95    | 3.50468\*10^(-10)   | 1.07954\*10^(-12)     | 1.72753\*10^(-3)  | 5.04969\*10^(-6)        | 4.92921\*10^(6)            |
 | inc.cpp    | 3.5061\*10^(-10)    | 1.41184\*10^(-12)     | 1.38989\*10^(-3)  | 5.77246\*10^(-6)        | 3.9642\*10^(6)             |
@@ -1134,32 +1044,13 @@ Jeśli jesteś ciekaw dokładnych wyników poniżej prezentuję tabelę.
 | inc.sql.sh | 2.24287\*10^(-6)    | 4.28608\*10^(-9)      | 5.33614\*10^(-3)  | 1.34152\*10^(-5)        | 2.37916\*10^(3)            |
 | inc.bash   | 4.23198\*10^(-6)    | 5.03612\*10^(-9)      | 1.8443\*10^(-3)   | 4.70927\*10^(-6)        | 4.35801\*10^(2)            |
 
-Analogicznie dla czasów włączania programów rysujemy drugi wykres:
-
-```python
-# Summary plot 2: Compare of startup time (speed2.png)
-sorted_by_B = sorted(params, key=lambda x: x[3])
-langs_B = [item[0] for item in sorted_by_B]
-log_b_vals = [item[4] for item in sorted_by_B]
-
-fig, ax = plt.subplots(figsize=(12, 6))
-colors = plt.cm.viridis(np.linspace(0, 1, len(langs_B)))
-bars = ax.bar(langs_B, log_b_vals, color=colors)
-ax.set_ylabel('Log[b] (Log of startup overhead time)', fontsize=12)
-ax.set_title('Comparison of Program Startup Time (Lower is better)', fontsize=14)
-plt.xticks(rotation=45, ha='right', fontsize=10)
-ax.grid(True, axis='y', linestyle='--', alpha=0.5)
-plt.tight_layout()
-plt.savefig("speed2.png", dpi=150)
-```
+Porównanie czasów uruchamiania programów (narzutu startowego):
 
 ![speed2.png](/img/loopspeed/speed2.png)
 
-Tutaj też najlepsze wartości to najniższe. Wartość zerowa oznacza czas włączania równy 1 sekundzie.
+Tabela posortowana według czasów uruchamiania:
 
-Poniżej ta sama tabela co poprzednio, ale posortowana po czasach włączania programu:
-
-| language   | one loop time \[s\] | loop time error \[s\] | launch time \[s\] | launch time error \[s\] | launch to loop ratio \[s\] |
+| Język      | Czas 1 pętli \[s\]  | Błąd czasu pętli \[s\] | Czas startu \[s\] | Błąd czasu startu \[s\] | Stosunek start/pętla       |
 | ---------- | ------------------- | --------------------- | ----------------- | ----------------------- | -------------------------- |
 | inc.c      | 3.53343\*10^(-10)   | 1.01268\*10^(-12)     | 1.37686\*10^(-3)  | 3.62949\*10^(-6)        | 3.89666\*10^(6)            |
 | inc.p      | 3.69329\*10^(-10)   | 2.36513\*10^(-12)     | 1.37772\*10^(-3)  | 4.0445\*10^(-6)         | 3.73033\*10^(6)            |
@@ -1178,437 +1069,112 @@ Poniżej ta sama tabela co poprzednio, ale posortowana po czasach włączania pr
 | inc.wl     | 4.87908\*10^(-7)    | 1.24762\*10^(-9)      | 1.91462\*10^(-1)  | 2.2833\*10^(-4)         | 3.92415\*10^(5)            |
 | inc.m.sh   | 2.69198\*10^(-9)    | 2.10845\*10^(-11)     | 5.28642           | 4.69114\*10^(-2)        | 1.96377\*10^(9)            |
 
-## Ciekawostki
+## Ciekawostki i obserwacje
 
-Podczas prowadzenia niektórych testów zdarzało się, że zmiany w kodzie, czy sposobie kompilacji bardzo istotnie wpłynęły na wyniki, mimo, że teoretycznie, każdy program miał robić to samo: puste pętle.
-
-Pierwszy przykład to zmiana sposobu przebiegania pętli
+Podczas przeprowadzania eksperymentów ujawniło się kilka zjawisk mających istotny wpływ na wydajność.
 
 ### RAM vs Procesor
 
-Mamy dwie możliwości przebiegania po zakresie od 1 do n. Pierwsza to zacząć od 1 i zwiększać ją o jeden co chwilę sprawdzając czy doszliśmy już do n, czy nie. Drugi, to stworzyć tablicę od 1 do n, załadować ją do pamięci RAM i wykonać ciało pętli dla każdej z tych liczb z pamięci.
+Wybór mechanizmu pętli (np. iteracja skalarnego licznika vs przechodzenie po tablicy alokowanej w pamięci) znacząco wpływa na czas wykonania. 
 
-Pierwsza metoda, bardziej konserwatywna jest typową konstrukcją pętli, jaką chciałem testować. Jednak, ta druga, okazuje się być bardziej wydajna dla rozmiarów tablic, które mieszczą się nam w pamięci operacyjnej. Prezentuję na przykładzie języka `R`, jak zmiana sposobu wykonywania pętli wpłynęła na szybkość jej wykonywania.
-
-Oto wycinek `git diff` pokazujący, jak zmienił się kod źródłowy:
+Na przykładzie języka R zmiana z pętli `while` (inkrementacja licznika) na pętlę `for in` (wcześniejsza alokacja wektora w RAM):
 
 ![r_loop_diff.png](/img/loopspeed/r_loop_diff.png)
 
-Widzimy, że zamieniliśmy pętlę ładującą wszystko do RAM, na iterującą co jeden ze sprawdzaniem warunku co krok. Poniżej dodaję kod do wykonania stosownego wykresu:
-
-```python
-# Plot: Compare while loop vs for-in loop for inc.r
-fig, ax = plt.subplots(figsize=(10, 6))
-x_range = np.logspace(0, 9, 300)
-y_while = 7.28e-7 * x_range + 0.18
-y_forin = 3.3e-8 * x_range + 0.18
-
-ax.plot(x_range, y_while, color='red', linewidth=2.5, label='while loop (step & condition check)')
-ax.plot(x_range, y_forin, color='green', linewidth=2.5, linestyle='--', label='for in loop (preloaded in RAM)')
-
-ax.set_xscale('log')
-ax.set_yscale('log')
-ax.set_xlabel('$size [number of loops]', fontsize=12)
-ax.set_ylabel('$time [sec]', fontsize=12)
-ax.set_title('Differences in loop time for inc.r (while loop vs for in loop)', fontsize=14)
-ax.grid(True, which="both", linestyle="--", alpha=0.5)
-ax.legend(loc='upper left', fontsize=11)
-plt.tight_layout()
-plt.savefig("diff_loop.png", dpi=150)
-```
+Porównanie modelowe:
 
 ![diff_loop.png](/img/loopspeed/diff_loop.png)
 
-Widzimy tutaj ogromną przewagę pętli `For in`. Kiedy spojrzymy na tabelę:
-
 ![loop_type.png](/img/loopspeed/loop_type.png)
 
-Okazuje się być ona 15 krotna. To znaczy: w języku `R`, jeśli starczy nam pamięci RAM, to pusta pętla `for in` wykona się 22 razy szybciej niż pętla `while`. Podobne jakościowo rezultaty dostajemy w języku `python`, a intuicja podpowiada, że należy ten wniosek rozszerzyć na inne języki, w których istnieją konstrukcję pętli, które najpierw ładują zakres do RAM, a potem po nim przebiegają.
-
-Ostatecznie, żeby wyrównać szanse, w końcowej wersji wykorzystałem pętlę iterującą.
+W języku R pętla `for in` z alokacją w RAM okazała się ponad 22-krotnie szybsza od klasycznej pętli `while`. Ceną za wydajność jest jednak wysokie zużycie pamięci operacyjnej przy dużych wartościach $N$.
 
 ### Optymalizacja kompilacji
 
-Ktoś przyzwyczajony do wysokopoziomowych języków, szczególnie interpretowanych, mógł by pomyśleć: "kompilacje jak kompilacje, nic ciekawego". Okazuje się jednak, że sposób w jaki kompilujemy program może drastycznie zmienić jego wydajność.
+Wpływ flag optymalizacyjnych kompilatora ma kluczowe znaczenie w językach kompilowanych.
 
 #### Pascal
 
-Przyjrzymy się uważniej linijce programu `inc.bash` zawierającej kompilację pascala.
+Włączenie flagi `-O2` w kompilatorze Free Pascal (`fpc -O2`):
 
 ```bash
 fpc -O2 inc/inc.p -o"$TMP/p" -Tlinux &>/dev/null
 ```
 
-Znajduje się tu flaga `-O2`, która sporo zmienia. Włącza ona analizator przepływu danych asemblera. On z kolei umożliwia procedurze eliminacji wspólnych pod-wyrażeń, na usunięcie niepotrzebnych przeładowań rejestru wartościami, które już zawierał. Więcej o falgach optymalizujących kompilację Pascala można przeczytać w [dokumentacji](http://www.math.uni-leipzig.de/pool/tuts/FreePascal/prog/node12.html).
-
-Wpływ tej flagi można zobaczyć na tym wykresie:
+powoduje dwukrotny wzrost szybkości wykonywania pętli dzięki eliminacji zbędnych operacji na rejestrach procesora:
 
 ![compilation.png](/img/loopspeed/compilation.png)
 
-A liczbowe wyniki analizy w tabeli poniżej:
-
 ![compilation_table.png](/img/loopspeed/compilation_table.png)
-
-Można z niej wyczytać, że zmiana flagi kompilacji wywarła około dwukrotny wpływ na szybkość wykonywania pętli. Inaczej ujmując - trzy znaki w komendzie kompilacyjnej `-O2` potrafią odczuwalnie zmienić wydajność wykonania programu.
 
 #### C++
 
-W przypadku `c++` sytuacja jest nawet bardziej złożona. Podobnie jak w Pascalu mamy do wyboru różne flagi mające różne zastosowania. Ostatecznie zdecydowaliśmy się, że wydajność `c++` najlepiej odda zastosowanie `-O1`.
+W przypadku C++ zastosowanie flag optymalizacyjnych `-O2` lub `-O3` prowadziło do całkowitego wycięcia pustej pętli z kodu binarnego przez kompilator (`dead code elimination`), redukując czas wykonania do zera (szumu pomiarowego). Aby zachować wykonywanie pętli w pomiarze, zastosowano poziom `-O1`:
 
 ```bash
 g++ -O1 -o "$TMP/cpp" 'inc/inc.cpp';
 ```
 
-Z [dokumentacji](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) kompilatora wynika, że dzięki niej kompilator próbuje zredukować wielkość kodu i czas wykonywania, ale nie stosuje tych optymalizacji, które mogły by zająć więcej czasu.
-
-Było to dla mnie dużym zaskoczeniem, ale kiedy stosowałem głębszą optymalizację, to znaczy flagi `-O2`, `-O3` i `-Ofast`, okazywało się, że pętla jest całkowicie pomijana. Czas wykonywania programu spadał do rzędu tysięcznych, czasem setnych sekundy, a więc całkowicie zlewał się z szumem i był niezależny od parametru, jaki wstawiałem. Myślałem, że sytuację popraw wykorzystanie zmiennych zapisywanych, nie na 8 bajtach, tylko na 16. Okazało się, że pętle po zmiennych typu `uint128_t` z biblioteki `boost/multiprecision/cpp_int.hpp` również są pomijane. Dopiero po użyciu zmiennych zapisywanych na 32 bajtach kompilator nie radził sobie z wycięciem pustej pętli z kodu programu. Jednak taki test był dla `c++` dość nieuczciwy, bo żaden inny język nie dochodził nigdy do takich zakresów. Architektura procesora w moim laptopie (x86\_64) świetnie nadaje się do liczb 8 bajtowych - 64bitowych. Używanie liczb 256 bitowych nawet przy najwyższym stopniu optymalizacji kompilacji nie dawało tak dobrych efektów jak `-O1` dla liczby 64 bitowej (unsigned long long int).
-
-Dla porównania wyników jakie dają poszczególne poziomy optymalizacji załączam wykres:
+Porównanie poziomów optymalizacji w C++:
 
 ![cpp_optimization.png](/img/loopspeed/cpp_optimization.png)
-
-Oraz podsumowanie graficzne wyników:
 
 ![cpp_optimization_table.png](/img/loopspeed/cpp_optimization_table.png)
 
 #### Fortran
 
-Dla porównania wyników jakie dała flaga `-O1` oraz jej brak w Fortranie załączam wykres:
+Podobne zależności zaobserwowano dla Fortrana przy użyciu flagi `-O1`:
 
 ![f_optimization.png](/img/loopspeed/f_optimization.png)
-
-Oraz podsumowanie graficzne wyników pomiaru z bazy:
 
 ![f_optimization_table.png](/img/loopspeed/f_optimization_table.png)
 
 ### Sposób pomiaru czasu
 
-Do pomiaru czasu wykonywania skryptu wykorzystywaliśmy dwie metody. Pierwsza to
-
-```bash
-/usr/bin/time -o "$TMP/time" -f "%e" $comm $size &> /dev/null; #oryfinally %U instead %e
-time="$(cat "$TMP/time" 2> /dev/null)";
-```
-
-Druga to:
-
-```bash
-time=`bash util/timing.sh $comm $size`
-```
-
-gdzie plik `util/timing.sh` zawierał poniższy kod
+Porównano dwie metody pomiaru czasu wykonania: narzędzie systemowe `/usr/bin/time -f "%e"` oraz dedykowany skrypt `util/timing.sh` oparty na mikrosekundowym stemplu `date +%s.%N` i kalkulatorze `bc`:
 
 ```bash
 #!/usr/bin/env bash
 START=$(date +%s.%N)
-# do something #######################
-
 "$@" &> /dev/null
-
-#######################################
 END=$(date +%s.%N)
 DIFF=$( echo "scale=6; (${END} - ${START})*1/1" | bc )
 echo "${DIFF}"
 ```
 
-Który sprawdzał aktualny czas, wykonywał podaną instrukcję i ponownie sprawdzał aktualny czas. Następnie za pomocą programu `bc` obliczał różnicę między tymi czasami i zwracał ją z dokładnością do mikrosekund.
-
-Zaletą pierwszej metody była prostota, mniejsza ilość kodu. Z resztą narzędzie `usr/bin/time` jest dedykowanym narzędziem do pomiarów czasu skryptów w systemie `linux`. Zaletą drugiej metody była wyższa precyzja (mikro vs setne sekundy). Oczywiście mimo wykorzystania 6 cyfr po przecinku, zamiast dwóch, precyzja nie sięgała ona tak głęboko, ale przy bardzo szybkich programach pozwoliła mierzyć czas startowania programów z błędem pomiarowym niższym, niż ten czas.
-
-Żeby dać tym metodom równe szanse włączyłem pętle w języku `bash`, które średnio trwały około 4.2 sekundy. Jest to wystarczająco długo, aby ograniczenie liczby cyfr wyników nie stało się kluczowe i wystarczająco krótko, żeby można było powtórzyć pomiar wiele razy. Kod do wygenerowania porówawczego histogramu w Pythonie wygląda następująco:
-
-```python
-# Plot: Comparison of timing measurement methods (pairedHistogramTiming.png)
-fig, ax = plt.subplots(figsize=(10, 6))
-ax.hist(timing_sh_data, bins=12, alpha=0.65, label=f'util/timing.sh (mean: {timing_sh_data.mean():.3f}s, std: {timing_sh_data.std():.3f}s)', color='#2980b9', edgecolor='black')
-ax.hist(usr_time_data, bins=12, alpha=0.65, label=f'/usr/bin/time -f "%e" (mean: {usr_time_data.mean():.3f}s, std: {usr_time_data.std():.3f}s)', color='#e74c3c', edgecolor='black')
-ax.set_xlabel('Measured Execution Time [s]', fontsize=12)
-ax.set_ylabel('Frequency / Count', fontsize=12)
-ax.set_title('Comparison of Timing Measurement Methods (util/timing.sh vs /usr/bin/time)', fontsize=14)
-ax.legend(loc='upper right', fontsize=11)
-ax.grid(True, linestyle='--', alpha=0.5)
-plt.tight_layout()
-plt.savefig("pairedHistogramTiming.png", dpi=150)
-```
-
-Wyniki zestawiłem na poniższym histogramie:
+Porównanie rozkładu wyników obu metod:
 
 ![pairedHistogramTiming.png](/img/loopspeed/pairedHistogramTiming.png)
 
-oraz w tabeli:
+| Metoda                | Czas \[s\] | Odchylenie std \[s\] |
+| --------------------- | ---------- | -------------------- |
+| util/timing.sh        | 4.244      | 0.449                |
+| /usr/bin/time -f "%e" | 4.208      | 0.285                |
 
-| method                | time \[s\] | standard dev \[s\] |
-| --------------------- | ---------- | ------------------ |
-| util/timing.sh        | 4.244      | 0.449              |
-| /usr/bin/time -f "%e" | 4.208      | 0.285              |
+Obie metody dają spójne wyniki w zakresie dłuższych pomiarów, jednak `util/timing.sh` zapewnia wyższą precyzję niezbędną przy szacowaniu krótkich czasów uruchamiania.
 
-Widać, że zmiana metody pomiaru z `/usr/bin/time` na `util/timing.sh` nie wymaga kasowania poprzednich wyników. Seria pomiarowe z `/usr/bin/time` i tak nie dotyczyła wyników o czasach poniżej `0.4 sec` bo przy błędzie rzędu `0.1` i zakresie 2 liczb po przecinku nie miało to sensu. Warto zwrócić uwagę na to, że rozkład czasów potrzebnych na wykonanie programu jest podobny do tego, jaki miał rozkład czasu selektów po indeksowanym kluczu w bazie danych.
+### Testy jednostkowe (`shunit2`)
 
-### Testy
+Prawidłowość działania środowiska weryfikowana jest przez pakiet testów napisany w `shunit2`:
 
-Jeśli wrócili byśmy do opisu instalacji, to zobaczyli byśmy, że ostatnia linia pliku `install.sh` odpowiada za pobranie biblioteki [`shunit2`](http://ssb.stsci.edu/testing/shunit2/shunit2.html).
+> test.sh
 
-```bash
-curl -L "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/shunit2/shunit2-2.1.6.tgz" | tar zx
-```
+Skrypt weryfikuje poprawność estymacji parametrów, spójność skali czasowej oraz graniczne czasy uruchamiania skryptów.
 
-Zastosowaliśmy ją w skrypcie testującym, które kod pokazuję poniżej
+### Ciągła integracja (CI/CD)
 
-> `test.sh`
+W projekcie wdrożono automatyczny pipeline CI/CD (GitHub Actions), zdefiniowany w `.github/workflows/test.yml`. W ramach każdego pusha/pull requesta uruchamiany jest kontener MariaDB oraz zestaw testów jednostkowych.
 
-```bash
-#!/usr/bin/env bash
-
-# args: min, mix, file - function check if
-# all numbers in file are in range (min,max)
-function columnInRange
-{
-    min="$1";
-    max="$2";
-
-    cat | while read n
-    do
-        echo $n;
-        assertTrue '[ 1 -eq $(echo $min"<"$n | bc -l) ]'
-        assertTrue '[ 1 -eq $(echo $n"<"$max | bc -l) ]'
-    done
-}
-```
-
-Zaczynamy od definiowania funkcji pomocniczej, która przyjmuje dwa parametry i strumień danych. Sprawdza ona czy strumień zawiera liczby z zakresu określonego przez te parametry. Za sprawdzenie odpowiadają funkcje `assertTrue`.
-
-Druga funkcja pomocnicza wykonuje dzielenie przez siebie wybranych kolumn z pary plików.
-
-```bash
-# args: col, method and parameter for 1 file, method and parameter for 2 file
-# function print ratio of given column form two files "log/out.[method][parameter].log
-# col number | meaning
-# 3          | size
-# 4          | time
-# 5          | speed
-function ratioOfColumns
-{
-    col="$1";
-
-    awk -F "|" 'FNR==NR{a[FNR] = $'$col'; next} {if(/inc/) printf "%12.6f\n", $'$col'/a[FNR]}' \
-        log/out.$2.log log/out.$3.log
-}
-```
-
-Na tą chwilę wygląda to dość enigmatycznie, ale pliki te w założeniu mają odpowiadać temu, co `inc.bash` wyświetla w konsoli. Zakres parametru `$1` to `3`,`4`,`5`, a dostępne wartości `$2` i `$3` to `l1`, `l2`, `t1` i `t2`. Odpowiedź na pytanie skąd biorą się tepliki zawarta jest w kolejnej funkcji:
-
-```bash
-oneTimeSetUp() {
-
-    for n in 1 2
-    do
-        for method in "l" "t"
-        do
-              bash inc.bash -$method $n | tee log/out.$method$n.log
-        done
-    done
-}
-```
-
-Która zgodnie z dokumentacją `shunit2` wykonana zostaje na samym początku testowania. Odpoiwada ona za wywołanie programu `inc.bash` cztery razy ze wszystkimi kombinacjami parametrów `-l` i `-t` oraz liczb `1` i `2` a następnie przekierowanie wyjścia do odpowiednio nazwanych plików.
-
-Kolejna funkcja wykona się po zakończeniu testowania - posprząta po testach.
-
-```bash
-oneTimeTearDown() {
-    rm -rf log/out.*.log
-}
-```
-
-Możemy przejść do właściwych funkjci zawierających testy:
-
-```bash
-# in database there are 16 columns of parameters
-test_parameters_are_proporly_estimated()
-{
-    infile=$(grep inc config/parameters.csv | wc -l);
-    inbase=$(sqlite3 log/log.db "SELECT count(*) FROM result WHERE a>ea and b>eb");
-    echo $infile;
-    echo $inbase;
-    assertEquals $infile $inbase;
-}
-```
-
-Pierwszy z testów sprawdza, czy plik `config/parameters.csv` został poprawnie załadowany do bazy przez skrypt `util/parameters_load.pl`.
-
-```bash
-# ratio of loops for 2 sec to 1 sec is between 1.9 and 2.1
-test_ratio_of_loops_in_proper_range()
-{
-     ratioOfColumns 3 t1 t2 | columnInRange 1.95 2.2
-}
-```
-
-Kolejny test bierze stosunek ilości pętli dla 2 sekund i 1 sekundy. Intuicyjnie czujemy, że powinien być on bliski dwójki, ale dopuszczamy odstępstwa w granicach błędu pomiarowego.
-
-```bash
-# ratio of time for test with 2 sec and 1 sec should be near to 2
-test_ratio_of_time_should_be_near_2_for_time_based_test()
-{
-    ratioOfColumns 4 t1 t2 | columnInRange 1.5 4;
-}
-```
-
-Następny test określa stosunek czasów dla programu zakładającego wykonywanie w 2 sekundy do 1 sekundy. Gdyby środowisko było idealne, to ten stosunek powinien wynosić dwa. Jednak ponieważ w GitHub Actions moc obliczeniowa przydzielana runnerom bywa zmienna, pozwalamy na dużą granicę błędu pomiarowego.
-
-```bash
-# ratio of time for test with 2 and 1 loop should be near to 1
-test_ratio_of_time_should_be_near_1_for_loop_based_test()
-{
-    ratioOfColumns 4 l1 l2 | columnInRange 0.4 1.8;
-}
-```
-
-Podobnie jest dla czasu wykonywania jednej i dwóch pętli. Stosunek tych czasów powinien być bliski jedności, ponieważ czas wykonywania pętli jest rzędy wielkości niższy od czasu włączania programu. Jednak i tutaj dopuszczamy duże różnice związane ze zmiennością dostępnej mocy obliczeniowej.
-
-```bash
-# any free language (without matlab and mathematica) start in time small than 0.2 sec
-test_start_no_longer_than_150_milisecond()
-{
-    # time of programs for 1 loop
-    awk '/inc/ {print $6}' log/out.l1.log | columnInRange 0.001 0.15;
-}
-```
-
-Kolejny test sprawdza, czy wszystkie programy startują szybciej niż w 0.15 sec i wolniej niż 1 milisekundę.
-
-```bash
-# ratio of speed for time based test should be near to 1
-test_speed_should_be_not_dependent_from_loops_in_limit()
-{
-    ratioOfColumns 5 t1 t2 | columnInRange 0.5 1.4;
-}
-```
-
-Następny dotyczy czasów długich w porównaniu z czasem włączania programu, a 1-2 sekund za takie można uznać i wymaga aby stosunek prędokości wykonywania pętli dla tych czasów był bliski jedności, a więc nie zmieniał się wraz z czasem.
-
-```bash
-# ratio of speed for 2 and 1 loop should be near to 2
-test_ratio_of_speed_for_small_loop_number_in_proper_range()
-{
-    ratioOfColumns 5 l1 l2 | columnInRange 1.1 7.0;
-}
-```
-
-Zupełnie odwrotnie dla 1-2 pętli, jeśli czas jest prawie taki sam, to mierzona prędkość powinna być prawie dwa razy wyższa dla 2 pętli niż dla jednej. Nie możemy jednak mierzyć tego zbyt dokładnie, ponieważ czasy wykonywania programów dla tak niewielkich ilości pętli są zwykle bliskie błędom pomiarowym.
-
-```bash
-test_ratio_of_speed_for_1_and_2_loops_form_database()
-{
-    for n in 1 2
-    do
-        sqlite3 log/log.db "SELECT name, avg(size/time) as speed FROM \
-            log WHERE size="$n" AND name!='inc.m.sh' AND name!='inc.wl' GROUP BY name" \
-            > log/out.l$n.speed.log
-    done
-
-    ratioOfColumns 2 l1.speed l2.speed | columnInRange 1.1 7.0;
-}
-```
-
-Ostatni test powtarza to samo co poprzedni, ale tym razem wydobywa dane z bazy, a nie konsoli.
-
-```bash
-. shunit2-2.1.6/src/shunit2
-```
-
-Jako ostatnią linię skryptu testującego dołączamy zgodnie z dokumentacją program `sh2unit`.
-
-### Ciągła integracja
-
-Na sam koniec opiszę proces ciągłej integracji, który wdrożyłem w tym projekcie. Ciągła integracja to automatyczne wykonywanie instalacji i testów przy każdym zdarzeniu `push` lub `pull_request` w repozytorium. W tym projekcie wykorzystujemy narzędzie [GitHub Actions](https://github.com/features/actions).
-
-Konfiguracja znajduje się w pliku `.github/workflows/test.yml`. Zaczynamy od zdefiniowania nazwy workflow oraz zdarzeń uruchamiających:
-
-```yaml
-name: Test Suite
-
-on:
-  push:
-    branches: [ master, main ]
-  pull_request:
-    branches: [ master, main ]
-```
-
-Następnie definiujemy zadanie `test`, które uruchamia się na środowisku `ubuntu-latest`. Podpinamy również usługę bazy danych MariaDB jako osobny kontener w sekcji `services`:
-
-```yaml
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    services:
-      mariadb:
-        image: mariadb:latest
-        env:
-          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'yes'
-          MARIADB_DATABASE: inc
-        ports:
-          - 3307:3306
-        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=3
-
-    env:
-      MYSQL_HOST: 127.0.0.1
-      MYSQL_TCP_PORT: 3307
-      MYSQL_USER: root
-      MYSQL_PWD: ""
-```
-
-W kolejnych krokach (`steps`) pobieramy kod repozytorium, instalujemy niezbędne zależności systemowe oraz moduł Perl `Text::CSV_XS`, ładujemy parametry do bazy danych i uruchamiamy nasz pakiet testów:
-
-```yaml
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Configure MariaDB client credentials (~/.my.cnf)
-        run: |
-          cat << 'EOF' > ~/.my.cnf
-          [client]
-          user = root
-          host = 127.0.0.1
-          port = 3307
-          EOF
-          chmod 600 ~/.my.cnf
-
-      - name: Install dependencies
-        run: |
-          SUDO=""
-          command -v sudo >/dev/null 2>&1 && SUDO="sudo"
-          $SUDO apt-get update
-          $SUDO apt-get install -y gfortran fpc mono-devel nodejs python3 perl libtext-csv-perl libtext-csv-xs-perl libdbi-perl libdbd-sqlite3-perl mariadb-client curl bc
-          bash install.sh || true
-
-      - name: Load database parameters
-        run: |
-          perl util/parameters_load.pl
-
-      - name: Run test suite
-        run: |
-          bash test.sh
-```
-
-Dzięki temu przy każdym commicie wysłanym do repozytorium GitHub automatycznie uruchamia środowisko testowe i sprawdza, czy wszystkie testy jednostkowe przechodzą pomyślnie.
-
-#### Testowanie GitHub Actions lokalnie z użyciem `act`
-
-Jedną z zalet nowoczesnego CI/CD jest możliwość lokalnego uruchamiania całego workflow bez konieczności robienia commitów i czekania na runnera w chmurze. Służy do tego narzędzie [act](https://github.com/nektos/act), które emuluje środowisko GitHub Actions w lokalnych kontenerach Docker.
-
-Aby uruchomić testy lokalnie:
+Testowanie pipeline'u lokalnie można przeprowadzić przy użyciu narzędzia `act`:
 
 ```bash
 # Instalacja narzędzia act (np. na Arch Linux)
 paru -S act
 
-# Uruchomienie lokalnego pipeline z użyciem nowoczesnego obrazu Ubuntu
+# Uruchomienie lokalnego pipeline z użyciem obrazu Ubuntu
 act -P ubuntu-latest=catthehacker/ubuntu:act-latest
 ```
 
-Narzędzie `act` podepnie lokalny kontener Dockera, uruchomi zdefiniowane serwisy (takie jak MariaDB) i wykona dokładnie te same kroki, które uruchamiają się na serwerach GitHub.
+---
 
-To już wszystko. Mam nadzieję, że ten artykuł uświadomił Ci, że wybór języka może mieć ogromne znaczenie dla wydajności oraz przybliżył Ci historię kilku z nich. Jednak najważniejsze, że ten kod został przygotowany tak, aby łatwo było go rozszerzyć o pomiary dotyczące zadań jak na przykład zapis do pliku, albo wykonywanie całkowania numerycznego. Jeśli będziesz zainteresowany rozwijaniem tego softu daj znać, mam parę koncepcji, w którą stronę można by rozwinąć ten projekt.
+Mam nadzieję, że przeprowadzone porównanie oraz analiza pozwalają lepiej zrozumieć różnice wydajnościowe i narzuty uruchomieniowe poszczególnych języków programowania. Zaprezentowaną strukturę testową można łatwo rozbudować o kolejne testy – np. operacje wejścia/wyjścia (I/O) czy całkowanie numeryczne.

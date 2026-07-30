@@ -103,6 +103,16 @@ const coverSrc = getImageAsset(frontmatter.coverImage);
             }
         });
 
+        // Wrap markdown tables in overflow container for mobile responsiveness
+        document.querySelectorAll('article section.prose table').forEach(table => {
+            if (!table.parentElement.classList.contains('table-wrapper')) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'table-wrapper overflow-x-auto max-w-full my-6';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            }
+        });
+
         // Add anchor links to headings
         document.querySelectorAll('article section.prose h2[id], article section.prose h3[id]').forEach(heading => {
             if (heading.querySelector('.anchor-link')) return;
