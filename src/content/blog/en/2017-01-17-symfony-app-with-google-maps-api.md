@@ -4,7 +4,7 @@ canonicalName: symfony-app-with-google-maps-api
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/3dc294cf-2fe2-4b97-8267-4f1e2d364ca3.avif
 description: A simple app integrating the fos user bundle with Google Maps. The service allows for logging in, registration, and saving your list of locations validated by the Google API.
 excerpt: A simple app integrating the fos user bundle with Google Maps. The service allows for logging in, registration, and saving your list of locations validated by the Google API.
-publishDate: 2021-05-18 20:50:00+00:00
+publishDate: 2017-01-17 20:50:00+00:00
 slug: en/application-with-fosuserbundle-and-google-maps-api
 tags:
 - symfony

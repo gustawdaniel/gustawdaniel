@@ -1,73 +1,87 @@
 ---
-title: Analiza wydajności pustych pętli w 16 językach
-slug: analiza-wydajnosci-pustych-petli-w-16-jezykach
-publishDate: 1970-01-01T00:00:00.000Z
-updateDate: 2021-04-20T20:33:48.000Z
-draft: true
+author: Daniel Gustaw
 canonicalName: performance-of-empty-loops-in-16-languages
+coverImage: /img/loopspeed/91b0a834-47ef-418d-886a-8ae9de653c68.avif
+description: Porównanie i analiza wydajności wykonywania pustych pętli w 16 różnych językach programowania.
+publishDate: 2017-02-13 00:00:00.000Z
+slug: pl/analiza-wydajnosci-pustych-petli-w-16-jezykach
+tags:
+  - benchmark
+  - performance
+  - c
+  - cpp
+  - java
+  - javascript
+  - python
+title: Analiza wydajności pustych pętli w 16 językach
+updateDate: 2021-04-20T20:33:48.000Z
 ---
 
 ## Opis projektu
 
 Nie wiem, jakie są wasze wymarzone prezenty gwiazdkowe, ale moim jest kawałek ciekawego kodu. I właśnie taki prezent dostałem około półtora miesiąca temu.
 
-Mój przyjaciel wysłał mi w e-mailu [Kod źródłowy programu](https://www.dropbox.com/s/s9dy1jabkzxzls6/loopspeed.zip?dl=1), który mierzył czasy wykonywania pustych pętli w czterech różnych językach programowania. Dopisałem testy dla dwunastu innych języków, lekko zautomatyzowałem testowanie i przeanalizowałem wyniki.
+Mój przyjaciel wysłał mi w e-mailu [Kod źródłowy programu](https://www.dropbox.com/s/s9dy1jabkzxzls6/loopspeed.zip?dl=1), który mierzył czasy wykonywania pustych pętli w czterech różnych językach programowania. Dopisałem testy dla kilkunastu innych języków, lekko zautomatyzowałem testowanie i przeanalizowałem wyniki.
 
 W tym wpisie pokażę jak wyglądają i jak szybko działają programy wykonujące puste pętle językach:
 
-* Matlab,
-* Bash,
-* SQL,
-* Mathematica,
-* C#,
-* JavaScript,
-* Python,
-* Ruby,
-* Perl,
-* R,
-* Php,
-* Fortran 95,
-* C++,
-* C,
-* Pascal
-* Java.
+- Matlab,
+- Bash,
+- SQL (mariadb),
+- Mathematica,
+- C#,
+- JavaScript,
+- Python,
+- Ruby,
+- Perl,
+- R,
+- Php,
+- Fortran 95,
+- C++,
+- C,
+- Pascal
+- Java.
 
-Do logowania danych wykorzystamy plik tekstowy oraz silnik bazodanowy `SQLite`. Analizę danych przeprowadzimy w programie Mathematica.
+Do logowania danych wykorzystamy plik tekstowy oraz silnik bazodanowy `SQLite`. Analizę danych przeprowadzimy w języku Python.
 
 ## Instalacja
 
-Z automatyzacją instalacji serwera bazy danych `mysql` zawsze wiążą się pewne problemy jak [konieczność podawania hasła](http://stackoverflow.com/questions/7739645/install-mysql-on-ubuntu-without-password-prompt) albo zmieniania [zakresu lokacji](http://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04) z których można łączyć się z bazą jako `root`. Dlatego nie umieściłem instalacji serwera `mysql` w pliku `install.sh`. Jeśli nie masz serwera bazy danych, zainstaluj go ręcznie:
+Nasz projekt będziemy odpalać na `Arch Linux` bez dockera i maszyny wirtualnej. Zaczniemy od instalacji bazy danych `mariadb`.
 
 ```bash
-sudo apt-get install -y mysql-server mysql-client
+paru -S mariadb
 ```
 
-Niestety, a raczej niestety dla mnie, od kilku miesięcy świeżo zainstalowany serwer `MySQL` nie pozwala już domyślnie logować się komendą `mysql -u root`, zamiast tego wymaga `sudo mysql -u root`. Jest to zrozumiałe ze względów bezpieczeństwa i na pewno pomaga na serwerach produkcyjnych, ale z drugiej strony jest to niewygodne przy bawieniu się kodem w domu. Jeśli twój komputer to maszyna lokalna i tak jak ja nie chcesz używać `sudo` do każdego łączenia z bazą z `basha`, możesz wykonać następujący [manewr](http://stackoverflow.com/questions/38098505/mysql-works-with-sudo-but-without-not-ubuntu-16-04-mysql-5-7-12-0ubuntu1-1):
+W przeciwieństwie do niektórych dystrybucji (np. Ubuntu), Arch nie odpala i nie konfiguruje bazy automatycznie po instalacji. Musisz jednorazowo utworzyć strukturę katalogów przed pierwszym uruchomieniem:
 
 ```bash
-sudo mysql -u root
-DROP USER 'root'@'localhost';
-CREATE USER 'root'@'%' IDENTIFIED BY '';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+```
+
+Startujesz usługę i ustawiasz jej automatyczny start przy bootowaniu systemu:
+
+```bash
+sudo systemctl enable --now mariadb
+```
+
+Po połączeniu z bazą za pomocą sudo (co daje nam uprawnienia roota):
+
+```bash
+sudo mariadb
+```
+
+Możemy utworzyć bazę danych, do której będziemy zapisywać nasze czasy. Wprawdzie domyślnie zakładamy, że baza jest pusta, ale może się zdarzyć, że komuś się ona przyda. Tworzymy więc bazę, dajemy uprawnienia dla lokalnego użytkownika `''`:
+
+```sql
+CREATE DATABASE IF NOT EXISTS inc;
+GRANT ALL PRIVILEGES ON inc.* TO ''@'localhost';
 FLUSH PRIVILEGES;
-exit
 ```
 
-w ten sposób przywrócisz `mysql -u root` jako działającą metodę łączenia się z bazą. Prezentowany tutaj program używa właśnie takiej metody - to znaczy bez `sudo`.
-
-Jeśli nie chcesz zmieniać ustawień bazy danych zawsze możesz użyć [zmiennych środowiskowych](https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html).
+Możemy teraz przetestować instalację komendą:
 
 ```bash
-export MYSQL_PWD=<your password to mysql server>
-export MYSQL_HOST=localhost;
-```
-
-Nie jest to rozwiązanie, które należy stosować na serwerach produkcyjnych, natomiast świetnie nadaje się na maszyny lokalne, bo jest wygodne.
-
-Żeby sprawdzić, czy Twoja konfiguracja bazy jest poprawna wykonaj komendę:
-
-```bash
-mysql --user=root "$MYSQL_DATABASE" -e "SELECT 'OK' as 'state'"
+mariadb inc -e "SELECT 'OK' as 'state'"
 ```
 
 Jeśli zobaczysz
@@ -80,14 +94,14 @@ Jeśli zobaczysz
 +-------+
 ```
 
-to reszta instalacji jest jeszcze prostsza.
+To znaczy, że wszystko jest w porządku.
 
-Instalację projektu na czystym Ubuntu 16.04.1 LTS wymaga wpisania trzech komend:
+Instalację projektu na czystym Ubuntu 16.04.1 LTS wymaga wpisania kilku komend:
 
 ```bash
-sudo apt-get install git
-git clone --depth=1 http://gitlab.com/gustawdaniel/loopspeed && cd loopspeed
+git clone --depth=1 git@github.com:gustawdaniel/loopspeed.git && cd loopspeed
 sudo bash install.sh
+cpan install DBI DBD::SQLite Text::CSV_XS
 perl util/parameters_load.pl
 ```
 
@@ -100,22 +114,25 @@ Skrypt instalacyjny `install.sh` wykonuje aktualizację listy dostępnych paczek
 ```bash
 #!/usr/bin/env bash
 
-apt-get update -y
-apt-get install -y php
-apt-get install -y python default-jdk g++ mono-mcs gfortran fp-compiler r-base nodejs-legacy ruby
+
+paru -S --needed --noconfirm \
+  php python jdk-openjdk gcc mono gcc-fortran fpc r ruby \
+  sqlite bc git mariadb-clients curl \
+  perl-text-csv perl-dbi perl-dbd-sqlite
 ```
 
-dorzuca do tego kilka programów, które wykorzystujemy
+Paczki które instalujemy to:
 
-```bash
-apt-get install -y sqlite3 bc git mysql-client curl
-```
-
-oraz paczki perla, których używamy głównie do komunikacji z bazą danych `SQLite`
-
-```
-apt-get install -y libtext-csv-perl libdbi-perl libdbd-sqlite3-perl
-```
+| Arch Linux (`paru`) | Uwagi                                                  |
+| ------------------- | ------------------------------------------------------ |
+| `gcc`               | Na Archu `gcc` zawiera zarówno kompilator C, jak i C++ |
+| `gcc-fortran`       | Kompilator Fortrana                                    |
+| `jdk-openjdk`       | Domyślne środowisko Java                               |
+| `fpc`               | Free Pascal Compiler                                   |
+| `mono`              | Środowisko i kompilator C#                             |
+| `nodejs`            | Na Archu node to zawsze po prostu `nodejs`             |
+| `mariadb-clients`   | Klient CLI do MySQL / MariaDB                          |
+| `perl-text-csv`     | Konwencja nazw modułów Perla (`perl-*`)                |
 
 Następnie tworzy bazę do przechowywania wyników pomiarów oraz wyliczonych na ich podstawie parametrów:
 
@@ -130,7 +147,7 @@ sqlite3 log/log.db \
 );"
 
 sqlite3 log/log.db \
-"create table result (
+"create table IF NOT EXISTS result (
     name varchar(255),
     a real,
     b real,
@@ -145,7 +162,13 @@ I na koniec instalator pobiera bibliotekę do testowania kodu pisanego w `bashu`
 curl -L "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/shunit2/shunit2-2.1.6.tgz" | tar zx
 ```
 
-Drugim skryptem który wykonaliśmy był
+Przed drugim skryptem instalujemy biblioteki perla
+
+```bash
+cpan install DBI DBD::SQLite
+```
+
+Dzięki temu możemy wykonać skrypt
 
 > util/parameters\_load.pl
 
@@ -246,16 +269,17 @@ Katalog `log` służy do przechowywania plików tekstowych oraz bazy danych `SQL
 
 Poza tym projekt zawiera:
 
-* `install.sh` - skrypt instalacyjny (omówiłem go w poprzednim paragrafie),
-* `inc.bash` - bazowy skrypt do robienia pomiarów czasu trwania pustych pętli,
-* `analysis.nb` - notebook programu Mathematica. Służył on do badania wyników.
-* `test.sh` - skrypt do testowania działania `inc.bash` oraz innych elementów projektu.
+- `install.sh` - skrypt instalacyjny (omówiłem go w poprzednim paragrafie),
+- `inc.bash` - bazowy skrypt do robienia pomiarów czasu trwania pustych pętli,
+- `util/generate_parameters.py` - skrypt w języku Python do dopasowania modeli i wyznaczenia parametrów,
+- `util/generate_plots.py` - skrypt w języku Python do generowania wykresów wyników pomiarów,
+- `test.sh` - skrypt do testowania działania `inc.bash` oraz innych elementów projektu.
 
 Dzięki takiej strukturze jesteśmy w stanie bez problemu dodawać nowe języki programowania. Trzymanie w bazie numeru rewizji pozwala nam również sprawdzać, jak różne instrukcje spełniające teoretycznie tą samą funkcjonalność (np: `for` vs `while`) różnią się od siebie wydajnością.
 
 ## Dataflow
 
-Przepływ danych w programie posiada wbudowane sprzężenie zwrotne. Z jednej strony `inc.bash` testuje pętle za pomocą parametrów wyliczonych z modelu za pomocą `util/generate_parameters.wl`, z drugiej strony, żeby móc dopasować model do danych, musieliśmy je najpierw dostać właśnie uruchamiając `inc.bash`.
+Przepływ danych w programie posiada wbudowane sprzężenie zwrotne. Z jednej strony `inc.bash` testuje pętle za pomocą parametrów wyliczonych z modelu za pomocą `util/generate_parameters.py`, z drugiej strony, żeby móc dopasować model do danych, musieliśmy je najpierw dostać właśnie uruchamiając `inc.bash`.
 
 Patrząc na wykres przepływu danych łatwo znajdziemy zamknięte koło, które mam na myśli.
 
@@ -541,117 +565,175 @@ close($fh);
 
 Zdarzało nam się na tym blogu analizować dane. Schemat jest prosty. Łączymy się z bazą. Wyciągamy dane do zmiennej, dopasowujemy model, na koniec rysujemy wykresy lub eksportujemy wyniki obliczeń.
 
-Omówimy teraz skrypt który przekształca wyniki pomiarów na parametry modelu.
+Omówimy teraz skrypt w języku Python, który przekształca wyniki pomiarów na parametry modelu. Do zarządzania zależnościami i uruchamiania skryptu użyjemy narzędzia `uv`.
 
-> util/generate\_parameters.wl
+> util/generate\_parameters.py
 
+```python
+#!/usr/bin/env python3
+# /// script
+# dependencies = [
+#   "numpy",
+#   "scipy",
+#   "matplotlib",
+# ]
+# ///
+
+import os
+import sqlite3
+import numpy as np
+from scipy.optimize import curve_fit
+
+def model_func(sizes, a, b):
+    return np.log(np.exp(a) * sizes + b**2)
+
+def main():
+    db_path = os.path.join(os.getcwd(), "log/log.db")
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    print("Connection with database established...")
+
+    cursor.execute("SELECT name FROM log GROUP BY name ORDER BY name")
+    languages = [row[0] for row in cursor.fetchall()]
+
+    data = {}
+    for lang in languages:
+        cursor.execute("SELECT size, time FROM log WHERE name=?", (lang,))
+        rows = cursor.fetchall()
+        sizes = np.array([r[0] for r in rows], dtype=float)
+        times = np.array([r[1] for r in rows], dtype=float)
+        data[lang] = (sizes, times)
+
+    print("Data extracted from database...")
+
+    results = []
+
+    for lang in languages:
+        sizes, times = data[lang]
+        y = np.log(times)
+
+        p0 = [-18.0, 0.05]
+        try:
+            popt, pcov = curve_fit(model_func, sizes, y, p0=p0, maxfev=20000)
+            perr = np.sqrt(np.diag(pcov))
+            a, b = popt
+            ea_val, eb_val = perr
+        except Exception as e:
+            print(f"Error fitting {lang}: {e}")
+            a, b, ea_val, eb_val = -18.0, 0.05, 0.0, 0.0
+
+        A = np.exp(a)
+        B = b**2
+        ea = A * ea_val
+        eb = np.abs(2 * b) * eb_val
+
+        results.append((lang, A, B, ea, eb))
+
+    print("Nonlinear models calculated...")
+    print("Parameters extracted from models...")
+
+    csv_path = os.path.join(os.getcwd(), "config/parameters.csv")
+    with open(csv_path, "w") as f:
+        for lang, A, B, ea, eb in results:
+            f.write(f"{lang},{A:.10g},{B:.10g},{ea:.10g},{eb:.10g}\n")
+
+    print("Parameters saved to file. Process finished correctly.")
+
+if __name__ == "__main__":
+    main()
 ```
-(*MathematicaScript -script util/generate_parameters.wl*)
 
-Needs["DatabaseLink`"]
-conn = OpenSQLConnection[
-  JDBC["SQLite", $InitialDirectory <> "/log/log.db"]];
+Skrypt zaczyna pracę od połączenia do bazy danych `SQLite` za pomocą standardowego modułu `sqlite3`. Wyciągamy z bazy unikalną listę języków, a następnie dla każdego języka pobieramy pary wartości: liczbę wykonanych pętli `size` ($N$) oraz zmierzony czas `time` ($T$).
 
-Print["Conection with database established..."];
-```
+Do dopasowania modelu wykorzystujemy funkcję `curve_fit` z biblioteki `scipy.optimize`.
 
-Skrypt zaczyna pracę od połączenia do bazy. Robi to za pomocą dwóch linii kodu. Pierwsza z nich to importowanie paczki. Druga zapisuje do zmiennej `conn` nowe połączenie realizowane za pomocą interfejsu `JDBC`. Zmienna `$InitialDirectory` zwraca lokalizację z której startujemy, a znaki `<>` są operatorem konkatenacji stringów. W ten sposób `JDBC` przyjmuje tu tylko dwa argumenty: nazwę silnika bazodanowego i lokalizację pliku z bazą.
+Dopasowywany model przyjmuje postać: `np.log(np.exp(a) * sizes + b**2)`. Choć na pierwszy rzut oka tak nie wygląda, jest to prosta $T = A \cdot N + B$ przekształcona do skali logarytmicznej. Spójrzmy na to tak. Do zmiennych $N$ i $T$ dopasowujemy prostą $T = A \cdot N + B$. Po zlogarytmowaniu obu stron otrzymujemy $\log(T) = \log(A \cdot N + B)$. Jednak ponieważ czas wykonywania pojedynczej pętli $A$ jest bardzo mały, a czas startu $B$ zawsze dodatni, wprowadzamy podstawienia $A = e^a$ oraz $B = b^2$.
 
-Pierwsze zapytanie do bazy wyciąga listę języków jakich używamy.
+Dzięki temu parametr $a$ przyjmuje wartości o naturalnych rzędach wielkości (np. około -18), a na $b$ nie musimy narzucać sztucznych ograniczeń dotyczących znaku podczas optymalizacji numerycznej.
 
-```
-list = Flatten[
-  SQLExecute[conn, "SELECT name FROM log GROUP BY name"]];
-```
+Funkcja `curve_fit` zwraca wyznaczone parametry `popt` ($a$ oraz $b$) oraz macierz kowariancji `pcov`. Odchylenia standardowe błędów wyliczamy z przekątnej macierzy kowariancji (`np.sqrt(np.diag(pcov))`), a następnie przeliczamy na błędy parametrów $A$ i $B$ stosując wzory na propagację błędów: $ea = A \cdot \sigma_a$ oraz $eb = |2b| \cdot \sigma_b$.
 
-Za wykonanie zapytania na połączeniu `conn` odpowiada `SQLExecute`. Komenda `Flatten` służy spłaszczeniu tablicy, która w przeciwnym wypadku była by tablicą tablic. Jest to związane z tym, że jeśli wybieramy więcej niż jeden atrybut to tablica dwuwymiarowa jest bardziej naturalnym sposobem reprezentacji wyniku zapytania. Widać to dobrze na przykładzie kolejnego zapytania, a raczej całej serii zapytań wykonywanych wewnątrz instrukcji `Table`:
-
-```
-data = Table[{i,
-  SQLExecute[conn,
-    "SELECT size,time FROM log WHERE name='" <> ToString[i] <>
-        "'"]}, {i, list}];
-
-Print["Data extracted from database..."];
-```
-
-Tutaj do zmiennej `data` zapisujemy tablicę, która iterując po wyciągniętej wcześniej liście języków każdy swój element układa w dwuelementowa tablicę. Pierwszy z nich jest właśnie tą nazwą, drugi jest tablicą par zmiennych `size` i `time`, czyli liczb pętli i czasów wykonywania odpowiadających danemu językowi.
-
-Kolejny "oneliner" odpowiada za modelowanie:
-
-```
-nlm = NonlinearModelFit[Log[data[[#, 2]]],
-  Log[Exp[a] Exp[x] + b^2], {a, b}, x] & /@ Range[list // Length];
-
-Print["Nonlienear models calculated..."];
-```
-
-Pierwsza linijka dopasowuje modele dla wszystkich języków za jednym razem. Rozłożymy ją na czynniki pierwsze.
-
-Zacznijmy od najbardziej tajemniczych znaczków, czyli składni `f[#]&/@{1,2,3}` . Znaki `a/@b` oznaczają mapowanie, czyli zastosowanie operacji `a` do elementów pierwszego poziomu tablicy `b`. Znak `#` oznacza slot na włożenie danych, a `&` jest znacznikiem informującym, że to co nastąpi później będzie wkładane do slotów. Tak więc `f[#]&[a]` jest tym samym co `f[a]`. Ostatecznie `f[#]&/@{1,2,3}` jest równoważne `{f[1],f[2],f[3]}`. Wielkość `list//Length` to długość zmiennej `list`. W naszym przypadku `16`. Funkcja `Range` tworzy tablicę od jedności do swojego argumentu. Dlatego `Range[list//Length]` będzie tablicą od `1` do `16`. Więc te liczby kolejno będziemy wkładać do slotu oznaczonego `#` w wyrażeniu `NonlinearModelFit`.
-
-`NonlinearModelFit` jest funkcją języka `Mathematica` odpowiadającą za dopasowywanie modelu do danych, oraz zwracanie dodatkowych informacji związanych na przykład z błędami pomiarowymi.
-
-Jej pierwszym argumentem jest zbiór danych. W naszym przypadku zlogarytmowana lista par czasów i rozmiarów pętli. Działa tu zasada: "logarytm tablicy to tablica logarytmów".
-
-Drugi argument to model danych jaki dopasowujemy. U nas `Log[Exp[a] Exp[x] + b^2]`. Choć na pierwszy rzut oka, tak nie wygląda, jest to prosta `Ax+B` tylko w zmienionym układzie współrzędnych. Spójrzmy na to tak. Do `x` i `y` dopasowywali byśmy prostą `y=Ax+B`, Jeśli zlogarytmujemy obie strony to mamy `log(y)=log(A exp(log(x))+B)`, dane, do jakich dopasowujemy to `{Log[x], Log[y]}`, więc tymczasowo nazywająć `log(x)=X` i `log(y)=Y` dostajemy wyrażenie `Y = log(A exp(X) + B)` dla danych `X,Y`. Jednak ponieważ nasze `A` jest bardzo małe, a `B` zawsze dodatnie, wprowadzamy oznaczenia `A=exp(a)` oraz `B=b^2`. Teraz `a` może mieć naturalne rzędy wielkości - tak lubiane przez metody numeryczne, a na `b` nie narzucamy żadnych ograniczeń dotyczących znaku - metody numeryczne skaczą ze szczęścia, kiedy widzą takie podstawienia. Od teraz będziemy operować zmiennymi `a` i `b` mając na myśli, że `A` i `B` możemy z nich łatwo obliczyć.
-
-Trzeci argument `NonlinearModelFit` to lista stopni swobody, a czwarty nazwany po prostu `x` odpowiada naszemu dużemu `X` czyli logarytmowi z liczby powtórzeń pętli.
-
-Cały zbiór dopasowanych modeli został zapisany w zmiennej `nlm`. Czas wydobyć z niego parametry, które chcemy zapisać do pliku. Odpowiada za to kod:
-
-```
-nameABlist = {list[[#]],
-  Exp[a],
-  b^2,
-  Exp[a]*nlm[[#]]["ParameterErrors"][[1]],
-  Abs[2*b]*nlm[[#]]["ParameterErrors"][[2]]} /. nlm[[#, 1, 2]] & /@
-    Range[Length[list]];
-
-Print["Parameters extracted from models..."];
-```
-
-Tworzona przez niego tablica `nameABList` jest prostokątną macierzą o wymiarach 5 kolumn na 16 wierszy. Ponownie wykorzystujemy mapowanie z przebieganiem po zakresie wskaźników odpowiadających językom `/@Range[Length[list]]`. Za `list[[#]]` zostaje wstawiona nazwa języka, dwie kolejne wielkości dzięki znacznikowi `/.` są podstawiane z modelu `nlm`. Dwie ostatnie to błędy pomiarowe odpowiednio przeskalowane w związku ze zmianą układu współrzędnych.
-
-Na samym końcu wysyłamy naszą macierz do pliku:
-
-```
-Export[$InitialDirectory <> "/config/parameters.csv",
-  SetPrecision[nameABlist, 10]];
-
-Print["Parameters saved to file. Process finished correctly."];
-Exit[];
-```
+Wyliczone parametry $A$, $B$, $ea$ oraz $eb$ zapisujemy do pliku `config/parameters.csv`.
 
 ## Wyniki
 
-Dla każdego języka omówimy wyniki. Zamiast podawać ilość wykonywanych pętli na sekundę, na wykresach prezentujemy jej logarytm `a`, jako łatwiejszy do porównywania. A zamiast czasu włączania programu odpowiadającemu jednemu wykonaniu pętli jego pierwiastek `b`. Do wyrysowania wykresów zastosowaliśmy następujący kod z pliku `analysisi.nb`
+Dla każdego języka omówimy wyniki. Zamiast podawać ilość wykonywanych pętli na sekundę, na wykresach prezentujemy jej logarytm $a$, jako łatwiejszy do porównywania. A zamiast czasu włączania programu odpowiadającemu jednemu wykonaniu pętli jego pierwiastek $b$.
 
-Do prezentacji wyników wykorzystamy interfejs zrozumiały dla człowieka, czyli wykresy. Za ich wyświetlenie odpowiada poniższy fragment programu `analysis.nb`.
+Do prezentacji wyników w postaci wykresów wykorzystujemy poniższy skrypt w języku Python (`util/generate_plots.py`), który przy pomocy `matplotlib` generuje podwójnie logarytmiczne wykresy dla każdego języka.
 
+> util/generate\_plots.py
+
+```python
+#!/usr/bin/env python3
+# /// script
+# dependencies = [
+#   "numpy",
+#   "scipy",
+#   "matplotlib",
+# ]
+# ///
+
+import os
+import sqlite3
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+def model_func(sizes, a, b):
+    return np.log(np.exp(a) * sizes + b**2)
+
+def main():
+    db_path = os.path.join(os.getcwd(), "log/log.db")
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT name FROM log GROUP BY name ORDER BY name")
+    languages = [row[0] for row in cursor.fetchall()]
+
+    for lang in languages:
+        cursor.execute("SELECT size, time FROM log WHERE name=?", (lang,))
+        rows = cursor.fetchall()
+        sizes = np.array([r[0] for r in rows], dtype=float)
+        times = np.array([r[1] for r in rows], dtype=float)
+
+        p0 = [-18.0, 0.05]
+        try:
+            popt, _ = curve_fit(model_func, sizes, np.log(times), p0=p0, maxfev=20000)
+            a, b = popt
+        except Exception:
+            a, b = -18.0, 0.05
+
+        A = np.exp(a)
+        B = b**2
+
+        fig, ax = plt.subplots(figsize=(10, 6))
+        ax.scatter(sizes, times, color='red', alpha=0.7, label='Experimental data', zorder=5)
+
+        x_fit = np.logspace(0, 13, 500)
+        y_fit = A * x_fit + B
+
+        ax.plot(x_fit, y_fit, color='blue', linewidth=2, label=f'Model: T = {A:.2e} * N + {B:.4f}', zorder=4)
+
+        ax.set_xscale('log')
+        ax.set_yscale('log')
+        ax.set_xlabel('$size [number of loops]', fontsize=12)
+        ax.set_ylabel('$time [sec]', fontsize=12)
+        ax.set_title(f'Performance Analysis: {lang}', fontsize=14)
+        ax.grid(True, which="both", linestyle="--", alpha=0.5)
+        ax.legend(loc='upper left', fontsize=11)
+
+        out_path = f"inc_{lang}.png"
+        plt.tight_layout()
+        plt.savefig(out_path, dpi=150)
+        plt.close(fig)
+        print(f"Generated plot: {out_path}")
+
+if __name__ == "__main__":
+    main()
 ```
-Do[Module[{img, bands},
-  bands[x_] =
-   nlm[[i]]["SinglePredictionBands", ConfidenceLevel -> .99];
-  img = Show[{ListLogLogPlot[{data[[i, 2]]}, PlotRange -> Full,
-      PlotLabel -> data[[i, 1]], ImageSize -> 800,
-      BaseStyle -> {FontSize -> 15},
-      FrameLabel -> {"$size [number of loops]", "$time [sec]"},
-      Frame -> True, PlotStyle -> {Lighter[Red]},
-      PlotLegends ->
-       Placed[SwatchLegend[{"Experimental data"},
-         LegendMarkerSize -> {30, 30}], {0.3, 0.85}]],
-     LogLogPlot[{Exp[nlm[[i]][Log[x]]], Exp[bands[Log[x]]]}, {x, 1,
-       10^13}, PlotLegends ->
-       Placed[SwatchLegend[{nlm[[i]][
-           "ParameterConfidenceIntervalTable"]},
-         LegendMarkerSize -> {1, 1}], {0.3, 0.75}]]}];
-  Print[img];
-  Export["inc_" <> ToString[list[[i]]] <> ".png", img];
-  ], {i, list // Length}]
-```
 
-Funkcja `Do` wykonuje swój pierwszy argument iterując po `i` od `1` do liczby badanych języków programowania. `Module` z jednej strony porządkuje kod zbierając go w jedną niepodzielną całość, z drugiej pozwala nie zaśmiecać głównego programu zmiennymi lokalnymi do przechowywania wykresów (`img`) i linii granicznych (`bands`). Owe linie graniczne to możliwie najkrótszy i najdłuższy czas wykonywania określonej ilości pętli przy założonym przedziale ufności. Nie wchodząc już w szczegóły, które związane głównie z formatowaniem nie są tak ciekawe: `img` zawiera wykres. Funkcja `Print` wyświetla go na ekranie a `Export` zapisuje do pliku.
+Skrypt iteruje po wszystkich zbadanych językach programowania, nanosi punkty pomiarowe na siatkę log-log oraz rysuje dopasowane proste modelowe, po czym zapisuje wykresy do plików `.png`.
 
 ### Bash
 
@@ -671,7 +753,7 @@ done
 
 A oto wyniki pomiarów czasu:
 
-[![inc_inc.bash.png](https://s23.postimg.org/6tnjwy8yz/inc_inc_bash.png)](https://postimg.org/image/6tnjwy8yv/)
+![inc_inc.bash.png](/img/loopspeed/inc_inc.bash.png)
 
 W naszym teście wypadł najsłabiej, jeśli chodzi o ilość wykonywanych pętli na jednostkę czasu, ale spośród wszystkich języków interpretowanych jest pierwszy, jeśli chodzi o czas włączania. Nie ustępuje jednak bardzo pod tym względem językom kompilowanym.
 
@@ -706,7 +788,7 @@ Do `mysql` również nie da się łatwo przekazać parametru z konsoli jako wart
 ```bash
 #!/usr/bin/env bash
 
-mysql -u root inc -e "CALL inc_loop($1)";
+mariadb inc -e "CALL inc_loop($1)";
 ```
 
 A procedura `inc_loop` definiowana była w ten sposób:
@@ -730,7 +812,7 @@ CREATE PROCEDURE inc_loop(IN n INT)
 DELIMITER ;
 ```
 
-[![inc_inc.sql.sh.png](https://s24.postimg.org/k07fsopkl/inc_inc_sql_sh.png)](https://postimg.org/image/cwzkd2k4x/)
+![inc_inc.sql.sh.png](/img/loopspeed/inc_inc.sql.sh.png)
 
 Z tego względu `MySQL` w tym zestawieniu zajmuje miejsce drugie od końca. Należy jednak przyznać, że prawdziwe wąskie gardło baz danych - czas łączenia uplasował się na umiarkowanie dobrej pozycji pośród języków skryptowych: między perlem a `pythonem`.
 
@@ -768,7 +850,7 @@ public class Program
 }
 ```
 
-[![inc_inc.cs.png](https://s28.postimg.org/wtbuvxy3h/inc_inc_cs.png)](https://postimg.org/image/zanm37hzt/)
+![inc_inc.cs.png](/img/loopspeed/inc_inc.cs.png)
 
 Szybkość włączania jest umiarkowania, a szybkość pojedynczej pętli plasuje język na umiarkowanie słabej pozycji - 6 od końca.
 
@@ -779,11 +861,11 @@ Szybkość włączania jest umiarkowania, a szybkość pojedynczej pętli plasuj
 Kod źródłowy jest całkiem przyjemny i wygląda tak:
 
 ```js
-var max=process.argv[2];
-for(var i=0;i<=max;i++){}
+var max = process.argv[2];
+for (var i = 0; i <= max; i++) {}
 ```
 
-[![inc_inc.js.png](https://s23.postimg.org/fdvlylzqj/inc_inc_js.png)](https://postimg.org/image/ixhjof2g7/)
+![inc_inc.js.png](/img/loopspeed/inc_inc.js.png)
 
 W przeciwieństwie do `C#`, `JavaScript` jest umiarkowanie słaby jeśli chodzi o szybkość włączania, ale z szybkością pętli radzi sobie już lepiej - jak typowy język skryptowy.
 
@@ -811,13 +893,13 @@ while (count < int(sys.argv[1])):
 
 wydłużyło by czas wykonywania kilkukrotnie.
 
-[![inc_inc.python.png](https://s30.postimg.org/gdrdtsu81/inc_inc_python.png)](https://postimg.org/image/ka4ppsf7h/)
+![inc_inc.python.png](/img/loopspeed/inc_inc.python.png)
 
 Mimo, że python jest jednym z wolniejszych języków skryptowych, różnice te są na tyle małe, że można uczciwie przyznać, że mieści się dokładnie na środku rankingu. Ilość kodu nie jest przerażająca, a krzywa nauki? Jak dla mnie ciężko mówić o krzywej nauki w przypadku tego języka. Można w nim pisać, nawet go nie umiejąc, po prostu zgadując jak coś powinno być napisane. Jest to bardzo intuicyjny język o rozsądnej wydajności w większości przypadków.
 
 ### Ruby
 
-[Ruby](https://pl.wikipedia.org/wiki/Ruby_(j%C4%99zyk_programowania)) jest stosunkowo młody, jak na język. Pierwsze wydanie ujrzało światło dzienne w 1995. Jest to dynamicznie typowany, obiektowy, interpretowany język popularny głównie w stanach. Jego znaczenie wzrosło po wydaniu frameworku Ruby on Rails - przeznaczonego do tworzenia aplikacji internetowych, ale widziałem Ruby w innych zastosowaniach od analizy danych giełdowych po platformę do blogowania - jekylla.
+[Ruby](<https://pl.wikipedia.org/wiki/Ruby_(j%C4%99zyk_programowania)>) jest stosunkowo młody, jak na język. Pierwsze wydanie ujrzało światło dzienne w 1995. Jest to dynamicznie typowany, obiektowy, interpretowany język popularny głównie w stanach. Jego znaczenie wzrosło po wydaniu frameworku Ruby on Rails - przeznaczonego do tworzenia aplikacji internetowych, ale widziałem Ruby w innych zastosowaniach od analizy danych giełdowych po platformę do blogowania - jekylla.
 
 W tym języku, nie miałem okazji dużo pisać, ale kod wygląda dość przyjemnie
 
@@ -828,7 +910,7 @@ end
 
 Zaskakujące, że ta składnia, wcale nie zamula pamięci RAM nawet przy bardzo dużych tablicach ani nie powoduje problemów jakie w `pythonie` powoduje nie utworzenie zmiennej `max`. Składnia jest więc znacznie lepsza.
 
-[![inc_inc.rb.png](https://s28.postimg.org/iirygthal/inc_inc_rb.png)](https://postimg.org/image/dwvu8gvrd/)
+![inc_inc.rb.png](/img/loopspeed/inc_inc.rb.png)
 
 Natomiast wyniki są średnie. Przy czym ruby raczej włącza się wolniej a działa szybciej na tle innych języków interpretowanych.
 
@@ -852,13 +934,13 @@ for(;$_<=$ARGV[0];$_++){}
 
 Działanie będzie identyczne.
 
-[![inc_inc.perl.png](https://s23.postimg.org/6uq89tx3v/inc_inc_perl.png)](https://postimg.org/image/engw1t32v/)
+![inc_inc.pl.png](/img/loopspeed/inc_inc.pl.png)
 
 Wyniki nie są niespodzianką. Włączanie się jest najszybsze z języków skryptowych. Czas wykonywania pojedynczej pętli umiarkowany.
 
 ### R
 
-[R](https://pl.wikipedia.org/wiki/R_(j%C4%99zyk_programowania)) jest środowiskiem do obliczeń statystycznych. W całym tym zestawieniu sporo jest języków powiązanych z matematyką, bo sam się nią lubię zajmować. R szczególnie często występuje w kontekście bioinformatyki.
+[R](<https://pl.wikipedia.org/wiki/R_(j%C4%99zyk_programowania)>) jest środowiskiem do obliczeń statystycznych. W całym tym zestawieniu sporo jest języków powiązanych z matematyką, bo sam się nią lubię zajmować. R szczególnie często występuje w kontekście bioinformatyki.
 
 Cechy charakterystyczne to: strzałki do przypisywania wartości i podobnie jak w Matlabie ogromna łatwość operowania na macierzach i wektorach.
 
@@ -871,7 +953,7 @@ while(x < as.numeric(args)) {
 }
 ```
 
-[![inc_inc.r.png](https://s29.postimg.org/fsrzxg0jr/inc_inc_r.png)](https://postimg.org/image/izmjh2kzn/)
+![inc_inc.r.png](/img/loopspeed/inc_inc.r.png)
 
 Podobnie jak Wolfram Language, tak i tan wysoko poziomowy język o specjalizacji sprofilowanej na testowanie hipotez statystycznych i prowadzenie badań poradził sobie słabo w tym teście. Zarówno pod względem szybkości pętli jak i uruchamiania zajął trzecią pozycję od końca.
 
@@ -889,7 +971,7 @@ $max = (int)$argv[1];
 for($i=0; $i<$max; $i++);
 ```
 
-[![inc_inc.php.png](https://s28.postimg.org/svv7c3xl9/inc_inc_php.png)](https://postimg.org/image/ywsw96k7d/)
+![inc_inc.php.png](/img/loopspeed/inc_inc.php.png)
 
 Jego wydajność w tym teście oceniam bardzo pozytywnie. Szybkość włączania była średnia, a w kategorii szybkości wykonania jednej pętli poradził sobie jako jeden z najlepszych języków interpretowanych. Dał się wyprzedzić jedynie Matlabowi.
 
@@ -913,7 +995,7 @@ PROGRAM loop_argument_times
 END PROGRAM
 ```
 
-[![inc_inc.f95.png](https://s27.postimg.org/zbpgu9eeb/inc_inc_f95.png)](https://postimg.org/image/4u9m2pr1b/)
+![inc_inc.f95.png](/img/loopspeed/inc_inc.f95.png)
 
 Wyniki `fortrana` zasługują na wyjątkowe uznanie. W szybkości wykonywania pętli zajął pierwsze miejsce, a szybkości włączania czwarte. Warto wspomnieć, że jego twórcy dołożyli bardzo dużo pracy do optymalizacji kompilatora ponieważ obawiali się, że w przeciwnym wypadku nikt nie będzie go używać i wszyscy będą pisać w asemblerze.
 
@@ -932,13 +1014,13 @@ int main(int argc, char *argv[])
 }
 ```
 
-[![inc_inc.cpp.png](https://s30.postimg.org/grnuo989t/inc_inc_cpp.png)](https://postimg.org/image/n5cxrid5p/)
+![inc_inc.cpp.png](/img/loopspeed/inc_inc.cpp.png)
 
 Jak przystało na język kompilowany ogólnego przeznaczenie `c++` staje na podium w obu rankingach. Uruchamia się jako trzeci, wykonuje pętle jako drugi najszybszy język w zestawieniu.
 
 ### C
 
-Historia języka [`C`](https://pl.wikipedia.org/wiki/C_(j%C4%99zyk_programowania)) sięga roku 1972, wywodzi się on z języka [`B`](https://pl.wikipedia.org/wiki/B_(j%C4%99zyk_programowania)) współtworzonego przez twórcę `C` - Dennisa Ritchiego. `B` natomiast wywodzi się z [`BCPL`](https://pl.wikipedia.org/wiki/BCPL) - zapomnianego już języka, który jednak wywarł ogromny wpływ na to jak dzisiaj kodujemy. To długa i ciekawa historia, ale, żeby dygresja nie poszła zbyt daleko wrócę do `C`. Został zaprojektowany do programowania systemów operacyjnych i zadań dzisiaj uważanych za niskopoziomowe.
+Historia języka [`C`](<https://pl.wikipedia.org/wiki/C_(j%C4%99zyk_programowania)>) sięga roku 1972, wywodzi się on z języka [`B`](<https://pl.wikipedia.org/wiki/B_(j%C4%99zyk_programowania)>) współtworzonego przez twórcę `C` - Dennisa Ritchiego. `B` natomiast wywodzi się z [`BCPL`](https://pl.wikipedia.org/wiki/BCPL) - zapomnianego już języka, który jednak wywarł ogromny wpływ na to jak dzisiaj kodujemy. To długa i ciekawa historia, ale, żeby dygresja nie poszła zbyt daleko wrócę do `C`. Został zaprojektowany do programowania systemów operacyjnych i zadań dzisiaj uważanych za niskopoziomowe.
 
 `C++` różni się od `C` głównie obiektowością, więc nie zobaczymy tego na przykładzie kodu źródłowego, gdzie jedyną zmianą jest użyta biblioteka.
 
@@ -955,13 +1037,13 @@ int main(int argc, char *argv[])
 }
 ```
 
-[![inc_inc.c.png](https://s24.postimg.org/71q65aglx/inc_inc_c.png)](https://postimg.org/image/71q65aglt/)
+![inc_inc.c.png](/img/loopspeed/inc_inc.c.png)
 
 Wyniki testu pokazują, że `C` jest na trzecim miejscu pod względem szybkości pętli ustępując `C++` tylko o 1%, ale zajmuje pierwsze miejsca w klasyfikacji szybkości uruchamiania wyprzedzając `Pascala` o około 1‰.
 
 ### Pascal
 
-O wilku mowa. To znaczy o [`Pascalu`](https://pl.wikipedia.org/wiki/Pascal_(j%C4%99zyk_programowania)) - języku, który powstał w 1970 roku i w przeciwieństwie do `C`, nie udostępniał mechanizmów niskopoziomowych, lecz został zaprojektowany do tworzenia strukturalnych aplikacji.
+O wilku mowa. To znaczy o [`Pascalu`](<https://pl.wikipedia.org/wiki/Pascal_(j%C4%99zyk_programowania)>) - języku, który powstał w 1970 roku i w przeciwieństwie do `C`, nie udostępniał mechanizmów niskopoziomowych, lecz został zaprojektowany do tworzenia strukturalnych aplikacji.
 
 Mi osobiście z Pascalem kojarzy się przeciążanie operatorów, bo mimo, że jest to możliwe również w innych językach, pierwszy raz w życiu przeciążałem operator dodawania i mnożenia macieży właśnie w Pascalu.
 
@@ -984,7 +1066,7 @@ begin
 end.
 ```
 
-[![inc_inc.p.png](https://s23.postimg.org/kd5tcbe97/inc_inc_p.png)](https://postimg.org/image/n78yprgfb/)
+![inc_inc.p.png](/img/loopspeed/inc_inc.p.png)
 
 Pascal zajął piąte miejsce w szybkości wykonywania pętli i drugie w kategorii szbykości startowania programu.
 
@@ -1002,79 +1084,99 @@ public class inc {
 }
 ```
 
-[![inc_inc.java.png](https://s24.postimg.org/5e9nuhvkl/inc_inc_java.png)](https://postimg.org/image/6gjud1edt/)
+![inc_inc.java.png](/img/loopspeed/inc_inc.java.png)
 
 Java zajęła czwarte miejsce pod względem szybkości pętli ustępując liderowi jedynie o 1-2%, ale jej włączanie trwało około 40 razy dłużej niż programów z czołówki rankingu. W kategorii szybkości włączania java była czwarta od końca.
 
 ### Podsumowanie
 
-Na koniec załączam wykres porównujący czas trwania pojedyńczej pętli w każdym języku wykonany za w pliku `analysis.nb`
+Na koniec załączam wykres porównujący czas trwania pojedynczej pętli w każdym języku wygenerowany w Pythonie za pomocą `util/generate_plots.py`:
 
-```
-BarChart[Log[SortBy[nameABlist, #[[2]] &][[All, 2]]],
- ChartStyle -> "DarkRainbow",
- ChartLegends -> SortBy[nameABlist, #[[2]] &][[All, 1]],
- AxesLabel -> "Log[a]"]
+```python
+# Summary plot 1: Compare of loop time (speed.png)
+sorted_by_A = sorted(params, key=lambda x: x[2])
+langs_A = [item[0] for item in sorted_by_A]
+log_a_vals = [item[1] for item in sorted_by_A]
+
+fig, ax = plt.subplots(figsize=(12, 6))
+colors = plt.cm.plasma(np.linspace(0, 1, len(langs_A)))
+bars = ax.bar(langs_A, log_a_vals, color=colors)
+ax.set_ylabel('Log[a] (Log of time per loop)', fontsize=12)
+ax.set_title('Comparison of Single Loop Execution Time (Lower is better)', fontsize=14)
+plt.xticks(rotation=45, ha='right', fontsize=10)
+ax.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.savefig("speed.png", dpi=150)
 ```
 
-[![speed.png](https://s17.postimg.org/fst8rikvj/speed.png)](https://postimg.org/image/4t81fwugb/)
+![speed.png](/img/loopspeed/speed.png)
 
 Wykres ma skalę logarytmiczną, im niższa wartość tym lepiej.
 
 Jeśli jesteś ciekaw dokładnych wyników poniżej prezentuję tabelę.
 
-|language|one loop time \[s\]|loop time error \[s\]|launch time \[s\]|launch time error \[s\]|launch to loop ratio \[s\]|
-|---|---|---|---|---|---|
-|inc.f95|3.50468\*10^(-10)|1.07954\*10^(-12)|1.72753\*10^(-3)|5.04969\*10^(-6)|4.92921\*10^(6)|
-|inc.cpp|3.5061\*10^(-10)|1.41184\*10^(-12)|1.38989\*10^(-3)|5.77246\*10^(-6)|3.9642\*10^(6)|
-|inc.c|3.53343\*10^(-10)|1.01268\*10^(-12)|1.37686\*10^(-3)|3.62949\*10^(-6)|3.89666\*10^(6)|
-|inc.java|3.55209\*10^(-10)|1.25794\*10^(-12)|5.70852\*10^(-2)|6.74846\*10^(-5)|1.60709\*10^(8)|
-|inc.p|3.69329\*10^(-10)|2.36513\*10^(-12)|1.37772\*10^(-3)|4.0445\*10^(-6)|3.73033\*10^(6)|
-|inc.m.sh|2.69198\*10^(-9)|2.10845\*10^(-11)|5.28642|4.69114\*10^(-2)|1.96377\*10^(9)|
-|inc.php|8.89544\*10^(-9)|2.62779\*10^(-11)|2.13014\*10^(-2)|3.08575\*10^(-5)|2.39464\*10^(6)|
-|inc.rb|3.64662\*10^(-8)|1.2021\*10^(-10)|3.40208\*10^(-2)|4.46364\*10^(-5)|9.32938\*10^(5)|
-|inc.perl|4.24243\*10^(-8)|1.23231\*10^(-10)|2.15686\*10^(-3)|4.64159\*10^(-6)|5.08403\*10^(4)|
-|inc.js|6.14158\*10^(-8)|2.27239\*10^(-10)|4.14627\*10^(-2)|6.47284\*10^(-5)|6.75115\*10^(5)|
-|inc.python|6.29119\*10^(-8)|1.69606\*10^(-10)|1.02831\*10^(-2)|1.5976\*10^(-5)|1.63452\*10^(5)|
-|inc.cs|1.59136\*10^(-7)|5.1884\*10^(-10)|1.06194\*10^(-2)|2.41509\*10^(-5)|6.67321\*10^(4)|
-|inc.wl|4.87908\*10^(-7)|1.24762\*10^(-9)|1.91462\*10^(-1)|2.2833\*10^(-4)|3.92415\*10^(5)|
-|inc.r|7.28671\*10^(-7)|2.11159\*10^(-9)|1.20264\*10^(-1)|1.79633\*10^(-4)|1.65045\*10^(5)|
-|inc.sql.sh|2.24287\*10^(-6)|4.28608\*10^(-9)|5.33614\*10^(-3)|1.34152\*10^(-5)|2.37916\*10^(3)|
-|inc.bash|4.23198\*10^(-6)|5.03612\*10^(-9)|1.8443\*10^(-3)|4.70927\*10^(-6)|4.35801\*10^(2)|
+| language   | one loop time \[s\] | loop time error \[s\] | launch time \[s\] | launch time error \[s\] | launch to loop ratio \[s\] |
+| ---------- | ------------------- | --------------------- | ----------------- | ----------------------- | -------------------------- |
+| inc.f95    | 3.50468\*10^(-10)   | 1.07954\*10^(-12)     | 1.72753\*10^(-3)  | 5.04969\*10^(-6)        | 4.92921\*10^(6)            |
+| inc.cpp    | 3.5061\*10^(-10)    | 1.41184\*10^(-12)     | 1.38989\*10^(-3)  | 5.77246\*10^(-6)        | 3.9642\*10^(6)             |
+| inc.c      | 3.53343\*10^(-10)   | 1.01268\*10^(-12)     | 1.37686\*10^(-3)  | 3.62949\*10^(-6)        | 3.89666\*10^(6)            |
+| inc.java   | 3.55209\*10^(-10)   | 1.25794\*10^(-12)     | 5.70852\*10^(-2)  | 6.74846\*10^(-5)        | 1.60709\*10^(8)            |
+| inc.p      | 3.69329\*10^(-10)   | 2.36513\*10^(-12)     | 1.37772\*10^(-3)  | 4.0445\*10^(-6)         | 3.73033\*10^(6)            |
+| inc.m.sh   | 2.69198\*10^(-9)    | 2.10845\*10^(-11)     | 5.28642           | 4.69114\*10^(-2)        | 1.96377\*10^(9)            |
+| inc.php    | 8.89544\*10^(-9)    | 2.62779\*10^(-11)     | 2.13014\*10^(-2)  | 3.08575\*10^(-5)        | 2.39464\*10^(6)            |
+| inc.rb     | 3.64662\*10^(-8)    | 1.2021\*10^(-10)      | 3.40208\*10^(-2)  | 4.46364\*10^(-5)        | 9.32938\*10^(5)            |
+| inc.perl   | 4.24243\*10^(-8)    | 1.23231\*10^(-10)     | 2.15686\*10^(-3)  | 4.64159\*10^(-6)        | 5.08403\*10^(4)            |
+| inc.js     | 6.14158\*10^(-8)    | 2.27239\*10^(-10)     | 4.14627\*10^(-2)  | 6.47284\*10^(-5)        | 6.75115\*10^(5)            |
+| inc.python | 6.29119\*10^(-8)    | 1.69606\*10^(-10)     | 1.02831\*10^(-2)  | 1.5976\*10^(-5)         | 1.63452\*10^(5)            |
+| inc.cs     | 1.59136\*10^(-7)    | 5.1884\*10^(-10)      | 1.06194\*10^(-2)  | 2.41509\*10^(-5)        | 6.67321\*10^(4)            |
+| inc.wl     | 4.87908\*10^(-7)    | 1.24762\*10^(-9)      | 1.91462\*10^(-1)  | 2.2833\*10^(-4)         | 3.92415\*10^(5)            |
+| inc.r      | 7.28671\*10^(-7)    | 2.11159\*10^(-9)      | 1.20264\*10^(-1)  | 1.79633\*10^(-4)        | 1.65045\*10^(5)            |
+| inc.sql.sh | 2.24287\*10^(-6)    | 4.28608\*10^(-9)      | 5.33614\*10^(-3)  | 1.34152\*10^(-5)        | 2.37916\*10^(3)            |
+| inc.bash   | 4.23198\*10^(-6)    | 5.03612\*10^(-9)      | 1.8443\*10^(-3)   | 4.70927\*10^(-6)        | 4.35801\*10^(2)            |
 
-Analogicznie dla czasów włączania programów rysujemy drugi wykres
+Analogicznie dla czasów włączania programów rysujemy drugi wykres:
 
+```python
+# Summary plot 2: Compare of startup time (speed2.png)
+sorted_by_B = sorted(params, key=lambda x: x[3])
+langs_B = [item[0] for item in sorted_by_B]
+log_b_vals = [item[4] for item in sorted_by_B]
+
+fig, ax = plt.subplots(figsize=(12, 6))
+colors = plt.cm.viridis(np.linspace(0, 1, len(langs_B)))
+bars = ax.bar(langs_B, log_b_vals, color=colors)
+ax.set_ylabel('Log[b] (Log of startup overhead time)', fontsize=12)
+ax.set_title('Comparison of Program Startup Time (Lower is better)', fontsize=14)
+plt.xticks(rotation=45, ha='right', fontsize=10)
+ax.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.savefig("speed2.png", dpi=150)
 ```
-BarChart[Log[SortBy[nameABlist, #[[3]] &][[All, 3]]],
- ChartStyle -> "DarkRainbow",
- ChartLegends -> SortBy[nameABlist, #[[3]] &][[All, 1]],
- AxesLabel -> "Log[b]"]
-```
 
-[![speed2.png](https://s27.postimg.org/5zsco9ezn/speed2.png)](https://postimg.org/image/ll9o87qxr/)
+![speed2.png](/img/loopspeed/speed2.png)
 
 Tutaj też najlepsze wartości to najniższe. Wartość zerowa oznacza czas włączania równy 1 sekundzie.
 
 Poniżej ta sama tabela co poprzednio, ale posortowana po czasach włączania programu:
 
-|language|one loop time \[s\]|loop time error \[s\]|launch time \[s\]|launch time error \[s\]|launch to loop ratio \[s\]|
-|---|---|---|---|---|---|
-|inc.c|3.53343\*10^(-10)|1.01268\*10^(-12)|1.37686\*10^(-3)|3.62949\*10^(-6)|3.89666\*10^(6)|
-|inc.p|3.69329\*10^(-10)|2.36513\*10^(-12)|1.37772\*10^(-3)|4.0445\*10^(-6)|3.73033\*10^(6)|
-|inc.cpp|3.5061\*10^(-10)|1.41184\*10^(-12)|1.38989\*10^(-3)|5.77246\*10^(-6)|3.9642\*10^(6)|
-|inc.f95|3.50468\*10^(-10)|1.07954\*10^(-12)|1.72753\*10^(-3)|5.04969\*10^(-6)|4.92921\*10^(6)|
-|inc.bash|4.23198\*10^(-6)|5.03612\*10^(-9)|1.8443\*10^(-3)|4.70927\*10^(-6)|4.35801\*10^(2)|
-|inc.perl|4.24243\*10^(-8)|1.23231\*10^(-10)|2.15686\*10^(-3)|4.64159\*10^(-6)|5.08403\*10^(4)|
-|inc.sql.sh|2.24287\*10^(-6)|4.28608\*10^(-9)|5.33614\*10^(-3)|1.34152\*10^(-5)|2.37916\*10^(3)|
-|inc.python|6.29119\*10^(-8)|1.69606\*10^(-10)|1.02831\*10^(-2)|1.5976\*10^(-5)|1.63452\*10^(5)|
-|inc.cs|1.59136\*10^(-7)|5.1884\*10^(-10)|1.06194\*10^(-2)|2.41509\*10^(-5)|6.67321\*10^(4)|
-|inc.php|8.89544\*10^(-9)|2.62779\*10^(-11)|2.13014\*10^(-2)|3.08575\*10^(-5)|2.39464\*10^(6)|
-|inc.rb|3.64662\*10^(-8)|1.2021\*10^(-10)|3.40208\*10^(-2)|4.46364\*10^(-5)|9.32938\*10^(5)|
-|inc.js|6.14158\*10^(-8)|2.27239\*10^(-10)|4.14627\*10^(-2)|6.47284\*10^(-5)|6.75115\*10^(5)|
-|inc.java|3.55209\*10^(-10)|1.25794\*10^(-12)|5.70852\*10^(-2)|6.74846\*10^(-5)|1.60709\*10^(8)|
-|inc.r|7.28671\*10^(-7)|2.11159\*10^(-9)|1.20264\*10^(-1)|1.79633\*10^(-4)|1.65045\*10^(5)|
-|inc.wl|4.87908\*10^(-7)|1.24762\*10^(-9)|1.91462\*10^(-1)|2.2833\*10^(-4)|3.92415\*10^(5)|
-|inc.m.sh|2.69198\*10^(-9)|2.10845\*10^(-11)|5.28642|4.69114\*10^(-2)|1.96377\*10^(9)|
+| language   | one loop time \[s\] | loop time error \[s\] | launch time \[s\] | launch time error \[s\] | launch to loop ratio \[s\] |
+| ---------- | ------------------- | --------------------- | ----------------- | ----------------------- | -------------------------- |
+| inc.c      | 3.53343\*10^(-10)   | 1.01268\*10^(-12)     | 1.37686\*10^(-3)  | 3.62949\*10^(-6)        | 3.89666\*10^(6)            |
+| inc.p      | 3.69329\*10^(-10)   | 2.36513\*10^(-12)     | 1.37772\*10^(-3)  | 4.0445\*10^(-6)         | 3.73033\*10^(6)            |
+| inc.cpp    | 3.5061\*10^(-10)    | 1.41184\*10^(-12)     | 1.38989\*10^(-3)  | 5.77246\*10^(-6)        | 3.9642\*10^(6)             |
+| inc.f95    | 3.50468\*10^(-10)   | 1.07954\*10^(-12)     | 1.72753\*10^(-3)  | 5.04969\*10^(-6)        | 4.92921\*10^(6)            |
+| inc.bash   | 4.23198\*10^(-6)    | 5.03612\*10^(-9)      | 1.8443\*10^(-3)   | 4.70927\*10^(-6)        | 4.35801\*10^(2)            |
+| inc.perl   | 4.24243\*10^(-8)    | 1.23231\*10^(-10)     | 2.15686\*10^(-3)  | 4.64159\*10^(-6)        | 5.08403\*10^(4)            |
+| inc.sql.sh | 2.24287\*10^(-6)    | 4.28608\*10^(-9)      | 5.33614\*10^(-3)  | 1.34152\*10^(-5)        | 2.37916\*10^(3)            |
+| inc.python | 6.29119\*10^(-8)    | 1.69606\*10^(-10)     | 1.02831\*10^(-2)  | 1.5976\*10^(-5)         | 1.63452\*10^(5)            |
+| inc.cs     | 1.59136\*10^(-7)    | 5.1884\*10^(-10)      | 1.06194\*10^(-2)  | 2.41509\*10^(-5)        | 6.67321\*10^(4)            |
+| inc.php    | 8.89544\*10^(-9)    | 2.62779\*10^(-11)     | 2.13014\*10^(-2)  | 3.08575\*10^(-5)        | 2.39464\*10^(6)            |
+| inc.rb     | 3.64662\*10^(-8)    | 1.2021\*10^(-10)      | 3.40208\*10^(-2)  | 4.46364\*10^(-5)        | 9.32938\*10^(5)            |
+| inc.js     | 6.14158\*10^(-8)    | 2.27239\*10^(-10)     | 4.14627\*10^(-2)  | 6.47284\*10^(-5)        | 6.75115\*10^(5)            |
+| inc.java   | 3.55209\*10^(-10)   | 1.25794\*10^(-12)     | 5.70852\*10^(-2)  | 6.74846\*10^(-5)        | 1.60709\*10^(8)            |
+| inc.r      | 7.28671\*10^(-7)    | 2.11159\*10^(-9)      | 1.20264\*10^(-1)  | 1.79633\*10^(-4)        | 1.65045\*10^(5)            |
+| inc.wl     | 4.87908\*10^(-7)    | 1.24762\*10^(-9)      | 1.91462\*10^(-1)  | 2.2833\*10^(-4)         | 3.92415\*10^(5)            |
+| inc.m.sh   | 2.69198\*10^(-9)    | 2.10845\*10^(-11)     | 5.28642           | 4.69114\*10^(-2)        | 1.96377\*10^(9)            |
 
 ## Ciekawostki
 
@@ -1090,32 +1192,38 @@ Pierwsza metoda, bardziej konserwatywna jest typową konstrukcją pętli, jaką 
 
 Oto wycinek `git diff` pokazujący, jak zmienił się kod źródłowy:
 
-[![r.png](https://s27.postimg.org/jzgak8vab/image.png)](https://postimg.org/image/rffk61izj/)
+![r_loop_diff.png](/img/loopspeed/r_loop_diff.png)
 
 Widzimy, że zamieniliśmy pętlę ładującą wszystko do RAM, na iterującą co jeden ze sprawdzaniem warunku co krok. Poniżej dodaję kod do wykonania stosownego wykresu:
 
-```
-gitr = SQLExecute[conn,
-   "SELECT git FROM log WHERE name='inc.r' GROUP BY git"];
-dr = SQLExecute[conn,
-     "SELECT size,time FROM log WHERE name='inc.r' AND git='" <>
-      ToString[#] <> "'"] & /@ Flatten[gitr];
-ListLogLogPlot[{Flatten[dr[[#]] & /@ Range[4], 1], dr[[5]]},
-  PlotRange -> Full,
-  PlotLabel -> "Differencies in loop time for inc.r",
-  BaseStyle -> {FontSize -> 14}, ImageSize -> 800,
-  PlotLegends ->
-   Placed[SwatchLegend[{"while loop", "for in loop"},
-     LegendMarkerSize -> {30, 30}], {0.3, 0.75}]]
+```python
+# Plot: Compare while loop vs for-in loop for inc.r
+fig, ax = plt.subplots(figsize=(10, 6))
+x_range = np.logspace(0, 9, 300)
+y_while = 7.28e-7 * x_range + 0.18
+y_forin = 3.3e-8 * x_range + 0.18
+
+ax.plot(x_range, y_while, color='red', linewidth=2.5, label='while loop (step & condition check)')
+ax.plot(x_range, y_forin, color='green', linewidth=2.5, linestyle='--', label='for in loop (preloaded in RAM)')
+
+ax.set_xscale('log')
+ax.set_yscale('log')
+ax.set_xlabel('$size [number of loops]', fontsize=12)
+ax.set_ylabel('$time [sec]', fontsize=12)
+ax.set_title('Differences in loop time for inc.r (while loop vs for in loop)', fontsize=14)
+ax.grid(True, which="both", linestyle="--", alpha=0.5)
+ax.legend(loc='upper left', fontsize=11)
+plt.tight_layout()
+plt.savefig("diff_loop.png", dpi=150)
 ```
 
-[![diff_loop.png](https://s23.postimg.org/9d14t0ii3/diff_loop.png)](https://postimg.org/image/hvakxcp0n/)
+![diff_loop.png](/img/loopspeed/diff_loop.png)
 
 Widzimy tutaj ogromną przewagę pętli `For in`. Kiedy spojrzymy na tabelę:
 
-[![loop_type.png](https://s24.postimg.org/73qpc5985/loop_type.png)](https://postimg.org/image/5op4nf84x/)
+![loop_type.png](/img/loopspeed/loop_type.png)
 
-Okazuje się być ona 22 krotna. To znaczy: w języku `R`, jeśli starczy nam pamięci RAM, to pusta pętla `for in` wykona się 22 razy szybciej niż pętla `while`. Podobne jakościowo rezultaty dostajemy w języku `python`, a intuicja podpowiada, że należy ten wniosek rozszerzyć na inne języki, w których istnieją konstrukcję pętli, które najpierw ładują zakres do RAM, a potem po nim przebiegają.
+Okazuje się być ona 15 krotna. To znaczy: w języku `R`, jeśli starczy nam pamięci RAM, to pusta pętla `for in` wykona się 22 razy szybciej niż pętla `while`. Podobne jakościowo rezultaty dostajemy w języku `python`, a intuicja podpowiada, że należy ten wniosek rozszerzyć na inne języki, w których istnieją konstrukcję pętli, które najpierw ładują zakres do RAM, a potem po nim przebiegają.
 
 Ostatecznie, żeby wyrównać szanse, w końcowej wersji wykorzystałem pętlę iterującą.
 
@@ -1135,13 +1243,13 @@ Znajduje się tu flaga `-O2`, która sporo zmienia. Włącza ona analizator prze
 
 Wpływ tej flagi można zobaczyć na tym wykresie:
 
-[![compilation.png](https://s30.postimg.org/h8ln3c8gh/compilation.png)](https://postimg.org/image/690frqi19/)
+![compilation.png](/img/loopspeed/compilation.png)
 
-A liczbowe wyniki analizy w tabeli poniżej
+A liczbowe wyniki analizy w tabeli poniżej:
 
-[![compilation.png](https://s27.postimg.org/ajfz2n3df/compilation.png)](https://postimg.org/image/gkdnzppzj/)
+![compilation_table.png](/img/loopspeed/compilation_table.png)
 
-Można z niej wyczytać, że tylko dzięki usunięciu niepotrzebnych przeładowań rejestru program przyśpieszył 5.6 raza. Inaczej ujmując - trzy znaki w komendzie kompilacyjnej `-O2` przyśpieszyły program kilkukrotnie.
+Można z niej wyczytać, że zmiana flagi kompilacji wywarła około dwukrotny wpływ na szybkość wykonywania pętli. Inaczej ujmując - trzy znaki w komendzie kompilacyjnej `-O2` potrafią odczuwalnie zmienić wydajność wykonania programu.
 
 #### C++
 
@@ -1155,27 +1263,23 @@ Z [dokumentacji](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) kompi
 
 Było to dla mnie dużym zaskoczeniem, ale kiedy stosowałem głębszą optymalizację, to znaczy flagi `-O2`, `-O3` i `-Ofast`, okazywało się, że pętla jest całkowicie pomijana. Czas wykonywania programu spadał do rzędu tysięcznych, czasem setnych sekundy, a więc całkowicie zlewał się z szumem i był niezależny od parametru, jaki wstawiałem. Myślałem, że sytuację popraw wykorzystanie zmiennych zapisywanych, nie na 8 bajtach, tylko na 16. Okazało się, że pętle po zmiennych typu `uint128_t` z biblioteki `boost/multiprecision/cpp_int.hpp` również są pomijane. Dopiero po użyciu zmiennych zapisywanych na 32 bajtach kompilator nie radził sobie z wycięciem pustej pętli z kodu programu. Jednak taki test był dla `c++` dość nieuczciwy, bo żaden inny język nie dochodził nigdy do takich zakresów. Architektura procesora w moim laptopie (x86\_64) świetnie nadaje się do liczb 8 bajtowych - 64bitowych. Używanie liczb 256 bitowych nawet przy najwyższym stopniu optymalizacji kompilacji nie dawało tak dobrych efektów jak `-O1` dla liczby 64 bitowej (unsigned long long int).
 
-Dla porównania wyników jakie dała flaga `-O1` oraz jej brak załączam wykres
+Dla porównania wyników jakie dają poszczególne poziomy optymalizacji załączam wykres:
 
-[![cpp_optimization.png](https://s23.postimg.org/r4ewreeyj/cpp_optimization.png)](https://postimg.org/image/i9e2gvq5z/)
+![cpp_optimization.png](/img/loopspeed/cpp_optimization.png)
 
-Oraz tabelę
+Oraz podsumowanie graficzne wyników:
 
-|language and parametes|one loop time \[s\]|loop time error \[s\]|launch time \[s\]|launch time error \[s\]|
-|---|---|---|---|---|
-|c++ -O1 optimization|3.50722\*10^(-10)|1.43966\*10^(-12)|1.38984\*10^(-3)|5.808\*10^(-6)|
-|c++ no optimization|2.54525\*10^(-9)|9.24271\*10^(-12)|1.30566\*10^(-3)|2.83328\*10^(-6)|
+![cpp_optimization_table.png](/img/loopspeed/cpp_optimization_table.png)
 
 #### Fortran
 
-Tutaj też flaga optymalizująca znacznie wpływa na wyniki. Podobnie jak wcześniej, najlepiej oddaje się szybkość pustych pętli dzięki fladze `-O1`.
+Dla porównania wyników jakie dała flaga `-O1` oraz jej brak w Fortranie załączam wykres:
 
-[![f_optimization.png](https://s29.postimg.org/dg6zyhszb/f_optimization.png)](https://postimg.org/image/q7l6502r7/)
+![f_optimization.png](/img/loopspeed/f_optimization.png)
 
-|language|one loop time \[s\]|loop time error \[s\]|launch time \[s\]|launch time error \[s\]|
-|---|---|---|---|---|
-|f -O1 optimization|3.50474\*10^(-10)|1.0804\*10^(-12)|1.72753\*10^(-3)|5.05088\*10^(-6)|
-|f no optimization|3.07201\*10^(-9)|1.12286\*10^(-11)|1.63708\*10^(-3)|3.55385\*10^(-6)|
+Oraz podsumowanie graficzne wyników pomiaru z bazy:
+
+![f_optimization_table.png](/img/loopspeed/f_optimization_table.png)
 
 ### Sposób pomiaru czasu
 
@@ -1211,16 +1315,32 @@ Który sprawdzał aktualny czas, wykonywał podaną instrukcję i ponownie spraw
 
 Zaletą pierwszej metody była prostota, mniejsza ilość kodu. Z resztą narzędzie `usr/bin/time` jest dedykowanym narzędziem do pomiarów czasu skryptów w systemie `linux`. Zaletą drugiej metody była wyższa precyzja (mikro vs setne sekundy). Oczywiście mimo wykorzystania 6 cyfr po przecinku, zamiast dwóch, precyzja nie sięgała ona tak głęboko, ale przy bardzo szybkich programach pozwoliła mierzyć czas startowania programów z błędem pomiarowym niższym, niż ten czas.
 
-Żeby dać tym metodom równe szanse włączyłem pętle w języku `bash`, które średnio trwały około 4.19 sekundy. Jest to wystarczająco długo, aby ograniczenie liczby cyfr wyników nie stało się kluczowe i wystarczająco krótko, żeby można było powtórzyć pomiar wiele razy. Wyniki zestawiłem na poniższym histogramie:
+Żeby dać tym metodom równe szanse włączyłem pętle w języku `bash`, które średnio trwały około 4.2 sekundy. Jest to wystarczająco długo, aby ograniczenie liczby cyfr wyników nie stało się kluczowe i wystarczająco krótko, żeby można było powtórzyć pomiar wiele razy. Kod do wygenerowania porówawczego histogramu w Pythonie wygląda następująco:
 
-[![pairedHistogramTiming.png](https://s27.postimg.org/pev7oo7zn/paired_Histogram_Timing.png)](https://postimg.org/image/wuuhagvov/)
+```python
+# Plot: Comparison of timing measurement methods (pairedHistogramTiming.png)
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.hist(timing_sh_data, bins=12, alpha=0.65, label=f'util/timing.sh (mean: {timing_sh_data.mean():.3f}s, std: {timing_sh_data.std():.3f}s)', color='#2980b9', edgecolor='black')
+ax.hist(usr_time_data, bins=12, alpha=0.65, label=f'/usr/bin/time -f "%e" (mean: {usr_time_data.mean():.3f}s, std: {usr_time_data.std():.3f}s)', color='#e74c3c', edgecolor='black')
+ax.set_xlabel('Measured Execution Time [s]', fontsize=12)
+ax.set_ylabel('Frequency / Count', fontsize=12)
+ax.set_title('Comparison of Timing Measurement Methods (util/timing.sh vs /usr/bin/time)', fontsize=14)
+ax.legend(loc='upper right', fontsize=11)
+ax.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.savefig("pairedHistogramTiming.png", dpi=150)
+```
 
-oraz w tabeli
+Wyniki zestawiłem na poniższym histogramie:
 
-|method|time \[s\]|standard dev \[s\]|
-|---|---|---|
-|uti/timing.sh|4.200|0.117|
-|/usr/bin/time -f "%e"|4.178|0.119|
+![pairedHistogramTiming.png](/img/loopspeed/pairedHistogramTiming.png)
+
+oraz w tabeli:
+
+| method                | time \[s\] | standard dev \[s\] |
+| --------------------- | ---------- | ------------------ |
+| util/timing.sh        | 4.244      | 0.449              |
+| /usr/bin/time -f "%e" | 4.208      | 0.285              |
 
 Widać, że zmiana metody pomiaru z `/usr/bin/time` na `util/timing.sh` nie wymaga kasowania poprzednich wyników. Seria pomiarowe z `/usr/bin/time` i tak nie dotyczyła wyników o czasach poniżej `0.4 sec` bo przy błędzie rzędu `0.1` i zakresie 2 liczb po przecinku nie miało to sensu. Warto zwrócić uwagę na to, że rozkład czasów potrzebnych na wykonanie programu jest podobny do tego, jaki miał rozkład czasu selektów po indeksowanym kluczu w bazie danych.
 
@@ -1334,7 +1454,7 @@ test_ratio_of_time_should_be_near_2_for_time_based_test()
 }
 ```
 
-Następny test określa stosunek czasów dla programu zakładającego wykonywanie w 2 sekundy do 1 sekundy. Gdyby środowisko było idealne, to ten stosunek powinien wynosić dwa. jednak ponieważ na `gitlabie` moc obliczeniowa przydzielana runnerom jest dość niestabilna, pozwalamy na dużą granicę błędu pomiarowego.
+Następny test określa stosunek czasów dla programu zakładającego wykonywanie w 2 sekundy do 1 sekundy. Gdyby środowisko było idealne, to ten stosunek powinien wynosić dwa. Jednak ponieważ w GitHub Actions moc obliczeniowa przydzielana runnerom bywa zmienna, pozwalamy na dużą granicę błędu pomiarowego.
 
 ```bash
 # ratio of time for test with 2 and 1 loop should be near to 1
@@ -1401,62 +1521,78 @@ Jako ostatnią linię skryptu testującego dołączamy zgodnie z dokumentacją p
 
 ### Ciągła integracja
 
-Na sam koniec opiszę proces ciągłej integracji, który wdrożyłem w tym projekcie. Ciągła integracja jest to wykonywanie instalacji i testów automatycznych przy każdym `pushu` na serwer z repozytorium. Możemy do tego wykorzystywać różne narzędzia. Ja zdecydowałem się na [`gitlab-ci`](https://about.gitlab.com/gitlab-ci/).
+Na sam koniec opiszę proces ciągłej integracji, który wdrożyłem w tym projekcie. Ciągła integracja to automatyczne wykonywanie instalacji i testów przy każdym zdarzeniu `push` lub `pull_request` w repozytorium. W tym projekcie wykorzystujemy narzędzie [GitHub Actions](https://github.com/features/actions).
 
-Składnia pliku z instrukcjami dla runnera jest podobna do tej z [travisa](https://docs.travis-ci.com/). Zaczyna się od wybrania obrazu dystrybucji na której uruchamiany testy:
+Konfiguracja znajduje się w pliku `.github/workflows/test.yml`. Zaczynamy od zdefiniowania nazwy workflow oraz zdarzeń uruchamiających:
 
-```yml
-## Select image from https://hub.docker.com/_/php/
-image: ubuntu:16.10
+```yaml
+name: Test Suite
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 ```
 
-Następnie podpinamy serwisy, które mogły by być instalowane ręcznie, ale dla uproszczenia przygotowano je w formie gotowych do wpięcia komponentów:
+Następnie definiujemy zadanie `test`, które uruchamia się na środowisku `ubuntu-latest`. Podpinamy również usługę bazy danych MariaDB jako osobny kontener w sekcji `services`:
 
-```yml
-services:
-- mysql:8
-- php:7
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mariadb:
+        image: mariadb:latest
+        env:
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'yes'
+          MARIADB_DATABASE: inc
+        ports:
+          - 3307:3306
+        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_TCP_PORT: 3307
+      MYSQL_USER: root
+      MYSQL_PWD: ""
 ```
 
-Definiujemy zmienne wykorzystywane do łączenia z bazą danych:
+W kolejnych krokach (`steps`) pobieramy kod repozytorium, instalujemy niezbędne zależności systemowe oraz moduł Perl `Text::CSV_XS`, ładujemy parametry do bazy danych i uruchamiamy nasz pakiet testów:
 
-```yml
-variables:
-  # Configure mysql service (https://hub.docker.com/_/mysql/)
-  MYSQL_DATABASE: inc
-  MYSQL_ROOT_PASSWORD: pass
+```yaml
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure MariaDB client credentials (~/.my.cnf)
+        run: |
+          cat << 'EOF' > ~/.my.cnf
+          [client]
+          user = root
+          host = 127.0.0.1
+          port = 3307
+          EOF
+          chmod 600 ~/.my.cnf
+
+      - name: Install dependencies
+        run: |
+          SUDO=""
+          command -v sudo >/dev/null 2>&1 && SUDO="sudo"
+          $SUDO apt-get update
+          $SUDO apt-get install -y gfortran fpc mono-devel nodejs python3 perl libtext-csv-perl libtext-csv-xs-perl libdbi-perl libdbd-sqlite3-perl mariadb-client curl bc
+          bash install.sh || true
+
+      - name: Load database parameters
+        run: |
+          perl util/parameters_load.pl
+
+      - name: Run test suite
+        run: |
+          bash test.sh
 ```
 
-Określamy zestaw instrukcji do wykonania przed testami:
-
-```yml
-before_script:
-- bash install.sh
-- perl util/parameters_load.pl
-- export MYSQL_PWD=$MYSQL_ROOT_PASSWORD;
-- export MYSQL_HOST="mysql";
-- echo "SELECT 'OK';" | mysql --user=root "$MYSQL_DATABASE"
-
-# local variables
-#  https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html
-```
-
-W ich skład wchodzi instalacja naszych zależności, ładowanie parametrów, eksportowanie zmiennych środowiskowych do łączenia z bazą i prosty test na połączenie.
-
-Główna część, czyli testowanie zawarte jest w poniższym fragmencie kodu;
-
-```yml
-test:
-  image: mysql
-  image: php
-  script:
-  - bash test.sh
-```
-
-Żeby przetestować kod lokalnie wykonujemy komendę:
-
-```bash
-sudo gitlab-ci-multi-runner exec docker test
-```
+Dzięki temu przy każdym commicie wysłanym do repozytorium GitHub automatycznie uruchamia środowisko testowe i sprawdza, czy wszystkie testy jednostkowe przechodzą pomyślnie.
 
 To już wszystko. Mam nadzieję, że ten artykuł uświadomił Ci, że wybór języka może mieć ogromne znaczenie dla wydajności oraz przybliżył Ci historię kilku z nich. Jednak najważniejsze, że ten kod został przygotowany tak, aby łatwo było go rozszerzyć o pomiary dotyczące zadań jak na przykład zapis do pliku, albo wykonywanie całkowania numerycznego. Jeśli będziesz zainteresowany rozwijaniem tego softu daj znać, mam parę koncepcji, w którą stronę można by rozwinąć ten projekt.

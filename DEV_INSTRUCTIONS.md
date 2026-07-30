@@ -5,7 +5,6 @@ This file contains development notes, tasks, and setup instructions preserved fr
 ## Real dates of drafts
 
 ```
-2017-01-17-aplikacja-z-fosuserbundle-i-api-google-maps.md
 2017-02-13-analiza-wydajności-pustych-pętli-w-16-językach.md
 2017-02-14-pomiar-ilości-tekstu-i-kodu-w-moich-wpisach.md
 2017-06-16-instalacja-odnawialnego-certyfikatu-tls.md
@@ -131,7 +130,24 @@ Raport z przeglądu strony domowej Daniela przed przesiadką z Ghost na Astro.
 - [ ] M1: Serwer ma otwarte wiele portów, które prowadzą w to samo miejsce. Czy to jest związane z Cloudflare?
 - [ ] M2: W wielu miejscach odwołujesz się do `preciselab.fra1.digitaloceanspaces.com`. Sprawdź, czy to jest zamierzone.
 
+## Images generation
 
+Prompt
+
+Cyberpunk magenta, Tokyo night, be artistic use geometry and colors
+
+spróbuj w bardziej bajkowym, animowanym klimacie, bardziej skup się na kolarach magenta, nie tak dużo kolorów, bardziej przycień to, niech będzie mocniej stonowane i kształty delikatniejsze, nie tak dynamiczne, ogólnie ciemniejszy obraz z dominującymi przejściami od różu do niebieskości granatu, ale raczej magenta jako dominujący
+
+Element 	Color Hex 	Description
+Background 	#070825 / #0D0F31 	Deep Synthwave Dark
+Foreground 	#F1F1F1 	Bright Readable Text
+Cyan 	#46BDFF / #59E1E3 	Active Workspace & Links
+Magenta 	#FF16B0 	Borders, Accents & Alerts
+Violet 	#F806FA 	Special Highlights
+Lime 	#B3F361 	Cursor & Success Indicators
+Yellow 	#FFEA16 	Degraded Status & Warnings
+
+https://github.com/juanmnl/vs-1984/blob/master/themes/1984-fancy-color-theme.json
 
 
 Seo roadmap:
