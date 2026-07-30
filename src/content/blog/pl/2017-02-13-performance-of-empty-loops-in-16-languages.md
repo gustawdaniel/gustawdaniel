@@ -1595,4 +1595,20 @@ W kolejnych krokach (`steps`) pobieramy kod repozytorium, instalujemy niezbędne
 
 Dzięki temu przy każdym commicie wysłanym do repozytorium GitHub automatycznie uruchamia środowisko testowe i sprawdza, czy wszystkie testy jednostkowe przechodzą pomyślnie.
 
+#### Testowanie GitHub Actions lokalnie z użyciem `act`
+
+Jedną z zalet nowoczesnego CI/CD jest możliwość lokalnego uruchamiania całego workflow bez konieczności robienia commitów i czekania na runnera w chmurze. Służy do tego narzędzie [act](https://github.com/nektos/act), które emuluje środowisko GitHub Actions w lokalnych kontenerach Docker.
+
+Aby uruchomić testy lokalnie:
+
+```bash
+# Instalacja narzędzia act (np. na Arch Linux)
+paru -S act
+
+# Uruchomienie lokalnego pipeline z użyciem nowoczesnego obrazu Ubuntu
+act -P ubuntu-latest=catthehacker/ubuntu:act-latest
+```
+
+Narzędzie `act` podepnie lokalny kontener Dockera, uruchomi zdefiniowane serwisy (takie jak MariaDB) i wykona dokładnie te same kroki, które uruchamiają się na serwerach GitHub.
+
 To już wszystko. Mam nadzieję, że ten artykuł uświadomił Ci, że wybór języka może mieć ogromne znaczenie dla wydajności oraz przybliżył Ci historię kilku z nich. Jednak najważniejsze, że ten kod został przygotowany tak, aby łatwo było go rozszerzyć o pomiary dotyczące zadań jak na przykład zapis do pliku, albo wykonywanie całkowania numerycznego. Jeśli będziesz zainteresowany rozwijaniem tego softu daj znać, mam parę koncepcji, w którą stronę można by rozwinąć ten projekt.
