@@ -24,7 +24,7 @@ zef install WWW
 ~~We're downloading the source code from gist~~
 
 ```Bash
- wget https://gist.githubusercontent.com/gustawdaniel/a4bb55473e8e4399a5b087f1979e78d0/raw/3427bbd1f6b68c75e0481eaee0fc6f466db8af6d/count_text_and_code.pl -O count_text_and_code.pl
+wget https://gist.githubusercontent.com/gustawdaniel/a4bb55473e8e4399a5b087f1979e78d0/raw/3427bbd1f6b68c75e0481eaee0fc6f466db8af6d/count_text_and_code.pl -O count_text_and_code.pl
 ```
 
 And ready.

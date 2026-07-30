@@ -115,7 +115,7 @@ For these instructions you do not need `+nightly` flag or `rust-toolchain.toml` 
 
 It works perfectly on modern `x86_64` cpus printing output:
 
-```
+```rust
 Vector a: __m128(2.0, 3.0, 5.0, 1.0)
 Vector b: __m128(1.0, 5.0, 3.0, 4.0)
 Result: [3.0, 8.0, 8.0, 5.0]
@@ -123,8 +123,7 @@ Result: [3.0, 8.0, 8.0, 5.0]
 
 but on other architectures (like ARM) it will fail with:
 
-```
-
+```rust
 error[E0425]: cannot find function `_mm_set_ps` in this scope
  --> src/bin/core.rs:6:17
   |
