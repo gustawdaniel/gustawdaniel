@@ -308,23 +308,100 @@ Mając 4 działające i w 100% zgodne skrypty, zmierzyłem czas potrzebny na prz
 | Język / Środowisko | Biblioteka HTTP / Parser | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Miejsce |
 | :--- | :--- | :---: | :---: | :---: |
 | **Perl 5** | `Mojo::UserAgent` + `Mojo::DOM` | **`6.542 s`** | `1.849 s` | 🥇 **1. miejsce** |
-| **Rust** (Release) | `ureq` + `scraper` | **`11.123 s`** | **`0.355 s`** | 🥈 **2. miejsce** |
+| **Rust** (Wersja podstawowa) | `ureq` + `scraper` (Release) | **`6.179 s`** | **`0.313 s`** | 🥈 **2. miejsce** |
 | **Python** (`uv`) | `httpx` + `selectolax` | **`12.068 s`** | `0.779 s` | 🥉 **3. miejsce** |
 | **Raku** | `WWW` + `DOM::Tiny` | **`1m 23.241 s`** | `1m 01.892 s` | 4. miejsce |
 
-### Dlaczego kilkunastoletni Perl 5 wygrał z Rustem?
+### Dlaczego kilkunastoletni Perl 5 wygrał z podstawową wersją w Ruste?
 
-Na pierwszy rzut oka wynik wywołuje szok: **jak Perl 5 mógł okazać się prawie 2-krotnie szybszy od skompilowanego Rusta?**
+Na pierwszy rzut oka wynik wywołuje szok: **jak Perl 5 mógł okazać się znikomo wolniejszy lub wręcz dorównywać zoptymalizowanemu kodowi w Ruste?**
 
 Wgląd w parametry CPU zdradza prawdę:
-* **Rust wykorzystał zaledwie 0.35 s czasu procesora**. Samo parsowanie HTML w Rust było błyskawiczne.
-* **Perl 5 zużył 1.85 s CPU**, ale zakończył całe zadanie w **6.54 s**.
+* **Rust wykorzystał zaledwie 0.31 s czasu procesora**. Samo parsowanie HTML w Rust było błyskawiczne.
+* **Perl 5 zużył 1.85 s CPU**, ale zakończył całe zadanie w podobnym czasie **6.54 s**.
 
 Powód leży w **warstwie sieciowej HTTP i utrzymywaniu sesji (HTTP Keep-Alive)**:
 1. `Mojo::UserAgent` w Perlu domyślnie inicjalizuje **pulę otwartych połączeń HTTP/1.1**. Po pobraniu pierwszego artykułu połączenie TCP oraz uścisk dłoni TLS (*TLS Handshake*) są wielokrotnie reużywane dla kolejnych 67 zapytań.
-2. Skrypt w Ruste wywoływał `ureq::get(&url).call()` w pętli. Bez jawnie utworzonego agenta z pulą połączeń, dla każdego z 68 zapytań nawiązywane było **nowe połączenie TCP i nowy handshake TLS**.
+2. Podstawowa wersja skryptu w Ruste wywoływała statyczną funkcję `ureq::get(&url).call()` w pętli. Bez jawnie utworzonego agenta z pulą połączeń, dla każdego z 68 zapytań nawiązywane było **nowe połączenie TCP i nowy handshake TLS**.
 
-Opóźnienia sieciowe (RTT) i nawiązywanie szyfrowania TLS dla 68 osobnych połączeń całkowicie zdominowały czas wykonania. Wynik ten pokazał najważniejszą lekcję inżynierii oprogramowania: **optymalizacja algorytmiczna i szybkość parsera są bezużyteczne, jeśli wąskim gardłem jest I/O i braki w optymalizacji protokołu sieciowego**.
+Opóźnienia sieciowe (RTT) i nawiązywanie szyfrowania TLS dla 68 osobnych połączeń całkowicie zdominowały czas wykonania.
+
+---
+
+## Reorganizacja w Ruste: Pula połączeń HTTP (`connection_pool.rs`)
+
+Znając przyczynę słabszego wyniku podstawowego skryptu w Ruste, wprowadziłem zoptymalizowany wariant w pliku `rust/src/bin/connection_pool.rs`.
+
+Porównajmy kluczowe fragmenty obu skryptów:
+
+### 1. Wersja podstawowa (`rust/src/main.rs`)
+W wersji domyślnej każde wywołanie `ureq::get` tworzy osobny, jednorazowy obiekt zapytania bez przechowywania stanu puli sesji:
+
+```rust
+// rust/src/main.rs - brak puli połączeń
+let body: String = ureq::get(BASE_URL).call()?.into_string()?;
+
+for element in fragment.select(&selector) {
+    // Tworzenie osobnego połączenia TCP + TLS Handshake dla każdego posta:
+    let post_body: String = ureq::get(&url).call()?.into_string()?;
+}
+```
+
+### 2. Wersja z pulą połączeń (`rust/src/bin/connection_pool.rs`)
+W wersji zoptymalizowanej tworzymy jawną instancję `ureq::Agent::new_with_defaults()`, która przechowuje pulę otwartych połączeń TCP i reużywa je za pomocą nagłówka HTTP Keep-Alive:
+
+```rust
+// rust/src/bin/connection_pool.rs - jawny agent z pulą połączeń
+let agent = ureq::Agent::new_with_defaults();
+
+let body: String = agent.get(BASE_URL).call()?.into_string()?;
+
+for element in fragment.select(&selector) {
+    // Reużywanie istniejącego połączenia TLS dzięki tej samej instancji agenta:
+    let post_body: String = agent.get(&url).call()?.into_string()?;
+}
+```
+
+---
+
+### Wyniki eksperymentu wydajnościowego
+
+Przeprowadziłem porównawczy test wydajnościowy dla obu wariantów w trybie deweloperskim (`cargo run`) oraz w skompilowanej wersji produkcyjnej (`--release`):
+
+#### 1. Tryb deweloperski (niezoptymalizowany `debug`):
+```bash
+$ time cargo run --bin rust
+# ... 68 artykułów ...
+real    0m8.284s
+user    0m2.584s
+sys     0m0.055s
+
+$ time cargo run --bin connection_pool
+# ... 68 artykułów ...
+real    0m4.978s
+user    0m1.969s
+sys     0m0.041s
+```
+W trybie debug wprowadzenie puli połączeń skróciło czas wykonania z **8.28 s do 4.97 s** (o ponad 40%).
+
+#### 2. Tryb produkcyjny (`--release`):
+W zoptymalizowanej wersji produkcyjnej spadek czasu wykonania jest spektakularny:
+
+| Wariant programu Rust | Utrzymywanie sesji (Keep-Alive) | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Skok wydajności |
+| :--- | :---: | :---: | :---: | :---: |
+| **Rust Standard** (`src/main.rs`) | ❌ Brak (`ureq::get`) | **`6.179 s`** | `0.313 s` | – |
+| **Rust Connection Pool** (`src/bin/connection_pool.rs`) | ✅ Tak (`ureq::Agent`) | **`3.269 s`** | `0.231 s` | ⚡ **Prawie 2x szybciej!** |
+
+### Ostateczny klasyfikacja wydajności:
+
+| Język / Wariant | Biblioteka HTTP / Parser | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Miejsce |
+| :--- | :--- | :---: | :---: | :---: |
+| **Rust (`connection_pool`)** | `ureq::Agent` + `scraper` (Release) | **`3.269 s`** | **`0.231 s`** | 🥇 **1. miejsce** |
+| **Perl 5** | `Mojo::UserAgent` + `Mojo::DOM` | **`6.542 s`** | `1.849 s` | 🥈 **2. miejsce** |
+| **Python** (`uv`) | `httpx` + `selectolax` | **`12.068 s`** | `0.779 s` | 🥉 **3. miejsce** |
+| **Raku** | `WWW` + `DOM::Tiny` | **`1m 23.241 s`** | `1m 01.892 s` | 4. interim |
+
+Zastosowanie `ureq::Agent` pozwoliło Rustowi osiągnąć fenomenalny czas **3.27 s** dla wszystkich 68 artykułów – wyprzedzając Perla 5 dwukrotnie i wygrywając wyścig zarówno w szybkości I/O, jak i w minimalnym zużyciu zasobów procesora.
 
 ---
 
@@ -336,3 +413,4 @@ To, co miało być zwykłym wyliczeniem statystyk bloga, zmieniło się w niesam
 2. **Drzewo DOM**: Należy precyzyjnie kontrolować kontekst zagnieżdżenia elementów (takich jak `<pre>`) w kodzie HTML.
 3. **Specyfikacja Unicode**: Zanim porównasz długość stringów w różnych językach, upewnij się, czy mierzysz **grafemy (NFG)**, **punkty kodowe (Code Points)**, czy **bajty UTF-8**.
 4. **Wydajność sieciowa**: Utrzymywanie trwałej sesji HTTP (Keep-Alive) ma drastycznie większy wpływ na czas wykonania skryptów sieciowych niż sam wybór języka programowania czy szybkość parsera HTML.
+
