@@ -4,11 +4,11 @@ canonicalName: scraping-data-in-perl-language
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 description: The article presents a simple scraper written in Perl 5. Despite handling three data records, its code is remarkably short.
 excerpt: The article presents a simple scraper written in Perl 5. Despite handling three data records, its code is remarkably short.
-publishDate: 2021-05-11 20:37:00+00:00
+publishDate: 2017-08-05 20:37:00+00:00
 slug: en/data-scraping-in-perl
 tags:
-- perl
-- scraping
+  - perl
+  - scraping
 title: Data scraping in Perl
 updateDate: 2021-06-22 09:00:09+00:00
 ---
@@ -35,7 +35,7 @@ git clone git@github.com:gustawdaniel/scraper.git && cd scraper
 
 The scraping process can be divided into two phases: data retrieval and processing them. In some cases - when what we download determines what we will be downloading
 
-* they should overlap, but they do not have to in our case. The file `app.pl` will be responsible for data retrieval, and `json.pl` for analysis. Files with the `.pm` extension are modules, classes, or libraries that we write ourselves, but they are not executable code for the application. Here we have the `Loader.pm` module responsible for recognizing the parameter passed to `app.pl` and loading one of the three available configurations from the `*Config.pm` files.
+- they should overlap, but they do not have to in our case. The file `app.pl` will be responsible for data retrieval, and `json.pl` for analysis. Files with the `.pm` extension are modules, classes, or libraries that we write ourselves, but they are not executable code for the application. Here we have the `Loader.pm` module responsible for recognizing the parameter passed to `app.pl` and loading one of the three available configurations from the `*Config.pm` files.
 
 Since the first action for both `app.pl` and `json.pl` is indeed loading the configuration, we will start by discussing the modules. To be a module, the code must be declared with the `package` statement:
 

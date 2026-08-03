@@ -4,7 +4,7 @@ canonicalName: scraping-data-in-perl-language
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/f2b67965-a6e0-4112-8ff2-ae3330414969.avif
 description: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania trzech rejestrów danych jego kod jest wyjątkowo krótki.
 excerpt: Artykuł prezentuje prosty scraper napisany w perlu 5. Mimo obsługiwania trzech rejestrów danych jego kod jest wyjątkowo krótki.
-publishDate: 2021-05-11 20:37:00+00:00
+publishDate: 2017-08-05 20:37:00+00:00
 slug: pl/scrapowanie-danych-w-jezyku-perl
 tags:
 - perl
@@ -390,5 +390,5 @@ Screen z widokiem przetworzonych danych
 
 ## Podsumowanie
 
-Program był pisany około pół roku temu. Teraz przed publikacją standardowo odrobinę go dopracowałem. Zastosowano w nim staroszkolną metodę oobsługi obiektów w Perlu. Warto wspomnieć, że istnieją w nim również biblioteki jak [Moose](https://metacpan.org/pod/release/ETHER/Moose-2.0802/lib/Moose.pm), albo [Moo](https://metacpan.org/pod/Moo) które wprowadzają obiekty dodając do nich trochę tzw. "cukru składniowego". Jednak znacznie ciekawsze jest to, że dokładnie dwa tygodnie temu - 24 lipca wyszła stabilna wersja interpretera szóstej wersji języka Perl. Wprowadza ona obiektowość jako część natywnej składni języka. Zapewnia przy tym lepsze typowanie, czyli łata chyba ten główny brak Perla 5, przez który trudno było pisać w nim bezpiecznie. Być może oznacza to, że perl 6 powróci do wyższych poziomów
+Program był pisany około pół roku temu. Teraz przed publikacją standardowo odrobinę go dopracowałem. Zastosowano w nim staroszkolną metodę obsługi obiektów w Perlu. Warto wspomnieć, że istnieją w nim również biblioteki jak [Moose](https://metacpan.org/pod/release/ETHER/Moose-2.0802/lib/Moose.pm), albo [Moo](https://metacpan.org/pod/Moo) które wprowadzają obiekty dodając do nich trochę tzw. "cukru składniowego". Jednak znacznie ciekawsze jest to, że dokładnie dwa tygodnie temu - 24 lipca wyszła stabilna wersja interpretera szóstej wersji języka Perl. Wprowadza ona obiektowość jako część natywnej składni języka. Zapewnia przy tym lepsze typowanie, czyli łata chyba ten główny brak Perla 5, przez który trudno było pisać w nim bezpiecznie. Być może oznacza to, że perl 6 powróci do wyższych poziomów
 popularności.
