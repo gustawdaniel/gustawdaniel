@@ -4,7 +4,7 @@ canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-jav
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/014d0920-5eca-46f4-b476-960e0fa98596.avif
 description: Este proyecto simple es excelente como introducción a la programación en JavaScript. El énfasis está en los elementos de ES6 y el frontend.
 excerpt: Este proyecto simple es excelente como introducción a la programación en JavaScript. El énfasis está en los elementos de ES6 y el frontend.
-publishDate: 2021-04-20 21:46:37+00:00
+publishDate: 2018-02-13 21:46:37+00:00
 slug: es/fetch-promesa-y-cadena-de-plantilla-en-ejemplo-de-lista-de-tareas-en-javascript
 tags:
 - js

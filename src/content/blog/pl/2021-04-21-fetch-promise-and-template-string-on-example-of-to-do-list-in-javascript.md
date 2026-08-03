@@ -4,7 +4,7 @@ canonicalName: fetch-promise-and-template-string-on-example-of-to-do-list-in-jav
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/014d0920-5eca-46f4-b476-960e0fa98596.avif
 description: Ten prosty projekt jest doskonałym wprowadzeniem do programowania w JavaScript. Nacisk kładzie się na elementy ES6 i frontend.
 excerpt: Ten prosty projekt jest doskonałym wprowadzeniem do programowania w JavaScript. Nacisk kładzie się na elementy ES6 i frontend.
-publishDate: 2021-04-20 21:46:37+00:00
+publishDate: 2018-02-13 21:46:37+00:00
 slug: pl/fetch-promise-oraz-string-templates
 tags:
 - js

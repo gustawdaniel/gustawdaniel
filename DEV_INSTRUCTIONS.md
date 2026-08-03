@@ -5,11 +5,6 @@ This file contains development notes, tasks, and setup instructions preserved fr
 ## Real dates of drafts
 
 ```
-2017-02-13-analiza-wydajności-pustych-pętli-w-16-językach.md
-2017-02-14-pomiar-ilości-tekstu-i-kodu-w-moich-wpisach.md
-2017-06-16-instalacja-odnawialnego-certyfikatu-tls.md
-2017-08-05-scrapowanie-danych-w-języku-perl.md
-2018-02-13-fetch-promise-oraz-string-templates.md
 2018-02-20-xss-attack-using-script-style-and-image.md
 2018-02-21-snake-game-in-javascript-part-1-objects.md
 2018-03-19-snake-game-in-javascript-part-2-events.md

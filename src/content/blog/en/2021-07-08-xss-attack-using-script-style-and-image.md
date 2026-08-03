@@ -4,7 +4,7 @@ canonicalName: xss-attack-using-script-style-and-image
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
 description: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
 excerpt: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
-publishDate: 2021-07-08 13:51:40+00:00
+publishDate: 2018-02-20 13:51:40+00:00
 slug: en/xss-attack-using-script-style-and-image
 tags:
 - xss

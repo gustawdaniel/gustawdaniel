@@ -4,7 +4,7 @@ canonicalName: xss-attack-using-script-style-and-image
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
 description: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
 excerpt: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
-publishDate: 2021-07-08 13:51:40+00:00
+publishDate: 2018-02-20 13:51:40+00:00
 slug: pl/xss-attack-using-script-style-and-image
 tags:
 - xss
