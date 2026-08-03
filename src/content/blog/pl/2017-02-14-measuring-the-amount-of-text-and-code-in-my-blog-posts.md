@@ -3,9 +3,8 @@ author: Daniel Gustaw
 canonicalName: measuring-the-amount-of-text-and-code-in-my-blog-posts
 coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/15be2f16-3724-4012-b7a9-d9a4ee508c13.avif
 description: Eksperymentalne badanie ilości kodu i tekstu w 68 wpisach na blogu w 4 językach (Perl 5, Raku, Python, Rust) wraz z analizą wydajności I/O i HTTP Keep-Alive.
-draft: false
 publishDate: 2017-02-14T00:00:00.000Z
-slug: pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
+slug: pl/pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
 tags: ['perl', 'raku', 'python', 'rust', 'benchmark', 'unicode', 'http']
 title: Pomiar ilości tekstu i kodu w moich wpisach
 updateDate: 2026-08-03T00:00:00.000Z
