@@ -1,28 +1,28 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
-description: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
-excerpt: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów skryptu, stylu lub obrazu. Możesz zobaczyć, jak zastąpić zawartość strony swoją własną, nawet bez javascriptu.
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7c750097-483e-409c-adba-7c3f66821283.avif
+description: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów script, style lub image. Zobacz, jak zastąpić zawartość strony swoją własną, nawet bez JavaScriptu.
+excerpt: Dowiedz się, jak zainfekować stronę za pomocą ataku XSS przy użyciu tagów script, style lub image. Zobacz, jak zastąpić zawartość strony swoją własną, nawet bez JavaScriptu.
 publishDate: 2018-02-20 13:51:40+00:00
 slug: pl/xss-attack-using-script-style-and-image
 tags:
 - xss
 - hacking
 - attack
-title: Atak XSS przy użyciu stylu skryptu i obrazu
+title: Atak XSS przy użyciu znaczników script, style i image
 updateDate: 2021-07-08 13:51:40+00:00
 ---
 
-Artykuł ten opisuje przykłady ataków XSS. Użycie znaczników skryptu jest prawdopodobnie najbardziej znanym przypadkiem, ale istnieją również inne możliwości. Możesz zmienić zawartość strony internetowej samodzielnie, używając znacznika obrazu lub czystego CSS.
+Artykuł ten opisuje przykłady ataków XSS. Użycie znaczników `<script>` jest prawdopodobnie najbardziej znanym przypadkiem, ale istnieją również inne możliwości. Możesz zmienić zawartość strony internetowej, używając znacznika `<img>` lub czystego CSS.
 
-To materiał edukacyjny i powinieneś pamiętać, że hakowanie jest nielegalne, jeśli zostaniesz przyłapany na gorącym uczynku. :)
+To materiał edukacyjny — pamiętaj, że hakowanie bez zgody właściciela jest nielegalne! :)
 
 ## Kod strony
 
-Aby zaprezentować atak, tworzymy prostą stronę internetową opartą na PHP. Bardzo lubię oddzielać logikę od widoku w kodzie, ale dla uproszczenia i zminimalizowania liczby linii kodu połączyliśmy je, a cały kod strony znajduje się w pliku index.php. Aby uzyskać podatną stronę, musi ona być w stanie zapisywać tekst od użytkownika do bazy danych i wyświetlać go na ekranie bez jego filtrowania.
+Aby zaprezentować atak, tworzymy prostą stronę internetową opartą na PHP. Zazwyczaj oddzielamy logikę od widoku, ale dla uproszczenia i zminimalizowania liczby linii kodu połączyliśmy je, a cały kod strony znajduje się w pliku `index.php`. Aby uzyskać podatną stronę, musi ona być w stanie zapisywać tekst od użytkownika i wyświetlać go na ekranie bez wcześniejszego filtrowania.
 
-Ponownie, w celu uproszczenia i jasności, rezygnujemy z najlepszych praktyk i używamy pliku json zamiast baz danych. Pierwszym plikiem naszego projektu jest `db.json`
+W celu uproszczenia rezygnujemy z bazy danych i używamy pliku JSON. Pierwszym plikiem naszego projektu jest `db.json`:
 
 > db.json
 
@@ -30,7 +30,7 @@ Ponownie, w celu uproszczenia i jasności, rezygnujemy z najlepszych praktyk i u
 ["First comment","Second one"]
 ```
 
-Aby zapisać komentarze wysyłane za pomocą skryptu PHP, wykonaj następujące czynności:
+Aby zapisać komentarze wysyłane za pomocą skryptu PHP, wykonujemy następujące czynności:
 
 > index.php
 
@@ -45,12 +45,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 ```
 
 * Odczytaj zawartość pliku `db.json` i przekształć ją na tablicę PHP.
-* Sprawdź, czy użytkownik wysyła zapytanie metodą POST - oznacza to, że wysyła formularz.
-* Jeśli tak
-* Dodaj komentarz przesłany przez użytkownika do tablicy.
-* Nadpisz plik `db.json`, kodując tablicę z nowym komentarzem w formacie JSON.
+* Sprawdź, czy użytkownik wysyła zapytanie metodą POST (wysłanie formularza).
+* Jeśli tak:
+  * Dodaj komentarz przesłany przez użytkownika do tablicy.
+  * Nadpisz plik `db.json`, kodując zaktualizowaną tablicę w formacie JSON.
 
-Niezależnie od metody zapytania skrypt przechodzi dalej i wyświetla formularz oraz listę komentarzy.
+Niezależnie od metody zapytania, skrypt wyświetla formularz oraz listę komentarzy:
 
 > index.php
 
@@ -67,69 +67,76 @@ foreach ($comments as $comment) {
 echo '</ul>';
 ```
 
-Utworzona strona internetowa wygląda następująco
+Możesz uruchomić serwer za pomocą polecenia:
+
+```bash
+php -S localhost:8000
+```
+
+Utworzona strona internetowa wygląda następująco:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
-Jest w pełni funkcjonalny, pozwala na dodawanie komentarzy, zapisywanie ich w formacie json i wyświetlanie listy komentarzy. Jeśli użytkownicy chcą dodać tekst, a nie włamać się, może to być koniec naszej przygody. Ale powinniśmy założyć, że przynajmniej jeden użytkownik strony internetowej chce się włamać. :)
+Strona jest w pełni funkcjonalna — pozwala na dodawanie komentarzy, zapisywanie ich w formacie JSON i wyświetlanie ich listy. Gdyby użytkownicy chcieli dodawać tylko zwykły tekst, na tym moglibyśmy zakończyć. Musimy jednak założyć, że przynajmniej jeden użytkownik będzie chciał przeprowadzić atak. :)
 
-## Jak to włamać?
+## Jak przeprowadzić atak?
 
-Ten przepływ danych - zapisywanie na serwerze i wyświetlanie po stronie klienta - umożliwia atak XSS, jeśli tekst nie jest odpowiednio filtrowany. XSS oznacza Cross-site scripting i umożliwia atakującym wstrzykiwanie skryptów po stronie klienta do stron internetowych przeglądanych przez innych użytkowników.
+Ten przepływ danych — zapisywanie na serwerze i wyświetlanie po stronie klienta — umożliwia przeprowadzenie ataku XSS, jeśli tekst nie zostanie odpowiednio przefiltrowany. XSS (Cross-Site Scripting) umożliwia wstrzyknięcie skryptów po stronie klienta do stron oglądanych przez innych użytkowników.
 
-Dodany kod wykonywalny jest interpretowany przez przeglądarkę, a nie serwer, więc nie możemy na nim zdobyć serwera, ale możemy wymienić zachowanie klienta. Przykładowe korzyści dla atakujących to:
+Dodany kod jest interpretowany przez przeglądarkę, a nie serwer. Nie przejmujemy więc samego serwera, ale kontrolujemy zachowanie przeglądarki klienta. Przykładowe cele atakującego to:
 
-* kradzież ciasteczek (sesyjnych) - przejęcie kontroli nad (zalogowaną) sesją ofiary
-* dynamiczna zmiana treści strony internetowej
-* włączenie key loggera w przeglądarce
+* Kradzież ciasteczek sesyjnych — przejęcie kontroli nad zalogowaną sesją ofiary.
+* Dynamiczna zmiana treści strony.
+* Uruchomienie keyloggera w przeglądarce.
 
-Skrypt może być przechowywany na serwerze lub zawarty w linku. W naszym przypadku chcemy zapisać skrypt do pliku json, wpisując komentarze. Interesuje nas zmiana treści strony internetowej na "Hacked by Daniel". W każdym przypadku przedstawionej poniżej metody ataku strona będzie wyglądać następująco:
+Skrypt może być zapisany w bazie/pliku na serwerze lub przekazany w linku. W naszym przypadku zapisujemy skrypt do pliku `db.json` poprzez formularz komentarzy. Chcemy zmienić treść strony na "Hacked by Daniel". Po zastosowaniu każdej z poniższych metod strona będzie wyglądać tak:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
-### Skrypt
+### Tag Script
 
-Najprostszym sposobem jest dołączenie skryptu, który dynamicznie po załadowaniu strony zmienia jego zawartość na wymaganą. Spróbuj dodać komentarz:
+Najprostszym sposobem jest dodanie znacznika `<script>`, który dynamicznie po załadowaniu strony zmienia jej zawartość:
 
 ```html
 <script>document.querySelector('html').innerHTML="Hacked By Daniel"</script>
 ```
 
-Ten kod wybiera `html` - oznacza to całą stronę i zmienia jej zawartość za pomocą właściwości `innerHTML`.
+Ten kod wybiera element główny `html` i podmienia całą jego zawartość za pomocą właściwości `innerHTML`.
 
-### Styl
+### Tag Style
 
-Inna metoda działa nawet jeśli znaczniki javascript są usuwane, a javascript jest wyłączony w przeglądarce.
+Inna metoda działa nawet w sytuacji, gdy tagi `<script>` są filtrowane, a JavaScript wyłączony w przeglądarce:
 
 ```html
 <style>html::before {content: "Hacked By Daniel";} body {display: none;}</style>
 ```
 
-Zdefiniowaliśmy dwie zasady dotyczące stylizacji strony internetowej. Pierwsza mówi przeglądarce, aby dodała tekst `Hacked By Daniel` przed treściami strony. Druga mówi, aby nie wyświetlać ciała.
+Zdefiniowaliśmy dwie reguły CSS. Pierwsza dodaje tekst `Hacked By Daniel` przed elementem body, a druga całkowicie ukrywa oryginalną treść strony (`body`).
 
-### Obraz
+### Tag Image
 
-Oczywiście, jeżeli zablokujemy tag `script` i tag `style` w naszych komentarzach, to nie wystarczy, ponieważ możemy uruchomić skrypt również w innych tagach.
+Filtrowanie tagów `<script>` i `<style>` w komentarzach nie wystarczy, ponieważ skrypty można uruchamiać również w zdarzeniach innych tagów HTML:
 
 ```html
 <img src=undefined onerror='document.querySelector("html").innerHTML="Hacked By Daniel"'>
 ```
 
-To jest przykład obrazu, który ma nieprawidłowy adres. Jeśli adres jest nieprawidłowy, przeglądarka uruchamia skrypt będący wartością atrybutu `onerror`.
+To przykład obrazu z nieprawidłowym adresem URL. Gdy próba załadowania pliku się nie powiedzie, przeglądarka automatycznie wykona kod JavaScript zawarty w atrybucie `onerror`.
 
 ## Jak się bronić?
 
-Aby bronić się przed tym atakiem, musimy filtrować komentarze naszych użytkowników i usuwać tagi HTML. Możemy to zrobić, zmieniając kod w `index.php` w następujący sposób
+Aby obronić się przed tym atakiem, musimy filtrować dane wejściowe i uciekać (escape'ować) tagi HTML. Możemy to zrobić, modyfikując kod w `index.php`:
 
 ```diff
 -      $comments[] = $_POST["comment"];
 +      $comments[] = htmlspecialchars($_POST["comment"]);
 ```
 
-Po zastosowaniu tego poprawionego tekstu, tekst napisany w formularzu zostanie wyświetlony w listach komentarzy dosłownie jako równy tekst wpisany przez użytkownika i nie będzie interpretowany jako tag HTML.
+Po zastosowaniu tej poprawki tekst wpisany w formularzu zostanie wyświetlony dosłownie jako zwykły ciąg znaków, a nie zinterpretowany jako kod HTML:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Podsumowanie
 
-Pokazaliśmy proste przykłady ataków XSS. Jeśli używasz frameworka takiego jak Symfony, to framework ma wbudowany mechanizm bezpieczeństwa w swojej strukturze, ale powinieneś pamiętać o funkcji `htmlspecialchars`, jeśli piszesz w czystym PHP.
+Przedstawiliśmy proste przykłady ataków XSS przy użyciu różnych tagów HTML. Nowoczesne frameworki, takie jak Symfony czy Laravel, posiadają wbudowane mechanizmy chroniące przed XSS, ale pisząc w czystym PHP, zawsze należy pamiętać o używaniu funkcji takich jak `htmlspecialchars`.
+

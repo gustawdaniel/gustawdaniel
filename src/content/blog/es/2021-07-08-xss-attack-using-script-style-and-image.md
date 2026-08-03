@@ -1,28 +1,28 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
-description: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Puedes ver cómo reemplazar el contenido de la página con el tuyo incluso sin javascript.
-excerpt: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Puedes ver cómo reemplazar el contenido de la página con el tuyo incluso sin javascript.
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7c750097-483e-409c-adba-7c3f66821283.avif
+description: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Mira cómo reemplazar el contenido de la página con el tuyo incluso sin JavaScript.
+excerpt: Aprende a infectar una página usando un ataque XSS con las etiquetas script, style o image. Mira cómo reemplazar el contenido de la página con el tuyo incluso sin JavaScript.
 publishDate: 2018-02-20 13:51:40+00:00
 slug: es/xss-ataque-usando-script-estilo-e-imagen
 tags:
 - xss
 - hacking
 - attack
-title: Ataque XSS utilizando estilo de script e imagen
+title: Ataque XSS utilizando etiquetas script, style e imagen
 updateDate: 2021-07-08 13:51:40+00:00
 ---
 
-Este artículo describe ejemplos de ataques XSS. El uso de etiquetas de script es probablemente el caso más conocido, pero también hay otras posibilidades. Puedes cambiar el contenido del sitio web por tu cuenta usando una etiqueta de imagen o css puro.
+Este artículo describe ejemplos de ataques XSS. El uso de etiquetas `<script>` es probablemente el caso más conocido, pero existen otras posibilidades. Puedes cambiar el contenido de un sitio web usando una etiqueta `<img>` o CSS puro.
 
-Este es material educativo, y debes recordar que hackear es ilegal si te atrapan en el acto. :)
+Este es material educativo. ¡Recuerda que hackear sin autorización es ilegal! :)
 
 ## Código del sitio web
 
-Para presentar el ataque, creamos un sitio web simple basado en PHP. Me gusta separar la lógica y la vista en el código, pero por simplicidad y para minimizar el número de líneas de código, lo mezclamos y todo el código del sitio web se coloca en index.php. Para obtener el sitio web vulnerable, tiene que ser capaz de guardar texto del usuario en la base de datos y mostrarlo en pantalla sin filtrarlo.
+Para presentar el ataque, creamos un sitio web simple basado en PHP. Aunque la mejor práctica es separar la lógica de la vista, por simplicidad y para minimizar el número de líneas de código las combinamos en un solo archivo: `index.php`. Para crear un sitio web vulnerable, este debe guardar la entrada del usuario y mostrarla en pantalla sin filtrarla.
 
-Nuevamente, por el caso de simplicidad y claridad, abandonamos las mejores prácticas y usamos un archivo json en lugar de bases de datos. El primer archivo de nuestro proyecto es `db.json`.
+Por simplicidad, prescindimos de una base de datos y utilizamos un archivo JSON. El primer archivo de nuestro proyecto es `db.json`:
 
 > db.json
 
@@ -30,7 +30,7 @@ Nuevamente, por el caso de simplicidad y claridad, abandonamos las mejores prác
 ["First comment","Second one"]
 ```
 
-Para guardar los comentarios enviados usando un script PHP, haz lo siguiente:
+Para guardar los comentarios enviados a través del script PHP:
 
 > index.php
 
@@ -45,12 +45,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 ```
 
 * Leer el contenido del archivo `db.json` y convertirlo en un array de PHP.
-* Verificar si el usuario envía una solicitud mediante el método POST - significa enviar el formulario
-* Si es así
-* Agregar el comentario enviado por el usuario al array
-* Sobrescribir el archivo `db.json` codificando en json el array con el nuevo comentario
+* Verificar si el usuario envía una solicitud mediante el método POST (envío del formulario).
+* Si es así:
+  * Agregar el comentario enviado por el usuario al array.
+  * Sobrescribir el archivo `db.json` guardando el array actualizado en formato JSON.
 
-Independientemente del método de solicitud, el script continúa y muestra el formulario y la lista de comentarios
+Independientemente del método de solicitud, el script muestra el formulario y la lista de comentarios:
 
 > index.php
 
@@ -67,69 +67,76 @@ foreach ($comments as $comment) {
 echo '</ul>';
 ```
 
-El sitio web creado se ve como el siguiente
+Puedes iniciar el servidor local con el comando:
+
+```bash
+php -S localhost:8000
+```
+
+El sitio web creado se ve de la siguiente manera:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
-Es completamente funcional, permite agregar un comentario, guardarlo en json y mostrar una lista de comentarios. Si los usuarios quieren agregar texto, no hackear, podría ser el final de nuestra aventura. Pero debemos asumir que al menos un usuario de un sitio web quiere hackearlo. :)
+Es completamente funcional: permite agregar un comentario, guardarlo en JSON y mostrar la lista de comentarios. Si los usuarios solo quisieran agregar texto normal, aquí terminaría nuestra historia. Pero debemos asumir que al menos un usuario intentará atacar el sitio. :)
 
 ## ¿Cómo hackearlo?
 
-Este flujo de datos - guardando en el servidor y mostrando en el cliente - hace posible un ataque XSS si el texto no se filtra adecuadamente. XSS significa scripting entre sitios y permite a los atacantes inyectar scripts del lado del cliente en páginas web vistas por otros usuarios.
+Este flujo de datos (guardar en el servidor y mostrar en el cliente) permite un ataque XSS si el texto no se filtra adecuadamente. XSS (Cross-Site Scripting) permite a los atacantes inyectar scripts del lado del cliente en páginas web vistas por otros usuarios.
 
-El código ejecutable agregado es interpretado por el navegador, no por el servidor, así que no podemos conquistar el servidor con ello, pero podemos cambiar el comportamiento del cliente. Los beneficios ejemplares para los atacantes son los siguientes:
+El código ejecutable inyectado es interpretado por el navegador, no por el servidor. Por lo tanto, no tomamos el control del servidor, pero sí podemos manipular el comportamiento del cliente. Los beneficios potenciales para el atacante incluyen:
 
-* robar cookies (de sesión) - tomar control sobre la (sesión iniciada) de la víctima
-* cambio dinámico del contenido del sitio web
-* habilitar un key logger en el navegador
+* Robar cookies de sesión – tomar el control de la sesión iniciada de la víctima.
+* Cambio dinámico del contenido de la página web.
+* Habilitar un keylogger en el navegador.
 
-El script puede ser almacenado en un servidor o incluido en el enlace. En nuestro caso, queremos guardar el script en un archivo json escribiendo comentarios. Nos interesa cambiar el contenido del sitio web a "Hackeado por Daniel". En cualquier caso del método de ataque presentado a continuación, el sitio web se verá así:
+El script puede estar almacenado en el servidor o incluirse en un enlace. En nuestro caso, queremos guardar el script en el archivo `db.json` enviándolo a través del formulario de comentarios. Queremos cambiar el contenido del sitio web a "Hacked by Daniel". En cualquiera de los métodos presentados a continuación, el sitio web terminará viéndose así:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
 ### Script
 
-La forma más sencilla es agregar un script que cambie dinámicamente su contenido a lo requerido después de que se cargue sile. Intenta agregar un comentario:
+La forma más sencilla es agregar una etiqueta `<script>` que cambie dinámicamente el contenido de la página tras cargarse:
 
 ```html
 <script>document.querySelector('html').innerHTML="Hacked By Daniel"</script>
 ```
 
-Este código selecciona `html` - significa toda la página, y cambia su contenido usando la propiedad `innerHTML`.
+Este código selecciona el elemento `html` raíz (toda la página) y reemplaza su contenido usando la propiedad `innerHTML`.
 
 ### Estilo
 
-Otro método funciona incluso si las etiquetas de javascript están eliminadas y javascript está deshabilitado en el navegador.
+Otro método funciona incluso si las etiquetas `<script>` se eliminan y JavaScript está deshabilitado en el navegador:
 
 ```html
 <style>html::before {content: "Hacked By Daniel";} body {display: none;}</style>
 ```
 
-Definimos dos reglas para el estilo de un sitio web. La primera dice al navegador que añada el texto `Hacked By Daniel` antes del cuerpo de un sitio web. La segunda es que no se muestre el cuerpo.
+Definimos dos reglas CSS. La primera indica al navegador que añada el texto `Hacked By Daniel` antes del cuerpo del sitio web (`body`). La segunda oculta completamente el cuerpo de la página.
 
 ### Imagen
 
-Por supuesto, si bloqueamos la etiqueta `script` y la etiqueta `style` en nuestros comentarios no es suficiente, porque también podemos ejecutar el script en otras etiquetas.
+Bloquear las etiquetas `<script>` y `<style>` en los comentarios no es suficiente, ya que también se pueden ejecutar scripts a través de controladores de eventos en otras etiquetas HTML:
 
 ```html
 <img src=undefined onerror='document.querySelector("html").innerHTML="Hacked By Daniel"'>
 ```
 
-Este es un ejemplo de una imagen que tiene una dirección inválida. Si la dirección es inválida, el navegador ejecuta el script que es el valor del atributo `onerror`.
+Este es un ejemplo de una imagen con una dirección inválida. Cuando la carga falla, el navegador ejecuta automáticamente el script dentro del atributo `onerror`.
 
 ## ¿Cómo defenderse?
 
-Para defenderse de este ataque necesitamos filtrar los comentarios de nuestros usuarios y eliminar las etiquetas HTML. Podemos hacerlo cambiando el código en `index.php` como se muestra a continuación.
+Para defenderse de este ataque, debemos sanitizar los comentarios de los usuarios y escapar las etiquetas HTML. Podemos hacerlo modificando el código en `index.php`:
 
 ```diff
 -      $comments[] = $_POST["comment"];
 +      $comments[] = htmlspecialchars($_POST["comment"]);
 ```
 
-Después de aplicar este texto fijo, el texto escrito en el formulario se mostrará en las listas de comentarios exactamente igual al texto escrito por el usuario, y no se interpretará como etiqueta HTML.
+Después de aplicar esta corrección, el texto ingresado en el formulario se mostrará literalmente como texto en la lista de comentarios, sin ser interpretado como etiqueta HTML:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Resumen
 
-Mostramos ejemplos simples de ataques XSS. Si usas un framework como Symfony, entonces el framework tiene un mecanismo de seguridad integrado en su estructura, pero debes recordar la función `htmlspecialchars` si escribes en PHP puro.
+Mostramos ejemplos simples de ataques XSS utilizando diferentes etiquetas. Los frameworks modernos como Symfony o Laravel tienen mecanismos de seguridad integrados contra XSS, pero al escribir en PHP puro, siempre debes recordar usar funciones como `htmlspecialchars`.
+

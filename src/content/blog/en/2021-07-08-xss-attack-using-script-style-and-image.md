@@ -1,28 +1,28 @@
 ---
 author: Daniel Gustaw
 canonicalName: xss-attack-using-script-style-and-image
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/94f5cc49-c10e-49c3-ad37-095e876d51cb.avif
-description: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
-excerpt: Learn how to infect a page using an XSS attack with the script, style, or image tags. You can see how to replace the content of the page with your own even without javascript.
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/7c750097-483e-409c-adba-7c3f66821283.avif
+description: Learn how to infect a page using an XSS attack with script, style, or image tags. See how to replace page content with your own, even without JavaScript.
+excerpt: Learn how to infect a page using an XSS attack with script, style, or image tags. See how to replace page content with your own, even without JavaScript.
 publishDate: 2018-02-20 13:51:40+00:00
 slug: en/xss-attack-using-script-style-and-image
 tags:
 - xss
 - hacking
 - attack
-title: Xss attack using script style and image
+title: XSS Attack Using Script, Style, and Image Tags
 updateDate: 2021-07-08 13:51:40+00:00
 ---
 
-This article describes examples of XSS attacks. Usage of script tags is probably the most known case, but there also other possibilities. You can change the content of the website on your own using an image tag or pure css.
+This article describes examples of XSS attacks. While using `<script>` tags is probably the most known vector, there are other possibilities. You can change the content of a website using an `<img>` tag or pure CSS.
 
-This is educational material, and you should remember that hacking is illegal if you are caught red-handed. :)
+This is educational material. Remember that hacking without authorization is illegal! :)
 
-## Website code
+## Website Code
 
-To present the attack we create a simple website based on PHP. I very like separate logic and view in code, but for simplicity and to minimize the number of lines of code we mixed in, and all website code is placed in index.php. To get the vulnerable website it has to be able to save text from user to database and display it on screen without filtering of this.
+To present the attack, we create a simple website based on PHP. While separating logic and view in code is generally best practice, for simplicity and to minimize lines of code we place all website code in `index.php`. To create a vulnerable website, it must save user input to a database and display it on screen without filtering.
 
-Again for the case of simplicity and clarity, we abandon best practices and use a json file instead of databases. The first file of our project is `db.json`
+For simplicity and clarity, we abandon a full database and use a JSON file instead. The first file of our project is `db.json`:
 
 > db.json
 
@@ -30,7 +30,7 @@ Again for the case of simplicity and clarity, we abandon best practices and use 
 ["First comment","Second one"]
 ```
 
-To save comments send by using PHP script do the following things:
+To save comments sent via PHP script:
 
 > index.php
 
@@ -44,13 +44,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ```
 
-* Read content of `db.json` file and convert it to PHP array.
-* Check if the user sends a request by method POST - it means send the form
-* If yes
-* Append comment send by the user to an array
-* Override file `db.json` by json encoding array with new comment
+* Read the contents of `db.json` and parse it as a PHP array.
+* Check if the user submitted a `POST` request (form submission).
+* If yes:
+  * Append the comment sent by the user to the array.
+  * Overwrite `db.json` by JSON-encoding the updated array.
 
-Independent from the method of request script goes on and display form and list of comments
+Regardless of the request method, the script proceeds to display the form and the list of comments:
 
 > index.php
 
@@ -67,69 +67,76 @@ foreach ($comments as $comment) {
 echo '</ul>';
 ```
 
-The created website looks like the following
+You can start it by command:
+
+```bash
+php -S localhost:8000
+```
+
+The created website looks like the following:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/eb6cbfa1-de14-45e8-b5c0-aa9b8f33df89.avif)
 
-It is fully functional, allows you to add a comment, save it in json, and display a list of comments. If users want to add text, not hack it could be the end of our adventure. But we should assume that at least one user of a website wants to hack it. :)
+It is fully functional, allowing users to add a comment, save it in JSON, and display the comment list. If users only intended to submit plain text, this would be the end of our story. But we must assume that at least one user will attempt to exploit the site. :)
 
-## How to hack it?
+## How to Hack It?
 
-This flow of data - saving on the server and displaying on client make possible XSS attack if the text is not properly filtered. XSS means Cross-site scripting and enables attackers to inject client-side scripts into web pages viewed by other users.
+This flow of data—saving on the server and displaying on the client—makes XSS attacks possible if input is not properly sanitized. XSS stands for Cross-Site Scripting, enabling attackers to inject client-side scripts into web pages viewed by other users.
 
-Appended executable code is interpreted by browser, not server so we cannot conquer server by it, but can exchange client behavior. Exemplary benefits for attackers are the following:
+Injected executable code is interpreted by the browser, not the server, so we cannot compromise the server directly, but we can manipulate client-side behavior. Potential benefits for attackers include:
 
-* stealing cookies (session) - taking control over (logged in) session of the victim
-* dynamic change of website content
-* enabling key logger in browser
+* Stealing session cookies – taking control over a victim's logged-in session.
+* Dynamic modification of page content.
+* Injecting a browser keylogger.
 
-The script can be stored on a server or included in the link. In our case, we want to save the script to json file by typing comments. We are interested in change the content of the website to "Hacked by Daniel". In any case of presented below attack method website will look like this:
+The payload script can be stored on the server or included in a malicious link. In our case, we want to save the payload script into `db.json` by submitting it as a comment. Our goal is to change the content of the website to "Hacked by Daniel". In each attack method presented below, the website will end up looking like this:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f24230e5-22d7-472d-b782-03adbba46806.avif)
 
-### Script
+### Script Tag
 
-The simplest way is to append a script that dynamically after sile load changes his content to required. Try to add a comment:
+The simplest way is to append a `<script>` tag that dynamically changes the page content after loading. Try adding this comment:
 
 ```html
 <script>document.querySelector('html').innerHTML="Hacked By Daniel"</script>
 ```
 
-This code select `html` - it means all page, and change his content using `innerHTML` property.
+This code selects the `html` root element—meaning the whole page—and replaces its content using `innerHTML`.
 
-### Style
+### Style Tag
 
-Another method works even if javascript tags are stripped and javascript is disabled in the browser.
+Another method works even if `<script>` tags are stripped and JavaScript is disabled in the browser:
 
 ```html
 <style>html::before {content: "Hacked By Daniel";} body {display: none;}</style>
 ```
 
-We defined two rules for the styling of a website. The first one tells the browser to append text `Hacked By Daniel` before the body of a website. The second one to do not display body.
+We define two styling rules. The first tells the browser to append the text `Hacked By Daniel` before the document body. The second hides the body completely.
 
-### Image
+### Image Tag
 
-Of course, if we block `script` tag and `style` tag in our comments is not enough, because we can run the script also in other tags.
+Blocking `<script>` and `<style>` tags in comments is not enough, because scripts can also be executed via event handlers in other HTML tags:
 
 ```html
 <img src=undefined onerror='document.querySelector("html").innerHTML="Hacked By Daniel"'>
 ```
 
-This is an example of an image that has an invalid address. If the address is invalid browser run script being the value of the attribute `onerror`.
+This element references an invalid image URL. When loading fails, the browser immediately executes the JavaScript code inside the `onerror` attribute.
 
-## How to defense?
+## How to Defend?
 
-To defend against this attack we need to filter the comments of our users and strip HTML tags. We can do it by changing the code in `index.php` as below
+To defend against this attack, we must sanitize user input and strip or escape HTML tags. We can update `index.php` as follows:
 
 ```diff
 -      $comments[] = $_POST["comment"];
 +      $comments[] = htmlspecialchars($_POST["comment"]);
 ```
 
-After applying this fixed text written in the form will be displayed in comments lists literally equal text typed by the user, and will be not interpreted as Html tag.
+After applying this fix, text entered into the form will be rendered literally on the page instead of being parsed as HTML tags:
 
 ![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/42fe0eac-c6c6-4f93-b66e-bf2b68eb74fb.avif)
 
 ## Summary
 
-We showed simple examples of XSS attacks. If you use a framework like Symfony then framework have security mechanism build in his structure, but you should remember about `htmlspecialchars` function if you write in pure PHP.
+We have shown simple examples of XSS attacks using different tags. Modern frameworks like Symfony or Laravel have built-in security mechanisms against XSS, but when writing raw PHP, always remember to use functions like `htmlspecialchars`.
+
