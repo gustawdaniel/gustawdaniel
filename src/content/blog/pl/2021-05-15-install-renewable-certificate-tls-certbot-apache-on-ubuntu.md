@@ -1,16 +1,16 @@
 ---
 author: Daniel Gustaw
 canonicalName: install-renewable-certificate-tls-certbot-apache-on-ubuntu
-coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/c29ee70d-e79e-4738-b1dd-fa9818d798a9.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/a6bd7fa4-7508-450d-910e-74998c8f026f.avif
 description: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem apache.
 excerpt: Jest wiele metod uzyskiwania certyfikatu pozwalającego szyfrować ruch http. Jedną z nich jest instalacja certbota i użycie go w zestawieniu z serwerem apache.
-publishDate: 2021-05-14 20:38:00+00:00
+publishDate: 2017-06-16 20:38:00+00:00
 slug: pl/instalacja-odnawialnego-certyfikatu-tls
 tags:
-- https
-- ssl
-- certbot
-- ubuntu
+  - https
+  - ssl
+  - certbot
+  - ubuntu
 title: Instalacja odnawialnego certyfikatu TLS (certbot + apache na Ubuntu)
 updateDate: 2021-06-22 09:05:15+00:00
 ---
@@ -59,7 +59,7 @@ a w pliku umieszczamy linię
 
 Możemy cieszyć się już zieloną kłódką na naszej stronie.
 
-![](https://i.imgur.com/6LaRspC.png)
+![](https://preciselab.fra1.digitaloceanspaces.com/blog/img/a6bd7fa4-7508-450d-910e-74998c8f026f.avif)
 
 ## Żródła:
 
