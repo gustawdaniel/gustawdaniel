@@ -1,10 +1,14 @@
 ---
-title: Pomiar ilości tekstu i kodu w moich wpisach
-slug: pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
-publishDate: 2017-02-14T00:00:00.000Z
-updateDate: 2026-08-03T00:00:00.000Z
-draft: false
+author: Daniel Gustaw
 canonicalName: measuring-the-amount-of-text-and-code-in-my-blog-posts
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/15be2f16-3724-4012-b7a9-d9a4ee508c13.avif
+description: Eksperymentalne badanie ilości kodu i tekstu w 68 wpisach na blogu w 4 językach (Perl 5, Raku, Python, Rust) wraz z analizą wydajności I/O i HTTP Keep-Alive.
+draft: false
+publishDate: 2017-02-14T00:00:00.000Z
+slug: pomiar-ilosci-tekstu-i-kodu-w-moich-wpisach
+tags: ['perl', 'raku', 'python', 'rust', 'benchmark', 'unicode', 'http']
+title: Pomiar ilości tekstu i kodu w moich wpisach
+updateDate: 2026-08-03T00:00:00.000Z
 ---
 
 W 2017 roku, z czystej ciekawości, postanowiłem sprawdzić, jaką część moich artykułów na blogu stanowi tekst pisany, a jaką kod źródłowy. Napisałem wtedy zwięzły, 21-liniowy program w Perlu, który dał mi szybką odpowiedź.
@@ -13,7 +17,7 @@ W 2021 roku – przy okazji eksperymentów z językiem Perl 6 (obecnie Raku) –
 
 Okazało się, że tak z pozoru trywialny problem – **„zlicz znaki tekstu i kodu na stronie HTML”** – kryje pod spodem fascynujący świat inżynieryjnych niuansów. Od błędów w darmowych bibliotekach CPAN, przez subtelności zagnieżdżania w drzewie DOM, aż po specyfikację Unicode (grafemy vs punkty kodowe) i optymalizację warstwy sieciowej HTTP.
 
-W tym artykule zabiorę Cię w podróż przez kolejne próby uzgodnienia wyników w 4 językach programowania (**Perl 5**, **Raku**, **Python** oraz **Rust**), kończąc niespodziewanym werdyktem wydajnościowym, w którym kilkunastoletni Perl pokonał zoptymalizowany kod w Ruste.
+W tym artykule zabiorę Cię w podróż przez kolejne próby uzgodnienia wyników w 4 językach programowania (**Perl 5**, **Raku**, **Python** oraz **Rust**), przedstawiając kompletne statystyki dla 68 artykułów, wykresy ewolucji proporcji kodu oraz niespodziewane wyniki wydajnościowe.
 
 ---
 
@@ -188,7 +192,103 @@ Po tej zmianie Raku osiągnął **100% zgodności co do jednego bajtu** z pozost
 
 ---
 
-## Akt V: Konfrontacja 4 języków programowania
+## Akt V: Tabela wyników dla wszystkich 68 artykułów
+
+Po ujednoliceniu algorytmu zliczania i obsłudze zagnieżdżania w DOM, wygenerowałem pełne zestawienie długości tekstu oraz kodu dla wszystkich 68 wpisów opublikowanych na blogu.
+
+### Podsumowanie statystyczne:
+* **Łączna liczba przeanalizowanych artykułów**: `68`
+* **Łączna liczba znaków tekstu**: **`504 233`**
+* **Łączna liczba znaków kodu źródłowego**: **`430 084`**
+* **Łączna objętość znakowa bloga**: **`934 317`** znaków
+* **Średni udział kodu na blogu**: **`46.03%`**
+
+### Tabela pomiarowa:
+
+| # | Znaki tekstu | Znaki kodu | Udział kodu | Tytuł artykułu |
+| :---: | :---: | :---: | :---: | :--- |
+| 1 | 7 770 | 10 782 | 58.1% | Leveraging SIMD in Rust for High-Performance Computing |
+| 2 | 10 794 | 8 754 | 44.8% | From MLP to CNN. Neural Networks for MNIST Digit Recognition |
+| 3 | 7 906 | 14 172 | 64.2% | Rust Wasm performance on snake game example |
+| 4 | 9 370 | 10 517 | 52.9% | Activation Functions in Machine Learning |
+| 5 | 16 421 | 6 088 | 27.0% | Machine Learning XOR from Scratch |
+| 6 | 5 324 | 3 504 | 39.7% | LangChain Exemplary Use Cases |
+| 7 | 1 835 | 8 461 | 82.2% | Fastify Prisma REST backend |
+| 8 | 1 171 | 2 454 | 67.7% | Web Push Notifications |
+| 9 | 2 854 | 10 898 | 79.3% | Svelte snake deployed on deno |
+| 10 | 4 478 | 10 277 | 69.6% | Rust implementation of RFC 7396 - JSON Merge Patch |
+| 11 | 6 219 | 1 590 | 20.4% | Tutorial for ESM + CommonJS package creators |
+| 12 | 2 860 | 638 | 18.2% | How to Install Yay on a Pure Arch Linux Docker Image |
+| 13 | 4 381 | 456 | 9.4% | Simplifying Linux Command Line with GPT-CLI (rust, open source) |
+| 14 | 10 424 | 8 602 | 45.2% | tRPC - super fast development cycle for fullstack typescript apps |
+| 15 | 1 739 | 567 | 24.6% | How to install MongoDB 6 on Fedora 37 |
+| 16 | 4 685 | 2 325 | 33.2% | QuickSort implementation in Rust, Typescript and Go |
+| 17 | 2 640 | 1 823 | 40.8% | ZeroMQ pull-push pattern for Node JS |
+| 18 | 4 054 | 3 103 | 43.4% | New Google Identity in Nuxt 3 |
+| 19 | 17 975 | 4 703 | 20.7% | Selected syntax in JavaScript ES2020, ES2021 and ES2022 |
+| 20 | 6 291 | 3 389 | 35.0% | CodinGame: Best fit to data - Rust - Regression Analysis |
+| 21 | 9 734 | 13 419 | 57.9% | CodinGame: Derivative Time - Part 1, Recursion (Typescript) |
+| 22 | 7 971 | 17 238 | 68.4% | CodinGame: Quaternion Multiplication - Rust, NodeJS - Parsing, Algebra |
+| 23 | 5 453 | 7 563 | 58.1% | CodinGame: ASCI Art - Rust, NodeJs - Strings, Arrays, Loops |
+| 24 | 1 538 | 805 | 34.4% | Overload Signatures in Typescript |
+| 25 | 12 712 | 15 481 | 54.9% | Login by Metamask - Rest Backend in Fastify (Node, Typescript, Prisma) |
+| 26 | 3 051 | 2 711 | 47.1% | Login Component in Nuxt (Rest Strapi) |
+| 27 | 3 642 | 5 461 | 60.0% | Maximum Inequality [Linear Search] rust and typescript |
+| 28 | 6 427 | 5 635 | 46.7% | Pulumi - Infrastructure as a Code [ Digital Ocean ] |
+| 29 | 1 153 | 2 011 | 63.6% | Last Occurrence [Linear Search] easy |
+| 30 | 5 573 | 2 270 | 28.9% | Analysis of Zipf's Law in Node.js |
+| 31 | 5 628 | 2 186 | 28.0% | Retry Policy - How to Handle Random, Unpredictable Errors |
+| 32 | 2 012 | 1 438 | 41.7% | Publishing an update of the package in the AUR repository |
+| 33 | 3 726 | 1 735 | 31.8% | Least Common Multiple - Number Theory |
+| 34 | 8 025 | 6 501 | 44.8% | How to configure SSL in local development |
+| 35 | 13 753 | 3 217 | 18.9% | Another installation guide for Arch Linux (i3) |
+| 36 | 17 645 | 5 769 | 24.6% | Benford's Law for the Fibonacci Sequence in Java, Rust, and Node JS |
+| 37 | 5 226 | 488 | 8.5% | Bolt (always) Lite - MITM, Proxy, Insomnia and Vue |
+| 38 | 14 801 | 5 190 | 25.9% | Process Control in Node JS |
+| 39 | 4 168 | 788 | 15.9% | Xss attack using script style and image |
+| 40 | 8 111 | 6 704 | 45.2% | Broadcast Channel API |
+| 41 | 5 953 | 11 488 | 65.9% | Analysis of the frequency of altcoin names in the English language corpus |
+| 42 | 4 977 | 5 391 | 52.0% | Scraping the most popular Twitter accounts |
+| 43 | 1 667 | 0 | 0.0% | How to create a free email account with custom domain? |
+| 44 | 2 549 | 735 | 22.4% | Telegram Bot in Typescript |
+| 45 | 2 829 | 223 | 7.3% | Installation of a renewable TLS certificate (certbot + apache on Ubuntu) |
+| 46 | 11 063 | 3 997 | 26.5% | Data scraping in Perl |
+| 47 | 13 494 | 10 561 | 43.9% | Scraping Facebook in 2021 |
+| 48 | 6 689 | 0 | 0.0% | How the war for compatibility shaped the frontend? |
+| 49 | 5 789 | 2 364 | 29.0% | We squeeze data from PDF like juice from a lemon |
+| 50 | 9 900 | 7 392 | 42.7% | Fetch, Promise and Template String on example of To Do List in JavaScript |
+| 51 | 9 647 | 4 423 | 31.4% | Communication between Vue components in Meteor |
+| 52 | 1 845 | 199 | 9.7% | Git styled calendar with custom dates |
+| 53 | 6 222 | 9 663 | 60.8% | How many families can fit on the plane - an algorithmics problem |
+| 54 | 2 711 | 0 | 0.0% | Scraping WordPress - 4300 court rulings in exchange rate lawsuits without a line of code |
+| 55 | 9 772 | 5 335 | 35.3% | Ruby on Rails - quick introduction |
+| 56 | 2 631 | 897 | 25.4% | Infrastructure as Code (Terraform + Digital Ocean) |
+| 57 | 2 491 | 1 718 | 40.8% | Calculating the Difference Between JSON Files |
+| 58 | 4 137 | 4 421 | 51.7% | Scraping of the Pharmacy Register |
+| 59 | 11 266 | 8 429 | 42.8% | How to download contact data for 20k lawyers in an hour |
+| 60 | 5 399 | 4 318 | 44.4% | Scraping from money.pl in 30 lines of code. |
+| 61 | 17 602 | 16 397 | 48.2% | Data Structuring on the Example of CHF NBP Course |
+| 62 | 23 419 | 42 529 | 64.5% | Application with FOSUserBundle and Google Maps API |
+| 63 | 7 876 | 2 916 | 27.0% | Compilation of PHP 7 interpreter in BunsenLabs |
+| 64 | 17 066 | 11 550 | 40.4% | Analysis of Apache logs with GoAccess |
+| 65 | 11 265 | 9 313 | 45.3% | The impact of indexing on search performance in MySQL database |
+| 66 | 16 235 | 22 121 | 57.7% | Tesseract-OCR and testing selects. |
+| 67 | 12 066 | 12 339 | 50.6% | Visualization of a dynamic correlation network. |
+| 68 | 8 133 | 11 652 | 58.9% | Data logging in MySql, Ajax, and Behat |
+
+---
+
+### Wykresy ewolucji tekstu i kodu
+
+Poniższe wykresy obrazują zmianę objętości artykułów oraz procentowy udział kodu źródłowego na przestrzeni lat:
+
+![Ewolucja ilości tekstu i kodu w kolejnych wpisach](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_text_vs_code_evolution.svg)
+
+![Procentowy udział kodu we wpisach](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_code_ratio_evolution.svg)
+
+---
+
+## Akt VI: Konfrontacja 4 języków programowania
 
 Stworzyłem spójne implementacje algorytmu zliczania tekstu i kodu w 4 językach:
 
@@ -301,54 +401,23 @@ Wszystkie skrypty dały **co do jednego znaku tożsame wyniki**.
 
 ---
 
-## Wisienka na torcie: Wyścig wydajności (Benchmark)
+## Akt VII: Wyścig wydajności i Pula Połączeń HTTP
 
-Mając 4 działające i w 100% zgodne skrypty, zmierzyłem czas potrzebny na przetworzenie wszystkich 68 artykułów z serwera produkcyjnego komendą `time`:
+Mając 4 działające i w 100% zgodne skrypty, zmierzyłem wydajność wykonania wszystkich programów (czas rzeczywisty `real`, czas CPU oraz szczytowe zużycie pamięci operacyjnej `Max RSS`).
 
-| Język / Środowisko | Biblioteka HTTP / Parser | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Miejsce |
-| :--- | :--- | :---: | :---: | :---: |
-| **Perl 5** | `Mojo::UserAgent` + `Mojo::DOM` | **`6.542 s`** | `1.849 s` | 🥇 **1. miejsce** |
-| **Rust** (Wersja podstawowa) | `ureq` + `scraper` (Release) | **`6.179 s`** | **`0.313 s`** | 🥈 **2. miejsce** |
-| **Python** (`uv`) | `httpx` + `selectolax` | **`12.068 s`** | `0.779 s` | 🥉 **3. miejsce** |
-| **Raku** | `WWW` + `DOM::Tiny` | **`1m 23.241 s`** | `1m 01.892 s` | 4. miejsce |
+### Niespodziewany wynik wstępny
+W pierwszej wersji benchmarku skrypt w Perlu 5 z `Mojo::UserAgent` wykonywał się w czasie **11.39 s**, podczas gdy podstawowa wersja w Ruste potrzebowała **5.21 s**, a Python **5.74 s**.
 
-### Dlaczego kilkunastoletni Perl 5 wygrał z podstawową wersją w Ruste?
+Zastanawiające było jednak to, dlaczego Python i podstawowy Rust były tylko 2-krotnie szybsze od Perla, mimo że procesor w Rust wykonywał całą pracę w zaledwie **0.37 s**!
 
-Na pierwszy rzut oka wynik wywołuje szok: **jak Perl 5 mógł okazać się znikomo wolniejszy lub wręcz dorównywać zoptymalizowanemu kodowi w Ruste?**
+Powód leżał w **warstwie sieciowej HTTP i utrzymywaniu sesji (HTTP Keep-Alive)**:
+1. `Mojo::UserAgent` w Perlu oraz zoptymalizowany klient sieciowy reużywają połączenia TCP/TLS.
+2. Podstawowa wersja skryptu w Ruste (`rust/src/main.rs`) wywoływała statyczną funkcję `ureq::get(&url)` w pętli. Bez jawnie utworzonego agenta z pulą połączeń, dla każdego z 68 zapytań nawiązywane było **nowe połączenie TCP i nowy handshake TLS**.
+3. W Pythonie (`count_text_and_code.py`) wywoływano `httpx.get(url)` w pętli. Podobnie jak w Ruste, wywołanie `httpx.get()` tworzy tymczasowego klienta i zamyka gniazdo po każdym zapytaniu. Gdybyśmy użyli `with httpx.Client() as client:`, Python również utrzymywałby pulę połączeń Keep-Alive.
 
-Wgląd w parametry CPU zdradza prawdę:
-* **Rust wykorzystał zaledwie 0.31 s czasu procesora**. Samo parsowanie HTML w Rust było błyskawiczne.
-* **Perl 5 zużył 1.85 s CPU**, ale zakończył całe zadanie w podobnym czasie **6.54 s**.
+### Reorganizacja w Ruste: `rust/src/bin/connection_pool.rs`
 
-Powód leży w **warstwie sieciowej HTTP i utrzymywaniu sesji (HTTP Keep-Alive)**:
-1. `Mojo::UserAgent` w Perlu domyślnie inicjalizuje **pulę otwartych połączeń HTTP/1.1**. Po pobraniu pierwszego artykułu połączenie TCP oraz uścisk dłoni TLS (*TLS Handshake*) są wielokrotnie reużywane dla kolejnych 67 zapytań.
-2. Podstawowa wersja skryptu w Ruste wywoływała statyczną funkcję `ureq::get(&url).call()` w pętli. Bez jawnie utworzonego agenta z pulą połączeń, dla każdego z 68 zapytań nawiązywane było **nowe połączenie TCP i nowy handshake TLS**.
-
-Opóźnienia sieciowe (RTT) i nawiązywanie szyfrowania TLS dla 68 osobnych połączeń całkowicie zdominowały czas wykonania.
-
----
-
-## Reorganizacja w Ruste: Pula połączeń HTTP (`connection_pool.rs`)
-
-Znając przyczynę słabszego wyniku podstawowego skryptu w Ruste, wprowadziłem zoptymalizowany wariant w pliku `rust/src/bin/connection_pool.rs`.
-
-Porównajmy kluczowe fragmenty obu skryptów:
-
-### 1. Wersja podstawowa (`rust/src/main.rs`)
-W wersji domyślnej każde wywołanie `ureq::get` tworzy osobny, jednorazowy obiekt zapytania bez przechowywania stanu puli sesji:
-
-```rust
-// rust/src/main.rs - brak puli połączeń
-let body: String = ureq::get(BASE_URL).call()?.into_string()?;
-
-for element in fragment.select(&selector) {
-    // Tworzenie osobnego połączenia TCP + TLS Handshake dla każdego posta:
-    let post_body: String = ureq::get(&url).call()?.into_string()?;
-}
-```
-
-### 2. Wersja z pulą połączeń (`rust/src/bin/connection_pool.rs`)
-W wersji zoptymalizowanej tworzymy jawną instancję `ureq::Agent::new_with_defaults()`, która przechowuje pulę otwartych połączeń TCP i reużywa je za pomocą nagłówka HTTP Keep-Alive:
+Tworzymy jawną instancję `ureq::Agent::new_with_defaults()`, która przechowuje pulę otwartych połączeń TCP i reużywa je dla kolejnych zapytań HTTP:
 
 ```rust
 // rust/src/bin/connection_pool.rs - jawny agent z pulą połączeń
@@ -364,44 +433,30 @@ for element in fragment.select(&selector) {
 
 ---
 
-### Wyniki eksperymentu wydajnościowego
+### Ostateczne zestawienie benchmarków
 
-Przeprowadziłem porównawczy test wydajnościowy dla obu wariantów w trybie deweloperskim (`cargo run`) oraz w skompilowanej wersji produkcyjnej (`--release`):
+Poniższa tabela przedstawia precyzyjne pomiary czasu oraz pamięci RAM zarejestrowane dla poszczególnych implementacji:
 
-#### 1. Tryb deweloperski (niezoptymalizowany `debug`):
-```bash
-$ time cargo run --bin rust
-# ... 68 artykułów ...
-real    0m8.284s
-user    0m2.584s
-sys     0m0.055s
+| Język / Wariant | Biblioteka HTTP / Parser | Connection Pool | Czas rzeczywisty (`real`) | Czas CPU (`user`+`sys`) | Zużycie RAM (`Max RSS`) |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| 🥇 **Rust (`connection_pool`)** | `ureq::Agent` + `scraper` (Release) | ✅ **Tak** | **`3.34 s`** | **`0.28 s`** | **`15.05 MB`** |
+| 🥈 **Rust (`rust` Standard)** | `ureq::get` + `scraper` (Release) | ❌ **Nie** | **`5.21 s`** | **`0.37 s`** | **`14.50 MB`** |
+| 🥉 **Python** (`httpx`) | `httpx.get` + `selectolax` | ❌ **Nie** | **`5.74 s`** | **`0.82 s`** | **`85.16 MB`** |
+| **Perl 5** | `Mojo::UserAgent` + `Mojo::DOM` | ✅ **Tak** | **`11.39 s`** | **`3.14 s`** | **`42.29 MB`** |
+| **Raku** | `WWW` (`get`) + `DOM::Tiny` | ❌ **Nie** | **`37.63 s`** | **`31.93 s`** | **`388.90 MB`** |
 
-$ time cargo run --bin connection_pool
-# ... 68 artykułów ...
-real    0m4.978s
-user    0m1.969s
-sys     0m0.041s
-```
-W trybie debug wprowadzenie puli połączeń skróciło czas wykonania z **8.28 s do 4.97 s** (o ponad 40%).
+---
 
-#### 2. Tryb produkcyjny (`--release`):
-W zoptymalizowanej wersji produkcyjnej spadek czasu wykonania jest spektakularny:
+### Wykresy porównawcze wydajności
 
-| Wariant programu Rust | Utrzymywanie sesji (Keep-Alive) | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Skok wydajności |
-| :--- | :---: | :---: | :---: | :---: |
-| **Rust Standard** (`src/main.rs`) | ❌ Brak (`ureq::get`) | **`6.179 s`** | `0.313 s` | – |
-| **Rust Connection Pool** (`src/bin/connection_pool.rs`) | ✅ Tak (`ureq::Agent`) | **`3.269 s`** | `0.231 s` | ⚡ **Prawie 2x szybciej!** |
+#### Czas rzeczywisty wykonania (`Wall-Clock Real Time`)
+![Czas rzeczywisty wykonania](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_real_time.svg)
 
-### Ostateczny klasyfikacja wydajności:
+#### Zużycie czasu procesora (`CPU Time`)
+![Czas procesora CPU](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_cpu_time.svg)
 
-| Język / Wariant | Biblioteka HTTP / Parser | Czas rzeczywisty (`real`) | Czas CPU (`user`) | Miejsce |
-| :--- | :--- | :---: | :---: | :---: |
-| **Rust (`connection_pool`)** | `ureq::Agent` + `scraper` (Release) | **`3.269 s`** | **`0.231 s`** | 🥇 **1. miejsce** |
-| **Perl 5** | `Mojo::UserAgent` + `Mojo::DOM` | **`6.542 s`** | `1.849 s` | 🥈 **2. miejsce** |
-| **Python** (`uv`) | `httpx` + `selectolax` | **`12.068 s`** | `0.779 s` | 🥉 **3. miejsce** |
-| **Raku** | `WWW` + `DOM::Tiny` | **`1m 23.241 s`** | `1m 01.892 s` | 4. interim |
-
-Zastosowanie `ureq::Agent` pozwoliło Rustowi osiągnąć fenomenalny czas **3.27 s** dla wszystkich 68 artykułów – wyprzedzając Perla 5 dwukrotnie i wygrywając wyścig zarówno w szybkości I/O, jak i w minimalnym zużyciu zasobów procesora.
+#### Szczytowe zużycie pamięci RAM (`Max RSS`)
+![Szczytowe zużycie pamięci RAM](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_ram_usage.svg)
 
 ---
 
@@ -412,5 +467,5 @@ To, co miało być zwykłym wyliczeniem statystyk bloga, zmieniło się w niesam
 1. **Jakość bibliotek**: Nawet popularne pakiety w CPAN mogą zawierać nieoczekiwane błędy w regexach obcinające wartości atrybutów na apostrofach.
 2. **Drzewo DOM**: Należy precyzyjnie kontrolować kontekst zagnieżdżenia elementów (takich jak `<pre>`) w kodzie HTML.
 3. **Specyfikacja Unicode**: Zanim porównasz długość stringów w różnych językach, upewnij się, czy mierzysz **grafemy (NFG)**, **punkty kodowe (Code Points)**, czy **bajty UTF-8**.
-4. **Wydajność sieciowa**: Utrzymywanie trwałej sesji HTTP (Keep-Alive) ma drastycznie większy wpływ na czas wykonania skryptów sieciowych niż sam wybór języka programowania czy szybkość parsera HTML.
-
+4. **Wydajność i RAM**: Rust z pulą połączeń HTTP osiąga imponujący wynik **3.34 s** oraz zużywa zaledwie **15 MB RAM** (5.7x mniej niż Python i 26x mniej niż Raku).
+5. **Wydajność sieciowa**: Utrzymywanie trwałej sesji HTTP (Keep-Alive) ma drastycznie większy wpływ na czas wykonania skryptów sieciowych niż sam wybór języka programowania czy szybkość parsera HTML.
