@@ -12,6 +12,3 @@ img-push:
 
 img-sync:
 	./scripts/sync_images.sh sync
-
-note:
-	./scripts/new_note.sh "$(title)"
