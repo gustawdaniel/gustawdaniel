@@ -282,9 +282,9 @@ With unified counting logic and proper DOM nesting handling, I generated complet
 
 The charts below illustrate article volume changes and code ratio percentages over time:
 
-![Text vs Code Character Evolution across 68 Posts](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_text_vs_code_evolution.svg)
+![Text vs Code Character Evolution across 68 Posts](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_text_vs_code_evolution.svg)
 
-![Code Ratio Percentage Evolution across 68 Posts](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_code_ratio_evolution.svg)
+![Code Ratio Percentage Evolution across 68 Posts](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_code_ratio_evolution.svg)
 
 ---
 
@@ -450,13 +450,13 @@ The table below presents the precise timing and RAM consumption measurements rec
 ### Performance Comparative Charts
 
 #### Wall-Clock Real Time Execution
-![Wall-Clock Execution Time](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_real_time.svg)
+![Wall-Clock Execution Time](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_real_time.svg)
 
 #### CPU Processor Time
-![Processor CPU Time](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_cpu_time.svg)
+![Processor CPU Time](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_cpu_time.svg)
 
 #### Peak RAM Memory Usage
-![Peak RAM Usage](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_ram_usage.svg)
+![Peak RAM Usage](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_ram_usage.svg)
 
 ---
 

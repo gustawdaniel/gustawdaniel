@@ -282,9 +282,9 @@ Con una lógica de conteo unificada y una gestión adecuada del anidamiento en e
 
 Los siguientes gráficos ilustran los cambios en el volumen de los artículos y el porcentaje de proporción de código a lo largo del tiempo:
 
-![Evolución del volumen de texto frente a código en los 68 artículos](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_text_vs_code_evolution.svg)
+![Evolución del volumen de texto frente a código en los 68 artículos](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_text_vs_code_evolution.svg)
 
-![Evolución del porcentaje de proporción de código en los 68 artículos](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_code_ratio_evolution.svg)
+![Evolución del porcentaje de proporción de código en los 68 artículos](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_code_ratio_evolution.svg)
 
 ---
 
@@ -450,13 +450,13 @@ La siguiente tabla presenta las mediciones precisas de tiempo y consumo de RAM r
 ### Gráficos comparativos de rendimiento
 
 #### Tiempo Real de Ejecución de Reloj (`Wall-Clock Real Time`)
-![Tiempo Real de Ejecución](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_real_time.svg)
+![Tiempo Real de Ejecución](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_real_time.svg)
 
 #### Tiempo de Procesador de CPU
-![Tiempo de Procesador CPU](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_cpu_time.svg)
+![Tiempo de Procesador CPU](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_cpu_time.svg)
 
 #### Consumo Máximo de Memoria RAM
-![Consumo Máximo de Memoria RAM](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_ram_usage.svg)
+![Consumo Máximo de Memoria RAM](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_ram_usage.svg)
 
 ---
 

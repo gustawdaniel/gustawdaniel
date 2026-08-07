@@ -6,12 +6,12 @@ Install netcat.
 
 You have 2 options:
 - gnu-netcat - simpler option without advanced features
-- openbsd-netcat - feature rich advanced netcat
+- openbsd-netcat - feature rich advanced netcat (has IPv6 support)
 
 If it is your first contact with netcat I recommend
 
 ```bash
-yay -S gnu-netcat
+yay -S openbsd-netcat
 ```
   
 Now on first device start listening on port, for example 1234

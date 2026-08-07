@@ -2,16 +2,6 @@
 
 This file contains development notes, tasks, and setup instructions preserved from the original README.
 
-## Real dates of drafts
-
-```
-2018-02-20-xss-attack-using-script-style-and-image.md
-2018-02-21-snake-game-in-javascript-part-1-objects.md
-2018-03-19-snake-game-in-javascript-part-2-events.md
-2018-03-20-snake-game-in-javascript-part-3-vue.md
-2018-07-08-measuring-the-amount-of-text-and-code-in-my-blog-posts.md
-2019-07-08-badanie-wydajności-insertów-mysql.md
-```
 
 ## Dev Setup:
 

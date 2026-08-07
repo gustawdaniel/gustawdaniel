@@ -281,9 +281,9 @@ Po ujednoliceniu algorytmu zliczania i obsłudze zagnieżdżania w DOM, wygenero
 
 Poniższe wykresy obrazują zmianę objętości artykułów oraz procentowy udział kodu źródłowego na przestrzeni lat:
 
-![Ewolucja ilości tekstu i kodu w kolejnych wpisach](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_text_vs_code_evolution.svg)
+![Ewolucja ilości tekstu i kodu w kolejnych wpisach](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_text_vs_code_evolution.svg)
 
-![Procentowy udział kodu we wpisach](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_code_ratio_evolution.svg)
+![Procentowy udział kodu we wpisach](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_code_ratio_evolution.svg)
 
 ---
 
@@ -449,13 +449,13 @@ Poniższa tabela przedstawia precyzyjne pomiary czasu oraz pamięci RAM zarejest
 ### Wykresy porównawcze wydajności
 
 #### Czas rzeczywisty wykonania (`Wall-Clock Real Time`)
-![Czas rzeczywisty wykonania](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_real_time.svg)
+![Czas rzeczywisty wykonania](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_real_time.svg)
 
 #### Zużycie czasu procesora (`CPU Time`)
-![Czas procesora CPU](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_cpu_time.svg)
+![Czas procesora CPU](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_cpu_time.svg)
 
 #### Szczytowe zużycie pamięci RAM (`Max RSS`)
-![Szczytowe zużycie pamięci RAM](/img/measuring-the-amount-of-text-and-code-in-my-blog-posts/chart_ram_usage.svg)
+![Szczytowe zużycie pamięci RAM](https://preciselab.fra1.digitaloceanspaces.com/blog/img/chart_ram_usage.svg)
 
 ---
 

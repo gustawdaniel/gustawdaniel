@@ -1,7 +1,7 @@
 ---
 author: Daniel Gustaw
 canonicalName: performance-of-empty-loops-in-16-languages
-coverImage: /img/loopspeed/91b0a834-47ef-418d-886a-8ae9de653c68.avif
+coverImage: https://preciselab.fra1.digitaloceanspaces.com/blog/img/91b0a834-47ef-418d-886a-8ae9de653c68.avif
 description: Porównanie i analiza wydajności wykonywania pustych pętli w 16 różnych językach programowania.
 publishDate: 2017-02-13 00:00:00.000Z
 slug: pl/analiza-wydajnosci-pustych-petli-w-16-jezykach
@@ -277,7 +277,7 @@ Dzięki takiej strukturze dodawanie obsługi nowych języków jest proste. Przec
 
 Przepływ danych w aplikacji opiera się na sprzężeniu zwrotnym: `inc.bash` testuje pętle na podstawie parametrów wyliczonych przez `util/generate_parameters.py`, natomiast sam model wymaga wcześniejszego zgromadzenia danych empirycznych za pomocą `inc.bash`.
 
-![Diagram przepływu danych - Loopspeed](/img/loopspeed/dataflow_pl.png)
+![Diagram przepływu danych - Loopspeed](https://preciselab.fra1.digitaloceanspaces.com/blog/img/dataflow_pl.svg)
 
 Mamy tu do czynienia z klasycznym problemem "co było pierwsze: jajko czy kura?". Odpowiedzią okazuje się podejście ewolucyjne. Początkowo każdy ze skryptów `inc.i` uruchamiany był ręcznie – najpierw dla pojedynczej pętli, potem dla tysiąca, miliona i miliarda iteracji. Jeśli wykonanie trwało zbyt długo (powyżej kilku sekund), zmniejszałem liczbę iteracji; gdy było zbyt krótkie – zwiększałem. Celem było ręczne znalezienie liczby iteracji odpowiadającej czasowi wykonania rzędu 4–5 sekund. 
 
@@ -694,7 +694,7 @@ done
 
 Wyniki pomiarów:
 
-![inc_inc.bash.png](/img/loopspeed/inc_inc.bash.png)
+![inc_inc.bash.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.bash.svg)
 
 Bash uzyskał najniższą szybkość wykonywania iteracji pętli w całym zestawieniu, charakteryzuje się jednak bardzo niskim czasem uruchamiania, nieustępującym znacząco językom kompilowanym.
 
@@ -751,7 +751,7 @@ CREATE PROCEDURE inc_loop(IN n INT)
 DELIMITER ;
 ```
 
-![inc_inc.sql.sh.png](/img/loopspeed/inc_inc.sql.sh.png)
+![inc_inc.sql.sh.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.sql.sh.svg)
 
 MariaDB zajmuje w klasyfikacji szybkości pętli przedostatnie miejsce. Co ciekawe, czas nawiązywania połączenia z bazą danych plasuje się na całkiem przyzwoitym poziomie na tle innych języków skryptowych.
 
@@ -789,7 +789,7 @@ public class Program
 }
 ```
 
-![inc_inc.cs.png](/img/loopspeed/inc_inc.cs.png)
+![inc_inc.cs.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.cs.svg)
 
 Czas uruchamiania środowiska Mono jest umiarkowany, natomiast szybkość pętli plasuje C# na 6. pozycji od końca w tym zestawieniu pomiarów.
 
@@ -804,7 +804,7 @@ var max = process.argv[2];
 for (var i = 0; i <= max; i++) {}
 ```
 
-![inc_inc.js.png](/img/loopspeed/inc_inc.js.png)
+![inc_inc.js.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.js.svg)
 
 Node.js wykazuje średni narzut przy uruchamianiu, ale w szybkości wykonywania pętli radzi sobie dobrze jak na środowisko dynamiczne.
 
@@ -828,7 +828,7 @@ while (count < max):
 
 *(Uwaga: Zastosowanie konstrukcji `for i in range(...)` w Pythonie 2/3 bez użycia iteratorów generowało w pamięci RAM pełną tablicę, co doprowadzało do braku pamięci przy dużych wartościach `max` – szczegóły opisano w sekcji z ciekawostkami).*
 
-![inc_inc.python.png](/img/loopspeed/inc_inc.python.png)
+![inc_inc.python.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.python.svg)
 
 Python plasuje się w środku stawki. Mimo że nie należy do najszybszych języków, nadrabia to prostotą i bardzo niskim progiem wejścia.
 
@@ -845,7 +845,7 @@ end
 
 Składnia zakreślająca przedział `(1 .. N)` w Ruby okazuje się zoptymalizowana pod kątem zużycia pamięci i nie zapycha RAM-u nawet dla bardzo dużych wartości $N$.
 
-![inc_inc.rb.png](/img/loopspeed/inc_inc.rb.png)
+![inc_inc.rb.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.rb.svg)
 
 Ruby osiąga umiarkowane wyniki: czas uruchamiania jest nieco dłuższy, ale pętla wykonuje się sprawnie.
 
@@ -861,7 +861,7 @@ Przykładowy kod:
 for(my $i=0;$i<=$ARGV[0];$i++){}
 ```
 
-![inc_inc.pl.png](/img/loopspeed/inc_inc.pl.png)
+![inc_inc.pl.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.pl.svg)
 
 Perl wykazuje najkrótszy czas uruchomienia spośród tradycyjnych języków skryptowych. Szybkość samej pętli plasuje go na średnim poziomie.
 
@@ -880,7 +880,7 @@ while(x < as.numeric(args)) {
 }
 ```
 
-![inc_inc.r.png](/img/loopspeed/inc_inc.r.png)
+![inc_inc.r.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.r.svg)
 
 Jako język wysokiego poziomu zorientowany na wektoryzację danych, R w pętli skalarnej wypadł słabo, zajmując 3. miejsce od końca pod względem szybkości pętli i czasu startu.
 
@@ -898,7 +898,7 @@ $max = (int)$argv[1];
 for($i=0; $i<$max; $i++);
 ```
 
-![inc_inc.php.png](/img/loopspeed/inc_inc.php.png)
+![inc_inc.php.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.php.svg)
 
 PHP uzyskał bardzo dobre wyniki – okazał się jednym z najszybszych języków interpretowanych pod względem czasu pojedynczej pętli, ustępując w tej kategorii jedynie Matlabowi.
 
@@ -922,7 +922,7 @@ PROGRAM loop_argument_times
 END PROGRAM
 ```
 
-![inc_inc.f95.png](/img/loopspeed/inc_inc.f95.png)
+![inc_inc.f95.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.f95.svg)
 
 Fortran 95 odniósł zwycięstwo w kategorii szybkości wykonywania pojedynczej pętli oraz zajął 4. miejsce pod względem najkrótszego czasu uruchomienia.
 
@@ -943,7 +943,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-![inc_inc.cpp.png](/img/loopspeed/inc_inc.cpp.png)
+![inc_inc.cpp.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.cpp.svg)
 
 C++ plasuje się w ścisłej czołówce: 3. miejsce pod względem czasu uruchomienia i 2. miejsce pod względem szybkości wykonywania pętli.
 
@@ -966,7 +966,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-![inc_inc.c.png](/img/loopspeed/inc_inc.c.png)
+![inc_inc.c.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.c.svg)
 
 C zdobywa 1. miejsce pod względem najkrótszego czasu uruchomienia oraz 3. miejsce pod względem szybkości pętli (zaledwie o 1% za C++ i Fortranem).
 
@@ -993,7 +993,7 @@ begin
 end.
 ```
 
-![inc_inc.p.png](/img/loopspeed/inc_inc.p.png)
+![inc_inc.p.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.p.svg)
 
 Pascal zajął 2. miejsce pod względem czasu uruchomienia i 5. miejsce pod względem szybkości pętli.
 
@@ -1013,7 +1013,7 @@ public class inc {
 }
 ```
 
-![inc_inc.java.png](/img/loopspeed/inc_inc.java.png)
+![inc_inc.java.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/inc_inc.java.svg)
 
 Java osiągnęła znakomitą szybkość wykonywania pętli (4. miejsce, zaledwie 1–2% za liderem), jednak uruchomienie JVM wiązało się z narzutem czasowym około 40-krotnie większym niż w przypadku C czy Pascala.
 
@@ -1021,7 +1021,7 @@ Java osiągnęła znakomitą szybkość wykonywania pętli (4. miejsce, zaledwie
 
 Poniższy wykres (wygenerowany w Pythonie) porównuje czas wykonania pojedynczej pętli dla wszystkich 16 języków (skala logarytmiczna – im niższa wartość, tym szybciej):
 
-![speed.png](/img/loopspeed/speed.png)
+![speed.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/speed.svg)
 
 Szczegółowe parametry zebrane w tabeli:
 
@@ -1046,7 +1046,7 @@ Szczegółowe parametry zebrane w tabeli:
 
 Porównanie czasów uruchamiania programów (narzutu startowego):
 
-![speed2.png](/img/loopspeed/speed2.png)
+![speed2.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/speed2.svg)
 
 Tabela posortowana według czasów uruchamiania:
 
@@ -1079,13 +1079,13 @@ Wybór mechanizmu pętli (np. iteracja skalarnego licznika vs przechodzenie po t
 
 Na przykładzie języka R zmiana z pętli `while` (inkrementacja licznika) na pętlę `for in` (wcześniejsza alokacja wektora w RAM):
 
-![r_loop_diff.png](/img/loopspeed/r_loop_diff.png)
+![r_loop_diff.png](/img/loopspeed/r_loop_diff.svg)
 
 Porównanie modelowe:
 
-![diff_loop.png](/img/loopspeed/diff_loop.png)
+![diff_loop.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/diff_loop.svg)
 
-![loop_type.png](/img/loopspeed/loop_type.png)
+![loop_type.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/loop_type.svg)
 
 W języku R pętla `for in` z alokacją w RAM okazała się ponad 22-krotnie szybsza od klasycznej pętli `while`. Ceną za wydajność jest jednak wysokie zużycie pamięci operacyjnej przy dużych wartościach $N$.
 
@@ -1103,9 +1103,9 @@ fpc -O2 inc/inc.p -o"$TMP/p" -Tlinux &>/dev/null
 
 powoduje dwukrotny wzrost szybkości wykonywania pętli dzięki eliminacji zbędnych operacji na rejestrach procesora:
 
-![compilation.png](/img/loopspeed/compilation.png)
+![compilation.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/compilation.svg)
 
-![compilation_table.png](/img/loopspeed/compilation_table.png)
+![compilation_table.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/compilation_table.svg)
 
 #### C++
 
@@ -1117,17 +1117,17 @@ g++ -O1 -o "$TMP/cpp" 'inc/inc.cpp';
 
 Porównanie poziomów optymalizacji w C++:
 
-![cpp_optimization.png](/img/loopspeed/cpp_optimization.png)
+![cpp_optimization.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cpp_optimization.svg)
 
-![cpp_optimization_table.png](/img/loopspeed/cpp_optimization_table.png)
+![cpp_optimization_table.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/cpp_optimization_table.svg)
 
 #### Fortran
 
 Podobne zależności zaobserwowano dla Fortrana przy użyciu flagi `-O1`:
 
-![f_optimization.png](/img/loopspeed/f_optimization.png)
+![f_optimization.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f_optimization.svg)
 
-![f_optimization_table.png](/img/loopspeed/f_optimization_table.png)
+![f_optimization_table.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/f_optimization_table.svg)
 
 ### Sposób pomiaru czasu
 
@@ -1144,7 +1144,7 @@ echo "${DIFF}"
 
 Porównanie rozkładu wyników obu metod:
 
-![pairedHistogramTiming.png](/img/loopspeed/pairedHistogramTiming.png)
+![pairedHistogramTiming.png](https://preciselab.fra1.digitaloceanspaces.com/blog/img/pairedHistogramTiming.svg)
 
 | Metoda                | Czas \[s\] | Odchylenie std \[s\] |
 | --------------------- | ---------- | -------------------- |
