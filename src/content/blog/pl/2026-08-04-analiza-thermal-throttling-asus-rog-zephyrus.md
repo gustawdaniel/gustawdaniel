@@ -205,7 +205,7 @@ Po wstępnym entuzjazmie przystąpiono do wykonania pełnej kompilacji jądra Li
 ### Przebieg awarii podczas kompilacji:
 
 1. **Po 4 minutach pełnego obciążenia** temperatura na procesorze przekroczyła **100°C**.
-2. **Hard Throttling**: Taktowanie procesora drastycznie spadło do **544 MHz** na wszystkich 32 wątkach. System przestał reagować na komendy użytkownika.
+2. **Hard Throttling**: Taktowanie procesora drastycznie spadło do **544 MHz** na wszystkich 32 wątkach.
 3. **Limit obrotów wentylatora**: Wentylator CPU utknął na poziomie **3800 RPM** i nie zwiększał obrotów mimo przekroczenia krytycznej temperatury. Wentylator GPU pozostał całkowicie bezczynny (0 RPM).
 4. **Thermal Protection Shutdown**: Po osiągnięciu przez matrycę krzemową temperatury rzędu **105.9°C** nastąpiła automatyczna aktywacja sprzętowego zabezpieczenia termicznego (Thermal Panic).
 5. **Blokada włączenia**: Komputer natychmiastowo wyłączył się (odcięcie zasilania) i **nie dawał się ponownie uruchomić** do momentu całkowitego fizycznego ostygnięcia układu chłodzenia.
