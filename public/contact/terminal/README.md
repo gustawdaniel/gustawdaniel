@@ -65,7 +65,7 @@ MIT
 QR codes
 
 ```bash
-qrencode -t ansiutf8 https://gustawdaniel.com/meet
+qrencode -t ansiutf8 https://gustawdaniel.com/calendar
 ```
 
 install in blog:

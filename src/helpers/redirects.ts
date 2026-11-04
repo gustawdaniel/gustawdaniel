@@ -39,10 +39,6 @@ export const redirects: Record<string, string | {
     '/scraping-libor-oraz-wibor-z-money-pl/': '/posts/pl/scraping-libor-oraz-wibor-z-money-pl/',
     '/strukturyzacja-historycznych-kursow-walut-nbp/': '/posts/pl/strukturyzacja-historycznych-kursow-walut-nbp/',
     '/rss/': '/rss.xml',
-    '/meet/': {
-        status: 302,
-        destination: 'https://calendar.app.google/hrkhBie98VxcmSsq9'
-    },
     '/calendar/': {
         status: 302,
         destination: 'https://calendar.app.google/hrkhBie98VxcmSsq9'
